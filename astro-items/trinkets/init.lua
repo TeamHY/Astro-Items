@@ -1,0 +1,15 @@
+AstroItems.Trinket = {}
+
+require "astro-items.trinkets.customs.absolute-zero"
+require "astro-items.trinkets.customs.black-mirror"
+require "astro-items.trinkets.customs.bloody-bandage"
+require "astro-items.trinkets.customs.doctrine"
+require "astro-items.trinkets.customs.edens-snake"
+require "astro-items.trinkets.customs.electronic-penny"
+require "astro-items.trinkets.customs.eye-of-god"
+require "astro-items.trinkets.customs.flunk"
+require "astro-items.trinkets.customs.lava-hand"
+require "astro-items.trinkets.customs.left-foot"
+require "astro-items.trinkets.customs.mosis-eyes"
+require "astro-items.trinkets.customs.nostalgia"
+require "astro-items.trinkets.customs.planetarium-crown"

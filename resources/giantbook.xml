@@ -1,5 +1,0 @@
-<giantbook anm2root="gfx/ui/giantbook/">
-		<entry id="44" anm2="GiantBook_SleepNightmare.anm2" anim="Idle" gfx="GiantBook_Rebirth_010_Sleep.png" />
-		<entry id="38" anm2="GiantBook_SuperBum.anm2" anim="Main" gfx="GiantBook_SuperBum.png" />
-		<entry id="33" anm2="GiantBook_Sleep.anm2" anim="Idle" gfx="GiantBook_Rebirth_010_Sleep.png" />
-</giantbook>

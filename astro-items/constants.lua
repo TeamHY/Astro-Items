@@ -1,0 +1,5 @@
+AstroItems.GRID_SIZE = 40
+
+AstroItems.MINUTE = 30 * 60
+
+AstroItems.GOLDEN_TRINKET_OFFSET = 32768

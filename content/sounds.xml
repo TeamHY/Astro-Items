@@ -1,8 +1,5 @@
 
 <sounds root="sfx/">
-    <sound name="Epic">
-        <sample weight="1" path="feedback/epic.wav" />
-    </sound>
     <sound name="Destroyed">
         <sample weight="1" path="destroyed.wav" />
     </sound>

@@ -1,29 +1,20 @@
-local hiddenItemManager = require("astro.lib.hidden_item_manager")
-local isc = require("astro.lib.isaacscript-common")
+local hiddenItemManager = require("astro-items.lib.hidden_item_manager")
+local isc = require("astro-items.lib.isaacscript-common")
 
-local mod = RegisterMod("Astrobirth", 1)
+local mod = RegisterMod("AstroItems", 1)
 
 hiddenItemManager:Init(mod)
 
-Astro = isc:upgradeMod(mod, { isc.ISCFeature.PLAYER_INVENTORY, isc.ISCFeature.ROOM_HISTORY })
+AstroItems = isc:upgradeMod(mod, { isc.ISCFeature.PLAYER_INVENTORY, isc.ISCFeature.ROOM_HISTORY })
 
 Json = require "json"
 
-require "astro.constants"
-require "astro.init"
-require "astro.save"
-require "astro.eid"
-require "astro.stage"
-require "astro.utill"
-require "astro.collectibles.init"
-require "astro.trinkets.init"
-require "astro.cards.init"
-require "astro.monsters.init"
-require "astro.player"
-require "astro.ban"
-require "astro.mega-chest"
-require "astro.room"
-require "astro.epic"
-require "astro.challenges"
-require "astro.void-portal"
-require "astro.inventorydesc"
+require "astro-items.constants"
+require "astro-items.save"
+require "astro-items.eid"
+require "astro-items.utill"
+require "astro-items.collectibles.init"
+require "astro-items.trinkets.init"
+require "astro-items.cards.init"
+require "astro-items.monsters.init"
+require "astro-items.player"
