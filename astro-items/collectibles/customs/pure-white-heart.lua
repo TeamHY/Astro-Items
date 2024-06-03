@@ -5,11 +5,9 @@ if EID then
         AstroItems.Collectible.PURE_WHITE_HEART,
         "순백의 심장",
         "...",
-        "!!! 효과가 발동한 뒤 사라집니다.#소지한 상태에서 {{BossRoom}}보스방 클리어 시 현재 소지중인 아이템 2개(랜덤) + , {{AngelRoom}}천사방 아이템 2개를 소환합니다. 하나를 선택하면 나머지는 사라집니다."
+        "!!! 효과가 발동한 뒤 사라집니다.#소지한 상태에서 {{BossRoom}}보스방 클리어 시 현재 소지중인 아이템 1개(랜덤) + , {{AngelRoom}}천사방 아이템 2개를 소환합니다. 하나를 선택하면 나머지는 사라집니다."
     )
 end
-
-local GRID_SIZE = 40
 
 AstroItems:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
@@ -26,7 +24,7 @@ AstroItems:AddCallback(
                 local itemPool = Game():GetItemPool()
 
                 local listToRemove =
-                    AstroItems:GetRandomCollectibles(inventory, rng, 2, AstroItems.Collectible.PURE_WHITE_HEART, true)
+                    AstroItems:GetRandomCollectibles(inventory, rng, 1, AstroItems.Collectible.PURE_WHITE_HEART, true)
 
                 for _, value in ipairs(listToRemove) do
                     player:RemoveCollectible(value)
