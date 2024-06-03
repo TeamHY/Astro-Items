@@ -1,10 +1,11 @@
-local hiddenItemManager = require("astro-items.lib.hidden_item_manager")
+-- local hiddenItemManager = require("astro-items.lib.hidden_item_manager")
 
 AstroItems.Players = {
     LEAH = Isaac.GetPlayerTypeByName("Leah"),
     DIABELLSTAR = Isaac.GetPlayerTypeByName("Diabellstar"),
     DIABELLSTAR_B = Isaac.GetPlayerTypeByName("Tainted Diabellstar", true),
     WATER_ENCHANTRESS = Isaac.GetPlayerTypeByName("Water Enchantress"),
+    WATER_ENCHANTRESS_B = Isaac.GetPlayerTypeByName("Tainted Water Enchantress", true),
     DAVID_MARTINEZ = Isaac.GetPlayerTypeByName("David Martinez"),
     DAVID_MARTINEZ_B = Isaac.GetPlayerTypeByName("Tainted David Martinez", true),
 }
@@ -12,6 +13,7 @@ AstroItems.Players = {
 local DIABELLSTAR_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_diabellstar_hair.anm2")
 local DIABELLSTAR_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_diabellstarb_hair.anm2")
 local WATER_ENCHANTRESS_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_water_enchantress_hair.anm2")
+local WATER_ENCHANTRESS_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_water_enchantressb_hair.anm2")
 local DAVID_MARTINEZ_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinez_hair.anm2")
 local DAVID_MARTINEZ_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinezb_hair.anm2")
 
@@ -50,6 +52,16 @@ AstroItems:AddCallback(
         else
             if player:GetEffects():HasNullEffect(WATER_ENCHANTRESS_HAIR) then
                 player:GetEffects():RemoveNullEffect(WATER_ENCHANTRESS_HAIR)
+            end
+        end
+
+        if player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS_B then
+            if not player:GetEffects():HasNullEffect(WATER_ENCHANTRESS_B_HAIR) then
+                player:GetEffects():AddNullEffect(WATER_ENCHANTRESS_B_HAIR, true)
+            end
+        else
+            if player:GetEffects():HasNullEffect(WATER_ENCHANTRESS_B_HAIR) then
+                player:GetEffects():RemoveNullEffect(WATER_ENCHANTRESS_B_HAIR)
             end
         end
 
