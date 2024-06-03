@@ -7,8 +7,6 @@ AstroItems.EID = {}
 ---@param description string
 ---@param eidDescription string
 function AstroItems:AddEIDCollectible(id, name, description, eidDescription)
-    print(id)
-
     if EID then
         EID:addCollectible(id, eidDescription, name)
     end
