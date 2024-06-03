@@ -1,7 +1,7 @@
 AstroItems.Collectible.ARIES_EX = Isaac.GetItemIdByName("Aries EX")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.ARIES_EX, "초 양자리", "...", "피격 시 무효화 처리되며, 10초간 무적이 됩니다.#{{Timer}}쿨타임 60초")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.ARIES_EX, "초 양자리", "...", "피격 시 무효화 처리되며, 10초간 무적이 됩니다.#중첩 시 지속시간이 증가합니다.#{{Timer}}쿨타임 60초")
 end
 
 --- 쿨타임
@@ -34,7 +34,9 @@ AstroItems:AddCallback(
             if data.Aries.CooldownTime <= frameCount then
                 data.Aries.CooldownTime = frameCount + cooldown
 
-                player:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS, false)
+                for _ = 1, player:GetCollectibleNum(AstroItems.Collectible.ARIES_EX) do
+                    player:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS, false)
+                end
 
                 return false
             end
