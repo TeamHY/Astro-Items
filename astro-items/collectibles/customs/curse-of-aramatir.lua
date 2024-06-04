@@ -4,6 +4,9 @@ if EID then
     AstroItems:AddEIDCollectible(AstroItems.Collectible.CURSE_OF_ARAMATIR, "금주 아라마티아", "...", "사용 시 소지된 아이템 중 하나를 소환합니다.#스테이지 진입 시 쿨타임이 채워집니다.#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다.")
 end
 
+local useSound = Isaac.GetSoundIdByName('Specialsummon')
+local useSoundVoulme = 1 -- 0 ~ 1
+
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,
     function(_)
@@ -48,6 +51,8 @@ AstroItems:AddCallback(
         end
 
         AstroItems:SpawnCollectible(hadCollectable, playerWhoUsedItem.Position)
+
+        SFXManager():Play(useSound, useSoundVoulme)
 
         return {
             Discharge = true,
