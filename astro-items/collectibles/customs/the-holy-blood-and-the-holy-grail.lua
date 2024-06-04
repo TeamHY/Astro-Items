@@ -22,7 +22,7 @@ AstroItems:AddCallback(
 
         return {
             Discharge = true,
-            Remove = false,
+            Remove = true,
             ShowAnim = true,
         }
     end,
