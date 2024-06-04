@@ -84,21 +84,21 @@
 		<Item Name="Comet" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pisces EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Gemini EX" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Prometheus" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Prometheus" Weight="0.35" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pure White Heart" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Platinum Bullet" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Ptolemaeus" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Ptolemaeus" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Altair" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Vega" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cursed Heart" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Death's Eyes" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Divine Light" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Acute Sinusitis" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Acute Sinusitis" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Laniakea Supercluster" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Galactic Medal Of Valor" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Galactic Medal Of Valor" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quasar" Weight="0.5" DecreaseBy="0.1" RemoveOn="0.1"/>
 		<Item Name="Fallen Orb" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Sagittarius EX" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sagittarius EX" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Head" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Tail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sleeping Puppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -107,17 +107,21 @@
 		<Item Name="Happy Onion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amplifying Mind" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Firecracker Flower" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - The Lost" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Technology Omicron" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amazing Chaos Scroll" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 
@@ -137,22 +141,22 @@
 		<Item Name="Pavo" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Comet" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pisces EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Gemini EX" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Prometheus" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Gemini EX" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Prometheus" Weight="0.35" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pure White Heart" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Platinum Bullet" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Ptolemaeus" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Ptolemaeus" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Altair" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Vega" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cursed Heart" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Death's Eyes" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Divine Light" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Acute Sinusitis" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Acute Sinusitis" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Laniakea Supercluster" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Galactic Medal Of Valor" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Galactic Medal Of Valor" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quasar" Weight="0.5" DecreaseBy="0.1" RemoveOn="0.1"/>
 		<Item Name="Fallen Orb" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Sagittarius EX" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sagittarius EX" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Head" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Tail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sleeping Puppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -161,17 +165,21 @@
 		<Item Name="Happy Onion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amplifying Mind" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Firecracker Flower" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - The Lost" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Technology Omicron" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amazing Chaos Scroll" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -282,6 +290,10 @@
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Technology Omicron" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Secret Bag" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Holy Blood and the Holy Grail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -339,6 +351,10 @@
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Technology Omicron" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Secret Bag" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Holy Blood and the Holy Grail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 
@@ -456,6 +472,10 @@
 		<Item Name="Rite of Aramesir" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Overwhelming Sinful Spoils" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="shop">
@@ -486,6 +506,10 @@
 		<Item Name="Rite of Aramesir" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Overwhelming Sinful Spoils" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Curse of Aramatir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Secret Bag" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Holy Blood and the Holy Grail" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="boss">

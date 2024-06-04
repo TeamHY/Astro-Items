@@ -8,7 +8,7 @@ end
 
 local damageIncrement = 0.7
 
-local damageMaxinum = 15
+local damageMaxinum = 5
 
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
