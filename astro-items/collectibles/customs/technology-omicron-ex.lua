@@ -1,9 +1,9 @@
-AstroItems.Collectible.TECHNOLOGY_OMICRON = Isaac.GetItemIdByName("Technology Omicron")
+AstroItems.Collectible.TECHNOLOGY_OMICRON_EX = Isaac.GetItemIdByName("Technology Omicron EX")
 
 if EID then
 	AstroItems:AddEIDCollectible(
-		AstroItems.Collectible.TECHNOLOGY_OMICRON,
-		"",
+		AstroItems.Collectible.TECHNOLOGY_OMICRON_EX,
+		"테크놀로지 오미크론 EX",
 		"...",
 		"↑ {{Tears}} 연사 x0.8#공격 시 10%의 확률로 눈물 주변에 레이저가 생깁니다.#중첩 시 기본 확률이 합 연산으로 증가하고 쿨타임이 줄어듭니다.#소환 쿨타임 : 1초#!!! {{LuckSmall}}행운 수치 비례: 행운 18 이상일 때 100% 확률 (행운 1당 +5%p)"
 	)
@@ -21,8 +21,8 @@ local function TryRandom(player)
 	local data = player:GetData()
 
 	if data["technologyOmicronCooldown"] == nil or data["technologyOmicronCooldown"] < Game():GetFrameCount() then
-		local rng = player:GetCollectibleRNG(AstroItems.Collectible.TECHNOLOGY_OMICRON)
-		local num = player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON)
+		local rng = player:GetCollectibleRNG(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX)
+		local num = player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX)
 
 		if
 			rng:RandomFloat() <
@@ -75,7 +75,7 @@ AstroItems:AddPriorityCallback(
 	ModCallbacks.MC_EVALUATE_CACHE,
 	CallbackPriority.DEFAULT,
 	function(_, player)
-		for i = 1, player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON) do
+		for i = 1, player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX) do
 			player.MaxFireDelay = MultiplyTears(player.MaxFireDelay, GetTearsMultiplier(player, 0.8))
 		end
 	end,
@@ -87,7 +87,7 @@ local function addTechOmicronLaser(tear, count)
 	local player = AstroItems:GetPlayerFromEntity(tear)
 	local scale = tear.Size + 10
 
-	count = count or math.max(1, player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON))
+	count = count or math.max(1, player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX))
 
 	data.technologyOmicronLasers = {}
 
@@ -269,7 +269,7 @@ end
 
 -- Astro:AddCallback(mod.Callback.REAL_FIRE_TEAR, function(_, tear, player)
 local function RealFireTear(tear, player)
-	if player:HasCollectible(AstroItems.Collectible.TECHNOLOGY_OMICRON) and ShouldTearGetEffects(tear) and TryRandom(player) then
+	if player:HasCollectible(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX) and ShouldTearGetEffects(tear) and TryRandom(player) then
 		tear:GetData().technologyOmicron = true
 		addTechOmicronLaser(tear)
 	end
@@ -309,7 +309,7 @@ AstroItems:AddCallback(
 ---@param knife EntityKnife
 ---@param player EntityPlayer
 local function PostThrowKnife(knife, player)
-	if player:HasCollectible(AstroItems.Collectible.TECHNOLOGY_OMICRON) and TryRandom(player) then -- or mod.HasPridePinEffect(player, mod.PridePinEffect.TECH_OMICRON) then
+	if player:HasCollectible(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX) and TryRandom(player) then -- or mod.HasPridePinEffect(player, mod.PridePinEffect.TECH_OMICRON) then
 		knife:GetData().technologyOmicron = true
 
 		local data = knife:GetData()
@@ -317,7 +317,7 @@ local function PostThrowKnife(knife, player)
 
 		data.technologyOmicronLasers = {}
 
-		for i = 1, player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON) do
+		for i = 1, player:GetCollectibleNum(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX) do
 			local laser = player:FireTechXLaser(knife.Position, knife.Velocity, scale, player)
 			laser.SubType = LaserSubType.LASER_SUBTYPE_RING_FOLLOW_PARENT
 			laser.Parent = knife
@@ -409,7 +409,7 @@ AstroItems:AddCallback(
 	ModCallbacks.MC_POST_LASER_UPDATE,
 	function(_, laser)
 		local player = laser.SpawnerEntity and laser.SpawnerEntity:ToPlayer()
-		if player and player:HasCollectible(AstroItems.Collectible.TECHNOLOGY_OMICRON) and TryRandom(player) then
+		if player and player:HasCollectible(AstroItems.Collectible.TECHNOLOGY_OMICRON_EX) and TryRandom(player) then
 			laser.Variant = 9
 			laser.CollisionDamage = laser.CollisionDamage * 1.5
 
