@@ -1,8 +1,8 @@
 local isc = require("astro-items.lib.isaacscript-common")
 
-AstroItems.Collectible.FIRECRACKER_FLOWER = Isaac.GetItemIdByName("Firecracker Flower")
+AstroItems.Collectible.HEART_BLOOM = Isaac.GetItemIdByName("Heart Bloom")
 
-AstroItems:AddEIDCollectible(AstroItems.Collectible.FIRECRACKER_FLOWER, "폭죽 꽃", "...", "{{Burning}} 30%의 확률로 적에게 달라붙는 씨앗 공격이 나갑니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 70 이상일 때 100% 확률 (행운 1당 +1%p)#적에게 달라붙은 씨앗은 2초 후 공격력 x6 +35의 폭발 피해를 줍니다. (자해 없음)")
+AstroItems:AddEIDCollectible(AstroItems.Collectible.HEART_BLOOM, "하트 꽃", "...", "{{Burning}} 30%의 확률로 적에게 달라붙는 씨앗 공격이 나갑니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 70 이상일 때 100% 확률 (행운 1당 +1%p)#적에게 달라붙은 씨앗은 2초 후 공격력 x6 +35의 폭발 피해를 줍니다. (자해 없음)")
 
 local tearChance = 0.3
 
@@ -135,9 +135,9 @@ local function OnTearInit(_, tear)
 
     local player = spawner:ToPlayer()
     if not player then return end
-    if not player:HasCollectible(AstroItems.Collectible.FIRECRACKER_FLOWER) then return end
+    if not player:HasCollectible(AstroItems.Collectible.HEART_BLOOM) then return end
 
-    local rng = player:GetCollectibleRNG(AstroItems.Collectible.FIRECRACKER_FLOWER)
+    local rng = player:GetCollectibleRNG(AstroItems.Collectible.HEART_BLOOM)
     if rng:RandomFloat() >= tearChance + player.Luck * tearLuckMultiplier then return end
 
     MakeTearFirecrackerSeed(tear)
@@ -333,9 +333,9 @@ function CheckForFirecrackerLaser(npc, source)
 
     local player = source.Entity:ToPlayer()
     if not player then return end
-    if not player:HasCollectible(AstroItems.Collectible.FIRECRACKER_FLOWER) then return end
+    if not player:HasCollectible(AstroItems.Collectible.HEART_BLOOM) then return end
 
-    local rng = player:GetCollectibleRNG(AstroItems.Collectible.FIRECRACKER_FLOWER)
+    local rng = player:GetCollectibleRNG(AstroItems.Collectible.HEART_BLOOM)
     if rng:RandomFloat() >= laserChance + player.Luck * laserLuckMultiplier then return end
 
     AddCrackered(npc, player)
@@ -349,9 +349,9 @@ function CheckForFirecrackerKnife(npc, source)
     local player = source.Entity.SpawnerEntity:ToPlayer()
 
     if not player then return end
-    if not player:HasCollectible(AstroItems.Collectible.FIRECRACKER_FLOWER) then return end
+    if not player:HasCollectible(AstroItems.Collectible.HEART_BLOOM) then return end
 
-    local rng = player:GetCollectibleRNG(AstroItems.Collectible.FIRECRACKER_FLOWER)
+    local rng = player:GetCollectibleRNG(AstroItems.Collectible.HEART_BLOOM)
     if rng:RandomFloat() >= knifeChance + player.Luck * knifeLuckMultiplier then return end
 
     AddCrackered(npc, player)
@@ -383,9 +383,9 @@ local function OnBoneSwing(_, bone)
 
     local player = spawner:ToPlayer()
     if not player then return end
-    if not player:HasCollectible(AstroItems.Collectible.FIRECRACKER_FLOWER) then return end
+    if not player:HasCollectible(AstroItems.Collectible.HEART_BLOOM) then return end
 
-    local rng = player:GetCollectibleRNG(AstroItems.Collectible.FIRECRACKER_FLOWER)
+    local rng = player:GetCollectibleRNG(AstroItems.Collectible.HEART_BLOOM)
     if rng:RandomFloat() >= swingChance + player.Luck * swingLuckMultiplier then return end
 
     local tearVelocity = isc:directionToVector(player:GetFireDirection())
