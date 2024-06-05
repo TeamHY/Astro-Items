@@ -15,13 +15,13 @@ AstroItems:AddCallback(
 
             for j = 0, ActiveSlot.SLOT_POCKET2 do
                 if player:GetActiveItem(j) == AstroItems.Collectible.CURSE_OF_ARAMATIR then
-                    -- if player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS and player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
-                    --     player:AddCollectible(CollectibleType.COLLECTIBLE_BATTERY)
-                    --     player:SetActiveCharge(100, j)
-                    --     player:RemoveCollectible(CollectibleType.COLLECTIBLE_BATTERY)
-                    -- else
+                    if player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS_B and player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+                        player:AddCollectible(CollectibleType.COLLECTIBLE_BATTERY)
+                        player:SetActiveCharge(100, j)
+                        player:RemoveCollectible(CollectibleType.COLLECTIBLE_BATTERY)
+                    else
                         player:SetActiveCharge(50, j)
-                    -- end
+                    end
                 end
             end
         end
