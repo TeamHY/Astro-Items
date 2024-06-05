@@ -58,7 +58,6 @@ AstroItems:AddCallback(
         end
 
         AstroItems:SpawnCollectible(AstroItems:GetBarrenPoolCollectible(rng), playerWhoUsedItem.Position, optionsPickupIndex)
-        AstroItems:SpawnCollectible(AstroItems:GetBarrenPoolCollectible(rng), playerWhoUsedItem.Position, optionsPickupIndex)
 
         return {
             Discharge = true,
