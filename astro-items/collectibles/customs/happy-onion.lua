@@ -85,7 +85,7 @@ AstroItems:AddCallback(
                         elseif random == 1 then
                             AstroItems.Data.HappyOnion.FireDelay = AstroItems.Data.HappyOnion.FireDelay + statusIncrement
                         elseif random == 2 then
-                            AstroItems.Data.HappyOnion.Range = AstroItems.Data.HappyOnion.Range + statusIncrement
+                            AstroItems.Data.HappyOnion.Range = AstroItems.Data.HappyOnion.Range + statusIncrement * 40
                         elseif random == 3 then
                             AstroItems.Data.HappyOnion.Speed = AstroItems.Data.HappyOnion.Speed + statusIncrement
                         elseif random == 4 then
