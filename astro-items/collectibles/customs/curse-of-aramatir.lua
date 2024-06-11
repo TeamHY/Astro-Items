@@ -1,7 +1,7 @@
 AstroItems.Collectible.CURSE_OF_ARAMATIR = Isaac.GetItemIdByName("Curse of Aramatir")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.CURSE_OF_ARAMATIR, "금주 아라마티아", "...", "사용 시 소지된 아이템 중 하나를 소환합니다.#스테이지 진입 시 쿨타임이 채워집니다.#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.CURSE_OF_ARAMATIR, "금주 아라마티아", "...", "사용 시 소지된 아이템 중 2개를 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다.")
 end
 
 local useSound = Isaac.GetSoundIdByName('Specialsummon')
@@ -40,9 +40,9 @@ AstroItems:AddCallback(
         local inventory = AstroItems:getPlayerInventory(playerWhoUsedItem, false)
         local rng = playerWhoUsedItem:GetCollectibleRNG(AstroItems.Collectible.CURSE_OF_ARAMATIR)
 
-        local hadCollectable = AstroItems:GetRandomCollectibles(inventory, rng, 1, AstroItems.Collectible.CURSE_OF_ARAMATIR, true)[1]
+        local hadCollectables = AstroItems:GetRandomCollectibles(inventory, rng, 2, AstroItems.Collectible.CURSE_OF_ARAMATIR, true)
 
-        if hadCollectable == nil then
+        if hadCollectables[1] == nil then
             return {
                 Discharge = false,
                 Remove = false,
@@ -50,7 +50,9 @@ AstroItems:AddCallback(
             }
         end
 
-        AstroItems:SpawnCollectible(hadCollectable, playerWhoUsedItem.Position)
+        for _, hadCollectable in ipairs(hadCollectables) do
+            AstroItems:SpawnCollectible(hadCollectable, playerWhoUsedItem.Position, AstroItems.Collectible.CURSE_OF_ARAMATIR)
+        end
 
         SFXManager():Play(useSound, useSoundVoulme)
 
