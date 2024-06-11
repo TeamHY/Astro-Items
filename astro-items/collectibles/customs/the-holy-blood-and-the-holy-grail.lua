@@ -1,7 +1,7 @@
 AstroItems.Collectible.THE_HOLY_BLOOD_AND_THE_HOLY_GRAIL = Isaac.GetItemIdByName("The Holy Blood and the Holy Grail")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.THE_HOLY_BLOOD_AND_THE_HOLY_GRAIL, "성혈과 성배", "...", "사용 시 보물방, 천사방, 비밀방 아이템을 각각 하나씩 소환합니다. 하나를 선택하면 나머지는 사라집니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.THE_HOLY_BLOOD_AND_THE_HOLY_GRAIL, "성혈과 성배", "피 묻은 성녀, 막달레나의 잔", "사용 시 보물방, 천사방, 비밀방 아이템을 각각 하나씩 소환합니다. 하나를 선택하면 나머지는 사라집니다.")
 end
 
 AstroItems:AddCallback(
