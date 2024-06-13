@@ -61,7 +61,7 @@
 		<Item Name="Power Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rapid Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
@@ -108,7 +108,7 @@
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amplifying Mind" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -116,7 +116,7 @@
 		<Item Name="Birthright - The Lost" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -166,7 +166,7 @@
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amplifying Mind" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -174,7 +174,7 @@
 		<Item Name="Birthright - The Lost" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -222,7 +222,7 @@
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amplifying Mind" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -230,7 +230,7 @@
 		<Item Name="Birthright - The Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
@@ -257,8 +257,6 @@
 		<Item Name="Ptolemaeus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Altair" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Vega" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Cursed Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Death's Eyes" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Divine Light" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Acute Sinusitis" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Laniakea Supercluster" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -279,7 +277,7 @@
 		<Item Name="Rhongomyniad" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amplifying Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -288,7 +286,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Technology Omicron EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -318,8 +316,6 @@
 		<Item Name="Ptolemaeus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Altair" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Vega" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Cursed Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Death's Eyes" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Divine Light" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Acute Sinusitis" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Laniakea Supercluster" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -340,7 +336,7 @@
 		<Item Name="Rhongomyniad" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amplifying Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Firecracker Flower" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -349,7 +345,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Technology Omicron EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -426,7 +422,7 @@
 		<Item Name="Rapid Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Firecracker Flower" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -436,7 +432,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Overwhelming Sinful Spoils" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
