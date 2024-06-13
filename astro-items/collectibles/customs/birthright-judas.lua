@@ -3,10 +3,10 @@ local isc = require("astro-items.lib.isaacscript-common")
 AstroItems.Collectible.BIRTHRIGHT_JUDAS = Isaac.GetItemIdByName("Birthright - Judas")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.BIRTHRIGHT_JUDAS, "생득권 - 유다", "...", "액티브 아이템 사용 시 쿨타임 한칸당 +0.7(고정 공격력) 증가됩니다.#최대 15까지만 증가됩니다.#중첩 시 다음 증가량부터 적용됩니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.BIRTHRIGHT_JUDAS, "생득권 - 유다", "충전을 힘으로!", "액티브 아이템 사용 시 쿨타임 한칸당 +1(고정 공격력) 증가됩니다.#최대 5까지만 증가됩니다.#중첩 시 다음 증가량부터 적용됩니다.")
 end
 
-local damageIncrement = 0.7
+local damageIncrement = 1
 
 local damageMaxinum = 5
 
