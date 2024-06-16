@@ -1,7 +1,7 @@
 AstroItems.Collectible.CURSE_OF_ARAMATIR = Isaac.GetItemIdByName("Curse of Aramatir")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.CURSE_OF_ARAMATIR, "금주 아라마티아", "...", "사용 시 소지된 아이템 중 2개를 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.CURSE_OF_ARAMATIR, "금주 아라마티아", "...", "일급 비밀방에서 사용 시 소지된 아이템 중 2개를 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다.")
 end
 
 local useSound = Isaac.GetSoundIdByName('Specialsummon')
@@ -43,6 +43,14 @@ AstroItems:AddCallback(
         local hadCollectables = AstroItems:GetRandomCollectibles(inventory, rng, 2, AstroItems.Collectible.CURSE_OF_ARAMATIR, true)
 
         if hadCollectables[1] == nil then
+            return {
+                Discharge = false,
+                Remove = false,
+                ShowAnim = false,
+            }
+        end
+
+        if Game():GetLevel():GetCurrentRoom():GetType() ~= RoomType.ROOM_SUPERSECRET then
             return {
                 Discharge = false,
                 Remove = false,
