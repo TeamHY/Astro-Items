@@ -14,9 +14,9 @@ AstroItems:AddCallback(
             if player:HasCollectible(AstroItems.Collectible.PAVO) then
                 if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE then
                     if entity.Type == EntityType.ENTITY_MEGA_SATAN then
-                        entity.HitPoints = entity.HitPoints - entity.MaxHitPoints * 0.1
+                        entity:TakeDamage(entity.HitPoints * 0.1, DamageFlag.DAMAGE_IGNORE_ARMOR, EntityRef(player), 0)
                     else
-                        entity.HitPoints = entity.HitPoints - entity.MaxHitPoints * 0.2 ^ player:GetCollectibleNum(AstroItems.Collectible.PAVO)
+                        entity:TakeDamage(entity.HitPoints * 0.2 ^ AstroItems:GetCollectibleNum(AstroItems.Collectible.PAVO), DamageFlag.DAMAGE_IGNORE_ARMOR, EntityRef(player), 0)
                     end
                 end
 
