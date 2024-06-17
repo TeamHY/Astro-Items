@@ -39,7 +39,9 @@ AstroItems:AddCallbackCustom(
     function(_, player, collectibleType)
         local level = Game():GetLevel()
 
-        if not AstroItems:HasPerfectionEffect(player) then
+        if Astro and not Astro:HasPerfectionEffect(player) then
+            level:AddCurse(LevelCurse.CURSE_OF_DARKNESS, true)
+        elseif not Astro then
             level:AddCurse(LevelCurse.CURSE_OF_DARKNESS, true)
         end
     end,
