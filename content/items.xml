@@ -85,7 +85,7 @@
 	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" />
 	<active gfx="The Holy Blood and the Holy Grail.png" quality="4" devilprice="2" initcharge="0" maxcharges="12" shopprice="45" name="The Holy Blood and the Holy Grail" />
 	<passive gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="30" name="Akashic Records" />
-	<passive gfx="Terraspark Boots.png" quality="3" devilprice="2" shopprice="20" name="terraspark boots" />
+	<passive tags="speed" gfx="Terraspark Boots.png" quality="3" devilprice="2" shopprice="20" name="Terraspark Boots" />
 
 
 
