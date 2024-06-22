@@ -4,8 +4,8 @@ AstroItems.Collectible.WARD = Isaac.GetItemIdByName("Ward")
 AstroItems.Collectible.PINK_WARD = Isaac.GetItemIdByName("Pink Ward")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.WARD, "와드", "...", "스테이지 중심 5x5의 방을 보여줍니다.")
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.PINK_WARD, "핑크 와드", "...", "스테이지 중심 5x5의 방을 보여줍니다.#숨어 있는 적을 아군으로 만듭니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.WARD, "와드", "...", "스테이지 중심 5x5의 방을 보여줍니다.#중첩 시 범위가 증가합니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.PINK_WARD, "핑크 와드", "...", "스테이지 중심 5x5의 방을 보여줍니다.#중첩 시 범위가 증가합니다.#숨어 있는 적을 아군으로 만듭니다.")
 end
 
 ---@param range number
