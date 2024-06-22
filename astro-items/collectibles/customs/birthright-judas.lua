@@ -3,7 +3,7 @@ local isc = require("astro-items.lib.isaacscript-common")
 AstroItems.Collectible.BIRTHRIGHT_JUDAS = Isaac.GetItemIdByName("Birthright - Judas")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.BIRTHRIGHT_JUDAS, "생득권 - 유다", "충전을 힘으로!", "액티브 아이템 사용 시 쿨타임 한칸당 +1(고정 공격력) 증가됩니다.#최대 5까지만 증가됩니다.#중첩 시 다음 증가량부터 적용됩니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.BIRTHRIGHT_JUDAS, "생득권 - 유다", "충전을 힘으로!", "액티브 아이템 사용 시 쿨타임 한칸당 +1(고정 공격력) 증가됩니다.#최대 5까지만 증가됩니다.#중첩 시 증가량과 최대치가 증가합니다.")
 end
 
 local damageIncrement = 1
@@ -46,8 +46,10 @@ AstroItems:AddCallback(
 
             data.birthrightJudasDamage = data.birthrightJudasDamage + maxCharges * damageIncrement * playerWhoUsedItem:GetCollectibleNum(AstroItems.Collectible.BIRTHRIGHT_JUDAS)
 
-            if data.birthrightJudasDamage > damageMaxinum then
-                data.birthrightJudasDamage = damageMaxinum
+            local maxinum = damageMaxinum * playerWhoUsedItem:GetCollectibleNum(AstroItems.Collectible.BIRTHRIGHT_JUDAS)
+
+            if data.birthrightJudasDamage > maxinum then
+                data.birthrightJudasDamage = maxinum
             end
 
             playerWhoUsedItem:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
