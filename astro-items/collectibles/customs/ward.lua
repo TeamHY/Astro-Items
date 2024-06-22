@@ -8,22 +8,21 @@ if EID then
     AstroItems:AddEIDCollectible(AstroItems.Collectible.PINK_WARD, "핑크 와드", "...", "스테이지 중심 5x5의 방을 보여줍니다.#숨어 있는 적을 아군으로 만듭니다.")
 end
 
-local function DisplayWardRoom()
+---@param range number
+local function DisplayWardRoom(range)
     local level = Game():GetLevel()
 
-    local roomIndexs = {
-        56, 57, 58, 59, 60,
-        69, 70, 71, 72, 73,
-        82, 83, 84, 85, 86,
-        95, 96, 97, 98, 99,
-        108, 109, 110, 111, 112
-    }
+    for i = -range, range do
+        for j = -range, range do
+            local index = AstroItems:ConvertRoomPositionToIndex(Vector(i + 6, j + 6))
 
-    for _, value in ipairs(roomIndexs) do
-        local room = level:GetRoomByIdx(value)
+            if index ~= -1 then
+                local room = level:GetRoomByIdx(index)
 
-        if room.Flags & RoomDescriptor.FLAG_RED_ROOM ~= RoomDescriptor.FLAG_RED_ROOM and room.DisplayFlags & RoomDescriptor.DISPLAY_BOX ~= RoomDescriptor.DISPLAY_BOX then
-            room.DisplayFlags = room.DisplayFlags | RoomDescriptor.DISPLAY_BOX | RoomDescriptor.DISPLAY_ICON
+                if room.Flags & RoomDescriptor.FLAG_RED_ROOM ~= RoomDescriptor.FLAG_RED_ROOM and room.DisplayFlags & RoomDescriptor.DISPLAY_BOX ~= RoomDescriptor.DISPLAY_BOX then
+                    room.DisplayFlags = room.DisplayFlags | RoomDescriptor.DISPLAY_BOX | RoomDescriptor.DISPLAY_ICON
+                end
+            end
         end
     end
 
@@ -37,7 +36,7 @@ AstroItems:AddCallback(
             local player = Isaac.GetPlayer(i - 1)
 
             if player:HasCollectible(AstroItems.Collectible.WARD) or player:HasCollectible(AstroItems.Collectible.PINK_WARD) then
-                DisplayWardRoom()
+                DisplayWardRoom(math.max(player:GetCollectibleNum(AstroItems.Collectible.WARD), player:GetCollectibleNum(AstroItems.Collectible.PINK_WARD)) * 2)
                 break
             end
         end
@@ -50,7 +49,7 @@ AstroItems:AddCallbackCustom(
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
         if collectibleType == AstroItems.Collectible.WARD or collectibleType == AstroItems.Collectible.PINK_WARD then
-            DisplayWardRoom()
+            DisplayWardRoom(math.max(player:GetCollectibleNum(AstroItems.Collectible.WARD), player:GetCollectibleNum(AstroItems.Collectible.PINK_WARD)) * 2)
         end
     end
 )
