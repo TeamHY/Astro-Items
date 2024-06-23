@@ -4,6 +4,8 @@ AstroItems.Collectible.CHUBBYS_HEAD = Isaac.GetItemIdByName("Chubby's Head")
 AstroItems.Collectible.SLEEPING_PUPPY = Isaac.GetItemIdByName("Sleeping Puppy")
 AstroItems.Collectible.CHUBBYS_TAIL = Isaac.GetItemIdByName("Chubby's Tail")
 
+local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
+
 if EID then
     EID:createTransformation("Chubby", "처비")
 
@@ -28,6 +30,7 @@ local CHUBBYS_HEAD_DAMAGE = 3.5
 
 -- 잠자는 강아지
 local SLEEPING_PUPPY_INCREMENT = 0.35
+local SLEEPING_PUPPY_VOULME = 1
 
 -- 처비의 꼬리
 local CHUBBYS_TAIL_SUBTYPE = 1000
@@ -142,6 +145,8 @@ AstroItems:AddCallback(
                         elseif random == 4 then
                             AstroItems.Data.SleepingPuppy.Luck = AstroItems.Data.SleepingPuppy.Luck + statusIncrement
                         end
+
+                        SFXManager():Play(chubbyUpSound, SLEEPING_PUPPY_VOULME)
                     end
 
                     isRun = true

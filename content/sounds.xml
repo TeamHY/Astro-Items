@@ -6,4 +6,7 @@
     <sound name="Specialsummon">
         <sample weight="1" path="specialsummon.wav" />
     </sound>
+    <sound name="ChubbyUp">
+        <sample weight="1" path="chubby-up.wav" />
+    </sound>
 </sounds>
