@@ -119,7 +119,7 @@
 		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
@@ -177,7 +177,7 @@
 		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
@@ -436,6 +436,8 @@
 		<Item Name="Amazing Chaos Scroll" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Overwhelming Sinful Spoils" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Terraspark Boots" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 
 	</Pool>
@@ -469,9 +471,11 @@
 		<Item Name="Amazing Chaos Scroll" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Overwhelming Sinful Spoils" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Curse of Aramatir" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Terraspark Boots" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="shop">
@@ -506,6 +510,8 @@
 		<Item Name="Curse of Aramatir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Terraspark Boots" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="boss">
