@@ -1,12 +1,12 @@
 AstroItems.Collectible.CAINS_SECRET_BAG = Isaac.GetItemIdByName("Cain's Secret Bag")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.CAINS_SECRET_BAG, "케인의 비밀 주머니", "...", "사용 시 소지한 아이템 중 하나를 제거합니다. 제거된 아이템과 행운방 아이템 2개를 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#!!! 비밀방에서는 사용할 수 없습니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.CAINS_SECRET_BAG, "케인의 비밀 주머니", "...", "일급 비밀방에서 사용 시 소지한 아이템 중 하나를 제거합니다. 제거된 아이템과 행운방 아이템 2개를 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.")
 end
 
-local banRooms = {
-    RoomType.ROOM_SECRET,
-}
+-- local banRooms = {
+--     RoomType.ROOM_SECRET,
+-- }
 
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,
@@ -38,7 +38,15 @@ AstroItems:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
-        if AstroItems:FindIndex(banRooms, Game():GetLevel():GetCurrentRoom():GetType()) ~= -1 then
+        -- if AstroItems:FindIndex(banRooms, Game():GetLevel():GetCurrentRoom():GetType()) ~= -1 then
+        --     return {
+        --         Discharge = false,
+        --         Remove = false,
+        --         ShowAnim = false,
+        --     }
+        -- end
+
+        if Game():GetLevel():GetCurrentRoom():GetType() ~= RoomType.ROOM_SUPERSECRET then
             return {
                 Discharge = false,
                 Remove = false,
