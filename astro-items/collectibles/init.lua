@@ -82,3 +82,29 @@ require "astro-items.collectibles.customs.vega"
 require "astro-items.collectibles.customs.very-ez-mode"
 require "astro-items.collectibles.customs.virgo-ex"
 require "astro-items.collectibles.customs.ward"
+
+---@type ItemConfigItem[]
+AstroItems.CollectableConfigs = {}
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    function(_, isContinued)
+        local itemConfig = Isaac.GetItemConfig()
+
+        local id = 1
+
+        while true do
+            local itemConfigItem = itemConfig:GetCollectible(id)
+
+            if id > 732 and itemConfigItem == nil then
+                break
+            end
+
+            if itemConfigItem ~= nil then
+                table.insert(AstroItems.CollectableConfigs, itemConfigItem)
+            end
+
+            id = id + 1
+        end
+    end
+)
