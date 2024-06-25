@@ -87,6 +87,7 @@
 	<passive gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="30" name="Akashic Records" />
 	<passive tags="speed" gfx="Terraspark Boots.png" quality="3" devilprice="2" shopprice="20" name="Terraspark Boots" />
 	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="3" devilprice="2" shopprice="15" name="Dunnell, the Noble Arms of Light" />
+	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" name="Starlit Papillon" />
 
 
 
