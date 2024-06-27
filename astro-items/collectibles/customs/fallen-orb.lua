@@ -3,7 +3,7 @@ local isc = require("astro-items.lib.isaacscript-common")
 AstroItems.Collectible.FALLEN_ORB = Isaac.GetItemIdByName("Fallen Orb")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.FALLEN_ORB, "타락한 오브", "불행한 운명", "{{Quality0}}/{{Quality1}}등급인 아이템이 등장하지 않습니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.FALLEN_ORB, "타락한 오브", "불행한 운명", "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 리롤됩니다.#리롤된 아이템은 콘솔창에서 확인할 수 있습니다")
 end
 
 AstroItems:AddCallback(
