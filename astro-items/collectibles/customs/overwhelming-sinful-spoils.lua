@@ -83,7 +83,7 @@ AstroItems:AddCallback(
                 }
 
                 -- local rng = player:GetCollectibleRNG(Astro.Collectible.OVERWHELMING_SINFUL_SPOILS)
-                -- soul:AddVelocity(Vector.One.FromAngle(rng:RandomInt(360)):Resized(200))
+                -- soul:AddVelocity(Vector.FromAngle(rng:RandomInt(360)):Resized(200))
 
                 break
             end

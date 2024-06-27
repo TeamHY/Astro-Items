@@ -33,6 +33,7 @@ require "astro-items.collectibles.customs.cygnus"
 require "astro-items.collectibles.customs.deaths-eyes"
 require "astro-items.collectibles.customs.deneb"
 require "astro-items.collectibles.customs.divine-light"
+require "astro-items.collectibles.customs.dunnell-the-noble-arms-of-light"
 require "astro-items.collectibles.customs.extra-guppy-sets"
 require "astro-items.collectibles.customs.ez-mode"
 require "astro-items.collectibles.customs.fallen-orb"
@@ -72,6 +73,7 @@ require "astro-items.collectibles.customs.sagittarius-ex"
 require "astro-items.collectibles.customs.scorpio-ex"
 require "astro-items.collectibles.customs.sinful-spoils-of-subversion-snake-eye"
 require "astro-items.collectibles.customs.solar-system"
+require "astro-items.collectibles.customs.starlit-papillon"
 require "astro-items.collectibles.customs.super-magneto"
 require "astro-items.collectibles.customs.taurus-ex"
 require "astro-items.collectibles.customs.technology-omicron-ex"
@@ -82,3 +84,29 @@ require "astro-items.collectibles.customs.vega"
 require "astro-items.collectibles.customs.very-ez-mode"
 require "astro-items.collectibles.customs.virgo-ex"
 require "astro-items.collectibles.customs.ward"
+
+---@type ItemConfigItem[]
+AstroItems.CollectableConfigs = {}
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    function(_, isContinued)
+        local itemConfig = Isaac.GetItemConfig()
+
+        local id = 1
+
+        while true do
+            local itemConfigItem = itemConfig:GetCollectible(id)
+
+            if id > 732 and itemConfigItem == nil then
+                break
+            end
+
+            if itemConfigItem ~= nil then
+                table.insert(AstroItems.CollectableConfigs, itemConfigItem)
+            end
+
+            id = id + 1
+        end
+    end
+)
