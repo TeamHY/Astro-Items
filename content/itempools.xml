@@ -438,6 +438,9 @@
 
 		<Item Name="Terraspark Boots" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Dunnell, the Noble Arms of Light" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Starlit Papillon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 
 	</Pool>
@@ -476,6 +479,9 @@
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Terraspark Boots" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="shop">
@@ -512,6 +518,9 @@
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Terraspark Boots" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="boss">
