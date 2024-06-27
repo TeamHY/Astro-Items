@@ -25,7 +25,7 @@ AstroItems:AddCallback(
             end
 
         
-            AstroItems:AddEIDCollectible(AstroItems.Collectible.VERY_EZ_MODE, "엄청 쉬운 모드", "...", "후반 스테이지 체력 제한 시스템이 작동하지 않습니다.#!!! 아래 아이템이 등장하지 않습니다.#" .. veryEZModeEIDString)
+            AstroItems:AddEIDCollectible(AstroItems.Collectible.VERY_EZ_MODE, "엄청 쉬운 모드", "...", "후반 스테이지 체력 제한 시스템이 작동하지 않습니다.#소울 하트 1개가 증가됩니다.#!!! 아래 아이템이 등장하지 않습니다.#" .. veryEZModeEIDString)
         end
     end
 )

@@ -1,7 +1,7 @@
 AstroItems.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.EZ_MODE, "쉬운 모드", "...", "피격 페널티가 발생하지 않습니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.EZ_MODE, "쉬운 모드", "...", "피격 페널티가 발생하지 않습니다.#소울 하트 1개가 증가됩니다.")
 end
 
 -- AstroItems:AddCallback(
