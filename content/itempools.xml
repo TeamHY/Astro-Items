@@ -357,16 +357,16 @@
 
 	<Pool Name="treasure">
 		<Item Name="Cygnus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Libra EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Cancer EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Libra EX" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cancer EX" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Scorpio EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Capricorn EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Virgo EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Leo EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Virgo EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Leo EX" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Aries EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Taurus EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Taurus EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Aquarius EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Casiopea" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Casiopea" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Corvus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pavo" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Comet" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -375,13 +375,13 @@
 		<Item Name="Ptolemaeus" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Altair" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Vega" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Deneb" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Deneb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Divine Light" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Acute Sinusitis" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Laniakea Supercluster" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Galactic Medal Of Valor" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pirate Map" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Quasar" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Quasar" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Platinum Bullet" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -399,8 +399,8 @@
 
 		<Item Name="Chaos Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Duality - Light and Darkness" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Sagittarius EX" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Ward" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sagittarius EX" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Ward" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Head" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sleeping Puppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Tail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -422,13 +422,13 @@
 		<Item Name="Rapid Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Heart Bloom" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.85" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - The Lost" Weight="0.9" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
@@ -521,8 +521,49 @@
 
 		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-	</Pool>
 
+		<Item Name="Fallen Orb" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+	</Pool>
+	<Pool Name="beggar">
+		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Super Magneto" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Oblivion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Pirate Map" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Omega 321" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Blood Of Hatred" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Morphine" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Ward" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Master's Degree" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Deneb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Casiopea" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bachelor's Degree" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Pink Ward" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birthright - Eden" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - The Lost" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Rite of Aramesir" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Overwhelming Sinful Spoils" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Curse of Aramatir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Secret Bag" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Holy Blood and the Holy Grail" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Terraspark Boots" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Fallen Orb" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+	</Pool>
 	<Pool Name="boss">
 
 		<Item Name="Angry Onion" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -532,6 +573,9 @@
 		<Item Name="Bomb Is Power" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Happy Onion" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Blood Of Hatred" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sleeping Puppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Terraspark Boots" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Morphine" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="redChest">
 		<Item Name="Chubby's Head" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
