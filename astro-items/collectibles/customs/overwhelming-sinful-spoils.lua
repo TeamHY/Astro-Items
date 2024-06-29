@@ -4,7 +4,7 @@ local useSound = Isaac.GetSoundIdByName('Specialsummon')
 local useSoundVoulme = 1 -- 0 ~ 1
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.OVERWHELMING_SINFUL_SPOILS, "폭주하는 죄보", "...", "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 여러 유령을 소환합니다.#최대 50개까지 저장할 수 있습니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.OVERWHELMING_SINFUL_SPOILS, "폭주하는 죄보", "...", "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 여러 유령을 소환합니다.#최대 5개까지 저장할 수 있습니다.#디아벨스타, 디아벨제의 경우 50개까지 저장할 수 있습니다.")
 end
 
 AstroItems:AddCallback(
@@ -105,8 +105,14 @@ AstroItems:AddCallback(
             if effect.Position:Distance(player.Position) < 10 then
                 AstroItems.Data.OverwhelmingSinfulSpoils.Souls = AstroItems.Data.OverwhelmingSinfulSpoils.Souls + 1
 
-                if AstroItems.Data.OverwhelmingSinfulSpoils.Souls > 50 then
-                    AstroItems.Data.OverwhelmingSinfulSpoils.Souls = 50
+                if AstroItems:IsDiabellstar(player) then
+                    if AstroItems.Data.OverwhelmingSinfulSpoils.Souls > 50 then
+                        AstroItems.Data.OverwhelmingSinfulSpoils.Souls = 50
+                    end
+                else
+                    if AstroItems.Data.OverwhelmingSinfulSpoils.Souls > 5 then
+                        AstroItems.Data.OverwhelmingSinfulSpoils.Souls = 5
+                    end
                 end
 
                 effect:Remove()
