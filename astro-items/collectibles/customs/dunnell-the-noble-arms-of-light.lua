@@ -136,7 +136,7 @@ AstroItems:AddCallback(
             if effect.Position:Distance(player.Position) < 10 then
                 AstroItems.Data.Dunnell.Souls = AstroItems.Data.Dunnell.Souls + 1
 
-                if player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS or player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS_B then
+                if AstroItems:IsWaterEnchantress(player) then
                     if AstroItems.Data.Dunnell.Souls > maximumForAdventurer then
                         AstroItems.Data.Dunnell.Souls = maximumForAdventurer
                     end

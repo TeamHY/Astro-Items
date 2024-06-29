@@ -17,6 +17,16 @@ local WATER_ENCHANTRESS_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/charac
 local DAVID_MARTINEZ_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinez_hair.anm2")
 local DAVID_MARTINEZ_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinezb_hair.anm2")
 
+---@param player EntityPlayer
+function AstroItems:IsDiabellstar(player)
+    return player:GetPlayerType() == AstroItems.Players.DIABELLSTAR or player:GetPlayerType() == AstroItems.Players.DIABELLSTAR_B
+end
+
+---@param player EntityPlayer
+function AstroItems:IsWaterEnchantress(player)
+    return player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS or player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS_B
+end
+
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,
     ---@param player EntityPlayer
