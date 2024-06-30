@@ -90,6 +90,7 @@
 	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" maxcharges="1" name="Starlit Papillon" />
 	<active tags="luck" gfx="Sinful Spoils Struggle.png" quality="3" devilprice="2" maxcharges="50" shopprice="25" name="Sinful Spoils Struggle" />
 	<passive gfx="Blood Trail.png" quality="1" devilprice="2" shopprice="15" name="Blood Trail" />
+	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="1" shopprice="15" name="Sandevistan" />
 
 
 

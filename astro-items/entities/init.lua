@@ -1,3 +1,5 @@
+require "astro-items.entities.soul"
+
 AstroItems:AddCallback(
 	ModCallbacks.MC_POST_EFFECT_UPDATE,
 	---@param effect EntityEffect

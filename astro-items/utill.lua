@@ -57,7 +57,7 @@ function AstroItems:AddGoldenTrinketDescription(id, appendText, numbersToMultipl
     end
 
     if maxMultiplier and maxMultiplier > 4 then
-        EID.GoldenTrinketData[id].mults = { maxMultiplier, maxMultiplier }
+        EID.GoldenTrinketData[id].mults = {maxMultiplier, maxMultiplier}
     end
 end
 
@@ -194,13 +194,13 @@ function AstroItems:SpawnCollectible(collectibleType, position, optionsPickupInd
 
     local pickup =
         Isaac.Spawn(
-            EntityType.ENTITY_PICKUP,
-            PickupVariant.PICKUP_COLLECTIBLE,
-            collectibleType,
-            currentRoom:FindFreePickupSpawnPosition(position, step, true),
-            Vector.Zero,
-            nil
-        ):ToPickup()
+        EntityType.ENTITY_PICKUP,
+        PickupVariant.PICKUP_COLLECTIBLE,
+        collectibleType,
+        currentRoom:FindFreePickupSpawnPosition(position, step, true),
+        Vector.Zero,
+        nil
+    ):ToPickup()
 
     if optionsPickupIndex then
         pickup.OptionsPickupIndex = optionsPickupIndex
@@ -251,7 +251,7 @@ function AstroItems:IsFirstAdded(collectibleType)
     end
 
     if count == 0 then
-        table.insert(AstroItems.Data.CollectibleCount, { id = collectibleType, count = 1 })
+        table.insert(AstroItems.Data.CollectibleCount, {id = collectibleType, count = 1})
         count = 1
     end
 
@@ -356,7 +356,7 @@ end
 function AstroItems:IsDeathCertificateRoom()
     local level = Game():GetLevel()
     local roomName = level:GetCurrentRoomDesc().Data.Name
-    
+
     if roomName == "Death Certificate" then
         return true
     end
@@ -367,8 +367,10 @@ end
 --- Credit to EID
 function AstroItems:IsCollectibleUnlocked(collectibleType)
     local itemConfig = Isaac.GetItemConfig()
-	local item = itemConfig:GetCollectible(collectibleType)
-	if item == nil then return false end
+    local item = itemConfig:GetCollectible(collectibleType)
+    if item == nil then
+        return false
+    end
 
     local result = false
 
@@ -381,9 +383,12 @@ function AstroItems:IsCollectibleUnlocked(collectibleType)
         result = false
         return false
     end
-    
-    if item.IsAvailable then result = item:IsAvailable()
-    else result = true end
+
+    if item.IsAvailable then
+        result = item:IsAvailable()
+    else
+        result = true
+    end
     return result
 end
 
@@ -396,4 +401,36 @@ function AstroItems:CheckTrinket(value, trinket)
     end
 
     return false
+end
+
+local function RunUpdates(tab) --This is from Fiend Folio
+    for i = #tab, 1, -1 do
+        local f = tab[i]
+        f.Delay = f.Delay - 1
+        if f.Delay <= 0 then
+            f.Func()
+            table.remove(tab, i)
+        end
+    end
+end
+
+AstroItems.DelayedFuncs = {}
+
+---Scheduled update from Fiend Folio
+---@param foo function
+---@param delay integer
+---@param callback ModCallbacks?
+function AstroItems:ScheduleForUpdate(foo, delay, callback)
+    callback = callback or ModCallbacks.MC_POST_UPDATE
+    if not AstroItems.DelayedFuncs[callback] then
+        AstroItems.DelayedFuncs[callback] = {}
+        AstroItems:AddCallback(
+            callback,
+            function()
+                RunUpdates(AstroItems.DelayedFuncs[callback])
+            end
+        )
+    end
+
+    table.insert(AstroItems.DelayedFuncs[callback], {Func = foo, Delay = delay})
 end
