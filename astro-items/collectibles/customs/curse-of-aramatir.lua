@@ -37,6 +37,14 @@ AstroItems:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
+        if Game():GetLevel():GetCurrentRoom():GetType() ~= RoomType.ROOM_SUPERSECRET then
+            return {
+                Discharge = false,
+                Remove = false,
+                ShowAnim = false,
+            }
+        end
+        
         local inventory = AstroItems:getPlayerInventory(playerWhoUsedItem, false)
         local rng = playerWhoUsedItem:GetCollectibleRNG(AstroItems.Collectible.CURSE_OF_ARAMATIR)
 
@@ -49,14 +57,6 @@ AstroItems:AddCallback(
         end
 
         if hadCollectables[1] == nil then
-            return {
-                Discharge = false,
-                Remove = false,
-                ShowAnim = false,
-            }
-        end
-
-        if Game():GetLevel():GetCurrentRoom():GetType() ~= RoomType.ROOM_SUPERSECRET then
             return {
                 Discharge = false,
                 Remove = false,
