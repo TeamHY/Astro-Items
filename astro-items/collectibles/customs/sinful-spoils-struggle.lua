@@ -12,7 +12,7 @@ AstroItems:AddCallback(
                 AstroItems.Collectible.SINFUL_SPOILS_STRUGGLE,
                 "죄보합전",
                 "...",
-                "일급 비밀방에서 사용 시 소지된 아이템 중 1개를 재거합니다. {{" .. AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}Original Sinful Spoils - Snake Eye, {{" .. AstroItems.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}Sinful Spoils of Subversion - Snake Eye 중 하나와 제거된 아이템을 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#디아벨스타, 디아벨제가 아닐 경우 사용 시 {{SmallLuck}}행운이 1 감소하고 제거 후 소환되는 아이템이 2개로 증가합니다."
+                "일급 비밀방에서 사용 시 소지된 아이템 중 1개를 재거합니다. {{Collectible" .. AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}Original Sinful Spoils - Snake Eye, {{Collectible" .. AstroItems.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}Sinful Spoils of Subversion - Snake Eye 중 하나와 제거된 아이템을 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#디아벨스타, 디아벨제가 아닐 경우 사용 시 {{SmallLuck}}행운이 1 감소하고 제거 후 소환되는 아이템이 2개로 증가합니다."
             )
         end
 
