@@ -24,13 +24,11 @@ AstroItems.MaidDuetBlackLists = {
     [CollectibleType.COLLECTIBLE_D_INFINITY] = true,
     [CollectibleType.COLLECTIBLE_BLANK_CARD] = true,
     [CollectibleType.COLLECTIBLE_PLACEBO] = true,
-    [CollectibleType.COLLECTIBLE_CLEAR_RUNE] = true
+    [CollectibleType.COLLECTIBLE_CLEAR_RUNE] = true,
+    -- 밸런스 문제로 REPENTOGON 여부 상관 없이 제외합니다.
+    [CollectibleType.COLLECTIBLE_GLOWING_HOUR_GLASS] = true,
+    [CollectibleType.COLLECTIBLE_JAR_OF_WISPS] = true,
 }
--- 밸런스 문제로 REPENTOGON 여부 상관 없이 제외합니다.
--- if not REPENTOGON then
-    AstroItems.MaidDuetBlackLists[CollectibleType.COLLECTIBLE_GLOWING_HOUR_GLASS] = true
-    AstroItems.MaidDuetBlackLists[CollectibleType.COLLECTIBLE_JAR_OF_WISPS] = true
--- end
 AstroItems.MaidDuetBlackListsCharges = {
     [CollectibleType.COLLECTIBLE_EVERYTHING_JAR] = true,
     [CollectibleType.COLLECTIBLE_WOODEN_NICKEL] = true,
@@ -41,19 +39,41 @@ AstroItems.MaidDuetBlackListsCharges = {
 AstroItems.MaidDuetBlackListsPlayers = {
     [PlayerType.PLAYER_CAIN_B] = true
 }
+if REPENTOGON then
+    AstroItems:AddCallback(
+        ModCallbacks.MC_POST_MODS_LOADED,
+        function()
+            if _wakaba then
+                -- 랜덤보스의 경우 와카바 모드의 리스트를 그대로 사용. 에피파니 등 추가 모드 호환을 위한 조치
+                AstroItems.MaidDuetBlackLists = wakaba.Blacklists.MaidDuet
+                AstroItems.MaidDuetBlackListsCharges = wakaba.Blacklists.MaidDuetCharges
+                AstroItems.MaidDuetBlackListsPlayers = wakaba.Blacklists.MaidDuetPlayers
+            end
+        end
+    )
+end
+
+--TODO 와카바 모드 대결모드 호환 패치 시 제거
+if _wakaba then
+    wakaba:AddCallback(wakaba.Callback.EVALUATE_MAID_DUET, function(_, player)
+    	if player:HasCollectible(AstroItems.Collectible.MY_MOON_MY_MAN) then
+    		return true
+    	end
+    end)
+end
 
 ---@param player EntityPlayer
-local function canUseMaidDuet(player, force)
+local function canUseMyMoon(player, force)
     local active1 = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
     local active2 = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
-    local extraCond = Isaac.RunCallback(AstroItems.Callbacks.EVALUATE_MAID_DUET, player)
+    local extraCond = Isaac.RunCallback(AstroItems.Callbacks.EVALUATE_MY_MOON, player)
     return active1 > 0 and not AstroItems.MaidDuetBlackLists[active1] and not AstroItems.MaidDuetBlackLists[active2] and
         not extraCond -- and
         -- (force or not player:GetEffects():HasCollectibleEffect(AstroItems.Collectible.UNTITLED))
 end
 
 AstroItems:AddCallback(
-    AstroItems.Callbacks.EVALUATE_MAID_DUET,
+    AstroItems.Callbacks.EVALUATE_MY_MOON,
     ---@param player EntityPlayer
     function(_, player)
         if AstroItems.MaidDuetBlackListsPlayers[player:GetPlayerType()] then
@@ -81,40 +101,41 @@ local function GetMinimumPreservedCharge(player, itemID)
 end
 
 ---@param player EntityPlayer
-function AstroItems:PlayerUpdate_MaidDuet(player)
+function AstroItems:PlayerUpdate_MyMoon(player)
     if not player:HasCollectible(AstroItems.Collectible.MY_MOON_MY_MAN) then
         return
     end
     
     local data = player:GetData()
 
-    if not data.wakaba then
-        data.wakaba = {}
+    if not data.astro then
+        data.astro = {}
     end
 
-    local lastPlayer = data.wakaba.lastmaidplayertype
+    local lastPlayer = data.astro.lastmoonplayertype
+    -- 해당 블록은 캐릭터 교체 시 교체한 액티브가 바뀌는 걸 방지하는 용도. 불필요 시 삭제 요망
     if lastPlayer and lastPlayer ~= player:GetPlayerType() then
         player:AddCollectible(
-            data.wakaba.lastmaidpocketitem,
-            data.wakaba.lastmaidpocketcharge or 0,
+            data.astro.lastmoonpocketitem,
+            data.astro.lastmoonpocketcharge or 0,
             false,
             ActiveSlot.SLOT_POCKET
         )
         isc:setActiveItem(
             player,
-            data.wakaba.lastmaidpocketitem,
+            data.astro.lastmoonpocketitem,
             ActiveSlot.SLOT_POCKET,
-            data.wakaba.lastmaidpocketcharge or 0
+            data.astro.lastmoonpocketcharge or 0
         )
         if REPENTOGON then
             local a = player:GetActiveItemDesc(ActiveSlot.SLOT_POCKET)
-            --a.Item = data.wakaba.lastmaidpocketitem
-            --a.Charge = data.wakaba.lastmaidcharge
-            --a.BatteryCharge = data.wakaba.lastmaidbatterycharge
-            a.PartialCharge = data.wakaba.lastmaidpartialcharge
-            a.VarData = data.wakaba.lastmaidvardata
+            --a.Item = data.astro.lastmoonpocketitem
+            --a.Charge = data.astro.lastmooncharge
+            --a.BatteryCharge = data.astro.lastmoonbatterycharge
+            a.PartialCharge = data.astro.lastmoonpartialcharge
+            a.VarData = data.astro.lastmoonvardata
         end
-        data.wakaba.lastmaidplayertype = player:GetPlayerType()
+        data.astro.lastmoonplayertype = player:GetPlayerType()
     end
 
     for i = 0, 2 do
@@ -135,7 +156,7 @@ function AstroItems:PlayerUpdate_MaidDuet(player)
                     Input.IsButtonPressed(Controller.STICK_RIGHT, player.ControllerIndex) and
                     Input.IsActionTriggered(ButtonAction.ACTION_DROP, player.ControllerIndex))
          then
-            if canUseMaidDuet(player) then
+            if canUseMyMoon(player) then
                 local duetPower = player:GetCollectibleNum(AstroItems.Collectible.MY_MOON_MY_MAN)
                 local config = Isaac.GetItemConfig()
 
@@ -200,8 +221,8 @@ function AstroItems:PlayerUpdate_MaidDuet(player)
 
                 player:AnimateCollectible(AstroItems.Collectible.MY_MOON_MY_MAN, "HideItem")
                 -- player:GetEffects():AddCollectibleEffect(AstroItems.Collectible.UNTITLED)
-                data.wakaba.lastmaidplayertype = player:GetPlayerType()
-                data.wakaba.lastmaidpocketitem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+                data.astro.lastmoonplayertype = player:GetPlayerType()
+                data.astro.lastmoonpocketitem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
 
                 if not AstroItems:IsDavidMartinez(player) then
                     player:RemoveCollectible(AstroItems.Collectible.MY_MOON_MY_MAN)
@@ -211,21 +232,21 @@ function AstroItems:PlayerUpdate_MaidDuet(player)
             end
         end
     end
-    data.wakaba.lastmaidpocketcharge =
+    data.astro.lastmoonpocketcharge =
         player:GetActiveCharge(ActiveSlot.SLOT_POCKET) + player:GetBatteryCharge(ActiveSlot.SLOT_POCKET)
     if REPENTOGON then
         local a = player:GetActiveItemDesc(ActiveSlot.SLOT_POCKET)
-        --data.wakaba.lastmaidpocketitem = a.Item
-        --data.wakaba.lastmaidcharge = a.Charge
-        --data.wakaba.lastmaidbatterycharge = a.BatteryCharge
-        data.wakaba.lastmaidpartialcharge = a.PartialCharge
-        data.wakaba.lastmaidvardata = a.VarData
+        --data.astro.lastmoonpocketitem = a.Item
+        --data.astro.lastmooncharge = a.Charge
+        --data.astro.lastmoonbatterycharge = a.BatteryCharge
+        data.astro.lastmoonpartialcharge = a.PartialCharge
+        data.astro.lastmoonvardata = a.VarData
     end
 end
-AstroItems:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, AstroItems.PlayerUpdate_MaidDuet)
+AstroItems:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, AstroItems.PlayerUpdate_MyMoon)
 
 -- -- TODO 패밀리어 기능으로 교체
--- function AstroItems:RoomClear_MaidDuet()
+-- function AstroItems:RoomClear_MyMoon()
 --     for i = 1, Game():GetNumPlayers() do
 --         local player = Isaac.GetPlayer(i - 1)
     
@@ -234,8 +255,8 @@ AstroItems:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, AstroItems.PlayerUpda
 --         end
 --     end
 -- end
--- AstroItems:AddCallback(ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD, AstroItems.RoomClear_MaidDuet)
--- AstroItems:AddCallbackCustom(isc.ModCallbackCustom.POST_GREED_MODE_WAVE, AstroItems.RoomClear_MaidDuet)
+-- AstroItems:AddCallback(ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD, AstroItems.RoomClear_MyMoon)
+-- AstroItems:AddCallbackCustom(isc.ModCallbackCustom.POST_GREED_MODE_WAVE, AstroItems.RoomClear_MyMoon)
 
 local function GetAllMainPlayers()
 	local mainPlayers = {}
@@ -279,33 +300,34 @@ if EID then
         "{{ButtonMenu}}"
     }
 
-    EID.descriptions["ko_kr"].MaidDuetBlacklisted = "!!! {{Collectible"..AstroItems.Collectible.MY_MOON_MY_MAN.."}}My Moon My Man으로 교체 불가"
+    EID.descriptions["ko_kr"].MyMoonBlacklisted = "!!! {{Collectible"..AstroItems.Collectible.MY_MOON_MY_MAN.."}}My Moon My Man으로 교체 불가"
 
-    local function CaramellaCondition(descObj)
+    local function MyMoonCondition(descObj)
         if descObj.ObjType == 5 and descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE then
             return true
         end
         return false
     end
-    local function CaramellaCallback(descObj)
+    local function MyMoonCallback(descObj)
         if descObj.ObjSubType == AstroItems.Collectible.MY_MOON_MY_MAN then
             local controllerEnabled = #GetAllMainPlayers() > 0
-            local maidKey = HotkeyToString[swapKey]
-            local maidButton = controllerEnabled and ControllerToString[ButtonAction.ACTION_DROP]
+            local moonKey = HotkeyToString[swapKey]
+            local moonButton = controllerEnabled and ControllerToString[ButtonAction.ACTION_DROP]
 
             local append = ""
-            if maidKey and maidButton then
-                append = append .. maidKey .. "/{{ButtonLStick}}+" .. maidButton
+            if moonKey and moonButton then
+                append = append .. moonKey .. "/{{ButtonLStick}}+" .. moonButton
             else
-                append = append .. (maidKey or maidButton)
+                append = append .. (moonKey or moonButton)
             end
             descObj.Description = descObj.Description:gsub("{wakaba_md1}", append)
-        elseif AstroItems.MaidDuetBlackLists[descObj.ObjSubType] then
+        elseif AstroItems.MaidDuetBlackLists[descObj.ObjSubType] and EID:getLanguage() == "ko_kr" then
             local append =
-                EID:getDescriptionEntry("MaidDuetBlacklisted") or EID:getDescriptionEntryEnglish("MaidDuetBlacklisted")
+            -- TODO 아직 AstroItems 모드에 영어 설명이 없으므로 EID 언어가 한글일 때만 출력.
+                EID:getDescriptionEntry("MyMoonBlacklisted") -- or EID:getDescriptionEntryEnglish("MyMoonBlacklisted")
             descObj.Description = descObj.Description .. "#" .. append
         end
         return descObj
     end
-    EID:addDescriptionModifier("AstroItemsMyMoonMyMan", CaramellaCondition, CaramellaCallback)
+    EID:addDescriptionModifier("AstroItemsMyMoonMyMan", MyMoonCondition, MyMoonCallback)
 end
