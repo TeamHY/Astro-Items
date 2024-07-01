@@ -92,6 +92,7 @@
 	<passive gfx="Blood Trail.png" quality="1" devilprice="2" shopprice="15" name="Blood Trail" />
 	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="1" shopprice="15" name="Sandevistan" />
 	<passive gfx="My Moon My Man.png" quality="1" devilprice="2" shopprice="15" name="My Moon My Man" />
+	<passive gfx="3 Body Problem.png" quality="1" devilprice="2" shopprice="15" name="3 Body Problem" />
 
 
 
