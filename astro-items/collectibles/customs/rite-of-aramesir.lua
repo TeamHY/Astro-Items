@@ -7,7 +7,7 @@ AstroItems:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
     function(_, isContinued)
         if EID then
-            AstroItems:AddEIDCollectible(AstroItems.Collectible.RITE_OF_ARAMESIR, "아라메시아의 의", "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다. ", "사용 시 {{Trinket" .. AstroItems.Trinket.BLACK_MIRROR .. "}}Black Mirror를 소환합니다.#스테이지 진입 시 쿨타임이 채워집니다.#성전의 수견사, 일리걸 나이트가 아닐 경우 사용 시 {{SmallLuck}}행운이 2 감소합니다.")
+            AstroItems:AddEIDCollectible(AstroItems.Collectible.RITE_OF_ARAMESIR, "아라메시아의 의", "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다. ", "사용 시 {{Trinket" .. AstroItems.Trinket.BLACK_MIRROR .. "}}Black Mirror를 소환합니다.#스테이지 진입 시 쿨타임이 채워집니다.#성전의 수견사, 일리걸 나이트가 아닐 경우 사용 시 {{LuckSmall}}행운이 2 감소합니다.")
         end
 
         if not isContinued then
