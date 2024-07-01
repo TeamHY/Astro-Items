@@ -27,6 +27,11 @@ function AstroItems:IsWaterEnchantress(player)
     return player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS or player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS_B
 end
 
+---@param player EntityPlayer
+function AstroItems:IsDavidMartinez(player)
+    return player:GetPlayerType() == AstroItems.Players.DAVID_MARTINEZ or player:GetPlayerType() == AstroItems.Players.DAVID_MARTINEZ_B
+end
+
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,
     ---@param player EntityPlayer
