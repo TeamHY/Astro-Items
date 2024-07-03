@@ -2,6 +2,7 @@ local isc = require("astro-items.lib.isaacscript-common")
 
 AstroItems.Collectible = {}
 
+require "astro-items.collectibles.customs.absolut-conjoined"
 require "astro-items.collectibles.customs.acute-sinusitis"
 require "astro-items.collectibles.customs.altair"
 require "astro-items.collectibles.customs.amazing-chaos-scroll"
