@@ -4,6 +4,7 @@ AstroItems.Collectible = {}
 
 require "astro-items.collectibles.customs.absolut-conjoined"
 require "astro-items.collectibles.customs.acute-sinusitis"
+require "astro-items.collectibles.customs.akashic-records"
 require "astro-items.collectibles.customs.altair"
 require "astro-items.collectibles.customs.amazing-chaos-scroll"
 require "astro-items.collectibles.customs.amplifying-mind"
