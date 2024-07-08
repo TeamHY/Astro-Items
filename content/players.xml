@@ -31,13 +31,13 @@
         portrait="playerportrait_water_enchantress.png"
         skinColor="5"
         birthright="" />
-    <player name="David Martinez" skin="character_david_martinez.png" hp="6" pocketActive="" items=""
+    <player name="David Martinez" skin="character_david_martinez.png" hp="6" pocketActive="824" bombs="2" items=""
         keys="1"
         nameimage="playername_subject_gamma.png"
         portrait="playerportrait_subject_gamma.png"
         skinColor="-1"
         birthright="" />
-    <player name="Tainted David Martinez" bSkinParent="David Martinez" skin="character_david_martinezb.png" hp="6" pocketActive="" items=""
+    <player name="Tainted David Martinez" bSkinParent="David Martinez" skin="character_david_martinezb.png" hp="6" pocketActive="" bombs="2" items="825"
         keys="1"
         nameimage="playername_subject_gamma.png"
         portrait="playerportrait_subject_gamma.png"
