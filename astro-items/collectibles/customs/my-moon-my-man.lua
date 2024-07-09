@@ -16,7 +16,10 @@ if EID then
 end
 
 -- 아이템 위치 바꾸는 키
-local swapKey = Keyboard.KEY_8
+local SWAP_KEY = Keyboard.KEY_8
+
+local ADDED_SOUND = Isaac.GetSoundIdByName('MyMoonMyMan')
+local ADDED_SOUND_VOULME = 1 -- 0 ~ 1
 
 AstroItems.MaidDuetBlackLists = {
     [CollectibleType.COLLECTIBLE_BOOK_OF_BELIAL_PASSIVE] = true,
@@ -151,7 +154,7 @@ function AstroItems:PlayerUpdate_MyMoon(player)
     if player.ControlsEnabled then
         --TODO 설정 가능 옵션으로 교체
         if
-            (player.ControllerIndex == 0 and Input.IsButtonTriggered(swapKey, player.ControllerIndex)) or
+            (player.ControllerIndex == 0 and Input.IsButtonTriggered(SWAP_KEY, player.ControllerIndex)) or
                 (player.ControllerIndex > 0 and Controller and
                     Input.IsButtonPressed(Controller.STICK_RIGHT, player.ControllerIndex) and
                     Input.IsActionTriggered(ButtonAction.ACTION_DROP, player.ControllerIndex))
@@ -258,6 +261,34 @@ AstroItems:AddCallback(ModCallbacks.MC_POST_PLAYER_UPDATE, AstroItems.PlayerUpda
 -- AstroItems:AddCallback(ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD, AstroItems.RoomClear_MyMoon)
 -- AstroItems:AddCallbackCustom(isc.ModCallbackCustom.POST_GREED_MODE_WAVE, AstroItems.RoomClear_MyMoon)
 
+AstroItems:AddCallback(
+	ModCallbacks.MC_PRE_PICKUP_COLLISION,
+	---@param entityPickup EntityPickup
+	---@param collider Entity
+	---@param low boolean
+	function(_, entityPickup, collider, low)
+        if collider:ToPlayer() and entityPickup.Variant == PickupVariant.PICKUP_COLLECTIBLE and entityPickup.SubType == AstroItems.Collectible.MY_MOON_MY_MAN then
+            AstroItems:ScheduleForUpdate(
+                function()
+                    SFXManager():Stop(SoundEffect.SOUND_CHOIR_UNLOCK)
+                end,
+                1
+            )
+        end
+    end
+)
+
+AstroItems:AddCallbackCustom(
+    isc.ModCallbackCustom.PRE_ITEM_PICKUP,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        SFXManager():Play(ADDED_SOUND, ADDED_SOUND_VOULME)
+    end,
+    ItemType.ITEM_PASSIVE,
+    AstroItems.Collectible.MY_MOON_MY_MAN
+)
+
 local function GetAllMainPlayers()
 	local mainPlayers = {}
 	for i = 0, Game():GetNumPlayers() - 1 do
@@ -311,7 +342,7 @@ if EID then
     local function MyMoonCallback(descObj)
         if descObj.ObjSubType == AstroItems.Collectible.MY_MOON_MY_MAN then
             local controllerEnabled = #GetAllMainPlayers() > 0
-            local moonKey = HotkeyToString[swapKey]
+            local moonKey = HotkeyToString[SWAP_KEY]
             local moonButton = controllerEnabled and ControllerToString[ButtonAction.ACTION_DROP]
 
             local append = ""

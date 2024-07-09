@@ -9,4 +9,7 @@
     <sound name="ChubbyUp">
         <sample weight="1" path="chubby-up.wav" />
     </sound>
+    <sound name="MyMoonMyMan">
+        <sample weight="1" path="feedback/my-moon-my-man.wav" />
+    </sound>
 </sounds>
