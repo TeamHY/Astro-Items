@@ -15,6 +15,11 @@ AstroItems:AddCallbackCustom(
     function(_, player, collectibleType)
         if collectibleType == AstroItems.Collectible.LIBRA_EX and AstroItems:IsFirstAdded(collectibleType) then
             AstroItems.Data.ChubbySet = AstroItems.Data.ChubbySet + 1
+
+            if AstroItems.Data.ChubbySet == 3 then
+                SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+                Game():GetHUD():ShowItemText("처비!!!", '')
+            end
         end
     end
 )

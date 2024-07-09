@@ -12,11 +12,25 @@ if EID then
     EID:assignTransformation("collectible", AstroItems.Collectible.CHUBBYS_HEAD, "Chubby")
     EID:assignTransformation("collectible", AstroItems.Collectible.SLEEPING_PUPPY, "Chubby")
     EID:assignTransformation("collectible", AstroItems.Collectible.CHUBBYS_TAIL, "Chubby")
+    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "Chubby")
+    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "Chubby")
+    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "Chubby")
 
     AstroItems:AddEIDCollectible(AstroItems.Collectible.CHUBBYS_HEAD, "처비의 머리", "...", "↑ {{DamageSmall}}공격력(고정) +3.5#중첩이 가능합니다.")
     AstroItems:AddEIDCollectible(AstroItems.Collectible.SLEEPING_PUPPY, "잠자는 강아지", "...", "9개 방을 클리어할 때 마다 공격력, 연사, 사거리, 속도, 행운 중 한 가지의 스텟이 0.35(고정) 증가됩니다.#중첩 시 다음 증가량부터 적용됩니다.")
     AstroItems:AddEIDCollectible(AstroItems.Collectible.CHUBBYS_TAIL, "처비의 꼬리", "...", "{{Chest}} 갈색 상자가 등장 시 33% 확률로 갈색 상자가 한 개 더 드랍 됩니다.#중첩 시 확률이 합 연산으로 증가합니다.")
 end
+
+-- 처비셋 목록
+local CHUBBY_SET_LIST = {
+    AstroItems.Collectible.CHUBBYS_HEAD,
+    AstroItems.Collectible.SLEEPING_PUPPY,
+    AstroItems.Collectible.CHUBBYS_TAIL,
+    -- AstroItems.Collectible.LIBRA_EX, -- 순서 문제로 별도 처리
+    CollectibleType.COLLECTIBLE_DOG_TOOTH,
+    CollectibleType.COLLECTIBLE_LITTLE_CHUBBY,
+    CollectibleType.COLLECTIBLE_BIG_CHUBBY,
+}
 
 -- 처비셋 쿨타임
 local CHUBBY_SET_COOLDOWN_TIME = 30 -- 30 프레임 당 하나
@@ -228,8 +242,13 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        if (collectibleType == AstroItems.Collectible.CHUBBYS_HEAD or collectibleType == AstroItems.Collectible.SLEEPING_PUPPY or collectibleType == AstroItems.Collectible.CHUBBYS_TAIL) and AstroItems:IsFirstAdded(collectibleType) then
+        if AstroItems:ContainCollectible(CHUBBY_SET_LIST, collectibleType) and AstroItems:IsFirstAdded(collectibleType) then
             AstroItems.Data.ChubbySet = AstroItems.Data.ChubbySet + 1
+
+            if AstroItems.Data.ChubbySet == 3 then
+                SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+                Game():GetHUD():ShowItemText("처비!!!", '')
+            end
         end
     end
 )
