@@ -8,7 +8,7 @@ if EID then
         AstroItems.Collectible.STARLIT_PAPILLON,
         "스타리트 파피용",
         "...",
-        "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 현재 방에서만 몬스터 공격 시 스택 당 1%p 추가 피해를 입힙니다.#최대 50개까지 저장할 수 있습니다. 성전의 수견사, 일리걸 나이트일 경우 최대 100개까지 저장할 수 있습니다."
+        "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 현재 방에서만 몬스터 공격 시 스택 당 1%p 추가 피해를 입힙니다.#최대 50개까지 저장할 수 있습니다. 성전의 수견사, 일리걸 나이트일 경우 영혼이 2씩 증가하고 최대 100개까지 저장할 수 있습니다."
     )
 end
 
@@ -137,6 +137,8 @@ AstroItems:AddCallback(
                 AstroItems.Data.StarlitPapillon.Souls = AstroItems.Data.StarlitPapillon.Souls + 1
 
                 if AstroItems:IsWaterEnchantress(player) then
+                    AstroItems.Data.StarlitPapillon.Souls = AstroItems.Data.StarlitPapillon.Souls + 1
+
                     if AstroItems.Data.StarlitPapillon.Souls > maximumForAdventurer then
                         AstroItems.Data.StarlitPapillon.Souls = maximumForAdventurer
                     end

@@ -8,7 +8,7 @@ if EID then
         AstroItems.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
         "빛의 성검 단넬",
         "...",
-        "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 현재 방에서만 {{DamageSmall}}공격력이 스택 당 1%p 증가합니다.#최대 50개까지 저장할 수 있습니다. 성전의 수견사, 일리걸 나이트일 경우 최대 100개까지 저장할 수 있습니다."
+        "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 현재 방에서만 {{DamageSmall}}공격력이 스택 당 1%p 증가합니다.#최대 50개까지 저장할 수 있습니다. 성전의 수견사, 일리걸 나이트일 경우 영혼이 2씩 증가하고 최대 100개까지 저장할 수 있습니다."
     )
 end
 
@@ -137,6 +137,8 @@ AstroItems:AddCallback(
                 AstroItems.Data.Dunnell.Souls = AstroItems.Data.Dunnell.Souls + 1
 
                 if AstroItems:IsWaterEnchantress(player) then
+                    AstroItems.Data.Dunnell.Souls = AstroItems.Data.Dunnell.Souls + 1
+                    
                     if AstroItems.Data.Dunnell.Souls > maximumForAdventurer then
                         AstroItems.Data.Dunnell.Souls = maximumForAdventurer
                     end
