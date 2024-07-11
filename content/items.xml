@@ -96,6 +96,7 @@
 	<passive tags="baby" gfx="Absolut Conjoined.png" quality="1" devilprice="2" shopprice="15" name="Absolut Conjoined" />
 	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" name="Spinup Dice" />
 	<active gfx="Bonfire.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="Bonfire" />
+	<passive gfx="Bunny Hop.png" quality="1" devilprice="2" shopprice="15" name="Bunny Hop" />
 
 
 
