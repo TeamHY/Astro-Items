@@ -441,6 +441,19 @@
 		<Item Name="Dunnell, the Noble Arms of Light" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Starlit Papillon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sandevistan" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bunny Hop" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Mirror Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Black Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Red Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="WANTED: Seeker of Sinful Spoil" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 
 	</Pool>
@@ -482,6 +495,18 @@
 
 		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bunny Hop" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Mirror Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Black Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Red Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="WANTED: Seeker of Sinful Spoil" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="shop">
@@ -523,6 +548,18 @@
 		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Fallen Orb" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bunny Hop" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Mirror Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Black Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Red Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="WANTED: Seeker of Sinful Spoil" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="beggar">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -563,6 +600,18 @@
 		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Fallen Orb" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bunny Hop" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Mirror Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Black Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Red Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="WANTED: Seeker of Sinful Spoil" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
@@ -576,6 +625,7 @@
 		<Item Name="Sleeping Puppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Terraspark Boots" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Morphine" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bunny Hop" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="redChest">
 		<Item Name="Chubby's Head" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
