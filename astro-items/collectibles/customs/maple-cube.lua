@@ -244,7 +244,7 @@ AstroItems:AddCallback(
             local data = AstroItems:GetPersistentPlayerData(player)
             local position = AstroItems:ToScreen(player.Position)
 
-            if data["mapleCube"] then
+            if data and data["mapleCube"] then
                 for index, value in ipairs(data["mapleCube"]) do
                     Isaac.RenderText(
                         OptionDisplayName[value.option] .. string.format(" +%d%%", value.damage),
