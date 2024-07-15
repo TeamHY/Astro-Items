@@ -434,3 +434,15 @@ function AstroItems:ScheduleForUpdate(foo, delay, callback)
 
     table.insert(AstroItems.DelayedFuncs[callback], {Func = foo, Delay = delay})
 end
+
+---@param worldPosition Vector
+---@return Vector
+function AstroItems: ToScreen(worldPosition)
+    local room = Game():GetRoom()
+
+    if room:IsMirrorWorld() then
+        return room:WorldToScreenPosition(Vector(room:GetBottomRightPos().X + 60 - worldPosition.X, worldPosition.Y))
+    end
+    
+    return room:WorldToScreenPosition(worldPosition)
+end

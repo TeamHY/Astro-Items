@@ -12,4 +12,7 @@
     <sound name="MyMoonMyMan">
         <sample weight="1" path="feedback/my-moon-my-man.wav" />
     </sound>
+    <sound name="UseCube">
+        <sample weight="1" path="feedback/use-cube.wav" />
+    </sound>
 </sounds>

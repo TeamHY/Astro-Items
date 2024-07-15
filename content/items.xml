@@ -98,6 +98,8 @@
 	<active gfx="Bonfire.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="Bonfire" />
 	<passive gfx="Bunny Hop.png" quality="1" devilprice="2" shopprice="15" name="Bunny Hop" />
 	<active gfx="Mirror Dice.png" quality="1" devilprice="2" maxcharges="3" shopprice="15" name="Mirror Dice" />
+	<active tags="damage" gfx="Black Cube.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" />
+	<active tags="damage" gfx="Red Cube.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="Red Cube" />
 
 
 
