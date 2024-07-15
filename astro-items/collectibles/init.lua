@@ -95,6 +95,7 @@ require "astro-items.collectibles.customs.trinity"
 require "astro-items.collectibles.customs.vega"
 require "astro-items.collectibles.customs.very-ez-mode"
 require "astro-items.collectibles.customs.virgo-ex"
+require "astro-items.collectibles.customs.wanted-seeker-of-sinful-spoil"
 require "astro-items.collectibles.customs.ward"
 
 ---@type ItemConfigItem[]
