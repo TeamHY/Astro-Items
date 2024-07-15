@@ -91,16 +91,16 @@
 	<active tags="luck" gfx="Sinful Spoils Struggle.png" quality="3" devilprice="2" maxcharges="50" shopprice="25" name="Sinful Spoils Struggle" />
 	<passive gfx="Blood Trail.png" quality="1" devilprice="2" shopprice="15" name="Blood Trail" />
 	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="1" shopprice="15" name="Sandevistan" />
-	<passive gfx="My Moon My Man.png" quality="1" devilprice="2" shopprice="15" name="My Moon My Man" />
-	<passive gfx="3 Body Problem.png" quality="1" devilprice="2" shopprice="15" name="3 Body Problem" />
-	<passive tags="baby" gfx="Absolut Conjoined.png" quality="1" devilprice="2" shopprice="15" name="Absolut Conjoined" />
-	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" name="Spinup Dice" />
-	<active gfx="Bonfire.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="Bonfire" />
-	<passive gfx="Bunny Hop.png" quality="1" devilprice="2" shopprice="15" name="Bunny Hop" />
-	<active gfx="Mirror Dice.png" quality="1" devilprice="2" maxcharges="3" shopprice="15" name="Mirror Dice" />
-	<active tags="damage" gfx="Black Cube.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" />
-	<active tags="damage" gfx="Red Cube.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="Red Cube" />
-	<active gfx="WANTED: Seeker of Sinful Spoil.png" quality="1" devilprice="2" maxcharges="0" shopprice="15" name="WANTED: Seeker of Sinful Spoil" />
+	<passive gfx="My Moon My Man.png" quality="4" devilprice="2" shopprice="30" name="My Moon My Man" />
+	<passive gfx="3 Body Problem.png" quality="3" devilprice="2" shopprice="20" name="3 Body Problem" />
+	<passive tags="baby" gfx="Absolut Conjoined.png" quality="2" devilprice="1" shopprice="15" name="Absolut Conjoined" />
+	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" />
+	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" />
+	<passive gfx="Bunny Hop.png" quality="2" devilprice="1" shopprice="10" name="Bunny Hop" />
+	<active gfx="Mirror Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="25" name="Mirror Dice" />
+	<active tags="damage" gfx="Black Cube.png" quality="3" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" />
+	<active tags="damage" gfx="Red Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Red Cube" />
+	<active gfx="WANTED: Seeker of Sinful Spoil.png" quality="3" devilprice="2" maxcharges="1" shopprice="15" name="WANTED: Seeker of Sinful Spoil" />
 
 
 

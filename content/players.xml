@@ -7,7 +7,7 @@
         portrait="playerportrait_leah.png"
         skinColor="-1"
         birthright="What?" />
-    <player name="Diabellstar" skin="character_diabellstar.png" hp="6" pocketActive="" bombs="2" items=""
+    <player name="Diabellstar" skin="character_diabellstar.png" hp="6" pocketActive="822" bombs="2" items=""
         keys="1"
         nameimage="playername_diabellstar.png"
         portrait="playerportrait_diabellstar.png"
