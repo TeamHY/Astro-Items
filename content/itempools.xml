@@ -511,6 +511,12 @@
 		<Item Name="Black Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Red Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="WANTED: Seeker of Sinful Spoil" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Calm Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Swift Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Blue Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="shop">
@@ -564,6 +570,12 @@
 		<Item Name="Black Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Red Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="WANTED: Seeker of Sinful Spoil" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Calm Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Swift Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Blue Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="beggar">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -616,6 +628,12 @@
 		<Item Name="Black Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Red Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="WANTED: Seeker of Sinful Spoil" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Calm Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Swift Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Blue Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
