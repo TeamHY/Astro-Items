@@ -106,6 +106,7 @@
 	<passive gfx="Blue Mind.png" quality="1" devilprice="2" shopprice="15" name="Blue Mind" />
 	<passive gfx="Lucky Mind.png" quality="1" devilprice="2" shopprice="15" name="Lucky Mind" />
 	<passive gfx="Quantum Mind.png" quality="1" devilprice="2" shopprice="15" name="Quantum Mind" />
+	<passive gfx="SOL EX.png" quality="1" devilprice="2" shopprice="15" name="SOL EX" />
 
 
 

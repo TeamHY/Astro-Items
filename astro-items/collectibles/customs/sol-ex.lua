@@ -4,7 +4,7 @@ local hiddenItemManager = require("astro-items.lib.hidden_item_manager")
 AstroItems.Collectible.SOL_EX = Isaac.GetItemIdByName("SOL EX")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.SOL_EX, "태양 EX", "...", "")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.SOL_EX, "태양 EX", "...", EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_SOL, nil, false).Description)
 end
 
 AstroItems:AddCallback(
@@ -41,7 +41,7 @@ AstroItems:AddCallbackCustom(
 )
 
 AstroItems:AddCallbackCustom(
-    isc.ModCallbackCustom.MC_POST_TRIGGER_COLLECTIBLE_REMOVED,
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)

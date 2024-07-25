@@ -18,7 +18,7 @@ AstroItems:AddCallback(
     end
 )
 
----@param list any[]
+---@param list table
 ---@param key any
 local function HasKey(list, key)
     for k, v in pairs(list) do
