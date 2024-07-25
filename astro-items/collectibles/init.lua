@@ -98,6 +98,8 @@ require "astro-items.collectibles.customs.virgo-ex"
 require "astro-items.collectibles.customs.wanted-seeker-of-sinful-spoil"
 require "astro-items.collectibles.customs.ward"
 
+require "astro-items.collectibles.ex-upgrade"
+
 ---@type ItemConfigItem[]
 AstroItems.CollectableConfigs = {}
 
