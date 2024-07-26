@@ -3,7 +3,9 @@
 local UPGRADE_CHANCE = 0.5
 
 local UPGRADE_LIST = {
-    [CollectibleType.COLLECTIBLE_SOL] = AstroItems.Collectible.SOL_EX
+    [CollectibleType.COLLECTIBLE_SOL] = AstroItems.Collectible.SOL_EX,
+    [CollectibleType.COLLECTIBLE_LUNA] = AstroItems.Collectible.LUNA_EX,
+    [CollectibleType.COLLECTIBLE_MERCURIUS] = AstroItems.Collectible.MERCURIUS_EX,
 }
 
 ---
@@ -15,13 +17,14 @@ AstroItems:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
         currentRoomData = {}
+        print("adsf")
     end
 )
 
----@param list table
+---@param table table
 ---@param key any
-local function HasKey(list, key)
-    for k, v in pairs(list) do
+local function HasKey(table, key)
+    for k, v in pairs(table) do
         if k == key then
             return true
         end
@@ -37,7 +40,7 @@ AstroItems:AddCallback(
     ---@param decrease boolean
     ---@param seed integer
     function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if HasKey(UPGRADE_LIST, selectedCollectible) and not AstroItems:FindIndex(currentRoomData, selectedCollectible) then
+        if HasKey(UPGRADE_LIST, selectedCollectible) and AstroItems:FindIndex(currentRoomData, selectedCollectible) == -1 then
             local rng = RNG()
             rng:SetSeed(seed, 35)
 
