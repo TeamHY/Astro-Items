@@ -17,7 +17,6 @@ AstroItems:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
         currentRoomData = {}
-        print("adsf")
     end
 )
 

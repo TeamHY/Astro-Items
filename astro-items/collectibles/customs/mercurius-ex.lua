@@ -16,7 +16,7 @@ if EID then
         "초 수성",
         "...",
         EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_MERCURIUS, nil, false).Description ..
-            "#방 클리어 시 50% 확률로 {{Card83}}Soul of Cain을 발동합니다."
+        "#방 클리어 시 50% 확률로 {{Card83}}Soul of Cain을 발동합니다."
     )
 end
 

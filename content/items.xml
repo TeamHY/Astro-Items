@@ -110,7 +110,7 @@
 	<passive gfx="LUNA EX.png" quality="1" devilprice="2" shopprice="15" name="LUNA EX" />
 	<passive gfx="MERCURIUS EX.png" quality="1" devilprice="2" shopprice="15" name="MERCURIUS EX" />
 	<passive gfx="VENUS EX.png" quality="1" devilprice="2" shopprice="15" name="VENUS EX" />
-	<passive gfx="TERRA EX.png" quality="1" devilprice="2" shopprice="15" name="TERRA EX" />
+	<passive tags="damage" gfx="TERRA EX.png" quality="1" devilprice="2" shopprice="15" name="TERRA EX" />
 	<passive gfx="MARS EX.png" quality="1" devilprice="2" shopprice="15" name="MARS EX" />
 	<passive gfx="JUPITER EX.png" quality="1" devilprice="2" shopprice="15" name="JUPITER EX" />
 	<passive gfx="SATURNUS EX.png" quality="1" devilprice="2" shopprice="15" name="SATURNUS EX" />
