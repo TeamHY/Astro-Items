@@ -25,20 +25,14 @@ AstroItems:AddCallback(
     ---@param rng RNG
     ---@param spawnPosition Vector
     function(_, rng, spawnPosition)
-        local level = Game():GetLevel()
-        local currentRoom = level:GetCurrentRoom()
-        local itemPool = Game():GetItemPool()
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
 
-        if currentRoom:GetType() == RoomType.ROOM_BOSS then
-            for i = 1, Game():GetNumPlayers() do
-                local player = Isaac.GetPlayer(i - 1)
+            if player:HasCollectible(AstroItems.Collectible.MERCURIUS_EX) then
+                local rng = player:GetCollectibleRNG(AstroItems.Collectible.MERCURIUS_EX)
 
-                if player:HasCollectible(AstroItems.Collectible.MERCURIUS_EX) then
-                    local rng = player:GetCollectibleRNG(AstroItems.Collectible.MERCURIUS_EX)
-
-                    if rng:RandomFloat() < 1 - ((1 - SOUL_CAIN_CHANCE) ^ player:GetCollectibleNum(AstroItems.Collectible.MERCURIUS_EX)) then
-                        player:UseCard(Card.CARD_SOUL_CAIN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
-                    end
+                if rng:RandomFloat() < 1 - ((1 - SOUL_CAIN_CHANCE) ^ player:GetCollectibleNum(AstroItems.Collectible.MERCURIUS_EX)) then
+                    player:UseCard(Card.CARD_SOUL_CAIN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
                 end
             end
         end
