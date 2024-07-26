@@ -1,6 +1,6 @@
 ---
 
--- 중첩 시 0.5 -> 0.75 -> 0.83
+-- 중첩 시 0.5 -> 0.75 -> 0.875
 local SOUL_CAIN_CHANCE = 0.5
 
 ---
@@ -36,7 +36,7 @@ AstroItems:AddCallback(
                 if player:HasCollectible(AstroItems.Collectible.MERCURIUS_EX) then
                     local rng = player:GetCollectibleRNG(AstroItems.Collectible.MERCURIUS_EX)
 
-                    if rng:RandomFloat() < SOUL_CAIN_CHANCE then
+                    if rng:RandomFloat() < 1 - ((1 - SOUL_CAIN_CHANCE) ^ player:GetCollectibleNum(AstroItems.Collectible.MERCURIUS_EX)) then
                         player:UseCard(Card.CARD_SOUL_CAIN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
                     end
                 end
