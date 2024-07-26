@@ -6,7 +6,7 @@ AstroItems.Collectible.SOL_EX = Isaac.GetItemIdByName("SOL EX")
 if EID then
     AstroItems:AddEIDCollectible(
         AstroItems.Collectible.SOL_EX,
-        "태양 EX",
+        "초 태양",
         "...",
         EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_SOL, nil, false).Description ..
         "#황금 장신구 2개를 소환합니다." ..
@@ -48,6 +48,7 @@ AstroItems:AddCallbackCustom(
     function(_, player, collectibleType)
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SOL) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_SOL)
+            Game():GetLevel():UpdateVisibility()
         end
     end,
     AstroItems.Collectible.SOL_EX
@@ -60,6 +61,7 @@ AstroItems:AddCallbackCustom(
     function(_, player, collectibleType)
         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SOL) then
             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_SOL)
+            Game():GetLevel():UpdateVisibility()
         end
     end,
     AstroItems.Collectible.SOL_EX

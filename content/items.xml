@@ -107,6 +107,16 @@
 	<passive gfx="Lucky Mind.png" quality="1" devilprice="2" shopprice="15" name="Lucky Mind" />
 	<passive gfx="Quantum Mind.png" quality="1" devilprice="2" shopprice="15" name="Quantum Mind" />
 	<passive gfx="SOL EX.png" quality="1" devilprice="2" shopprice="15" name="SOL EX" />
+	<passive gfx="LUNA EX.png" quality="1" devilprice="2" shopprice="15" name="LUNA EX" />
+	<passive gfx="MERCURIUS EX.png" quality="1" devilprice="2" shopprice="15" name="MERCURIUS EX" />
+	<passive gfx="VENUS EX.png" quality="1" devilprice="2" shopprice="15" name="VENUS EX" />
+	<passive gfx="TERRA EX.png" quality="1" devilprice="2" shopprice="15" name="TERRA EX" />
+	<passive gfx="MARS EX.png" quality="1" devilprice="2" shopprice="15" name="MARS EX" />
+	<passive gfx="JUPITER EX.png" quality="1" devilprice="2" shopprice="15" name="JUPITER EX" />
+	<passive gfx="SATURNUS EX.png" quality="1" devilprice="2" shopprice="15" name="SATURNUS EX" />
+	<passive gfx="URANUS EX.png" quality="1" devilprice="2" shopprice="15" name="URANUS EX" />
+	<passive gfx="NEPTUNUS EX.png" quality="1" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
+	<passive gfx="PLUTO EX.png" quality="1" devilprice="2" shopprice="15" name="PLUTO EX" />
 
 
 
