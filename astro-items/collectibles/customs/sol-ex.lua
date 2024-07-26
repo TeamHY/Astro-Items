@@ -4,7 +4,14 @@ local hiddenItemManager = require("astro-items.lib.hidden_item_manager")
 AstroItems.Collectible.SOL_EX = Isaac.GetItemIdByName("SOL EX")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.SOL_EX, "태양 EX", "...", EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_SOL, nil, false).Description)
+    AstroItems:AddEIDCollectible(
+        AstroItems.Collectible.SOL_EX,
+        "태양 EX",
+        "...",
+        EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_SOL, nil, false).Description ..
+        "#황금 장신구 2개를 소환합니다." ..
+        "#{{Collectible633}}Dogma를 획득합니다."
+    )
 end
 
 AstroItems:AddCallback(
@@ -19,6 +26,8 @@ AstroItems:AddCallback(
         if currentRoom:GetType() == RoomType.ROOM_BOSS then
             for i = 1, Game():GetNumPlayers() do
                 local player = Isaac.GetPlayer(i - 1)
+
+                player:AddCollectible(CollectibleType.COLLECTIBLE_DOGMA)
                 
                 for _ = 1, 2 do
                     AstroItems:SpawnTrinket(itemPool:GetTrinket() + 32768, player.Position)
