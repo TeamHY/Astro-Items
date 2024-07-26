@@ -27,10 +27,14 @@ AstroItems:AddCallback(
             for i = 1, Game():GetNumPlayers() do
                 local player = Isaac.GetPlayer(i - 1)
 
-                player:AddCollectible(CollectibleType.COLLECTIBLE_DOGMA)
-                
-                for _ = 1, 2 do
-                    AstroItems:SpawnTrinket(itemPool:GetTrinket() + 32768, player.Position)
+                if player:HasCollectible(AstroItems.Collectible.SOL_EX) then
+                    for _ = 1, player:GetCollectibleNum(AstroItems.Collectible.SOL_EX) do
+                        player:AddCollectible(CollectibleType.COLLECTIBLE_DOGMA)
+    
+                        for _ = 1, 2 do
+                            AstroItems:SpawnTrinket(itemPool:GetTrinket() + 32768, player.Position)
+                        end
+                    end
                 end
             end
         end
