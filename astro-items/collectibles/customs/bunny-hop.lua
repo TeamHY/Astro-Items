@@ -6,7 +6,7 @@
 -- 1 -> 스피드가 2배 증가
 -- 1.5 -> 스피드가 2.5배 증가
 -- 2 -> 스피드가 3배 증가
-local MULTIPLIER = 0.3
+local MULTIPLIER = 1
 
 ---
 
