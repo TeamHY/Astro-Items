@@ -13,7 +13,7 @@ local UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_SATURNUS] = AstroItems.Collectible.SATURNUS_EX,
     [CollectibleType.COLLECTIBLE_URANUS] = AstroItems.Collectible.URANUS_EX,
     [CollectibleType.COLLECTIBLE_NEPTUNUS] = AstroItems.Collectible.NEPTUNUS_EX,
-    -- [CollectibleType.COLLECTIBLE_PLUTO] = AstroItems.Collectible.PLUTO_EX
+    [CollectibleType.COLLECTIBLE_PLUTO] = AstroItems.Collectible.PLUTO_EX
 }
 
 ---
