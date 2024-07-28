@@ -115,7 +115,7 @@
 	<passive gfx="JUPITER EX.png" quality="1" devilprice="2" shopprice="15" name="JUPITER EX" />
 	<passive gfx="SATURNUS EX.png" quality="1" devilprice="2" shopprice="15" name="SATURNUS EX" />
 	<passive gfx="URANUS EX.png" quality="1" devilprice="2" shopprice="15" name="URANUS EX" />
-	<passive gfx="NEPTUNUS EX.png" quality="1" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
+	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="1" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
 	<passive gfx="PLUTO EX.png" quality="1" devilprice="2" shopprice="15" name="PLUTO EX" />
 
 

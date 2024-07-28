@@ -6,6 +6,14 @@ local UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_SOL] = AstroItems.Collectible.SOL_EX,
     [CollectibleType.COLLECTIBLE_LUNA] = AstroItems.Collectible.LUNA_EX,
     [CollectibleType.COLLECTIBLE_MERCURIUS] = AstroItems.Collectible.MERCURIUS_EX,
+    -- [CollectibleType.COLLECTIBLE_VENUS] = AstroItems.Collectible.VENUS_EX,
+    [CollectibleType.COLLECTIBLE_TERRA] = AstroItems.Collectible.TERRA_EX,
+    -- [CollectibleType.COLLECTIBLE_MARS] = AstroItems.Collectible.MARS_EX,
+    [CollectibleType.COLLECTIBLE_JUPITER] = AstroItems.Collectible.JUPITER_EX,
+    [CollectibleType.COLLECTIBLE_SATURNUS] = AstroItems.Collectible.SATURNUS_EX,
+    [CollectibleType.COLLECTIBLE_URANUS] = AstroItems.Collectible.URANUS_EX,
+    [CollectibleType.COLLECTIBLE_NEPTUNUS] = AstroItems.Collectible.NEPTUNUS_EX,
+    -- [CollectibleType.COLLECTIBLE_PLUTO] = AstroItems.Collectible.PLUTO_EX
 }
 
 ---
