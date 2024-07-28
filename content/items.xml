@@ -15,7 +15,7 @@
 	<passive gfx="Comet.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Comet" />
 	<passive gfx="Pisces.png" quality="3" devilprice="2" shopprice="30" name="Pisces EX" />
 	<passive gfx="Gemini.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Gemini EX" />
-	<passive gfx="Greed.png" quality="3" devilprice="2" tags="noeden" name="Greed" />
+	<passive gfx="Greed.png" quality="0" devilprice="2" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Greed" />
 	<passive cache="damage" gfx="Prometheus.png" quality="3" devilprice="2" name="Prometheus" />
 	<passive gfx="Pure White Heart.png" quality="3" devilprice="2" shopprice="20" name="Pure White Heart" />
 	<passive cache="damage firedelay" gfx="Platinum Bullet.png" quality="3" devilprice="2" name="Platinum Bullet" />
@@ -29,7 +29,7 @@
 	<passive gfx="Ptolemaeus.png" quality="4" devilprice="2" shopprice="40" name="Ptolemaeus" />
 	<passive cache="firedelay" gfx="Angry Onion.png" quality="3" devilprice="2" name="Angry Onion" />
 	<active gfx="Deep Of Abyss.png" quality="3" devilprice="1" maxcharges="8" name="Oblivion" />
-	<passive gfx="collectibles_668_dadsnote.png" quality="3" devilprice="2" tags="noeden" name="Go Home!" />
+	<passive gfx="collectibles_668_dadsnote.png" quality="0" devilprice="2" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Go Home!" />
 	<passive gfx="Fallen Orb.png" quality="4" devilprice="2" shopprice="20" name="Fallen Orb" />
 	<passive gfx="Trinity.png" quality="3" devilprice="1" name="Trinity" />
 	<passive gfx="Blood Of Hatred.png" quality="2" devilprice="1" shopprice="5" tags="devil" blackhearts="2" name="Blood Of Hatred" />
@@ -61,7 +61,7 @@
 	<passive gfx="Rhongomyniad.png" quality="4" devilprice="1" shopprice="20" name="Rhongomyniad" />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" />
 	<passive cache="damage" gfx="Amplifying Mind.png" quality="3" devilprice="2" shopprice="15" name="Amplifying Mind" />
-	<passive gfx="EZ Mode.png" quality="1" devilprice="2" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" />
+	<passive gfx="EZ Mode.png" quality="0" devilprice="2" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" />
 	<passive gfx="Birthright - Eden.png" quality="3" devilprice="2" shopprice="15" name="Birthright - Eden" />
 	<passive gfx="Birthright - Isaac.png" quality="4" devilprice="2" shopprice="40" name="Birthright - Isaac" />
 	<passive cache="damage" gfx="Power Rock Bottom.png" quality="3" devilprice="2" shopprice="15" name="Power Rock Bottom" />
@@ -80,7 +80,7 @@
 	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="35" name="Rite of Aramesir" />
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="15" maxcharges="300" chargetype="timed" name="Overwhelming Sinful Spoils" />
 	<passive id="2" cache="firedelay" gfx="Technology Omicron.png" quality="3" tags="offensive summonable tech" name="Technology Omicron EX" description="Laser aura tears"/>
-	<passive gfx="Very EZ Mode.png" quality="4" devilprice="2" shopprice="40" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" />
+	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" />
 	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="50" shopprice="25" name="Curse of Aramatir" />
 	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" />
 	<active gfx="The Holy Blood and the Holy Grail.png" quality="4" devilprice="2" initcharge="0" maxcharges="12" shopprice="45" name="The Holy Blood and the Holy Grail" />
