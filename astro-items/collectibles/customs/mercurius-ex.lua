@@ -15,7 +15,7 @@ if EID then
         AstroItems.Collectible.MERCURIUS_EX,
         "초 수성",
         "...",
-        EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_MERCURIUS, nil, false).Description ..
+        "{{Collectible590}}Mercurius 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
         "#방 클리어 시 50% 확률로 {{Card83}}Soul of Cain을 발동합니다."
     )
 end
@@ -44,6 +44,9 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
+        local itemPool = Game():GetItemPool()
+        itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_MERCURIUS)
+
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_MERCURIUS) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_MERCURIUS)
         end
@@ -51,14 +54,14 @@ AstroItems:AddCallbackCustom(
     AstroItems.Collectible.MERCURIUS_EX
 )
 
-AstroItems:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_MERCURIUS) then
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_MERCURIUS)
-        end
-    end,
-    AstroItems.Collectible.MERCURIUS_EX
-)
+-- AstroItems:AddCallbackCustom(
+--     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+--     ---@param player EntityPlayer
+--     ---@param collectibleType CollectibleType
+--     function(_, player, collectibleType)
+--         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_MERCURIUS) then
+--             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_MERCURIUS)
+--         end
+--     end,
+--     AstroItems.Collectible.MERCURIUS_EX
+-- )

@@ -8,9 +8,8 @@ if EID then
         AstroItems.Collectible.SOL_EX,
         "초 태양",
         "...",
-        EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_SOL, nil, false).Description ..
-        "#황금 장신구 2개를 소환합니다." ..
-        "#{{Collectible633}}Dogma를 획득합니다."
+        "{{Collectible588}}Sol 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
+        "#{{BossRoom}}보스방 클리어 시 {{Collectible633}}Dogma를 획득하고 황금 장신구 2개를 소환합니다."
     )
 end
 
@@ -46,6 +45,9 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
+        local itemPool = Game():GetItemPool()
+        itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_SOL)
+
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SOL) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_SOL)
             Game():GetLevel():UpdateVisibility()
@@ -54,15 +56,15 @@ AstroItems:AddCallbackCustom(
     AstroItems.Collectible.SOL_EX
 )
 
-AstroItems:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SOL) then
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_SOL)
-            Game():GetLevel():UpdateVisibility()
-        end
-    end,
-    AstroItems.Collectible.SOL_EX
-)
+-- AstroItems:AddCallbackCustom(
+--     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+--     ---@param player EntityPlayer
+--     ---@param collectibleType CollectibleType
+--     function(_, player, collectibleType)
+--         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SOL) then
+--             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_SOL)
+--             Game():GetLevel():UpdateVisibility()
+--         end
+--     end,
+--     AstroItems.Collectible.SOL_EX
+-- )

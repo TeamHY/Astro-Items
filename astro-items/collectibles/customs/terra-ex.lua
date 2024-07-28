@@ -15,9 +15,9 @@ if EID then
         AstroItems.Collectible.TERRA_EX,
         "초 지구",
         "...",
-        EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_TERRA, nil, false).Description ..
-        "#방 클리어 시 {{Card32}}Hagalaz를 발동합니다." ..
-        "#방 입장 시 {{DamageSmall}}공격력이 x1.5 ~ x2 증가합니다. 중첩이 가능합니다."
+        "{{Collectible592}}Terra 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
+        "#방 입장 시 {{DamageSmall}}공격력이 x1.5 ~ x2 증가합니다. 중첩이 가능합니다." ..
+        "#방 클리어 시 {{Card32}}Hagalaz를 발동합니다."
     )
 end
 
@@ -85,6 +85,9 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
+        local itemPool = Game():GetItemPool()
+        itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_TERRA)
+
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_TERRA) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_TERRA)
         end
@@ -92,14 +95,14 @@ AstroItems:AddCallbackCustom(
     AstroItems.Collectible.TERRA_EX
 )
 
-AstroItems:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_TERRA) then
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_TERRA)
-        end
-    end,
-    AstroItems.Collectible.TERRA_EX
-)
+-- AstroItems:AddCallbackCustom(
+--     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+--     ---@param player EntityPlayer
+--     ---@param collectibleType CollectibleType
+--     function(_, player, collectibleType)
+--         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_TERRA) then
+--             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_TERRA)
+--         end
+--     end,
+--     AstroItems.Collectible.TERRA_EX
+-- )

@@ -14,7 +14,7 @@ if EID then
         AstroItems.Collectible.SATURNUS_EX,
         "초 토성",
         "...",
-        EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_SATURNUS, nil, false).Description ..
+        "{{Collectible595}}Saturnus 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
         "#10초 마다 {{Collectible522}}Telekinesis를 1회 발동합니다. 중첩 시 횟수가 늘어납니다."
     )
 end
@@ -38,6 +38,9 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
+        local itemPool = Game():GetItemPool()
+        itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_SATURNUS)
+
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SATURNUS) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_SATURNUS)
         end
@@ -45,14 +48,14 @@ AstroItems:AddCallbackCustom(
     AstroItems.Collectible.SATURNUS_EX
 )
 
-AstroItems:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SATURNUS) then
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_SATURNUS)
-        end
-    end,
-    AstroItems.Collectible.SATURNUS_EX
-)
+-- AstroItems:AddCallbackCustom(
+--     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+--     ---@param player EntityPlayer
+--     ---@param collectibleType CollectibleType
+--     function(_, player, collectibleType)
+--         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_SATURNUS) then
+--             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_SATURNUS)
+--         end
+--     end,
+--     AstroItems.Collectible.SATURNUS_EX
+-- )

@@ -14,8 +14,8 @@ if EID then
         AstroItems.Collectible.JUPITER_EX,
         "초 목성",
         "...",
-        EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_JUPITER, nil, false).Description ..
-        EID:getDescriptionObj(5, 100, CollectibleType.COLLECTIBLE_BLACK_BEAN, nil, false).Description ..
+        "{{Collectible594}}Jupiter 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
+        "#{{Collectible180}}Black Bean 효과가 적용됩니다." ..
         "#5초 마다 {{Collectible486}}Dull Razor를 1회 발동합니다. 중첩 시 횟수가 늘어납니다."
     )
 end
@@ -40,6 +40,9 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
+        local itemPool = Game():GetItemPool()
+        itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_JUPITER)
+
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_JUPITER) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_JUPITER)
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_BLACK_BEAN)
@@ -48,15 +51,15 @@ AstroItems:AddCallbackCustom(
     AstroItems.Collectible.JUPITER_EX
 )
 
-AstroItems:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_JUPITER) then
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_JUPITER)
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_BLACK_BEAN)
-        end
-    end,
-    AstroItems.Collectible.JUPITER_EX
-)
+-- AstroItems:AddCallbackCustom(
+--     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+--     ---@param player EntityPlayer
+--     ---@param collectibleType CollectibleType
+--     function(_, player, collectibleType)
+--         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_JUPITER) then
+--             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_JUPITER)
+--             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_BLACK_BEAN)
+--         end
+--     end,
+--     AstroItems.Collectible.JUPITER_EX
+-- )
