@@ -104,6 +104,7 @@ require "astro-items.collectibles.customs.mercurius-ex"
 require "astro-items.collectibles.customs.terra-ex"
 require "astro-items.collectibles.customs.jupiter-ex"
 require "astro-items.collectibles.customs.saturnus-ex"
+require "astro-items.collectibles.customs.uranus-ex"
 
 require "astro-items.collectibles.ex-upgrade"
 
