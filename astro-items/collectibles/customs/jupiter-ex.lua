@@ -16,7 +16,8 @@ if EID then
         "...",
         "{{Collectible594}}Jupiter 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
         "#{{Collectible180}}Black Bean 효과가 적용됩니다." ..
-        "#5초 마다 {{Collectible486}}Dull Razor를 1회 발동합니다. 중첩 시 횟수가 늘어납니다."
+        "#5초 마다 {{Collectible486}}Dull Razor를 1회 발동합니다. 중첩 시 횟수가 늘어납니다." ..
+        "#최초 획득 시 {{Card71}}XV - The Devil?를 발동합니다."
     )
 end
 
@@ -46,6 +47,8 @@ AstroItems:AddCallbackCustom(
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_JUPITER) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_JUPITER)
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_BLACK_BEAN)
+
+            player:UseCard(Card.CARD_REVERSE_DEVIL, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
         end
     end,
     AstroItems.Collectible.JUPITER_EX
