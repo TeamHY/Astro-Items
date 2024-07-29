@@ -1,0 +1,4 @@
+<entities anm2root="gfx/" version="5">
+    <entity name="Super Nova" anm2path="super_nova_effect.anm2" id="1000" variant="3100" collisionMass="1" friction="1">
+    </entity>
+</entities>
