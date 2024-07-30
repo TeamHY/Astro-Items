@@ -7,6 +7,12 @@
         portrait="playerportrait_leah.png"
         skinColor="-1"
         birthright="What?" />
+    <player name="Tainted Leah" bSkinParent="Leah" skin="character_leahb.png" hp="2"
+        black="4" pocketActive="" items="" keys="1"
+        nameimage="playername_leah.png"
+        portrait="playerportrait_leah.png"
+        skinColor="-1"
+        birthright="" />
     <player name="Diabellstar" skin="character_diabellstar.png" hp="6" pocketActive="822" bombs="2" items=""
         keys="1"
         nameimage="playername_diabellstar.png"

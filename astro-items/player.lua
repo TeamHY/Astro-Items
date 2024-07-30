@@ -2,6 +2,7 @@
 
 AstroItems.Players = {
     LEAH = Isaac.GetPlayerTypeByName("Leah"),
+    LEAH_B = Isaac.GetPlayerTypeByName("Tainted Leah", true),
     DIABELLSTAR = Isaac.GetPlayerTypeByName("Diabellstar"),
     DIABELLSTAR_B = Isaac.GetPlayerTypeByName("Tainted Diabellstar", true),
     WATER_ENCHANTRESS = Isaac.GetPlayerTypeByName("Water Enchantress"),
@@ -10,6 +11,7 @@ AstroItems.Players = {
     DAVID_MARTINEZ_B = Isaac.GetPlayerTypeByName("Tainted David Martinez", true),
 }
 
+local LEAH_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_leahb_hair.anm2")
 local DIABELLSTAR_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_diabellstar_hair.anm2")
 local DIABELLSTAR_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_diabellstarb_hair.anm2")
 local WATER_ENCHANTRESS_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_water_enchantress_hair.anm2")
@@ -36,6 +38,16 @@ AstroItems:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,
     ---@param player EntityPlayer
     function(_, player)
+        if player:GetPlayerType() == AstroItems.Players.LEAH_B then
+            if not player:GetEffects():HasNullEffect(LEAH_B_HAIR) then
+                player:GetEffects():AddNullEffect(LEAH_B_HAIR, true)
+            end
+        else
+            if player:GetEffects():HasNullEffect(LEAH_B_HAIR) then
+                player:GetEffects():RemoveNullEffect(LEAH_B_HAIR)
+            end
+        end
+
         if player:GetPlayerType() == AstroItems.Players.DIABELLSTAR then
             if not player:GetEffects():HasNullEffect(DIABELLSTAR_HAIR) then
                 player:GetEffects():AddNullEffect(DIABELLSTAR_HAIR, true)
