@@ -10,8 +10,8 @@ if EID then
         "...",
         "{{Collectible589}}Luna 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
         "#{{Collectible76}}X-Ray Vision 효과가 적용됩니다." ..
-        "#맵에 {{SecretRoom}}비밀방, {{SuperSecretRoom}}일급 비밀방, {{UltraSecretRoom}}특급 비밀방 위치가 표시됩니다." ..
-        "#{{Collectible" .. AstroItems.Collectible.RAPID_ROCK_BOTTOM .. "}}Rapid Rock Bottom 효과가 적용됩니다."
+        "#{{Collectible" .. AstroItems.Collectible.RAPID_ROCK_BOTTOM .. "}}Rapid Rock Bottom 효과가 적용됩니다." ..
+        "#맵에 {{SecretRoom}}비밀방, {{SuperSecretRoom}}일급 비밀방, {{UltraSecretRoom}}특급 비밀방 위치가 표시됩니다."
     )
 end
 
