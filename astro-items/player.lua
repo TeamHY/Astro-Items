@@ -20,6 +20,11 @@ local DAVID_MARTINEZ_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_d
 local DAVID_MARTINEZ_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinezb_hair.anm2")
 
 ---@param player EntityPlayer
+function AstroItems:IsLeah(player)
+    return player:GetPlayerType() == AstroItems.Players.LEAH or player:GetPlayerType() == AstroItems.Players.LEAH_B
+end
+
+---@param player EntityPlayer
 function AstroItems:IsDiabellstar(player)
     return player:GetPlayerType() == AstroItems.Players.DIABELLSTAR or player:GetPlayerType() == AstroItems.Players.DIABELLSTAR_B
 end

@@ -117,6 +117,7 @@
 	<passive gfx="URANUS EX.png" quality="1" devilprice="2" shopprice="15" name="URANUS EX" />
 	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="1" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
 	<passive tags="tearflag" gfx="PLUTO EX.png" quality="1" devilprice="2" shopprice="15" name="PLUTO EX" />
+	<active tags="luck" gfx="Pure Love.png" quality="1" devilprice="2" maxcharges="6" shopprice="15" name="Pure Love" />
 
 
 

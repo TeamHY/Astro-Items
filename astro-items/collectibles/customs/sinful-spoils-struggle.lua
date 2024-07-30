@@ -7,12 +7,11 @@ AstroItems:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
     function(_, isContinued)
         if EID then
-            AstroItems:AddEIDCollectible(AstroItems.Collectible.SINFUL_SPOILS_STRUGGLE, "아라메시아의 의", "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다. ", "사용 시 {{Trinket" .. AstroItems.Trinket.BLACK_MIRROR .. "}}Black Mirror를 소환합니다.#스테이지 진입 시 쿨타임이 채워집니다.#성전의 수견사, 일리걸 나이트가 아닐 경우 사용 시 {{LuckSmall}}행운이 2 감소합니다.")
             AstroItems:AddEIDCollectible(
                 AstroItems.Collectible.SINFUL_SPOILS_STRUGGLE,
                 "죄보합전",
                 "...",
-                "일급 비밀방에서 사용 시 소지된 아이템 중 1개를 재거합니다. {{Collectible" .. AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}Original Sinful Spoils - Snake Eye, {{Collectible" .. AstroItems.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}Sinful Spoils of Subversion - Snake Eye 중 하나와 제거된 아이템을 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#디아벨스타, 디아벨제가 아닐 경우 사용 시 {{LuckSmall}}행운이 1 감소하고 제거 후 소환되는 아이템이 2개로 증가합니다."
+                "일급 비밀방에서 사용 시 소지된 아이템 중 1개를 제거합니다. {{Collectible" .. AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}Original Sinful Spoils - Snake Eye, {{Collectible" .. AstroItems.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}Sinful Spoils of Subversion - Snake Eye 중 하나와 제거된 아이템을 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#디아벨스타, 디아벨제가 아닐 경우 사용 시 {{LuckSmall}}행운이 1 감소하고 제거 후 소환되는 아이템이 2개로 증가합니다."
             )
         end
 
