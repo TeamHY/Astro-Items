@@ -10,10 +10,35 @@ if EID then
         "...",
         "{{Collectible589}}Luna 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
         "#{{Collectible76}}X-Ray Vision 효과가 적용됩니다." ..
-        "#{{Collectible246}}Blue Map 효과가 적용됩니다." ..
+        "#맵에 {{SecretRoom}}비밀방, {{SuperSecretRoom}}일급 비밀방, {{UltraSecretRoom}}특급 비밀방 위치가 표시됩니다." ..
         "#{{Collectible" .. AstroItems.Collectible.RAPID_ROCK_BOTTOM .. "}}Rapid Rock Bottom 효과가 적용됩니다."
     )
 end
+
+local function DisplaySecretRoom()
+    local level = Game():GetLevel()
+
+    for i = 0, 169 do
+        local room = level:GetRoomByIdx(i)
+
+        if room.Data then
+            if room.Data.Type == RoomType.ROOM_SECRET or room.Data.Type == RoomType.ROOM_SUPERSECRET or room.Data.Type == RoomType.ROOM_ULTRASECRET then
+                room.DisplayFlags = room.DisplayFlags | RoomDescriptor.DISPLAY_BOX | RoomDescriptor.DISPLAY_ICON
+            end
+        end
+    end
+
+    level:UpdateVisibility()
+end
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_NEW_LEVEL,
+    function(_)
+        if AstroItems:HasCollectible(AstroItems.Collectible.LUNA_EX) then
+            DisplaySecretRoom()
+        end
+    end
+)
 
 AstroItems:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
@@ -22,6 +47,8 @@ AstroItems:AddCallbackCustom(
     function(_, player, collectibleType)
         local itemPool = Game():GetItemPool()
         itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_LUNA)
+
+        DisplaySecretRoom()
 
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_LUNA) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_LUNA)
