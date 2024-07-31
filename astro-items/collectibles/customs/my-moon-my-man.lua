@@ -56,15 +56,6 @@ if REPENTOGON then
     )
 end
 
---TODO 와카바 모드 대결모드 호환 패치 시 제거
-if _wakaba then
-    wakaba:AddCallback(wakaba.Callback.EVALUATE_MAID_DUET, function(_, player)
-    	if player:HasCollectible(AstroItems.Collectible.MY_MOON_MY_MAN) then
-    		return true
-    	end
-    end)
-end
-
 ---@param player EntityPlayer
 local function canUseMyMoon(player, force)
     local active1 = player:GetActiveItem(ActiveSlot.SLOT_PRIMARY)
