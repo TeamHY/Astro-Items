@@ -9,20 +9,27 @@ if EID then
         "초 명왕성",
         "...",
         "{{Collectible597}}Pluto 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#(미완성)방 입장 시 모든 적이 작아집니다."
+        "#방 입장 시 모든 적이 작아집니다."
     )
 end
 
 AstroItems:AddCallback(
-    ModCallbacks.MC_EVALUATE_CACHE,
-    ---@param player EntityPlayer
-    ---@param cacheFlag CacheFlag
-    function(_, player, cacheFlag)
-        if player:HasCollectible(AstroItems.Collectible.PLUTO_EX) then
-            player.TearFlags = player.TearFlags | TearFlags.TEAR_GODS_FLESH
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+        
+            if player:HasCollectible(AstroItems.Collectible.PLUTO_EX) then
+                for _, entity in ipairs(Isaac.GetRoomEntities()) do
+                    if entity:IsVulnerableEnemy() then
+                        entity:AddShrink(EntityRef(player), 150)
+                    end
+                end
+
+                break
+            end
         end
-    end,
-    CacheFlag.CACHE_TEARFLAG
+    end
 )
 
 AstroItems:AddCallbackCustom(
