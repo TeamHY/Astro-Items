@@ -25,7 +25,7 @@ AstroItems:AddCallback(
         for _, entity in ipairs(entities) do
             if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE then
                 local pickup = entity:ToPickup()
-                local item = AstroItems:GetRandomCollectibles(inventory, rngObj, 5, AstroItems.Collectible.MIRROR_DICE, true)[1]
+                local item = AstroItems:GetRandomCollectibles(inventory, rngObj, 1, AstroItems.Collectible.MIRROR_DICE, true)[1]
 
                 if not item then
                     return {
