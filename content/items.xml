@@ -96,28 +96,28 @@
 	<passive tags="baby" gfx="Absolut Conjoined.png" quality="2" devilprice="1" shopprice="15" name="Absolut Conjoined" />
 	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" />
 	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" />
-	<passive gfx="Bunny Hop.png" quality="2" devilprice="1" shopprice="10" name="Bunny Hop" />
+	<passive gfx="Bunny Hop.png" quality="2" devilprice="2" shopprice="10" name="Bunny Hop" />
 	<active gfx="Mirror Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="25" name="Mirror Dice" />
 	<active tags="damage" gfx="Black Cube.png" quality="3" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" />
 	<active tags="damage" gfx="Red Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Red Cube" />
 	<active gfx="WANTED Seeker of Sinful Spoil.png" quality="3" devilprice="2" maxcharges="1" shopprice="15" name="WANTED: Seeker of Sinful Spoil" />
-	<passive gfx="Calm Mind.png" quality="1" devilprice="2" shopprice="15" name="Calm Mind" />
-	<passive gfx="Swift Mind.png" quality="1" devilprice="2" shopprice="15" name="Swift Mind" />
-	<passive gfx="Blue Mind.png" quality="1" devilprice="2" shopprice="15" name="Blue Mind" />
-	<passive gfx="Lucky Mind.png" quality="1" devilprice="2" shopprice="15" name="Lucky Mind" />
-	<active gfx="Quantum Mind.png" quality="1" devilprice="2" maxcharges="6"  shopprice="15" name="Quantum Mind" />
-	<passive gfx="SOL EX.png" quality="1" devilprice="2" shopprice="15" name="SOL EX" />
-	<passive gfx="LUNA EX.png" quality="1" devilprice="2" shopprice="15" name="LUNA EX" />
-	<passive gfx="MERCURIUS EX.png" quality="1" devilprice="2" shopprice="15" name="MERCURIUS EX" />
-	<passive gfx="VENUS EX.png" quality="1" devilprice="2" shopprice="15" name="VENUS EX" />
-	<passive tags="damage" gfx="TERRA EX.png" quality="1" devilprice="2" shopprice="15" name="TERRA EX" />
-	<passive gfx="MARS EX.png" quality="1" devilprice="2" shopprice="15" name="MARS EX" />
-	<passive gfx="JUPITER EX.png" quality="1" devilprice="2" shopprice="15" name="JUPITER EX" />
-	<passive gfx="SATURNUS EX.png" quality="1" devilprice="2" shopprice="15" name="SATURNUS EX" />
-	<passive gfx="URANUS EX.png" quality="1" devilprice="2" shopprice="15" name="URANUS EX" />
-	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="1" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
-	<passive tags="tearflag" gfx="PLUTO EX.png" quality="1" devilprice="2" shopprice="15" name="PLUTO EX" />
-	<active tags="luck" gfx="Pure Love.png" quality="1" devilprice="2" maxcharges="6" shopprice="15" name="Pure Love" />
+	<passive gfx="Calm Mind.png" quality="4" devilprice="2" shopprice="15" name="Calm Mind" />
+	<passive gfx="Swift Mind.png" quality="2" devilprice="2" shopprice="15" name="Swift Mind" />
+	<passive gfx="Blue Mind.png" quality="4" devilprice="2" shopprice="15" name="Blue Mind" />
+	<passive gfx="Lucky Mind.png" quality="3" devilprice="2" shopprice="15" name="Lucky Mind" />
+	<active gfx="Quantum Mind.png" quality="4" devilprice="2" maxcharges="6"  shopprice="15" name="Quantum Mind" />
+	<passive gfx="SOL EX.png" quality="4" devilprice="2" shopprice="15" name="SOL EX" />
+	<passive gfx="LUNA EX.png" quality="4" devilprice="2" shopprice="15" name="LUNA EX" />
+	<passive gfx="MERCURIUS EX.png" quality="4" devilprice="2" shopprice="15" name="MERCURIUS EX" />
+	<passive gfx="VENUS EX.png" quality="4" devilprice="2" shopprice="15" name="VENUS EX" />
+	<passive tags="damage" gfx="TERRA EX.png" quality="4" devilprice="2" shopprice="15" name="TERRA EX" />
+	<passive gfx="MARS EX.png" quality="4" devilprice="2" shopprice="15" name="MARS EX" />
+	<passive gfx="JUPITER EX.png" quality="4" devilprice="2" shopprice="15" name="JUPITER EX" />
+	<passive gfx="SATURNUS EX.png" quality="4" devilprice="2" shopprice="15" name="SATURNUS EX" />
+	<passive gfx="URANUS EX.png" quality="4" devilprice="2" shopprice="15" name="URANUS EX" />
+	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="4" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
+	<passive tags="tearflag" gfx="PLUTO EX.png" quality="4" devilprice="2" shopprice="15" name="PLUTO EX" />
+	<active tags="luck" gfx="Pure Love.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" name="Pure Love" />
 
 
 
