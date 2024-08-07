@@ -11,7 +11,7 @@ AstroItems:AddCallback(
                 AstroItems.Collectible.PURE_LOVE,
                 "순애",
                 "...",
-                "일급 비밀방에서 사용 시 {{LuckSmall}}행운이 1 감소하고 대결 모드에서 현재 판 금지된 아이템 중 하나를 소환합니다.#야곱, 알트 야곱, 레아, 라헬이 아닐 경우 사용 시 행운이 감소되지 않고 소환되는 아이템이 2개로 증가합니다. 하나를 선택하면 나머지는 사라집니다."
+                "일급 비밀방에서 사용 시 {{LuckSmall}}행운이 1 감소하고 대결 모드에서 현재 판 금지된 아이템 중 하나를 소환합니다.#야곱, 알트 야곱, 레아, 라헬이 아닐 경우 사용 시 행운이 감소되지 않고 소환되는 아이템이 2개로 증가합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다."
             )
         end
 
@@ -30,26 +30,26 @@ local function IsSynergy(player)
     return type == PlayerType.PLAYER_JACOB or type == PlayerType.PLAYER_JACOB_B or type == PlayerType.PLAYER_JACOB2_B or AstroItems:IsLeah(player)
 end
 
--- AstroItems:AddCallback(
---     ModCallbacks.MC_POST_NEW_LEVEL,
---     function(_)
---         for i = 1, Game():GetNumPlayers() do
---             local player = Isaac.GetPlayer(i - 1)
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_NEW_LEVEL,
+    function(_)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
 
---             for j = 0, ActiveSlot.SLOT_POCKET2 do
---                 if player:GetActiveItem(j) == AstroItems.Collectible.PURE_LOVE then
---                     if player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS and player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
---                         player:AddCollectible(CollectibleType.COLLECTIBLE_BATTERY)
---                         player:SetActiveCharge(100, j)
---                         player:RemoveCollectible(CollectibleType.COLLECTIBLE_BATTERY)
---                     else
---                         player:SetActiveCharge(50, j)
---                     end
---                 end
---             end
---         end
---     end
--- )
+            for j = 0, ActiveSlot.SLOT_POCKET2 do
+                if player:GetActiveItem(j) == AstroItems.Collectible.PURE_LOVE then
+                    -- if player:GetPlayerType() == AstroItems.Players.WATER_ENCHANTRESS and player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+                    --     player:AddCollectible(CollectibleType.COLLECTIBLE_BATTERY)
+                    --     player:SetActiveCharge(100, j)
+                    --     player:RemoveCollectible(CollectibleType.COLLECTIBLE_BATTERY)
+                    -- else
+                        player:SetActiveCharge(50, j)
+                    -- end
+                end
+            end
+        end
+    end
+)
 
 
 AstroItems:AddCallback(
