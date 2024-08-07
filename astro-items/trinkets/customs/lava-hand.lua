@@ -11,10 +11,7 @@ end
 ---@param player EntityPlayer
 ---@param trinket TrinketType
 function AstroItems:UpdateLavaHandEffect(player, trinket)
-    if
-        player:HasTrinket(AstroItems.Trinket.LAVA_HAND) and
-            not AstroItems:CheckTrinket(trinket, TrinketType.TRINKET_PERFECTION)
-     then
+    if player:HasTrinket(AstroItems.Trinket.LAVA_HAND) and not AstroItems:CheckTrinket(trinket, TrinketType.TRINKET_PERFECTION) and not AstroItems:CheckTrinket(trinket, AstroItems.Trinket.FLUNK) then
         isc:smeltTrinket(player, trinket)
         player:TryRemoveTrinket(trinket)
     end
