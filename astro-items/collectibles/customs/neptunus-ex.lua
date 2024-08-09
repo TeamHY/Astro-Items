@@ -1,6 +1,6 @@
 ---
 
-local TEARS_INCREMENT = 0.25
+local TEARS_INCREMENT = 0.1
 
 ---
 
