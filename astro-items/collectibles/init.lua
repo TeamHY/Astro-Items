@@ -42,6 +42,7 @@ require "astro-items.collectibles.customs.extra-guppy-sets"
 require "astro-items.collectibles.customs.ez-mode"
 require "astro-items.collectibles.customs.fallen-orb"
 require "astro-items.collectibles.customs.duality-light-and-darkness" -- fallen orb보다 아래 있어야 함
+require "astro-items.collectibles.customs.forbidden-dice"
 require "astro-items.collectibles.customs.fortune-coin"
 require "astro-items.collectibles.customs.galactic-medal-of-valor"
 require "astro-items.collectibles.customs.gemini-ex"
