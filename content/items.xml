@@ -121,6 +121,7 @@
 	<active gfx="Restock Dice.png" quality="1" devilprice="2" maxcharges="6" shopprice="15" name="Restock Dice" />
 	<active gfx="Sacred Dice.png" quality="1" devilprice="2" maxcharges="6" shopprice="15" name="Sacred Dice" />
 	<active gfx="Forbidden Dice.png" quality="1" devilprice="2" maxcharges="6" shopprice="15" name="Forbidden Dice" />
+	<active gfx="Dad's Box.png" quality="1" devilprice="2" maxcharges="6" shopprice="15" name="Dad's Box" />
 
 
 
