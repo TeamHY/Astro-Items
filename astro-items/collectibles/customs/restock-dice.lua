@@ -25,11 +25,15 @@ AstroItems:AddCallback(
 
         for _, entity in ipairs(entities) do
             if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE and entity.SubType == 0 then
-                local pickup = entity:ToPickup()
+                local itemPoolType = itemPool:GetPoolForRoom(room:GetType(), rngObj:GetSeed())
 
-                local item = itemPool:GetCollectible(itemPool:GetPoolForRoom(room:GetType(), rngObj:GetSeed()), true, rngObj:GetSeed(), CollectibleType.COLLECTIBLE_BREAKFAST)
+                if itemPoolType == ItemPoolType.POOL_NULL then
+                    itemPoolType = ItemPoolType.POOL_TREASURE
+                end
 
-                pickup:Morph(pickup.Type, pickup.Variant, item, true)
+                local item = itemPool:GetCollectible(itemPoolType, true, rngObj:GetSeed(), CollectibleType.COLLECTIBLE_BREAKFAST)
+
+                entity:ToPickup():Morph(entity.Type, entity.Variant, item, true)
             end
         end
 
