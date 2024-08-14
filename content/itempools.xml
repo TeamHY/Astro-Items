@@ -64,6 +64,10 @@
 		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Restock Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
     <Pool Name="greedSecret">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -104,6 +108,10 @@
 		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Restock Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 
@@ -442,6 +450,8 @@
 		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -501,6 +511,8 @@
 		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedAngel">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -668,6 +680,11 @@
 		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Restock Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 	<Pool Name="greedTreasure">
 		<Item Name="Cygnus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -774,6 +791,11 @@
 		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Restock Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="craneGame">
@@ -831,6 +853,11 @@
 		<Item Name="Blue Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Restock Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="shop">
@@ -890,6 +917,11 @@
 		<Item Name="Blue Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Restock Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -948,6 +980,11 @@
 		<Item Name="Blue Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Restock Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="beggar">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1006,6 +1043,11 @@
 		<Item Name="Blue Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Quantum Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Restock Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
