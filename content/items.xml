@@ -50,17 +50,17 @@
 	<passive gfx="Ward.png" quality="2" devilprice="2" shopprice="22" name="Ward" />
 	<passive cache="damage" gfx="Chubby's Head.png" quality="3" devilprice="2" name="Chubby's Head" />
 	<passive cache="damage firedelay range speed luck" gfx="Sleeping Puppy.png" quality="3" devilprice="1" name="Sleeping Puppy" />
-	<passive gfx="Chubby's Tail.png" quality="3" devilprice="1" name="Chubby's Tail" />
+	<passive gfx="Chubby's Tail.png" quality="2" devilprice="1" name="Chubby's Tail" />
 	<passive cache="damage firedelay range speed luck" gfx="Happy Onion.png" quality="3" devilprice="2" name="Happy Onion" />
-	<passive gfx="Key Is Power.png" quality="3" devilprice="1" name="Key Is Power" />
-	<passive gfx="Bomb Is Power.png" quality="3" devilprice="1" name="Bomb Is Power" />
+	<passive gfx="Key Is Power.png" quality="2" devilprice="1" name="Key Is Power" />
+	<passive gfx="Bomb Is Power.png" quality="2" devilprice="1" name="Bomb Is Power" />
 	<active gfx="Fortune Coin.png" quality="3" devilprice="1" maxcharges="1" shopprice="10" name="Fortune Coin" />
 	<passive gfx="Master's Degree.png" quality="3" devilprice="1" shopprice="30" name="Master's Degree" />
 	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" />
 	<passive gfx="Pink Ward.png" quality="3" devilprice="1" shopprice="22" name="Pink Ward" />
 	<passive gfx="Rhongomyniad.png" quality="4" devilprice="1" shopprice="20" name="Rhongomyniad" />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" />
-	<passive cache="damage" gfx="Amplifying Mind.png" quality="3" devilprice="2" shopprice="15" name="Amplifying Mind" />
+	<passive cache="damage" gfx="Amplifying Mind.png" quality="2" devilprice="2" shopprice="15" name="Amplifying Mind" />
 	<passive gfx="EZ Mode.png" quality="0" devilprice="2" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" />
 	<passive gfx="Birthright - Eden.png" quality="3" devilprice="2" shopprice="15" name="Birthright - Eden" />
 	<passive gfx="Birthright - Isaac.png" quality="4" devilprice="2" shopprice="40" name="Birthright - Isaac" />
@@ -79,7 +79,7 @@
 	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="40" name="Super Nova" />
 	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="35" name="Rite of Aramesir" />
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="15" maxcharges="300" chargetype="timed" name="Overwhelming Sinful Spoils" />
-	<passive id="2" cache="firedelay" gfx="Technology Omicron.png" quality="3" tags="offensive summonable tech" name="Technology Omicron EX" description="Laser aura tears"/>
+	<passive id="2" cache="firedelay" gfx="Technology Omicron.png" quality="4" tags="offensive summonable tech" name="Technology Omicron EX" description="Laser aura tears"/>
 	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" />
 	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="50" shopprice="25" name="Curse of Aramatir" />
 	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" />
@@ -118,10 +118,10 @@
 	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="4" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
 	<passive tags="tearflag" gfx="PLUTO EX.png" quality="4" devilprice="2" shopprice="15" name="PLUTO EX" />
 	<active tags="luck" gfx="Pure Love.png" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" />
-	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="6" shopprice="15" name="Restock Dice" />
-	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" name="Sacred Dice" />
-	<active gfx="Forbidden Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" name="Forbidden Dice" />
-	<active gfx="Dad's Box.png" quality="2" devilprice="2" maxcharges="6" shopprice="15" name="Dad's Box" />
+	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="12" shopprice="15" name="Restock Dice" />
+	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Sacred Dice" />
+	<active gfx="Forbidden Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Forbidden Dice" />
+	<active gfx="Dad's Box.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Dad's Box" />
 
 
 
