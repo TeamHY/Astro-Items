@@ -1,22 +1,20 @@
 AstroItems.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 
 if EID then
-    AstroItems:AddEIDCollectible(AstroItems.Collectible.EZ_MODE, "쉬운 모드", "...", "피격 페널티가 발생하지 않습니다.#소울 하트 1개가 증가됩니다.")
+    AstroItems:AddEIDCollectible(AstroItems.Collectible.EZ_MODE, "쉬운 모드", "...", "피격 페널티가 발생하지 않습니다.#소울 하트 1개가 증가됩니다.#후반 스테이지 진입 시 제거됩니다.")
 end
 
--- AstroItems:AddCallback(
---     ModCallbacks.MC_POST_NEW_ROOM,
---     function(_)
---         local level = Game():GetLevel()
---         local currentRoom = level:GetCurrentRoom()
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        local level = Game():GetLevel()
+        local stage = level:GetStage()
 
---         if AstroItems:CheckFirstVisitFrame(currentRoom) then
---             if level:GetAbsoluteStage() == LevelStage.STAGE1_1 and level:GetCurrentRoomIndex() == 84 then
---                 AstroItems:SpawnCollectible(AstroItems.Collectible.EZ_MODE, currentRoom:GetGridPosition(33), nil, true)
---             end
---         end
---     end
--- )
+        if stage >= LevelStage.STAGE4_3 or (stage == LevelStage.STAGE4_1 and level:GetStageType() == StageType.STAGETYPE_REPENTANCE) or (stage == LevelStage.STAGE4_2 and level:GetStageType() == StageType.STAGETYPE_REPENTANCE) then
+            AstroItems:RemoveAllCollectibles(AstroItems.Collectible.EZ_MODE)
+        end
+    end
+)
 
 AstroItems:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,
