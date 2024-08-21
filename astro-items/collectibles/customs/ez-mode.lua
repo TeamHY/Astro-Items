@@ -11,7 +11,11 @@ AstroItems:AddCallback(
         local stage = level:GetStage()
 
         if stage >= LevelStage.STAGE4_3 or (stage == LevelStage.STAGE4_1 and level:GetStageType() == StageType.STAGETYPE_REPENTANCE) or (stage == LevelStage.STAGE4_2 and level:GetStageType() == StageType.STAGETYPE_REPENTANCE) then
-            AstroItems:RemoveAllCollectibles(AstroItems.Collectible.EZ_MODE)
+            for i = 1, Game():GetNumPlayers() do
+                local player = Isaac.GetPlayer(i - 1)
+            
+                AstroItems:RemoveAllCollectible(player, AstroItems.Collectible.EZ_MODE)
+            end
         end
     end
 )
