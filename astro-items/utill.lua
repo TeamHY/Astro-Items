@@ -446,3 +446,14 @@ function AstroItems: ToScreen(worldPosition)
     
     return room:WorldToScreenPosition(worldPosition)
 end
+
+function AstroItems:IsLatterStage()
+    local level = Game():GetLevel()
+    local stage = level:GetStage()
+
+    if stage >= LevelStage.STAGE4_3 or (stage == LevelStage.STAGE4_1 and level:GetStageType() == StageType.STAGETYPE_REPENTANCE) or (stage == LevelStage.STAGE4_2 and level:GetStageType() == StageType.STAGETYPE_REPENTANCE) then
+        return true
+    end
+
+    return false
+end

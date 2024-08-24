@@ -3,7 +3,7 @@ AstroItems.Trinket.FLUNK = Isaac.GetTrinketIdByName("Flunk")
 if EID then
     EID:addTrinket(
         AstroItems.Trinket.FLUNK,
-        "이 아이템은 룰상{{Trinket145}}Perfection로 취급됩니다.#↑ 행운 +2#{{ColorGold}}↑ 행운 +2",
+        "이 아이템은 룰상{{Trinket145}}Perfection로 취급됩니다.#↑ 행운 +2#{{ColorGold}}↑ 행운 +2#{{Collectible" .. AstroItems.Collectible.EZ_MODE .. "}}EZ Mode 소지 시 사라지지 않습니다.",
         "낙제"
     )
 
@@ -20,7 +20,7 @@ AstroItems:AddCallback(
     function(_, entity, amount, damageFlags, source, countdownFrames)
         local player = entity:ToPlayer()
 
-        if player ~= nil and player:HasTrinket(AstroItems.Trinket.FLUNK) then
+        if player ~= nil and player:HasTrinket(AstroItems.Trinket.FLUNK) and not player:HasCollectible(AstroItems.Collectible.EZ_MODE) then
             if damageFlags & (DamageFlag.DAMAGE_NO_PENALTIES | DamageFlag.DAMAGE_RED_HEARTS) == 0 then
                 AstroItems:RemoveAllTrinket(player, AstroItems.Trinket.FLUNK)
             end
