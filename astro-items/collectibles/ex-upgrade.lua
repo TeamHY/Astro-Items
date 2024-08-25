@@ -40,6 +40,16 @@ local function HasKey(table, key)
     return false
 end
 
+local function HasUpgradedCollectible()
+    for _, collectible in pairs(UPGRADE_LIST) do
+        if AstroItems:HasCollectible(collectible) then
+            return true
+        end
+    end
+
+    return false
+end
+
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_GET_COLLECTIBLE,
     ---@param selectedCollectible CollectibleType
@@ -47,7 +57,7 @@ AstroItems:AddCallback(
     ---@param decrease boolean
     ---@param seed integer
     function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if HasKey(UPGRADE_LIST, selectedCollectible) and AstroItems:FindIndex(currentRoomData, selectedCollectible) == -1 then
+        if HasKey(UPGRADE_LIST, selectedCollectible) and AstroItems:FindIndex(currentRoomData, selectedCollectible) == -1 and not HasUpgradedCollectible() then
             local rng = RNG()
             rng:SetSeed(seed, 35)
 
