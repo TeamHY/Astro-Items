@@ -9,6 +9,8 @@ AstroItems.Players = {
     WATER_ENCHANTRESS_B = Isaac.GetPlayerTypeByName("Tainted Water Enchantress", true),
     DAVID_MARTINEZ = Isaac.GetPlayerTypeByName("David Martinez"),
     DAVID_MARTINEZ_B = Isaac.GetPlayerTypeByName("Tainted David Martinez", true),
+    STELLAR = Isaac.GetPlayerTypeByName("Stellar"),
+    STELLAR_B = Isaac.GetPlayerTypeByName("Tainted Stellar", true),
 }
 
 local LEAH_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_leahb_hair.anm2")
@@ -18,6 +20,8 @@ local WATER_ENCHANTRESS_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/characte
 local WATER_ENCHANTRESS_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_water_enchantressb_hair.anm2")
 local DAVID_MARTINEZ_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinez_hair.anm2")
 local DAVID_MARTINEZ_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinezb_hair.anm2")
+local STELLAR_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_stellar_hair.anm2")
+local STELLAR_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_stellarb_hair.anm2")
 
 ---@param player EntityPlayer
 function AstroItems:IsLeah(player)
@@ -37,6 +41,11 @@ end
 ---@param player EntityPlayer
 function AstroItems:IsDavidMartinez(player)
     return player:GetPlayerType() == AstroItems.Players.DAVID_MARTINEZ or player:GetPlayerType() == AstroItems.Players.DAVID_MARTINEZ_B
+end
+
+---@param player EntityPlayer
+function AstroItems:IsStellar(player)
+    return player:GetPlayerType() == AstroItems.Players.STELLAR or player:GetPlayerType() == AstroItems.Players.STELLAR_B
 end
 
 AstroItems:AddCallback(
@@ -118,6 +127,26 @@ AstroItems:AddCallback(
             if player:GetEffects():HasNullEffect(DAVID_MARTINEZ_B_HAIR) then
                 player:GetEffects():RemoveNullEffect(DAVID_MARTINEZ_B_HAIR)
                 -- hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_SNAKE_EYE)
+            end
+        end
+
+        if player:GetPlayerType() == AstroItems.Players.STELLAR then
+            if not player:GetEffects():HasNullEffect(STELLAR_HAIR) then
+                player:GetEffects():AddNullEffect(STELLAR_HAIR, true)
+            end
+        else
+            if player:GetEffects():HasNullEffect(STELLAR_HAIR) then
+                player:GetEffects():RemoveNullEffect(STELLAR_HAIR)
+            end
+        end
+
+        if player:GetPlayerType() == AstroItems.Players.STELLAR_B then
+            if not player:GetEffects():HasNullEffect(STELLAR_B_HAIR) then
+                player:GetEffects():AddNullEffect(STELLAR_B_HAIR, true)
+            end
+        else
+            if player:GetEffects():HasNullEffect(STELLAR_B_HAIR) then
+                player:GetEffects():RemoveNullEffect(STELLAR_B_HAIR)
             end
         end
     end

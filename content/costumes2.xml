@@ -6,6 +6,8 @@
 	<costume anm2path="character_water_enchantressb_hair.anm2" type="none" priority="99" />
 	<costume anm2path="character_david_martinez_hair.anm2" type="none" priority="99" />
 	<costume anm2path="character_david_martinezb_hair.anm2" type="none" priority="99" />
+	<costume anm2path="character_stellar_hair.anm2" type="none" priority="99" />
+	<costume anm2path="character_stellarb_hair.anm2" type="none" priority="99" />
 	<costume id="1" anm2path="firecrackerrose.anm2" type="passive" hasSkinAlt="false" />
 	<costume id="2" anm2path="technologyomicron.anm2" type="passive" />
 </costumes>
