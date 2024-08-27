@@ -5,6 +5,7 @@ local BOSS_EXTRA_DAMAGE = 0.3
 ---
 
 local isc = require("astro-items.lib.isaacscript-common")
+local hiddenItemManager = require("astro-items.lib.hidden_item_manager")
 
 AstroItems.Collectible.THREE_BODY_PROBLEM = Isaac.GetItemIdByName("3 Body Problem")
 
@@ -124,9 +125,7 @@ AstroItems:AddCallbackCustom(
                 AstroItems:RemoveAllCollectible(player, item)
             end
 
-            player:AddCollectible(CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE)
-            player:AddCollectible(CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE)
-            player:AddCollectible(CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE)
+            hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE, nil, 3)
         end
     end,
     AstroItems.Collectible.THREE_BODY_PROBLEM
