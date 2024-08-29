@@ -1,7 +1,7 @@
 ---
-local SOUND_VOLUME = 1
+local SOUND_VOLUME = 0.7
 
-local BOSS_EXTRA_DAMAGE = 0.3
+local BOSS_EXTRA_DAMAGE = 0.5
 ---
 
 local isc = require("astro-items.lib.isaacscript-common")
@@ -26,6 +26,11 @@ AstroItems:AddCallback(
         activeItmes = {
             CollectibleType.COLLECTIBLE_BOOK_OF_BELIAL,
             CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS,
+            CollectibleType.COLLECTIBLE_ERASER,
+            CollectibleType.COLLECTIBLE_DADS_KEY,
+            CollectibleType.COLLECTIBLE_ANIMA_SOLA,
+            CollectibleType.COLLECTIBLE_TELEKINESIS,
+            CollectibleType.COLLECTIBLE_FORTUNE_COOKIE,
         }
 
         banItems = {
