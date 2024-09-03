@@ -18,11 +18,12 @@ AstroItems:AddCallback(
         if not isContinued and AstroItems.Data.RunVirgo then
             local player = Isaac.GetPlayer()
             local collectibleRNG = player:GetCollectibleRNG(AstroItems.Collectible.VIRGO_EX)
+            local position = Game():GetRoom():GetCenterPos()
 
             if collectibleRNG:RandomFloat() > 0.5 then
-                AstroItems:SpawnTrinket(TrinketType.TRINKET_TELESCOPE_LENS, player.Position)
+                AstroItems:SpawnTrinket(TrinketType.TRINKET_TELESCOPE_LENS, position)
             else
-                AstroItems:SpawnCollectible(CollectibleType.COLLECTIBLE_MAGIC_8_BALL, player.Position)
+                AstroItems:SpawnCollectible(CollectibleType.COLLECTIBLE_MAGIC_8_BALL, position)
             end
 
             AstroItems.Data.RunVirgo = false

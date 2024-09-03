@@ -11,11 +11,10 @@ AstroItems:AddCallback(
     ---@param isContinued boolean
     function(_, isContinued)
         if not isContinued and AstroItems.Data.CasiopeaCount ~= nil and AstroItems.Data.CasiopeaCount > 0 then
-            local player = Isaac.GetPlayer()
             local itemPool = Game():GetItemPool()
 
             for _ = 1, AstroItems.Data.CasiopeaCount do
-                AstroItems:SpawnTrinket(itemPool:GetTrinket() + 32768, player.Position)
+                AstroItems:SpawnTrinket(itemPool:GetTrinket() + 32768, Game():GetRoom():GetCenterPos())
             end
 
             AstroItems.Data.CasiopeaCount = 0
