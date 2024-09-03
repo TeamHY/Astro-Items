@@ -35,7 +35,7 @@ AstroItems:AddCallback(
         if player ~= nil then
             local data = player:GetData()
 
-            if player:HasCollectible(AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE) and entity:IsVulnerableEnemy() and (data["ossSnakeEyeCooldown"] == nil or data["ossSnakeEyeCooldown"] < Game():GetFrameCount() or (data["ossDurationTime"] ~= nil and data["ossDurationTime"] < Game():GetFrameCount())) then
+            if player:HasCollectible(AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE) and entity:IsVulnerableEnemy() and (data["ossSnakeEyeCooldown"] == nil or data["ossSnakeEyeCooldown"] < Game():GetFrameCount() or (data["ossDurationTime"] ~= nil and data["ossDurationTime"] > Game():GetFrameCount())) then
                 if source.Type == EntityType.ENTITY_TEAR or damageFlags & DamageFlag.DAMAGE_LASER == DamageFlag.DAMAGE_LASER or source.Type == EntityType.ENTITY_KNIFE then
                     local rng = player:GetCollectibleRNG(AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE)
                     local baseChance = spawnChance * ComputeMultiplier(player);
