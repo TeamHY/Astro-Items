@@ -1,3 +1,7 @@
+---
+local SOUND_VOLUME = 0.7
+---
+
 local isc = require("astro-items.lib.isaacscript-common")
 
 AstroItems.Collectible.AKASHIC_RECORDS = Isaac.GetItemIdByName("Akashic Records")
@@ -8,14 +12,10 @@ if EID then
         "아카식 레코드",
         "...",
         "맵에 {{Library}}책방의 위치가 표시됩니다."
-        .."#{{Library}}책방 입장 시 모든 방이 밝혀집니다."
-        .."#방 입장 시 10%의 확률로 {{Collectible58}}Book of Shadows, {{Collectible192}}Telepathy For Dummies, {{Collectible34}}The Book of Belial 중 하나가 발동합니다."
-        .."#!!! {{LuckSmall}}행운 수치 비례: 행운 18 이상일 때 100% 확률 ({{LuckSmall}}행운 1당 +5%p)"
-        .."#!!! 처음 획득 시 3개를 획득합니다."
+        .."#{{Library}}책방에 입장 시 {{Card81}}Soul of Isaac, {{Card83}}Soul of Cain을 발동합니다."
+        .."#방 입장 시, 방에서 몬스터 최초 처치 시, 방 클리어 시 무작위로 책이 발동됩니다."
     )
 end
-
-local baseChance = 0.1
 
 local bookItems = {
     CollectibleType.COLLECTIBLE_ANARCHIST_COOKBOOK,
@@ -35,27 +35,65 @@ local bookItems = {
     CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES,
 }
 
+---@param player EntityPlayer
+local function RunEffect(player)
+    local rng = player:GetCollectibleRNG(AstroItems.Collectible.AKASHIC_RECORDS)
+    
+    local item = bookItems[rng:RandomInt(#bookItems) + 1]
+
+    player:AnimateCollectible(AstroItems.Collectible.AKASHIC_RECORDS, "HideItem")
+    player:UseActiveItem(item, false)
+    SFXManager():Play(SoundEffect.SOUND_DIVINE_INTERVENTION, SOUND_VOLUME)
+end
+
+local isFirstKill = true
+
 AstroItems:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    ---@param isContinued boolean
-    function(_, isContinued)
-        if not isContinued and AstroItems.Data.RunAkashicRecords then
-            local player = Isaac.GetPlayer()
-            local rng = player:GetCollectibleRNG(AstroItems.Collectible.AKASHIC_RECORDS)
-            local book = AstroItems:GetRandomCollectibles(bookItems, rng, 1)[1]
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        isFirstKill = true
 
-            AstroItems:SpawnCollectible(book, player.Position)
-
-            AstroItems.Data.RunAkashicRecords = false
+        if not Game():GetRoom():IsClear() then
+            for i = 1, Game():GetNumPlayers() do
+                local player = Isaac.GetPlayer(i - 1)
+    
+                if player:HasCollectible(AstroItems.Collectible.AKASHIC_RECORDS) then
+                    RunEffect(player)
+                    break
+                end
+            end
         end
     end
 )
 
 AstroItems:AddCallback(
-    ModCallbacks.MC_POST_NEW_LEVEL,
-    function()
-        if AstroItems:HasCollectible(AstroItems.Collectible.AKASHIC_RECORDS) then
-            AstroItems:DisplayRoom(RoomType.ROOM_LIBRARY)
+    ModCallbacks.MC_POST_NPC_DEATH,
+    ---@param entityNPC EntityNPC
+    function(_, entityNPC)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            if player:HasCollectible(AstroItems.Collectible.AKASHIC_RECORDS) and isFirstKill and entityNPC.Type ~= EntityType.ENTITY_FIREPLACE then
+                RunEffect(player)
+                isFirstKill = false
+                break
+            end
+        end
+    end
+)
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
+    ---@param rng RNG
+    ---@param spawnPosition Vector
+    function(_, rng, spawnPosition)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            if player:HasCollectible(AstroItems.Collectible.AKASHIC_RECORDS) then
+                RunEffect(player)
+                break
+            end
         end
     end
 )
@@ -63,32 +101,30 @@ AstroItems:AddCallback(
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
-        local room = Game():GetRoom()
+        local level = Game():GetLevel()
+        local currentRoom = level:GetCurrentRoom()
 
-        if room:GetType() == RoomType.ROOM_LIBRARY and AstroItems:HasCollectible(AstroItems.Collectible.AKASHIC_RECORDS) then
-            Isaac.GetPlayer():UseCard(Card.RUNE_ANSUZ, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
-        end
-
-        if not room:IsClear() then
+        if currentRoom:GetFrameCount() <= 0 and currentRoom:IsFirstVisit() and currentRoom:GetType() == RoomType.ROOM_LIBRARY then
             for i = 1, Game():GetNumPlayers() do
                 local player = Isaac.GetPlayer(i - 1)
-    
+            
                 if player:HasCollectible(AstroItems.Collectible.AKASHIC_RECORDS) then
-                    local rng = player:GetCollectibleRNG(AstroItems.Collectible.AKASHIC_RECORDS)
-                    
-                    if rng:RandomFloat() < baseChance + player.Luck / 20 then
-                        local random = rng:RandomInt(3)
-
-                        if random == 0 then
-                            player:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS, false)
-                        elseif random == 1 then
-                            player:UseActiveItem(CollectibleType.COLLECTIBLE_TELEPATHY_BOOK, false)
-                        else
-                            player:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_BELIAL, false)
-                        end
+                    for _ = 1, player:GetCollectibleNum(AstroItems.Collectible.AKASHIC_RECORDS) do
+                        player:UseCard(Card.CARD_SOUL_ISAAC, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
+                        player:UseCard(Card.CARD_SOUL_CAIN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
                     end
                 end
             end
+        end
+    end
+)
+
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_NEW_LEVEL,
+    function(_)
+        if AstroItems:HasCollectible(AstroItems.Collectible.AKASHIC_RECORDS) then
+            AstroItems:DisplayRoom(RoomType.ROOM_LIBRARY)
         end
     end
 )
@@ -98,13 +134,7 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        AstroItems.Data.RunAkashicRecords = true
         AstroItems:DisplayRoom(RoomType.ROOM_LIBRARY)
-
-        if AstroItems:IsFirstAdded(AstroItems.Collectible.AKASHIC_RECORDS) then
-            player:AddCollectible(AstroItems.Collectible.AKASHIC_RECORDS)
-            player:AddCollectible(AstroItems.Collectible.AKASHIC_RECORDS)
-        end
     end,
     AstroItems.Collectible.AKASHIC_RECORDS
 )
