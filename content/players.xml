@@ -8,7 +8,7 @@
         skinColor="-1"
         birthright="What?" />
     <player name="Tainted Leah" bSkinParent="Leah" skin="character_leahb.png" hp="2"
-        black="4" pocketActive="851" items="" keys="1"
+        black="4" pocketActive="851" items="" bombs="2" keys="1"
         nameimage="playername_leah.png"
         portrait="playerportrait_leah.png"
         skinColor="-1"
