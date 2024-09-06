@@ -151,3 +151,16 @@ AstroItems:AddCallback(
         end
     end
 )
+
+AstroItems:AddPriorityCallback(
+    ModCallbacks.MC_EVALUATE_CACHE,
+    CallbackPriority.LATE,
+    ---@param player EntityPlayer
+    ---@param cacheFlag CacheFlag
+    function(_, player, cacheFlag)
+        if player:GetPlayerType() == AstroItems.Players.DIABELLSTAR then
+            player.Damage = player.Damage * 1.5
+        end
+    end,
+    CacheFlag.CACHE_DAMAGE
+)
