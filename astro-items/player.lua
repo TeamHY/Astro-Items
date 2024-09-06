@@ -159,7 +159,7 @@ AstroItems:AddPriorityCallback(
     ---@param cacheFlag CacheFlag
     function(_, player, cacheFlag)
         if player:GetPlayerType() == AstroItems.Players.DIABELLSTAR then
-            player.Damage = player.Damage * 1.5
+            player.Damage = player.Damage * 1.2
         end
     end,
     CacheFlag.CACHE_DAMAGE
