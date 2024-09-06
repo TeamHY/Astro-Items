@@ -1,7 +1,7 @@
 ---
 local SOUND_VOLUME = 0.7
 
-local BOSS_EXTRA_DAMAGE = 0.5
+local BOSS_EXTRA_DAMAGE = 0.25
 ---
 
 local isc = require("astro-items.lib.isaacscript-common")
