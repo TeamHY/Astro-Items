@@ -242,7 +242,7 @@ AstroItems:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        if AstroItems:ContainCollectible(CHUBBY_SET_LIST, collectibleType) and AstroItems:IsFirstAdded(collectibleType) then
+        if AstroItems:Contain(CHUBBY_SET_LIST, collectibleType) and AstroItems:IsFirstAdded(collectibleType) then
             AstroItems.Data.ChubbySet = AstroItems.Data.ChubbySet + 1
 
             if AstroItems.Data.ChubbySet == 3 then

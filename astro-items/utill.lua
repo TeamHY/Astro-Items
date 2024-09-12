@@ -61,9 +61,10 @@ function AstroItems:AddGoldenTrinketDescription(id, appendText, numbersToMultipl
     end
 end
 
----@param list CollectibleType[]
----@param target CollectibleType
-function AstroItems:ContainCollectible(list, target)
+---@generic T
+---@param list T[]
+---@param target T
+function AstroItems:Contain(list, target)
     for _, value in ipairs(list) do
         if value == target then
             return true
@@ -89,7 +90,7 @@ function AstroItems:GetRandomCollectibles(collectibles, rng, count, ignoreCollec
             local isIgnore = value == ignoreCollectible
 
             if type(ignoreCollectible) == "table" then
-                isIgnore = AstroItems:ContainCollectible(ignoreCollectible, value)
+                isIgnore = AstroItems:Contain(ignoreCollectible, value)
             end
 
             if not isIgnore and itemConfig:GetCollectible(value).Tags & ItemConfig.TAG_QUEST ~= ItemConfig.TAG_QUEST then
