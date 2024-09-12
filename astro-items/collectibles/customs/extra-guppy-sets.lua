@@ -1,3 +1,7 @@
+---
+local BLUE_SPEED_MULTIPLIER = 2
+---
+
 AstroItems.Collectible.ABSOLUT_GUPPY = Isaac.GetItemIdByName("Absolut Guppy")
 AstroItems.Collectible.DELIRIUM_GUPPY = Isaac.GetItemIdByName("Delirium Guppy")
 
@@ -51,6 +55,21 @@ AstroItems:AddCallback(
             end
         elseif familiar.Variant == FamiliarVariant.BLUE_FLY and familiar.SubType == ABSOLUT_GUPPY_SUBTYPE then
             familiar.Color = DELIRIUM_FLY_COLOR
+        end
+    end
+)
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_UPDATE,
+    function(_)
+        if AstroItems:HasCollectible(AstroItems.Collectible.DELIRIUM_GUPPY) then
+            for _, entity in ipairs(Isaac.FindByType(EntityType.ENTITY_FAMILIAR)) do
+                if entity.Variant == FamiliarVariant.BLUE_FLY or entity.Variant == FamiliarVariant.BLUE_SPIDER then
+                    for _ = 1, BLUE_SPEED_MULTIPLIER - 1 do
+                        entity:Update()
+                    end
+                end
+            end
         end
     end
 )
