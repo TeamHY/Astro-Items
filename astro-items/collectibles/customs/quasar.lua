@@ -29,7 +29,7 @@ AstroItems:AddCallback(
             if player:HasCollectible(AstroItems.Collectible.QUASAR) and remaining > 0 and entityNPC.Type ~= EntityType.ENTITY_FIREPLACE then
                 Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BLACK_HOLE, 0, entityNPC.Position, Vector.Zero, player)
 
-                remaining = -remaining - 1
+                remaining = remaining - 1
 
                 break
             end

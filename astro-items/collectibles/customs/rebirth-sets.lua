@@ -12,6 +12,7 @@ local REINCARNATION_DAMAGE_MULTIPLIER = 0.5
 local isc = require("astro-items.lib.isaacscript-common")
 
 AstroItems.Collectible.REINCARNATION = Isaac.GetItemIdByName("Reincarnation")
+AstroItems.Collectible.SAMSARA = Isaac.GetItemIdByName("Samsara")
 
 if EID then
     AstroItems:AddEIDCollectible(
@@ -20,7 +21,18 @@ if EID then
         "...",
         "다음 게임 시작 시 부활 아이템 중 하나가 소환됩니다."
     )
+
+    AstroItems:AddEIDCollectible(
+        AstroItems.Collectible.SAMSARA,
+        "삼사라",
+        "...",
+        "적 처치 시 {{Collectible522}}Telekinesis가 발동합니다. 방마다 한 번씩 발동합니다." ..
+        "#중첩 시 여러 번 발동할 수 있습니다." ..
+        "#Astrobirth 모드의 NextBan 시스템이 무효화됩니다."
+    )
 end
+
+--#region Reincarnation
 
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
@@ -80,3 +92,38 @@ AstroItems:AddCallback(
         end
     end
 )
+
+--#endregion
+
+--#region Samsara
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            local data = player:GetData()
+
+            data["samsaraRemaining"] = (data["samsaraRemaining"] or 0) + player:GetCollectibleNum(AstroItems.Collectible.SAMSARA)
+        end
+    end
+)
+
+AstroItems:AddCallback(
+    ModCallbacks.MC_POST_NPC_DEATH,
+    ---@param entityNPC EntityNPC
+    function(_, entityNPC)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            local data = player:GetData()
+
+            if player:HasCollectible(AstroItems.Collectible.SAMSARA) and data["samsaraRemaining"] and data["samsaraRemaining"] > 0 and entityNPC.Type ~= EntityType.ENTITY_FIREPLACE then
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_TELEKINESIS)
+
+                data["samsaraRemaining"] = data["samsaraRemaining"] - 1
+            end
+        end
+    end
+)
+
+--#endregion
