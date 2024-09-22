@@ -22,6 +22,9 @@ local MATRYOSHKA_LUCK = 0.5
 
 -- 미니 상자가 등장할 확률 (0 ~ 1)
 local MATRYOSHKA_CHEST_CHANCE = 0.5
+
+-- 효과음 볼륨
+local MATRYOSHKA_SOUND_VOLUME = 1.0
 ---
 
 local isc = require("astro-items.lib.isaacscript-common")
@@ -29,6 +32,8 @@ local isc = require("astro-items.lib.isaacscript-common")
 AstroItems.Collectible.REINCARNATION = Isaac.GetItemIdByName("Reincarnation")
 AstroItems.Collectible.MATRYOSHKA = Isaac.GetItemIdByName("Matryoshka")
 AstroItems.Collectible.SAMSARA = Isaac.GetItemIdByName("Samsara")
+
+local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
 if EID then
     AstroItems:AddEIDCollectible(
@@ -200,6 +205,8 @@ AstroItems:AddCallback(
                                 local chest = Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_CHEST, 1, pickup.Position, Vector(0, 0), nil)
                                 chest.SpriteScale = chest.SpriteScale * 0.75 -- TODO: 점점 더 작아지게
                             end
+
+                            SFXManager():Play(chubbyUpSound, MATRYOSHKA_SOUND_VOLUME)
 
                             isRun = true
                         end
