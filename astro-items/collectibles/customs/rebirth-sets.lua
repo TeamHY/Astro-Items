@@ -272,7 +272,7 @@ AstroItems:AddCallback(
             local data = player:GetData()
 
             if player:HasCollectible(AstroItems.Collectible.SAMSARA) and data["samsaraRemaining"] and data["samsaraRemaining"] > 0 and entityNPC.Type ~= EntityType.ENTITY_FIREPLACE then
-                player:UseActiveItem(CollectibleType.COLLECTIBLE_TELEKINESIS)
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_TELEKINESIS, false)
 
                 data["samsaraRemaining"] = data["samsaraRemaining"] - 1
             end
