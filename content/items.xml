@@ -9,7 +9,7 @@
 	<passive gfx="Aries.png" quality="4" devilprice="2" shopprice="30" name="Aries EX" />
 	<passive cache="firedelay speed" gfx="Taurus.png" quality="2" devilprice="2" shopprice="15" name="Taurus EX" />
 	<passive gfx="Aquarius.png" quality="3" devilprice="2" shopprice="30" name="Aquarius EX" />
-	<passive gfx="Casiopea.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Casiopea" />
+	<passive gfx="Casiopea.png" quality="3" devilprice="2" shopprice="15" tags="noeden" name="Casiopea" />
 	<passive gfx="Corvus.png" quality="3" devilprice="1" shopprice="20" tags="noeden" name="Corvus" />
 	<passive gfx="Pavo.png" quality="4" devilprice="2" shopprice="30" name="Pavo" />
 	<passive gfx="Comet.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Comet" />
@@ -28,7 +28,7 @@
 	<passive gfx="Solar System.png" quality="4" devilprice="1" name="Solar System" />
 	<passive gfx="Ptolemaeus.png" quality="4" devilprice="2" shopprice="40" name="Ptolemaeus" />
 	<passive cache="firedelay" gfx="Angry Onion.png" quality="3" devilprice="2" name="Angry Onion" />
-	<active gfx="Deep Of Abyss.png" quality="3" devilprice="1" maxcharges="8" name="Oblivion" />
+	<active gfx="Deep Of Abyss.png" quality="2" devilprice="1" maxcharges="8" name="Oblivion" />
 	<passive gfx="collectibles_668_dadsnote.png" quality="0" devilprice="2" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Go Home!" />
 	<passive gfx="Fallen Orb.png" quality="4" devilprice="2" shopprice="20" name="Fallen Orb" />
 	<passive gfx="Trinity.png" quality="3" devilprice="1" name="Trinity" />
@@ -40,7 +40,7 @@
 	<active gfx="Laniakea Supercluster.png" quality="4" devilprice="2" initcharge="0" maxcharges="6" name="Laniakea Supercluster" />
 	<passive gfx="Cleaner.png" quality="0" devilprice="1" tags="noeden" name="Cleaner" />
 	<passive cache="damage luck" gfx="Clover.png" quality="3" devilprice="2" name="Clover" />
-	<passive gfx="Galactic Medal Of Valor.png" quality="4" devilprice="2" name="Galactic Medal Of Valor" />
+	<passive gfx="Galactic Medal Of Valor.png" quality="3" devilprice="2" name="Galactic Medal Of Valor" />
 	<passive gfx="Pirate Map.png" quality="2" devilprice="1" name="Pirate Map" />
 	<passive tags="syringe" gfx="Morphine.png" quality="2" devilprice="1" shopprice="5" name="Morphine" />
 	<passive gfx="Quasar.png" quality="4" devilprice="2" name="Quasar" />
@@ -96,7 +96,7 @@
 	<passive tags="baby" gfx="Absolut Conjoined.png" quality="2" devilprice="1" shopprice="15" name="Absolut Conjoined" />
 	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" />
 	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" />
-	<passive gfx="Bunny Hop.png" quality="2" devilprice="2" shopprice="10" name="Bunny Hop" />
+	<passive gfx="Bunny Hop.png" quality="2" devilprice="1" shopprice="8" name="Bunny Hop" />
 	<active gfx="Mirror Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="25" name="Mirror Dice" />
 	<active tags="damage" gfx="Black Cube.png" quality="3" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" />
 	<active tags="damage" gfx="Red Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Red Cube" />
@@ -106,24 +106,24 @@
 	<passive gfx="Blue Mind.png" quality="4" devilprice="2" shopprice="15" name="Blue Mind" />
 	<passive gfx="Lucky Mind.png" quality="3" devilprice="2" shopprice="15" name="Lucky Mind" />
 	<active gfx="Quantum Mind.png" quality="4" devilprice="2" maxcharges="12"  shopprice="20" name="Quantum Mind" />
-	<passive gfx="SOL EX.png" quality="4" devilprice="2" shopprice="15" name="SOL EX" />
-	<passive gfx="LUNA EX.png" quality="4" devilprice="2" shopprice="15" name="LUNA EX" />
-	<passive gfx="MERCURIUS EX.png" quality="4" devilprice="2" shopprice="15" name="MERCURIUS EX" />
-	<passive gfx="VENUS EX.png" quality="4" devilprice="2" shopprice="15" name="VENUS EX" />
-	<passive tags="damage" gfx="TERRA EX.png" quality="4" devilprice="2" shopprice="15" name="TERRA EX" />
-	<passive gfx="MARS EX.png" quality="4" devilprice="2" shopprice="15" name="MARS EX" />
-	<passive gfx="JUPITER EX.png" quality="4" devilprice="2" shopprice="15" name="JUPITER EX" />
-	<passive gfx="SATURNUS EX.png" quality="4" devilprice="2" shopprice="15" name="SATURNUS EX" />
-	<passive gfx="URANUS EX.png" quality="4" devilprice="2" shopprice="15" name="URANUS EX" />
-	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="4" devilprice="2" shopprice="15" name="NEPTUNUS EX" />
-	<passive tags="tearflag" gfx="PLUTO EX.png" quality="4" devilprice="2" shopprice="15" name="PLUTO EX" />
+	<passive gfx="SOL EX.png" quality="4" devilprice="2" shopprice="30" name="SOL EX" />
+	<passive gfx="LUNA EX.png" quality="4" devilprice="2" shopprice="30" name="LUNA EX" />
+	<passive gfx="MERCURIUS EX.png" quality="4" devilprice="2" shopprice="30" name="MERCURIUS EX" />
+	<passive gfx="VENUS EX.png" quality="4" devilprice="2" shopprice="30" name="VENUS EX" />
+	<passive tags="damage" gfx="TERRA EX.png" quality="4" devilprice="2" shopprice="30" name="TERRA EX" />
+	<passive gfx="MARS EX.png" quality="4" devilprice="2" shopprice="30" name="MARS EX" />
+	<passive gfx="JUPITER EX.png" quality="4" devilprice="2" shopprice="30" name="JUPITER EX" />
+	<passive gfx="SATURNUS EX.png" quality="4" devilprice="2" shopprice="30" name="SATURNUS EX" />
+	<passive gfx="URANUS EX.png" quality="4" devilprice="2" shopprice="30" name="URANUS EX" />
+	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="4" devilprice="2" shopprice="30" name="NEPTUNUS EX" />
+	<passive tags="tearflag" gfx="PLUTO EX.png" quality="4" devilprice="2" shopprice="30" name="PLUTO EX" />
 	<active tags="luck" gfx="Pure Love.png" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" />
 	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="15" name="Restock Dice" />
 	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Sacred Dice" />
 	<active gfx="Forbidden Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Forbidden Dice" />
 	<active gfx="Dad's Box.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Dad's Box" />
-	<passive tags="damage firedelay speed luck" gfx="Matryoshka.png" quality="1" devilprice="2" shopprice="15" name="Matryoshka" />
-	<passive gfx="Samsara.png" quality="1" devilprice="2" shopprice="15" name="Samsara" />
+	<passive tags="damage firedelay speed luck" gfx="Matryoshka.png" quality="3" devilprice="2" shopprice="30" name="Matryoshka" />
+	<passive gfx="Samsara.png" quality="3" devilprice="2" shopprice="30" name="Samsara" />
 
 
 
