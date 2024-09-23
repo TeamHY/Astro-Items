@@ -9,8 +9,7 @@ if EID then
         "초 천왕성",
         "...",
         "{{Collectible596}}Uranus 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#{{Collectible530}}Death's List 효과가 적용됩니다." ..
-        "#{{Collectible" .. AstroItems.Collectible.LEO_EX .. "}}Leo EX 효과가 적용됩니다."
+        "#{{Collectible530}}Death's List 효과가 적용됩니다."
     )
 end
 
@@ -25,7 +24,6 @@ AstroItems:AddCallbackCustom(
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_URANUS) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_URANUS)
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_DEATHS_LIST)
-            hiddenItemManager:Add(player, AstroItems.Collectible.LEO_EX)
         end
     end,
     AstroItems.Collectible.URANUS_EX
@@ -39,7 +37,6 @@ AstroItems:AddCallbackCustom(
 --         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_URANUS) then
 --             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_URANUS)
 --             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_DEATHS_LIST)
---             hiddenItemManager:Remove(player, AstroItems.Collectible.LEO_EX)
 --         end
 --     end,
 --     AstroItems.Collectible.URANUS_EX
