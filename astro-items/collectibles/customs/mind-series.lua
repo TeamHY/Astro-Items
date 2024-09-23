@@ -4,11 +4,11 @@ local DELAY_FRAME = 30
 
 local DAMAGE_INCREMENT = 0.005
 
-local SPEED_INCREMENT = 0.0025
+local SPEED_INCREMENT = 0.00075
 
 local TEARS_INCREMENT = 0.0015
 
-local LUCK_INCREMENT = 0.0075
+local LUCK_INCREMENT = 0.0085
 
 ---
 
@@ -38,7 +38,7 @@ if EID then
         AstroItems.Collectible.SWIFT_MIND,
         "신속한 정신",
         "...",
-        "1초 마다 이동 속도가 0.0025 증가합니다. 시작 방에서는 증가하지 않습니다." ..
+        "1초 마다 이동 속도가 0.00075 증가합니다. 시작 방에서는 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -54,7 +54,7 @@ if EID then
         AstroItems.Collectible.LUCKY_MIND,
         "행운의 정신",
         "...",
-        "1초 마다 행운이 0.0075 증가합니다. 시작 방에서는 증가하지 않습니다." ..
+        "1초 마다 행운이 0.0085 증가합니다. 시작 방에서는 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
