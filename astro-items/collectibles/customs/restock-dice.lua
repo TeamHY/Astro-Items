@@ -4,8 +4,8 @@ if EID then
     AstroItems:AddEIDCollectible(
         AstroItems.Collectible.RESTOCK_DICE,
         "리스톡 주사위",
-        "사용 시 빈 아이템 테이블에 현재 방 배열 아이템을 소환합니다.",
-        ""
+        "...",
+        "사용 시 빈 아이템 테이블에 현재 방 배열 아이템을 소환합니다."
     )
 end
 

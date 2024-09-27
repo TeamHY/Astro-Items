@@ -123,7 +123,10 @@
 	<active gfx="Forbidden Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Forbidden Dice" />
 	<active gfx="Dad's Box.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Dad's Box" />
 	<passive tags="damage firedelay speed luck" gfx="Matryoshka.png" quality="3" devilprice="2" shopprice="30" name="Matryoshka" />
-	<passive gfx="Samsara.png" quality="3" devilprice="2" shopprice="30" name="Samsara" />
+	<passive tags="damage firedelay speed luck" gfx="Samsara.png" quality="3" devilprice="2" shopprice="30" name="Samsara" />
+	<passive tags="firedelay" gfx="Blue Stew.png" quality="2" devilprice="2" shopprice="15" name="Blue Stew" />
+	<passive tags="luck" gfx="Green Stew.png" quality="2" devilprice="2" shopprice="15" name="Green Stew" />
+	<passive tags="speed" gfx="Brown Stew.png" quality="2" devilprice="2" shopprice="15" name="Brown Stew" />
 
 
 
