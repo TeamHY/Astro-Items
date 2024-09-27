@@ -21,7 +21,10 @@ local MATRYOSHKA_SPEED = 0.5
 local MATRYOSHKA_LUCK = 0.5
 
 -- 미니 상자가 등장할 확률 (0 ~ 1)
-local MATRYOSHKA_CHEST_CHANCE = 0.5
+local MATRYOSHKA_CHANCE = 0.5
+
+-- 처비의 꼬리 소지 시 미니 상자가 등장할 확률 (0 ~ 1)
+local MATRYOSHKA_WITH_CHUBBYS_TAIL_CHANCE = 0.3
 
 -- 효과음 볼륨
 local MATRYOSHKA_SOUND_VOLUME = 1.0
@@ -50,7 +53,7 @@ if EID then
         "...",
         "상자를 열 때마다 공격력, 연사, 이동 속도, 행운 중 한 가지의 스텟이 0.5(고정) 증가됩니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다." ..
-        "#갈색 상자를 열 때 50% 확률로 미니 상자가 소환됩니다." ..
+        "#갈색 상자를 열 때 50% 확률로 미니 상자가 소환됩니다. {{Collectible" .. AstroItems.Collectible.CHUBBYS_TAIL .. "}}Chubby's Tail 소지 시 30% 확률로 소환됩니다." ..
         "#{{ColorRed}}BUG: 상자에서 패시브, 액티브 아이템이 등장할 경우 스탯이 증가하지 않습니다."
     )
 
@@ -201,9 +204,13 @@ AstroItems:AddCallback(
                                 AstroItems.Data.Matryoshka.Luck = AstroItems.Data.Matryoshka.Luck + MATRYOSHKA_LUCK * matryoshkaNum
                             end
 
-                            if pickup.Variant == PickupVariant.PICKUP_CHEST and rng:RandomFloat() < MATRYOSHKA_CHEST_CHANCE then
-                                local chest = Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_CHEST, 1, pickup.Position, Vector(0, 0), nil)
-                                chest.SpriteScale = chest.SpriteScale * 0.75 -- TODO: 점점 더 작아지게
+                            if pickup.Variant == PickupVariant.PICKUP_CHEST then 
+                                local spawnChance = AstroItems:HasCollectible(AstroItems.Collectible.CHUBBYS_TAIL) and MATRYOSHKA_WITH_CHUBBYS_TAIL_CHANCE or MATRYOSHKA_CHANCE
+
+                                if rng:RandomFloat() < spawnChance then
+                                    local chest = Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_CHEST, 1, pickup.Position, Vector(0, 0), nil)
+                                    chest.SpriteScale = chest.SpriteScale * 0.75 -- TODO: 점점 더 작아지게
+                                end
                             end
 
                             SFXManager():Play(chubbyUpSound, MATRYOSHKA_SOUND_VOLUME)
