@@ -12,7 +12,7 @@ AstroItems.Collectible.VENUS_EX = Isaac.GetItemIdByName("VENUS EX")
 if EID then
     AstroItems:AddEIDCollectible(
         AstroItems.Collectible.VENUS_EX,
-        "초 화성",
+        "초 금성",
         "...",
         "{{Collectible591}}Venus 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
         "#매혹 상태 적에게 50% 추가 피해를 입힙니다. 중첩 시 추가 피해가 합연산으로 증가합니다."
