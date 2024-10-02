@@ -5,13 +5,13 @@ local LASER_DURATION = 60
 local LASER_DAMAGE = 3.5
 
 -- 90도 마다 레이저가 생성됩니다. (360도 / 90도 = 4개)
-local LASER_ANGLE_STEP = 90
+local LASER_ANGLE_STEP = 30
 
-local SPAWN_CHANCE = 0.1
+local SPAWN_CHANCE = 0.1 -- 기본 발동 확률
 
-local LUCK_MULTIPLY = 1 / 100
+local LUCK_MULTIPLY = 3 / 100 -- 행운 1당 +1%p
 
-local COOLDOWN_TIME = 90 -- 30 프레임 = 1초
+local COOLDOWN_TIME = 90 -- 30 프레임 = 1초 (쿨타임)
 
 ---
 
@@ -21,10 +21,10 @@ if EID then
     AstroItems:AddEIDCollectible(
         AstroItems.Collectible.SUPER_NOVA,
         "초신성",
-        "...",
+        "광활한 별들의 폭발",
         "공격 시 10%의 확률로 십자 모양 광선을 소환합니다. 3초의 쿨타임이 존재합니다." ..
         "#중첩 시 기본 확률이 합 연산으로 증가하고 쿨타임이 줄어듭니다." ..
-        "#!!! {{LuckSmall}}행운 수치 비례: 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
+        "#!!! {{LuckSmall}}행운 수치 비례: 행운 30 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 end
 
