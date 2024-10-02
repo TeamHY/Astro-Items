@@ -902,7 +902,7 @@
 		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Fallen Orb" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Fallen Orb" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -965,7 +965,7 @@
 		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Fallen Orb" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Fallen Orb" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1028,7 +1028,7 @@
 		<Item Name="Dunnell, the Noble Arms of Light" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Starlit Papillon" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Fallen Orb" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Fallen Orb" Weight="0.25" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
