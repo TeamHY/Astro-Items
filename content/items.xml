@@ -127,6 +127,7 @@
 	<passive tags="firedelay" gfx="Blue Stew.png" quality="2" devilprice="2" shopprice="15" name="Blue Stew" />
 	<passive tags="luck" gfx="Green Stew.png" quality="2" devilprice="2" shopprice="15" name="Green Stew" />
 	<passive tags="speed" gfx="Brown Stew.png" quality="2" devilprice="2" shopprice="15" name="Brown Stew" />
+	<passive gfx="Dracoback, the Rideable Dragon.png" quality="2" devilprice="2" shopprice="15" name="Dracoback, the Rideable Dragon" />
 
 
 

@@ -458,3 +458,19 @@ function AstroItems:IsLatterStage()
 
     return false
 end
+
+---@generic T
+---@param list table<integer, T>
+---@param predicate fun(item: T): boolean
+---@return table<integer, T>
+function AstroItems:Filter(list, predicate)
+    local result = {}
+
+    for _, value in ipairs(list) do
+        if predicate(value) then
+            table.insert(result, value)
+        end
+    end
+
+    return result
+end
