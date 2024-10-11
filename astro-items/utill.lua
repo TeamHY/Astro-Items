@@ -438,7 +438,7 @@ end
 
 ---@param worldPosition Vector
 ---@return Vector
-function AstroItems: ToScreen(worldPosition)
+function AstroItems:ToScreen(worldPosition)
     local room = Game():GetRoom()
 
     if room:IsMirrorWorld() then

@@ -1,4 +1,8 @@
 <entities anm2root="gfx/" version="5">
     <entity name="Super Nova" anm2path="super_nova_effect.anm2" id="1000" variant="3100" collisionMass="1" friction="1">
     </entity>
+    <entity name="Effect Star" anm2path="effect_star.anm2" id="1000" variant="3101" collisionMass="1" friction="1">
+    </entity>
+    <entity name="Effect Dust" anm2path="effect_dust.anm2" id="1000" variant="3102" collisionMass="1" friction="1">
+    </entity>
 </entities>
