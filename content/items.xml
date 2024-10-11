@@ -128,6 +128,7 @@
 	<passive tags="luck" gfx="Green Stew.png" quality="2" devilprice="2" shopprice="15" name="Green Stew" />
 	<passive tags="speed" gfx="Brown Stew.png" quality="2" devilprice="2" shopprice="15" name="Brown Stew" />
 	<passive gfx="Dracoback, the Rideable Dragon.png" quality="2" devilprice="2" shopprice="15" name="Dracoback, the Rideable Dragon" />
+	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="4" devilprice="2" shopprice="40" name="Amazing Chaos Scroll of Goodness" tags="offensive summonable tearsup" />
 
 
 
