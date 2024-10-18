@@ -414,7 +414,6 @@
 		<Item Name="Pisces EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Gemini EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Prometheus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Platinum Bullet" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Ptolemaeus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Altair" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -429,7 +428,6 @@
 		<Item Name="Chaos Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sagittarius EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Ward" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Head" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sleeping Puppy" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Tail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -475,7 +473,6 @@
 		<Item Name="Pisces EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Gemini EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Prometheus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Platinum Bullet" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Ptolemaeus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Altair" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -490,7 +487,6 @@
 		<Item Name="Chaos Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sagittarius EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Ward" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Head" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sleeping Puppy" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Tail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
