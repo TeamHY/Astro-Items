@@ -838,7 +838,6 @@
 
 		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -902,7 +901,6 @@
 
 		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -965,7 +963,6 @@
 
 		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1028,7 +1025,6 @@
 
 		<Item Name="Blood Trail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="My Moon My Man" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="3 Body Problem" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Absolut Conjoined" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Spinup Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bonfire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1069,7 +1065,6 @@
 		<Item Name="Chubby's Tail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedBoss">
 
