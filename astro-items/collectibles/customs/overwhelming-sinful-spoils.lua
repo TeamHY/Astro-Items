@@ -1,5 +1,5 @@
 ---
-local DURATION = 3 * 30
+local DURATION = 4 * 30
 ---
 
 AstroItems.Collectible.OVERWHELMING_SINFUL_SPOILS = Isaac.GetItemIdByName("Overwhelming Sinful Spoils")
@@ -17,9 +17,9 @@ AstroItems:AddCallback(
             "폭주하는 죄보",
             "...",
             "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 여러 유령을 소환합니다." ..
-            "#최대 5개까지 저장할 수 있습니다." ..
-            "#디아벨스타, 디아벨제의 경우 50개까지 저장할 수 있습니다." ..
-            "#사용 시 {{Collectible" .. AstroItems.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}Sinful Spoils of Subversion - Snake Eye, {{Collectible" .. AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}Original Sinful Spoils - Snake Eye의 쿨타임을 3초간 무시합니다."
+            "#최대 2개까지 저장할 수 있습니다." ..
+            "#디아벨스타, 디아벨제의 경우 5개까지 저장할 수 있습니다." ..
+            "#사용 시 {{Collectible" .. AstroItems.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}Sinful Spoils of Subversion - Snake Eye, {{Collectible" .. AstroItems.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}Original Sinful Spoils - Snake Eye의 소환 쿨타임을 4초간 무시합니다."
         )
         end
 
@@ -121,12 +121,12 @@ AstroItems:AddCallback(
                 AstroItems.Data.OverwhelmingSinfulSpoils.Souls = AstroItems.Data.OverwhelmingSinfulSpoils.Souls + 1
 
                 if AstroItems:IsDiabellstar(player) then
-                    if AstroItems.Data.OverwhelmingSinfulSpoils.Souls > 50 then
-                        AstroItems.Data.OverwhelmingSinfulSpoils.Souls = 50
-                    end
-                else
                     if AstroItems.Data.OverwhelmingSinfulSpoils.Souls > 5 then
                         AstroItems.Data.OverwhelmingSinfulSpoils.Souls = 5
+                    end
+                else
+                    if AstroItems.Data.OverwhelmingSinfulSpoils.Souls > 2 then
+                        AstroItems.Data.OverwhelmingSinfulSpoils.Souls = 2
                     end
                 end
 
