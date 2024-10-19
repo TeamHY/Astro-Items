@@ -10,7 +10,7 @@ if EID then
     AstroItems:AddEIDCollectible(
         AstroItems.Collectible.AKASHIC_RECORDS,
         "아카식 레코드",
-        "...",
+        "초차원적 정보의 집합체",
         "맵에 {{Library}}책방의 위치가 표시됩니다."
         .."#{{Library}}책방에 입장 시 {{Card81}}Soul of Isaac, {{Card83}}Soul of Cain을 발동합니다."
         .."#방 입장 시, 방에서 몬스터 최초 처치 시, 방 클리어 시 무작위로 책이 발동됩니다."
@@ -22,7 +22,6 @@ local bookItems = {
     CollectibleType.COLLECTIBLE_BOOK_OF_REVELATIONS,
     CollectibleType.COLLECTIBLE_BOOK_OF_SECRETS,
     CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS,
-    CollectibleType.COLLECTIBLE_HOW_TO_JUMP,
     CollectibleType.COLLECTIBLE_MONSTER_MANUAL,
     CollectibleType.COLLECTIBLE_SATANIC_BIBLE,
     CollectibleType.COLLECTIBLE_TELEPATHY_BOOK,
@@ -31,7 +30,6 @@ local bookItems = {
     CollectibleType.COLLECTIBLE_BOOK_OF_SIN,
     CollectibleType.COLLECTIBLE_NECRONOMICON,
     CollectibleType.COLLECTIBLE_BOOK_OF_THE_DEAD,
-    CollectibleType.COLLECTIBLE_LEMEGETON,
     CollectibleType.COLLECTIBLE_BOOK_OF_VIRTUES,
 }
 
