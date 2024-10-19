@@ -857,6 +857,8 @@
 		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Akashic Records" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -920,6 +922,7 @@
 		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Akashic Records" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1044,6 +1047,7 @@
 		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Akashic Records" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
