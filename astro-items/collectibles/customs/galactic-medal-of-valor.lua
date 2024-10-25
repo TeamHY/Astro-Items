@@ -1,7 +1,7 @@
 ---
 
 -- 30% 추가 피해
-local extraDamageMultiplier = 0.3
+local EXTRA_DAMAGE_MULTIPLIER = 0.3
 
 ---
 
@@ -23,7 +23,7 @@ AstroItems:AddCallback(
 
         if player ~= nil and player:HasCollectible(AstroItems.Collectible.GALACTIC_MEDAL_OF_VALOR) then
             if entity:IsBoss() and (source.Type == EntityType.ENTITY_TEAR or damageFlags & DamageFlag.DAMAGE_LASER == DamageFlag.DAMAGE_LASER or source.Type == EntityType.ENTITY_KNIFE) then
-                entity:TakeDamage(amount * extraDamageMultiplier * player:GetCollectibleNum(AstroItems.Collectible.GALACTIC_MEDAL_OF_VALOR), 0, EntityRef(player), 0)
+                entity:TakeDamage(amount * EXTRA_DAMAGE_MULTIPLIER * player:GetCollectibleNum(AstroItems.Collectible.GALACTIC_MEDAL_OF_VALOR), 0, EntityRef(player), 0)
             end
         end
     end

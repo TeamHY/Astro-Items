@@ -1,7 +1,7 @@
 ---
 
 -- 20% 추가 피해
-local extraDamageMultiplier = 0.2
+local EXTRA_DAMAGE_MULTIPLIER = 0.2
 
 ---
 
@@ -30,7 +30,7 @@ AstroItems:AddCallback(
 
         if player ~= nil and player:HasCollectible(AstroItems.Collectible.SAGITTARIUS_EX) then
             if (not entity:IsBoss()) and entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE and (source.Type == EntityType.ENTITY_TEAR or damageFlags & DamageFlag.DAMAGE_LASER == DamageFlag.DAMAGE_LASER or source.Type == EntityType.ENTITY_KNIFE) then
-                entity:TakeDamage(amount * (extraDamageMultiplier + player.Luck / 100) * player:GetCollectibleNum(AstroItems.Collectible.SAGITTARIUS_EX), 0, EntityRef(player), 0)
+                entity:TakeDamage(amount * (EXTRA_DAMAGE_MULTIPLIER + player.Luck / 100) * player:GetCollectibleNum(AstroItems.Collectible.SAGITTARIUS_EX), 0, EntityRef(player), 0)
             end
         end
     end
