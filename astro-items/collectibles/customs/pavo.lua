@@ -16,7 +16,7 @@ AstroItems:AddCallback(
                     if entity.Type == EntityType.ENTITY_MEGA_SATAN then
                         entity:TakeDamage(entity.HitPoints * 0.1, DamageFlag.DAMAGE_IGNORE_ARMOR, EntityRef(player), 0)
                     else
-                        entity:TakeDamage(entity.HitPoints * 0.2 ^ AstroItems:GetCollectibleNum(AstroItems.Collectible.PAVO), DamageFlag.DAMAGE_IGNORE_ARMOR, EntityRef(player), 0)
+                        entity:TakeDamage(entity.HitPoints * (1 - (0.8 ^ AstroItems:GetCollectibleNum(AstroItems.Collectible.PAVO))), DamageFlag.DAMAGE_IGNORE_ARMOR, EntityRef(player), 0)
                     end
                 end
 

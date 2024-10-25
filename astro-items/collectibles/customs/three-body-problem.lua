@@ -114,7 +114,7 @@ AstroItems:AddCallback(
 
         if player ~= nil and player:HasCollectible(AstroItems.Collectible.THREE_BODY_PROBLEM) then
             if entity:IsBoss() and (source.Type == EntityType.ENTITY_TEAR or damageFlags & DamageFlag.DAMAGE_LASER == DamageFlag.DAMAGE_LASER or source.Type == EntityType.ENTITY_KNIFE) then
-                entity:TakeDamage(amount * BOSS_EXTRA_DAMAGE ^ player:GetCollectibleNum(AstroItems.Collectible.THREE_BODY_PROBLEM), 0, EntityRef(player), 0)
+                entity:TakeDamage(amount * BOSS_EXTRA_DAMAGE * player:GetCollectibleNum(AstroItems.Collectible.THREE_BODY_PROBLEM), 0, EntityRef(player), 0)
             end
         end
     end
