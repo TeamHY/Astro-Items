@@ -300,9 +300,7 @@ function AstroItems:GetCollectibleNum(collectible)
     for i = 1, Game():GetNumPlayers() do
         local player = Isaac.GetPlayer(i - 1)
 
-        if player:HasCollectible(collectible) then
-            count = count + 1
-        end
+        count = count + player:GetCollectibleNum(collectible)
     end
 
     return count
