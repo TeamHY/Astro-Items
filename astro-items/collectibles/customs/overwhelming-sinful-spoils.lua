@@ -40,6 +40,9 @@ AstroItems:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
+        local playerData = playerWhoUsedItem:GetData()
+        playerData["ossDurationTime"] = Game():GetFrameCount() + DURATION
+
         if AstroItems.Data.OverwhelmingSinfulSpoils.Souls > 0 then
             for _ = 1, AstroItems.Data.OverwhelmingSinfulSpoils.Souls do
                 local rng = playerWhoUsedItem:GetCollectibleRNG(AstroItems.Collectible.OVERWHELMING_SINFUL_SPOILS)
@@ -75,9 +78,6 @@ AstroItems:AddCallback(
 
             return true
         end
-
-        local playerData = playerWhoUsedItem:GetData()
-        playerData["ossDurationTime"] = Game():GetFrameCount() + DURATION
     end,
     AstroItems.Collectible.OVERWHELMING_SINFUL_SPOILS
 )
