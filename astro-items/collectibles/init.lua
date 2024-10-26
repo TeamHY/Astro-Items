@@ -35,6 +35,7 @@ require "astro-items.collectibles.customs.chubby-sets"
 require "astro-items.collectibles.customs.cleaner"
 require "astro-items.collectibles.customs.clover"
 require "astro-items.collectibles.customs.comet"
+table.insert(items, require "astro-items.collectibles.customs.copernicus")
 require "astro-items.collectibles.customs.corvus"
 require "astro-items.collectibles.customs.curse-of-aramatir"
 require "astro-items.collectibles.customs.cursed-heart"

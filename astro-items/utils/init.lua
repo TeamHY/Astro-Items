@@ -1,3 +1,7 @@
+require "astro-items.utils.knife-util"
+
+AstroItems.TearModifier = require "astro-items.utils.tear-modifier"
+
 --- From isaacscript-common
 ---
 --- Helper function to get the player from a tear, laser, bomb, etc. Returns undefined if the entity
