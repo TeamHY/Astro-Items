@@ -1,4 +1,6 @@
 require "astro-items.entities.soul"
+require "astro-items.entities.star"
+require "astro-items.entities.dust"
 
 AstroItems:AddCallback(
 	ModCallbacks.MC_POST_EFFECT_UPDATE,

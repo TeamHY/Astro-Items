@@ -1,6 +1,6 @@
 ---
 
-local waterEnchantressMultiplier = 1.1
+local WATER_ENCHANTRESS_MULTIPLIER = 1.1
 
 ---
 
@@ -69,27 +69,27 @@ AstroItems:AddPriorityCallback(
         if not AstroItems:IsWaterEnchantress(player) then return end
 
         if cacheFlag == CacheFlag.CACHE_FIREDELAY then
-            player.MaxFireDelay = ((player.MaxFireDelay + 1) / waterEnchantressMultiplier) - 1
+            player.MaxFireDelay = ((player.MaxFireDelay + 1) / WATER_ENCHANTRESS_MULTIPLIER) - 1
         end
 
         if cacheFlag == CacheFlag.CACHE_DAMAGE then
-            player.Damage = player.Damage * waterEnchantressMultiplier
+            player.Damage = player.Damage * WATER_ENCHANTRESS_MULTIPLIER
         end
 
         if cacheFlag == CacheFlag.CACHE_SPEED then
-            player.MoveSpeed = player.MoveSpeed * waterEnchantressMultiplier
+            player.MoveSpeed = player.MoveSpeed * WATER_ENCHANTRESS_MULTIPLIER
         end
 
         if cacheFlag == CacheFlag.CACHE_LUCK and player.Luck > 0 then
-            player.Luck = player.Luck * waterEnchantressMultiplier
+            player.Luck = player.Luck * WATER_ENCHANTRESS_MULTIPLIER
         end
 
         if cacheFlag == CacheFlag.CACHE_RANGE then
-            player.TearRange = player.TearRange * waterEnchantressMultiplier
+            player.TearRange = player.TearRange * WATER_ENCHANTRESS_MULTIPLIER
         end
 
         if cacheFlag == CacheFlag.CACHE_SHOTSPEED then
-            player.ShotSpeed = player.ShotSpeed * waterEnchantressMultiplier
+            player.ShotSpeed = player.ShotSpeed * WATER_ENCHANTRESS_MULTIPLIER
         end
     end
 )

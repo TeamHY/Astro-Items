@@ -2,9 +2,13 @@ local isc = require("astro-items.lib.isaacscript-common")
 
 AstroItems.Collectible = {}
 
+---@type {Init: fun()}[]
+local items = {}
+
 require "astro-items.collectibles.customs.absolut-conjoined"
 require "astro-items.collectibles.customs.acute-sinusitis"
 require "astro-items.collectibles.customs.akashic-records"
+table.insert(items, require "astro-items.collectibles.customs.albireo")
 require "astro-items.collectibles.customs.altair"
 require "astro-items.collectibles.customs.amazing-chaos-scroll"
 require "astro-items.collectibles.customs.amazing-chaos-scroll-of-goodness"
@@ -143,6 +147,15 @@ AstroItems:AddCallback(
             end
 
             id = id + 1
+        end
+    end
+)
+
+AstroItems:AddCallback(
+    AstroItems.Callbacks.MOD_INIT,
+    function(_)
+        for _, item in ipairs(items) do
+            item.Init()
         end
     end
 )

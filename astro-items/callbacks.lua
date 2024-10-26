@@ -3,8 +3,11 @@ AstroItems.Callbacks = {
     POST_NEW_GREED_WAVE = "ASTRO_POST_NEW_GREED_WAVE",
     PLAYER_TAKE_PENALTY = "ASTRO_PLAYER_TAKE_PENALTY",
     SOUL_COLLECTED = "ASTRO_SOUL_COLLECTED",
-    EVALUATE_MY_MOON = "ASTRO_EVALUATE_MY_MOON"
+    EVALUATE_MY_MOON = "ASTRO_EVALUATE_MY_MOON",
+    MOD_INIT = "ASTRO_MOD_INIT",
 }
+
+local isFirst = true
 
 AstroItems:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
@@ -12,6 +15,11 @@ AstroItems:AddCallback(
         if not isContinued then
             AstroItems.Data["lastStage"] = LevelStage.STAGE_NULL
             AstroItems.Data["lastGreedWave"] = 0
+        end
+
+        if isFirst then
+            Isaac.RunCallback(AstroItems.Callbacks.MOD_INIT)
+            isFirst = false
         end
     end
 )
