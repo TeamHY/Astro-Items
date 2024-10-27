@@ -1,4 +1,5 @@
 require "astro-items.utils.knife-util"
+require "astro-items.utils.noise"
 
 AstroItems.TearModifier = require "astro-items.utils.tear-modifier"
 

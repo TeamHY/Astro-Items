@@ -85,6 +85,7 @@ require "astro-items.collectibles.customs.pure-white-heart"
 require "astro-items.collectibles.customs.quasar"
 require "astro-items.collectibles.customs.rapid-rock-bottom"
 require "astro-items.collectibles.customs.restock-dice"
+table.insert(items, require "astro-items.collectibles.customs.rgb")
 require "astro-items.collectibles.customs.rhongomyniad"
 require "astro-items.collectibles.customs.rite-of-aramesir"
 require "astro-items.collectibles.customs.sacred-dice"
