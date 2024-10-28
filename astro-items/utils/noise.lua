@@ -15,9 +15,7 @@ function Noise:GetSimpleHash(list)
     return hash % 75327403;
 end
 
-function Noise:GetWhiteNoise(x, y, z)
-    local rng = RNG()
-    rng:SetSeed(self:GetSimpleHash({ x, y, z }), 35)
-    
-    return rng:RandomFloat()
+function Noise:GetWhiteNoise(x, y)
+    math.randomseed(self:GetSimpleHash({ x, y }))
+    return math.random()
 end
