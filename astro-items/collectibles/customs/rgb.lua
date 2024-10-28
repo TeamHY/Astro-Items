@@ -20,10 +20,10 @@ local function Init()
             AstroItems.Collectible.RGB,
             "삼원색",
             "...",
-            "방의 색상이 변경됩니다. 방 색상에 따라 효과가 달라집니다." ..
-            "#{{ArrowUp}} {{ColorRed}}{{DamageSmall}} 공격력 x1.5" ..
-            "#{{ArrowUp}} {{ColorGreen}}{{LuckSmall}} 행운 x1.5" ..
-            "#{{ArrowUp}} {{ColorBlue}}{{TearsSmall}} 연사 x1.5" ..
+            "방의 색상이 변경됩니다. 색상에 따라 효과가 달라집니다." ..
+            "#{{ArrowUp}} {{DamageSmall}}{{ColorRed}}(빨강) 공격력 배율 x1.5" ..
+            "#{{ArrowUp}} {{LuckSmall}}{{ColorGreen}}(초록) 행운 배율 x1.5" ..
+            "#{{ArrowUp}} {{TearsSmall}}{{ColorBlue}}(파랑) 연사 배율 x1.5" ..
             "#중첩 시 곱 연산으로 적용됩니다."
         )
     end
