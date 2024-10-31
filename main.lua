@@ -1,23 +1,23 @@
-local hiddenItemManager = require("astro-items.lib.hidden_item_manager")
-local isc = require("astro-items.lib.isaacscript-common")
+local hiddenItemManager = require("astro.lib.hidden_item_manager")
+local isc = require("astro.lib.isaacscript-common")
 
 local mod = RegisterMod("AstroItems", 1)
 
 hiddenItemManager:Init(mod)
 
----@class AstroItems : ModReference
-AstroItems = isc:upgradeMod(mod, { isc.ISCFeature.PLAYER_INVENTORY, isc.ISCFeature.ROOM_HISTORY })
+Astro = isc:upgradeMod(mod, { isc.ISCFeature.PLAYER_INVENTORY, isc.ISCFeature.ROOM_HISTORY })
+Astro.HiddenItemManager = hiddenItemManager
 
 Json = require "json"
 
-require "astro-items.constants"
-require "astro-items.save"
-require "astro-items.callbacks"
-require "astro-items.eid"
-require "astro-items.utils.init"
-require "astro-items.entities.init"
-require "astro-items.collectibles.init"
-require "astro-items.trinkets.init"
-require "astro-items.player"
-require "astro-items.room"
-require "astro-items.curse"
+require "astro.constants"
+require "astro.save"
+require "astro.callbacks"
+require "astro.eid"
+require "astro.utils.init"
+require "astro.entities.init"
+require "astro.collectibles.init"
+require "astro.trinkets.init"
+require "astro.player"
+require "astro.room"
+require "astro.curse"
