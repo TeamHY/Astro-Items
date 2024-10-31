@@ -49,7 +49,7 @@
         portrait="playerportrait_subject_gamma.png"
         skinColor="-1"
         birthright="" />
-    <player name="Stellar" skin="character_stellar.png" hp="6" pocketActive="" bombs="2" items=""
+    <player name="Stellar" skin="character_stellar.png" hp="6" pocketActive="863" bombs="2" items=""
         keys="1"
         nameimage="playername_stellar.png"
         portrait="playerportrait_stellar.png"
