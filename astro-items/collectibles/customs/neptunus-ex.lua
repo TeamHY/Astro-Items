@@ -1,6 +1,6 @@
 ---
 
-local TEARS_INCREMENT = 0.1
+local TEARS_INCREMENT = 0.05
 
 ---
 
@@ -15,7 +15,7 @@ if EID then
         "초 해왕성",
         "...",
         "{{Collectible597}}Neptunus 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#방 클리어 시 {{TearsSmall}}연사(고정) 0.25 증가합니다. 중첩이 가능합니다. 스테이지 입장 시 초기화 됩니다."
+        "#방 클리어 시 {{TearsSmall}}연사(고정) 0.05 증가합니다. 중첩이 가능합니다. 스테이지 입장 시 초기화 됩니다."
     )
 end
 
