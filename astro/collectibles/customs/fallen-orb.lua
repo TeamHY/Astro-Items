@@ -24,7 +24,7 @@ Astro:AddCallback(
                 local rng = RNG()
                 rng:SetSeed(seed, 35)
 
-                if itemConfigitem:HasTags(ItemConfig.TAG_QUEST) == false and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST and itemConfigitem.Quality <= 2 then
+                if itemConfigitem:HasTags(ItemConfig.TAG_QUEST) == false and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST and itemConfigitem.Quality <= 1 then
                     local newCollectable = itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
                     print("Fallen Orb: " .. selectedCollectible .. " -> " .. newCollectable)
 

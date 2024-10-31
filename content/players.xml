@@ -49,16 +49,16 @@
         portrait="playerportrait_subject_gamma.png"
         skinColor="-1"
         birthright="" />
-    <player name="Stellar" skin="character_stellar.png" hp="6" pocketActive="" bombs="2" items=""
+    <player name="Stellar" skin="character_stellar.png" hp="6" pocketActive="863" bombs="2" items=""
         keys="1"
-        nameimage="playername_subject_gamma.png"
-        portrait="playerportrait_subject_gamma.png"
+        nameimage="playername_stellar.png"
+        portrait="playerportrait_stellar.png"
         skinColor="2"
         birthright="" />
     <player name="Tainted Stellar" bSkinParent="Stellar" skin="character_stellarb.png" hp="6" pocketActive="" bombs="2" items=""
         keys="1"
-        nameimage="playername_subject_gamma.png"
-        portrait="playerportrait_subject_gamma.png"
+        nameimage="playername_stellarb.png"
+        portrait="playerportrait_stellarb.png"
         skinColor="5"
         birthright="" />
 </players>

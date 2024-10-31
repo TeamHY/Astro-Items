@@ -68,6 +68,7 @@
 		<Item Name="Restock Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Forbidden Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
     <Pool Name="greedSecret">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -170,6 +171,7 @@
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedDevil">
 		<Item Name="Cygnus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -283,6 +285,7 @@
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -339,6 +342,7 @@
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cain's Secret Bag" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Holy Blood and the Holy Grail" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="greedCurse">
@@ -454,6 +458,7 @@
 		<Item Name="The Holy Blood and the Holy Grail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -513,6 +518,7 @@
 		<Item Name="The Holy Blood and the Holy Grail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedAngel">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -684,6 +690,7 @@
 		<Item Name="Sacred Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
 	<Pool Name="greedTreasure">
@@ -858,6 +865,7 @@
 		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Akashic Records" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
 
@@ -923,6 +931,7 @@
 		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Akashic Records" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1048,6 +1057,7 @@
 		<Item Name="Forbidden Dice" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dad's Box" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Akashic Records" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
