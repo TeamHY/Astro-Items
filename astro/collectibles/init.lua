@@ -95,6 +95,7 @@ require "astro.collectibles.customs.sandevistan"
 require "astro.collectibles.customs.scorpio-ex"
 require "astro.collectibles.customs.sinful-spoils-of-subversion-snake-eye"
 require "astro.collectibles.customs.sinful-spoils-struggle"
+table.insert(items, require "astro.collectibles.customs.snake-eyes-poplar")
 require "astro.collectibles.customs.solar-system"
 require "astro.collectibles.customs.spinup-dice"
 require "astro.collectibles.customs.starlit-papillon"
