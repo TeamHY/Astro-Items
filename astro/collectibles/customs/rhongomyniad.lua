@@ -54,6 +54,27 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_LEVEL,
+    function(_)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            for j = 0, ActiveSlot.SLOT_POCKET2 do
+                if player:GetActiveItem(j) == Astro.Collectible.RHONGOMYNIAD then
+                    -- if player:GetPlayerType() == Astro.Players.WATER_ENCHANTRESS and player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+                    --     player:AddCollectible(CollectibleType.COLLECTIBLE_BATTERY)
+                    --     player:SetActiveCharge(100, j)
+                    --     player:RemoveCollectible(CollectibleType.COLLECTIBLE_BATTERY)
+                    -- else
+                        player:SetActiveCharge(50, j)
+                    -- end
+                end
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
     ---@param rng RNG
     ---@param spawnPosition Vector

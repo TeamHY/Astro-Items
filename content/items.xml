@@ -58,7 +58,7 @@
 	<passive gfx="Master's Degree.png" quality="3" devilprice="1" shopprice="30" name="Master's Degree" />
 	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" />
 	<passive gfx="Pink Ward.png" quality="3" devilprice="1" shopprice="22" name="Pink Ward" />
-	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" shopprice="20" name="Rhongomyniad" />
+	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" />
 	<passive cache="damage" gfx="Amplifying Mind.png" quality="2" devilprice="2" shopprice="15" name="Amplifying Mind" />
 	<passive gfx="EZ Mode.png" quality="0" devilprice="2" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" />
