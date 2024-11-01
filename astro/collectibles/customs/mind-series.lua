@@ -62,7 +62,8 @@ if EID then
         Astro.Collectible.QUANTUM_MIND,
         "퀀텀 마인드",
         "...",
-        "사용 시 방 안에 모든 아이템이 {{Collectible" .. Astro.Collectible.CALM_MIND .. "}}Calm Mind, {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind, {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}}Blue Mind, {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}}Lucky Mind 중에 하나로 변경됩니다. 동일한 아이템이 여러개 등장할 수 있습니다."
+        "사용 시 방 안에 모든 아이템이 {{Collectible" .. Astro.Collectible.CALM_MIND .. "}}Calm Mind, {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind, {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}}Blue Mind, {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}}Lucky Mind 중에 하나로 변경됩니다. 동일한 아이템이 여러개 등장할 수 있습니다." ..
+        "#이동 속도가 2.0 이상일 경우 {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind는 등장하지 않습니다."
     )
 end
 
@@ -81,6 +82,14 @@ Astro:AddCallback(
             Astro.Collectible.BLUE_MIND,
             Astro.Collectible.LUCKY_MIND
         }
+
+        if playerWhoUsedItem.MoveSpeed >= 2 then
+            mindSeries = {
+                Astro.Collectible.CALM_MIND,
+                Astro.Collectible.BLUE_MIND,
+                Astro.Collectible.LUCKY_MIND
+            }
+        end
 
         local entities = Isaac.GetRoomEntities()
 
