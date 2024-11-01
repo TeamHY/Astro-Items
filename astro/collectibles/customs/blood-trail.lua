@@ -1,3 +1,9 @@
+---
+
+local MAX_GIVE_COUNT = 4
+
+---
+
 Astro.Collectible.BLOOD_TRAIL = Isaac.GetItemIdByName("Blood Trail")
 
 if EID then
@@ -5,7 +11,8 @@ if EID then
         Astro.Collectible.BLOOD_TRAIL,
         "블러드 트레일",
         "...",
-        "스테이지 입장 시 {{Collectible73}}Cube of Meat를 획득합니다.#중첩이 가능합니다."
+        "최초 획득 시 {{Collectible73}}Cube of Meat를 4개까지 지급합니다." ..
+        "#스테이지 입장 시 {{Collectible73}}Cube of Meat를 획득합니다. 중첩이 가능합니다."
     )
 end
 
@@ -22,4 +29,18 @@ Astro:AddCallback(
             end
         end
     end
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if Astro:IsFirstAdded(CollectibleType.BLOOD_TRAIL) then
+            for _ = 1 , MAX_GIVE_COUNT - player:GetCollectibleNum(CollectibleType.COLLECTIBLE_CUBE_OF_MEAT) do
+                player:AddCollectible(CollectibleType.COLLECTIBLE_CUBE_OF_MEAT)
+            end
+        end
+    end,
+    Astro.Collectible.BLOOD_TRAIL
 )
