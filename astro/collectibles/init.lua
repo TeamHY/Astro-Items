@@ -5,6 +5,7 @@ Astro.Collectible = {}
 ---@type {Init: fun()}[]
 local items = {}
 
+table.insert(items, require "astro.collectibles.customs.abortion")
 require "astro.collectibles.customs.absolut-conjoined"
 require "astro.collectibles.customs.acute-sinusitis"
 require "astro.collectibles.customs.akashic-records"
