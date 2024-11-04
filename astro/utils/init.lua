@@ -156,6 +156,24 @@ function Astro:RemoveAllTrinket(player, type)
     end
 end
 
+---@param entityType integer
+---@param entityVariant integer
+---@param entitySubtype integer
+---@param position Vector
+---@return Entity
+function Astro:Spawn(entityType, entityVariant, entitySubtype, position)
+    local currentRoom = Game():GetLevel():GetCurrentRoom()
+
+    return Isaac.Spawn(
+        entityType,
+        entityVariant,
+        entitySubtype,
+        currentRoom:FindFreePickupSpawnPosition(position, 0, true),
+        Vector.Zero,
+        nil
+    )
+end
+
 ---@param pillEffect PillEffect
 ---@param position Vector
 ---@return EntityPickup
