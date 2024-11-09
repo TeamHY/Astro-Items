@@ -1,10 +1,10 @@
 ---
 
-local SPAWN_CHANCE = 0.1
+local SPAWN_CHANCE = 0.5
 
 local LUCK_MULTIPLY = 1 / 100
 
-local COOLDOWN_TIME = 75 -- 30 프레임 = 1초
+local COOLDOWN_TIME = 30 -- 30 프레임 = 1초
 
 ---
 
@@ -16,9 +16,9 @@ local function Init()
             Astro.Collectible.ABORTION,
             "낙태",
             "...",
-            "공격 시 10%의 확률로 특수한 눈물을 발사합니다. 해당 눈물은 적 명중 시 {{Collectible678}}C Section의 눈물로 변화합니다." ..
+            "공격 시 50%의 확률로 특수한 눈물을 발사합니다. 해당 눈물은 적 명중 시 {{Collectible678}}C Section의 눈물로 변화합니다." ..
             "#중첩 시 최종 확률이 합 연산으로 증가하고 쿨타임이 줄어듭니다." ..
-            "#!!! {{LuckSmall}}행운 수치 비례: 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
+            "#!!! {{LuckSmall}}행운 수치 비례: 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
         )
     end
 end
