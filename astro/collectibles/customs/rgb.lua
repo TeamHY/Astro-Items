@@ -2,11 +2,11 @@
 
 local COLOR_VALUE = 0.3 -- 방 색상 강도 (0.0 ~ 1.0)
 
-local DAMAGE_MULTIPLIER = 1.5
+local DAMAGE_MULTIPLIER = 1.4
 
 local LUCK_MULTIPLIER = 1.5
 
-local FIRE_DELAY_MULTIPLIER = 1.5
+local FIRE_DELAY_MULTIPLIER = 1.2
 
 ---
 
