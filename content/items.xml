@@ -131,9 +131,9 @@
 	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="4" devilprice="2" shopprice="40" name="Amazing Chaos Scroll of Goodness" tags="offensive summonable tearsup" />
 	<active cache="all" gfx="Albireo.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Albireo" />
 	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="offensive summonable" />
-	<passive cache="damage luck firedelay" gfx="RGB.png" quality="1" devilprice="2" shopprice="15" name="RGB" />
-	<passive gfx="Abortion.png" quality="3" devilprice="2" shopprice="15" name="Abortion" />
-	<familiar gfx="Snake-Eyes Poplar.png" quality="1" devilprice="2" shopprice="15" name="Snake-Eyes Poplar" />
+	<passive cache="damage luck firedelay" gfx="RGB.png" quality="3" devilprice="2" shopprice="25" name="RGB" />
+	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" />
+	<familiar gfx="Snake-Eyes Poplar.png" quality="3" devilprice="1" shopprice="15" name="Snake-Eyes Poplar" />
 
 
 
