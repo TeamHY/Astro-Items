@@ -11,17 +11,18 @@ end
 ---@param player EntityPlayer
 ---@param trinket TrinketType
 function Astro:UpdateLavaHandEffect(player, trinket)
-    if player:HasTrinket(Astro.Trinket.LAVA_HAND) and not Astro:CheckTrinket(trinket, TrinketType.TRINKET_PERFECTION) and not Astro:CheckTrinket(trinket, Astro.Trinket.FLUNK) then
+    if not Astro:CheckTrinket(trinket, TrinketType.TRINKET_PERFECTION) and not Astro:CheckTrinket(trinket, Astro.Trinket.FLUNK) then
         isc:smeltTrinket(player, trinket)
         player:TryRemoveTrinket(trinket)
     end
 end
 
-Astro:AddCallback(
+Astro:AddPriorityCallback(
     ModCallbacks.MC_POST_PEFFECT_UPDATE,
+    CallbackPriority.LATE,
     ---@param player EntityPlayer
     function(_, player)
-        if not Astro then
+        if player:HasTrinket(Astro.Trinket.LAVA_HAND) then
             for i = 0, 1 do -- TrinketIndex 0 ~ 1
                 local trinket = player:GetTrinket(i)
 
