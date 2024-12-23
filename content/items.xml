@@ -105,7 +105,7 @@
 	<passive gfx="Swift Mind.png" quality="2" devilprice="2" shopprice="12" name="Swift Mind" />
 	<passive gfx="Blue Mind.png" quality="4" devilprice="2" shopprice="15" name="Blue Mind" />
 	<passive gfx="Lucky Mind.png" quality="3" devilprice="2" shopprice="15" name="Lucky Mind" />
-	<active gfx="Quantum Mind.png" quality="4" devilprice="2" maxcharges="12"  shopprice="20" name="Quantum Mind" />
+	<active gfx="Quantum Mind.png" quality="4" devilprice="2" maxcharges="12"  shopprice="15" name="Quantum Mind" />
 	<passive gfx="SOL EX.png" quality="4" devilprice="2" shopprice="30" name="SOL EX" />
 	<passive gfx="LUNA EX.png" quality="4" devilprice="2" shopprice="30" name="LUNA EX" />
 	<passive gfx="MERCURIUS EX.png" quality="4" devilprice="2" shopprice="30" name="MERCURIUS EX" />
