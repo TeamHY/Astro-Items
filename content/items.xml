@@ -83,7 +83,7 @@
 	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" />
 	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="50" shopprice="25" name="Curse of Aramatir" />
 	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" />
-	<active gfx="The Holy Blood and the Holy Grail.png" quality="4" devilprice="2" initcharge="0" maxcharges="12" shopprice="45" name="The Holy Blood and the Holy Grail" />
+	<active gfx="The Holy Blood and the Holy Grail.png" quality="4" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" />
 	<passive tags="book" gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="30" name="Akashic Records" />
 	<passive tags="speed" gfx="Terraspark Boots.png" quality="2" devilprice="1" shopprice="10" name="Terraspark Boots" />
 	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" />
