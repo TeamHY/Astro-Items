@@ -70,10 +70,9 @@ local function MultiplyTears(baseFiredelay, multiplier)
 	return newFiredelay
 end
 
--- 래피드 락바텀과 호환을 고려해 우선 순위 DEFAULT로 변경. 원래 LATE임.
 Astro:AddPriorityCallback(
 	ModCallbacks.MC_EVALUATE_CACHE,
-	CallbackPriority.DEFAULT,
+	Astro.CallbackPriority.MULTIPLY,
 	function(_, player)
 		for i = 1, player:GetCollectibleNum(Astro.Collectible.TECHNOLOGY_OMICRON_EX) do
 			player.MaxFireDelay = MultiplyTears(player.MaxFireDelay, GetTearsMultiplier(player, 0.8))

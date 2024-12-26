@@ -72,7 +72,7 @@ Astro:AddCallbackCustom(
 Astro:AddPriorityCallback(
     ModCallbacks.MC_EVALUATE_CACHE,
     ---@diagnostic disable-next-line: param-type-mismatch
-    CallbackPriority.LATE + 2000, -- 혼줌과 동일
+    Astro.CallbackPriority.MULTIPLY,
     ---@param player EntityPlayer
     ---@param cacheFlag CacheFlag
     function (_, player, cacheFlag)

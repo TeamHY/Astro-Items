@@ -60,7 +60,7 @@ Astro:AddCallback(
 
 Astro:AddPriorityCallback(
     ModCallbacks.MC_EVALUATE_CACHE,
-    CallbackPriority.LATE + 2000, -- 혼줌과 동일
+    Astro.CallbackPriority.MULTIPLY,
     ---@param player EntityPlayer
     ---@param cacheFlag CacheFlag
     function (_, player, cacheFlag)

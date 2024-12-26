@@ -183,7 +183,7 @@ end
 
 Astro:AddPriorityCallback(
     ModCallbacks.MC_EVALUATE_CACHE,
-    CallbackPriority.LATE + 2000, --Very low priority so the multiplier works with mods
+    Astro.CallbackPriority.MULTIPLY, --Very low priority so the multiplier works with mods
     milkshake.onCache
 )
 
