@@ -1,7 +1,7 @@
 Astro.Collectible.PURE_LOVE = Isaac.GetItemIdByName("Pure Love")
 
 local useSound = Isaac.GetSoundIdByName('Destroyed')
-local useSoundVoulme = 1 -- 0 ~ 1
+local useSoundVolume = 1 -- 0 ~ 1
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
@@ -11,7 +11,10 @@ Astro:AddCallback(
                 Astro.Collectible.PURE_LOVE,
                 "순애",
                 "...",
-                "일급 비밀방에서 사용 시 {{LuckSmall}}행운이 1 감소하고 대결 모드에서 현재 판 금지된 아이템 중 하나를 소환합니다.#야곱, 알트 야곱, 레아, 라헬이 아닐 경우 사용 시 행운이 감소되지 않고 소환되는 아이템이 2개로 증가합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다."
+                "일급 비밀방에서 사용 시 {{LuckSmall}}행운이 1 감소하고 소지한 아이템 1개와 {{Quality3}}3등급/{{Quality4}}4등급 아이템 1개를 소환합니다. 하나를 선택하면 나머지는 사라집니다." ..
+                "#야곱, 알트 야곱, 레아, 라헬이 아닐 경우 사용 시 행운이 감소되지 않습니다." ..
+                "#1 스테이지일 경우 맵에 {{SuperSecretRoom}}일급 비밀방 위치가 표시됩니다." ..
+                "#스테이지 진입 시 쿨타임이 채워집니다."
             )
         end
 
@@ -45,12 +48,15 @@ Astro:AddCallback(
                     -- else
                         player:SetActiveCharge(50, j)
                     -- end
+
+                    if Game():GetLevel():GetAbsoluteStage() == LevelStage.STAGE1_1 then
+                        Astro:DisplayRoom(RoomType.ROOM_SUPERSECRET)
+                    end
                 end
             end
         end
     end
 )
-
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
@@ -69,38 +75,28 @@ Astro:AddCallback(
             }
         end
 
-        if not Astro or not Astro.Data or not Astro.Data.currentBanItems then
-            return {
-                Discharge = false,
-                Remove = false,
-                ShowAnim = false,
-            }
+        local targetCollectables = {}
+
+        for _, config in ipairs(Astro.CollectableConfigs) do
+            if config.Quality >= 3 then
+                table.insert(targetCollectables, config.ID)
+            end
         end
 
         local rng = playerWhoUsedItem:GetCollectibleRNG(Astro.Collectible.PURE_LOVE)
+        local hadCollectable = Astro:GetRandomCollectibles(Astro:getPlayerInventory(playerWhoUsedItem, false), rng, 1, Astro.Collectible.PURE_LOVE, true)[1]
+        local newCollectable = Astro:GetRandomCollectibles(targetCollectables, rng, 1, nil, true)[1]
 
-        local hadCollectables = {}
-
-        if IsSynergy(playerWhoUsedItem) then
-            hadCollectables = Astro:GetRandomCollectibles(Astro.Data.currentBanItems, rng, 2)
-        else
-            hadCollectables = Astro:GetRandomCollectibles(Astro.Data.currentBanItems, rng, 1)
-        end
-
-        if hadCollectables[1] == nil then
-            return {
-                Discharge = false,
-                Remove = false,
-                ShowAnim = false,
-            }
-        end
-
-        for _, hadCollectable in ipairs(hadCollectables) do
+        if hadCollectable then
             Astro:SpawnCollectible(hadCollectable, playerWhoUsedItem.Position, Astro.Collectible.PURE_LOVE)
             playerWhoUsedItem:RemoveCollectible(hadCollectable)
         end
 
-        SFXManager():Play(useSound, useSoundVoulme)
+        if newCollectable then
+            Astro:SpawnCollectible(newCollectable, playerWhoUsedItem.Position, Astro.Collectible.PURE_LOVE)
+        end
+
+        SFXManager():Play(useSound, useSoundVolume)
 
         if not IsSynergy(playerWhoUsedItem) then
             Astro.Data.PureLove.luck = Astro.Data.PureLove.luck - 1
