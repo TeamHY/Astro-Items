@@ -25,7 +25,7 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddPriorityCallback(
+Astro:AddCallback(
     ModCallbacks.MC_EVALUATE_CACHE,
     ---@param player EntityPlayer
     ---@param cacheFlag CacheFlag
