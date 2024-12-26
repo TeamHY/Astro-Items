@@ -221,6 +221,8 @@ function milkshake:OnMilkshakeAdded(player, _, firstTime)
     elseif chosenHeart == 2 then
         player:AddBlackHearts(2)
     end
+
+    SFXManager():Play(Astro.SoundEffect.MAPLE, 1)
 end
 
 Astro:AddCallbackCustom(

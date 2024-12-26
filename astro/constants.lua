@@ -10,3 +10,7 @@ Astro.CallbackPriority = {
     MULTIPLY = CallbackPriority.LATE + 2000,
     ROCK_BOTTOM = CallbackPriority.LATE + 4000
 }
+
+Astro.SoundEffect = {
+    MAPLE = Isaac.GetSoundIdByName("Maple"),
+}

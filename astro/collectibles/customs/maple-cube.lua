@@ -1,8 +1,6 @@
 ---
 
-local USE_CUBE_SOUND = Isaac.GetSoundIdByName("UseCube")
-
-local USE_CUBE_VOULME = 1
+local USE_CUBE_VOLUME = 1
 
 local BLACK_COST_COINS = 10
 
@@ -129,7 +127,7 @@ Astro:AddCallback(
         playerWhoUsedItem:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
         playerWhoUsedItem:EvaluateItems()
 
-        SFXManager():Play(USE_CUBE_SOUND, USE_CUBE_VOULME)
+        SFXManager():Play(Astro.SoundEffect.MAPLE, USE_CUBE_VOLUME)
 
         return {
             Discharge = true,
@@ -175,7 +173,7 @@ Astro:AddCallback(
         playerWhoUsedItem:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
         playerWhoUsedItem:EvaluateItems()
 
-        SFXManager():Play(USE_CUBE_SOUND, USE_CUBE_VOULME)
+        SFXManager():Play(Astro.SoundEffect.MAPLE, USE_CUBE_VOLUME)
 
         return {
             Discharge = true,
