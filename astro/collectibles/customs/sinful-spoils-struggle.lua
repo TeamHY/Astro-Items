@@ -13,7 +13,8 @@ Astro:AddCallback(
                 "...",
                 "{{Collectible684}}Hungry Soul 효과가 적용됩니다." ..
                 "{{Collectible634}}Purgatory 효과가 적용됩니다." ..
-                "중첩 시 {{Collectible727}}Ghost Bombs 효과가 적용됩니다." ..
+                "{{Collectible727}}Ghost Bombs 효과가 적용됩니다." ..
+                "중첩 시 {{Collectible" .. Astro.Collectible.SNAKE_EYES_POPLAR .. "}}Snake-Eyes Poplar 효과가 적용됩니다." ..
                 "소환된 유령의 속도가 2배 빨라집니다."
             )
         end
@@ -48,9 +49,13 @@ Astro:AddCallbackCustom(
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_PURGATORY)
         end
 
+        if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS) then
+            hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS)
+        end
+
         if player:GetCollectibleNum(Astro.Collectible.SINFUL_SPOILS_STRUGGLE) > 1 then
-            if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS) then
-                hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS)
+            if not hiddenItemManager:Has(player, Astro.Collectible.SNAKE_EYES_POPLAR) then
+                hiddenItemManager:Add(player, Astro.Collectible.SNAKE_EYES_POPLAR)
             end
         end
     end,
@@ -70,9 +75,13 @@ Astro:AddCallbackCustom(
             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_PURGATORY)
         end
 
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS)
+        end
+
         if player:GetCollectibleNum(Astro.Collectible.SINFUL_SPOILS_STRUGGLE) <= 1 then
-            if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS) then
-                hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_GHOST_BOMBS)
+            if hiddenItemManager:Has(player, Astro.Collectible.SNAKE_EYES_POPLAR) then
+                hiddenItemManager:Remove(player, Astro.Collectible.SNAKE_EYES_POPLAR)
             end
         end
     end,
