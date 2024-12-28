@@ -14,7 +14,10 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_BLUE_MAP,
             CollectibleType.COLLECTIBLE_STAR_OF_BETHLEHEM,
             CollectibleType.COLLECTIBLE_CRYSTAL_BALL,
+            CollectibleType.COLLECTIBLE_SPELUNKER_HAT,
             Astro.Collectible.DUALITY_LIGHT_AND_DARKNESS,
+            Astro.Collectible.WARD,
+            Astro.Collectible.PINK_WARD,
         }
 
         if EID then
