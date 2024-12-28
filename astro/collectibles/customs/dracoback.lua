@@ -11,18 +11,46 @@ if EID then
         Astro.Collectible.DRACOBACK,
         "기룡 드라코백",
         "...",
-        "방 입장 시 적 하나가 지워집니다. {{BossRoom}}보스방에서는 발동하지 않습니다. 중첩 시 지워지는 적의 수가 증가합니다." ..
-        "#성전의 수견사, 일리걸 나이트일 경우 올스탯이 x1.1 증가합니다."
+        "방 입장 시 적 하나가 지워집니다. 스테이지마다 2회까지 발동됩니다. {{BossRoom}}보스방에서는 발동하지 않습니다. 중첩 시 방 마다 지워지는 적의 수가 증가합니다." ..
+        "#성전의 수견사, 일리걸 나이트일 경우 올스탯이 x1.1 증가하고 스테이지마다 5회까지 발동됩니다."
     )
 end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_LEVEL,
+    function(_)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            local data = Astro:GetPersistentPlayerData(player);
+
+            if data then
+                data["dracobackCount"] = 0
+            end
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
-
+            
             if not player:HasCollectible(Astro.Collectible.DRACOBACK) then
+                goto continue
+            end
+            
+            local data = Astro:GetPersistentPlayerData(player);
+
+            if not data["dracobackCount"] then
+                data["dracobackCount"] = 0
+            end
+
+            if Astro:IsWaterEnchantress(player) then
+                if data["dracobackCount"] >= 5 then
+                    goto continue
+                end
+            elseif data["dracobackCount"] >= 2 then
                 goto continue
             end
             
@@ -32,6 +60,10 @@ Astro:AddCallback(
                 local entities = Astro:Filter(Isaac.GetRoomEntities(), function(entity)
                     return entity:IsVulnerableEnemy() and not entity:IsBoss() and entity.Type ~= EntityType.ENTITY_FIREPLACE
                 end)
+
+                if #entities > 0 then
+                    data["dracobackCount"] = data["dracobackCount"] + 1
+                end
 
                 local rng = player:GetCollectibleRNG(Astro.Collectible.DRACOBACK)
                 local dracobackNum = player:GetCollectibleNum(Astro.Collectible.DRACOBACK)
