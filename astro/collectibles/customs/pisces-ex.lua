@@ -1,3 +1,9 @@
+---
+
+local SOUND_VOLUME = 1
+
+---
+
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.PISCES_EX = Isaac.GetItemIdByName("Pisces EX")
@@ -18,6 +24,7 @@ Astro:AddCallback(
         if player:HasCollectible(Astro.Collectible.PISCES_EX) then
             if Game():GetFrameCount() % math.floor(3600 / player:GetCollectibleNum(Astro.Collectible.PISCES_EX)) == 0 then
                 player:UseCard(Card.CARD_REVERSE_MAGICIAN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
+                SFXManager():Play(Astro.SoundEffect.PISCES_EX, SOUND_VOLUME)
             end
         end
     end
