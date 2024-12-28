@@ -2,6 +2,10 @@
 
 local WATER_ENCHANTRESS_MULTIPLIER = 1.1
 
+local MAX_COUNT = 2
+
+local WATER_ENCHANTRESS_MAX_COUNT = 5
+
 ---
 
 Astro.Collectible.DRACOBACK = Isaac.GetItemIdByName("Dracoback, the Rideable Dragon")
@@ -47,10 +51,10 @@ Astro:AddCallback(
             end
 
             if Astro:IsWaterEnchantress(player) then
-                if data["dracobackCount"] >= 5 then
+                if data["dracobackCount"] >= WATER_ENCHANTRESS_MAX_COUNT then
                     goto continue
                 end
-            elseif data["dracobackCount"] >= 2 then
+            elseif data["dracobackCount"] >= MAX_COUNT then
                 goto continue
             end
             
