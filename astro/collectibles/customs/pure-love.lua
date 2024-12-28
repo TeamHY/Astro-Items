@@ -1,3 +1,5 @@
+local isc = require("astro.lib.isaacscript-common")
+
 Astro.Collectible.PURE_LOVE = Isaac.GetItemIdByName("Pure Love")
 
 local useSound = Isaac.GetSoundIdByName('Destroyed')
@@ -56,6 +58,16 @@ Astro:AddCallback(
             end
         end
     end
+)
+
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        Astro:DisplayRoom(RoomType.ROOM_SUPERSECRET)
+    end,
+    Astro.Collectible.PURE_LOVE
 )
 
 Astro:AddCallback(
