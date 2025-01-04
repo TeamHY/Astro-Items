@@ -113,7 +113,7 @@ require "astro.collectibles.customs.very-ez-mode"
 require "astro.collectibles.customs.virgo-ex"
 require "astro.collectibles.customs.wanted-seeker-of-sinful-spoil"
 require "astro.collectibles.customs.ward"
-require "astro.collectibles.customs.rebirth-sets"
+require "astro.collectibles.customs.manyu-sets"
 
 require "astro.collectibles.customs.sol-ex"
 require "astro.collectibles.customs.luna-ex"

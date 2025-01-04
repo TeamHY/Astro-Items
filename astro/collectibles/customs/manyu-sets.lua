@@ -36,9 +36,23 @@ Astro.Collectible.REINCARNATION = Isaac.GetItemIdByName("Reincarnation")
 Astro.Collectible.MATRYOSHKA = Isaac.GetItemIdByName("Matryoshka")
 Astro.Collectible.SAMSARA = Isaac.GetItemIdByName("Samsara")
 
+-- 만유의 생멸셋 목록
+local MANYU_SET_LIST = {
+    Astro.Collectible.REINCARNATION,
+    Astro.Collectible.MATRYOSHKA,
+    Astro.Collectible.SAMSARA
+}
+
 local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
 if EID then
+    -- NOTE: 불교 용어인듯하여 음역했습니다
+    EID:createTransformation("Saengmyeol of Manyu", "만유의 생멸")
+
+    EID:assignTransformation("collectible", Astro.Collectible.REINCARNATION, "Saengmyeol of Manyu")
+    EID:assignTransformation("collectible", Astro.Collectible.MATRYOSHKA, "Saengmyeol of Manyu")
+    EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "Saengmyeol of Manyu")
+
     Astro:AddEIDCollectible(
         Astro.Collectible.REINCARNATION,
         "리인카네이션",
@@ -288,3 +302,42 @@ Astro:AddCallback(
 )
 
 --#endregion
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    ---@param isContinued boolean
+    function(_, isContinued)
+        if not isContinued then
+            Astro.Data.ManyuSet = 0
+        end
+    end
+)
+
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if Astro:Contain(MANYU_SET_LIST, collectibleType) and Astro:IsFirstAdded(collectibleType) then
+            Astro.Data.ManyuSet = Astro.Data.ManyuSet + 1
+
+            if Astro.Data.ManyuSet == 3 then
+                SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
+                Game():GetHUD():ShowItemText("만유의 생멸", '')
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_GET_TRINKET,
+    ---@param trinket TrinketType
+    ---@param rng RNG
+    function(_, trinket, rng)
+        if Astro.Data and Astro.Data.ManyuSet and Astro.Data.ManyuSet >= 3 then
+            if not Astro:IsGoldenTrinketType(trinket) then
+                return trinket + Astro.GOLDEN_TRINKET_OFFSET
+            end
+        end
+    end
+)
