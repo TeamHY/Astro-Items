@@ -18,4 +18,7 @@
     <sound name="PiscesEX">
         <sample weight="1" path="feedback/pisces-ex.wav" />
     </sound>
+    <sound name="StaffOfAinzOoalGown">
+        <sample weight="1" path="feedback/staff-of-ainz-ooal-gown.wav" />
+    </sound>
 </sounds>

@@ -98,6 +98,7 @@ require "astro.collectibles.customs.sinful-spoils-struggle"
 table.insert(items, require "astro.collectibles.customs.snake-eyes-poplar")
 require "astro.collectibles.customs.solar-system"
 require "astro.collectibles.customs.spinup-dice"
+require "astro.collectibles.customs.staff-of-ainz-ooal-gown"
 require "astro.collectibles.customs.starlit-papillon"
 require "astro.collectibles.customs.stew-series"
 require "astro.collectibles.customs.super-magneto"

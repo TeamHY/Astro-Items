@@ -14,4 +14,5 @@ Astro.CallbackPriority = {
 Astro.SoundEffect = {
     MAPLE = Isaac.GetSoundIdByName("Maple"),
     PISCES_EX = Isaac.GetSoundIdByName("PiscesEX"),
+    STAFF_OF_AINZ_OOAL_GOWN = Isaac.GetSoundIdByName("StaffOfAinzOoalGown"),
 }
