@@ -25,6 +25,16 @@ Astro:AddCallback(
     end
 )
 
+---@param player EntityPlayer
+---@param charge number
+local function UpdateCharge(player, charge)
+    for i = 0, ActiveSlot.SLOT_POCKET2 do
+        if player:GetActiveItem(i) == Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN then
+            player:SetActiveCharge(math.floor(charge), i)
+        end
+    end
+end
+
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,
     ---@param entity Entity
@@ -59,11 +69,7 @@ Astro:AddCallback(
                     end
                 end 
 
-                for j = 0, ActiveSlot.SLOT_POCKET2 do
-                    if player:GetActiveItem(j) == Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN then
-                        player:SetActiveCharge(data.StaffOfAinzOoalGown, j)
-                    end
-                end
+                UpdateCharge(player, data.StaffOfAinzOoalGown)
             end
         end
     end
@@ -86,11 +92,7 @@ Astro:AddCallback(
                     data.StaffOfAinzOoalGown = 0
                 end
 
-                for j = 0, ActiveSlot.SLOT_POCKET2 do
-                    if player:GetActiveItem(j) == Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN then
-                        player:SetActiveCharge(data.StaffOfAinzOoalGown, j)
-                    end
-                end
+                UpdateCharge(player, data.StaffOfAinzOoalGown)
             end
         end
     end
