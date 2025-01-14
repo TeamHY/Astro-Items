@@ -60,7 +60,7 @@ Astro:AddCallback(
                 data.StaffOfAinzOoalGown = data.StaffOfAinzOoalGown + amount * CHARGE_MULTIPLY
 
                 if data.StaffOfAinzOoalGown >= 100 then
-                    if player:HasCollectible(CollectibleType.COLLECTIBLE_CAR_BATTERY) then
+                    if player:HasCollectible(CollectibleType.COLLECTIBLE_BATTERY) then
                         if data.StaffOfAinzOoalGown >= 200 then
                             data.StaffOfAinzOoalGown = 200
                         end
