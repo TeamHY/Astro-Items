@@ -8,17 +8,20 @@ Astro.Collectible.SNAKE_EYES_POPLAR = Isaac.GetItemIdByName("Snake-Eyes Poplar")
 
 local FAMILIAR_VARIANT = Isaac.GetEntityVariantByName("Snake-Eyes Poplar")
 
-local function Init()
-    if EID then
-        Astro:AddEIDCollectible(
-            Astro.Collectible.SNAKE_EYES_POPLAR,
-            "스네이크아이즈 포프루스",
-            "...",
-            "5초 마다 무작위 유령을 하나 소환합니다." ..
-            "#디아벨스타, 디아벨제의 경우 하나 더 소환합니다."
-        )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SNAKE_EYES_POPLAR,
+                "스네이크아이즈 포프루스",
+                "...",
+                "5초 마다 무작위 유령을 하나 소환합니다." ..
+                "#디아벨스타, 디아벨제의 경우 하나 더 소환합니다."
+            )
+        end
     end
-end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_FAMILIAR_INIT,
@@ -102,7 +105,3 @@ Astro:AddCallback(
     end,
     CacheFlag.CACHE_FAMILIARS
 )
-
-return {
-    Init = Init
-}

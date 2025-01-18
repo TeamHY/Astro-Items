@@ -8,18 +8,21 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.ALBIREO = Isaac.GetItemIdByName("Albireo")
 
-local function Init()
-    if EID then
-        Astro:AddEIDCollectible(
-            Astro.Collectible.ALBIREO,
-            "알비레오",
-            "...",
-            "사용 시 방에 있는 별자리, 행성 아이템이 강화됩니다." ..
-            "#{{Collectible" .. Astro.Collectible.CYGNUS .. "}}Cygnus 소지 시 올스탯이 x1.1 증가합니다." ..
-            "#!!! 일회용 아이템 (스텔라 제외)"
-        )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.ALBIREO,
+                "알비레오",
+                "...",
+                "사용 시 방에 있는 별자리, 행성 아이템이 강화됩니다." ..
+                "#{{Collectible" .. Astro.Collectible.CYGNUS .. "}}Cygnus 소지 시 올스탯이 x1.1 증가합니다." ..
+                "#!!! 일회용 아이템 (스텔라 제외)"
+            )
+        end
     end
-end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
@@ -103,7 +106,3 @@ Astro:AddPriorityCallback(
         end
     end
 )
-
-return {
-    Init = Init
-}

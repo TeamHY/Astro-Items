@@ -1,15 +1,10 @@
-local isc = require("astro.lib.isaacscript-common")
-
 Astro.Collectible = {}
 
----@type {Init: fun()}[]
-local items = {}
-
-table.insert(items, require "astro.collectibles.customs.abortion")
+require "astro.collectibles.customs.abortion"
 require "astro.collectibles.customs.absolut-conjoined"
 require "astro.collectibles.customs.acute-sinusitis"
 require "astro.collectibles.customs.akashic-records"
-table.insert(items, require "astro.collectibles.customs.albireo")
+require "astro.collectibles.customs.albireo"
 require "astro.collectibles.customs.altair"
 require "astro.collectibles.customs.amazing-chaos-scroll"
 require "astro.collectibles.customs.amazing-chaos-scroll-of-goodness"
@@ -36,7 +31,7 @@ require "astro.collectibles.customs.chubby-sets"
 require "astro.collectibles.customs.cleaner"
 require "astro.collectibles.customs.clover"
 require "astro.collectibles.customs.comet"
-table.insert(items, require "astro.collectibles.customs.copernicus")
+require "astro.collectibles.customs.copernicus"
 require "astro.collectibles.customs.corvus"
 require "astro.collectibles.customs.curse-of-aramatir"
 require "astro.collectibles.customs.cursed-heart"
@@ -75,6 +70,7 @@ require "astro.collectibles.customs.omega-321"
 require "astro.collectibles.customs.original-sinful-spoils-snake-eye"
 require "astro.collectibles.customs.overwhelming-sinful-spoils"
 require "astro.collectibles.customs.pavo"
+require "astro.collectibles.customs.pink-ward"
 require "astro.collectibles.customs.pirate-map"
 require "astro.collectibles.customs.pisces-ex"
 require "astro.collectibles.customs.platinum-bullet"
@@ -86,7 +82,7 @@ require "astro.collectibles.customs.pure-white-heart"
 require "astro.collectibles.customs.quasar"
 require "astro.collectibles.customs.rapid-rock-bottom"
 require "astro.collectibles.customs.restock-dice"
-table.insert(items, require "astro.collectibles.customs.rgb")
+require "astro.collectibles.customs.rgb"
 require "astro.collectibles.customs.rhongomyniad"
 require "astro.collectibles.customs.rite-of-aramesir"
 require "astro.collectibles.customs.sacred-dice"
@@ -95,7 +91,7 @@ require "astro.collectibles.customs.sandevistan"
 require "astro.collectibles.customs.scorpio-ex"
 require "astro.collectibles.customs.sinful-spoils-of-subversion-snake-eye"
 require "astro.collectibles.customs.sinful-spoils-struggle"
-table.insert(items, require "astro.collectibles.customs.snake-eyes-poplar")
+require "astro.collectibles.customs.snake-eyes-poplar"
 require "astro.collectibles.customs.solar-system"
 require "astro.collectibles.customs.spinup-dice"
 require "astro.collectibles.customs.staff-of-ainz-ooal-gown"
@@ -152,15 +148,6 @@ Astro:AddCallback(
             end
 
             id = id + 1
-        end
-    end
-)
-
-Astro:AddCallback(
-    Astro.Callbacks.MOD_INIT,
-    function(_)
-        for _, item in ipairs(items) do
-            item.Init()
         end
     end
 )

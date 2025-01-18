@@ -14,20 +14,23 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.RGB = Isaac.GetItemIdByName("RGB")
 
-local function Init()
-    if EID then
-        Astro:AddEIDCollectible(
-            Astro.Collectible.RGB,
-            "삼원색",
-            "...",
-            "방의 색상이 변경됩니다. 색상에 따라 효과가 달라집니다." ..
-            "#{{ArrowUp}} {{DamageSmall}}{{ColorRed}}(빨강) 공격력 배율 x1.5" ..
-            "#{{ArrowUp}} {{LuckSmall}}{{ColorGreen}}(초록) 행운 배율 x1.5" ..
-            "#{{ArrowUp}} {{TearsSmall}}{{ColorBlue}}(파랑) 연사 배율 x1.5" ..
-            "#중첩 시 곱 연산으로 적용됩니다."
-        )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.RGB,
+                "삼원색",
+                "...",
+                "방의 색상이 변경됩니다. 색상에 따라 효과가 달라집니다." ..
+                "#{{ArrowUp}} {{DamageSmall}}{{ColorRed}}(빨강) 공격력 배율 x1.5" ..
+                "#{{ArrowUp}} {{LuckSmall}}{{ColorGreen}}(초록) 행운 배율 x1.5" ..
+                "#{{ArrowUp}} {{TearsSmall}}{{ColorBlue}}(파랑) 연사 배율 x1.5" ..
+                "#중첩 시 곱 연산으로 적용됩니다."
+            )
+        end
     end
-end
+)
 
 local colors = {
     RED = 0,
@@ -114,7 +117,3 @@ Astro:AddPriorityCallback(
         end
     end
 )
-
-return {
-    Init = Init
-}
