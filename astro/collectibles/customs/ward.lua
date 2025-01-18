@@ -1,20 +1,29 @@
-local isc = require("astro.lib.isaacscript-common")
-
 Astro.Collectible.WARD = Isaac.GetItemIdByName("Ward")
-Astro.Collectible.PINK_WARD = Isaac.GetItemIdByName("Pink Ward")
 
-if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.WARD, "와드", "...", "스테이지 중심 5x5의 방을 보여줍니다.#중첩 시 범위가 증가합니다.")
-    Astro:AddEIDCollectible(Astro.Collectible.PINK_WARD, "핑크 와드", "...", "스테이지 중심 5x5의 방을 보여줍니다.#중첩 시 범위가 증가합니다.#숨어 있는 적을 아군으로 만듭니다.")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.WARD,
+                "와드",
+                "...",
+                "사용 시 주변 3x3의 방을 보여줍니다."
+            )
+        end
+    end
+)
 
 ---@param range number
-local function DisplayWardRoom(range)
+---@param centerRoomIndex number
+local function DisplayWardRoom(range, centerRoomIndex)
     local level = Game():GetLevel()
+
+    local centerPos = Astro:ConvertRoomIndexToPosition(centerRoomIndex)
 
     for i = -range, range do
         for j = -range, range do
-            local index = Astro:ConvertRoomPositionToIndex(Vector(i + 6, j + 6))
+            local index = Astro:ConvertRoomPositionToIndex(Vector(centerPos.X + i, centerPos.Y + j))
 
             if index ~= -1 then
                 local room = level:GetRoomByIdx(index)
@@ -29,47 +38,24 @@ local function DisplayWardRoom(range)
     level:UpdateVisibility()
 end
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_NEW_LEVEL,
-    function(_)
-        for i = 1, Game():GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
-
-            if player:HasCollectible(Astro.Collectible.WARD) or player:HasCollectible(Astro.Collectible.PINK_WARD) then
-                DisplayWardRoom(math.max(player:GetCollectibleNum(Astro.Collectible.WARD), player:GetCollectibleNum(Astro.Collectible.PINK_WARD)) * 2)
-                break
-            end
-        end
-    end
-)
-
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if collectibleType == Astro.Collectible.WARD or collectibleType == Astro.Collectible.PINK_WARD then
-            DisplayWardRoom(math.max(player:GetCollectibleNum(Astro.Collectible.WARD), player:GetCollectibleNum(Astro.Collectible.PINK_WARD)) * 2)
-        end
-    end
-)
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_NPC_INIT,
-    ---@param entityNPC EntityNPC
-    function(_, entityNPC)
-        for i = 1, Game():GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
-        
-            if player:HasCollectible(Astro.Collectible.PINK_WARD) then
-                if entityNPC.Type == EntityType.ENTITY_NEEDLE or entityNPC.Type == EntityType.ENTITY_WIZOOB or entityNPC.Type == EntityType.ENTITY_RED_GHOST or entityNPC.Type == EntityType.ENTITY_POLTY then
-                    entityNPC:AddEntityFlags(EntityFlag.FLAG_CHARM)
-                    entityNPC:AddEntityFlags(EntityFlag.FLAG_FRIENDLY)
-                end
-            end
+    ModCallbacks.MC_USE_ITEM,
+    ---@param collectibleID CollectibleType
+    ---@param rngObj RNG
+    ---@param playerWhoUsedItem EntityPlayer
+    ---@param useFlags UseFlag
+    ---@param activeSlot ActiveSlot
+    ---@param varData integer
+    function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
+        local currentRoomIndex = Game():GetLevel():GetCurrentRoomIndex()
+        DisplayWardRoom(1, currentRoomIndex)
 
-            break
-        end
-    end
+        return {
+            Discharge = true,
+            Remove = false,
+            ShowAnim = true,
+        }
+    end,
+    Astro.Collectible.WARD
 )
-

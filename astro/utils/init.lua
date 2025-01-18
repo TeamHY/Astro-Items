@@ -362,6 +362,7 @@ function Astro:FindIndex(list, value)
     return -1
 end
 
+---@param index integer
 function Astro:ConvertRoomIndexToPosition(index)
     local x = index % 13
     local y = math.floor(index / 13)
@@ -369,6 +370,7 @@ function Astro:ConvertRoomIndexToPosition(index)
     return Vector(x, y)
 end
 
+---@param position Vector
 function Astro:ConvertRoomPositionToIndex(position)
     if position.X < 0 or position.X > 12 or position.Y < 0 or position.Y > 12 then
         return -1
