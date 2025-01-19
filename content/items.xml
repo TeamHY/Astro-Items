@@ -81,7 +81,7 @@
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="300" chargetype="timed" name="Overwhelming Sinful Spoils" />
 	<passive id="2" cache="firedelay" gfx="Technology Omicron.png" quality="4" tags="offensive summonable tech" name="Technology Omicron EX" description="Laser aura tears"/>
 	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" />
-	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="50" shopprice="16" name="Curse of Aramatir" />
+	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="0" shopprice="16" name="Curse of Aramatir" />
 	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" />
 	<active gfx="The Holy Blood and the Holy Grail.png" quality="4" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" />
 	<passive tags="book" gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="18" name="Akashic Records" />

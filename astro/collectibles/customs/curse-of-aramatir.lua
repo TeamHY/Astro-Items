@@ -1,11 +1,31 @@
+---
+
+local USE_SOUND = Isaac.GetSoundIdByName('Specialsummon')
+
+local USE_SOUND_VOLUME = 1 -- 0 ~ 1
+
+local SPAWN_COLLECTIBLE_COUNT = 3
+
+---
+
 Astro.Collectible.CURSE_OF_ARAMATIR = Isaac.GetItemIdByName("Curse of Aramatir")
 
-if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.CURSE_OF_ARAMATIR, "금주 아라마티아", "...", "일급 비밀방에서 사용 시 소지된 아이템 중 1개를 소환합니다. 하나를 선택하면 나머지는 사라집니다.#스테이지 진입 시 쿨타임이 채워집니다.#성전의 수견사, 일리걸 나이트일 경우 아이템 2개를 소환합니다.#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다.")
-end
-
-local useSound = Isaac.GetSoundIdByName('Specialsummon')
-local useSoundVoulme = 1 -- 0 ~ 1
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CURSE_OF_ARAMATIR,
+                "금주 아라마티아",
+                "...",
+                "일급 비밀방에서 사용 시 소지한 {{Quality3}}3등급/{{Quality4}}4등급 아이템 " .. SPAWN_COLLECTIBLE_COUNT .. "개를 소환합니다. 하나를 선택하면 나머지는 사라집니다." ..
+                "#소환된 아이템은 방을 나갈 경우 사라집니다." ..
+                "#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다." ..
+                "#!!! 일회용 아이템 (성전의 수견사, 일리걸 나이트는 스테이지당 한 번 사용 가능능)"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,
@@ -13,16 +33,25 @@ Astro:AddCallback(
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
 
-            for j = 0, ActiveSlot.SLOT_POCKET2 do
-                if player:GetActiveItem(j) == Astro.Collectible.CURSE_OF_ARAMATIR then
-                    if player:GetPlayerType() == Astro.Players.WATER_ENCHANTRESS_B and player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
-                        player:AddCollectible(CollectibleType.COLLECTIBLE_BATTERY)
-                        player:SetActiveCharge(100, j)
-                        player:RemoveCollectible(CollectibleType.COLLECTIBLE_BATTERY)
-                    else
-                        player:SetActiveCharge(50, j)
-                    end
-                end
+            if Astro:IsWaterEnchantress(player) then
+                local data = Astro:GetPersistentPlayerData(player)
+
+                data.curseOfAramatir = {
+                    used = false
+                }
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        local entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, -1)
+
+        for _, entity in ipairs(entities) do
+            if entity:ToPickup().OptionsPickupIndex == Astro.Collectible.CURSE_OF_ARAMATIR then
+                entity:Remove()
             end
         end
     end
@@ -44,17 +73,31 @@ Astro:AddCallback(
                 ShowAnim = false,
             }
         end
-        
-        local inventory = Astro:getPlayerInventory(playerWhoUsedItem, false)
-        local rng = playerWhoUsedItem:GetCollectibleRNG(Astro.Collectible.CURSE_OF_ARAMATIR)
 
-        local hadCollectables = {}
+        local playerData = Astro:GetPersistentPlayerData(playerWhoUsedItem)
 
         if Astro:IsWaterEnchantress(playerWhoUsedItem) then
-            hadCollectables = Astro:GetRandomCollectibles(inventory, rng, 2, Astro.Collectible.CURSE_OF_ARAMATIR, true)
-        else
-            hadCollectables = Astro:GetRandomCollectibles(inventory, rng, 1, Astro.Collectible.CURSE_OF_ARAMATIR, true)
+            if playerData.curseOfAramatir and playerData.curseOfAramatir.used then
+                return {
+                    Discharge = false,
+                    Remove = false,
+                    ShowAnim = false,
+                }
+            end
         end
+        
+        local rng = playerWhoUsedItem:GetCollectibleRNG(Astro.Collectible.CURSE_OF_ARAMATIR)
+        
+        local inventory = Astro:Filter(
+            Astro:getPlayerInventory(playerWhoUsedItem, false),
+            function (item)
+                local quality = Isaac.GetItemConfig():GetCollectible(item).Quality
+
+                return quality >= 3
+            end
+        )
+
+        local hadCollectables = Astro:GetRandomCollectibles(inventory, rng, SPAWN_COLLECTIBLE_COUNT, Astro.Collectible.CURSE_OF_ARAMATIR, true)
 
         if hadCollectables[1] == nil then
             return {
@@ -68,11 +111,23 @@ Astro:AddCallback(
             Astro:SpawnCollectible(hadCollectable, playerWhoUsedItem.Position, Astro.Collectible.CURSE_OF_ARAMATIR)
         end
 
-        SFXManager():Play(useSound, useSoundVoulme)
+        SFXManager():Play(USE_SOUND, USE_SOUND_VOLUME)
+
+        if Astro:IsWaterEnchantress(playerWhoUsedItem) then
+            playerData.curseOfAramatir = {
+                used = true
+            }
+
+            return {
+                Discharge = true,
+                Remove = false,
+                ShowAnim = true,
+            }
+        end
 
         return {
             Discharge = true,
-            Remove = false,
+            Remove = true,
             ShowAnim = true,
         }
     end,
