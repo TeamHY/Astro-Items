@@ -71,6 +71,8 @@
 		<Item Name="Forbidden Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll of Goodness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
     <Pool Name="greedSecret">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -177,6 +179,7 @@
 
 		<Item Name="Copernicus" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -296,6 +299,7 @@
 
 		<Item Name="Copernicus" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -356,6 +360,7 @@
 
 		<Item Name="Copernicus" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="greedCurse">
@@ -476,6 +481,7 @@
 		<Item Name="Copernicus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -540,6 +546,7 @@
 		<Item Name="Copernicus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedAngel">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -722,6 +729,7 @@
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -903,6 +911,7 @@
 		<Item Name="Matryoshka" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Samsara" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
 
@@ -974,6 +983,7 @@
 		<Item Name="Matryoshka" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Samsara" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1105,6 +1115,7 @@
 		<Item Name="Matryoshka" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Samsara" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Staff of Ainz Ooal Gown" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
