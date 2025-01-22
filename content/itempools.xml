@@ -70,6 +70,7 @@
 		<Item Name="Sacred Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Forbidden Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll of Goodness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
     <Pool Name="greedSecret">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -175,6 +176,7 @@
 		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Copernicus" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -293,6 +295,7 @@
 		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Copernicus" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -352,6 +355,7 @@
 		<Item Name="Amazing Chaos Scroll of Goodness" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Copernicus" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="greedCurse">
@@ -471,6 +475,7 @@
 
 		<Item Name="Copernicus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -534,6 +539,7 @@
 
 		<Item Name="Copernicus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedAngel">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -715,6 +721,7 @@
 		<Item Name="Samsara" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -1112,7 +1119,7 @@
 		<Item Name="Terraspark Boots" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Morphine" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bunny Hop" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Snake-Eyes Poplar" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Snake-Eyes Poplar" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="redChest">
 		<Item Name="Chubby's Head" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1141,7 +1148,7 @@
 		<Item Name="Chubby's Tail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Delirium Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 </ItemPools>
