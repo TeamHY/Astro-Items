@@ -2,7 +2,7 @@
     portraitroot="gfx/ui/stage/"
     nameimageroot="gfx/ui/boss/">
     <player name="Leah" skin="character_leah.png" hp="2"
-        black="4" pocketActive="839" items="794,843" keys="1"
+        black="4" pocketActive="839" items="843" keys="1"
         nameimage="playername_leah.png"
         portrait="playerportrait_leah.png"
         skinColor="-1"
@@ -13,7 +13,7 @@
         portrait="playerportrait_leah.png"
         skinColor="-1"
         birthright="" />
-    <player name="Diabellstar" skin="character_diabellstar.png" hp="6" pocketActive="822" bombs="2" items=""
+    <player name="Diabellstar" skin="character_diabellstar.png" hp="6" pocketActive="" bombs="2" items="867"
         keys="1"
         nameimage="playername_diabellstar.png"
         portrait="playerportrait_diabellstar.png"

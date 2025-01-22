@@ -6,6 +6,6 @@
     <description>인터넷 방송인 &quot;아이작 오헌영&quot; 내수용으로 개발한 대결모드에 방 구조에 사용되는 모드입니다
 
 다른 모드와 호환해서 사용할 수 있으며, 대결 모드(astro) 설치했다면 꼭 같이 깔아주세요</description>
-    <version>1.53</version>
+    <version>1.55</version>
     <visibility>Public</visibility>
 </metadata>
