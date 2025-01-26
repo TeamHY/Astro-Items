@@ -2,7 +2,7 @@
 
 local LASER_DURATION = 60
 
-local LASER_DAMAGE = 3.5
+local LASER_DAMAGE_MULTIPLY = 0.5
 
 -- 90도 마다 레이저가 생성됩니다. (360도 / 90도 = 4개)
 local LASER_ANGLE_STEP = 30
@@ -62,7 +62,7 @@ local GRID_DESTRUCTION_WHITELIST = ConstructDictionaryFromTable({
 local function RunAttack(player, position)
     for angle = 0, 360, LASER_ANGLE_STEP do
         local laser = EntityLaser.ShootAngle(LaserVariant.LIGHT_BEAM, position, angle, LASER_DURATION, Vector.Zero, player)
-        laser.CollisionDamage = LASER_DAMAGE
+        laser.CollisionDamage = player.Damage * LASER_DAMAGE_MULTIPLY
         laser.OneHit = false
         laser.DisableFollowParent = true
         laser:GetData().AstroSuperNovaLaser = true
