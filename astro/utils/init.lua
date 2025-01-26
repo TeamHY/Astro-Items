@@ -516,3 +516,8 @@ end
 function Astro:GetDoors()
     return isc:getDoors()
 end
+
+---@param rng RNG
+function Astro:CopyRNG(rng)
+    return RNG(rng:GetSeed(), 35)
+end
