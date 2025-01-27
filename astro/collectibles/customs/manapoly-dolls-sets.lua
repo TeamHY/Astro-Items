@@ -1,12 +1,10 @@
 ---
 
+local TAANA_SPEED = 10 -- 에이플 날아가는 속도
+
 local SEERI_CHANCE = 1
 
 local SEERI_CHANCE_LUCK_MULTIPLY = 0.01 -- 행운 1당 1% 소환 확률 증가
-
-local SEERI_SOUND = SoundEffect.SOUND_THUMBSUP
-
-local SEERI_SOUND_VOLUME = 0
 
 local SEERI_COOLDOWN_TIME = 60
 
@@ -36,7 +34,7 @@ Astro:AddCallback(
                 Astro.Collectible.TAANA_DEFENSE_HELPER,
                 "TAANA - 방어 도우미",
                 "...",
-                ""
+                "{{Trinket145}}Perfection가 사라지기 전에 주울 수 있습니다. 스테이지 당 한 번씩 발동합니다."
             )
 
             Astro:AddEIDCollectible(
@@ -78,6 +76,75 @@ Astro:AddCallback(
         familiar:FollowParent()
     end,
     TAANA_VARIANT
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    function(_, isContinued)
+        if not isContinued then
+            Astro.Data.Taana = {
+                Count = 0
+            }
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_LEVEL,
+    function(_)
+        Astro.Data.Taana = {
+            Count = 0
+        }
+    end
+)
+
+--- astro/callbacks.lua에 추가 구현이 있습니다.
+---@param effect EntityEffect
+local function ChangePerfection(effect)
+    local position = effect.Position
+    local dir = 2 * math.pi * math.random()
+    local velocity = Vector(math.cos(dir), math.sin(dir)) * TAANA_SPEED
+
+    Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TRINKET, TrinketType.TRINKET_PERFECTION, position, velocity, nil):ToPickup().Timeout = 60
+
+    Astro:ScheduleForUpdate(function()
+        if not Astro:HasTrinket(TrinketType.TRINKET_PERFECTION) then
+            Isaac.RunCallback(Astro.Callbacks.REMOVED_PERFECTION, position)
+        end
+    end, 61)
+
+    effect:Remove()
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_INIT,
+    ---@param effect EntityEffect
+    function (_, effect)
+        if effect.SubType ~= 100 then
+            return
+        end
+
+        if not Astro.Data.Taana then
+            Astro.Data.Taana = {
+                Count = 0
+            }
+        end
+
+        local entities = Isaac.FindByType(EntityType.ENTITY_FAMILIAR, TAANA_VARIANT)
+
+        for i, e in ipairs(entities) do
+            print(i, Astro.Data.Taana.Count + 1)
+            if i == Astro.Data.Taana.Count + 1 then
+                local familiar = e:ToFamiliar()
+                familiar:GetSprite():Play("activated")
+
+                ChangePerfection(effect)
+                Astro.Data.Taana.Count = Astro.Data.Taana.Count + 1
+                break
+            end
+        end
+    end,
+    EffectVariant.POOF01
 )
 
 --#endregion
@@ -159,10 +226,7 @@ Astro:AddCallback(
             
             if colRNG:RandomFloat() < SEERI_CHANCE + familiarPlayer.Luck * SEERI_CHANCE_LUCK_MULTIPLY then
                 familiar:GetSprite():Play("activated")
-
-                local steven = Astro:Spawn(EntityType.ENTITY_FAMILIAR, FamiliarVariant.LITTLE_STEVEN, SEERI_VARIANT, familiar.Position)
-                Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, -1, steven.Position, steven.Velocity, familiarPlayer)
-
+                Astro:Spawn(EntityType.ENTITY_FAMILIAR, FamiliarVariant.LITTLE_STEVEN, SEERI_VARIANT, familiar.Position)
                 data["spawnCooldown"] = Game():GetFrameCount() + SEERI_COOLDOWN_TIME
             end
 

@@ -12,6 +12,7 @@ Astro.Callbacks = {
     POST_PLAYER_COLLECTIBLE_REMOVED = "ASTRO_POST_PLAYER_COLLECTIBLE_REMOVED",
     POST_TRANSFORMATION = "ASTRO_POST_TRANSFORMATION",
     POST_PICKUP_COLLECT = "ASTRO_POST_PICKUP_COLLECT",
+    REMOVED_PERFECTION = "ASTRO_REMOVED_PERFECTION",
 }
 
 local isFirst = true
@@ -71,6 +72,10 @@ Astro:AddCallback(
         if player ~= nil then
             if damageFlags & (DamageFlag.DAMAGE_NO_PENALTIES | DamageFlag.DAMAGE_RED_HEARTS) == 0 then
                 Isaac.RunCallback(Astro.Callbacks.PLAYER_TAKE_PENALTY, player)
+
+                if player:HasTrinket(TrinketType.TRINKET_PERFECTION) and not player:HasCollectible(Astro.Collectible.TAANA_DEFENSE_HELPER) then
+                    Isaac.RunCallback(Astro.Callbacks.REMOVED_PERFECTION, player.Position)
+                end
             end
         end
     end
