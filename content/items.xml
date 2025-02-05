@@ -89,7 +89,7 @@
 	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" />
 	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" maxcharges="1" name="Starlit Papillon" />
 	<passive gfx="Sinful Spoils Struggle.png" quality="3" devilprice="2" shopprice="25" name="Sinful Spoils Struggle" />
-	<passive gfx="Blood Trail.png" quality="1" devilprice="2" shopprice="15" name="Blood Trail" />
+	<passive gfx="Blood Trail.png" quality="4" devilprice="2" shopprice="25" name="Blood Trail" />
 	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="300" chargetype="timed" shopprice="15" name="Sandevistan" />
 	<passive gfx="My Moon My Man.png" quality="4" devilprice="2" shopprice="30" name="My Moon My Man" />
 	<passive gfx="3 Body Problem.png" quality="3" devilprice="2" shopprice="20" name="3 Body Problem" />
