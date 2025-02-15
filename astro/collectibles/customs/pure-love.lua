@@ -65,7 +65,9 @@ Astro:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        Astro:DisplayRoom(RoomType.ROOM_SUPERSECRET)
+        if Game():GetLevel():GetAbsoluteStage() == LevelStage.STAGE1_1 then
+            Astro:DisplayRoom(RoomType.ROOM_SUPERSECRET)
+        end
     end,
     Astro.Collectible.PURE_LOVE
 )
