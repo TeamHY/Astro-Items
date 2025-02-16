@@ -69,7 +69,7 @@
 	<passive cache="luck" gfx="Lucky Rock Bottom.png" quality="3" devilprice="2" shopprice="15" name="Lucky Rock Bottom" />
 	<passive gfx="Sinful Spoils of Subversion - Snake Eye.png" quality="3" devilprice="2" shopprice="20" name="Sinful Spoils of Subversion - Snake Eye" />
 	<passive gfx="Original Sinful Spoils - Snake Eye.png" quality="4" devilprice="2" shopprice="20" name="Original Sinful Spoils - Snake Eye" />
-	<passive id="1" gfx="Heart Bloom.png" quality="3" devilprice="2" shopprice="15" tags="offensive summonable" name="Heart Bloom" description="Bloom and Doom" />
+	<passive id="1" gfx="Heart Bloom.png" quality="2" devilprice="1" shopprice="15" tags="offensive summonable" name="Heart Bloom" description="Bloom and Doom" />
 	<passive tags="guppy" gfx="Absolut Guppy.png" quality="3" devilprice="2" shopprice="15" name="Absolut Guppy" />
 	<passive tags="guppy" gfx="Delirium Guppy.png" quality="3" devilprice="1" shopprice="15" name="Delirium Guppy" />
 	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="10" name="Birthright - Judas" />
@@ -89,7 +89,7 @@
 	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" />
 	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" maxcharges="1" name="Starlit Papillon" />
 	<passive gfx="Sinful Spoils Struggle.png" quality="3" devilprice="2" shopprice="25" name="Sinful Spoils Struggle" />
-	<passive gfx="Blood Trail.png" quality="1" devilprice="2" shopprice="15" name="Blood Trail" />
+	<passive gfx="Blood Trail.png" quality="4" devilprice="2" shopprice="25" name="Blood Trail" />
 	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="300" chargetype="timed" shopprice="15" name="Sandevistan" />
 	<passive gfx="My Moon My Man.png" quality="4" devilprice="2" shopprice="30" name="My Moon My Man" />
 	<passive gfx="3 Body Problem.png" quality="3" devilprice="2" shopprice="20" name="3 Body Problem" />
@@ -135,9 +135,9 @@
 	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" />
 	<familiar tags="baby" gfx="Snake-Eyes Poplar.png" quality="2" devilprice="1" shopprice="12" name="Snake-Eyes Poplar" />
 	<active gfx="Staff of Ainz Ooal Gown.png" quality="4" devilprice="2" initcharge="0" maxcharges="100" shopprice="25" name="Staff of Ainz Ooal Gown" />
-	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="2" devilprice="1" shopprice="15" name="TAANA - Defense Helper" />
-	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="2" devilprice="1" shopprice="15" name="SEERI the Combat Helper" />
-	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="2" devilprice="1" shopprice="15" name="KAAEN - Auto Reloader" />
+	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="3" devilprice="2" shopprice="22" name="TAANA - Defense Helper" />
+	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="3" devilprice="2" shopprice="16" name="SEERI the Combat Helper" />
+	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="1" devilprice="1" shopprice="8" name="KAAEN - Auto Reloader" />
 
 
 

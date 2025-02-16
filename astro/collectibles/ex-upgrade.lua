@@ -1,6 +1,6 @@
 ---
 
-local UPGRADE_CHANCE = 0.5
+local UPGRADE_CHANCE = 0.3
 
 Astro.ZODIAC_UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_AQUARIUS] = Astro.Collectible.AQUARIUS_EX,

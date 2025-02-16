@@ -72,6 +72,7 @@
 		<Item Name="Amazing Chaos Scroll of Goodness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils Struggle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Staff of Ainz Ooal Gown" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="TAANA - Defense Helper" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
     <Pool Name="greedSecret">
@@ -913,6 +914,10 @@
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Staff of Ainz Ooal Gown" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="KAAEN - Auto Reloader" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="SEERI the Combat Helper" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="TAANA - Defense Helper" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -984,6 +989,10 @@
 		<Item Name="Samsara" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Staff of Ainz Ooal Gown" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="KAAEN - Auto Reloader" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="SEERI the Combat Helper" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="TAANA - Defense Helper" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1116,6 +1125,10 @@
 		<Item Name="Samsara" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Reincarnation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Staff of Ainz Ooal Gown" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="KAAEN - Auto Reloader" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="SEERI the Combat Helper" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="TAANA - Defense Helper" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 

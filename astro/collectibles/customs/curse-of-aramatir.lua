@@ -1,12 +1,14 @@
 ---
 
-local USE_SOUND = Isaac.GetSoundIdByName('Specialsummon')
+local USE_SOUND = Isaac.GetSoundIdByName("Specialsummon")
 
 local USE_SOUND_VOLUME = 1 -- 0 ~ 1
 
 local SPAWN_COLLECTIBLE_COUNT = 3
 
 ---
+
+local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.CURSE_OF_ARAMATIR = Isaac.GetItemIdByName("Curse of Aramatir")
 
@@ -20,8 +22,9 @@ Astro:AddCallback(
                 "...",
                 "일급 비밀방에서 사용 시 소지한 {{Quality3}}3등급/{{Quality4}}4등급 아이템 " .. SPAWN_COLLECTIBLE_COUNT .. "개를 소환합니다. 하나를 선택하면 나머지는 사라집니다." ..
                 "#소환된 아이템은 방을 나갈 경우 사라집니다." ..
+                "#1 스테이지일 경우 맵에 {{SuperSecretRoom}}일급 비밀방 위치가 표시됩니다." ..
                 "#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다." ..
-                "#!!! 일회용 아이템 (성전의 수견사, 일리걸 나이트는 스테이지당 한 번 사용 가능능)"
+                "#!!! 일회용 아이템 (성전의 수견사, 일리걸 나이트는 스테이지당 한 번 사용 가능)"
             )
         end
     end
@@ -41,7 +44,25 @@ Astro:AddCallback(
                 }
             end
         end
+
+        if Astro:HasCollectible(Astro.Collectible.CURSE_OF_ARAMATIR) then
+            if Game():GetLevel():GetAbsoluteStage() == LevelStage.STAGE1_1 then
+                Astro:DisplayRoom(RoomType.ROOM_SUPERSECRET)
+            end
+        end
     end
+)
+
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if Game():GetLevel():GetAbsoluteStage() == LevelStage.STAGE1_1 then
+            Astro:DisplayRoom(RoomType.ROOM_SUPERSECRET)
+        end
+    end,
+    Astro.Collectible.CURSE_OF_ARAMATIR
 )
 
 Astro:AddCallback(
