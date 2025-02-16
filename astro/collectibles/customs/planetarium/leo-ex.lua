@@ -1,13 +1,19 @@
+---
+
+--- 지속 시간
+local FREEZE_DURATION = 5 * 30
+
+local FREEZE_CHANCE = 0.5
+
+---
+
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.LEO_EX = Isaac.GetItemIdByName("Leo EX")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.LEO_EX, "초 사자자리", "...", "방 입장 시 모든 몬스터가 5초간 {{Freezing}}빙결 상태가 됩니다 ({{Trinket188}} 만럭 효과와 동일)#다음 게임 시작 시 {{Collectible302}}Leo를 가지고 시작합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.LEO_EX, "초 사자자리", "...", "방 입장 시 모든 몬스터가 50% 확률로로 5초간 {{Freezing}}빙결 상태가 됩니다 ({{Trinket188}} 만럭 효과와 동일)#다음 게임 시작 시 {{Collectible302}}Leo를 가지고 시작합니다.")
 end
-
---- 지속 시간
-local freezeDuration = 5 * 30
 
 ---@type Entity[]
 local freezeEntities = {}
@@ -55,13 +61,14 @@ Astro:AddCallback(
 
         if owner ~= nil then
             local entities = Isaac.GetRoomEntities()
+            local rng = owner:GetCollectibleRNG(Astro.Collectible.LEO_EX)
 
             freezeEntities = {}
-            freezeDurationTime = Game():GetFrameCount() + freezeDuration
+            freezeDurationTime = Game():GetFrameCount() + FREEZE_DURATION
 
             for _, entity in ipairs(entities) do
-                if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE then
-                    entity:AddFreeze(EntityRef(owner), freezeDuration)
+                if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE and rng:RandomFloat() < FREEZE_CHANCE then
+                    entity:AddFreeze(EntityRef(owner), FREEZE_DURATION)
                     entity:AddEntityFlags(EntityFlag.FLAG_ICE)
                     table.insert(freezeEntities, entity)
                 end
