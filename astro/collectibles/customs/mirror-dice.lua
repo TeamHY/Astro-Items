@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.MIRROR_DICE,
         "거울 주사위",
         "...",
-        "사용 시 방 안에 모든 아이템이 현재 소지 중인 아이템으로 변경됩니다. 동일한 아이템이 여러개 등장할 수 있습니다. 보유한 아이템이 없을 경우 사용할 수 없습니다."
+        "사용 시 방 안에 모든 아이템이 현재 소지 중인 아이템으로 변경됩니다. {{Quality0}}0등급/{{Quality1}}1등급 아이템은 등장하지 않습니다. 동일한 아이템이 여러개 등장할 수 있습니다. 보유한 아이템이 없을 경우 사용할 수 없습니다."
     )
 end
 
@@ -20,6 +20,11 @@ Astro:AddCallback(
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
         local inventory = Astro:getPlayerInventory(playerWhoUsedItem, false)
 
+        local itemList = Astro:FilterInventory(inventory, function(item)
+            local itemConfig = Isaac.GetItemConfig():GetCollectible(item)
+            return itemConfig.Quality > 1
+        end)
+
         local entities = Isaac.GetRoomEntities()
 
         for _, entity in ipairs(entities) do
@@ -27,7 +32,7 @@ Astro:AddCallback(
                 local pickup = entity:ToPickup()
                 
                 if pickup.SubType ~= 0 then
-                    local item = Astro:GetRandomCollectibles(inventory, rngObj, 1, Astro.Collectible.MIRROR_DICE, true)[1]
+                    local item = Astro:GetRandomCollectibles(itemList, rngObj, 1, Astro.Collectible.MIRROR_DICE, true)[1]
 
                     if not item then
                         return {
