@@ -55,7 +55,8 @@ local function SpinupModifierCondition(descObj)
     if descObj.ObjType == 5 and descObj.ObjVariant == 100 then
         local numPlayers = Game():GetNumPlayers()
         for i = 0, numPlayers - 1 do
-            if Isaac.GetPlayer(i):HasCollectible(Astro.Collectible.SPINUP_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
+            local player = Isaac.GetPlayer(i)
+            if player:HasCollectible(Astro.Collectible.SPINUP_DICE) or player:HasCollectible(Astro.Collectible.QUBIT_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
                 return true
             end
         end
@@ -68,7 +69,7 @@ local function SpinupModifierCallback(descObj)
 
     -- items check
     for i = 0, numPlayers - 1 do
-        if Isaac.GetPlayer(i):HasCollectible(Astro.Collectible.SPINUP_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
+        if Isaac.GetPlayer(i):HasCollectible(Astro.Collectible.SPINUP_DICE) or Isaac.GetPlayer(i):HasCollectible(Astro.Collectible.QUBIT_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
             playerID = i
             icon = "#{{Collectible" .. Astro.Collectible.SPINUP_DICE .. "}} :"
             break
@@ -111,10 +112,15 @@ local function SpinupModifierCallback(descObj)
     end
 end
 
-if EID and EID.Config["SpindownDiceResults"] > 0 then
-    EID:addDescriptionModifier("Spinup Modifier", SpinupModifierCondition, SpinupModifierCallback)
-    EID:addDescriptionModifier("Spinup Tab Previews", TabConditions, TabCallback)
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID and EID.Config["SpindownDiceResults"] > 0 then
+            EID:addDescriptionModifier("Spinup Modifier", SpinupModifierCondition, SpinupModifierCallback)
+            EID:addDescriptionModifier("Spinup Tab Previews", TabConditions, TabCallback)
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
