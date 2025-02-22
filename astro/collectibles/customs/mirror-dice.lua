@@ -20,37 +20,50 @@ Astro:AddCallback(
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
         local inventory = Astro:getPlayerInventory(playerWhoUsedItem, false)
 
-        local itemList = Astro:FilterInventory(inventory, function(item)
+        -- 퀄리티가 2 이상인 아이템만 필터링
+        local itemList = Astro:Filter(inventory, function(item)
             local itemConfig = Isaac.GetItemConfig():GetCollectible(item)
-            return itemConfig.Quality > 1
+            return itemConfig and itemConfig.Quality > 1
         end)
 
+        -- 가진 아이템이 필터링 된 결과에 아이템이 없을 경우 코드 조기 종료
+        if #itemList == 0 then
+            return {
+                Discharge = false,
+                Remove = false,
+                ShowAnim = false,
+            }
+        end
+
         local entities = Isaac.GetRoomEntities()
+        local transformed = false
 
         for _, entity in ipairs(entities) do
             if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE then
                 local pickup = entity:ToPickup()
                 
                 if pickup.SubType ~= 0 then
-                    local item = Astro:GetRandomCollectibles(itemList, rngObj, 1, Astro.Collectible.MIRROR_DICE, true)[1]
+                    local randomItems = Astro:GetRandomCollectibles(itemList, rngObj, 1, Astro.Collectible.MIRROR_DICE, true)
 
-                    if not item then
-                        return {
-                            Discharge = false,
-                            Remove = false,
-                            ShowAnim = false,
-                        }
+                    -- 변환 아이템이 없으면 코드 계속 진행
+                    if not randomItems or #randomItems == 0 then
+                        goto continue
                     end
 
-                    pickup:Morph(pickup.Type, pickup.Variant, item, true)
+                    -- 방에 있는 아이템을 필터링이 된 아이템중 하나로 변경
+                    pickup:Morph(pickup.Type, pickup.Variant, randomItems[1], true)
+                    transformed = true
+
+                    ::continue::
                 end
             end
         end
 
+        -- 변환 발생시 쿨타임 초기화, 아닐시에는 초기화 없음.
         return {
-            Discharge = true,
+            Discharge = transformed,
             Remove = false,
-            ShowAnim = true,
+            ShowAnim = transformed,
         }
     end,
     Astro.Collectible.MIRROR_DICE
