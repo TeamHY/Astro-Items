@@ -90,6 +90,7 @@ require "astro.collectibles.customs.wanted-seeker-of-sinful-spoil"
 require "astro.collectibles.customs.ward"
 require "astro.collectibles.customs.manyu-sets"
 require "astro.collectibles.customs.qubit-dice"
+require "astro.collectibles.customs.strawberry-milk"
 
 --#region PLANETARIUM
 
