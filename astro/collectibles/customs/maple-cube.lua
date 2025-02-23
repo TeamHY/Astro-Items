@@ -234,9 +234,16 @@ Astro:AddCallback(
     CacheFlag.CACHE_DAMAGE
 )
 
+local font = Font()
+font:Load("font/pftempestasevencondensed.fnt")
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function(_)
+        if not Game():GetRoom():IsClear() then
+            return
+        end
+
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
             local data = Astro:GetPersistentPlayerData(player)
@@ -244,14 +251,13 @@ Astro:AddCallback(
 
             if data and data["mapleCube"] then
                 for index, value in ipairs(data["mapleCube"]) do
-                    Isaac.RenderText(
+                    font:DrawString(
                         OptionDisplayName[value.option] .. string.format(" +%d%%", value.damage),
                         position.X - 24,
                         position.Y - 40 - index * 10,
-                        1,
-                        1,
-                        1,
-                        1
+                        KColor(1, 1, 1, 1),
+                        48,
+                        true
                     )
                 end
             end
