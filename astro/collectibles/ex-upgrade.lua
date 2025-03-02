@@ -77,12 +77,17 @@ Astro:AddCallback(
     ---@param seed integer
     function(_, selectedCollectible, itemPoolType, decrease, seed)
         if HasKey(Astro.PLANET_UPGRADE_LIST, selectedCollectible) and Astro:FindIndex(currentRoomData, selectedCollectible) == -1 and not HasUpgradedCollectible() then
-            local rng = RNG()
-            rng:SetSeed(seed, 35)
+            local room = Game():GetRoom()
+            local roomType = room:GetType()
 
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                table.insert(currentRoomData, selectedCollectible)
-                return Astro.PLANET_UPGRADE_LIST[selectedCollectible]
+            if roomType == RoomType.ROOM_SECRET or roomType == RoomType.ROOM_SUPERSECRET or roomType == RoomType.ROOM_ULTRASECRET then
+                local rng = RNG()
+                rng:SetSeed(seed, 35)
+
+                if rng:RandomFloat() < UPGRADE_CHANCE then
+                    table.insert(currentRoomData, selectedCollectible)
+                    return Astro.PLANET_UPGRADE_LIST[selectedCollectible]
+                end
             end
         end
     end
