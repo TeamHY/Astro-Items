@@ -92,7 +92,7 @@ Astro:AddCallback(
         local targetCollectables = {}
 
         for _, config in ipairs(Astro.CollectableConfigs) do
-            if config.Quality >= 3 then
+            if config.Quality >= 3 and config:IsAvailable() and not config.Hidden then
                 table.insert(targetCollectables, config.ID)
             end
         end
