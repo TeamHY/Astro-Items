@@ -11,6 +11,8 @@ Astro.Players = {
     DAVID_MARTINEZ_B = Isaac.GetPlayerTypeByName("Tainted David Martinez", true),
     STELLAR = Isaac.GetPlayerTypeByName("Stellar"),
     STELLAR_B = Isaac.GetPlayerTypeByName("Tainted Stellar", true),
+    AINZ_OOAL_GOWN = Isaac.GetPlayerTypeByName("Ainz Ooal Gown"),
+    AINZ_OOAL_GOWN_B = Isaac.GetPlayerTypeByName("Tainted Ainz Ooal Gown", true),
 }
 
 local LEAH_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_leahb_hair.anm2")
@@ -22,6 +24,8 @@ local DAVID_MARTINEZ_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_d
 local DAVID_MARTINEZ_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_david_martinezb_hair.anm2")
 local STELLAR_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_stellar_hair.anm2")
 local STELLAR_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_stellarb_hair.anm2")
+local AINZ_OOAL_GOWN_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_ainz_ooal_gown_hair.anm2")
+local AINZ_OOAL_GOWN_B_HAIR = Isaac.GetCostumeIdByPath("gfx/characters/character_ainz_ooal_gownb_hair.anm2")
 
 ---@param player EntityPlayer
 function Astro:IsLeah(player)
@@ -46,6 +50,11 @@ end
 ---@param player EntityPlayer
 function Astro:IsStellar(player)
     return player:GetPlayerType() == Astro.Players.STELLAR or player:GetPlayerType() == Astro.Players.STELLAR_B
+end
+
+---@param player EntityPlayer
+function Astro:IsAinzOoalGown(player)
+    return player:GetPlayerType() == Astro.Players.AINZ_OOAL_GOWN or player:GetPlayerType() == Astro.Players.AINZ_OOAL_GOWN_B
 end
 
 Astro:AddCallback(
@@ -147,6 +156,26 @@ Astro:AddCallback(
         else
             if player:GetEffects():HasNullEffect(STELLAR_B_HAIR) then
                 player:GetEffects():RemoveNullEffect(STELLAR_B_HAIR)
+            end
+        end
+
+        if player:GetPlayerType() == Astro.Players.AINZ_OOAL_GOWN then
+            if not player:GetEffects():HasNullEffect(AINZ_OOAL_GOWN_HAIR) then
+                player:GetEffects():AddNullEffect(AINZ_OOAL_GOWN_HAIR, true)
+            end
+        else
+            if player:GetEffects():HasNullEffect(AINZ_OOAL_GOWN_HAIR) then
+                player:GetEffects():RemoveNullEffect(AINZ_OOAL_GOWN_HAIR)
+            end
+        end
+
+        if player:GetPlayerType() == Astro.Players.AINZ_OOAL_GOWN_B then
+            if not player:GetEffects():HasNullEffect(AINZ_OOAL_GOWN_B_HAIR) then
+                player:GetEffects():AddNullEffect(AINZ_OOAL_GOWN_B_HAIR, true)
+            end
+        else
+            if player:GetEffects():HasNullEffect(AINZ_OOAL_GOWN_B_HAIR) then
+                player:GetEffects():RemoveNullEffect(AINZ_OOAL_GOWN_B_HAIR)
             end
         end
     end

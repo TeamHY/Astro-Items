@@ -61,4 +61,16 @@
         portrait="playerportrait_stellarb.png"
         skinColor="5"
         birthright="" />
+    <player name="Ainz Ooal Gown" skin="character_ainz_ooal_gown.png" hp="6" pocketActive="" bombs="2" items=""
+        keys="1"
+        nameimage="playername_ainz_ooal_gown.png"
+        portrait="playerportrait_ainz_ooal_gown.png"
+        skinColor="0"
+        birthright="" />
+    <player name="Tainted Ainz Ooal Gown" bSkinParent="Ainz Ooal Gown" skin="character_ainz_ooal_gownb.png" hp="6" pocketActive="" bombs="2" items=""
+        keys="1"
+        nameimage="playername_ainz_ooal_gown.png"
+        portrait="playerportrait_ainz_ooal_gown.png"
+        skinColor="-1"
+        birthright="" />
 </players>
