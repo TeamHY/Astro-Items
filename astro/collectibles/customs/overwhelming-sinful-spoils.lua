@@ -4,7 +4,7 @@ local DURATION = 4 * 30
 
 Astro.Collectible.OVERWHELMING_SINFUL_SPOILS = Isaac.GetItemIdByName("Overwhelming Sinful Spoils")
 
-local useSound = Isaac.GetSoundIdByName('Specialsummon')
+local useSound = Isaac.GetSoundIdByName('OverwhelmingSinfulSpoils')
 local useSoundVoulme = 1 -- 0 ~ 1
 
 Astro:AddCallback(

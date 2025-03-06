@@ -2,7 +2,7 @@
 
 local USE_SOUND = Astro.SoundEffect.STAFF_OF_AINZ_OOAL_GOWN
 
-local USE_SOUND_VOLUME = 2
+local USE_SOUND_VOLUME = 1
 
 local CHARGE_MULTIPLY = 0.2 -- 대미지 당 충전량 비율
 

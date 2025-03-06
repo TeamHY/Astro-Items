@@ -1,10 +1,10 @@
 
 <sounds root="sfx/">
-    <sound name="Destroyed">
-        <sample weight="1" path="destroyed.wav" />
+    <sound name="OverwhelmingSinfulSpoils">
+        <sample weight="1" path="feedback/overwhelming-sinful-spoils.wav" />
     </sound>
-    <sound name="Specialsummon">
-        <sample weight="1" path="specialsummon.wav" />
+    <sound name="RiteofAramesir">
+        <sample weight="1" path="feedback/rite-of-aramesir.wav" />
     </sound>
     <sound name="ChubbyUp">
         <sample weight="1" path="chubby-up.wav" />

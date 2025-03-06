@@ -1,6 +1,6 @@
 Astro.Collectible.RITE_OF_ARAMESIR = Isaac.GetItemIdByName("Rite of Aramesir")
 
-local useSound = Isaac.GetSoundIdByName('Specialsummon')
+local useSound = Isaac.GetSoundIdByName('RiteofAramesir')
 local useSoundVoulme = 1 -- 0 ~ 1
 
 Astro:AddCallback(
