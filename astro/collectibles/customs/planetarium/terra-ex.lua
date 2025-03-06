@@ -1,7 +1,7 @@
 ---
 
-local MIN_DAMAGE_MULTIPLIER = 1.5
-local MAX_DAMAGE_MULTIPLIER = 2.0
+local MIN_DAMAGE_MULTIPLIER = 1.1
+local MAX_DAMAGE_MULTIPLIER = 1.5
 
 ---
 
@@ -16,7 +16,7 @@ if EID then
         "초 지구",
         "...",
         "{{Collectible592}}Terra 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#방 입장 시 {{DamageSmall}}공격력이 x1.5 ~ x2 증가합니다. 중첩이 가능합니다." ..
+        "#방 입장 시 {{DamageSmall}}공격력이 x1.1 ~ x1.5 증가합니다. 중첩이 가능합니다." ..
         "#방 클리어 시 {{Card32}}Hagalaz를 발동합니다."
     )
 end
