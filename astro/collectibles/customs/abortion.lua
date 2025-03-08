@@ -4,7 +4,7 @@ local SPAWN_CHANCE = 0.5
 
 local LUCK_MULTIPLY = 1 / 100
 
-local COOLDOWN_TIME = 30 -- 30 프레임 = 1초
+local COOLDOWN_TIME = 15 -- 30 프레임 = 1초
 
 local SYNERGY_COOLDOWN_TIME = 60
 
