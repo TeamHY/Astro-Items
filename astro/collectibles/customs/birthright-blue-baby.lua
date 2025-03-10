@@ -8,7 +8,7 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_BLUE_BABY,
                 "생득권 - 블루베이비",
                 "...",
-                "소울하트를 획득 시 소울하트 1개가 더 늘어납니다."
+                "소울하트를 획득 시 소울하트 1개가 더 늘어납니다. 중첩이 가능합니다."
             )
         end
     end
@@ -30,7 +30,7 @@ Astro:AddCallback(
             if currentSoulHearts > data.prevSoulHearts then
                 if data.prevSoulHearts ~= -1 then
                     local additionalSoulHearts = currentSoulHearts - data.prevSoulHearts
-                    player:AddSoulHearts(additionalSoulHearts)
+                    player:AddSoulHearts(additionalSoulHearts * player:GetCollectibleNum(Astro.Collectible.BIRTHRIGHT_BLUE_BABY))
                 end
             end
         end
