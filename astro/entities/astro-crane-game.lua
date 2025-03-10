@@ -60,7 +60,12 @@ Astro:AddCallback(
             sprite:PlayOverlay("CoinInsert", true)
             SFXManager():Play(SoundEffect.SOUND_COIN_SLOT)
 
-            player:AddCoins(-data.price)
+            local rng = player:GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_CAIN)
+
+            if not (player:HasCollectible(Astro.Collectible.BIRTHRIGHT_CAIN) and rng:RandomFloat() < Astro.BIRTHRIGHT_CAIN_CHANCE) then
+                player:AddCoins(-data.price)
+            end
+
             sprite:Play("Initiate")
         end
     end
@@ -126,16 +131,23 @@ Astro:AddCallbackCustom(
             sprite:Play("Death")
         elseif sprite:IsFinished("Death") then
             sprite:Play("Broken")
+            slot.GridCollisionClass = GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER
             slot:Kill()
         end
 
         if sprite:IsEventTriggered("Explosion") then
-            Isaac.Explode(slot.Position, slot, 0)
+            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, slot.Position, Vector(0, 0), nil)
+            SFXManager():Play(SoundEffect.	SOUND_BOSS1_EXPLOSIONS, 1)
         end
 
         if sprite:IsEventTriggered("Prize") then
             local data = GetData(slot.SubType)
             Astro:SpawnCollectible(data.collectible, slot.Position)
+        end
+
+        if slot.GridCollisionClass == GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER then
+            sprite:Play("Broken")
+            slot:Kill()
         end
     end,
     3100
