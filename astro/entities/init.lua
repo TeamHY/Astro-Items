@@ -1,3 +1,4 @@
+require "astro.entities.astro-crane-game"
 require "astro.entities.soul"
 require "astro.entities.star"
 require "astro.entities.dust"
