@@ -1,6 +1,6 @@
 ---
 
-local CHANGE_CHANCE = 0.2
+local CHANGE_CHANCE = 0.7
 
 ---
 
