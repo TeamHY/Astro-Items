@@ -6,6 +6,8 @@ local CHANGE_CHANCE = 0.7
 
 local isc = require("astro.lib.isaacscript-common")
 
+local INIT_CHECK_SUBTYPE = 1000
+
 ---@param priceType number
 ---@param collectible CollectibleType
 local function GetSubType(priceType, collectible)
@@ -77,12 +79,14 @@ Astro:AddCallbackCustom(
     function(_, slot)
         local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_EVE)
 
-        if rng:RandomFloat() < CHANGE_CHANCE then
+        if slot.SubType ~= INIT_CHECK_SUBTYPE and rng:RandomFloat() < CHANGE_CHANCE then
             local itemPool = Game():GetItemPool()
             local collectible = itemPool:GetCollectible(ItemPoolType.POOL_SHOP, true)
 
             slot:Remove()
             Isaac.Spawn(EntityType.ENTITY_SLOT, 3100, GetSubType(rng:RandomInt(4), collectible), slot.Position, Vector(0, 0), nil)
+        elseif slot.SubType ~= INIT_CHECK_SUBTYPE then
+            slot.SubType = INIT_CHECK_SUBTYPE
         end
     end,
     16
