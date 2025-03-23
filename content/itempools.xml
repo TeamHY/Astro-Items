@@ -740,6 +740,10 @@
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 	</Pool>
 	<Pool Name="greedTreasure">
@@ -929,6 +933,10 @@
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -1007,6 +1015,10 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1146,6 +1158,10 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
@@ -1161,13 +1177,6 @@
 		<Item Name="Morphine" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bunny Hop" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Snake-Eyes Poplar" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
-	</Pool>
-	<Pool Name="redChest">
-		<Item Name="Chubby's Head" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Sleeping Puppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Chubby's Tail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
-		<Item Name="Absolut Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedBoss">
 
