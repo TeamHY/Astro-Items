@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Callbacks = {
     POST_NEW_STAGE = "ASTRO_POST_NEW_STAGE",
     POST_NEW_GREED_WAVE = "ASTRO_POST_NEW_GREED_WAVE",
-    PLAYER_TAKE_PENALTY = "ASTRO_PLAYER_TAKE_PENALTY",
+    PLAYER_TAKE_PENALTY = "ASTRO_PLAYER_TAKE_PENALTY", -- false를 리턴 시 패널티를 제거합니다.
     SOUL_COLLECTED = "ASTRO_SOUL_COLLECTED",
     EVALUATE_MY_MOON = "ASTRO_EVALUATE_MY_MOON",
     MOD_INIT = "ASTRO_MOD_INIT",
@@ -71,7 +71,12 @@ Astro:AddCallback(
 
         if player ~= nil then
             if damageFlags & (DamageFlag.DAMAGE_NO_PENALTIES | DamageFlag.DAMAGE_RED_HEARTS) == 0 then
-                Isaac.RunCallback(Astro.Callbacks.PLAYER_TAKE_PENALTY, player)
+                local result = Isaac.RunCallback(Astro.Callbacks.PLAYER_TAKE_PENALTY, player)
+
+                if result == false then
+                    entity:TakeDamage(amount, damageFlags | DamageFlag.DAMAGE_NO_PENALTIES, source, countdownFrames)
+                    return false
+                end
 
                 if player:HasTrinket(TrinketType.TRINKET_PERFECTION) and not player:HasCollectible(Astro.Collectible.TAANA_DEFENSE_HELPER) then
                     Isaac.RunCallback(Astro.Callbacks.REMOVED_PERFECTION, player.Position)

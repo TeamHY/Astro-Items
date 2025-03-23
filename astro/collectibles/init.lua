@@ -95,6 +95,7 @@ require "astro.collectibles.customs.ward"
 require "astro.collectibles.customs.manyu-sets"
 require "astro.collectibles.customs.qubit-dice"
 require "astro.collectibles.customs.strawberry-milk"
+require "astro.collectibles.customs.hot-potato"
 
 --#region PLANETARIUM
 
