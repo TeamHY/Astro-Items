@@ -8,7 +8,8 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_STEVEN,
                 "생득권 - 스티븐",
                 "...",
-                ""
+                "보스방에서 {{Collectible100}}Little Steven만 등장합니다." ..
+                "#2개 이상 중첩 시 {{Collectible100}}Little Steven이 추가로 소환됩니다."
             )
         end
     end
