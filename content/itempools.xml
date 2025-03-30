@@ -745,6 +745,11 @@
 		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 	</Pool>
 	<Pool Name="greedTreasure">
@@ -938,6 +943,11 @@
 		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -1020,6 +1030,11 @@
 		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1163,6 +1178,11 @@
 		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
@@ -1178,6 +1198,9 @@
 		<Item Name="Morphine" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bunny Hop" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Snake-Eyes Poplar" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedBoss">
 
