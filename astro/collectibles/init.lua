@@ -97,6 +97,7 @@ require "astro.collectibles.customs.qubit-dice"
 require "astro.collectibles.customs.strawberry-milk"
 require "astro.collectibles.customs.hot-potato"
 require "astro.collectibles.customs.unholy-mantle"
+require "astro.collectibles.customs.birthright-steven"
 
 --#region PLANETARIUM
 
