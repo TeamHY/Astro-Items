@@ -145,6 +145,7 @@
 	<passive gfx="Birthright - Blue Baby.png" quality="2" devilprice="1" shopprice="7" soulhearts="2" name="Birthright - Blue Baby" />
 	<passive gfx="Birthright - Cain.png" quality="3" devilprice="1" shopprice="15" name="Birthright - Cain" />
 	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" />
+	<passive gfx="Unholy Mantle.png" quality="2" devilprice="2" shopprice="15" name="Unholy Mantle" />
 
 
 

@@ -96,6 +96,7 @@ require "astro.collectibles.customs.manyu-sets"
 require "astro.collectibles.customs.qubit-dice"
 require "astro.collectibles.customs.strawberry-milk"
 require "astro.collectibles.customs.hot-potato"
+require "astro.collectibles.customs.unholy-mantle"
 
 --#region PLANETARIUM
 
