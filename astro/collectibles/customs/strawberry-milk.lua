@@ -1,6 +1,6 @@
 ---
 
-local DELAY_TIME = 10
+local DELAY_TIME = 60
 
 local TEARS_INCREMENT = 1
 
