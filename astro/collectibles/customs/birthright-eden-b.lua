@@ -8,7 +8,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_EDEN_B,
-                "Birthright - Eden B",
+                "생득권 - 알트 에덴",
                 "...",
                 "사용 시 {{Collectible619}}Birthright를 획득 합니다." ..
                 "#소지 시 {{Collectible258}}Missing No. 효과가 적용됩니다."
