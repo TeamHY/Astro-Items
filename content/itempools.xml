@@ -1211,6 +1211,8 @@
 
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedBoss">
 
