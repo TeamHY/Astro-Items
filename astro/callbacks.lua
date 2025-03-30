@@ -4,6 +4,7 @@ Astro.Callbacks = {
     POST_NEW_STAGE = "ASTRO_POST_NEW_STAGE",
     POST_NEW_GREED_WAVE = "ASTRO_POST_NEW_GREED_WAVE",
     PLAYER_TAKE_PENALTY = "ASTRO_PLAYER_TAKE_PENALTY", -- false를 리턴 시 패널티를 제거합니다.
+    POST_PLAYER_TAKE_PENALTY = "ASTRO_POST_PLAYER_TAKE_PENALTY",
     SOUL_COLLECTED = "ASTRO_SOUL_COLLECTED",
     EVALUATE_MY_MOON = "ASTRO_EVALUATE_MY_MOON",
     MOD_INIT = "ASTRO_MOD_INIT",
@@ -77,6 +78,8 @@ Astro:AddCallback(
                     entity:TakeDamage(amount, damageFlags | DamageFlag.DAMAGE_NO_PENALTIES, source, countdownFrames)
                     return false
                 end
+
+                Isaac.RunCallback(Astro.Callbacks.POST_PLAYER_TAKE_PENALTY, player)
 
                 if player:HasTrinket(TrinketType.TRINKET_PERFECTION) and not player:HasCollectible(Astro.Collectible.TAANA_DEFENSE_HELPER) then
                     Isaac.RunCallback(Astro.Callbacks.REMOVED_PERFECTION, player.Position)

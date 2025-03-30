@@ -10,6 +10,8 @@ local TEARS_INCREMENT = 0.0015
 
 local LUCK_INCREMENT = 0.0085
 
+local PENALTY_TIME = 60 * 30
+
 ---
 
 Astro.Collectible.AMPLIFYING_MIND = Isaac.GetItemIdByName("Amplifying Mind")
@@ -30,7 +32,9 @@ if EID then
         Astro.Collectible.CALM_MIND,
         "침착한 정신",
         "...",
-        "1초 마다 공격력이 0.005 증가합니다. 시작 방에서는 증가하지 않습니다." ..
+        "1초 마다 공격력이 0.005 증가합니다." ..
+        "#시작 방에서는 증가하지 않습니다." ..
+        "#패널티 피격 시 1분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -38,7 +42,9 @@ if EID then
         Astro.Collectible.SWIFT_MIND,
         "신속한 정신",
         "...",
-        "1초 마다 이동 속도가 0.00075 증가합니다. 시작 방에서는 증가하지 않습니다." ..
+        "1초 마다 이동 속도가 0.00075 증가합니다." ..
+        "#시작 방에서는 증가하지 않습니다." ..
+        "#패널티 피격 시 1분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -46,7 +52,9 @@ if EID then
         Astro.Collectible.BLUE_MIND,
         "우울한 정신",
         "...",
-        "1초 마다 연사(고정)가 0.0015 증가합니다. 시작 방에서는 증가하지 않습니다." ..
+        "1초 마다 연사(고정)가 0.0015 증가합니다." ..
+        "#시작 방에서는 증가하지 않습니다." ..
+        "#패널티 피격 시 1분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -54,7 +62,9 @@ if EID then
         Astro.Collectible.LUCKY_MIND,
         "행운의 정신",
         "...",
-        "1초 마다 행운이 0.0085 증가합니다. 시작 방에서는 증가하지 않습니다." ..
+        "1초 마다 행운이 0.0085 증가합니다." ..
+        "#시작 방에서는 증가하지 않습니다." ..
+        "#패널티 피격 시 1분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -149,11 +159,12 @@ Astro:AddCallback(
                     damage = 0,
                     speed = 0,
                     tears = 0,
-                    luck = 0
+                    luck = 0,
+                    penaltyTime = 0
                 }
             end
     
-            if Game():GetLevel():GetCurrentRoomIndex() ~= 84 and Game():GetFrameCount() % DELAY_FRAME == 0 then
+            if Game():GetLevel():GetCurrentRoomIndex() ~= 84 and Game():GetFrameCount() % DELAY_FRAME == 0 and data["mindSeries"].penaltyTime < Game():GetFrameCount()then
                 local isRequiredEvaluation = false
 
                 local amplifyingMindMultiplier = player:HasCollectible(Astro.Collectible.AMPLIFYING_MIND) and 2 or 1
@@ -212,5 +223,17 @@ Astro:AddCallback(
                 player.Luck = player.Luck + data["mindSeries"].luck
             end
 		end
+    end
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_TAKE_PENALTY,
+    ---@param player EntityPlayer
+    function(_, player)
+        local data = Astro:GetPersistentPlayerData(player)
+
+        if data and data["mindSeries"] then
+            data["mindSeries"].penaltyTime = Game():GetFrameCount() + PENALTY_TIME
+        end
     end
 )
