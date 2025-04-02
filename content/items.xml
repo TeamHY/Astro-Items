@@ -139,13 +139,13 @@
 	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="3" devilprice="2" shopprice="16" name="SEERI the Combat Helper" />
 	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="1" devilprice="1" shopprice="8" name="KAAEN - Auto Reloader" />
 	<active gfx="Qubit Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="15" name="Qubit Dice" />
-	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="3" devilprice="1" shopprice="15" name="Strawberry Milk" />
-	<passive gfx="Entoma Vasilissa Zeta.png" quality="3" devilprice="2" shopprice="15" name="Entoma Vasilissa Zeta" />
+	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="2" devilprice="1" shopprice="15" name="Strawberry Milk" />
+	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="15" name="Entoma Vasilissa Zeta" />
 	<passive gfx="Birthright - Eve.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Eve" />
 	<passive gfx="Birthright - Blue Baby.png" quality="2" devilprice="1" shopprice="7" soulhearts="2" name="Birthright - Blue Baby" />
-	<passive gfx="Birthright - Cain.png" quality="3" devilprice="1" shopprice="15" name="Birthright - Cain" />
+	<passive gfx="Birthright - Cain.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Cain" />
 	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" />
-	<passive gfx="Unholy Mantle.png" quality="2" devilprice="2" shopprice="15" name="Unholy Mantle" />
+	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" shopprice="15" name="Unholy Mantle" />
 	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Steven" />
 	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Apollyon B" />
 	<active gfx="Birthright - Eden B.png" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" />
