@@ -760,6 +760,11 @@
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Birthright - Steven" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 	</Pool>
 	<Pool Name="greedTreasure">
@@ -1042,9 +1047,14 @@
 		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Entoma Vasilissa Zeta" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birthright - Steven" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1190,9 +1200,14 @@
 		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Entoma Vasilissa Zeta" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birthright - Steven" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 

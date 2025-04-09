@@ -78,12 +78,12 @@
 	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" />
 	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="40" name="Super Nova" />
 	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" />
-	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="300" chargetype="timed" name="Overwhelming Sinful Spoils" />
+	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" />
 	<passive id="2" cache="firedelay" gfx="Technology Omicron.png" quality="4" tags="offensive summonable tech" name="Technology Omicron EX" description="Laser aura tears"/>
 	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" />
 	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="0" shopprice="16" name="Curse of Aramatir" />
 	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" />
-	<active gfx="The Holy Blood and the Holy Grail.png" quality="4" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" />
+	<active gfx="The Holy Blood and the Holy Grail.png" quality="3" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" />
 	<passive tags="book" gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="18" name="Akashic Records" />
 	<passive tags="speed" gfx="Terraspark Boots.png" quality="2" devilprice="1" shopprice="10" name="Terraspark Boots" />
 	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" />
@@ -97,7 +97,7 @@
 	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" />
 	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" />
 	<passive gfx="Bunny Hop.png" quality="2" devilprice="1" shopprice="8" name="Bunny Hop" />
-	<active gfx="Mirror Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="25" name="Mirror Dice" />
+	<active gfx="Mirror Dice.png" quality="3" devilprice="1" maxcharges="10" shopprice="15" name="Mirror Dice" />
 	<active tags="damage" gfx="Black Cube.png" quality="3" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" />
 	<active tags="damage" gfx="Red Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Red Cube" />
 	<active gfx="WANTED Seeker of Sinful Spoil.png" quality="3" devilprice="2" maxcharges="1" shopprice="15" name="WANTED: Seeker of Sinful Spoil" />
@@ -138,7 +138,7 @@
 	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="3" devilprice="2" shopprice="22" name="TAANA - Defense Helper" />
 	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="3" devilprice="2" shopprice="16" name="SEERI the Combat Helper" />
 	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="1" devilprice="1" shopprice="8" name="KAAEN - Auto Reloader" />
-	<active gfx="Qubit Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="15" name="Qubit Dice" />
+	<active gfx="Qubit Dice.png" quality="4" devilprice="1" maxcharges="12" shopprice="18" name="Qubit Dice" />
 	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="2" devilprice="1" shopprice="15" name="Strawberry Milk" />
 	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="15" name="Entoma Vasilissa Zeta" />
 	<passive gfx="Birthright - Eve.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Eve" />
@@ -147,7 +147,7 @@
 	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" />
 	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" shopprice="15" name="Unholy Mantle" />
 	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Steven" />
-	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Apollyon B" />
+	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="8" name="Birthright - Apollyon B" />
 	<active gfx="Birthright - Eden B.png" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" />
 
 
