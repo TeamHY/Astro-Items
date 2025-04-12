@@ -65,12 +65,12 @@ end
 Astro:AddCallback(
 	ModCallbacks.MC_POST_RENDER,
 	function(_)
-		local centerX = Isaac.GetScreenWidth() / 2
-		local centerY = Isaac.GetScreenHeight() / 2
-		
-		background:Render(Vector(centerX, centerY), Vector(0, 0), Vector(0, 0))
-
 		if #warnings > 0 then
+			local centerX = Isaac.GetScreenWidth() / 2
+			local centerY = Isaac.GetScreenHeight() / 2
+			
+			background:Render(Vector(centerX, centerY), Vector(0, 0), Vector(0, 0))
+
 			for i, warning in ipairs(warnings) do
 				font:DrawStringUTF8(warning, centerX - 104, centerY - 4 - math.floor(#warnings * 16 / 2) + (i - 1) * 16, KColor(1, 1, 1, 1), 200, true)
 			end
