@@ -33,7 +33,7 @@ local CHUBBY_SET_LIST = {
 }
 
 -- 처비셋 쿨타임
-local CHUBBY_SET_COOLDOWN_TIME = 30 -- 30 프레임 당 하나
+local CHUBBY_SET_COOLDOWN_TIME = 15 -- 30 프레임 당 하나
 
 -- 처비셋 눈물 발사 시 효과 발동 확률
 local CHUBBY_SET_CHANCE = 0.5
@@ -44,7 +44,7 @@ local CHUBBYS_HEAD_DAMAGE = 3.5
 
 -- 잠자는 강아지
 local SLEEPING_PUPPY_INCREMENT = 0.35
-local SLEEPING_PUPPY_VOULME = 1
+local SLEEPING_PUPPY_VOULME = 2
 local SLEEPING_PUPPY_DAMAGE = 0.35
 
 -- 처비의 꼬리

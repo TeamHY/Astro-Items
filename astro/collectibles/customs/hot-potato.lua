@@ -14,7 +14,8 @@ if EID then
         "뜨거운 감자",
         "",
         "4초마다 폭발을 일으킵니다." ..
-        "#{{Collectible375}}Host Hat 효과가 적용됩니다."
+        "#{{Collectible375}}Host Hat 효과가 적용됩니다."..
+        "#폭탄 +2 증가됩니다."
     )
 end
 
