@@ -54,13 +54,13 @@ if not REPENTANCE_PLUS then
 	table.insert(warnings, "Repentance+ DLC가 필요합니다.")
 end
 
-if not HY_POCKETS then
-	table.insert(warnings, "추가 소모성 모드가 필요합니다.")
-end
+-- if not HY_POCKETS then
+-- 	table.insert(warnings, "추가 소모성 모드가 필요합니다.")
+-- end
 
-if not GoldenItems then
-	table.insert(warnings, "황금 아이템 모드가 필요합니다.")
-end
+-- if not GoldenItems then
+-- 	table.insert(warnings, "황금 아이템 모드가 필요합니다.")
+-- end
 
 Astro:AddCallback(
 	ModCallbacks.MC_POST_RENDER,
