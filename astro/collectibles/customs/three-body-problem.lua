@@ -129,9 +129,15 @@ Astro:AddCallbackCustom(
             for _, item in ipairs(banItems) do
                 Astro:RemoveAllCollectible(player, item)
             end
-
-            hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE, nil, 3)
         end
     end,
     Astro.Collectible.THREE_BODY_PROBLEM
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PEFFECT_UPDATE,
+    ---@param player EntityPlayer
+    function(_, player)
+        hiddenItemManager:CheckStack(player, CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE, player:HasCollectible(Astro.Collectible.THREE_BODY_PROBLEM) and 3 or 0, "ASTRO_THREE_BODY_PROBLEM")
+    end
 )
