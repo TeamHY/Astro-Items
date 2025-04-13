@@ -9,7 +9,7 @@ if EID then
         "초 태양",
         "...",
         "{{Collectible588}}Sol 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#{{BossRoom}}보스방 클리어 시 {{Collectible633}}Dogma를 획득하고 황금 장신구 2개를 소환합니다."
+        "#{{BossRoom}}보스방 클리어 시 {{Collectible633}}Dogma가 없을 경우 1개 획득하고 장신구 1개를 소환합니다."
     )
 end
 
@@ -28,11 +28,13 @@ Astro:AddCallback(
 
                 if player:HasCollectible(Astro.Collectible.SOL_EX) then
                     for _ = 1, player:GetCollectibleNum(Astro.Collectible.SOL_EX) do
-                        player:AddCollectible(CollectibleType.COLLECTIBLE_DOGMA)
-    
-                        for _ = 1, 2 do
-                            Astro:SpawnTrinket(itemPool:GetTrinket() + 32768, player.Position)
+                        if not player:HasCollectible(CollectibleType.COLLECTIBLE_DOGMA) then
+                            player:AddCollectible(CollectibleType.COLLECTIBLE_DOGMA)
                         end
+    
+                        -- for _ = 1, 2 do
+                            Astro:SpawnTrinket(itemPool:GetTrinket(), player.Position)
+                        -- end
                     end
                 end
             end
