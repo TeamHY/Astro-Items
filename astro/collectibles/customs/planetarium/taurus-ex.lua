@@ -5,7 +5,12 @@ if EID then
         Astro.Collectible.TAURUS_EX,
         "초 황소자리",
         "...",
-        "중첩이 가능합니다.#방 입장 시 아래 효과 중 한가지가 적용됩니다.#{{Tears}}연사(상한+2) 증가됩니다.#{{Damage}}공격력이 +2 증가됩니다. ({{Collectible34}} 액티브와 동일) #{{Speed}}이동 속도가 최대로 고정됩니다. 이미 최대일 경우 이 효과가 선택되지 않습니다.#유도 특성이 적용됩니다. ({{Collectible192}} 액티브와 동일)"
+        "중첩이 가능합니다." ..
+        "#방 입장 시 아래 효과 중 한가지가 적용됩니다. {{BossRoom}}보스방에서는 모든 효과가 적용됩니다." ..
+        "#{{Tears}}연사(상한+2) 증가됩니다." ..
+        "#{{Damage}}공격력이 +2 증가됩니다. ({{Collectible34}} 액티브와 동일) " ..
+        "#{{Speed}}이동 속도가 최대로 고정됩니다. 이미 최대일 경우 이 효과가 선택되지 않습니다." ..
+        "#유도 특성이 적용됩니다. ({{Collectible192}} 액티브와 동일)"
     )
 end
 
@@ -61,6 +66,22 @@ Astro:AddCallback(
                     }
                 end
 
+                local room = Game():GetRoom()
+
+                if room:GetType() == RoomType.ROOM_BOSS then
+                    for j = 0, 3 do
+                        if not (checkMaxSpeed(player) and j == 2) then
+                            effects[j](player)
+                        end
+                    end
+    
+                    player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+                    player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
+                    player:EvaluateItems()
+    
+                    goto continue
+                end    
+
                 repeat
                     data.Taurus.Key = player:GetCollectibleRNG(Astro.Collectible.TAURUS_EX):RandomInt(4)
                 until not (checkMaxSpeed(player) and data.Taurus.Key == 2)
@@ -70,6 +91,8 @@ Astro:AddCallback(
                 player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
                 player:EvaluateItems()
             end
+
+            ::continue::
         end
     end
 )
@@ -81,9 +104,10 @@ Astro:AddCallback(
     function(_, player, cacheFlag)
         if player:HasCollectible(Astro.Collectible.TAURUS_EX) then
             local data = player:GetData()
+            local room = Game():GetRoom()
 
             if data.Taurus ~= nil then
-                if cacheFlag == CacheFlag.CACHE_SPEED and data.Taurus.Key == 2 then
+                if cacheFlag == CacheFlag.CACHE_SPEED and (data.Taurus.Key == 2 or room:GetType() == RoomType.ROOM_BOSS)then
                     if player:HasCollectible(CollectibleType.COLLECTIBLE_MERCURIUS) then
                         if player.MoveSpeed < 1.4 then
                             player.MoveSpeed = 1.4
@@ -93,7 +117,7 @@ Astro:AddCallback(
                             player.MoveSpeed = 2
                         end
                     end
-                elseif cacheFlag == CacheFlag.CACHE_FIREDELAY and data.Taurus.Key == 3 then
+                elseif cacheFlag == CacheFlag.CACHE_FIREDELAY and (data.Taurus.Key == 3 or room:GetType() == RoomType.ROOM_BOSS) then
                     player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, 2 * player:GetCollectibleNum(Astro.Collectible.TAURUS_EX))
                 end
             end
