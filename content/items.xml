@@ -150,6 +150,7 @@
 	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="8" name="Birthright - Apollyon B" />
 	<active gfx="Birthright - Eden B.png" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" />
 	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="15" name="Purple Candle" />
+	<passive gfx="Astro Godhead.png" quality="2" devilprice="1" shopprice="15" name="Astro Godhead" />
 
 
 	<!-- 아래부터는 커스텀 장신구 -->
