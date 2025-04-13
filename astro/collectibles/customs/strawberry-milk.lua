@@ -30,7 +30,7 @@ Astro:AddCallback(
         if player:HasCollectible(Astro.Collectible.STRAWBERRY_MILK) then
             local data = player:GetData()
 
-            if data["StrawberryMilkDelay"] == nil or data["StrawberryMilkDelay"] <= Game():GetFrameCount() then
+            if (data["StrawberryMilkDelay"] == nil or data["StrawberryMilkDelay"] <= Game():GetFrameCount()) and not Game():GetRoom():IsClear() then
                 if player.FireDelay ~= -1 then
                     for i = 1, 4 do
                         local tear = player:FireTear(player.Position, Vector(2, 2):Rotated(i * 90), true, true, false):ToTear()
