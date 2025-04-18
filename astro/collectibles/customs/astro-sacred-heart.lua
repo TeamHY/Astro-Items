@@ -49,8 +49,7 @@ Astro:AddCallback(
             
             if player ~= nil and player:HasCollectible(Astro.Collectible.ASTRO_SACRED_HEART) then
                 local numAstroSacredHeart = player:GetCollectibleNum(Astro.Collectible.ASTRO_SACRED_HEART)
-                entity:TakeDamage(amount * (2.3 * numAstroSacredHeart), damageFlags | DamageFlag.DAMAGE_IV_BAG, source, countdownFrames)
-                return false
+                entity:TakeDamage(amount * ((2.3 * numAstroSacredHeart) - 1), damageFlags | DamageFlag.DAMAGE_IV_BAG, source, countdownFrames)
             end
         end
     end
