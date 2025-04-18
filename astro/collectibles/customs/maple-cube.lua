@@ -18,10 +18,19 @@ local RED_MAX_BOSS = 25
 
 local RED_MAX_MONSTER = 25
 
+local BONUS_POTENTIAL_COST_COINS = 5
+
+local BONUS_POTENTIAL_MAX_STAT = 25
+
+local BONUS_POTENTIAL_MAX_BOSS = 25
+
+local BONUS_POTENTIAL_MAX_MONSTER = 25
+
 ---
 
 Astro.Collectible.BLACK_CUBE = Isaac.GetItemIdByName("Black Cube")
 Astro.Collectible.RED_CUBE = Isaac.GetItemIdByName("Red Cube")
+Astro.Collectible.BONUS_POTENTIAL_CUBE = Isaac.GetItemIdByName("Bonus Potential Cube")
 
 if EID then
     Astro:AddEIDCollectible(
@@ -43,13 +52,27 @@ if EID then
         "#보스 공격력 +1%p~+" .. RED_MAX_BOSS .. "%p" ..
         "#일반 몬스터 공격력 +1%p~+" .. RED_MAX_MONSTER .. "%p"
     )
+
+    Astro:AddEIDCollectible(
+        Astro.Collectible.BONUS_POTENTIAL_CUBE,
+        "에디셔널 큐브",
+        "...",
+        "사용 시 " .. BONUS_POTENTIAL_COST_COINS .. "코인을 소모하고, 아래 옵션 중 1가지를 얻습니다." ..
+        "#공력력 +1%p~+" .. BONUS_POTENTIAL_MAX_STAT .. "%p" ..
+        "#보스 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_BOSS .. "%p" ..
+        "#일반 몬스터 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_MONSTER .. "%p" ..
+        "#{{Collectible" .. Astro.Collectible.BLACK_CUBE .. "}}Black Cube, {{Collectible" .. Astro.Collectible.RED_CUBE .. "}}Red Cube와 별개로 적용됩니다."
+    )
 end
 
 -- 표기 순서 문제로 역순 정렬 함.
 local OptionType = {
-    MONSTER_DAMAGE = 3,
+    STAT_DAMAGE = 1,
     BOSS_DAMAGE = 2,
-    STAT_DAMAGE = 1
+    MONSTER_DAMAGE = 3,
+    BONUS_STAT_DAMAGE = 4,
+    BONUS_BOSS_DAMAGE = 5,
+    BONUS_MONSTER_DAMAGE = 6,
 }
 
 local MaxDamage = {
@@ -62,13 +85,21 @@ local MaxDamage = {
         [OptionType.STAT_DAMAGE] = RED_MAX_STAT,
         [OptionType.BOSS_DAMAGE] = RED_MAX_BOSS,
         [OptionType.MONSTER_DAMAGE] = RED_MAX_MONSTER
+    },
+    [Astro.Collectible.BONUS_POTENTIAL_CUBE] = {
+        [OptionType.BONUS_STAT_DAMAGE] = BONUS_POTENTIAL_MAX_STAT,
+        [OptionType.BONUS_BOSS_DAMAGE] = BONUS_POTENTIAL_MAX_BOSS,
+        [OptionType.BONUS_MONSTER_DAMAGE] = BONUS_POTENTIAL_MAX_MONSTER
     }
 }
 
 local OptionDisplayName = {
     [OptionType.STAT_DAMAGE] = "DMG",
     [OptionType.BOSS_DAMAGE] = "BOSS",
-    [OptionType.MONSTER_DAMAGE] = "MOB"
+    [OptionType.MONSTER_DAMAGE] = "MOB",
+    [OptionType.BONUS_STAT_DAMAGE] = "B-DMG",
+    [OptionType.BONUS_BOSS_DAMAGE] = "B-BOSS",
+    [OptionType.BONUS_MONSTER_DAMAGE] = "B-MOB"
 }
 
 Astro:AddCallback(
@@ -108,12 +139,25 @@ Astro:AddCallback(
         playerWhoUsedItem:AddCoins(-BLACK_COST_COINS)
 
         local data = Astro:GetPersistentPlayerData(playerWhoUsedItem)
-        data["mapleCube"] = {}
+        
+        if (not data["mapleCube"]) then
+            data["mapleCube"] = {}
+        end
+
+        local newData = {}
+
+        for _, value in pairs(data["mapleCube"]) do
+            if value.option >= OptionType.BONUS_STAT_DAMAGE then
+                table.insert(newData, value)
+            end
+        end
+
+        data["mapleCube"] = newData
 
         local ignoreOption = rngObj:RandomInt(3) + 1
 
         for _, option in pairs(OptionType) do
-            if option ~= ignoreOption then
+            if option ~= ignoreOption and option < OptionType.BONUS_STAT_DAMAGE then
                 table.insert(
                     data["mapleCube"],
                     {
@@ -123,6 +167,10 @@ Astro:AddCallback(
                 )
             end
         end
+
+        table.sort(data["mapleCube"], function(a, b)
+            return a.option > b.option
+        end)
 
         playerWhoUsedItem:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
         playerWhoUsedItem:EvaluateItems()
@@ -158,7 +206,20 @@ Astro:AddCallback(
         playerWhoUsedItem:AddCoins(-RED_COST_COINS)
 
         local data = Astro:GetPersistentPlayerData(playerWhoUsedItem)
-        data["mapleCube"] = {}
+        
+        if (not data["mapleCube"]) then
+            data["mapleCube"] = {}
+        end
+
+        local newData = {}
+
+        for _, value in pairs(data["mapleCube"]) do
+            if value.option >= OptionType.BONUS_STAT_DAMAGE then
+                table.insert(newData, value)
+            end
+        end
+
+        data["mapleCube"] = newData
 
         local option = rngObj:RandomInt(3) + 1
 
@@ -169,6 +230,10 @@ Astro:AddCallback(
                 damage = rngObj:RandomInt(MaxDamage[collectibleID][option]) + 1
             }
         )
+
+        table.sort(data["mapleCube"], function(a, b)
+            return a.option > b.option
+        end)
 
         playerWhoUsedItem:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
         playerWhoUsedItem:EvaluateItems()
@@ -182,6 +247,69 @@ Astro:AddCallback(
         }
     end,
     Astro.Collectible.RED_CUBE
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_USE_ITEM,
+    ---@param collectibleID CollectibleType
+    ---@param rngObj RNG
+    ---@param playerWhoUsedItem EntityPlayer
+    ---@param useFlags UseFlag
+    ---@param activeSlot ActiveSlot
+    ---@param varData integer
+    function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
+        if playerWhoUsedItem:GetNumCoins() < BONUS_POTENTIAL_COST_COINS then
+            return {
+                Discharge = false,
+                Remove = false,
+                ShowAnim = false
+            }
+        end
+
+        playerWhoUsedItem:AddCoins(-BONUS_POTENTIAL_COST_COINS)
+
+        local data = Astro:GetPersistentPlayerData(playerWhoUsedItem)
+        
+        if (not data["mapleCube"]) then
+            data["mapleCube"] = {}
+        end
+
+        local newData = {}
+
+        for _, value in pairs(data["mapleCube"]) do
+            if value.option < OptionType.BONUS_STAT_DAMAGE then
+                table.insert(newData, value)
+            end
+        end
+
+        data["mapleCube"] = newData
+
+        local option = rngObj:RandomInt(3) + 4
+
+        table.insert(
+            data["mapleCube"],
+            {
+                option = option,
+                damage = rngObj:RandomInt(MaxDamage[collectibleID][option]) + 1
+            }
+        )
+
+        table.sort(data["mapleCube"], function(a, b)
+            return a.option > b.option
+        end)
+
+        playerWhoUsedItem:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
+        playerWhoUsedItem:EvaluateItems()
+
+        SFXManager():Play(Astro.SoundEffect.MAPLE, USE_CUBE_VOLUME)
+
+        return {
+            Discharge = true,
+            Remove = false,
+            ShowAnim = true
+        }
+    end,
+    Astro.Collectible.BONUS_POTENTIAL_CUBE
 )
 
 Astro:AddCallback(
@@ -204,9 +332,9 @@ Astro:AddCallback(
 
             if data["mapleCube"] then
                 for _, value in ipairs(data["mapleCube"]) do
-                    if value.option == OptionType.BOSS_DAMAGE and entity:IsBoss() then
+                    if (value.option == OptionType.BOSS_DAMAGE or value.option == OptionType.BONUS_BOSS_DAMAGE) and entity:IsBoss() then
                         entity:TakeDamage(amount * value.damage / 100, 0, EntityRef(player), 0)
-                    elseif value.option == OptionType.MONSTER_DAMAGE and not entity:IsBoss() then
+                    elseif (value.option == OptionType.MONSTER_DAMAGE or value.option == OptionType.BONUS_MONSTER_DAMAGE) and not entity:IsBoss() then
                         entity:TakeDamage(amount * value.damage / 100, 0, EntityRef(player), 0)
                     end
                 end
@@ -225,6 +353,9 @@ Astro:AddCallback(
         if data and data["mapleCube"] then
             for _, value in ipairs(data["mapleCube"]) do
                 if value.option == OptionType.STAT_DAMAGE then
+                    player.Damage = player.Damage + player.Damage * value.damage / 100
+                    break
+                elseif value.option == OptionType.BONUS_STAT_DAMAGE then
                     player.Damage = player.Damage + player.Damage * value.damage / 100
                     break
                 end
