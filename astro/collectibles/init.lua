@@ -103,6 +103,7 @@ require "astro.collectibles.customs.unholy-mantle"
 require "astro.collectibles.customs.birthright-steven"
 require "astro.collectibles.customs.birthright-apollyon-b"
 require "astro.collectibles.customs.birthright-eden-b"
+require "astro.collectibles.customs.schrodingers-cat"
 
 --#region PLANETARIUM
 
