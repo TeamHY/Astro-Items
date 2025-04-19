@@ -1,5 +1,3 @@
-local hiddenItemManager = require("astro.lib.hidden_item_manager")
-
 Astro.Collectible.SCHRODINGERS_CAT = Isaac.GetItemIdByName("Schrodinger's Cat")
 Astro.Collectible.GUPPY_PART = Isaac.GetItemIdByName("Guppy Part")
 
@@ -13,15 +11,21 @@ if EID then
 end
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_PEFFECT_UPDATE,
-    ---@param player EntityPlayer
-    function(_, player)
-        if not player:HasCollectible(Astro.Collectible.SCHRODINGERS_CAT) then
-            return
-        end
-
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
         local room = Game():GetRoom()
 
-        hiddenItemManager:CheckStack(player, Astro.Collectible.GUPPY_PART, room:IsClear() and 0 or player:GetCollectibleNum(Astro.Collectible.SCHRODINGERS_CAT), "ASTRO_SCHRODINGERS_CAT")
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            local rng = player:GetCollectibleRNG(Astro.Collectible.SCHRODINGERS_CAT)
+
+            Astro:RemoveAllCollectible(player, Astro.Collectible.GUPPY_PART)
+
+            if not room:IsClear() and rng:RandomFloat() < 0.5 then
+                for _ = 1, player:GetCollectibleNum(Astro.Collectible.SCHRODINGERS_CAT) do
+                    player:AddCollectible(Astro.Collectible.GUPPY_PART)
+                end
+            end
+        end
     end
 )
