@@ -155,6 +155,7 @@
 	<active tags="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" />
 	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Schrodinger's Cat" />
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" />
+	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="2" shopprice="15" name="Cracked Bottom" />
 
 
 	<!-- 아래부터는 커스텀 장신구 -->
