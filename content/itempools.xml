@@ -765,6 +765,11 @@
 
 		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+
 
 	</Pool>
 	<Pool Name="greedTreasure">
@@ -963,6 +968,10 @@
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -1055,6 +1064,10 @@
 		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1208,6 +1221,10 @@
 		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
@@ -1250,6 +1267,8 @@
 
 		<Item Name="Absolut Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 </ItemPools>
