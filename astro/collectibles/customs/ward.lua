@@ -1,3 +1,5 @@
+local hiddenItemManager = require("astro.lib.hidden_item_manager")
+
 Astro.Collectible.WARD = Isaac.GetItemIdByName("Ward")
 
 Astro:AddCallback(
@@ -8,7 +10,7 @@ Astro:AddCallback(
                 Astro.Collectible.WARD,
                 "와드",
                 "...",
-                "사용 시 주변 3x3의 방을 보여줍니다."
+                "사용 시 주변 3x3의 방을 보여줍니다. 그 방에서 {{Collectible91}}Spelunker Hat 효과가 적용됩니다."
             )
         end
     end
@@ -50,6 +52,8 @@ Astro:AddCallback(
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
         local currentRoomIndex = Game():GetLevel():GetCurrentRoomIndex()
         DisplayWardRoom(1, currentRoomIndex)
+
+        hiddenItemManager:AddForRoom(playerWhoUsedItem, CollectibleType.COLLECTIBLE_SPELUNKER_HAT)
 
         return {
             Discharge = true,
