@@ -15,6 +15,17 @@ Astro:AddCallback(
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
         Isaac.ExecuteCommand("goto s.planetarium.0")
 
+        Astro:ScheduleForUpdate(
+            function()
+                playerWhoUsedItem:UseCard(Card.CARD_SOUL_ISAAC)
+                playerWhoUsedItem:UseCard(Card.CARD_SOUL_ISAAC)
+                playerWhoUsedItem:UseCard(Card.CARD_SOUL_ISAAC)
+
+                Astro:SpawnTrinket(TrinketType.TRINKET_TELESCOPE_LENS, playerWhoUsedItem.Position)
+            end,
+            1
+        )
+
         return {
             Discharge = true,
             Remove = true,
