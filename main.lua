@@ -19,6 +19,7 @@ require "astro.entities.init"
 require "astro.collectibles.init"
 require "astro.trinkets.init"
 require "astro.player"
+require "astro.ban"
 require "astro.room"
 require "astro.curse"
 
