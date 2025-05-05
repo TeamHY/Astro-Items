@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.BIRTH_CERTIFICATE,
         "출생증명서",
         "...",
-        "사용 시 {{Quality3}}등급 이하 모든 아이템이 존재하는 방으로 이동합니다."
+        "사용 시 {{Quality2}}등급 이하 모든 아이템이 존재하는 방으로 이동합니다."
     )
 end
 
@@ -47,7 +47,7 @@ Astro:AddCallback(
         if Astro.Data.BirthCertificateUsed and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE then 
             local itemConfig = Isaac.GetItemConfig()
             
-            if itemConfig:GetCollectible(pickup.SubType).Quality > 3 then
+            if itemConfig:GetCollectible(pickup.SubType).Quality > 2 then
                 pickup:Remove()
             end
         end
