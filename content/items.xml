@@ -156,7 +156,7 @@
 	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="10" name="Schrodinger's Cat" />
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" />
 	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="3" devilprice="1" shopprice="15" name="Cracked Bottom" />
-	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="1" shopprice="15" name="Birth Certificate" />
+	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="1" shopprice="25" name="Birth Certificate" />
 
 
 	<!-- 아래부터는 커스텀 장신구 -->

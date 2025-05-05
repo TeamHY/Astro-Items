@@ -75,6 +75,7 @@
 		<Item Name="TAANA - Defense Helper" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="RGB" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
     <Pool Name="greedSecret">
@@ -769,6 +770,8 @@
 		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 
 	</Pool>
@@ -972,6 +975,8 @@
 		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -1068,6 +1073,8 @@
 		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1225,6 +1232,8 @@
 		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bonus Potential Cube" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
