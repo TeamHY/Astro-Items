@@ -1,6 +1,6 @@
 ---
 
-local COLOR_VALUE = 0.3 -- 방 색상 강도 (0.0 ~ 1.0)
+local COLOR_VALUE = 0.1 -- 방 색상 강도 (0.0 ~ 1.0)
 
 local DAMAGE_MULTIPLIER = 1.4
 
