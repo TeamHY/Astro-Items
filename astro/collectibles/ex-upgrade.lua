@@ -31,7 +31,11 @@ Astro.PLANET_UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_PLUTO] = Astro.Collectible.PLUTO_EX
 }
 
-Astro.UPGRADE_LIST = {}
+Astro.UPGRADE_LIST = {
+    [CollectibleType.COLLECTIBLE_SACRED_HEART] = Astro.Collectible.ASTRO_SACRED_HEART,
+    [CollectibleType.COLLECTIBLE_GODHEAD] = Astro.Collectible.ASTRO_GODHEAD,
+}
+
 for k, v in pairs(Astro.ZODIAC_UPGRADE_LIST) do Astro.UPGRADE_LIST[k] = v end
 for k, v in pairs(Astro.PLANET_UPGRADE_LIST) do Astro.UPGRADE_LIST[k] = v end
 
