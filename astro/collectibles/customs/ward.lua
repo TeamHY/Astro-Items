@@ -10,7 +10,7 @@ Astro:AddCallback(
                 Astro.Collectible.WARD,
                 "와드",
                 "...",
-                "사용 시 주변 3x3의 방을 보여줍니다. 그 방에서 {{Collectible91}}Spelunker Hat 효과가 적용됩니다."
+                "사용 시 그 방과, 다음 방 한번까지 {{Collectible91}}Spelunker Hat 효과가 적용됩니다."
             )
         end
     end
