@@ -2,6 +2,7 @@ require "astro.entities.astro-crane-game"
 require "astro.entities.soul"
 require "astro.entities.star"
 require "astro.entities.dust"
+require "astro.entities.lava-beggar"
 
 Astro:AddCallback(
 	ModCallbacks.MC_POST_EFFECT_UPDATE,
