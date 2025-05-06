@@ -133,7 +133,7 @@
 	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="offensive summonable" />
 	<passive cache="damage luck firedelay" gfx="RGB.png" quality="3" devilprice="2" shopprice="25" name="RGB" />
 	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" />
-	<familiar tags="baby" gfx="Snake-Eyes Poplar.png" quality="2" devilprice="1" shopprice="12" name="Snake-Eyes Poplar" />
+	<familiar tags="baby" gfx="Snake-Eyes Poplar.png" quality="2" devilprice="1" shopprice="10" name="Snake-Eyes Poplar" />
 	<active gfx="Staff of Ainz Ooal Gown.png" quality="4" devilprice="2" initcharge="0" maxcharges="100" shopprice="25" name="Staff of Ainz Ooal Gown" />
 	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="3" devilprice="2" shopprice="22" name="TAANA - Defense Helper" />
 	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="3" devilprice="2" shopprice="16" name="SEERI the Combat Helper" />
