@@ -129,7 +129,7 @@
 	<passive tags="speed" gfx="Brown Stew.png" quality="2" devilprice="2" shopprice="15" name="Brown Stew" />
 	<passive cache="all" gfx="Dracoback, the Rideable Dragon.png" quality="2" devilprice="1" shopprice="15" name="Dracoback, the Rideable Dragon" />
 	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="4" devilprice="2" shopprice="30" name="Amazing Chaos Scroll of Goodness" tags="offensive summonable tearsup" />
-	<active cache="all" gfx="Albireo.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Albireo" />
+	<active cache="all" gfx="Albireo.png" quality="3" devilprice="2" maxcharges="6" shopprice="12" name="Albireo" />
 	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="offensive summonable" />
 	<passive cache="damage luck firedelay" gfx="RGB.png" quality="3" devilprice="2" shopprice="25" name="RGB" />
 	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" />
