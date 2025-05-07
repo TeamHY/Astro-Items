@@ -1,6 +1,13 @@
 ---
 
+-- 일반 거지에서 변경될 확률
 local CHANGE_CHANCE = 0.1
+
+-- 성공 확률 (0 ~ 1)
+local SUCCESS_CHANCE = 1
+
+-- 가격
+local PRICE = 10
 
 ---
 
@@ -8,43 +15,42 @@ local isc = require("astro.lib.isaacscript-common")
 
 local INIT_CHECK_SUBTYPE = 1000
 
-local LAVA_BEGGAR_SUBTYPE = 3100
+local LAVA_BEGGAR_VARIANT = 3101
 
--- Astro:AddCallback(
---     ModCallbacks.MC_PRE_PLAYER_COLLISION,
---     ---@param player EntityPlayer
---     ---@param collider Entity
---     ---@param low boolean
---     function(_, player, collider, low)
---         if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == 3100 then
---             local data = GetData(collider.SubType)
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_PLAYER_COLLISION,
+    ---@param player EntityPlayer
+    ---@param collider Entity
+    ---@param low boolean
+    function(_, player, collider, low)
+        if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == LAVA_BEGGAR_VARIANT then
+            if player:GetNumCoins() < PRICE then
+                return nil
+            end
 
---             if player:GetNumCoins() < data.price then
---                 return nil
---             end
+            local sprite = collider:GetSprite()
 
---             local sprite = collider:GetSprite()
+            if not sprite:IsPlaying("Idle") then
+                return nil
+            end
 
---             if
---                 not (sprite:IsPlaying("Idle_10") or sprite:IsPlaying("Idle_15") or sprite:IsPlaying("Idle_20") or
---                     sprite:IsPlaying("Idle_25"))
---              then
---                 return nil
---             end
+            SFXManager():Play(SoundEffect.SOUND_SCAMPER)
 
---             sprite:PlayOverlay("CoinInsert", true)
---             SFXManager():Play(SoundEffect.SOUND_COIN_SLOT)
+            player:AddCoins(-PRICE)
 
---             local rng = player:GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_CAIN)
+            local rng = player:GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_STEVEN)
 
---             if not (player:HasCollectible(Astro.Collectible.BIRTHRIGHT_CAIN) and rng:RandomFloat() < Astro.BIRTHRIGHT_CAIN_CHANCE) then
---                 player:AddCoins(-data.price)
---             end
+            if rng:RandomFloat() < SUCCESS_CHANCE then
+                sprite:Play("PayPrize")
 
---             sprite:Play("Initiate")
---         end
---     end
--- )
+                local data = collider:GetData()
+                data.player = player
+            else
+                sprite:Play("PayNothing")
+            end
+        end
+    end
+)
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_SLOT_INIT,
@@ -54,18 +60,23 @@ Astro:AddCallbackCustom(
             local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_EVE)
 
             if rng:RandomFloat() < CHANGE_CHANCE then
-                local sprite = slot:GetSprite()
-                sprite:Load("gfx/lava_beggar.anm2")
-                sprite:LoadGraphics()
-                sprite:Play(sprite:GetDefaultAnimation(), true)
-
-                slot.SubType = LAVA_BEGGAR_SUBTYPE
+                Isaac.Spawn(EntityType.ENTITY_SLOT, LAVA_BEGGAR_VARIANT, 0, slot.Position, Vector(0, 0), nil)
+                slot:Remove()
             else
                 slot.SubType = INIT_CHECK_SUBTYPE
             end
         end
     end,
     4
+)
+
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_SLOT_INIT,
+    ---@param slot Entity
+    function(_, slot)        
+        slot.SpriteOffset = Vector(0, 5)
+    end,
+    LAVA_BEGGAR_VARIANT
 )
 
 -- Astro:AddCallbackCustom(
@@ -100,35 +111,44 @@ Astro:AddCallbackCustom(
     function(_, slot)
         local sprite = slot:GetSprite()
 
-        if sprite:IsFinished("Initiate") then
-            sprite:Play("Wiggle")
-        elseif sprite:IsFinished("Wiggle") then
+        if sprite:IsFinished("PayPrize") then
             sprite:Play("Prize")
-            SFXManager():Play(SoundEffect.SOUND_THUMBSUP, 1)
         elseif sprite:IsFinished("Prize") then
-            sprite:Play("OutOfPrizes")
+            sprite:Play("Idle")
         elseif sprite:IsFinished("OutOfPrizes") then
             sprite:Play("Death")
-        elseif sprite:IsFinished("Death") then
-            sprite:Play("Broken")
-            slot.GridCollisionClass = GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER
-            slot:Kill()
+        -- elseif sprite:IsFinished("Death") then
+        --     sprite:Play("Broken")
+        --     slot.GridCollisionClass = GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER
+        --     slot:Kill()
         end
 
-        if sprite:IsEventTriggered("Explosion") then
-            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, slot.Position, Vector(0, 0), nil)
-            SFXManager():Play(SoundEffect.	SOUND_BOSS1_EXPLOSIONS, 1)
-        end
+        -- if sprite:IsEventTriggered("Explosion") then
+        --     Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, slot.Position, Vector(0, 0), nil)
+        --     SFXManager():Play(SoundEffect.	SOUND_BOSS1_EXPLOSIONS, 1)
+        -- end
 
         if sprite:IsEventTriggered("Prize") then
-            local data = GetData(slot.SubType)
-            Astro:SpawnCollectible(data.collectible, slot.Position)
+            SFXManager():Play(SoundEffect.SOUND_THUMBSUP, 1)
+
+            local data = slot:GetData()
+
+            if data.player then
+                ---@type EntityPlayer
+                local player = data.player
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false)
+            end
         end
 
         if slot.GridCollisionClass == GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER then
-            sprite:Play("Broken")
-            slot:Kill()
+            Game():GetLevel():SetStateFlag(LevelStateFlag.STATE_BUM_KILLED, true)
+
+            slot:BloodExplode()
+            slot:BloodExplode()
+            slot:BloodExplode()
+            slot:BloodExplode()
+            slot:Remove()
         end
     end,
-    3100
+    LAVA_BEGGAR_VARIANT
 )
