@@ -18,7 +18,7 @@ if EID then
                 end
             end,
             function(descObj)
-                EID:appendToDescription(descObj, "#패널티 피격 시 차지가 " .. penalty .. " 감소됩니다.")
+                EID:appendToDescription(descObj, "#{{ColorRed}}패널티 피격 시 차지가 " .. penalty .. " 감소됩니다.")
                 return descObj
             end
         )
@@ -33,7 +33,7 @@ if EID then
                 end
             end,
             function(descObj)
-                EID:appendToDescription(descObj, "#패널티 피격 시 아이템이 제거됩니다.")
+                EID:appendToDescription(descObj, "#{{ColorRed}}패널티 피격 시 아이템이 제거됩니다.")
                 return descObj
             end
         )
