@@ -29,7 +29,7 @@ Astro:AddCallback(
                 local rng = RNG()
                 rng:SetSeed(seed, 35)
 
-                if itemConfigitem:HasTags(ItemConfig.TAG_OFFENSIVE) and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST then
+                if not itemConfigitem:HasTags(ItemConfig.TAG_OFFENSIVE) and not itemConfigitem:HasTags(ItemConfig.TAG_QUEST) and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST then
                     local newCollectable = itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
                     print("Birthright - Tainted Lost: " .. selectedCollectible .. " -> " .. newCollectable)
 
