@@ -521,3 +521,15 @@ end
 function Astro:CopyRNG(rng)
     return RNG(rng:GetSeed(), 35)
 end
+
+---@param player EntityPlayer
+---@return integer
+function Astro:GetLastPenaltyFrame(player)
+    local data = Astro:GetPersistentPlayerData(player)
+
+    if data and data["lastPenaltyFrame"] then
+        return data["lastPenaltyFrame"]
+    end
+
+    return -108000
+end

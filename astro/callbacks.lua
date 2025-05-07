@@ -24,6 +24,7 @@ Astro:AddCallback(
         if not isContinued then
             Astro.Data["lastStage"] = LevelStage.STAGE_NULL
             Astro.Data["lastGreedWave"] = 0
+            Astro.Data["lastPenaltyFrame"] = nil
         end
 
         if isFirst then
@@ -77,6 +78,12 @@ Astro:AddCallback(
                 if result == false then
                     entity:TakeDamage(amount, damageFlags | DamageFlag.DAMAGE_NO_PENALTIES, source, countdownFrames)
                     return false
+                end
+
+                local playerData = Astro:GetPersistentPlayerData(player)
+
+                if playerData then
+                    playerData["lastPenaltyFrame"] = Game():GetFrameCount()
                 end
 
                 Isaac.RunCallback(Astro.Callbacks.POST_PLAYER_TAKE_PENALTY, player)

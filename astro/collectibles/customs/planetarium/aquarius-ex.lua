@@ -1,7 +1,19 @@
+---
+
+local PENALTY_TIME = 10 * 30
+
+---
+
 Astro.Collectible.AQUARIUS_EX = Isaac.GetItemIdByName("Aquarius EX")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.AQUARIUS_EX, "초 물병자리", "...", "공격 당한 몬스터에서 눈물이 뿜어져 나옵니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.AQUARIUS_EX,
+        "초 물병자리",
+        "...",
+        "공격 당한 몬스터에서 눈물이 뿜어져 나옵니다." ..
+        "#패널티 피격 시 10초 동안 효과가 중지됩니다."
+    )
 end
 
 Astro:AddCallback(
@@ -41,7 +53,7 @@ Astro:AddCallback(
                 ---@type EntityPlayer
                 local player = data.Source
 
-                if player ~= nil and entity:IsVulnerableEnemy() and Game().TimeCounter % data.Delay == 0 then
+                if player ~= nil and entity:IsVulnerableEnemy() and Game().TimeCounter % data.Delay == 0 and Astro:GetLastPenaltyFrame(player) + PENALTY_TIME < Game():GetFrameCount() then
                     local splashTear =
                         player:FireTear(
                         entity.Position,
