@@ -149,6 +149,7 @@ require "astro.collectibles.customs.planetarium.pluto-ex"
 --#endregion
 
 require "astro.collectibles.ex-upgrade"
+require "astro.collectibles.penalty"
 
 ---@type ItemConfigItem[]
 Astro.CollectableConfigs = {}
