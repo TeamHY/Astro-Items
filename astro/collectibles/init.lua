@@ -106,6 +106,7 @@ require "astro.collectibles.customs.birthright-eden-b"
 require "astro.collectibles.customs.schrodingers-cat"
 require "astro.collectibles.customs.cracked-bottom"
 require "astro.collectibles.customs.birth-certificate"
+require "astro.collectibles.customs.birthright-tainted-lost"
 
 --#region PLANETARIUM
 
