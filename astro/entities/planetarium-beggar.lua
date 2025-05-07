@@ -1,21 +1,16 @@
 ---
 
--- 일반 거지에서 변경될 확률
-local CHANGE_CHANCE = 0.1
-
 -- 성공 확률 (0 ~ 1)
-local SUCCESS_CHANCE = 1
+local SUCCESS_CHANCE = 0.25
 
 -- 가격
-local PRICE = 10
+local PRICE = 1
 
 ---
 
 local isc = require("astro.lib.isaacscript-common")
 
-local INIT_CHECK_SUBTYPE = 1000
-
-local LAVA_BEGGAR_VARIANT = 3101
+local PLANETARIUM_BEGGAR_VARIANT = 3102
 
 Astro:AddCallback(
     ModCallbacks.MC_PRE_PLAYER_COLLISION,
@@ -23,7 +18,7 @@ Astro:AddCallback(
     ---@param collider Entity
     ---@param low boolean
     function(_, player, collider, low)
-        if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == LAVA_BEGGAR_VARIANT then
+        if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == PLANETARIUM_BEGGAR_VARIANT then
             if player:GetNumCoins() < PRICE then
                 return nil
             end
@@ -38,7 +33,7 @@ Astro:AddCallback(
 
             player:AddCoins(-PRICE)
 
-            local rng = player:GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_STEVEN)
+            local rng = player:GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_APOLLYON_B)
 
             if rng:RandomFloat() < SUCCESS_CHANCE then
                 sprite:Play("PayPrize")
@@ -55,19 +50,16 @@ Astro:AddCallback(
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_SLOT_INIT,
     ---@param slot Entity
-    function(_, slot)        
-        if slot.SubType == 0 and Game():GetRoom():GetType() ~= RoomType.ROOM_PLANETARIUM then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_EVE)
+    function(_, slot)
+        if slot.Variant == 4 or slot.Variant == 5 or slot.Variant == 7 or slot.Variant == 9 or slot.Variant == 13 or slot.Variant == 18 then
+            local room = Game():GetRoom()
 
-            if rng:RandomFloat() < CHANGE_CHANCE then
-                Isaac.Spawn(EntityType.ENTITY_SLOT, LAVA_BEGGAR_VARIANT, 0, slot.Position, Vector(0, 0), nil)
+            if room:GetType() == RoomType.ROOM_PLANETARIUM and slot.Variant ~= PLANETARIUM_BEGGAR_VARIANT then
+                Isaac.Spawn(EntityType.ENTITY_SLOT, PLANETARIUM_BEGGAR_VARIANT, 0, slot.Position, Vector(0, 0), nil)
                 slot:Remove()
-            else
-                slot.SubType = INIT_CHECK_SUBTYPE
             end
         end
-    end,
-    4
+    end
 )
 
 Astro:AddCallbackCustom(
@@ -76,7 +68,7 @@ Astro:AddCallbackCustom(
     function(_, slot)        
         slot.SpriteOffset = Vector(0, 5)
     end,
-    LAVA_BEGGAR_VARIANT
+    PLANETARIUM_BEGGAR_VARIANT
 )
 
 Astro:AddCallbackCustom(
@@ -90,18 +82,18 @@ Astro:AddCallbackCustom(
         elseif sprite:IsFinished("PayNothing") then
             sprite:Play("Idle")
         elseif sprite:IsFinished("Prize") then
-            sprite:Play("Idle")
+            sprite:Play('Teleport')
+        elseif sprite:IsFinished("Teleport") then
+            slot:Remove()
         end
+
         if sprite:IsEventTriggered("Prize") then
             SFXManager():Play(SoundEffect.SOUND_THUMBSUP, 1)
 
-            local data = slot:GetData()
+            local itemPool = Game():GetItemPool()
+            local item = itemPool:GetCollectible(ItemPoolType.POOL_PLANETARIUM, true)
 
-            if data.player then
-                ---@type EntityPlayer
-                local player = data.player
-                player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, false)
-            end
+            Astro:SpawnCollectible(item, slot.Position + Vector(0, 40))
         end
 
         if slot.GridCollisionClass == GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER then
@@ -111,5 +103,5 @@ Astro:AddCallbackCustom(
             slot:Remove()
         end
     end,
-    LAVA_BEGGAR_VARIANT
+    PLANETARIUM_BEGGAR_VARIANT
 )

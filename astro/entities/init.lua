@@ -3,6 +3,7 @@ require "astro.entities.soul"
 require "astro.entities.star"
 require "astro.entities.dust"
 require "astro.entities.lava-beggar"
+require "astro.entities.planetarium-beggar"
 
 Astro:AddCallback(
 	ModCallbacks.MC_POST_EFFECT_UPDATE,
