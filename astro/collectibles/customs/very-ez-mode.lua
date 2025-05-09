@@ -9,6 +9,10 @@ Astro:AddCallback(
     function(_, isContinued)
         collectibles = {
             CollectibleType.COLLECTIBLE_COMPASS,
+            CollectibleType.COLLECTIBLE_PSY_FLY,
+            CollectibleType.COLLECTIBLE_HOLY_MANTLE,
+            CollectibleType.COLLECTIBLE_DARK_ARTS,
+            CollectibleType.COLLECTIBLE_LOST_CONTACT,
             CollectibleType.COLLECTIBLE_TREASURE_MAP,
             CollectibleType.COLLECTIBLE_MIND,
             CollectibleType.COLLECTIBLE_BLUE_MAP,
@@ -16,6 +20,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_CRYSTAL_BALL,
             CollectibleType.COLLECTIBLE_SPELUNKER_HAT,
             Astro.Collectible.DUALITY_LIGHT_AND_DARKNESS,
+            Astro.Collectible.SOL_EX,
             Astro.Collectible.WARD,
             Astro.Collectible.PINK_WARD,
         }
