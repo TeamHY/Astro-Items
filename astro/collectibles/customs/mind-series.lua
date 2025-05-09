@@ -2,13 +2,13 @@
 
 local DELAY_FRAME = 30
 
-local DAMAGE_INCREMENT = 0.005
+local DAMAGE_INCREMENT = 0.007
 
-local SPEED_INCREMENT = 0.00075
+local SPEED_INCREMENT = 0.00095
 
-local TEARS_INCREMENT = 0.0015
+local TEARS_INCREMENT = 0.0019
 
-local LUCK_INCREMENT = 0.0085
+local LUCK_INCREMENT = 0.0087
 
 local PENALTY_TIME = 240 * 30
 
@@ -32,7 +32,7 @@ if EID then
         Astro.Collectible.CALM_MIND,
         "침착한 정신",
         "...",
-        "1초 마다 공격력이 0.005 증가합니다." ..
+        "1초 마다 공격력이 0.007 증가합니다." ..
         "#시작 방에서는 증가하지 않습니다." ..
         "#패널티 피격 시 4분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
@@ -42,7 +42,7 @@ if EID then
         Astro.Collectible.SWIFT_MIND,
         "신속한 정신",
         "...",
-        "1초 마다 이동 속도가 0.00075 증가합니다." ..
+        "1초 마다 이동 속도가 0.00095 증가합니다." ..
         "#시작 방에서는 증가하지 않습니다." ..
         "#패널티 피격 시 4분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
@@ -52,7 +52,7 @@ if EID then
         Astro.Collectible.BLUE_MIND,
         "우울한 정신",
         "...",
-        "1초 마다 연사(고정)가 0.0015 증가합니다." ..
+        "1초 마다 연사(고정)가 0.0019 증가합니다." ..
         "#시작 방에서는 증가하지 않습니다." ..
         "#패널티 피격 시 4분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
@@ -62,7 +62,7 @@ if EID then
         Astro.Collectible.LUCKY_MIND,
         "행운의 정신",
         "...",
-        "1초 마다 행운이 0.0085 증가합니다." ..
+        "1초 마다 행운이 0.0087 증가합니다." ..
         "#시작 방에서는 증가하지 않습니다." ..
         "#패널티 피격 시 4분 간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
