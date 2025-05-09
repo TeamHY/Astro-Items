@@ -2,7 +2,7 @@ local PENALTY_DEATHS_HEAD_COUNT = 1 -- 빠가지 소환 개수
 
 local PENALTY_DEATHS_HEAD_CHANCE = 1 -- 빠가지 소환 확률
 
-local PENALTY_BONE_HEARTS = 1 -- 뼈 심장 추가 개수
+local PENALTY_BROKEN_HEARTS = 1 -- 뼈 심장 추가 개수
 
 -- 패널티 피격 시 차지 감소
 local PENALTY_ACTIVE_ITEMS = {
@@ -112,7 +112,7 @@ Astro:AddCallback(
             end
 
             if not (Astro.IsFight and Astro:IsLatterStage()) then
-                player:AddBoneHearts(PENALTY_BONE_HEARTS)
+                player:AddBrokenHearts(PENALTY_BROKEN_HEARTS)
             end
         end
     end
