@@ -140,7 +140,7 @@
 	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="1" devilprice="1" shopprice="8" name="KAAEN - Auto Reloader" />
 	<active gfx="Qubit Dice.png" quality="4" devilprice="1" maxcharges="12" shopprice="18" name="Qubit Dice" />
 	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="2" devilprice="1" shopprice="15" name="Strawberry Milk" />
-	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="15" name="Entoma Vasilissa Zeta" />
+	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="20" name="Entoma Vasilissa Zeta" />
 	<passive gfx="Birthright - Eve.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Eve" />
 	<passive gfx="Birthright - Blue Baby.png" quality="2" devilprice="1" shopprice="7" soulhearts="2" name="Birthright - Blue Baby" />
 	<passive gfx="Birthright - Cain.png" quality="2" devilprice="1" shopprice="5" name="Birthright - Cain" />
