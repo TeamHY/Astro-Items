@@ -47,17 +47,17 @@
 	<active gfx="Chaos Dice.png" quality="3" devilprice="2" initcharge="2" maxcharges="6" name="Chaos Dice" />
 	<passive gfx="Duality - Light and Darkness.png" quality="2" devilprice="1" shopprice="20" name="Duality - Light and Darkness" />
 	<passive cache="tearflag" gfx="Sagittarius EX.png" quality="3" devilprice="2" name="Sagittarius EX" />
-	<active gfx="Ward.png" quality="2" devilprice="2" shopprice="22" maxcharges="6" name="Ward" />
+	<active gfx="Ward.png" quality="2" devilprice="2" shopprice="19" maxcharges="6" name="Ward" />
 	<passive cache="damage" gfx="Chubby's Head.png" quality="4" devilprice="2" name="Chubby's Head" />
 	<passive cache="damage firedelay range speed luck" gfx="Sleeping Puppy.png" quality="2" devilprice="1" name="Sleeping Puppy" />
 	<passive gfx="Chubby's Tail.png" quality="2" devilprice="1" name="Chubby's Tail" />
 	<passive cache="damage firedelay range speed luck" gfx="Happy Onion.png" quality="3" devilprice="2" name="Happy Onion" />
 	<passive gfx="Key Is Power.png" quality="2" devilprice="1" name="Key Is Power" />
 	<passive gfx="Bomb Is Power.png" quality="2" devilprice="1" name="Bomb Is Power" />
-	<active gfx="Fortune Coin.png" quality="1" devilprice="1" maxcharges="1" shopprice="5" name="Fortune Coin" />
-	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="15" name="Master's Degree" />
+	<active gfx="Fortune Coin.png" quality="1" devilprice="1" maxcharges="1" shopprice="1" name="Fortune Coin" />
+	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="13" name="Master's Degree" />
 	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" />
-	<passive gfx="Pink Ward.png" quality="3" devilprice="1" shopprice="22" name="Pink Ward" />
+	<passive gfx="Pink Ward.png" quality="3" devilprice="1" shopprice="18" name="Pink Ward" />
 	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" />
 	<passive cache="damage" gfx="Amplifying Mind.png" quality="2" devilprice="2" shopprice="15" name="Amplifying Mind" />
@@ -67,16 +67,16 @@
 	<passive cache="damage" gfx="Power Rock Bottom.png" quality="3" devilprice="2" shopprice="15" name="Power Rock Bottom" />
 	<passive cache="firedelay" gfx="Rapid Rock Bottom.png" quality="3" devilprice="2" shopprice="15" name="Rapid Rock Bottom" />
 	<passive cache="luck" gfx="Lucky Rock Bottom.png" quality="2" devilprice="2" shopprice="15" name="Lucky Rock Bottom" />
-	<passive gfx="Sinful Spoils of Subversion - Snake Eye.png" quality="2" devilprice="2" shopprice="20" name="Sinful Spoils of Subversion - Snake Eye" />
-	<passive gfx="Original Sinful Spoils - Snake Eye.png" quality="4" devilprice="2" shopprice="20" name="Original Sinful Spoils - Snake Eye" />
+	<passive gfx="Sinful Spoils of Subversion - Snake Eye.png" quality="2" devilprice="2" shopprice="10" name="Sinful Spoils of Subversion - Snake Eye" />
+	<passive gfx="Original Sinful Spoils - Snake Eye.png" quality="4" devilprice="2" shopprice="10" name="Original Sinful Spoils - Snake Eye" />
 	<passive id="1" gfx="Heart Bloom.png" quality="2" devilprice="1" shopprice="15" tags="offensive summonable" name="Heart Bloom" description="Bloom and Doom" />
 	<passive tags="guppy" gfx="Absolut Guppy.png" quality="3" devilprice="2" shopprice="15" name="Absolut Guppy" />
 	<passive tags="guppy" gfx="Delirium Guppy.png" quality="3" devilprice="1" shopprice="15" name="Delirium Guppy" />
-	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="10" name="Birthright - Judas" />
-	<passive gfx="Birthright - The Lost.png" quality="3" devilprice="2" shopprice="20" name="Birthright - The Lost" />
+	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="7" name="Birthright - Judas" />
+	<passive gfx="Birthright - The Lost.png" quality="4" devilprice="2" shopprice="20" name="Birthright - The Lost" />
 	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="20" name="Amazing Chaos Scroll" tags="offensive summonable tearsup" />
 	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" />
-	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="40" name="Super Nova" />
+	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" />
 	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" />
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" />
 	<passive id="2" cache="firedelay" gfx="Technology Omicron.png" quality="4" tags="offensive summonable tech" name="Technology Omicron EX" description="Laser aura tears"/>
@@ -146,8 +146,8 @@
 	<passive gfx="Birthright - Cain.png" quality="2" devilprice="1" shopprice="5" name="Birthright - Cain" />
 	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" />
 	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" shopprice="20" name="Unholy Mantle" />
-	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Steven" />
-	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="8" name="Birthright - Apollyon B" />
+	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="10" name="Birthright - Steven" />
+	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="4" name="Birthright - Apollyon B" />
 	<active gfx="Birthright - Eden B.png" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" />
 	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="10" name="Purple Candle" />
 	<passive gfx="Astro Godhead.png" quality="4" devilprice="2" shopprice="50" name="Astro Godhead" />
@@ -157,7 +157,7 @@
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" />
 	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="3" devilprice="1" shopprice="15" name="Cracked Bottom" />
 	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="1" shopprice="25" name="Birth Certificate" />
-	<passive gfx="Birthright - Tainted Lost.png" quality="2" devilprice="2" shopprice="15" name="Birthright - Tainted Lost" />
+	<passive gfx="Birthright - Tainted Lost.png" quality="4" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" />
 
 
 	<!-- 아래부터는 커스텀 장신구 -->
