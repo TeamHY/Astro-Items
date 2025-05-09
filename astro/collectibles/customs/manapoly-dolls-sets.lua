@@ -6,11 +6,11 @@ local SEERI_CHANCE = 1
 
 local SEERI_CHANCE_LUCK_MULTIPLY = 0.01 -- 행운 1당 1% 소환 확률 증가
 
-local SEERI_COOLDOWN_TIME = 60
+local SEERI_COOLDOWN_TIME = 300
 
-local SEERI_MAX_COUNT = 10 -- 리틀 스티븐 최대 소환 갯수
+local SEERI_MAX_COUNT = 5 -- 리틀 스티븐 최대 소환 갯수
 
-local KAAEN_CHANCE = 0.01
+local KAAEN_CHANCE = 0.2
 
 local KAAEN_SOUND = SoundEffect.SOUND_THUMBSUP
 
@@ -41,7 +41,7 @@ Astro:AddCallback(
                 Astro.Collectible.SEERI_COMBAT_HELPER,
                 "SEERI - 전투 도우미",
                 "...",
-                "공격 시 1%의 확률로 그 방에서 {{Collectible100}}Little Steven을 소환합니다. 최대 10개까지 소환합니다." ..
+                "공격 시 1%의 확률로 그 방에서 {{Collectible100}}Little Steven을 소환합니다. 최대 5개까지 소환합니다." ..
                 "#!!! {{LuckSmall}}행운 수치 비례: 행운 99 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
 
@@ -49,7 +49,7 @@ Astro:AddCallback(
                 Astro.Collectible.KAAEN_AUTO_RELOADER,
                 "KAAEN - 재장전 도우미",
                 "...",
-                "방 클리어 시 1% 확률로 작은 배터리를 소환합니다."
+                "방 클리어 시 20% 확률로 작은 배터리를 소환합니다."
             )
         end
     end
