@@ -187,6 +187,7 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -310,6 +311,7 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -374,6 +376,7 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="greedCurse">
