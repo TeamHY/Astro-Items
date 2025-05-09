@@ -5,7 +5,8 @@ local PENALTY_ACTIVE_ITEMS = {
 
 -- 패널티 피격 시 아이템 제거
 local PENALTY_REMOVE_ITEMS = {
-    CollectibleType.COLLECTIBLE_ABEL
+    Astro.Collectible.UNHOLY_MANTLE,
+    CollectibleType.COLLECTIBLE_HOLY_MANTLE,
 }
 
 if EID then
