@@ -10,7 +10,7 @@ local MAXIMUM = 50
 local MAXIMUM_FOR_ADVENTURER = 100
 
 -- 스택 감소량
-local SOUL_DECREASE = 20
+local SOUL_DECREASE = 5
 
 -- 용사 관련 캐릭터일 경우 스택 감소량
 local SOUL_DECREASE_FOR_ADVENTURER = 10
