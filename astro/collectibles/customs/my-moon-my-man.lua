@@ -9,7 +9,7 @@ if EID then
         "...",
     "#{wakaba_md1} 버튼으로 소지 중인 액티브와 픽업 슬롯 액티브를 교체합니다."
         .. "#카드/알약 액티브가 비어있을 경우 액티브를 픽업 슬롯으로 옮깁니다."
-        .. "#데이비드, 루시가 아닐 경우 사용 시 사라집니다."
+        .. "#데이비드, 루시가 아닐 경우 사용 시 사라지며 캐릭터 교체 시 픽업 슬롯의 액티브가 사라집니다."
         .. "#!!! (일부 아이템은 픽업 슬롯으로 옮길 수 없음)"
         .. "{{CR}}"
     )
@@ -145,10 +145,10 @@ function Astro:PlayerUpdate_MyMoon(player)
     if player.ControlsEnabled then
         --TODO 설정 가능 옵션으로 교체
         if
-            (player.ControllerIndex == 0 and Input.IsButtonTriggered(SWAP_KEY, player.ControllerIndex)) or
+            (player.ControllerIndex == 0 and Input.IsButtonTriggered(SWAP_KEY, player.ControllerIndex)) --[[ or
                 (player.ControllerIndex > 0 and Controller and
                     Input.IsButtonPressed(Controller.STICK_RIGHT, player.ControllerIndex) and
-                    Input.IsActionTriggered(ButtonAction.ACTION_DROP, player.ControllerIndex))
+                    Input.IsActionTriggered(ButtonAction.ACTION_DROP, player.ControllerIndex)) ]]
          then
             if canUseMyMoon(player) then
                 local duetPower = player:GetCollectibleNum(Astro.Collectible.MY_MOON_MY_MAN)
@@ -322,7 +322,7 @@ if EID then
         "{{ButtonMenu}}"
     }
 
-    EID.descriptions["ko_kr"].MyMoonBlacklisted = "!!! {{Collectible"..Astro.Collectible.MY_MOON_MY_MAN.."}}My Moon My Man으로 교체 불가"
+    EID.descriptions["ko_kr"].MyMoonBlacklisted = "!!! {{Collectible"..Astro.Collectible.MY_MOON_MY_MAN.."}} My Moon My Man: 픽업 슬롯으로 옮길 수 없음"
 
     local function MyMoonCondition(descObj)
         if descObj.ObjType == 5 and descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE then
@@ -334,20 +334,28 @@ if EID then
         if descObj.ObjSubType == Astro.Collectible.MY_MOON_MY_MAN then
             local controllerEnabled = #GetAllMainPlayers() > 0
             local moonKey = HotkeyToString[SWAP_KEY]
-            local moonButton = controllerEnabled and ControllerToString[ButtonAction.ACTION_DROP]
+            --local moonButton = controllerEnabled and ControllerToString[ButtonAction.ACTION_DROP]
 
             local append = ""
+            if moonKey then
+                append = append .. moonKey
+            end
+            --[[
             if moonKey and moonButton then
                 append = append .. moonKey .. "/{{ButtonLStick}}+" .. moonButton
             else
                 append = append .. (moonKey or moonButton)
             end
+            ]]
             descObj.Description = descObj.Description:gsub("{wakaba_md1}", append)
         elseif Astro.MaidDuetBlackLists[descObj.ObjSubType] and EID:getLanguage() == "ko_kr" then
-            local append =
-            -- TODO 아직 Astro 모드에 영어 설명이 없으므로 EID 언어가 한글일 때만 출력.
-                EID:getDescriptionEntry("MyMoonBlacklisted") -- or EID:getDescriptionEntryEnglish("MyMoonBlacklisted")
-            descObj.Description = descObj.Description .. "#" .. append
+            -- 아이템 소지 시에만 설명 등장, 항상 등장하게 하려면 if 조건 제거
+            if isc:anyPlayerHasCollectible(Astro.Collectible.MY_MOON_MY_MAN) then
+                local append =
+                -- TODO 아직 Astro 모드에 영어 설명이 없으므로 EID 언어가 한글일 때만 출력.
+                    EID:getDescriptionEntry("MyMoonBlacklisted") -- or EID:getDescriptionEntryEnglish("MyMoonBlacklisted")
+                descObj.Description = descObj.Description .. "#" .. append
+            end
         end
         return descObj
     end
