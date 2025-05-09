@@ -7,7 +7,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.UNHOLY_MANTLE,
         "언홀리 맨틀",
-        "...",
+        "타락한 방패",
         "{{Collectible313}}Holy Mantle 효과가 적용됩니다." ..
         "#!!! 소지 중에는 {{Collectible313}}Holy Mantle이 등장하지 않습니다."
     )
