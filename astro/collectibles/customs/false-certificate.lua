@@ -236,7 +236,7 @@ Astro:AddCallback(
     ---@param pickup EntityPickup
     function(_, pickup)
         if Astro.Data.FalseCertificateUsed and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE then             
-            if Astro:Contain(FALSE_CERTIFICATE_ITEMS, pickup.SubType) then
+            if not Astro:Contain(FALSE_CERTIFICATE_ITEMS, pickup.SubType) then
                 pickup:Remove()
             end
         end
