@@ -10,7 +10,7 @@ Astro:AddCallback(
                 Astro.Collectible.WARD,
                 "와드",
                 "...",
-                "사용 시 그 방과, 다음 방 한번까지 {{Collectible91}}Spelunker Hat 효과가 적용됩니다."
+                "사용 시 그 방과, 다음 방 한번까지 {{Collectible91}}Spelunker Hat, {{Collectible" .. Astro.Collectible.PURPLE_CANDLE .."}}Purple Candle 효과가 적용됩니다."
             )
         end
     end
@@ -54,6 +54,7 @@ Astro:AddCallback(
         DisplayWardRoom(1, currentRoomIndex)
 
         hiddenItemManager:AddForRoom(playerWhoUsedItem, CollectibleType.COLLECTIBLE_SPELUNKER_HAT)
+        hiddenItemManager:AddForRoom(playerWhoUsedItem, Astro.Collectible.PURPLE_CANDLE)
 
         return {
             Discharge = true,
