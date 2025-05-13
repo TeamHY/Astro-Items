@@ -108,6 +108,7 @@ require "astro.collectibles.customs.cracked-bottom"
 require "astro.collectibles.customs.birth-certificate"
 require "astro.collectibles.customs.birthright-tainted-lost"
 require "astro.collectibles.customs.false-certificate"
+require "astro.collectibles.customs.puzzle-dice"
 
 --#region PLANETARIUM
 
@@ -157,8 +158,8 @@ require "astro.collectibles.penalty"
 Astro.CollectableConfigs = {}
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    function(_, isContinued)
+    Astro.Callbacks.MOD_INIT,
+    function(_)
         local itemConfig = Isaac.GetItemConfig()
 
         local id = 1
@@ -166,7 +167,7 @@ Astro:AddCallback(
         while true do
             local itemConfigItem = itemConfig:GetCollectible(id)
 
-            if id > 732 and itemConfigItem == nil then
+            if id > Astro.MAX_ORIGINAL_COLLECTIBLE_ID and itemConfigItem == nil then
                 break
             end
 

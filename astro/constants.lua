@@ -6,6 +6,8 @@ Astro.MINUTE = 30 * 60
 
 Astro.GOLDEN_TRINKET_OFFSET = 32768
 
+Astro.MAX_ORIGINAL_COLLECTIBLE_ID = 732
+
 Astro.CallbackPriority = {
     MULTIPLY = CallbackPriority.LATE + 2000,
     ROCK_BOTTOM = CallbackPriority.LATE + 4000
