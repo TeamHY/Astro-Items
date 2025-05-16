@@ -22,7 +22,7 @@ Astro:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param pickingUpItem { itemType: ItemType, subType: CollectibleType | TrinketType }
     function(_, player, pickingUpItem)
-        if Options.Language == "kr" then
+        if Options.Language == "kr" or REPKOR then
             if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
                 local item = Astro.EID[pickingUpItem.subType]
 
