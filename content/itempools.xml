@@ -76,6 +76,7 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="RGB" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
     <Pool Name="greedSecret">
@@ -189,6 +190,7 @@
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -314,6 +316,7 @@
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -380,6 +383,7 @@
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="greedCurse">
@@ -505,6 +509,8 @@
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -574,6 +580,8 @@
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedAngel">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -780,6 +788,7 @@
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 
@@ -986,6 +995,7 @@
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
 
@@ -1086,6 +1096,7 @@
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1246,6 +1257,7 @@
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
