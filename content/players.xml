@@ -55,7 +55,7 @@
         portrait="playerportrait_stellar.png"
         skinColor="2"
         birthright="" />
-    <player name="Tainted Stellar" bSkinParent="Stellar" skin="character_stellarb.png" hp="6" pocketActive="" bombs="2" items="689"
+    <player name="Tainted Stellar" bSkinParent="Stellar" skin="character_stellarb.png" hp="6" pocketActive="" bombs="2" items=""
         keys="1"
         nameimage="playername_stellarb.png"
         portrait="playerportrait_stellarb.png"
