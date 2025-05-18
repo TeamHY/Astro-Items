@@ -1,20 +1,20 @@
 <items gfxroot="gfx/items/" version="1">
 	<passive gfx="Cygnus.png" quality="4" devilprice="2" name="Cygnus" />
 	<passive tags="dead tech battery syringe mom guppy fly bob mushroom baby angel devil poop book spider" gfx="Libra.png" devilprice="2" quality="3" shopprice="30" name="Libra EX" />
-	<passive gfx="Cancer.png" quality="3" devilprice="2" shopprice="30" name="Cancer EX" />
-	<passive gfx="Scorpio.png" quality="3" shopprice="30" name="Scorpio EX" />
-	<passive gfx="Capricorn.png" quality="2" devilprice="2" shopprice="30" name="Capricorn EX" />
-	<passive gfx="Virgo.png" quality="4" devilprice="1" shopprice="20" tags="noeden" name="Virgo EX" />
-	<passive gfx="Leo.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Leo EX" />
+	<passive gfx="Cancer.png" quality="3" devilprice="1" shopprice="20" name="Cancer EX" />
+	<passive gfx="Scorpio.png" quality="3" shopprice="20" name="Scorpio EX" />
+	<passive gfx="Capricorn.png" quality="2" devilprice="2" shopprice="15" name="Capricorn EX" />
+	<passive gfx="Virgo.png" quality="2" devilprice="1" shopprice="15" tags="noeden" name="Virgo EX" />
+	<passive gfx="Leo.png" quality="2" devilprice="1" shopprice="15" tags="noeden" name="Leo EX" />
 	<passive gfx="Aries.png" quality="4" devilprice="2" shopprice="30" name="Aries EX" />
-	<passive cache="firedelay speed" gfx="Taurus.png" quality="4" devilprice="2" shopprice="18" name="Taurus EX" />
-	<passive gfx="Aquarius.png" quality="3" devilprice="2" shopprice="30" name="Aquarius EX" />
+	<passive cache="firedelay speed" gfx="Taurus.png" quality="4" devilprice="2" shopprice="25" name="Taurus EX" />
+	<passive gfx="Aquarius.png" quality="3" devilprice="2" shopprice="25" name="Aquarius EX" />
 	<passive gfx="Casiopea.png" quality="3" devilprice="1" shopprice="10" tags="noeden" name="Casiopea" />
 	<passive gfx="Corvus.png" quality="3" devilprice="1" shopprice="20" tags="noeden" name="Corvus" />
-	<passive gfx="Pavo.png" quality="4" devilprice="2" shopprice="30" name="Pavo" />
-	<passive gfx="Comet.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Comet" />
-	<passive gfx="Pisces.png" quality="3" devilprice="2" shopprice="30" name="Pisces EX" />
-	<passive gfx="Gemini.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Gemini EX" />
+	<passive gfx="Pavo.png" quality="2" devilprice="1" shopprice="15" name="Pavo" />
+	<passive gfx="Comet.png" quality="4" devilprice="2" shopprice="30" tags="noeden" name="Comet" />
+	<passive gfx="Pisces.png" quality="3" devilprice="2" shopprice="20" name="Pisces EX" />
+	<passive gfx="Gemini.png" quality="4" devilprice="2" shopprice="30" tags="noeden" name="Gemini EX" />
 	<passive gfx="Greed.png" quality="0" devilprice="2" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Greed" />
 	<passive cache="damage" gfx="Prometheus.png" quality="3" devilprice="2" name="Prometheus" />
 	<passive gfx="Pure White Heart.png" quality="3" devilprice="2" shopprice="20" name="Pure White Heart" />
