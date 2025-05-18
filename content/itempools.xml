@@ -792,6 +792,8 @@
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Bandage Girl" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 
 	</Pool>
@@ -1001,6 +1003,7 @@
 
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bandage Girl" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
 
@@ -1105,6 +1108,7 @@
 
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bandage Girl" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1269,6 +1273,7 @@
 
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Bandage Girl" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
