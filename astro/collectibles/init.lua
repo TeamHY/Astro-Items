@@ -109,6 +109,7 @@ require "astro.collectibles.customs.birth-certificate"
 require "astro.collectibles.customs.birthright-tainted-lost"
 require "astro.collectibles.customs.false-certificate"
 require "astro.collectibles.customs.puzzle-dice"
+require "astro.collectibles.customs.bandage-girl"
 
 --#region PLANETARIUM
 

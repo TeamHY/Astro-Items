@@ -36,7 +36,7 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        if Astro:IsFirstAdded(CollectibleType.BLOOD_TRAIL) then
+        if Astro:IsFirstAdded(Astro.Collectible.BLOOD_TRAIL) then
             for _ = 1 , MAX_GIVE_COUNT - player:GetCollectibleNum(CollectibleType.COLLECTIBLE_CUBE_OF_MEAT) do
                 player:AddCollectible(CollectibleType.COLLECTIBLE_CUBE_OF_MEAT)
             end
