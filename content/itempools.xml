@@ -789,6 +789,8 @@
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 
@@ -997,6 +999,9 @@
 		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -1097,6 +1102,9 @@
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1258,6 +1266,9 @@
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
