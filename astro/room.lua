@@ -157,3 +157,27 @@ function Astro:GetArcadePoolCollectible(rng)
 
     return collectables[1]
 end
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
+    ---@param rng RNG
+    function(_, rng)
+        Astro:ScheduleForUpdate(
+            function()
+                local room = Game():GetRoom()
+                local level = Game():GetLevel()
+
+                if room:GetType() == RoomType.ROOM_BOSS and level:GetStage() <= LevelStage.STAGE1_2 and not level:IsAltStage() then
+                    for _, value in pairs(Astro:GetDoors()) do
+                        local door = value ---@type GridEntityDoor
+
+                        if door:IsOpen() == false then
+                            door:TryUnlock(Isaac.GetPlayer(), true)
+                        end
+                    end
+                end
+            end,
+            1
+        )
+    end
+)
