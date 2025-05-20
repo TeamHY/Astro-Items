@@ -1,3 +1,5 @@
+local isc = require("astro.lib.isaacscript-common")
+
 Astro.Collectible.BIRTHRIGHT_STEVEN = Isaac.GetItemIdByName("Birthright - Steven")
 
 Astro:AddCallback(
@@ -61,4 +63,16 @@ Astro:AddCallback(
             end
         end
     end
+)
+
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if player:GetCollectibleNum(CollectibleType.COLLECTIBLE_LITTLE_STEVEN) >= 4 then
+            Astro:RemoveAllCollectible(player, Astro.Collectible.BIRTHRIGHT_STEVEN)
+        end
+    end,
+    CollectibleType.COLLECTIBLE_LITTLE_STEVEN
 )
