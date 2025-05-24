@@ -48,10 +48,10 @@ Astro:AddCallback(
                 local rng = RNG()
                 rng:SetSeed(seed, 35)
 
-                local isReroll = CheckReroll(selectedCollectible)
+                local rerollConditionResult = CheckReroll(selectedCollectible)
 
-                if isReroll and itemConfigitem:HasTags(ItemConfig.TAG_QUEST) == false and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST then
-                    local newCollectable = itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
+                if rerollConditionResult.reroll and itemConfigitem:HasTags(ItemConfig.TAG_QUEST) == false and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST then
+                    local newCollectable = rerollConditionResult.newItem or itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
 
                     if rerollTable[newCollectable] then
                         table.insert(rerollTable[newCollectable], selectedCollectible)
@@ -82,7 +82,6 @@ local function CreateRerollAnimationSprite(collectible)
     sprite:ReplaceSpritesheet(0, itemConfigitem.GfxFileName)
     sprite:LoadGraphics()
     sprite:Play("Idle", true)
-    sprite:SetLastFrame()
 
     return sprite
 end
@@ -107,7 +106,11 @@ Astro:AddCallback(
                 local collectible = pickup.SubType
 
                 if rerollTable[collectible] then
-                    table.insert(rerollAnimationList, { target = pickup, sprite = CreateRerollAnimationSprite(collectible) })
+                    for _, c in ipairs(rerollTable[collectible]) do
+                        table.insert(rerollAnimationList, { target = pickup, sprite = CreateRerollAnimationSprite(c) })
+                    end
+
+                    rerollTable[collectible] = nil
                 end
             end
         end
@@ -117,21 +120,24 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function(_)
+        local updatedAnimationList = {}
+
         for i, value in ipairs(rerollAnimationList) do
             local target = value.target
             local sprite = value.sprite
 
-            local rowNum = math.floor((i - 1) / MAX_ROW_NUM) == math.floor(#rerollAnimationList / MAX_ROW_NUM) and #rerollAnimationList % MAX_ROW_NUM or MAX_ROW_NUM
-            local xOffset = (((i - 1) % MAX_ROW_NUM) + 0.5 - rowNum / 2) * 50
-            local yOffset = -((math.floor((i - 1) / MAX_ROW_NUM) * 50) + 60)
-            local position = Astro:ToScreen(target.Position + Vector(xOffset, yOffset))
+            if not sprite:IsFinished("Idle") and target:Exists() then
+                local rowNum = math.floor((i - 1) / MAX_ROW_NUM) == math.floor(#rerollAnimationList / MAX_ROW_NUM) and #rerollAnimationList % MAX_ROW_NUM or MAX_ROW_NUM
+                local xOffset = (((i - 1) % MAX_ROW_NUM) + 0.5 - rowNum / 2) * 50
+                local yOffset = -((math.floor((i - 1) / MAX_ROW_NUM) * 50) + 60)
+                local position = Astro:ToScreen(target.Position + Vector(xOffset, yOffset))
 
-            if sprite:IsFinished("Idle") then
-                table.remove(rerollAnimationList, i)
-            else
                 sprite:Render(position, Vector(0, 0), Vector(0, 0))
+                table.insert(updatedAnimationList, value)
             end
         end
+
+        rerollAnimationList = updatedAnimationList
     end
 )
 
