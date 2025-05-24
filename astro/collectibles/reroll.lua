@@ -7,6 +7,11 @@ Astro.RerollConditions = {}
 
 local rerollTable = {}
 
+---@param condition fun(selectedCollectible: CollectibleType): boolean | RerollConditionResult
+function Astro:AddRerollCondition(condition)
+    table.insert(Astro.RerollConditions, condition)
+end
+
 ---@param selectedCollectible CollectibleType
 ---@return RerollConditionResult
 local function CheckReroll(selectedCollectible)
@@ -122,18 +127,38 @@ Astro:AddCallback(
     function(_)
         local updatedAnimationList = {}
 
-        for i, value in ipairs(rerollAnimationList) do
+        local groupedAnimations = {}
+
+        for _, value in ipairs(rerollAnimationList) do
             local target = value.target
-            local sprite = value.sprite
 
-            if not sprite:IsFinished("Idle") and target:Exists() then
-                local rowNum = math.floor((i - 1) / MAX_ROW_NUM) == math.floor(#rerollAnimationList / MAX_ROW_NUM) and #rerollAnimationList % MAX_ROW_NUM or MAX_ROW_NUM
-                local xOffset = (((i - 1) % MAX_ROW_NUM) + 0.5 - rowNum / 2) * 50
-                local yOffset = -((math.floor((i - 1) / MAX_ROW_NUM) * 50) + 60)
-                local position = Astro:ToScreen(target.Position + Vector(xOffset, yOffset))
+            if not target:Exists() then
+                goto continue
+            end
 
-                sprite:Render(position, Vector(0, 0), Vector(0, 0))
-                table.insert(updatedAnimationList, value)
+            if not groupedAnimations[target.InitSeed] then
+                groupedAnimations[target.InitSeed] = {}
+            end
+
+            table.insert(groupedAnimations[target.InitSeed], value)
+
+            ::continue::
+        end
+
+        for _, list in pairs(groupedAnimations) do
+            for i, value in ipairs(list) do
+                local target = value.target
+                local sprite = value.sprite
+
+                if not sprite:IsFinished("Idle") and target:Exists() then
+                    local rowNum = math.floor((i - 1) / MAX_ROW_NUM) == math.floor(#list / MAX_ROW_NUM) and #list % MAX_ROW_NUM or MAX_ROW_NUM
+                    local xOffset = (((i - 1) % MAX_ROW_NUM) + 0.5 - rowNum / 2) * 50
+                    local yOffset = -((math.floor((i - 1) / MAX_ROW_NUM) * 50) + 80)
+                    local position = Astro:ToScreen(target.Position + Vector(xOffset, yOffset))
+
+                    sprite:Render(position, Vector(0, 0), Vector(0, 0))
+                    table.insert(updatedAnimationList, value)
+                end
             end
         end
 

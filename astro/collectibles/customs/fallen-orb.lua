@@ -6,19 +6,21 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(Astro.Collectible.FALLEN_ORB, "타락한 오브", "불행한 운명", "{{Quality0}}0등급/{{Quality1}}1등급 아이템 등장 시 리롤됩니다.#리롤된 아이템은 콘솔창에서 확인할 수 있습니다.")
+            Astro:AddEIDCollectible(Astro.Collectible.FALLEN_ORB, "타락한 오브", "불행한 운명", "{{Quality0}}0등급/{{Quality1}}1등급 아이템 등장 시 리롤됩니다.")
         end
 
-        table.insert(Astro.RerollConditions, function(selectedCollectible)
-            local itemConfig = Isaac.GetItemConfig()
-            local itemConfigitem = itemConfig:GetCollectible(selectedCollectible)
-    
-            if Astro:HasCollectible(Astro.Collectible.FALLEN_ORB) then
-                return itemConfigitem.Quality <= 1
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                local itemConfig = Isaac.GetItemConfig()
+                local itemConfigitem = itemConfig:GetCollectible(selectedCollectible)
+        
+                if Astro:HasCollectible(Astro.Collectible.FALLEN_ORB) then
+                    return itemConfigitem.Quality <= 1
+                end
+        
+                return false
             end
-    
-            return false
-        end)
+        )
     end
 )
 
