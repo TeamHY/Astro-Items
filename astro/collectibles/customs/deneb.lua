@@ -1,3 +1,9 @@
+---
+
+local EXTRA_DAMAGE_MULTIPLIER = 0.3
+
+---
+
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.DENEB = Isaac.GetItemIdByName("Deneb")
@@ -7,7 +13,8 @@ if EID then
         Astro.Collectible.DENEB,
         "데네브",
         "...",
-        "다음 게임에서 애프터버스 변종 스테이지 (Burning Basement, Flooded Caves, Dank Depths, Scarred Womb) 등장하지 않습니다."
+        "다음 게임에서 애프터버스 변종 스테이지 (Burning Basement, Flooded Caves, Dank Depths, Scarred Womb) 등장하지 않습니다." ..
+        "#변종 몬스터 직접 공격 시 30% 추가 피해를 입힙니다. 중첩 시 추가 피해가 합 연산으로 증가합니다."
     )
 end
 
@@ -58,4 +65,23 @@ Astro:AddCallbackCustom(
         Astro.Data.RunDeneb = true
     end,
     Astro.Collectible.DENEB
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_ENTITY_TAKE_DMG,
+    ---@param entity Entity
+    ---@param amount number
+    ---@param damageFlags number
+    ---@param source EntityRef
+    ---@param countdownFrames number
+    function(_, entity, amount, damageFlags, source, countdownFrames)
+        local player = Astro:GetPlayerFromEntity(source.Entity)
+        local npc = entity:ToNPC()
+
+        if player ~= nil and npc ~= nil and player:HasCollectible(Astro.Collectible.DENEB) then
+            if npc:IsChampion() and (source.Type == EntityType.ENTITY_TEAR or damageFlags & DamageFlag.DAMAGE_LASER == DamageFlag.DAMAGE_LASER or source.Type == EntityType.ENTITY_KNIFE) then
+                npc:TakeDamage(amount * EXTRA_DAMAGE_MULTIPLIER * player:GetCollectibleNum(Astro.Collectible.DENEB), 0, EntityRef(player), 0)
+            end
+        end
+    end
 )

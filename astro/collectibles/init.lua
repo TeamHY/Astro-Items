@@ -155,6 +155,7 @@ require "astro.collectibles.customs.planetarium.pluto-ex"
 
 require "astro.collectibles.ex-upgrade"
 require "astro.collectibles.penalty"
+require "astro.collectibles.reroll"
 
 ---@type ItemConfigItem[]
 Astro.CollectableConfigs = {}
