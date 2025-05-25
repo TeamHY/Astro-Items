@@ -15,7 +15,10 @@ Astro:AddCallback(
                 local itemConfigitem = itemConfig:GetCollectible(selectedCollectible)
         
                 if Astro:HasCollectible(Astro.Collectible.FALLEN_ORB) then
-                    return itemConfigitem.Quality <= 1
+                    return {
+                        reroll = itemConfigitem.Quality <= 1,
+                        modifierName = "Fallen Orb"
+                    }
                 end
         
                 return false

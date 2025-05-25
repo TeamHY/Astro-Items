@@ -20,7 +20,10 @@ Astro:AddCallback(
                 local itemConfigitem = itemConfig:GetCollectible(selectedCollectible)
         
                 if Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_TAINTED_LOST) then
-                    return not itemConfigitem:HasTags(ItemConfig.TAG_OFFENSIVE)
+                    return {
+                        reroll = not itemConfigitem:HasTags(ItemConfig.TAG_OFFENSIVE),
+                        modifierName = "Birthright - Tainted Lost"
+                    }
                 end
         
                 return false

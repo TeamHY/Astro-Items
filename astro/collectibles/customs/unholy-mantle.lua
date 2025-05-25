@@ -19,7 +19,10 @@ Astro:AddCallback(
         Astro:AddRerollCondition(
             function(selectedCollectible)
                 if Astro:HasCollectible(Astro.Collectible.UNHOLY_MANTLE) then
-                    return selectedCollectible == CollectibleType.COLLECTIBLE_HOLY_MANTLE
+                    return {
+                        reroll = selectedCollectible == CollectibleType.COLLECTIBLE_HOLY_MANTLE,
+                        modifierName = "Unholy Mantle"
+                    }
                 end
         
                 return false

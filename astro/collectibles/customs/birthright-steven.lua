@@ -22,7 +22,8 @@ Astro:AddCallback(
                 if Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_STEVEN) and room:GetType() == RoomType.ROOM_BOSS and selectedCollectible ~= CollectibleType.COLLECTIBLE_LITTLE_STEVEN then
                     return {
                         reroll = true,
-                        newItem = CollectibleType.COLLECTIBLE_LITTLE_STEVEN
+                        newItem = CollectibleType.COLLECTIBLE_LITTLE_STEVEN,
+                        modifierName = "Birthright - Steven"
                     }
                 end
         

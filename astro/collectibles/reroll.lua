@@ -1,6 +1,14 @@
-local MAX_ROW_NUM = 10
+---
 
----@alias RerollConditionResult { reroll: boolean, newItem: CollectibleType }
+local MAX_ROW_NUM = 3
+
+local ANIMATION_REPEAT_COUNT = 3
+
+---
+
+
+
+---@alias RerollConditionResult { reroll: boolean, newItem: CollectibleType, modifierName: string }
 
 ---@type (fun(selectedCollectible: CollectibleType): boolean | RerollConditionResult[])[]
 Astro.RerollConditions = {}
@@ -17,7 +25,8 @@ end
 local function CheckReroll(selectedCollectible)
     local result = {
         newItem = nil,
-        reroll = false
+        reroll = false,
+        modifierName = nil
     }
 
     for _, condition in ipairs(Astro.RerollConditions) do
@@ -29,6 +38,7 @@ local function CheckReroll(selectedCollectible)
             local conditionResult = conditionResult --[[@as RerollConditionResult]]
             result.newItem = conditionResult.newItem or result.newItem
             result.reroll = conditionResult.reroll or result.reroll
+            result.modifierName = conditionResult.modifierName or result.modifierName
         end
     end
 
@@ -64,6 +74,8 @@ Astro:AddCallback(
                         rerollTable[newCollectable] = { selectedCollectible }
                     end
 
+                    print((rerollConditionResult.modifierName or '???') .. ": " .. selectedCollectible .. " -> " .. newCollectable)
+
                     return newCollectable
                 end
             end
@@ -73,7 +85,7 @@ Astro:AddCallback(
 
 --#region Render
 
----@type {target: EntityPickup, sprite: Sprite}[]
+---@type {target: EntityPickup, sprite: Sprite, loops: number}[]
 local rerollAnimationList = {}
 
 ---@param collectible CollectibleType
@@ -112,7 +124,7 @@ Astro:AddCallback(
 
                 if rerollTable[collectible] then
                     for _, c in ipairs(rerollTable[collectible]) do
-                        table.insert(rerollAnimationList, { target = pickup, sprite = CreateRerollAnimationSprite(c) })
+                        table.insert(rerollAnimationList, { target = pickup, sprite = CreateRerollAnimationSprite(c), loops = ANIMATION_REPEAT_COUNT })
                     end
 
                     rerollTable[collectible] = nil
@@ -127,6 +139,7 @@ Astro:AddCallback(
     function(_)
         local updatedAnimationList = {}
 
+        ---@type { [integer]: {target: EntityPickup, sprite: Sprite, loops: number}[] }
         local groupedAnimations = {}
 
         for _, value in ipairs(rerollAnimationList) do
@@ -150,14 +163,23 @@ Astro:AddCallback(
                 local target = value.target
                 local sprite = value.sprite
 
-                if not sprite:IsFinished("Idle") and target:Exists() then
-                    local rowNum = math.floor((i - 1) / MAX_ROW_NUM) == math.floor(#list / MAX_ROW_NUM) and #list % MAX_ROW_NUM or MAX_ROW_NUM
-                    local xOffset = (((i - 1) % MAX_ROW_NUM) + 0.5 - rowNum / 2) * 50
-                    local yOffset = -((math.floor((i - 1) / MAX_ROW_NUM) * 50) + 80)
-                    local position = Astro:ToScreen(target.Position + Vector(xOffset, yOffset))
+                if target:Exists() then
+                    if not sprite:IsFinished("Idle") then
+                        local rowNum = math.floor((i - 1) / MAX_ROW_NUM) == math.floor(#list / MAX_ROW_NUM) and #list % MAX_ROW_NUM or MAX_ROW_NUM
+                        local xOffset = (((i - 1) % MAX_ROW_NUM) + 0.5 - rowNum / 2) * 50
+                        local yOffset = -((math.floor((i - 1) / MAX_ROW_NUM) * 50) + 80)
+                        local position = Astro:ToScreen(target.Position + Vector(xOffset, yOffset))
 
-                    sprite:Render(position, Vector(0, 0), Vector(0, 0))
-                    table.insert(updatedAnimationList, value)
+                        sprite:Render(position, Vector(0, 0), Vector(0, 0))
+                        table.insert(updatedAnimationList, value)
+                    else
+                        value.loops = value.loops - 1
+
+                        if value.loops > 0 then
+                            table.insert(updatedAnimationList, value)
+                            sprite:Play("Idle", true)
+                        end
+                    end
                 end
             end
         end

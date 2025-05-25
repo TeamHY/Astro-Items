@@ -27,7 +27,10 @@ Astro:AddCallback(
         Astro:AddRerollCondition(
             function(selectedCollectible)
                 if Astro:HasCollectible(Astro.Collectible.PURPLE_CANDLE) then
-                    return selectedCollectible == CollectibleType.COLLECTIBLE_BLACK_CANDLE
+                    return {
+                        reroll = selectedCollectible == CollectibleType.COLLECTIBLE_BLACK_CANDLE,
+                        modifierName = "Purple Candle"
+                    }
                 end
         
                 return false

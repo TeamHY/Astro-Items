@@ -20,7 +20,10 @@ Astro:AddCallback(
                 local itemConfigitem = itemConfig:GetCollectible(selectedCollectible)
         
                 if Astro:HasTrinket(Astro.Trinket.YES) then
-                    return itemConfigitem.Type ~= ItemType.ITEM_ACTIVE
+                    return {
+                        reroll = itemConfigitem.Type ~= ItemType.ITEM_ACTIVE,
+                        modifierName = "Yes!"
+                    }
                 end
         
                 return false
