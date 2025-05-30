@@ -34,14 +34,14 @@ Astro:AddCallback(
                 Astro.Collectible.TAANA_DEFENSE_HELPER,
                 "TAANA - 방어 도우미",
                 "...",
-                "{{Trinket145}}Perfection가 사라지기 전에 주울 수 있습니다. 스테이지 당 한 번씩 발동합니다."
+                "{{Trinket145}}Perfection이 사라지기 전에 주울 수 있습니다. (스테이지당 1번 가능)"
             )
 
             Astro:AddEIDCollectible(
                 Astro.Collectible.SEERI_COMBAT_HELPER,
                 "SEERI - 전투 도우미",
                 "...",
-                "공격 시 1%의 확률로 그 방에서 {{Collectible100}}Little Steven을 소환합니다. 최대 5개까지 소환합니다." ..
+                "공격 시 1%의 확률로 그 방에서 {{Collectible100}}Little Steven을 소환합니다.#최대 5개까지 소환합니다." ..
                 "#!!! {{LuckSmall}}행운 수치 비례: 행운 99 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
 
@@ -49,7 +49,7 @@ Astro:AddCallback(
                 Astro.Collectible.KAAEN_AUTO_RELOADER,
                 "KAAEN - 재장전 도우미",
                 "...",
-                "방 클리어 시 20% 확률로 작은 배터리를 소환합니다."
+                "방 클리어 시 20% 확률로 {{Crafting19}}리틀 배터리를 소환합니다."
             )
         end
     end

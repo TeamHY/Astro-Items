@@ -3,7 +3,7 @@ Astro.Trinket.FLUNK = Isaac.GetTrinketIdByName("Flunk")
 if EID then
     EID:addTrinket(
         Astro.Trinket.FLUNK,
-        "이 아이템은 룰상{{Trinket145}}Perfection로 취급됩니다.#↑ 행운 +2#{{ColorGold}}↑ 행운 +2#{{Collectible" .. Astro.Collectible.EZ_MODE .. "}}EZ Mode 소지 시 사라지지 않습니다.",
+        "#↓ 행운 -2#{{ArrowGrayRight}} {{ColorGold}}행운 감소 효과가 적용되지 않습니다.{{CR}}#{{Trinket145}} Perfection과 같은 판정을 가집니다.#{{Collectible" .. Astro.Collectible.EZ_MODE .. "}}EZ Mode 소지 시 사라지지 않습니다.",
         "낙제"
     )
 

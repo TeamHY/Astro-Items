@@ -6,9 +6,9 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_APOLLYON_B,
-                "생득권 - 알트 아폴리온",
+                "더럽혀진 아폴리온의 생득권",
                 "...",
-                "클리어 되지 않은 방 입장 시 {{Card38}}Berkano가 발동됩니다." ..
+                "클리어하지 않은 방에 입장 시 {{Card38}}Berkano가 발동됩니다." ..
                 "#중첩 시 발동 횟수가 증가합니다."
             )
         end

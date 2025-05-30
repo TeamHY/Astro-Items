@@ -1,7 +1,7 @@
 Astro.Collectible.LUCKY_ROCK_BOTTOM = Isaac.GetItemIdByName("Lucky Rock Bottom")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.LUCKY_ROCK_BOTTOM, "운 좋은 밑바닥", "...", "행운을 항상 가장 높았던 값으로 고정합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.LUCKY_ROCK_BOTTOM, "운 좋은 밑바닥", "...", "{{LuckSmall}} 행운을 항상 가장 높았던 값으로 고정합니다.")
 end
 
 Astro:AddCallback(

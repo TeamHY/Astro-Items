@@ -32,9 +32,9 @@ if EID then
         Astro.Collectible.CALM_MIND,
         "침착한 정신",
         "...",
-        "1초 마다 공격력이 0.007 증가합니다." ..
-        "#시작 방에서는 증가하지 않습니다." ..
-        "#패널티 피격 시 4분 간 증가하지 않습니다." ..
+        "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
+        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -42,9 +42,9 @@ if EID then
         Astro.Collectible.SWIFT_MIND,
         "신속한 정신",
         "...",
-        "1초 마다 이동 속도가 0.00095 증가합니다." ..
-        "#시작 방에서는 증가하지 않습니다." ..
-        "#패널티 피격 시 4분 간 증가하지 않습니다." ..
+        "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
+        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -52,9 +52,9 @@ if EID then
         Astro.Collectible.BLUE_MIND,
         "우울한 정신",
         "...",
-        "1초 마다 연사(고정)가 0.0019 증가합니다." ..
-        "#시작 방에서는 증가하지 않습니다." ..
-        "#패널티 피격 시 4분 간 증가하지 않습니다." ..
+        "{{Timer}} 1초마다 {{TearsSmall}}연사(고정) +0.0019" ..
+        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -62,9 +62,9 @@ if EID then
         Astro.Collectible.LUCKY_MIND,
         "행운의 정신",
         "...",
-        "1초 마다 행운이 0.0087 증가합니다." ..
-        "#시작 방에서는 증가하지 않습니다." ..
-        "#패널티 피격 시 4분 간 증가하지 않습니다." ..
+        "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.0087" ..
+        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -72,8 +72,8 @@ if EID then
         Astro.Collectible.QUANTUM_MIND,
         "퀀텀 마인드",
         "...",
-        "사용 시 방 안에 모든 아이템이 {{Collectible" .. Astro.Collectible.CALM_MIND .. "}}Calm Mind, {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind, {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}}Blue Mind, {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}}Lucky Mind 중에 하나로 변경됩니다. 동일한 아이템이 여러개 등장할 수 있습니다." ..
-        "#이동 속도가 2.0 이상일 경우 {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind는 등장하지 않습니다." ..
+        "사용 시 그 방의 아이템을 {{Collectible" .. Astro.Collectible.CALM_MIND .. "}}Calm Mind, {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind, {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}}Blue Mind, {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}}Lucky Mind 중 하나로 변경합니다. (동일한 아이템이 여러 개 등장할 수 있음)" ..
+        "#이동속도가 2.0 이상일 경우 {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind는 등장하지 않습니다." ..
         "#레아가 사용할 경우 충전량이 6칸 남습니다."
     )
 end

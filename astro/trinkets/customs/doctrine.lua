@@ -1,7 +1,7 @@
 Astro.Trinket.DOCTRINE = Isaac.GetTrinketIdByName("Doctrine")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.DOCTRINE, "스테이지 입장 시 {{AngelRoom}}천사방 확률이 15% 증가합니다.#저주가 적용되지 않습니다.", "교리")
+    EID:addTrinket(Astro.Trinket.DOCTRINE, "스테이지 입장 시 {{AngelRoom}}천사방 확률 +15%#저주가 적용되지 않습니다.", "교리")
 
     Astro:AddGoldenTrinketDescription(Astro.Trinket.DOCTRINE, "", 15, 2)
 end

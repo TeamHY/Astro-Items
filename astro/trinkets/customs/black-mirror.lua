@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Trinket.BLACK_MIRROR = Isaac.GetTrinketIdByName("Black Mirror")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.BLACK_MIRROR, "패시브 아이템 획득 시 하나 더 추가됩니다. 아이템이 추가된 후 해당 장신구는 제거됩니다.#!!! 획득 시 바로 흡수됩니다.", "검은 거울")
+    EID:addTrinket(Astro.Trinket.BLACK_MIRROR, "패시브 아이템 획득 시 그 아이템을 한번 더 얻습니다.#!!!아이템 획득 후 제거됩니다.", "검은 거울")
 
     -- Astro:AddGoldenTrinketDescription(Astro.Trinket.BLACK_MIRROR, "", 10)
 end

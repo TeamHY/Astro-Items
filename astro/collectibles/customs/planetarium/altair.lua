@@ -7,7 +7,7 @@ if EID then
         Astro.Collectible.ALTAIR,
         "알타일",
         "...",
-        "획득 시 {{Trinket23}}Missing Poster 를 소환합니다.#다음 게임 시작 시 하얀불을 소환합니다."
+        "획득 시 {{Trinket23}}Missing Poster를 소환합니다.#다음 게임에 하얀 모닥불을 소환합니다."
     )
 end
 

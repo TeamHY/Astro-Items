@@ -57,27 +57,27 @@ if EID then
         Astro.Collectible.REINCARNATION,
         "리인카네이션",
         "...",
-        "다음 게임 시작 시 부활 아이템 중 하나가 소환됩니다." ..
-        "#소지한 부활 아이템 하나당 공격력이 50%p 증가합니다."
+        "다음 게임에서 부활류 아이템 중 하나를 소환합니다." ..
+        "#소지중인 부활류 아이템 하나당 {{DamageSmall}}공격력 +50%p"
     )
 
     Astro:AddEIDCollectible(
         Astro.Collectible.MATRYOSHKA,
         "마트료시카",
         "...",
-        "상자를 열 때마다 공격력, 연사, 이동 속도, 행운 중 한 가지의 스텟이 0.5(고정) 증가됩니다." ..
+        "상자를 열 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.5(고정)" ..
         "#중첩 시 다음 증가량부터 적용됩니다." ..
-        "#갈색 상자를 열 때 50% 확률로 미니 상자가 소환됩니다. {{Collectible" .. Astro.Collectible.CHUBBYS_TAIL .. "}}Chubby's Tail 소지 시 20% 확률로 소환됩니다." ..
-        "#{{ColorRed}}BUG: 상자에서 패시브, 액티브 아이템이 등장할 경우 스탯이 증가하지 않습니다."
+        "#{{WoodenChest}}나무상자를 열 때 50% 확률로 작은 상자가 소환됩니다. {{Collectible" .. Astro.Collectible.CHUBBYS_TAIL .. "}}Chubby's Tail 소지 시 20% 확률로 소환됩니다." ..
+        "#{{ColorRed}}BUG: 상자에서 패시브, 액티브 아이템이 등장할 경우 능력치가 증가하지 않습니다."
     )
 
     Astro:AddEIDCollectible(
         Astro.Collectible.SAMSARA,
         "삼사라",
         "...",
-        "적 처치 시 {{Collectible522}}Telekinesis가 발동합니다. 방마다 한 번씩 발동합니다." ..
+        "적 처치 시 {{Collectible522}}Telekinesis가 발동합니다. (방마다 최대 1번)" ..
         "#중첩 시 여러 번 발동할 수 있습니다." ..
-        "#Astrobirth 모드의 NextBan 시스템이 무효화됩니다."
+        "#Astrobirth의 NextBan 시스템이 무효화됩니다."
     )
 end
 

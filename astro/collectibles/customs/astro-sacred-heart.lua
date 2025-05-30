@@ -12,8 +12,9 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_SACRED_HEART,
                 "아스트로 성스러운 심장",
                 "...",
-                "#{{Collectible182}}Sacred Heart 효과가 적용됩니다." ..
-                "#적이 피해를 입을 때 피해량의 2.3배가 적용됩니다. 중첩 시 피해량이 합 연산으로 증가합니다."
+                "#{{Collectible182}} Sacred Heart 효과가 적용됩니다." ..
+                "#적이 피해를 입을 때 피해량의 2.3배가 적용됩니다." ..
+                "#{{ArrowGrayRight}}중첩 시 피해량이 합 연산으로 증가합니다."
             )
         end
     end

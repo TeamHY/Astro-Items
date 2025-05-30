@@ -8,9 +8,9 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_EVE,
-                "생득권 - 이브",
+                "이브의 생득권",
                 "...",
-                "{{Collectible122}}Whore of babylon, {{Collectible122}}Dead Bird 효과가 항상 적용됩니다. 중첩이 가능합니다."
+                "{{Collectible122}}Whore of babylon, {{Collectible117}}Dead Bird 효과가 항상 적용됩니다.#중첩이 가능합니다."
             )
         end
     end

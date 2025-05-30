@@ -8,8 +8,9 @@ if EID then
         Astro.Collectible.SOL_EX,
         "초 태양",
         "...",
-        "{{Collectible588}}Sol 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#{{BossRoom}}보스방 클리어 시 {{Collectible633}}Dogma가 없을 경우 1개 획득하고 장신구 1개를 소환합니다."
+        "{{Collectible588}} Sol 효과가 적용됩니다." ..
+        "#{{BossRoom}} 보스방 클리어 시;#{{ArrowGrayRight}} {{Collectible633}}Dogma를 획득합니다. (최대 1번)#{{ArrowGrayRight}} 무작위 장신구 1개를 소환합니다." ..
+        "#!!! 이번 게임에서 {{Collectible588}}Sol이 등장하지 않습니다."
     )
 end
 

@@ -8,9 +8,9 @@ if EID then
         Astro.Collectible.LUNA_EX,
         "초 달",
         "...",
-        "{{Collectible589}}Luna 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#{{Collectible76}}X-Ray Vision 효과가 적용됩니다." ..
-        "#맵에 {{SecretRoom}}비밀방, {{SuperSecretRoom}}일급 비밀방, {{UltraSecretRoom}}특급 비밀방 위치가 표시됩니다."
+        "{{Collectible589}}Luna, {{Collectible76}}X-Ray Vision 효과가 적용됩니다." ..
+        "#맵에 {{SecretRoom}}비밀방, {{SuperSecretRoom}}일급비밀방, {{UltraSecretRoom}}특급비밀방 위치가 표시됩니다."..
+        "#!!! 이번 게임에서 {{Collectible589}}Luna가 등장하지 않습니다."
     )
 end
 

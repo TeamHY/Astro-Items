@@ -17,8 +17,8 @@ if EID then
     EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "Chubby")
 
     Astro:AddEIDCollectible(Astro.Collectible.CHUBBYS_HEAD, "처비의 머리", "...", "↑ {{DamageSmall}}공격력(고정) +3.5#중첩이 가능합니다.")
-    Astro:AddEIDCollectible(Astro.Collectible.SLEEPING_PUPPY, "잠자는 강아지", "...", "↑ {{DamageSmall}}공격력(고정) +0.35#9개 방을 클리어할 때 마다 공격력, 연사, 사거리, 속도, 행운 중 한 가지의 스텟이 0.35(고정) 증가됩니다.#중첩 시 다음 증가량부터 적용됩니다.")
-    Astro:AddEIDCollectible(Astro.Collectible.CHUBBYS_TAIL, "처비의 꼬리", "...", "{{Chest}} 갈색 상자가 등장 시 33% 확률로 갈색 상자가 한 개 더 드랍 됩니다.#중첩 시 확률이 합 연산으로 증가합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.SLEEPING_PUPPY, "잠자는 강아지", "...", "↑ {{DamageSmall}}공격력(고정) +0.35#9개의 방을 클리어할 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나가 +0.35(고정)#{{ArrowGrayRight}} 중첩 시 다음 증가량부터 적용됩니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.CHUBBYS_TAIL, "처비의 꼬리", "...", "{{WoodenChest}}나무상자 등장 시 33% 확률로 한 개 더 등장합니다.#중첩 시 확률이 합 연산으로 증가합니다.")
 end
 
 -- 처비셋 목록

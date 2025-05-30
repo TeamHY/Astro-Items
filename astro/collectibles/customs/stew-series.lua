@@ -22,8 +22,9 @@ if EID then
         "푸른 스튜",
         "...",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
-        "{{TearsSmall}}연사(고정)가 +21.6 증가하며 증가한 연사는 1초마다 -0.12씩 감소합니다." ..
-        "#연사 감소 중에 적 처치시 일시적으로 연사가 +0.12 증가합니다."
+        "↑ {{TearsSmall}}연사(고정) +21.6"..
+        "#{{ArrowGrayRight}} 증가한 {{TearsSmall}}연사는 1초마다 -0.12" ..
+        "#{{ArrowGrayRight}} 감소 중 적 처치 시 {{TearsSmall}}연사 +0.12"
     )
 
     Astro:AddEIDCollectible(
@@ -31,8 +32,9 @@ if EID then
         "초록 스튜",
         "...",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
-        "{{LuckSmall}}행운이 +21.6 증가하며 증가한 행운은 1초마다 -0.12씩 감소합니다." ..
-        "#행운 감소 중에 적 처치시 일시적으로 행운이 +0.12 증가합니다."
+        "↑ {{LuckSmall}}행운 +21.6"..
+        "#{{ArrowGrayRight}} 증가한 {{LuckSmall}}행운은 1초마다 -0.12" ..
+        "#{{ArrowGrayRight}} 감소 중 적 처치 시 {{LuckSmall}}행운 +0.12"
     )
 
     Astro:AddEIDCollectible(
@@ -40,8 +42,9 @@ if EID then
         "갈색 스튜",
         "...",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
-        "{{SpeedSmall}}이동 속도가 +1.08 증가하며 증가한 이동 속도는 1초마다 -0.006씩 감소합니다." ..
-        "#이동 속도 감소 중에 적 처치시 일시적으로 이동 속도가 +0.006 증가합니다."
+        "↑ {{SpeedSmall}}이동속도 +1.08"..
+        "#{{ArrowGrayRight}} 증가한 {{SpeedSmall}}이동속도는 1초마다 -0.006" ..
+        "#{{ArrowGrayRight}} 감소 중 적 처치 시 {{SpeedSmall}}이동속도 +0.006"
     )
 end
 

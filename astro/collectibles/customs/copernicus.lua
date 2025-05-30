@@ -7,8 +7,8 @@ Astro:AddCallback(
 			Astro:AddEIDCollectible(
 				Astro.Collectible.COPERNICUS,
 				"코페르니쿠스",
-				"...",
-				"{{ArrowUp}} {{TearsSmall}}연사 +0.77" ..
+				"지동설",
+				"↑ {{TearsSmall}}연사 +0.77" ..
 				"#적 명중 시 적 주변에 유령 탄환이 돌아갑니다." ..
 				"#각 적 당 일정 횟수 이상 명중 시 유령 탄환이 적을 공격합니다."
 			)

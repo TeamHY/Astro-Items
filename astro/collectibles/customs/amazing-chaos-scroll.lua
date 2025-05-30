@@ -7,14 +7,14 @@ if EID then
         Astro.Collectible.AMAZING_CHAOS_SCROLL,
         "놀라운 혼돈의 주문서",
         "...",
-        "{{UnknownHeart}} 최대 체력, 소울하트, 블랙하트 중 하나 +1" ..
-        "#{{ArrowUp}} {{SpeedSmall}}이동속도 배율 x0.85~1.35" ..
-        "#{{ArrowUp}} {{TearsSmall}}공격 딜레이 ÷0.85~1.35" ..
-        "#{{ArrowUp}} {{DamageSmall}}공격력 배율 x0.85~1.35" ..
-        "#{{ArrowUp}} {{RangeSmall}}사거리 배율 x0.85~1.35" ..
-        "#{{ArrowUp}} {{ShotspeedSmall}}탄속 배율 x0.85~1.35" ..
-        "#{{ArrowUp}} {{LuckSmall}}행운 배율 x0.85~1.35" ..
-        "#!!! 해당 아이템의 체력은 즉시 들어오지 않으며, 거래 후 체력이 없을경우 사망합니다"
+        "↑ {{Heart}}최대 체력, {{BlackHeart}}블랙하트, {{SoulHeart}}소울하트 중 하나 +1" ..
+        "#↑ {{SpeedSmall}}이동속도 배율 x0.85~1.35" ..
+        "#↑ {{TearsSmall}}공격 딜레이 ÷0.85~1.35" ..
+        "#↑ {{DamageSmall}}공격력 배율 x0.85~1.35" ..
+        "#↑ {{RangeSmall}}사거리 배율 x0.85~1.35" ..
+        "#↑ {{ShotspeedSmall}}탄속 배율 x0.85~1.35" ..
+        "#↑ {{LuckSmall}}행운 배율 x0.85~1.35" ..
+        "#!!! 해당 아이템의 체력은 즉시 들어오지 않으며, 획득 후 체력이 없을 경우 사망합니다."
     )
 end
 

@@ -1,7 +1,7 @@
 Astro.Collectible.LANIAKEA_SUPERCLUSTER = Isaac.GetItemIdByName("Laniakea Supercluster")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.LANIAKEA_SUPERCLUSTER, "라니아케아 초은하단", "...", "사용 시 모든 {{Planetarium}}행성방 아이템이 존재하는 방으로 이동합니다.#!!! 일회용 아이템")
+    Astro:AddEIDCollectible(Astro.Collectible.LANIAKEA_SUPERCLUSTER, "라니아케아 초은하단", "...", "!!! 일회용#사용 시 {{Planetarium}}천체관 아이템이 존재하는 방으로 이동합니다.")
 end
 
 Astro:AddCallback(

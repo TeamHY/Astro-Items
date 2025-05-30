@@ -5,8 +5,7 @@ if EID then
         Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL,
         "죄보사냥의 악마",
         "...",
-        "사용 시 현재 캐릭터가 디아벨스타가 됩니다."
-        .. "#!!! 일회용 아이템"
+        "!!! 일회용#사용 시 캐릭터를 디아벨스타로 변경합니다."
     )
 end
 

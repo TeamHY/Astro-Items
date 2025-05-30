@@ -1,7 +1,14 @@
 Astro.Collectible.ARIES_EX = Isaac.GetItemIdByName("Aries EX")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.ARIES_EX, "초 양자리", "...", "피격 시 무효화 처리되며, 10초간 무적이 됩니다.#중첩 시 지속시간이 증가합니다.#{{Timer}}쿨타임 60초")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.ARIES_EX,
+        "초 양자리",
+        "...",
+        "피격 시 그 피격은 무효화되며, 10초간 무적이 됩니다." ..
+        "#{{Timer}} 쿨타임 60초"..
+        "#{{ArrowGrayRight}} 중첩 시 지속 시간이 증가합니다."
+    )
 end
 
 --- 쿨타임

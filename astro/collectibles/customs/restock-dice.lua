@@ -3,9 +3,9 @@ Astro.Collectible.RESTOCK_DICE = Isaac.GetItemIdByName("Restock Dice")
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.RESTOCK_DICE,
-        "리스톡 주사위",
+        "재활용 주사위",
         "...",
-        "사용 시 빈 아이템 테이블에 현재 방 배열 아이템을 소환합니다."
+        "사용 시 빈 받침대에 그 방의 배열의 아이템을 소환합니다."
     )
 end
 

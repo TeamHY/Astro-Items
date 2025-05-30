@@ -5,7 +5,8 @@ if EID then
         Astro.Collectible.FORBIDDEN_DICE,
         "금지된 주사위",
         "...",
-        "사용 시 방 안의 모든 아이템을 다른 아이템으로 바꿉니다.#액티브 아이템 등장 시 다시 바꿉니다."
+        "사용 시 그 방의 아이템을 다른 아이템으로 바꿉니다."..
+        "#{{ArrowGrayRight}} 액티브 아이템 등장 시 다시 바꿉니다."
     )
 end
 

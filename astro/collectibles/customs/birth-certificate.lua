@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.BIRTH_CERTIFICATE,
         "출생증명서",
         "...",
-        "사용 시 {{Quality2}}등급 이하 모든 아이템이 존재하는 방으로 이동합니다."
+        "사용 시 {{Quality2}}등급 이하의 아이템이 있는 방으로 이동합니다."
     )
 end
 

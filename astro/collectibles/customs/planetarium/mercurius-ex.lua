@@ -15,8 +15,9 @@ if EID then
         Astro.Collectible.MERCURIUS_EX,
         "초 수성",
         "...",
-        "{{Collectible590}}Mercurius 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#방 클리어 시 50% 확률로 {{Card83}}Soul of Cain을 발동합니다."
+        "{{Collectible590}} Mercurius 효과가 적용됩니다." ..
+        "#방 클리어 시 50% 확률로 {{Card83}}Soul of Cain을 발동합니다." ..
+        "#!!! 이번 게임에서 {{Collectible590}}Mercurius가 등장하지 않습니다."
     )
 end
 

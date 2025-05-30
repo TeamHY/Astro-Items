@@ -1,7 +1,7 @@
 Astro.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.EZ_MODE, "쉬운 모드", "...", "↓ {{LuckSmall}}행운 -9#후반 스테이지 진입 전까지 피격 페널티가 발생하지 않습니다.#소울 하트 1개가 증가됩니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.EZ_MODE, "쉬움 모드", "...", "↑ {{SoulHeart}}소울하트 +1#↓ {{LuckSmall}}행운 -9#후반 스테이지 진입 전까지 피격 페널티가 발생하지 않습니다.")
 end
 
 Astro:AddCallback(

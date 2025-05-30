@@ -22,10 +22,10 @@ Astro:AddCallback(
                 Astro.Collectible.RGB,
                 "삼원색",
                 "...",
-                "방의 색상이 변경됩니다. 색상에 따라 효과가 달라집니다." ..
-                "#{{ArrowUp}} {{DamageSmall}}{{ColorRed}}(빨강) 공격력 배율 x1.4" ..
-                "#{{ArrowUp}} {{LuckSmall}}{{ColorGreen}}(초록) 행운 배율 x1.5" ..
-                "#{{ArrowUp}} {{TearsSmall}}{{ColorBlue}}(파랑) 연사 배율 x1.2" ..
+                "방의 색상을 변경하며, 색상에 따라 효과가 달라집니다;" ..
+                "#{{ArrowGrayRight}} {{ColorRed}}(빨강){{CR}} {{DamageSmall}}공격력 배율 x1.4" ..
+                "#{{ArrowGrayRight}} {{ColorGreen}}(초록){{CR}} {{LuckSmall}}행운 배율 x1.5" ..
+                "#{{ArrowGrayRight}} {{ColorBlue}}(파랑){{CR}} {{TearsSmall}}연사 배율 x1.2" ..
                 "#중첩 시 곱 연산으로 적용됩니다."
             )
         end

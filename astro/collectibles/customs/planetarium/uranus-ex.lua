@@ -8,8 +8,8 @@ if EID then
         Astro.Collectible.URANUS_EX,
         "초 천왕성",
         "...",
-        "{{Collectible596}}Uranus 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#{{Collectible530}}Death's List 효과가 적용됩니다."
+        "{{Collectible596}}Uranus, {{Collectible530}}Death's List 효과가 적용됩니다." ..
+        "#!!! 이번 게임에서 {{Collectible596}}Uranus가 등장하지 않습니다."
     )
 end
 

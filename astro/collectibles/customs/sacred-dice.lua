@@ -5,7 +5,9 @@ if EID then
         Astro.Collectible.SACRED_DICE,
         "성스러운 주사위",
         "...",
-        "사용 시 방 안의 모든 아이템을 다른 아이템으로 바꿉니다.#{{Quality0}}/{{Quality1}}등급 아이템 등장 시 다시 바꿉니다.#{{Quality2}}등급 아이템 등장 시 20% 확률로 다시 바꿉니다."
+        "사용 시 그 방의 아이템을 다른 아이템으로 바꿉니다."..
+        "#{{ArrowGrayRight}} {{Quality0}}/{{Quality1}}등급 아이템 등장 시 다시 바꿉니다."..
+        "#{{ArrowGrayRight}} {{Quality2}}등급 아이템 등장 시 20% 확률로 다시 바꿉니다."
     )
 end
 

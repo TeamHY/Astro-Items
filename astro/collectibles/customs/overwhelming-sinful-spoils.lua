@@ -16,7 +16,7 @@ Astro:AddCallback(
             Astro.Collectible.OVERWHELMING_SINFUL_SPOILS,
             "폭주하는 죄보",
             "...",
-            "적 처치 시 영혼을 흡수합니다. 사용 시 영혼을 소모해 여러 유령을 소환합니다." ..
+            "적 처치 시 영혼을 흡수하며, 사용 시 영혼을 소모해 여러 유령을 소환합니다." ..
             "#최대 2개까지 저장할 수 있습니다." ..
             "#디아벨스타, 디아벨제의 경우 5개까지 저장할 수 있습니다." ..
             "#사용 시 {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}Sinful Spoils of Subversion - Snake Eye, {{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}Original Sinful Spoils - Snake Eye의 소환 쿨타임을 4초간 무시합니다."

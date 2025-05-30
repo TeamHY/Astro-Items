@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Trinket.LAVA_HAND = Isaac.GetTrinketIdByName("Lava Hand")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.LAVA_HAND, "{{Trinket145}}Perfection을 제외한 장신구를 획득 시 즉시 흡수됩니다.", "용암 손")
+    EID:addTrinket(Astro.Trinket.LAVA_HAND, "{{Collectible479}} 장신구 획득 시 즉시 흡수됩니다. ({{Trinket145}}Perfection 제외)", "용암 손")
 
 -- Astro:AddGoldenTrinketDescription(Astro.Trinket.LAVA_HAND, "", 10)
 end

@@ -14,8 +14,11 @@ if EID then
         Astro.Collectible.NEPTUNUS_EX,
         "초 해왕성",
         "...",
-        "{{Collectible597}}Neptunus 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#방 클리어 시 {{TearsSmall}}연사(고정) 0.05 증가합니다. 중첩이 가능합니다. 스테이지 입장 시 초기화 됩니다."
+        "{{Collectible597}} Neptunus 효과가 적용됩니다." ..
+        "#방 클리어 시 {{TearsSmall}}연사(고정) +0.05" ..
+        "#{{ArrowGrayRight}} 스테이지 입장 시 초기화됩니다." ..
+        "#{{ArrowGrayRight}} 중첩이 가능합니다." ..
+        "#!!! 이번 게임에서 {{Collectible597}}Neptunus가 등장하지 않습니다."
     )
 end
 

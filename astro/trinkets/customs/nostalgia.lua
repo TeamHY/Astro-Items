@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Trinket.NOSTALGIA = Isaac.GetTrinketIdByName("Nostalgia")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.NOSTALGIA, "#소지한 상태에서 {{BossRoom}}보스방 클리어 시 The Binding of Isaac: Wrath of the Lamb에서 등장한 아이템 2개를 소환합니다.#!!! 획득 시 바로 흡수됩니다.#!!! 효과가 발동한 뒤 사라집니다.", "노스텔지아")
+    EID:addTrinket(Astro.Trinket.NOSTALGIA, "!!! 효과가 발동한 뒤 사라집니다.#소지중인 상태에서 {{BossRoom}}보스방 클리어 시 The Binding of Isaac: Wrath of the Lamb에서 등장한 아이템 2개를 소환합니다.#!!! 획득 시 바로 흡수됩니다.", "노스텔지아")
 end
 
 -- The Sad Onion(c1) ~ Box(c198)까지 포함되어 있습니다. 누락된 아이템이 있을 수 있습니다.

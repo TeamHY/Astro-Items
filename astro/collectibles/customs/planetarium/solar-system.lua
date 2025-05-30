@@ -7,7 +7,7 @@ if EID then
         Astro.Collectible.SOLAR_SYSTEM,
         "태양계",
         "...",
-        "획득 시 소지 중인 {{Planetarium}}천체관 아이템이 모두 제거됩니다. 제거한 수 만큼 {{Planetarium}}천체관 아이템을 소환합니다."
+        "획득 시 소지중인 {{Planetarium}}천체관 아이템이 모두 제거됩니다.#{{ArrowGrayRight}} 제거한 만큼 {{Planetarium}}천체관 아이템을 소환합니다."
     )
 end
 

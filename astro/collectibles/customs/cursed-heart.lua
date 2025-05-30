@@ -7,7 +7,7 @@ if EID then
         Astro.Collectible.CURSED_HEART,
         "저주받은 심장",
         "...",
-        "↑ {{DamageSmall}}공격력 배율 x1.25#공격에 50% 확률로 유도 효과가 생깁니다.#공격력 배율 중첩이 가능합니다.#!!! 이번 게임에서 {{Collectible182}}Sacred Heart가 등장하지 않습니다."
+        "↑ {{DamageSmall}}공격력 배율 x1.25#공격이 50% 확률로 적에게 유도됩니다.#공격력 배율 중첩이 가능합니다.#!!! 이번 게임에서 {{Collectible182}}Sacred Heart가 등장하지 않습니다."
     )
 end
 

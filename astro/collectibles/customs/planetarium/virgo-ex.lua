@@ -7,7 +7,7 @@ if EID then
         Astro.Collectible.VIRGO_EX,
         "초 처녀자리",
         "...",
-        "획득 시 {{Trinket152}}Telescope Lens, {{Pill1}}Gulp!가 소환됩니다.#{{Planetarium}}천체관을 보여줍니다.#다음 게임 시작 시 {{Trinket152}}Telescope Lens 또는 {{Collectible194}}Magic 8 Ball 하나 소환합니다."
+        "획득 시 {{Trinket152}}Telescope Lens, {{Pill1}}Gulp!가 소환됩니다.#{{Room}} 맵에 {{Planetarium}}천체관이 표시됩니다.#다음 게임에서 {{Trinket152}}Telescope Lens 또는 {{Collectible194}}Magic 8 Ball을 소환합니다."
     )
 end
 

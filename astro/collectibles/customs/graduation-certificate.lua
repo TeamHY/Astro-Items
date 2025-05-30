@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.GRADUATION_CERTIFICATE,
         "졸업증명서",
         "...",
-        "사용 시 소지 중인 모든 아이템이 존재하는 방으로 이동합니다."
+        "사용 시 소지중인 아이템이 있는 방으로 이동합니다."
     )
 end
 

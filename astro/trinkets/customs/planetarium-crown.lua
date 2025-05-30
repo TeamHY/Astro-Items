@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Trinket.PLANETARIUM_CROWN = Isaac.GetTrinketIdByName("Planetarium Crown")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.PLANETARIUM_CROWN, "{{TreasureRoom}}보물방 입장 시 {{Planetarium}}행성방 아이템 1개가 소환됩니다.#!!! 효과가 발동한 뒤 사라집니다.", "천체 왕관")
+    EID:addTrinket(Astro.Trinket.PLANETARIUM_CROWN, "!!! 효과가 발동한 뒤 사라집니다.#{{TreasureRoom}}보물방 입장 시 {{Planetarium}}천체관 아이템 1개가 소환됩니다.", "천체 왕관")
 
     Astro:AddGoldenTrinketDescription(Astro.Trinket.PLANETARIUM_CROWN, "", 1)
 end

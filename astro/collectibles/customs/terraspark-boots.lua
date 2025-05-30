@@ -1,7 +1,7 @@
 Astro.Collectible.TERRASPARK_BOOTS = Isaac.GetItemIdByName("Terraspark Boots")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.TERRASPARK_BOOTS, "테라스파크 부츠", "...", "방이 클리어 상태일 시 {{Speed}}이동 속도가 2 증가합니다.#방이 클리어 상태가 아닐 시 {{Speed}}이동 속도가 0.3 감소합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.TERRASPARK_BOOTS, "테라스파크 부츠", "...", "클리어한 방에서 {{SpeedSmall}}이동속도 +2#클리어하지 않은 방에서 {{SpeedSmall}}이동속도 -0.3")
 end
 
 Astro:AddCallback(

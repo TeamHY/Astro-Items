@@ -13,9 +13,9 @@ Astro:AddCallback(
                 Astro.Collectible.PURE_LOVE,
                 "순애",
                 "...",
-                "일급 비밀방에서 사용 시 {{LuckSmall}}행운이 1 감소하고 소지한 아이템 1개와 {{Quality3}}3등급/{{Quality4}}4등급 아이템 1개를 소환합니다. 하나를 선택하면 나머지는 사라집니다." ..
-                "#야곱, 알트 야곱, 레아, 라헬이 사용 시 행운이 감소되지 않고 소지한 아이템 대신 {{Quality3}}3등급/{{Quality4}}4등급 아이템 1개가 더 소환됩니다." ..
-                "#1 스테이지일 경우 맵에 {{SuperSecretRoom}}일급 비밀방 위치가 표시됩니다." ..
+                "{{SuperSecretRoom}} 일급비밀방에서 사용 시;#{{ArrowGrayRight}} {{LuckSmall}}행운 -1#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}} 아이템 1개를 소환하며, 하나를 선택하면 나머지는 사라집니다." ..
+                "#Jacob, Esau, Tainted Jacob, 레아, 라헬이 사용 시 행운이 감소되지 않고 소지중인 아이템 대신 {{Quality3}}/{{Quality4}}등급 아이템 1개가 더 소환됩니다." ..
+                "#1스테이지일 경우 맵에 {{SuperSecretRoom}}일급비밀방 위치가 표시됩니다." ..
                 "#스테이지 진입 시 쿨타임이 채워집니다."
             )
         end

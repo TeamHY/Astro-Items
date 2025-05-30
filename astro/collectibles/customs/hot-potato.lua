@@ -12,10 +12,10 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.HOT_POTATO,
         "뜨거운 감자",
-        "",
-        "4초마다 폭발을 일으킵니다." ..
-        "#{{Collectible375}}Host Hat 효과가 적용됩니다."..
-        "#폭탄 +2 증가됩니다."
+        "화젯거리",
+        "↑ {{Bomb}}폭탄 +2"..
+        "#{{Collectible40}} 4초마다 폭발을 일으킵니다." ..
+        "#{{Collectible375}} Host Hat 효과가 적용됩니다."
     )
 end
 

@@ -13,7 +13,10 @@ if EID then
         Astro.Collectible.PISCES_EX,
         "초 물고기자리",
         "...",
-        "게임 시간 2분마다 {{Card57}}The Magician?가 발동됩니다.#중첩 시 발동 간격이 줄어듭니다.#다음 게임 시작 시 {{Card57}}The Magician?을 하나 소환합니다.#중첩이 가능합니다."
+        "{{Timer}} 게임 시간 2분마다 {{Card57}}I - The Magician?이 발동됩니다."..
+        "#{{ArrowGrayRight}} 중첩 시 발동 간격이 줄어듭니다."..
+        "#다음 게임에서 {{Card57}}I - The Magician?을 소환합니다."..
+        "#중첩이 가능합니다."
     )
 end
 

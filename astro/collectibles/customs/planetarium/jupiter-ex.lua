@@ -14,10 +14,11 @@ if EID then
         Astro.Collectible.JUPITER_EX,
         "초 목성",
         "...",
-        "{{Collectible594}}Jupiter 효과가 적용되고 해당 게임에서 등장하지 않습니다." ..
-        "#{{Collectible180}}Black Bean 효과가 적용됩니다." ..
-        "#5초 마다 {{Collectible486}}Dull Razor를 1회 발동합니다. 중첩 시 횟수가 늘어납니다." ..
-        "#최초 획득 시 {{Card71}}XV - The Devil?를 발동합니다."
+        "{{Collectible594}}Jupiter, {{Collectible180}}Black Bean 효과가 적용됩니다." ..
+        "#5초마다 {{Collectible486}}Dull Razor를 1번 발동합니다." ..
+        "#{{ArrowGrayRight}} 중첩 시 횟수가 늘어납니다." ..
+        "#최초 획득 시 {{Card71}}XV - The Devil?을 발동합니다." ..
+        "#!!! 이번 게임에서 {{Collectible594}}Jupiter가 등장하지 않습니다."
     )
 end
 

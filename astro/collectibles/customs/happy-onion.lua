@@ -1,7 +1,7 @@
 Astro.Collectible.HAPPY_ONION = Isaac.GetItemIdByName("Happy Onion")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.HAPPY_ONION, "행복한 양파", "...", "방 클리어 시 공격력, 연사, 사거리, 속도, 행운 중 한 가지의 스텟이 0.7(고정) 증가됩니다.#스테이지 입장 시 증가된 스텟은 초기화되며, 최대 10번까지만 누적됩니다.#중첩 시 다음 증가량부터 적용됩니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.HAPPY_ONION, "행복한 양파", "...", "방 클리어 시 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}속도, {{LuckSmall}}행운 중 하나 +0.7(고정)#최대 10번까지 누적됩니다.#스테이지 입장 시 증가된 능력치는 초기화됩니다.#중첩 시 다음 증가량부터 적용됩니다.")
 end
 
 local HAPPY_ONION_INCREMENT = 0.7

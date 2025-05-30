@@ -6,10 +6,11 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_BLUE_BABY,
-                "생득권 - 블루베이비",
+                "???의 생득권",
                 "...",
-                "소울하트를 획득 시 소울하트 1개가 더 늘어납니다. 중첩이 가능합니다."..
-                "#소울 하트 +1 증가됩니다."
+                "{{SoulHeart}}소울하트 +1"..
+                "#소울하트 획득량이 2배가 됩니다."..
+                "#중첩이 가능합니다."
             )
         end
     end

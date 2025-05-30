@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.PROMETHEUS = Isaac.GetItemIdByName("Prometheus")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.PROMETHEUS, "프로메테우스", "...", "항상 다크니스 저주가 활성화됩니다.#↑ {{DamageSmall}}공격력 x1.25#중첩이 가능합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.PROMETHEUS, "프로메테우스", "...", "↑ {{DamageSmall}}공격력 x1.25#항상 {{CurseDarknessSmall}}Curse of Dakrness 저주에 걸립니다.#중첩이 가능합니다.")
 end
 
 -- !!! astro/init.lua로 이동
