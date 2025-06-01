@@ -67,7 +67,7 @@ Astro:AddCallback(
                     else
                         data.StaffOfAinzOoalGown = 100
                     end
-                end 
+                end
 
                 UpdateCharge(player, data.StaffOfAinzOoalGown)
             end
@@ -118,7 +118,6 @@ Astro:AddCallback(
         end
 
         data.StaffOfAinzOoalGown = data.StaffOfAinzOoalGown - 100
-        enableRealBlackHole = true
 
         playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS, false)
 
@@ -134,115 +133,4 @@ Astro:AddCallback(
         }
     end,
     Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN
-)
-
-local ShaderData = {
-    blackHole = false,
-    blackHolePosition = Vector.Zero,
-    blackHolePositionShader = Vector.Zero,
-    blackHoleTime = 0,
-    blackHoleSize = 1
-}
-
-Astro:AddCallback(
-    ModCallbacks.MC_GET_SHADER_PARAMS,
-    function(_, shaderName)
-        if shaderName == "Black_Hole" then
-            if ShaderData.blackHole then
-                local room = Game():GetRoom()
-                local position = room:WorldToScreenPosition(ShaderData.blackHolePositionShader + Vector(0, -3))
-                local radius = room:WorldToScreenPosition(ShaderData.blackHolePositionShader + Vector(20, -3))
-                local time = ShaderData.blackHoleTime
-
-                local params = {
-                    Enabled = 1,
-                    BlackPosition = {position.X, position.Y, radius.X},
-                    Time = time,
-                    WarpCheck = {position.X + 1, position.Y + 1}
-                }
-                return params
-            else
-                local params = {
-                    Enabled = 0,
-                    BlackPosition = {0, 0, 0},
-                    Time = 0,
-                    WarpCheck = {0, 0}
-                }
-                return params
-            end
-        end
-    end
-)
-
-local function BlackHoleUpdate()
-    if ShaderData.blackHole then
-        if Game():GetFrameCount() % 2 == 0 then
-            Game():MakeShockwave(ShaderData.blackHolePosition, -0.1, 0.0025, 60)
-        end
-        ShaderData.blackHoleTime =
-            math.min(ShaderData.blackHoleSize, ShaderData.blackHoleTime + 10 / 100 * ShaderData.blackHoleSize)
-    end
-end
-
-local function EnableBlackHole(position, size)
-    size = size or 1
-
-    ShaderData.blackHolePosition = position
-    ShaderData.blackHolePositionShader = position
-    ShaderData.blackHoleTime = 0
-    ShaderData.blackHole = true
-    ShaderData.blackHoleSize = size
-
-    local room = Game():GetRoom()
-    if room:IsMirrorWorld() then
-        local ogY = ShaderData.blackHolePositionShader.Y
-        local center = room:GetCenterPos()
-        local direction = ShaderData.blackHolePositionShader - center
-        ShaderData.blackHolePositionShader = center - direction
-        ShaderData.blackHolePositionShader.Y = ogY
-    end
-
-    Astro:RemoveCallback(ModCallbacks.MC_POST_UPDATE, BlackHoleUpdate)
-    Astro:AddCallback(ModCallbacks.MC_POST_UPDATE, BlackHoleUpdate)
-end
-
-local function DisableBlackHole(position)
-    if (not position) or position:Distance(ShaderData.blackHolePosition) < 0.01 then
-        ShaderData.blackHole = false
-        Astro:RemoveCallback(ModCallbacks.MC_POST_UPDATE, BlackHoleUpdate)
-    end
-end
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_NEW_ROOM,
-    function(_)
-        enableRealBlackHole = false
-        DisableBlackHole()
-    end
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_EFFECT_UPDATE,
-    ---@param effect EntityEffect
-    function(_, effect)
-        if not enableRealBlackHole then
-            return
-        end
-
-        local data = effect:GetData()
-        local sprite = effect:GetSprite()
-
-        if not data.Init_BH and sprite:IsPlaying("Init") then
-            data.Init_BH = true
-
-            EnableBlackHole(effect.Position)
-        end
-
-        if not data.Stop_BH and sprite:IsPlaying("Death") then
-            data.Stop_BH = true
-
-            DisableBlackHole(effect.Position)
-        end
-    end,
-    EffectVariant.BLACK_HOLE
 )
