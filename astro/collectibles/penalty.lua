@@ -11,7 +11,11 @@ local PENALTY_ACTIVE_ITEMS = {
 
 -- 패널티 피격 시 아이템 제거
 local PENALTY_REMOVE_ITEMS = {
-    Astro.Collectible.UNHOLY_MANTLE,
+    collectible = {
+        Astro.Collectible.UNHOLY_MANTLE,
+    },
+    trinket = {
+    }
 }
 
 if EID then
@@ -30,20 +34,36 @@ if EID then
         )
     end
 
-    for _, item in ipairs(PENALTY_REMOVE_ITEMS) do
+    for _, item in ipairs(PENALTY_REMOVE_ITEMS.collectible) do
         EID:addDescriptionModifier(
-            "AstroPenaltyRemove" .. item,
+            "AstroPenaltyRemoveCollectible" .. item,
             function(descObj)
                 if descObj.ObjType == EntityType.ENTITY_PICKUP and descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE and descObj.ObjSubType == item then
                     return true
                 end
             end,
             function(descObj)
-                EID:appendToDescription(descObj, "#{{ColorRed}}패널티 피격 시 아이템이 제거됩니다.")
+                EID:appendToDescription(descObj, "#{{ColorRed}}패널티 피격 시 제거됩니다.")
                 return descObj
             end
         )
     end
+
+    for _, item in ipairs(PENALTY_REMOVE_ITEMS.trinket) do
+        EID:addDescriptionModifier(
+            "AstroPenaltyRemoveTrinket" .. item,
+            function(descObj)
+                if descObj.ObjType == EntityType.ENTITY_PICKUP and descObj.ObjVariant == PickupVariant.PICKUP_TRINKET and descObj.ObjSubType == item then
+                    return true
+                end
+            end,
+            function(descObj)
+                EID:appendToDescription(descObj, "#{{ColorRed}}패널티 피격 시 제거됩니다.")
+                return descObj
+            end
+        )
+    end
+
 end
 
 local function CheckBossRoom()
@@ -89,7 +109,7 @@ Astro:AddCallback(
                 for i = 0, ActiveSlot.SLOT_POCKET2 do
                     if player:GetActiveItem(i) == item then
                         local charge = player:GetActiveCharge(i)
-                        
+
                         if charge > 0 then
                             player:SetActiveCharge(math.max(0, charge - penalty), i)
                         end
@@ -98,9 +118,15 @@ Astro:AddCallback(
             end
         end
 
-        for _, item in ipairs(PENALTY_REMOVE_ITEMS) do
+        for _, item in ipairs(PENALTY_REMOVE_ITEMS.collectible) do
             if player:HasCollectible(item) then
                 Astro:RemoveAllCollectible(player, item)
+            end
+        end
+
+        for _, item in ipairs(PENALTY_REMOVE_ITEMS.trinket) do
+            if player:HasTrinket(item) then
+                Astro:RemoveAllTrinket(player, item)
             end
         end
 
