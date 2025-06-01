@@ -52,33 +52,27 @@ Astro:AddCallback(
     ---@param decrease boolean
     ---@param seed integer
     function(_, selectedCollectible, itemPoolType, decrease, seed)
-        for i = 1, Game():GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
+        local itemPool = Game():GetItemPool()
+        local itemConfig = Isaac.GetItemConfig()
+        local itemConfigitem = itemConfig:GetCollectible(selectedCollectible)
 
-            if player:HasCollectible(Astro.Collectible.FALLEN_ORB) then
-                local itemPool = Game():GetItemPool()
-                local itemConfig = Isaac.GetItemConfig()
-                local itemConfigitem = itemConfig:GetCollectible(selectedCollectible)
+        local rng = RNG()
+        rng:SetSeed(seed, 35)
 
-                local rng = RNG()
-                rng:SetSeed(seed, 35)
+        local rerollConditionResult = CheckReroll(selectedCollectible)
 
-                local rerollConditionResult = CheckReroll(selectedCollectible)
+        if rerollConditionResult.reroll and itemConfigitem:HasTags(ItemConfig.TAG_QUEST) == false and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST then
+            local newCollectable = rerollConditionResult.newItem or itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
 
-                if rerollConditionResult.reroll and itemConfigitem:HasTags(ItemConfig.TAG_QUEST) == false and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST then
-                    local newCollectable = rerollConditionResult.newItem or itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
-
-                    if rerollTable[newCollectable] then
-                        table.insert(rerollTable[newCollectable], selectedCollectible)
-                    else
-                        rerollTable[newCollectable] = { selectedCollectible }
-                    end
-
-                    print((rerollConditionResult.modifierName or '???') .. ": " .. selectedCollectible .. " -> " .. newCollectable)
-
-                    return newCollectable
-                end
+            if rerollTable[newCollectable] then
+                table.insert(rerollTable[newCollectable], selectedCollectible)
+            else
+                rerollTable[newCollectable] = { selectedCollectible }
             end
+
+            print((rerollConditionResult.modifierName or '???') .. ": " .. selectedCollectible .. " -> " .. newCollectable)
+
+            return newCollectable
         end
     end
 )
