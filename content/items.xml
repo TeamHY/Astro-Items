@@ -162,6 +162,7 @@
 	<active gfx="Puzzle Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="18" name="Puzzle Dice" />
 	<passive gfx="Bandage Girl.png" quality="3" devilprice="1" shopprice="20" name="Bandage Girl" />
 	<active gfx="Graduation Certificate.png" quality="4" devilprice="2" shopprice="30" maxcharges="0" name="Graduation Certificate" />
+	<passive gfx="Super Rocket in a Jar.png" quality="3" devilprice="2" shopprice="15" name="Super Rocket in a Jar" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" cache="tearflag" />
