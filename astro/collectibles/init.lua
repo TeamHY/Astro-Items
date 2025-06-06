@@ -46,6 +46,7 @@ require "astro.collectibles.customs.duality-light-and-darkness" -- fallen orb보
 require "astro.collectibles.customs.forbidden-dice"
 require "astro.collectibles.customs.fortune-coin"
 require "astro.collectibles.customs.galactic-medal-of-valor"
+require "astro.collectibles.customs.giga-boom"
 require "astro.collectibles.customs.go-home"
 require "astro.collectibles.customs.greed"
 require "astro.collectibles.customs.happy-onion"
