@@ -14,6 +14,7 @@ Astro.Callbacks = {
     POST_TRANSFORMATION = "ASTRO_POST_TRANSFORMATION",
     POST_PICKUP_COLLECT = "ASTRO_POST_PICKUP_COLLECT",
     REMOVED_PERFECTION = "ASTRO_REMOVED_PERFECTION",
+    PLAYER_DEAL_DMG = "ASTRO_PLAYER_DEAL_DMG",
 }
 
 local isFirst = true
@@ -95,6 +96,25 @@ Astro:AddCallback(
         end
     end
 )
+
+Astro:AddCallback(
+    ModCallbacks.MC_ENTITY_TAKE_DMG,
+    ---@param entity Entity
+    ---@param amount number
+    ---@param damageFlags number
+    ---@param source EntityRef
+    ---@param countdownFrames number
+    function(_, entity, amount, damageFlags, source, countdownFrames)
+        local player = Astro:GetPlayerFromEntity(source.Entity)
+
+        if player ~= nil and entity:IsVulnerableEnemy() then
+            if source.Type == EntityType.ENTITY_TEAR or damageFlags & DamageFlag.DAMAGE_LASER == DamageFlag.DAMAGE_LASER or source.Type == EntityType.ENTITY_KNIFE then
+                return Isaac.RunCallback(Astro.Callbacks.PLAYER_DEAL_DMG, entity, amount, damageFlags, player, countdownFrames)
+            end
+        end
+    end
+)
+
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_ITEM_PICKUP,

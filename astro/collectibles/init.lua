@@ -113,6 +113,7 @@ require "astro.collectibles.customs.graduation-certificate"
 require "astro.collectibles.customs.false-certificate"
 require "astro.collectibles.customs.puzzle-dice"
 require "astro.collectibles.customs.bandage-girl"
+require "astro.collectibles.customs.coin-detonator"
 
 --#region PLANETARIUM
 
