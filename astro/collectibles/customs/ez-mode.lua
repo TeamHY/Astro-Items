@@ -1,26 +1,54 @@
+---
+
+local SPEED_DECREMENT = -0.1
+
+local TEARS_DECREMENT = -0.1
+
+local DAMAGE_DECREMENT = -0.1
+
+local RANGE_DECREMENT = -1
+
+local SHOT_SPEED_DECREMENT = -0.1
+
+local LUCK_DECREMENT = -1
+
+---
+
 Astro.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.EZ_MODE, "쉬움 모드", "...", "↑ {{SoulHeart}}소울하트 +1#↓ {{LuckSmall}}행운 -9#후반 스테이지 진입 전까지 피격 페널티가 발생하지 않습니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.EZ_MODE, "쉬움 모드", "...", "↑ {{SoulHeart}}소울하트 +1#↓ {{LuckSmall}}행운 -9#후반 스테이지 진입 전까지 피격 패널티가 적용되지 않습니다. 대신 모든 스탯이 감소됩니다.")
 end
 
 Astro:AddCallback(
-    ModCallbacks.MC_ENTITY_TAKE_DMG,
-    ---@param entity Entity
-    ---@param amount number
-    ---@param damageFlags number
-    ---@param source EntityRef
-    ---@param countdownFrames number
-    function(_, entity, amount, damageFlags, source, countdownFrames)
-        local player = entity:ToPlayer()
+    Astro.Callbacks.PLAYER_TAKE_PENALTY,
+    ---@param player EntityPlayer
+    function(_, player)
+        if player:HasCollectible(Astro.Collectible.EZ_MODE) and not Astro:IsLatterStage() then
+            local data = Astro:GetPersistentPlayerData(player)
 
-        if player ~= nil and not Astro:IsLatterStage() then
-            if player:HasCollectible(Astro.Collectible.EZ_MODE) then
-                if damageFlags & DamageFlag.DAMAGE_NO_PENALTIES == 0 then
-                    player:TakeDamage(amount, damageFlags | DamageFlag.DAMAGE_NO_PENALTIES, source, countdownFrames)
-                    return false
-                end
+            if not data["ezModeStatus"] then
+                data["ezModeStatus"] = {
+                    speed = 0,
+                    tears = 0,
+                    damage = 0,
+                    range = 0,
+                    shotSpeed = 0,
+                    luck = 0
+                }
             end
+
+            data["ezModeStatus"].speed = data["ezModeStatus"].speed + SPEED_DECREMENT
+            data["ezModeStatus"].tears = data["ezModeStatus"].tears + TEARS_DECREMENT
+            data["ezModeStatus"].damage = data["ezModeStatus"].damage + DAMAGE_DECREMENT
+            data["ezModeStatus"].range = data["ezModeStatus"].range + RANGE_DECREMENT
+            data["ezModeStatus"].shotSpeed = data["ezModeStatus"].shotSpeed + SHOT_SPEED_DECREMENT
+            data["ezModeStatus"].luck = data["ezModeStatus"].luck + LUCK_DECREMENT
+
+            player:AddCacheFlags(CacheFlag.CACHE_ALL)
+            player:EvaluateItems()
+
+            return false
         end
     end
 )
@@ -29,10 +57,29 @@ Astro:AddCallback(
     ModCallbacks.MC_EVALUATE_CACHE,
     ---@param player EntityPlayer
     ---@param cacheFlag CacheFlag
-    function (_, player, cacheFlag)
+    function(_, player, cacheFlag)
+        local data = Astro:GetPersistentPlayerData(player)
+
         if player:HasCollectible(Astro.Collectible.EZ_MODE) then
-            player.Luck = player.Luck - 9
+            if cacheFlag == CacheFlag.CACHE_LUCK then
+                player.Luck = player.Luck - 9
+            end
         end
-    end,
-    CacheFlag.CACHE_LUCK
+
+        if data and data["ezModeStatus"] then
+            if cacheFlag == CacheFlag.CACHE_SPEED then
+                player.MoveSpeed = player.MoveSpeed + data["ezModeStatus"].speed
+            elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
+                player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, data["ezModeStatus"].tears)
+            elseif cacheFlag == CacheFlag.CACHE_DAMAGE then
+                player.Damage = player.Damage + data["ezModeStatus"].damage
+            elseif cacheFlag == CacheFlag.CACHE_RANGE then
+                player.TearRange = player.TearRange + data["ezModeStatus"].range
+            elseif cacheFlag == CacheFlag.CACHE_SHOTSPEED then
+                player.ShotSpeed = player.ShotSpeed + data["ezModeStatus"].shotSpeed
+            elseif cacheFlag == CacheFlag.CACHE_LUCK then
+                player.Luck = player.Luck + data["ezModeStatus"].luck
+            end
+        end
+    end
 )

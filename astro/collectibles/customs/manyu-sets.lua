@@ -107,7 +107,8 @@ Astro:AddCallbackCustom(
         if collectibleType == Astro.Collectible.REINCARNATION then
             Astro.Data.RunReincarnation = true
         elseif Astro:Contain(REINCARNATION_ITEMS, collectibleType) then
-            player:AddCacheFlags(CacheFlag.CACHE_DAMAGE, true)
+            player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
+            player:EvaluateItems()
         end
     end
 )
@@ -118,7 +119,8 @@ Astro:AddCallbackCustom(
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
         if Astro:Contain(REINCARNATION_ITEMS, collectibleType) then
-            player:AddCacheFlags(CacheFlag.CACHE_DAMAGE, true)
+            player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
+            player:EvaluateItems()
         end
     end
 )
