@@ -16,7 +16,7 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_GODHEAD,
                 "아스트로 갓헤드",
                 "...",
-                "#{{Collectible331}} Godhead 효과가 적용됩니다." ..
+                "#{{Collectible331}}Godhead 효과가 적용됩니다." ..
                 "#오라의 공격력이 캐릭터 공격력의 30%로 적용됩니다." ..
                 "#{{ArrowGrayRight}} 중첩 시 오라의 공격력이 합 연산으로 증가합니다."
             )
