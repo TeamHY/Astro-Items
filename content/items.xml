@@ -165,6 +165,7 @@
 	<passive gfx="Super Rocket in a Jar.png" quality="3" devilprice="2" shopprice="15" name="Super Rocket in a Jar" />
 	<passive gfx="Giga Boom.png" quality="3" devilprice="2" shopprice="15" name="Giga Boom" />
 	<active gfx="Coin Detonator.png" quality="3" devilprice="2" shopprice="15" maxcharges="240" chargetype="timed" name="Coin Detonator" />
+	<active gfx="Marker Pocket.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Marker Pocket" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" cache="tearflag" />
