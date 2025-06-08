@@ -18,7 +18,7 @@ Astro:AddCallback(
                 "...",
                 "#{{Collectible331}} Godhead 효과가 적용됩니다." ..
                 "#오라의 공격력이 캐릭터 공격력의 30%로 적용됩니다." ..
-                "#{{ArrowGrayRight}] 중첩 시 오라의 공격력이 합 연산으로 증가합니다."
+                "#{{ArrowGrayRight}} 중첩 시 오라의 공격력이 합 연산으로 증가합니다."
             )
         end
     end

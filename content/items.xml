@@ -167,6 +167,7 @@
 	<active gfx="Coin Detonator.png" quality="3" devilprice="2" shopprice="15" maxcharges="240" chargetype="timed" name="Coin Detonator" />
 	<active gfx="Marker Pocket.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Marker Pocket" />
 	<passive cache="damage" gfx="Maw of the Void EX.png" quality="3" devilprice="2" shopprice="15" name="Maw of the Void EX" />
+	<passive gfx="Steam Bundle.png" quality="3" devilprice="2" shopprice="15" name="Steam Bundle" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" cache="tearflag" />

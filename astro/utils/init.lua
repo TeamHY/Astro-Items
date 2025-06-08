@@ -319,6 +319,7 @@ function Astro:HasCollectible(collectible)
 end
 
 ---@param collectible CollectibleType
+---@return integer
 function Astro:GetCollectibleNum(collectible)
     local count = 0
 
