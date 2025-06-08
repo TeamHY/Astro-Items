@@ -1,8 +1,10 @@
 ---
 
-local BLACK_HEART_SPAWN_CHANCE = 0.5
+local UPGRADE_CHANCE = 0.2
 
-local MAX_BLACK_HEARTS_PER_ROOM = 5
+local BLACK_HEART_SPAWN_CHANCE = 0.1
+
+local MAX_BLACK_HEARTS_PER_ROOM = 3
 
 local DAMAGE_INCREMENT = 1.0
 
@@ -40,6 +42,23 @@ Astro:AddCallback(
                 return false
             end
         )
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GET_COLLECTIBLE,
+    ---@param selectedCollectible CollectibleType
+    ---@param itemPoolType ItemPoolType
+    ---@param decrease boolean
+    ---@param seed integer
+    function(_, selectedCollectible, itemPoolType, decrease, seed)
+        if selectedCollectible == CollectibleType.COLLECTIBLE_MAW_OF_THE_VOID then
+            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.MAW_OF_THE_VOID_EX)
+
+            if rng:RandomFloat() < UPGRADE_CHANCE then
+                return Astro.Collectible.MAW_OF_THE_VOID_EX
+            end
+        end
     end
 )
 
