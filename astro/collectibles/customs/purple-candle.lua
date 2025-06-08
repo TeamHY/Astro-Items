@@ -9,17 +9,36 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.PURPLE_CANDLE = Isaac.GetItemIdByName("Purple Candle")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.PURPLE_CANDLE,
-        "보라 양초",
-        "...",
-        "{{Collectible260}} Black Candle 효과가 적용됩니다." ..
-        "#{{CurseBlindSmall}} 가려진 아이템을 알 수 있게 됩니다." ..
-        "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다." ..
-        "#!!! 소지중일 때 {{Collectible260}}Black Candle이 등장하지 않습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.PURPLE_CANDLE,
+                "보라 양초",
+                "...",
+                "{{Collectible260}} Black Candle 효과가 적용됩니다." ..
+                "#{{CurseBlindSmall}} 가려진 아이템을 알 수 있게 됩니다." ..
+                "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다." ..
+                "#!!! 소지중일 때 {{Collectible260}}Black Candle이 등장하지 않습니다."
+            )
+        end
+
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                if Astro:HasCollectible(Astro.Collectible.PURPLE_CANDLE) then
+                    return {
+                        reroll = selectedCollectible == CollectibleType.COLLECTIBLE_BLACK_CANDLE,
+                        modifierName = "Purple Candle"
+                    }
+                end
+        
+                return false
+            end
+        )
+    end
+)
+
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GET_COLLECTIBLE,
@@ -94,31 +113,4 @@ Astro:AddCallbackCustom(
         end
     end,
     Astro.Collectible.PURPLE_CANDLE
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        for i = 1, Game():GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
-
-            if player:HasCollectible(Astro.Collectible.PURPLE_CANDLE) then
-                local itemPool = Game():GetItemPool()
-
-                local rng = RNG()
-                rng:SetSeed(seed, 35)
-
-                if selectedCollectible == CollectibleType.COLLECTIBLE_BLACK_CANDLE then
-                    local newCollectable = itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
-                    print("Purple Candle: " .. selectedCollectible .. " -> " .. newCollectable)
-
-                    return newCollectable
-                end
-            end
-        end
-    end
 )

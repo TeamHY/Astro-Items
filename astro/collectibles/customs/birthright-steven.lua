@@ -14,33 +14,24 @@ Astro:AddCallback(
                 "#2개 이상 중첩 시 {{Collectible100}}Little Steven이 추가로 소환됩니다."
             )
         end
+
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                local room = Game():GetRoom()
+                
+                if Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_STEVEN) and room:GetType() == RoomType.ROOM_BOSS and selectedCollectible ~= CollectibleType.COLLECTIBLE_LITTLE_STEVEN then
+                    return {
+                        reroll = true,
+                        newItem = CollectibleType.COLLECTIBLE_LITTLE_STEVEN,
+                        modifierName = "Birthright - Steven"
+                    }
+                end
+        
+                return false
+            end
+        )
     end
 )
-
-Astro:AddPriorityCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    CallbackPriority.IMPORTANT,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        local room = Game():GetRoom()
-        
-        for i = 1, Game():GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
-
-            if player:HasCollectible(Astro.Collectible.BIRTHRIGHT_STEVEN) and room:GetType() == RoomType.ROOM_BOSS then                
-                if selectedCollectible ~= CollectibleType.COLLECTIBLE_LITTLE_STEVEN then
-                    local newCollectable = CollectibleType.COLLECTIBLE_LITTLE_STEVEN
-                    print("Birthright - Steven: " .. selectedCollectible .. " -> " .. newCollectable)
-
-                    return newCollectable
-                end
-            end
-        end
-    end
-) 
 
 Astro:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,

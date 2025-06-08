@@ -3,15 +3,33 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.UNHOLY_MANTLE = Isaac.GetItemIdByName("Unholy Mantle")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.UNHOLY_MANTLE,
-        "불경스런 망토",
-        "타락한 방패",
-        "{{Collectible313}} Holy Mantle 효과가 적용됩니다." ..
-        "#!!! 소지중일 때 {{Collectible313}}Holy Mantle이 등장하지 않습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.UNHOLY_MANTLE,
+                "불경스런 망토",
+                "타락한 방패",
+                "{{Collectible313}} Holy Mantle 효과가 적용됩니다." ..
+                "#!!! 소지중일 때 {{Collectible313}}Holy Mantle이 등장하지 않습니다."
+            )
+        end
+
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                if Astro:HasCollectible(Astro.Collectible.UNHOLY_MANTLE) then
+                    return {
+                        reroll = selectedCollectible == CollectibleType.COLLECTIBLE_HOLY_MANTLE,
+                        modifierName = "Unholy Mantle"
+                    }
+                end
+        
+                return false
+            end
+        )
+    end
+)
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
@@ -36,30 +54,3 @@ Astro:AddCallbackCustom(
     end,
     Astro.Collectible.UNHOLY_MANTLE
 )
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        for i = 1, Game():GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
-
-            if player:HasCollectible(Astro.Collectible.UNHOLY_MANTLE) then
-                local itemPool = Game():GetItemPool()
-                
-                local rng = RNG()
-                rng:SetSeed(seed, 35)
-
-                if selectedCollectible == CollectibleType.COLLECTIBLE_HOLY_MANTLE then
-                    local newCollectable = itemPool:GetCollectible(itemPoolType, decrease, rng:Next())
-                    print("Unholy Mantle: " .. selectedCollectible .. " -> " .. newCollectable)
-
-                    return newCollectable
-                end
-            end
-        end
-    end
-) 
