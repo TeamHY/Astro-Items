@@ -58,27 +58,27 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     ---@param cacheFlag CacheFlag
     function(_, player, cacheFlag)
-        local data = Astro:GetPersistentPlayerData(player)
-
         if player:HasCollectible(Astro.Collectible.EZ_MODE) then
+            local data = Astro:GetPersistentPlayerData(player)
+
+            if data and data["ezModeStatus"] then
+                if cacheFlag == CacheFlag.CACHE_SPEED then
+                    player.MoveSpeed = player.MoveSpeed + data["ezModeStatus"].speed
+                elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
+                    player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, data["ezModeStatus"].tears)
+                elseif cacheFlag == CacheFlag.CACHE_DAMAGE then
+                    player.Damage = player.Damage + data["ezModeStatus"].damage
+                elseif cacheFlag == CacheFlag.CACHE_RANGE then
+                    player.TearRange = player.TearRange + data["ezModeStatus"].range
+                elseif cacheFlag == CacheFlag.CACHE_SHOTSPEED then
+                    player.ShotSpeed = player.ShotSpeed + data["ezModeStatus"].shotSpeed
+                elseif cacheFlag == CacheFlag.CACHE_LUCK then
+                    player.Luck = player.Luck + data["ezModeStatus"].luck
+                end
+            end
+
             if cacheFlag == CacheFlag.CACHE_LUCK then
                 player.Luck = player.Luck - 9
-            end
-        end
-
-        if data and data["ezModeStatus"] then
-            if cacheFlag == CacheFlag.CACHE_SPEED then
-                player.MoveSpeed = player.MoveSpeed + data["ezModeStatus"].speed
-            elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
-                player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, data["ezModeStatus"].tears)
-            elseif cacheFlag == CacheFlag.CACHE_DAMAGE then
-                player.Damage = player.Damage + data["ezModeStatus"].damage
-            elseif cacheFlag == CacheFlag.CACHE_RANGE then
-                player.TearRange = player.TearRange + data["ezModeStatus"].range
-            elseif cacheFlag == CacheFlag.CACHE_SHOTSPEED then
-                player.ShotSpeed = player.ShotSpeed + data["ezModeStatus"].shotSpeed
-            elseif cacheFlag == CacheFlag.CACHE_LUCK then
-                player.Luck = player.Luck + data["ezModeStatus"].luck
             end
         end
     end
