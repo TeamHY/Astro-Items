@@ -1,7 +1,7 @@
 <items gfxroot="gfx/items/" version="1">
 	<passive gfx="Cygnus.png" quality="4" devilprice="2" name="Cygnus" />
 	<passive tags="dead tech battery syringe mom guppy fly bob mushroom baby angel devil poop book spider" gfx="Libra.png" devilprice="2" quality="3" shopprice="30" name="Libra EX" />
-	<passive gfx="Cancer.png" quality="3" devilprice="1" shopprice="20" name="Cancer EX" />
+	<passive gfx="Cancer.png" quality="2" devilprice="1" shopprice="20" name="Cancer EX" />
 	<passive gfx="Scorpio.png" quality="3" shopprice="20" name="Scorpio EX" />
 	<passive gfx="Capricorn.png" quality="2" devilprice="2" shopprice="15" name="Capricorn EX" />
 	<passive gfx="Virgo.png" quality="2" devilprice="1" shopprice="15" tags="noeden" name="Virgo EX" />
@@ -9,7 +9,7 @@
 	<passive gfx="Aries.png" quality="4" devilprice="2" shopprice="30" name="Aries EX" />
 	<passive cache="firedelay speed" gfx="Taurus.png" quality="4" devilprice="2" shopprice="25" name="Taurus EX" />
 	<passive gfx="Aquarius.png" quality="3" devilprice="2" shopprice="25" name="Aquarius EX" />
-	<passive gfx="Casiopea.png" quality="3" devilprice="1" shopprice="10" tags="noeden" name="Casiopea" />
+	<passive gfx="Casiopea.png" quality="2" devilprice="1" shopprice="10" tags="noeden" name="Casiopea" />
 	<passive gfx="Corvus.png" quality="3" devilprice="1" shopprice="20" tags="noeden" name="Corvus" />
 	<passive gfx="Pavo.png" quality="2" devilprice="1" shopprice="15" name="Pavo" />
 	<passive gfx="Comet.png" quality="4" devilprice="2" shopprice="30" tags="noeden" name="Comet" />
@@ -27,11 +27,11 @@
 	<passive gfx="Super Magneto.png" quality="4" devilprice="2" shopprice="21" name="Super Magneto" />
 	<passive gfx="Solar System.png" quality="4" devilprice="1" name="Solar System" />
 	<passive gfx="Ptolemaeus.png" quality="4" devilprice="2" shopprice="40" name="Ptolemaeus" />
-	<passive cache="firedelay" gfx="Angry Onion.png" quality="3" devilprice="2" name="Angry Onion" />
+	<passive cache="firedelay" gfx="Angry Onion.png" quality="2" devilprice="1" name="Angry Onion" />
 	<active gfx="Deep Of Abyss.png" quality="2" devilprice="1" maxcharges="6" shopprice="8" name="Oblivion" />
 	<passive gfx="collectibles_668_dadsnote.png" quality="0" devilprice="2" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Go Home!" />
 	<passive gfx="Fallen Orb.png" quality="4" devilprice="2" shopprice="20" name="Fallen Orb" />
-	<passive gfx="Trinity.png" quality="3" devilprice="1" name="Trinity" />
+	<passive gfx="Trinity.png" quality="2" devilprice="1" name="Trinity" />
 	<passive gfx="Blood Of Hatred.png" quality="2" devilprice="1" shopprice="5" tags="devil" blackhearts="2" name="Blood Of Hatred" />
 	<passive gfx="Divine Light.png" quality="3" devilprice="2" name="Divine Light" />
 	<passive gfx="Omega 321.png" quality="2" devilprice="1" name="Omega 321" />
@@ -57,7 +57,7 @@
 	<active gfx="Fortune Coin.png" quality="1" devilprice="1" maxcharges="1" shopprice="1" name="Fortune Coin" />
 	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="13" name="Master's Degree" />
 	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" />
-	<passive gfx="Pink Ward.png" quality="3" devilprice="1" shopprice="18" name="Pink Ward" />
+	<passive gfx="Pink Ward.png" quality="2" devilprice="1" shopprice="18" name="Pink Ward" />
 	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" />
 	<passive cache="damage" gfx="Amplifying Mind.png" quality="2" devilprice="2" shopprice="15" name="Amplifying Mind" />
@@ -66,9 +66,9 @@
 	<passive gfx="Birthright - Isaac.png" quality="4" devilprice="2" shopprice="30" name="Birthright - Isaac" />
 	<passive cache="damage" gfx="Power Rock Bottom.png" quality="3" devilprice="2" shopprice="15" name="Power Rock Bottom" />
 	<passive cache="firedelay" gfx="Rapid Rock Bottom.png" quality="3" devilprice="2" shopprice="15" name="Rapid Rock Bottom" />
-	<passive cache="luck" gfx="Lucky Rock Bottom.png" quality="2" devilprice="2" shopprice="15" name="Lucky Rock Bottom" />
-	<passive gfx="Sinful Spoils of Subversion - Snake Eye.png" quality="2" devilprice="2" shopprice="10" name="Sinful Spoils of Subversion - Snake Eye" />
-	<passive gfx="Original Sinful Spoils - Snake Eye.png" quality="4" devilprice="2" shopprice="10" name="Original Sinful Spoils - Snake Eye" />
+	<passive cache="luck" gfx="Lucky Rock Bottom.png" quality="3" devilprice="2" shopprice="16" name="Lucky Rock Bottom" />
+	<passive gfx="Sinful Spoils of Subversion - Snake Eye.png" quality="2" devilprice="1" shopprice="10" name="Sinful Spoils of Subversion - Snake Eye" />
+	<passive gfx="Original Sinful Spoils - Snake Eye.png" quality="2" devilprice="1" shopprice="10" name="Original Sinful Spoils - Snake Eye" />
 	<passive id="1" gfx="Heart Bloom.png" quality="2" devilprice="1" shopprice="15" tags="offensive summonable" name="Heart Bloom" description="Bloom and Doom" />
 	<passive tags="guppy" gfx="Absolut Guppy.png" quality="3" devilprice="2" shopprice="15" name="Absolut Guppy" />
 	<passive tags="guppy" gfx="Delirium Guppy.png" quality="3" devilprice="1" shopprice="15" name="Delirium Guppy" />
@@ -88,11 +88,11 @@
 	<passive tags="speed" gfx="Terraspark Boots.png" quality="2" devilprice="1" shopprice="10" name="Terraspark Boots" />
 	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" />
 	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" maxcharges="1" name="Starlit Papillon" />
-	<passive gfx="Sinful Spoils Struggle.png" quality="3" devilprice="2" shopprice="25" name="Sinful Spoils Struggle" />
+	<passive gfx="Sinful Spoils Struggle.png" quality="2" devilprice="1" shopprice="18" name="Sinful Spoils Struggle" />
 	<passive gfx="Blood Trail.png" quality="3" devilprice="1" shopprice="20" name="Blood Trail" />
 	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="300" chargetype="timed" shopprice="15" name="Sandevistan" />
 	<passive gfx="My Moon My Man.png" quality="4" devilprice="2" shopprice="30" name="My Moon My Man" />
-	<passive gfx="3 Body Problem.png" quality="3" devilprice="2" shopprice="20" name="3 Body Problem" />
+	<passive gfx="3 Body Problem.png" quality="2" devilprice="2" shopprice="20" name="3 Body Problem" />
 	<passive tags="baby" gfx="Absolut Conjoined.png" quality="2" devilprice="1" shopprice="15" name="Absolut Conjoined" />
 	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" />
 	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" />
@@ -155,9 +155,9 @@
 	<active tags="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" />
 	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="5" name="Schrodinger's Cat" />
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" />
-	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="3" devilprice="1" shopprice="15" name="Cracked Bottom" />
+	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="1" shopprice="15" name="Cracked Bottom" />
 	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="0" shopprice="25" name="Birth Certificate" />
-	<passive gfx="Birthright - Tainted Lost.png" quality="4" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" />
+	<passive gfx="Birthright - Tainted Lost.png" quality="3" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" />
 	<active gfx="False Certificate.png" quality="4" devilprice="2" maxcharges="0" shopprice="25" name="False Certificate" />
 	<active gfx="Puzzle Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="18" name="Puzzle Dice" />
 	<passive gfx="Bandage Girl.png" quality="3" devilprice="1" shopprice="20" name="Bandage Girl" />
