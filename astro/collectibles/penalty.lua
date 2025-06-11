@@ -12,9 +12,12 @@ local PENALTY_ACTIVE_ITEMS = {
 -- 패널티 피격 시 아이템 제거
 local PENALTY_REMOVE_ITEMS = {
     collectible = {
+        CollectibleType.COLLECTIBLE_LIBRA,
+        CollectibleType.COLLECTIBLE_DEAD_CAT,
         Astro.Collectible.UNHOLY_MANTLE,
     },
     trinket = {
+        TrinketType.TRINKET_JAW_BREAKER,
     }
 }
 
