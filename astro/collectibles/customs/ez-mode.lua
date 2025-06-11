@@ -1,23 +1,23 @@
 ---
 
-local SPEED_DECREMENT = -0.1
+local SPEED_DECREMENT = -0.025
 
-local TEARS_DECREMENT = -0.1
+local TEARS_DECREMENT = -0.005
 
-local DAMAGE_DECREMENT = -0.1
+local DAMAGE_DECREMENT = -0.05
 
-local RANGE_DECREMENT = -1
+local RANGE_DECREMENT = -0.05
 
-local SHOT_SPEED_DECREMENT = -0.1
+local SHOT_SPEED_DECREMENT = -0.05
 
-local LUCK_DECREMENT = -1
+local LUCK_DECREMENT = -3
 
 ---
 
 Astro.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.EZ_MODE, "쉬운 모드", "...", "↓ {{LuckSmall}}행운 -9#후반 스테이지 진입 전까지 피격 페널티가 발생하지 않습니다. 대신 모든 스탯이 감소됩니다.#소울 하트 1개가 증가됩니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.EZ_MODE, "쉬운 모드", "...", "↓ {{LuckSmall}}행운 -1#후반 스테이지 진입 전까지 피격 페널티가 발생하지 않습니다. 대신 모든 스탯이 감소됩니다.#소울 하트 1개가 증가됩니다.")
 end
 
 Astro:AddCallback(
@@ -78,7 +78,7 @@ Astro:AddCallback(
             end
 
             if cacheFlag == CacheFlag.CACHE_LUCK then
-                player.Luck = player.Luck - 9
+                player.Luck = player.Luck - 1
             end
         end
     end
