@@ -30,7 +30,7 @@ Astro:AddCallback(
 
         return {
             Discharge = true,
-            Remove = true,
+            Remove = false,
             ShowAnim = true,
         }
     end,
