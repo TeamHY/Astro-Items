@@ -121,6 +121,7 @@ require "astro.collectibles.customs.false-certificate"
 require "astro.collectibles.customs.puzzle-dice"
 require "astro.collectibles.customs.bandage-girl"
 require "astro.collectibles.customs.coin-detonator"
+require "astro.collectibles.customs.black-list"
 
 --#region PLANETARIUM
 
