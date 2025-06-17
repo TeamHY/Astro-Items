@@ -1,3 +1,9 @@
+---
+
+local UPGRADE_CHANCE = 0.2
+
+---
+
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To Go Deeper (Astro)")
@@ -7,16 +13,32 @@ if EID then
         Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO,
         "더 깊이 가야 해 (아스트로)",
         "...",
-        "1회 사용: 멤버십 상점 소환#" ..
-        "2회 사용: 장식 타일에서 함정문 소환#" ..
-        "3회 사용: 스킵 문 소환#" ..
-        "스테이지마다 사용 횟수 초기화"
+        "사용 시 다음 스테이지로 갈 수 있는 다락문을 소환합니다." ..
+        "#치장성 타일 위에서 사용 시 멤버십 상점이 소환됩니다."
     )
 end
 
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GET_COLLECTIBLE,
+    ---@param selectedCollectible CollectibleType
+    ---@param itemPoolType ItemPoolType
+    ---@param decrease boolean
+    ---@param seed integer
+    function(_, selectedCollectible, itemPoolType, decrease, seed)
+        if selectedCollectible == CollectibleType.COLLECTIBLE_WE_NEED_TO_GO_DEEPER then
+            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO)
+
+            if rng:RandomFloat() < UPGRADE_CHANCE then
+                return Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO
+            end
+        end
+    end
+)
+
+
 local function spawnMembershipShop(player, position)
     local room = Game():GetRoom()
-    local gridIndex = room:GetGridIndex(position)
+    local gridIndex = room:GetGridIndex(room:FindFreePickupSpawnPosition(position, 0))
 
     local gridEntity = room:GetGridEntity(gridIndex)
 
@@ -24,12 +46,12 @@ local function spawnMembershipShop(player, position)
         gridEntity:Destroy()
     end
     
-    Isaac.GridSpawn(18, 2, position, false)
+    Isaac.GridSpawn(18, 2, position, true)
 end
 
 local function spawnTrapdoor(player, position)
     local room = Game():GetRoom()
-    local gridIndex = Isaac
+    local gridIndex = room:GetGridIndex(room:FindFreePickupSpawnPosition(position, 0))
     
     room:SpawnGridEntity(gridIndex, 17, 0, 0, 0)
 end
