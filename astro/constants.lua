@@ -10,7 +10,8 @@ Astro.MAX_ORIGINAL_COLLECTIBLE_ID = 732
 
 Astro.CallbackPriority = {
     MULTIPLY = CallbackPriority.LATE + 2000,
-    ROCK_BOTTOM = CallbackPriority.LATE + 4000
+    ROCK_BOTTOM = CallbackPriority.LATE + 4000,
+    POST_PENALTY = 999999999999
 }
 
 Astro.SoundEffect = {
