@@ -6,7 +6,7 @@ local UPGRADE_CHANCE = 0.2
 
 local isc = require("astro.lib.isaacscript-common")
 
-Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To Go Deeper (Astro)")
+Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To Go Deeper! (Astro)")
 
 if EID then
     Astro:AddEIDCollectible(
