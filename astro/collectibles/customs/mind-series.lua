@@ -10,7 +10,7 @@ local TEARS_INCREMENT = 0.0019
 
 local LUCK_INCREMENT = 0.0087
 
-local PENALTY_TIME = 240 * 30
+local PENALTY_TIME = 60 * 30
 
 ---
 
@@ -34,7 +34,7 @@ if EID then
         "...",
         "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
         "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -44,7 +44,7 @@ if EID then
         "...",
         "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
         "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -54,7 +54,7 @@ if EID then
         "...",
         "{{Timer}} 1초마다 {{TearsSmall}}연사(고정) +0.0019" ..
         "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
@@ -64,7 +64,7 @@ if EID then
         "...",
         "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.0087" ..
         "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 4분간 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
         "#중첩 시 다음 증가량부터 적용됩니다."
     )
 
