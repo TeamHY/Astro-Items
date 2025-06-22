@@ -2,11 +2,11 @@ local PENALTY_DEATHS_HEAD_COUNT = 1 -- 빠가지 소환 개수
 
 local PENALTY_DEATHS_HEAD_CHANCE = 1 -- 빠가지 소환 확률
 
-local PENALTY_BROKEN_HEARTS = 1 -- 뼈 심장 추가 개수
+local PENALTY_BROKEN_HEARTS = 0 -- 뼈 심장 추가 개수
 
 -- 패널티 피격 시 차지 감소
 local PENALTY_ACTIVE_ITEMS = {
-    [CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS] = 2, -- ex) 피격 시 2 감소
+    [CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS] = 1, -- ex) 피격 시 2 감소
 }
 
 -- 패널티 피격 시 아이템 제거
