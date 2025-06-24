@@ -1,12 +1,16 @@
 ---
 
-local FLAME_SPAWN_CHANCE = 0.1
+local SUN_FLAME_SPAWN_CHANCE = 0.1
+local ECLIPSE_FLAME_SPAWN_CHANCE = 0.1
 
-local LUCK_MULTIPLY = 1 / 100
+local SUN_LUCK_MULTIPLY = 1 / 100
+local ECLIPSE_LUCK_MULTIPLY = 1 / 100
 
 ---
 
 Astro.Collectible.BOOK_OF_SUN = Isaac.GetItemIdByName("Book of Sun")
+Astro.Collectible.BOOK_OF_ECLIPSE = Isaac.GetItemIdByName("Book of Eclipse")
+
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -18,6 +22,15 @@ Astro:AddCallback(
                 "...",
                 "사용 시 모든 적을 불 태우고 게임당 한번 {{Card20}}XIX - The Sun을 소환합니다. 다음 게임에서 Burning Basement 스테이지가 등장하지 않습니다." ..
                 "소지 중 적이 죽었을 경우 10% 확률로 빨간 불을 소환합니다." ..
+                "#!!! {{LuckSmall}}행운 수치 비례: 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BOOK_OF_ECLIPSE,
+                "개기일식의 서",
+                "...",
+                "사용 시 모든 적을 불 태우고 게임당 한번 {{Card75}}XIX - The Sun?을 소환합니다. 다음 게임에서 Burning Basement 스테이지가 등장하지 않습니다." ..
+                "소지 중 적이 죽었을 경우 10% 확률로 파란 불을 소환합니다." ..
                 "#!!! {{LuckSmall}}행운 수치 비례: 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
         end
@@ -44,7 +57,7 @@ Astro:AddCallback(
     ---@param isContinued boolean
     function(_, isContinued)
         if not isContinued then
-            if Astro.Data["usedBookOfSun"] then
+            if Astro.Data["usedBookOfSun"] or Astro.Data["usedBookOfEclipse"] then
                 Astro.Data["banBurningBasementStage"] = true
                 TryChangeStage()
             else
@@ -52,6 +65,7 @@ Astro:AddCallback(
             end
 
             Astro.Data["usedBookOfSun"] = false
+            Astro.Data["usedBookOfEclipse"] = false
         end
     end
 )
@@ -97,6 +111,37 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
+    ModCallbacks.MC_USE_ITEM,
+    ---@param collectibleType CollectibleType
+    ---@param rng RNG
+    ---@param player EntityPlayer
+    ---@param useFlags UseFlag
+    ---@param activeSlot ActiveSlot
+    ---@param varData integer
+    function(_, collectibleType, rng, player, useFlags, activeSlot, varData)
+        local entities = Isaac.GetRoomEntities()
+
+        for _, entity in ipairs(entities) do
+            if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE then
+                entity:AddBurn(EntityRef(player), 103, player.Damage)
+            end
+        end
+
+        if not Astro.Data["usedBookOfEclipse"] then
+            Astro.Data["usedBookOfEclipse"] = true
+            Astro:SpawnCard(Card.CARD_REVERSE_SUN, player.Position)
+        end
+
+        return {
+            Discharge = true,
+            Remove = false,
+            ShowAnim = true
+        }
+    end,
+    Astro.Collectible.BOOK_OF_ECLIPSE
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_POST_NPC_DEATH,
     ---@param entityNPC EntityNPC
     function(_, entityNPC)
@@ -106,9 +151,28 @@ Astro:AddCallback(
             if player:HasCollectible(Astro.Collectible.BOOK_OF_SUN) then
                 local rng = player:GetCollectibleRNG(Astro.Collectible.BOOK_OF_SUN)
     
-                if rng:RandomFloat() < (FLAME_SPAWN_CHANCE + player.Luck * LUCK_MULTIPLY) then
+                if rng:RandomFloat() < (SUN_FLAME_SPAWN_CHANCE + player.Luck * SUN_LUCK_MULTIPLY) then
                     local flame = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.RED_CANDLE_FLAME, 0, entityNPC.Position, Vector.Zero, Isaac.GetPlayer())
                     flame.CollisionDamage = 23
+                    break
+                end
+            end
+        end
+
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+        
+            if player:HasCollectible(Astro.Collectible.BOOK_OF_ECLIPSE) then
+                local rng = player:GetCollectibleRNG(Astro.Collectible.BOOK_OF_ECLIPSE)
+    
+                if rng:RandomFloat() < (ECLIPSE_FLAME_SPAWN_CHANCE + player.Luck * ECLIPSE_LUCK_MULTIPLY) then
+                    local flame = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.RED_CANDLE_FLAME, 0, entityNPC.Position, Vector.Zero, Isaac.GetPlayer())
+                    flame.CollisionDamage = 23
+
+                    local sprite = flame:GetSprite()
+                    sprite:ReplaceSpritesheet(0, "gfx/effects/effect_005_fire_blue.png")
+                    sprite:LoadGraphics()
+
                     break
                 end
             end
