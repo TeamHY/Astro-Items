@@ -2,25 +2,42 @@
 
 local UPGRADE_CHANCE = 0.2
 
+local MARK_DURATION = 60 * 30
+
 ---
 
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.BLACK_LIST = Isaac.GetItemIdByName("Black List")
 
-local RoomTypeList = {
-    [RoomType.ROOM_TREASURE] = true,
-}
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BLACK_LIST,
+                "블랙 리스트",
+                "...",
+                "{{Collectible530}}Death's List 효과가 적용됩니다." ..
+                "#방 입장 시 1분간 Brimstone Mark가 적용됩니다." ..
+                "#!!! 소지중일 때 {{Collectible530}}Death's List가 등장하지 않습니다."
+            )
+        end
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BLACK_LIST,
-        "블랙 리스트",
-        "...",
-        "{{Collectible530}}Death's List 효과가 적용됩니다." ..
-        "#!!! {{ColorRed}}테스트: 보물방 입장 시 버튼이 생성됩니다."
-    )
-end
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                if Astro:HasCollectible(Astro.Collectible.BLACK_LIST) then
+                    return {
+                        reroll = selectedCollectible == CollectibleType.COLLECTIBLE_DEATHS_LIST,
+                        modifierName = "Black List"
+                    }
+                end
+        
+                return false
+            end
+        )
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GET_COLLECTIBLE,
@@ -42,16 +59,13 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
-        local room = Game():GetRoom()
-        local roomType = room:GetType()
-        
-        if room:IsFirstVisit() and RoomTypeList[roomType] then
-            for i = 0, Game():GetNumPlayers() - 1 do
-                local player = Isaac.GetPlayer(i)
-                
-                if player:HasCollectible(Astro.Collectible.BLACK_LIST) then
-                    room:SpawnGridEntity(room:GetGridIndex(room:FindFreePickupSpawnPosition(room:GetCenterPos(), 0)), GridEntityType.GRID_PRESSURE_PLATE, 0, 0, 0)
-                    break
+        if Astro:HasCollectible(Astro.Collectible.BLACK_LIST) then
+            for _, entity in ipairs(Isaac.GetRoomEntities()) do
+                if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE then
+                    local data = entity:GetData()
+                    data["blackList"] = true
+
+                    entity:AddEntityFlags(EntityFlag.FLAG_BRIMSTONE_MARKED)
                 end
             end
         end
@@ -62,6 +76,18 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_PEFFECT_UPDATE,
     ---@param player EntityPlayer
     function(_, player)
+        local room = Game():GetRoom()
+        
+        if room:GetFrameCount() == MARK_DURATION then
+            for _, entity in ipairs(Isaac.GetRoomEntities()) do
+                local data = entity:GetData()
+                
+                if data["blackList"] then
+                    entity:ClearEntityFlags(EntityFlag.FLAG_BRIMSTONE_MARKED)
+                end
+            end
+        end
+
         hiddenItemManager:CheckStack(player, CollectibleType.COLLECTIBLE_DEATHS_LIST, player:HasCollectible(Astro.Collectible.BLACK_LIST) and 1 or 0, "ASTRO_BLACK_LIST")
     end
 )
