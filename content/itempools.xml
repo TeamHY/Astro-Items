@@ -24,6 +24,7 @@
 		<Item Name="Quasar" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Laniakea Supercluster" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Copernicus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
     <Pool Name="secret">
