@@ -173,7 +173,7 @@
 	<passive gfx="Urinary Incontinence.png" quality="3" devilprice="2" shopprice="15" name="Urinary Incontinence" />
 	<passive gfx="Anorexia Nervosa.png" quality="3" devilprice="2" shopprice="15" name="Anorexia Nervosa" />
 	<passive gfx="Black List.png" quality="3" devilprice="2" shopprice="15" name="Black List" />
-	<passive cache="damage" gfx="Dry Eye Syndrome.png" quality="3" devilprice="2" shopprice="15" name="Dry Eye Syndrome" />
+	<passive cache="damage" gfx="Dry Eye Syndrome.png" quality="3" devilprice="2" shopprice="25" name="Dry Eye Syndrome" />
 	<active tags="book" gfx="Book of Sun.png" quality="2" devilprice="1" shopprice="10" maxcharges="3" name="Book of Sun" />
 	<active tags="book" gfx="Book of Moon.png" quality="3" devilprice="1" shopprice="15" maxcharges="12" name="Book of Moon" />
 	<active tags="book" gfx="Book of Eclipse.png" quality="2" devilprice="1" shopprice="15" maxcharges="3" name="Book of Eclipse" />
