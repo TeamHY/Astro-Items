@@ -14,7 +14,7 @@ if EID then
         Astro.Collectible.BOOK_OF_LUNAR_ECLIPSE,
         "개기월식의 서",
         "...",
-        "사용 시 현재 방이 어두워지고 중앙에 달빛이 생깁니다. 스테이지당 한번 {{Card19}}XVIII - The Moon?을 소환합니다." ..
+        "사용 시 현재 방이 어두워지고 중앙에 달빛이 생깁니다. 게임당 한번 {{Card19}}XVIII - The Moon?을 소환합니다." ..
         "#{{TreasureRoom}}보물방, {{Shop}}상점, {{BossRoom}}보스스방 최초 입장 시 중앙에 달빛이 생깁니다."
     )
 end
@@ -28,10 +28,18 @@ local function DarkenRoom(player)
 end
 
 Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    function(_, isContinued)
+        if not isContinued then
+            Astro.Data["usedBookOfLunarEclipse"] = false
+        end
+    end
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,
     function(_)
         Astro.Data["usedBookOfMoon"] = false
-        Astro.Data["usedBookOfLunarEclipse"] = false
     end
 )
 
