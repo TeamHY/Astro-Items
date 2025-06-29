@@ -170,8 +170,8 @@
 	<passive gfx="Steam Bundle.png" quality="3" devilprice="2" shopprice="30" name="Steam Bundle" />
 	<passive gfx="Astro Star of Bethlehem.png" quality="3" devilprice="2" shopprice="15" name="Astro Star of Bethlehem" />
 	<active gfx="We Need To Go Deeper! (Astro).png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="We Need To Go Deeper! (Astro)" />
-	<passive gfx="Urinary Incontinence.png" quality="3" devilprice="2" shopprice="15" name="Urinary Incontinence" />
-	<passive gfx="Anorexia Nervosa.png" quality="3" devilprice="2" shopprice="15" name="Anorexia Nervosa" />
+	<passive gfx="Urinary Incontinence.png" quality="2" devilprice="1" shopprice="15" name="Urinary Incontinence" />
+	<passive gfx="Anorexia Nervosa.png" quality="3" devilprice="2" shopprice="15" maxhearts="6" name="Anorexia Nervosa" />
 	<passive gfx="Black List.png" quality="3" devilprice="2" shopprice="15" name="Black List" />
 	<passive cache="damage" gfx="Dry Eye Syndrome.png" quality="3" devilprice="2" shopprice="25" name="Dry Eye Syndrome" />
 	<active tags="book" gfx="Book of Sun.png" quality="2" devilprice="1" shopprice="10" maxcharges="3" name="Book of Sun" />
