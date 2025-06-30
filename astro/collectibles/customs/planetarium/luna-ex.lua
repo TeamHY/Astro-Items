@@ -59,17 +59,17 @@ Astro:AddCallbackCustom(
     Astro.Collectible.LUNA_EX
 )
 
--- Astro:AddCallbackCustom(
---     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
---     ---@param player EntityPlayer
---     ---@param collectibleType CollectibleType
---     function(_, player, collectibleType)
---         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_LUNA) then
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_LUNA)
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_XRAY_VISION)
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_BLUE_MAP)
---             Game():GetLevel():UpdateVisibility()
---         end
---     end,
---     Astro.Collectible.LUNA_EX
--- )
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_LUNA) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_LUNA)
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_XRAY_VISION)
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_BLUE_MAP)
+            Game():GetLevel():UpdateVisibility()
+        end
+    end,
+    Astro.Collectible.LUNA_EX
+)

@@ -97,14 +97,14 @@ Astro:AddCallbackCustom(
     Astro.Collectible.TERRA_EX
 )
 
--- Astro:AddCallbackCustom(
---     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
---     ---@param player EntityPlayer
---     ---@param collectibleType CollectibleType
---     function(_, player, collectibleType)
---         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_TERRA) then
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_TERRA)
---         end
---     end,
---     Astro.Collectible.TERRA_EX
--- )
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_TERRA) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_TERRA)
+        end
+    end,
+    Astro.Collectible.TERRA_EX
+)

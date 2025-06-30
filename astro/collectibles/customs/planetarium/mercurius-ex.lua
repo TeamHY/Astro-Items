@@ -55,14 +55,14 @@ Astro:AddCallbackCustom(
     Astro.Collectible.MERCURIUS_EX
 )
 
--- Astro:AddCallbackCustom(
---     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
---     ---@param player EntityPlayer
---     ---@param collectibleType CollectibleType
---     function(_, player, collectibleType)
---         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_MERCURIUS) then
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_MERCURIUS)
---         end
---     end,
---     Astro.Collectible.MERCURIUS_EX
--- )
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_MERCURIUS) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_MERCURIUS)
+        end
+    end,
+    Astro.Collectible.MERCURIUS_EX
+)

@@ -54,14 +54,14 @@ Astro:AddCallbackCustom(
     Astro.Collectible.VENUS_EX
 )
 
--- Astro:AddCallbackCustom(
---     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
---     ---@param player EntityPlayer
---     ---@param collectibleType CollectibleType
---     function(_, player, collectibleType)
---         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_VENUS) then
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_VENUS)
---         end
---     end,
---     Astro.Collectible.VENUS_EX
--- )
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_VENUS) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_VENUS)
+        end
+    end,
+    Astro.Collectible.VENUS_EX
+)

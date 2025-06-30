@@ -48,14 +48,14 @@ Astro:AddCallbackCustom(
     Astro.Collectible.PLUTO_EX
 )
 
--- Astro:AddCallbackCustom(
---     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
---     ---@param player EntityPlayer
---     ---@param collectibleType CollectibleType
---     function(_, player, collectibleType)
---         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_PLUTO) then
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_PLUTO)
---         end
---     end,
---     Astro.Collectible.PLUTO_EX
--- )
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_PLUTO) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_PLUTO)
+        end
+    end,
+    Astro.Collectible.PLUTO_EX
+)

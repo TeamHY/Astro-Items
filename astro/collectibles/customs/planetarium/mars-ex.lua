@@ -84,14 +84,14 @@ Astro:AddCallbackCustom(
     Astro.Collectible.MARS_EX
 )
 
--- Astro:AddCallbackCustom(
---     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
---     ---@param player EntityPlayer
---     ---@param collectibleType CollectibleType
---     function(_, player, collectibleType)
---         if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_MARS) then
---             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_MARS)
---         end
---     end,
---     Astro.Collectible.MARS_EX
--- )
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_MARS) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_MARS)
+        end
+    end,
+    Astro.Collectible.MARS_EX
+)
