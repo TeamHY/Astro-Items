@@ -1,20 +1,25 @@
-local isc = require("astro.lib.isaacscript-common")
+---
+
+local COIN_CONSUMPTION = 5
+
+---
 
 Astro.Trinket.LAVA_HAND = Isaac.GetTrinketIdByName("Lava Hand")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.LAVA_HAND, "{{Collectible479}} 장신구 획득 시 즉시 흡수됩니다. ({{Trinket145}}Perfection 제외)", "용암 손")
+    EID:addTrinket(Astro.Trinket.LAVA_HAND, "{{Collectible479}} 장신구 소지 시 5원을 소모하고 흡수합니다.", "용암 손")
 
 -- Astro:AddGoldenTrinketDescription(Astro.Trinket.LAVA_HAND, "", 10)
 end
 
 ---@param player EntityPlayer
----@param trinket TrinketType
-function Astro:UpdateLavaHandEffect(player, trinket)
-    if not Astro:CheckTrinket(trinket, TrinketType.TRINKET_PERFECTION) and not Astro:CheckTrinket(trinket, Astro.Trinket.FLUNK) then
-        isc:smeltTrinket(player, trinket)
-        player:TryRemoveTrinket(trinket)
+function Astro:UpdateLavaHandEffect(player)
+    if player:GetNumCoins() < COIN_CONSUMPTION then
+        return
     end
+
+    player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, UseFlag.USE_NOANIM)
+    player:AddCoins(-COIN_CONSUMPTION)
 end
 
 Astro:AddPriorityCallback(
@@ -30,7 +35,7 @@ Astro:AddPriorityCallback(
                     break
                 end
 
-                Astro:UpdateLavaHandEffect(player, trinket)
+                Astro:UpdateLavaHandEffect(player)
             end
         end
     end
