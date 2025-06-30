@@ -141,7 +141,7 @@
 	<active gfx="Qubit Dice.png" quality="4" devilprice="1" maxcharges="12" shopprice="18" name="Qubit Dice" />
 	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="2" devilprice="1" shopprice="15" name="Strawberry Milk" />
 	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="20" name="Entoma Vasilissa Zeta" />
-	<passive gfx="Birthright - Eve.png" quality="2" devilprice="1" shopprice="15" name="Birthright - Eve" />
+	<passive gfx="Birthright - Eve.png" quality="3" devilprice="1" shopprice="15" name="Birthright - Eve" />
 	<passive gfx="Birthright - Blue Baby.png" quality="2" devilprice="1" shopprice="7" soulhearts="2" name="Birthright - Blue Baby" />
 	<passive gfx="Birthright - Cain.png" quality="2" devilprice="1" shopprice="5" name="Birthright - Cain" />
 	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" />
@@ -155,7 +155,7 @@
 	<active tags="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" />
 	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="5" name="Schrodinger's Cat" />
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" hidden="true" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" />
-	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="1" shopprice="15" name="Cracked Bottom" />
+	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="1" shopprice="12" name="Cracked Bottom" />
 	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="0" shopprice="25" name="Birth Certificate" />
 	<passive gfx="Birthright - Tainted Lost.png" quality="3" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" />
 	<active gfx="False Certificate.png" quality="4" devilprice="2" maxcharges="0" shopprice="25" name="False Certificate" />
