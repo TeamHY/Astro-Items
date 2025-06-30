@@ -1,6 +1,6 @@
 ---
 
-local UPGRADE_CHANCE = 0.2
+local UPGRADE_CHANCE = 0.5
 
 ---
 
