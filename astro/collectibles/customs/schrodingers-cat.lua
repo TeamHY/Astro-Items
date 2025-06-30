@@ -6,22 +6,20 @@ if EID then
         Astro.Collectible.SCHRODINGERS_CAT,
         "슈뢰딩거의 고양이",
         "",
-        "클리어하지 않은 방에 입장 시 50% 확률로 Guppy 세트 +1#방을 나가면 효과는 초기화됩니다.#중첩이 가능합니다."
+        "스테이지 입장 시 50% 확률로 Guppy 세트 +1#다음 스테이지 입장 시 효과는 초기화됩니다.#중첩이 가능합니다."
     )
 end
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_NEW_ROOM,
+    ModCallbacks.MC_POST_NEW_LEVEL,
     function(_)
-        local room = Game():GetRoom()
-
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
             local rng = player:GetCollectibleRNG(Astro.Collectible.SCHRODINGERS_CAT)
 
             Astro:RemoveAllCollectible(player, Astro.Collectible.GUPPY_PART)
 
-            if not room:IsClear() and rng:RandomFloat() < 0.5 then
+            if rng:RandomFloat() < 0.5 then
                 for _ = 1, player:GetCollectibleNum(Astro.Collectible.SCHRODINGERS_CAT) do
                     player:AddCollectible(Astro.Collectible.GUPPY_PART)
                 end
