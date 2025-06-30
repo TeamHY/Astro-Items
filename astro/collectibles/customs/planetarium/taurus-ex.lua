@@ -5,12 +5,11 @@ if EID then
         Astro.Collectible.TAURUS_EX,
         "초 황소자리",
         "...",
-        "!!! 방 입장 시 아래 효과 중 하나 적용;" ..
+        "{{BossRoom}} 보스방 입장 시 아래 효과들이 적용됩니다." ..
         "#{{ArrowGrayRight}} {{TearsSmall}}연사(상한) +2" ..
         "#{{ArrowGrayRight}} {{DamageSmall}}공격력 +2" ..
         "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도를 최대치로 설정합니다.#{{Blank}} (이미 최대라면 미선택)" ..
         "#{{ArrowGrayRight}} {{RangeSmall}}사거리 +3#{{Blank}} 공격이 적에게 유도됩니다." ..
-        "#{{BossRoom}} 보스방에서는 모든 효과가 적용됩니다." ..
         "#중첩이 가능합니다."
     )
 end
@@ -81,16 +80,16 @@ Astro:AddCallback(
                     player:EvaluateItems()
     
                     goto continue
-                end    
+                end
 
-                repeat
-                    data.Taurus.Key = player:GetCollectibleRNG(Astro.Collectible.TAURUS_EX):RandomInt(4)
-                until not (checkMaxSpeed(player) and data.Taurus.Key == 2)
+                -- repeat
+                --     data.Taurus.Key = player:GetCollectibleRNG(Astro.Collectible.TAURUS_EX):RandomInt(4)
+                -- until not (checkMaxSpeed(player) and data.Taurus.Key == 2)
 
-                effects[data.Taurus.Key](player)
-                player:AddCacheFlags(CacheFlag.CACHE_SPEED)
-                player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
-                player:EvaluateItems()
+                -- effects[data.Taurus.Key](player)
+                -- player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+                -- player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
+                -- player:EvaluateItems()
             end
 
             ::continue::
