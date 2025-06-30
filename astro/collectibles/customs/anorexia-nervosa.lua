@@ -5,6 +5,12 @@ local FOOD_ITEMS = {
     CollectibleType.COLLECTIBLE_DINNER,
     CollectibleType.COLLECTIBLE_DESSERT,
     CollectibleType.COLLECTIBLE_BREAKFAST,
+    CollectibleType.COLLECTIBLE_MARROW,
+    CollectibleType.COLLECTIBLE_MIDNIGHT_SNACK,
+    CollectibleType.COLLECTIBLE_CRACK_JACKS,
+    CollectibleType.COLLECTIBLE_ROTTEN_MEAT,
+    CollectibleType.COLLECTIBLE_SNACK,
+    CollectibleType.COLLECTIBLE_SUPPER,
 }
 
 Astro:AddCallback(
@@ -13,7 +19,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.ANOREXIA_NERVOSA,
                 "거식증",
-                "...",
+                "식욕이 없어요...",
                 "음식 관련 {{Heart}}최대 체력 증가 아이템이 등장하지 않습니다."
             )
         end
