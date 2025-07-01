@@ -4,6 +4,7 @@ require "astro.entities.star"
 require "astro.entities.dust"
 require "astro.entities.lava-beggar"
 require "astro.entities.planetarium-beggar"
+require "astro.entities.glitched-machine"
 
 Astro:AddCallback(
 	ModCallbacks.MC_POST_EFFECT_UPDATE,
