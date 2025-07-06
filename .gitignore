@@ -1,3 +1,4 @@
 disable.it
 .vscode/settings.json
 .luarc.json
+.cursor/
