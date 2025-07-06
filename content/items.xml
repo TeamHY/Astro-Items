@@ -179,6 +179,7 @@
 	<active tags="book" gfx="Book of Eclipse.png" quality="2" devilprice="1" shopprice="15" maxcharges="3" name="Book of Eclipse" />
 	<active tags="book" gfx="Book of Lunar Eclipse.png" quality="4" devilprice="1" shopprice="30" maxcharges="12" name="Book of Lunar Eclipse" />
 	<passive gfx="Stairway to Hell.png" quality="3" devilprice="2" shopprice="15" name="Stairway to Hell" />
+	<active tags="book" gfx="Book of Life.png" quality="3" devilprice="2" shopprice="15" maxcharges="0" name="Book of Life" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" cache="tearflag" />

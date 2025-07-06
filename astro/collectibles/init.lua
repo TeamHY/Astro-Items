@@ -126,6 +126,7 @@ require "astro.collectibles.customs.puzzle-dice"
 require "astro.collectibles.customs.bandage-girl"
 require "astro.collectibles.customs.coin-detonator"
 require "astro.collectibles.customs.black-list"
+require "astro.collectibles.customs.book-of-life"
 
 --#region PLANETARIUM
 

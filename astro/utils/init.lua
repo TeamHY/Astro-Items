@@ -352,6 +352,13 @@ end
 
 ---@param list any[]
 ---@param value any
+---@return boolean
+function Astro:Exists(list, value)
+    return Astro:FindIndex(list, value) ~= -1
+end
+
+---@param list any[]
+---@param value any
 ---@return integer
 function Astro:FindIndex(list, value)
     for i, v in ipairs(list) do
