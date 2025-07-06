@@ -196,4 +196,5 @@
 	<trinket gfx="Planetarium Crown.png" name="Planetarium Crown" />
 	<trinket cache="luck" gfx="Flunk.png" name="Flunk" />
 	<trinket gfx="Yes.png" name="Yes!" />
+	<trinket gfx="Obsidian Hand.png" name="Obsidian Hand" />
 </items>
