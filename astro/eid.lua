@@ -2,6 +2,13 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.EID = {}
 
+Astro.EID.QualityIcon = Sprite()
+Astro.EID.QualityIcon:Load("gfx/ui/eid/quality.anm2")
+Astro.EID.QualityIcon:LoadGraphics()
+
+EID:addIcon("Quality5", "Quality5", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
+EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
+
 ---@param id CollectibleType
 ---@param name string
 ---@param description string
