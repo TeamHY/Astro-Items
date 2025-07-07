@@ -1,8 +1,10 @@
 Astro.Collectible.LANIAKEA_SUPERCLUSTER = Isaac.GetItemIdByName("Laniakea Supercluster")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.LANIAKEA_SUPERCLUSTER, "라니아케아 초은하단", "...", "!!! 일회용#사용 시 {{Planetarium}}천체관 아이템이 존재하는 방으로 이동합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.LANIAKEA_SUPERCLUSTER, "라니아케아 초은하단", "...", "!!! 일회용#사용 시 {{Planetarium}}천체관으로 이동하고 {{Trinket152}}Telescope Lens와 Glitched Machine을 소환합니다.")
 end
+
+local flag = false
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
@@ -13,18 +15,9 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
+        flag = true
+
         Isaac.ExecuteCommand("goto s.planetarium.0")
-
-        Astro:ScheduleForUpdate(
-            function()
-                playerWhoUsedItem:UseCard(Card.CARD_SOUL_ISAAC)
-                playerWhoUsedItem:UseCard(Card.CARD_SOUL_ISAAC)
-                playerWhoUsedItem:UseCard(Card.CARD_SOUL_ISAAC)
-
-                Astro:SpawnTrinket(TrinketType.TRINKET_TELESCOPE_LENS, playerWhoUsedItem.Position)
-            end,
-            1
-        )
 
         return {
             Discharge = true,
@@ -33,4 +26,18 @@ Astro:AddCallback(
         }
     end,
     Astro.Collectible.LANIAKEA_SUPERCLUSTER
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        if flag then
+            flag = false
+
+            local room = Game():GetRoom()
+
+            Astro:SpawnEntity(Astro.Entity.GlitchedMachine, room:GetCenterPos())
+            Astro:SpawnTrinket(TrinketType.TRINKET_TELESCOPE_LENS, room:GetCenterPos())
+        end
+    end
 )

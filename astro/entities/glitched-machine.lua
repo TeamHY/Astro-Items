@@ -8,6 +8,12 @@ local PRICE = 10
 
 local isc = require("astro.lib.isaacscript-common")
 
+Astro.Entity.GlitchedMachine = {
+    Type = EntityType.ENTITY_SLOT,
+    Variant = 3104,
+    SubType = 0,
+}
+
 local INIT_CHECK_SUBTYPE = 1000
 
 Astro:AddCallback(
@@ -16,7 +22,7 @@ Astro:AddCallback(
     ---@param collider Entity
     ---@param low boolean
     function(_, player, collider, low)
-        if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == 3104 then
+        if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == Astro.Entity.GlitchedMachine.Variant then
             if player:GetNumCoins() < PRICE then
                 return nil
             end
@@ -40,7 +46,7 @@ Astro:AddCallbackCustom(
 
         if slot.SubType ~= INIT_CHECK_SUBTYPE and rng:RandomFloat() < CHANGE_CHANCE then
             slot:Remove()
-            Isaac.Spawn(EntityType.ENTITY_SLOT, 3104, 0, slot.Position, Vector(0, 0), nil)
+            Isaac.Spawn(EntityType.ENTITY_SLOT, Astro.Entity.GlitchedMachine.Variant, 0, slot.Position, Vector(0, 0), nil)
         elseif slot.SubType ~= INIT_CHECK_SUBTYPE then
             slot.SubType = INIT_CHECK_SUBTYPE
         end
@@ -80,5 +86,5 @@ Astro:AddCallbackCustom(
             slot:Kill()
         end
     end,
-    3104
+    Astro.Entity.GlitchedMachine.Variant
 )

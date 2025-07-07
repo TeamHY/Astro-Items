@@ -174,6 +174,22 @@ function Astro:Spawn(entityType, entityVariant, entitySubtype, position)
     )
 end
 
+---@param entity Astro.Entity
+---@param position Vector
+---@return Entity
+function Astro:SpawnEntity(entity, position)
+    local currentRoom = Game():GetLevel():GetCurrentRoom()
+
+    return Isaac.Spawn(
+        entity.Type,
+        entity.Variant,
+        entity.SubType,
+        currentRoom:FindFreePickupSpawnPosition(position, 0, true),
+        Vector.Zero,
+        nil
+    )
+end
+
 ---@param pillEffect PillEffect
 ---@param position Vector
 ---@return EntityPickup
