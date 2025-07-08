@@ -15,6 +15,7 @@ local PENALTY_REMOVE_ITEMS = {
         CollectibleType.COLLECTIBLE_LIBRA,
         CollectibleType.COLLECTIBLE_DEAD_CAT,
         Astro.Collectible.UNHOLY_MANTLE,
+        CollectibleType.COLLECTIBLE_TAURUS,
     },
     trinket = {
         TrinketType.TRINKET_JAW_BREAKER,
