@@ -2,7 +2,7 @@
 
 local LASER_DURATION = 60
 
-local LASER_DAMAGE_MULTIPLY = 0.5
+local LASER_DAMAGE_MULTIPLY = 0.35
 
 -- 90도 마다 레이저가 생성됩니다. (360도 / 90도 = 4개)
 local LASER_ANGLE_STEP = 30
