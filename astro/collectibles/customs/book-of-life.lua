@@ -7,7 +7,8 @@ if EID then
         "...",
         "#!!! 일회용 아이템" ..
         "#사용 시 이번 게임에서 등장했던 아이템 중 보유하지 않은 아이템 하나를 소환합니다." ..
-        "#만약 Astrobirth 모드가 활성화되어 있다면 위 효과 대신 이번 게임 금지 아이템 중 하나를 소환합니다."
+        "#만약 Astrobirth 모드가 활성화되어 있다면 위 효과 대신 이번 게임 금지 아이템 중 하나를 소환합니다." ..
+        "#소지 중 사망 시 그 방에서 부활하고 해당 아이템은 사라집니다."
     )
 end
 
@@ -78,15 +79,15 @@ Astro:AddCallback(
     Astro.Collectible.BOOK_OF_LIFE
 )
 
--- if REPENTOGON then
---     Astro:AddCallback(
---         ModCallbacks.MC_PRE_TRIGGER_PLAYER_DEATH,
---         function(_, player)
---             if player:HasCollectible(Astro.Collectible.BOOK_OF_LIFE, true) then
---                 player:RemoveCollectible(Astro.Collectible.BOOK_OF_LIFE)
---                 player:SetMinDamageCooldown(120)
---                 return false
---             end
---         end
---     )
--- end
+if REPENTOGON then
+    Astro:AddCallback(
+        ModCallbacks.MC_PRE_TRIGGER_PLAYER_DEATH,
+        function(_, player)
+            if player:HasCollectible(Astro.Collectible.BOOK_OF_LIFE, true) then
+                player:RemoveCollectible(Astro.Collectible.BOOK_OF_LIFE)
+                player:SetMinDamageCooldown(120)
+                return false
+            end
+        end
+    )
+end
