@@ -183,6 +183,7 @@
 	<passive tags="syringe" gfx="Life-Sustaining Treatment.png" quality="3" devilprice="2" shopprice="15" name="Life-Sustaining Treatment" />
 	<familiar gfx="Big Chest.png" quality="3" devilprice="2" shopprice="15" name="Big Chest" />
 	<passive cache="damage" gfx="Max's Head.png" quality="3" devilprice="2" shopprice="15" name="Max's Head" />
+	<active tags="book" cache="firedelay" gfx="Book of Despair.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Book of Despair" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" cache="tearflag" />
