@@ -10,6 +10,7 @@ saveManager.Init(mod)
 
 Astro = isc:upgradeMod(mod, { isc.ISCFeature.PLAYER_INVENTORY, isc.ISCFeature.ROOM_HISTORY })
 Astro.HiddenItemManager = hiddenItemManager
+Astro.SaveManager = saveManager
 
 Json = require "json"
 

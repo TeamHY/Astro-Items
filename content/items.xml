@@ -181,6 +181,7 @@
 	<passive gfx="Stairway to Hell.png" quality="3" devilprice="2" shopprice="15" name="Stairway to Hell" />
 	<active tags="book" gfx="Book of Life.png" quality="3" devilprice="2" shopprice="15" maxcharges="0" name="Book of Life" />
 	<passive tags="syringe" gfx="Life-Sustaining Treatment.png" quality="3" devilprice="2" shopprice="15" name="Life-Sustaining Treatment" />
+	<familiar gfx="Big Chest.png" quality="3" devilprice="2" shopprice="15" name="Big Chest" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" cache="tearflag" />
