@@ -127,6 +127,7 @@ require "astro.collectibles.customs.bandage-girl"
 require "astro.collectibles.customs.coin-detonator"
 require "astro.collectibles.customs.black-list"
 require "astro.collectibles.customs.book-of-life"
+require "astro.collectibles.customs.life-sustaining-treatment"
 
 --#region PLANETARIUM
 
