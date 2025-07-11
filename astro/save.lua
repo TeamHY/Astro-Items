@@ -1,39 +1,34 @@
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
+local saveManager = require("astro.lib.save_manager")
 
 Astro.Data = {}
 
 -- Load Data
-Astro:AddPriorityCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    CallbackPriority.IMPORTANT,
-    ---@param isContinued boolean
-    function(_, isContinued)
-        if Astro:HasData() then
-            local raw = Astro:LoadData()
-            local data = Json.decode(raw)
-
-            Astro.Data = data or {}
-
-            hiddenItemManager:LoadData(Astro.Data.HiddenItemData)
-        end
-
-        if not isContinued then
-            Astro.Data.PersistentPlayerData = {}
-            Astro.Data.PersistentPickupData = {}
-        end
-
-        print("[Astro] Data loaded")
+Astro:AddCallback(
+    saveManager.SaveCallbacks.POST_DATA_LOAD,
+    function(_, saveData, isLuamod)
+        Astro.Data = saveData.file.other.AstroData or {}
+        hiddenItemManager:LoadData(Astro.Data.HiddenItemData)
     end
 )
 
 -- Save Data
-Astro:AddPriorityCallback(
-    ModCallbacks.MC_PRE_GAME_EXIT,
-    CallbackPriority.LATE,
-    ---@param shouldSave boolean
-    function(_, shouldSave)
+Astro:AddCallback(
+    saveManager.SaveCallbacks.PRE_DATA_SAVE,
+    function(_, saveData)
         Astro.Data.HiddenItemData = hiddenItemManager:GetSaveData()
-        Astro:SaveData(Json.encode(Astro.Data))
+        saveData.file.other.AstroData = Astro.Data
+    end
+)
+
+Astro:AddPriorityCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    CallbackPriority.IMPORTANT,
+    function(_, isContinued)
+        if not isContinued then
+            Astro.Data.PersistentPlayerData = {}
+            Astro.Data.PersistentPickupData = {}
+        end
     end
 )
 

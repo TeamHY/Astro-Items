@@ -1,9 +1,12 @@
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
+local saveManager = require("astro.lib.save_manager")
 local isc = require("astro.lib.isaacscript-common")
 
 local mod = RegisterMod("AstroItems", 1)
 
 hiddenItemManager:Init(mod)
+
+saveManager.Init(mod)
 
 Astro = isc:upgradeMod(mod, { isc.ISCFeature.PLAYER_INVENTORY, isc.ISCFeature.ROOM_HISTORY })
 Astro.HiddenItemManager = hiddenItemManager
