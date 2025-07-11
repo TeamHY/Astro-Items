@@ -1,7 +1,5 @@
 ---
 
-local UPGRADE_CHANCE = 0.3
-
 local ROOM_REWARD_CHANCE = 0.25
 
 local TRINKET_ROOMS_INTERVAL = 5
@@ -49,18 +47,7 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if selectedCollectible == CollectibleType.COLLECTIBLE_LIL_CHEST then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BIG_CHEST)
-            
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                return Astro.Collectible.BIG_CHEST
-            end
-        end
-    end
-)
+
 
 Astro:AddCallback(
     ModCallbacks.MC_FAMILIAR_INIT,

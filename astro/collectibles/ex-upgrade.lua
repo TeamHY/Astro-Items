@@ -1,71 +1,73 @@
 ---
 
-local UPGRADE_CHANCE = 0.3
+---@class UpgradeItem
+---@field Id CollectibleType
+---@field Chance number
 
-Astro.ZODIAC_UPGRADE_LIST = {
-    [CollectibleType.COLLECTIBLE_AQUARIUS] = Astro.Collectible.AQUARIUS_EX,
-    [CollectibleType.COLLECTIBLE_PISCES] = Astro.Collectible.PISCES_EX,
-    [CollectibleType.COLLECTIBLE_ARIES] = Astro.Collectible.ARIES_EX,
-    [CollectibleType.COLLECTIBLE_TAURUS] = Astro.Collectible.TAURUS_EX,
-    [CollectibleType.COLLECTIBLE_GEMINI] = Astro.Collectible.GEMINI_EX,
-    [CollectibleType.COLLECTIBLE_CANCER] = Astro.Collectible.CANCER_EX,
-    [CollectibleType.COLLECTIBLE_LEO] = Astro.Collectible.LEO_EX,
-    [CollectibleType.COLLECTIBLE_VIRGO] = Astro.Collectible.VIRGO_EX,
-    [CollectibleType.COLLECTIBLE_LIBRA] = Astro.Collectible.LIBRA_EX,
-    [CollectibleType.COLLECTIBLE_SCORPIO] = Astro.Collectible.SCORPIO_EX,
-    [CollectibleType.COLLECTIBLE_SAGITTARIUS] = Astro.Collectible.SAGITTARIUS_EX,
-    [CollectibleType.COLLECTIBLE_CAPRICORN] = Astro.Collectible.CAPRICORN_EX
+---@type UpgradeItem[]
+Astro.PLANETARIUM_UPGRADE_LIST = {
+    [CollectibleType.COLLECTIBLE_SOL] = { Id = Astro.Collectible.SOL_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_LUNA] = { Id = Astro.Collectible.LUNA_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_MERCURIUS] = { Id = Astro.Collectible.MERCURIUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_VENUS] = { Id = Astro.Collectible.VENUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_TERRA] = { Id = Astro.Collectible.TERRA_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_MARS] = { Id = Astro.Collectible.MARS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_JUPITER] = { Id = Astro.Collectible.JUPITER_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_SATURNUS] = { Id = Astro.Collectible.SATURNUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_URANUS] = { Id = Astro.Collectible.URANUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_NEPTUNUS] = { Id = Astro.Collectible.NEPTUNUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_PLUTO] = { Id = Astro.Collectible.PLUTO_EX, Chance = 0 },
+    -- 위의 행성은 별도의 업그레이드 로직을 따름
+    [CollectibleType.COLLECTIBLE_AQUARIUS] = { Id = Astro.Collectible.AQUARIUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_PISCES] = { Id = Astro.Collectible.PISCES_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_ARIES] = { Id = Astro.Collectible.ARIES_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_TAURUS] = { Id = Astro.Collectible.TAURUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_GEMINI] = { Id = Astro.Collectible.GEMINI_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_CANCER] = { Id = Astro.Collectible.CANCER_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_LEO] = { Id = Astro.Collectible.LEO_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_VIRGO] = { Id = Astro.Collectible.VIRGO_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_LIBRA] = { Id = Astro.Collectible.LIBRA_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_SCORPIO] = { Id = Astro.Collectible.SCORPIO_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_SAGITTARIUS] = { Id = Astro.Collectible.SAGITTARIUS_EX, Chance = 0 },
+    [CollectibleType.COLLECTIBLE_CAPRICORN] = { Id = Astro.Collectible.CAPRICORN_EX, Chance = 0 },
+    -- 위의 별자리는 자동으로 업그레이드 되지 않음
+    [CollectibleType.COLLECTIBLE_SACRED_HEART] = { Id = Astro.Collectible.ASTRO_SACRED_HEART, Chance = 0.2 },
+    [CollectibleType.COLLECTIBLE_GODHEAD] = { Id = Astro.Collectible.ASTRO_GODHEAD, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_STAR_OF_BETHLEHEM] = { Id = Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM, Chance = 0.6 },
+    [CollectibleType.COLLECTIBLE_WE_NEED_TO_GO_DEEPER] = { Id = Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO, Chance = 0.2 },
+
 }
 
+---@type UpgradeItem[]
 Astro.PLANET_UPGRADE_LIST = {
-    [CollectibleType.COLLECTIBLE_SOL] = Astro.Collectible.SOL_EX,
-    [CollectibleType.COLLECTIBLE_LUNA] = Astro.Collectible.LUNA_EX,
-    [CollectibleType.COLLECTIBLE_MERCURIUS] = Astro.Collectible.MERCURIUS_EX,
-    [CollectibleType.COLLECTIBLE_VENUS] = Astro.Collectible.VENUS_EX,
-    [CollectibleType.COLLECTIBLE_TERRA] = Astro.Collectible.TERRA_EX,
-    [CollectibleType.COLLECTIBLE_MARS] = Astro.Collectible.MARS_EX,
-    [CollectibleType.COLLECTIBLE_JUPITER] = Astro.Collectible.JUPITER_EX,
-    [CollectibleType.COLLECTIBLE_SATURNUS] = Astro.Collectible.SATURNUS_EX,
-    [CollectibleType.COLLECTIBLE_URANUS] = Astro.Collectible.URANUS_EX,
-    [CollectibleType.COLLECTIBLE_NEPTUNUS] = Astro.Collectible.NEPTUNUS_EX,
-    [CollectibleType.COLLECTIBLE_PLUTO] = Astro.Collectible.PLUTO_EX
+    [CollectibleType.COLLECTIBLE_SOL] = { Id = Astro.Collectible.SOL_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_LUNA] = { Id = Astro.Collectible.LUNA_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_MERCURIUS] = { Id = Astro.Collectible.MERCURIUS_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_VENUS] = { Id = Astro.Collectible.VENUS_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_TERRA] = { Id = Astro.Collectible.TERRA_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_MARS] = { Id = Astro.Collectible.MARS_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_JUPITER] = { Id = Astro.Collectible.JUPITER_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_SATURNUS] = { Id = Astro.Collectible.SATURNUS_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_URANUS] = { Id = Astro.Collectible.URANUS_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_NEPTUNUS] = { Id = Astro.Collectible.NEPTUNUS_EX, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_PLUTO] = { Id = Astro.Collectible.PLUTO_EX, Chance = 0.3 },
 }
 
+---@type UpgradeItem[]
 Astro.UPGRADE_LIST = {
-    [CollectibleType.COLLECTIBLE_SACRED_HEART] = Astro.Collectible.ASTRO_SACRED_HEART,
-    [CollectibleType.COLLECTIBLE_GODHEAD] = Astro.Collectible.ASTRO_GODHEAD,
+    [CollectibleType.COLLECTIBLE_DEATHS_LIST] = { Id = Astro.Collectible.BLACK_LIST, Chance = 0.2 },
+    [CollectibleType.COLLECTIBLE_MAW_OF_THE_VOID] = { Id = Astro.Collectible.MAW_OF_THE_VOID_EX, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_BLACK_CANDLE] = { Id = Astro.Collectible.PURPLE_CANDLE, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_ROCKET_IN_A_JAR] = { Id = Astro.Collectible.SUPER_ROCKET_IN_A_JAR, Chance = 0.6 },
+    [CollectibleType.COLLECTIBLE_HUMBLEING_BUNDLE] = { Id = Astro.Collectible.STEAM_BUNDLE, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_LIL_CHEST] = { Id = Astro.Collectible.BIG_CHEST, Chance = 0.3 }
 }
-
-for k, v in pairs(Astro.ZODIAC_UPGRADE_LIST) do Astro.UPGRADE_LIST[k] = v end
-for k, v in pairs(Astro.PLANET_UPGRADE_LIST) do Astro.UPGRADE_LIST[k] = v end
 
 ---
 
--- 현재 방에서 시도한 아이템 리스트
-local currentRoomData = {}
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_NEW_ROOM,
-    function(_)
-        currentRoomData = {}
-    end
-)
-
----@param table table
----@param key any
-local function HasKey(table, key)
-    for k, v in pairs(table) do
-        if k == key then
-            return true
-        end
-    end
-
-    return false
-end
-
-local function HasUpgradedCollectible()
+local function HasUpgradedPlanet()
     for _, collectible in pairs(Astro.PLANET_UPGRADE_LIST) do
-        if Astro:HasCollectible(collectible) then
+        if Astro:HasCollectible(collectible.Id) then
             return true
         end
     end
@@ -73,26 +75,74 @@ local function HasUpgradedCollectible()
     return false
 end
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if HasKey(Astro.PLANET_UPGRADE_LIST, selectedCollectible) and Astro:FindIndex(currentRoomData, selectedCollectible) == -1 and not HasUpgradedCollectible() then
-            local room = Game():GetRoom()
-            local roomType = room:GetType()
+local function TryUpgradePlanet(selectedCollectible, seed)
+    local upgradeData = Astro.PLANET_UPGRADE_LIST[selectedCollectible]
 
-            if roomType == RoomType.ROOM_SECRET or roomType == RoomType.ROOM_SUPERSECRET or roomType == RoomType.ROOM_ULTRASECRET then
-                local rng = RNG()
-                rng:SetSeed(seed, 35)
+    if upgradeData and upgradeData.Chance ~= 0 and not HasUpgradedPlanet() then
+        local room = Game():GetRoom()
+        local roomType = room:GetType()
 
-                if rng:RandomFloat() < UPGRADE_CHANCE then
-                    table.insert(currentRoomData, selectedCollectible)
-                    return Astro.PLANET_UPGRADE_LIST[selectedCollectible]
-                end
+        if roomType == RoomType.ROOM_SECRET or roomType == RoomType.ROOM_SUPERSECRET or roomType == RoomType.ROOM_ULTRASECRET then
+            local rng = RNG()
+            rng:SetSeed(seed, 35)
+
+            if rng:RandomFloat() < 1 then
+                return upgradeData.Id
             end
         end
+    end
+
+    return nil
+end
+
+local function TryUpgrade(selectedCollectible, seed)
+    local upgradeData = Astro.UPGRADE_LIST[selectedCollectible] or Astro.PLANETARIUM_UPGRADE_LIST[selectedCollectible]
+
+    if upgradeData and upgradeData.Chance ~= 0 then
+        local rng = RNG()
+        rng:SetSeed(seed, 35)
+
+        if rng:RandomFloat() < 1 then
+            return upgradeData.Id
+        end
+    end
+
+    return nil
+end
+
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        Astro:AddRerollCondition(
+            function(selectedCollectible, itemPoolType, decrease, seed)
+                local upgradeId = TryUpgradePlanet(selectedCollectible, seed)
+
+                if upgradeId then
+                    return {
+                        reroll = true,
+                        newItem = upgradeId,
+                        modifierName = "Planet Upgrade"
+                    }
+                end
+        
+                return false
+            end
+        )
+
+        Astro:AddRerollCondition(
+            function(selectedCollectible, itemPoolType, decrease, seed)
+                local upgradeId = TryUpgrade(selectedCollectible, seed)
+
+                if upgradeId then
+                    return {
+                        reroll = true,
+                        newItem = upgradeId,
+                        modifierName = "Item Upgrade"
+                    }
+                end
+
+                return false
+            end
+        )
     end
 )

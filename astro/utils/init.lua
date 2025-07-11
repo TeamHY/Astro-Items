@@ -71,6 +71,7 @@ end
 ---@generic T
 ---@param list T[]
 ---@param target T
+---@return boolean
 function Astro:Contain(list, target)
     for _, value in ipairs(list) do
         if value == target then

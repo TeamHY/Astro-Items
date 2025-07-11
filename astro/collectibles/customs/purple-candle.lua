@@ -1,9 +1,3 @@
----
-
-local UPGRADE_CHANCE = 0.5
-
----
-
 local isc = require("astro.lib.isaacscript-common")
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
@@ -40,22 +34,7 @@ Astro:AddCallback(
 )
 
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if selectedCollectible == CollectibleType.COLLECTIBLE_BLACK_CANDLE then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.PURPLE_CANDLE)
 
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                return Astro.Collectible.PURPLE_CANDLE
-            end
-        end
-    end
-)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

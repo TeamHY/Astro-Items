@@ -1,9 +1,3 @@
----
-
-local UPGRADE_CHANCE = 0.2
-
----
-
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To Go Deeper! (Astro)")
@@ -18,22 +12,7 @@ if EID then
     )
 end
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if selectedCollectible == CollectibleType.COLLECTIBLE_WE_NEED_TO_GO_DEEPER then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO)
 
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                return Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO
-            end
-        end
-    end
-)
 
 
 local function spawnMembershipShop(player, position)

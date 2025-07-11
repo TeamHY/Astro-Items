@@ -1,9 +1,3 @@
----
-
-local UPGRADE_CHANCE = 0.6
-
----
-
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM = Isaac.GetItemIdByName("Astro Star of Bethlehem")
@@ -18,22 +12,7 @@ if EID then
     )
 end
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if selectedCollectible == CollectibleType.COLLECTIBLE_STAR_OF_BETHLEHEM then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM)
 
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                return Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM
-            end
-        end
-    end
-)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

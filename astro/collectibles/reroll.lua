@@ -10,19 +10,22 @@ local ANIMATION_REPEAT_COUNT = 3
 
 ---@alias RerollConditionResult { reroll: boolean, newItem: CollectibleType, modifierName: string }
 
----@type (fun(selectedCollectible: CollectibleType): boolean | RerollConditionResult[])[]
+---@type (fun(selectedCollectible: CollectibleType, itemPoolType: ItemPoolType, decrease: boolean, seed: integer): boolean | RerollConditionResult[])[]
 Astro.RerollConditions = {}
 
 local rerollTable = {}
 
----@param condition fun(selectedCollectible: CollectibleType): boolean | RerollConditionResult
+---@param condition fun(selectedCollectible: CollectibleType, itemPoolType: ItemPoolType, decrease: boolean, seed: integer): boolean | RerollConditionResult
 function Astro:AddRerollCondition(condition)
     table.insert(Astro.RerollConditions, condition)
 end
 
 ---@param selectedCollectible CollectibleType
+---@param itemPoolType ItemPoolType
+---@param decrease boolean
+---@param seed integer
 ---@return RerollConditionResult
-local function CheckReroll(selectedCollectible)
+local function CheckReroll(selectedCollectible, itemPoolType, decrease, seed)
     local result = {
         newItem = nil,
         reroll = false,
@@ -30,7 +33,7 @@ local function CheckReroll(selectedCollectible)
     }
 
     for _, condition in ipairs(Astro.RerollConditions) do
-        local conditionResult = condition(selectedCollectible)
+        local conditionResult = condition(selectedCollectible, itemPoolType, decrease, seed)
 
         if type(conditionResult) == 'boolean' then
             result.reroll = conditionResult or result.reroll
@@ -59,7 +62,7 @@ Astro:AddCallback(
         local rng = RNG()
         rng:SetSeed(seed, 35)
 
-        local rerollConditionResult = CheckReroll(selectedCollectible)
+        local rerollConditionResult = CheckReroll(selectedCollectible, itemPoolType, decrease, seed)
 
         if rerollConditionResult.reroll and itemConfigitem:HasTags(ItemConfig.TAG_QUEST) == false and selectedCollectible ~= CollectibleType.COLLECTIBLE_BREAKFAST then
             local newCollectable = rerollConditionResult.newItem or itemPool:GetCollectible(itemPoolType, decrease, rng:Next())

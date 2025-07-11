@@ -1,9 +1,3 @@
----
-
-local UPGRADE_CHANCE = 0.6
-
----
-
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.SUPER_ROCKET_IN_A_JAR = Isaac.GetItemIdByName("Super Rocket in a Jar")
@@ -23,22 +17,7 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if selectedCollectible == CollectibleType.COLLECTIBLE_ROCKET_IN_A_JAR then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.SUPER_ROCKET_IN_A_JAR)
 
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                return Astro.Collectible.SUPER_ROCKET_IN_A_JAR
-            end
-        end
-    end
-)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_BOMB_INIT,

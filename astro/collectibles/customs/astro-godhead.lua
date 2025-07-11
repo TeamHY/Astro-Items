@@ -1,9 +1,3 @@
----
-
-local UPGRADE_CHANCE = 0.5
-
----
-
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.ASTRO_GODHEAD = Isaac.GetItemIdByName("Astro Godhead")
@@ -24,22 +18,7 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if selectedCollectible == CollectibleType.COLLECTIBLE_GODHEAD then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.ASTRO_GODHEAD)
 
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                return Astro.Collectible.ASTRO_GODHEAD
-            end
-        end
-    end
-)
 
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,

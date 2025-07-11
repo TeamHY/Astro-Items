@@ -1,7 +1,5 @@
 ---
 
-local UPGRADE_CHANCE = 0.2
-
 local MARK_DURATION = 60 * 30
 
 ---
@@ -39,22 +37,7 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GET_COLLECTIBLE,
-    ---@param selectedCollectible CollectibleType
-    ---@param itemPoolType ItemPoolType
-    ---@param decrease boolean
-    ---@param seed integer
-    function(_, selectedCollectible, itemPoolType, decrease, seed)
-        if selectedCollectible == CollectibleType.COLLECTIBLE_DEATHS_LIST then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BLACK_LIST)
 
-            if rng:RandomFloat() < UPGRADE_CHANCE then
-                return Astro.Collectible.BLACK_LIST
-            end
-        end
-    end
-)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

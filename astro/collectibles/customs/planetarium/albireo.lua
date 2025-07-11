@@ -37,8 +37,8 @@ Astro:AddCallback(
             local pickup = entity:ToPickup()
             local id = pickup.SubType
 
-            if Astro.UPGRADE_LIST[id] then
-                pickup:Morph(pickup.Type, pickup.Variant, Astro.UPGRADE_LIST[id], true)
+            if Astro.PLANETARIUM_UPGRADE_LIST[id] then
+                pickup:Morph(pickup.Type, pickup.Variant, Astro.PLANETARIUM_UPGRADE_LIST[id].Id, true)
                 Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, -1, pickup.Position, pickup.Velocity, playerWhoUsedItem)
             end
         end
