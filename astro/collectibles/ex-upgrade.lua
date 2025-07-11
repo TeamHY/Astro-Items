@@ -60,7 +60,8 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_BLACK_CANDLE] = { Id = Astro.Collectible.PURPLE_CANDLE, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_ROCKET_IN_A_JAR] = { Id = Astro.Collectible.SUPER_ROCKET_IN_A_JAR, Chance = 0.6 },
     [CollectibleType.COLLECTIBLE_HUMBLEING_BUNDLE] = { Id = Astro.Collectible.STEAM_BUNDLE, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_LIL_CHEST] = { Id = Astro.Collectible.BIG_CHEST, Chance = 0.3 }
+    [CollectibleType.COLLECTIBLE_LIL_CHEST] = { Id = Astro.Collectible.BIG_CHEST, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_CRICKETS_HEAD] = { Id = Astro.Collectible.MAXS_HEAD, Chance = 0.3 }
 }
 
 ---
