@@ -2,7 +2,7 @@
 
 local LASER_DURATION = 60
 
-local LASER_DAMAGE_MULTIPLY = 0.5
+local LASER_DAMAGE_MULTIPLY = 0.35
 
 -- 90도 마다 레이저가 생성됩니다. (360도 / 90도 = 4개)
 local LASER_ANGLE_STEP = 30
@@ -11,7 +11,7 @@ local SPAWN_CHANCE = 0.1 -- 기본 발동 확률
 
 local LUCK_MULTIPLY = 3 / 100 -- 행운 1당 +1%p
 
-local COOLDOWN_TIME = 300 -- 30 프레임 = 1초 (쿨타임)
+local COOLDOWN_TIME = 450 -- 30 프레임 = 1초 (쿨타임)
 
 ---
 
