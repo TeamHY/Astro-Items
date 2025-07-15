@@ -2,6 +2,7 @@ local isc = require("astro.lib.isaacscript-common")
 
 require "astro.utils.knife-util"
 require "astro.utils.noise"
+require "astro.utils.player-effect"
 
 Astro.TearModifier = require "astro.utils.tear-modifier"
 

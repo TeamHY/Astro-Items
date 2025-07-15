@@ -69,46 +69,26 @@ Astro:AddCallbackCustom(
 )
 
 if REPENTOGON then
-    Astro:AddPriorityCallback(
-        ModCallbacks.MC_PRE_PLAYER_UPDATE,
-        CallbackPriority.LATE,
-        function (_, player)
-            if player:HasCollectible(Astro.Collectible.AKASHIC_RECORDS) then
-                local data = Astro.SaveManager.GetRunSave(player)
-
-                if data["akashicRecordsEffects"] and #data["akashicRecordsEffects"] > 0 then
-                    local removeList = {}
-
-                    for i, item in ipairs(data["akashicRecordsEffects"]) do
-                        if not player:GetEffects():HasCollectibleEffect(item) then
-                            player:AddCollectibleEffect(item, true)
-                        end
-                        
-                        table.insert(removeList, i)
-                    end
-
-                    for _, index in ipairs(removeList) do
-                        data["akashicRecordsEffects"][index] = nil
-                    end
-                end
-            end
-        end
-    )
-
-    Astro:AddPriorityCallback(
-        ModCallbacks.MC_POST_PLAYER_TRIGGER_EFFECT_REMOVED,
-        CallbackPriority.LATE,
+    Astro:AddCallback(
+        ModCallbacks.MC_USE_ITEM,
+        ---@param collectibleID CollectibleType
+        ---@param rngObj RNG
         ---@param player EntityPlayer
-        ---@param itemConfigItem ItemConfigItem
-        function (_, player, itemConfigItem)
-            if player:HasCollectible(Astro.Collectible.AKASHIC_RECORDS) and Astro:Contain(BOOK_LIST, itemConfigItem.ID) then
-                local data = Astro.SaveManager.GetRunSave(player)
-
-                if not data["akashicRecordsEffects"] then
-                    data["akashicRecordsEffects"] = {}
-                end
-
-                table.insert(data["akashicRecordsEffects"], itemConfigItem.ID)
+        ---@param useFlags UseFlag
+        ---@param activeSlot ActiveSlot
+        ---@param varData integer
+        function(_, collectibleID, rngObj, player, useFlags, activeSlot, varData)
+            if player:HasCollectible(Astro.Collectible.AKASHIC_RECORDS) and Astro:Contain(BOOK_LIST, collectibleID) then
+                Astro:RegisterPersistentPlayerEffect(
+                    player,
+                    function()
+                        return player:HasCollectible(Astro.Collectible.AKASHIC_RECORDS)
+                    end,
+                    {
+                        type = "collectible",
+                        id = collectibleID
+                    }
+                )
             end
         end
     )
