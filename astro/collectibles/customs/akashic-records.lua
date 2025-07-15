@@ -1,6 +1,6 @@
 ---
 
--- 지금 모드 템은 ㅊ
+-- 지금 모드 템은 Effects로 구현되어 있지 않아서 적용할 수 없습니다.
 local BOOK_LIST = {
     -- CollectibleType.COLLECTIBLE_ANARCHIST_COOKBOOK,
     CollectibleType.COLLECTIBLE_BOOK_OF_REVELATIONS,
