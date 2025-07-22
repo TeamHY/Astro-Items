@@ -187,6 +187,7 @@
 	<passive gfx="Witchcraft.png" quality="3" devilprice="2" shopprice="15" name="Witchcraft" />
 	<active gfx="Glitched D6.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Glitched D6" />
 	<passive gfx="Mayushii's Pocket Watch.png" quality="3" devilprice="2" shopprice="15" name="Mayushii's Pocket Watch" />
+	<active gfx="Zoltraak.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Zoltraak" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" cache="tearflag" />
