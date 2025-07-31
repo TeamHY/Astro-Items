@@ -21,4 +21,7 @@
     <sound name="StaffOfAinzOoalGown">
         <sample weight="1" path="feedback/staff-of-ainz-ooal-gown.wav" />
     </sound>
+    <sound name="PillarTeleport">
+        <sample weight="1" path="pillar_teleport.wav" />
+    </sound>
 </sounds>

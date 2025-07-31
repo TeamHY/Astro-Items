@@ -57,8 +57,6 @@ local function SpawnFlowersOnRocksOnly()
         local rock = gridEntity and gridEntity:ToRock()
         
         if rock and rock.State ~= 2 then
-            print(rock:GetVariant())
-
             if rock:GetType() == GridEntityType.GRID_ROCK_SPIKED then
                 rock:Destroy(false)
                 goto continue
