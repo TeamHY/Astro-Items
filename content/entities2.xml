@@ -35,10 +35,10 @@
     <entity anm2path="stairway_to_hell.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="20" friction="1" id="1000" name="Stairway to Hell" numGridCollisionPoints="0" shadowSize="20" stageHP="0" variant="3103">
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
     </entity>
-    <entity anm2path="zoltraak_staff.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="20" friction="1" id="1000" name="Zoltraak Staff" numGridCollisionPoints="0" shadowSize="20" stageHP="0" variant="3104">
+    <entity anm2path="zoltraak_staff.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="20" friction="1" id="1000" name="Zoltraak Staff" numGridCollisionPoints="0" shadowSize="0" stageHP="0" variant="3104">
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
     </entity>
-    <entity anm2path="zoltraak_staff.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="20" friction="1" id="1000" name="Zoltraak Staff Magic" numGridCollisionPoints="0" shadowSize="20" stageHP="0" variant="3105">
+    <entity anm2path="zoltraak_staff_magic.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="0" collisionRadius="20" friction="1" id="1000" name="Zoltraak Staff Magic" numGridCollisionPoints="0" shadowSize="0" stageHP="0" variant="3105">
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
     </entity>
     <entity anm2path="flammes_flower.anm2" name="Flamme's Flower" id="1000" variant="3106" collisionMass="1" friction="1" >

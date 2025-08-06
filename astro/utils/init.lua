@@ -5,6 +5,7 @@ require "astro.utils.noise"
 require "astro.utils.player-effect"
 
 Astro.TearModifier = require "astro.utils.tear-modifier"
+Astro.SpringAnimation = require "astro.utils.spring-animation"
 
 --- From isaacscript-common
 ---

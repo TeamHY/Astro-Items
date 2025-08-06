@@ -24,4 +24,7 @@
     <sound name="PillarTeleport">
         <sample weight="1" path="pillar_teleport.wav" />
     </sound>
+    <sound name="ZoltraakShot">
+        <sample weight="1" path="feedback/zoltraak-shot.wav" />
+    </sound>
 </sounds>
