@@ -21,7 +21,10 @@ Astro:AddCallback(
 
                 for _ = 1, player:GetCollectibleNum(Astro.Collectible.DIVINE_LIGHT) do
                     if rng:RandomFloat() < 0.1 + player.Luck / 20 then
-                        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.CRACK_THE_SKY, 0, entity.Position, Vector.Zero, player)
+                        local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.CRACK_THE_SKY, 0, entity.Position, Vector.Zero, player)
+                        effect.Parent = player
+                        effect:ToEffect().CollisionDamage = player.Damage + 20
+
                     end
                 end
             end
