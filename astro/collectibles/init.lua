@@ -136,6 +136,7 @@ require "astro.collectibles.customs.book-of-life"
 require "astro.collectibles.customs.life-sustaining-treatment"
 require "astro.collectibles.customs.flammes-grimoire"
 require "astro.collectibles.customs.pillars-of-creation"
+require "astro.collectibles.customs.ibn-5100"
 
 --#region PLANETARIUM
 
