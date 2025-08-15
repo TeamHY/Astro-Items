@@ -1,10 +1,10 @@
 Astro.Trinket.LEFT_FOOT = Isaac.GetTrinketIdByName("The Left Foot")
 
 if EID then
-    EID:addTrinket(
+    Astro:AddEIDTrinket(
         Astro.Trinket.LEFT_FOOT,
         "{{RedChest}} 빨간상자 등장 시 30% 확률로 빨간상자가 하나 더 드랍됩니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 70 이상일 때 100% 확률  ({{LuckSmall}}행운 1당 +1%p)",
-        "왼발"
+        "왼발", "어둠의 보상을 거두어들이다"
     )
 
     Astro:AddGoldenTrinketDescription(Astro.Trinket.LEFT_FOOT, "", 30, 5 / 3)

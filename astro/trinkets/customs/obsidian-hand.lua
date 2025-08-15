@@ -3,7 +3,11 @@
 Astro.Trinket.OBSIDIAN_HAND = Isaac.GetTrinketIdByName("Obsidian Hand")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.OBSIDIAN_HAND, "스테이지 입장 시 {{Collectible479}}Smelter 1회를 발동합니다.", "옵시디언 손")
+    Astro:AddEIDTrinket(
+        Astro.Trinket.OBSIDIAN_HAND,
+        "스테이지 입장 시 {{Collectible479}}Smelter 1회를 발동합니다.",
+        "옵시디언 손", "..."
+    )
 
 -- Astro:AddGoldenTrinketDescription(Astro.Trinket.OBSIDIAN_HAND, "", 10)
 end

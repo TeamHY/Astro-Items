@@ -7,7 +7,11 @@ local COIN_CONSUMPTION = 5
 Astro.Trinket.LAVA_HAND = Isaac.GetTrinketIdByName("Lava Hand")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.LAVA_HAND, "{{Collectible479}} 장신구 소지 시 5원을 소모하고 흡수합니다.", "용암 손")
+    Astro:AddEIDTrinket(
+        Astro.Trinket.LAVA_HAND,
+        "{{Collectible479}} 장신구 소지 시 5원을 소모하고 흡수합니다.",
+        "용암 손", "..."
+    )
 
 -- Astro:AddGoldenTrinketDescription(Astro.Trinket.LAVA_HAND, "", 10)
 end

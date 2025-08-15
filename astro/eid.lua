@@ -1,6 +1,7 @@
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.EID = {}
+Astro.EID.Trinket = {}
 
 Astro.EID.QualityIcon = Sprite()
 Astro.EID.QualityIcon:Load("gfx/ui/eid/quality.anm2")
@@ -24,6 +25,21 @@ function Astro:AddEIDCollectible(id, name, description, eidDescription)
     }
 end
 
+---@param id TrinketType
+---@param name string
+---@param description string
+---@param eidDescription string
+function Astro:AddEIDTrinket(id, eidDescription, name, description)
+    if EID then
+        EID:addTrinket(id, eidDescription, name)
+    end
+
+    Astro.EID.Trinket[id] = {
+        name = name,
+        description = description
+    }
+end
+
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.PRE_ITEM_PICKUP,
     ---@param player EntityPlayer
@@ -32,9 +48,13 @@ Astro:AddCallbackCustom(
         if Options.Language == "kr" or REPKOR then
             if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
                 local item = Astro.EID[pickingUpItem.subType]
-
                 if item then
                     Game():GetHUD():ShowItemText(item.name or '', item.description or '')
+                end
+            else
+                local trinket = Astro.EID.Trinket[pickingUpItem.subType]
+                if trinket then
+                    Game():GetHUD():ShowItemText(trinket.name or '', trinket.description or '')
                 end
             end
         end

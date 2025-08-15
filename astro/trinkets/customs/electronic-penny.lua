@@ -3,7 +3,11 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Trinket.ELECTRONIC_PENNY = Isaac.GetTrinketIdByName("Electronic Penny")
 
 if EID then
-    EID:addTrinket(Astro.Trinket.ELECTRONIC_PENNY, "동전 획득 시 5% 확률로 {{Crafting18}}리틀 배터리를 소환합니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 95 이상일 때 100% 확률 (행운 1당 +1%p)", "일레트로닉 동전")
+    Astro:AddEIDTrinket(
+        Astro.Trinket.ELECTRONIC_PENNY,
+        "동전 획득 시 5% 확률로 {{Crafting18}}리틀 배터리를 소환합니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 95 이상일 때 100% 확률 (행운 1당 +1%p)",
+        "일레트로닉 동전", "에너지 부자"
+    )
 
     Astro:AddGoldenTrinketDescription(Astro.Trinket.ELECTRONIC_PENNY, "", 5)
 end
