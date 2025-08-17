@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.DADS_BOX,
         "아빠의 상자",
-        "...",
+        "뭐가 들었지...",
         "사용 시 황금 장신구 1개를 소환합니다."
     )
 end
