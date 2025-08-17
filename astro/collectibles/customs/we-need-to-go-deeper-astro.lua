@@ -5,10 +5,10 @@ Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO,
-        "더 깊이 가야 해 (아스트로)",
+        "더 깊은 한울로!",
         "...",
-        "사용 시 다음 스테이지로 갈 수 있는 다락문을 소환합니다." ..
-        "#치장성 타일 위에서 사용 시 멤버십 상점이 소환됩니다."
+        "사용 시 다음 스테이지로 가는 다락문을 생성합니다." ..
+        "#{{Collectible602}} 치장성 타일(풀, 돌 조각 등) 위에 사용 시 특수한 상점으로 가는 다락문을 생성합니다."
     )
 end
 
