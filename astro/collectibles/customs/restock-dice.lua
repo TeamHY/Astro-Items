@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.RESTOCK_DICE,
         "재활용 주사위",
-        "...",
+        "운명을 다시 써라",
         "사용 시 빈 받침대에 그 방의 배열의 아이템을 소환합니다."
     )
 end
