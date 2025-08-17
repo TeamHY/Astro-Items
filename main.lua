@@ -43,8 +43,9 @@ local function GetCurrentModPath()
 
 	return modPath
 end
+Astro.ModPath = GetCurrentModPath()
 
-local modPath = GetCurrentModPath()
+local modPath = Astro.ModPath
 local font = Font()
 font:Load(modPath .. "resources/font/eid_korean_soyanon.fnt")
 
@@ -82,3 +83,6 @@ Astro:AddCallback(
 		end
 	end
 )
+
+-- 서순 문제로 여기에-사왈이
+require "astro.translate"
