@@ -4,8 +4,8 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.IBN_5100,
         "IBN 5100",
-        "{{TreasureRoom}}보물방 입장 시 IBN 5100 머신을 1개 소환합니다.#{{Coin}}코인 10개를 소모하여 {{Collectible422}}Glowing Hourglass를 발동합니다.",
-        "IBN 5100"
+        "IBN 5100",
+        "{{TreasureRoom}}보물방 입장 시 IBN 5100 머신을 1개 소환합니다.#{{ArrowRightGray}} {{Coin}}코인 10개를 소모하여 {{Collectible422}}Glowing Hourglass를 발동합니다."
     )
 end
 
