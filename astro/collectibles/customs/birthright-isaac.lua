@@ -1,7 +1,7 @@
 Astro.Collectible.BIRTHRIGHT_ISAAC = Isaac.GetItemIdByName("Birthright - Isaac")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.BIRTHRIGHT_ISAAC, "아이작의 생득권", "...", "방 입장 시 {{Card81}}Soul of Isaac을 발동합니다.#중접이 가능합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.BIRTHRIGHT_ISAAC, "아이작의 생득권", "추가 선택지", "방 입장 시 {{Card81}}Soul of Isaac을 발동합니다.#중접이 가능합니다.")
 end
 
 Astro:AddCallback(
