@@ -6,7 +6,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS,
         "놀라운 긍정의 혼돈의 주문서",
-        "정상화",
+        "스탯 주작은 뭐야",
         "↑ {{Heart}}최대 체력, {{BlackHeart}}블랙하트, {{SoulHeart}}소울하트 중 하나 +1" ..
         "#↑ {{SpeedSmall}}이동속도 배율 x1.0~1.35" ..
         "#↑ {{TearsSmall}}공격 딜레이 ÷1.0~1.35" ..
