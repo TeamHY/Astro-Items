@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.MIRROR_DICE,
         "거울 주사위",
-        "...",
+        "운명을 비춰라",
         "사용 시 그 방의 아이템을;"..
         "#{{ArrowGrayRight}} 현재 소지중인 아이템으로 변경합니다."..
         "#{{ArrowGrayRight}} {{Quality0}}/{{Quality1}}등급 아이템은 등장하지 않습니다."..
