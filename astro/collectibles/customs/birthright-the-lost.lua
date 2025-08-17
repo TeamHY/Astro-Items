@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.BIRTHRIGHT_THE_LOST = Isaac.GetItemIdByName("Birthright - The Lost")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.BIRTHRIGHT_THE_LOST, "더 로스트의 생득권", "...", "획득 시 The Lost에게 불필요한 아이템이 배열에서 제거됩니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.BIRTHRIGHT_THE_LOST, "더 로스트의 생득권", "더 나은 운명", "획득 시 The Lost에게 불필요한 아이템이 배열에서 제거됩니다.")
 end
 
 Astro:AddCallbackCustom(
