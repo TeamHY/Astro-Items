@@ -8,11 +8,14 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.ASTRO_GODHEAD,
-                "아스트로 갓헤드",
+                "우주신",
                 "...",
-                "{{Collectible331}}Godhead 효과가 적용됩니다." ..
-                "#오라의 공격력이 캐릭터 공격력의 30%로 적용됩니다." ..
-                "#{{ArrowGrayRight}} 중첩 시 오라의 공격력이 합 연산으로 증가합니다."
+                "↑ {{DamageSmall}}공격력 +1" ..
+                "#↓ {{TearsSmall}}연사 -0.3" ..
+                "#↓ {{ShotspeedSmall}}탄속 -0.3" ..
+                "#공격이 적에게 유도됩니다.." ..
+                "#{{Collectible331}}눈물에 후광이 생기며 후광에 닿은 적은 프레임당 캐릭터의 공격력 30%의 피해를 받습니다." ..
+                "#{{ArrowGrayRight}} 중첩 시 후광의 공격력이 합 연산으로 증가합니다."
             )
         end
     end
