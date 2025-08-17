@@ -3,8 +3,8 @@ Astro.Collectible.BOOK_OF_LIFE = Isaac.GetItemIdByName("Book of Life")
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BOOK_OF_LIFE,
-        "생자의 서 -금단의 주술-",
-        "...",
+        "생자의 서",
+        "금단의 주술",
         "#!!! 일회용 아이템" ..
         "#사용 시 이번 게임에서 등장했던 아이템 중 보유하지 않은 아이템 하나를 소환합니다." ..
         "#만약 Astrobirth 모드가 활성화되어 있다면 위 효과 대신 이번 게임 금지 아이템 중 하나를 소환합니다." ..
