@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SUPER_ROCKET_IN_A_JAR,
                 "슈퍼 로켓 든 병",
-                "...",
+                "엄청난 로켓 발사! + 폭탄 5개",
                 "#{{Collectible583}} Rocket in a Jar 효과가 적용됩니다." ..
                 "#로켓이 기가 로켓으로 변경됩니다."
             )
