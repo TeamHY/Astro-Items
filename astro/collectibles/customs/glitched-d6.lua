@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.GLITCHED_D6,
         "글리치드 6각 주사위",
         "...",
-        "사용 시 {{Card41}}Soul of Isaac를 4번 발동합니다."
+        "사용 시 {{Card81}}Soul of Isaac를 4번 발동합니다."
     )
 end
 
