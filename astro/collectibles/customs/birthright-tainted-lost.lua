@@ -9,8 +9,8 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
                 "더럽혀진 로스트의 생득권",
-                "...",
-                "offensive 태그 아이템 등장 시 다른 아이템으로 바꿉니다." ..
+                "더 나은 운명",
+                "{{Player31}} offensive 태그 아이템 등장 시 다른 아이템으로 바꿉니다." ..
                 "#리롤된 아이템은 콘솔에서 확인할 수 있습니다."
             )
         end
