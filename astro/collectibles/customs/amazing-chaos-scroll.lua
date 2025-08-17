@@ -6,14 +6,14 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.AMAZING_CHAOS_SCROLL,
         "놀라운 혼돈의 주문서",
-        "바로 능력치 정상화",
+        "플마단",
         "↑ {{Heart}}최대 체력, {{BlackHeart}}블랙하트, {{SoulHeart}}소울하트 중 하나 +1" ..
-        "#↑ {{SpeedSmall}}이동속도 배율 x0.85~1.35" ..
-        "#↑ {{TearsSmall}}공격 딜레이 ÷0.85~1.35" ..
-        "#↑ {{DamageSmall}}공격력 배율 x0.85~1.35" ..
-        "#↑ {{RangeSmall}}사거리 배율 x0.85~1.35" ..
-        "#↑ {{ShotspeedSmall}}탄속 배율 x0.85~1.35" ..
-        "#↑ {{LuckSmall}}행운 배율 x0.85~1.35" ..
+        "#{{ArrowUpDown}} {{SpeedSmall}}이동속도 배율 x0.85~1.35" ..
+        "#{{ArrowUpDown}} {{TearsSmall}}공격 딜레이 ÷0.85~1.35" ..
+        "#{{ArrowUpDown}} {{DamageSmall}}공격력 배율 x0.85~1.35" ..
+        "#{{ArrowUpDown}} {{RangeSmall}}사거리 배율 x0.85~1.35" ..
+        "#{{ArrowUpDown}} {{ShotspeedSmall}}탄속 배율 x0.85~1.35" ..
+        "#{{ArrowUpDown}} {{LuckSmall}}행운 배율 x0.85~1.35" ..
         "#!!! 해당 아이템의 체력은 즉시 들어오지 않으며, 획득 후 체력이 없을 경우 사망합니다."
     )
 end
