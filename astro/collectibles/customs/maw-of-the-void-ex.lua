@@ -19,7 +19,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.MAW_OF_THE_VOID_EX,
-                "초 공허의 구멍",
+                "초 공허의 구렁텅이",
                 "향상된 어둠의 입구",
                 "↑ {{DamageSmall}}공격력 +1" ..
                 "#{{Collectible399}} Maw Of The Void 효과가 적용됩니다." ..
