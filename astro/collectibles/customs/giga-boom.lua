@@ -10,7 +10,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.GIGA_BOOM,
         "기가 붐",
-        "...",
+        "엄청난 폭탄 10개",
         "최초 획득 시 기가 폭탄 10개를 소환합니다."
     )
 end
