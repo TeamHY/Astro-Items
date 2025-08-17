@@ -28,7 +28,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.CLEANER,
                 "클리너",
-                "...",
+                "말끔하게",
                 "!!! 효과가 발동한 뒤 사라집니다.#!!! 획득 시 아래 아이템이 제거됩니다.#" .. Astro.CleanerEIDString
             )
         end
