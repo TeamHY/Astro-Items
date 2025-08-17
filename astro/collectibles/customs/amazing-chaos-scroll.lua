@@ -6,7 +6,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.AMAZING_CHAOS_SCROLL,
         "놀라운 혼돈의 주문서",
-        "...",
+        "바로 능력치 정상화",
         "↑ {{Heart}}최대 체력, {{BlackHeart}}블랙하트, {{SoulHeart}}소울하트 중 하나 +1" ..
         "#↑ {{SpeedSmall}}이동속도 배율 x0.85~1.35" ..
         "#↑ {{TearsSmall}}공격 딜레이 ÷0.85~1.35" ..
