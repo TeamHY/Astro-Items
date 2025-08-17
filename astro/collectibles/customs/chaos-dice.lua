@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.CHAOS_DICE,
         "혼돈의 주사위",
-        "...",
+        "!!!",
         "사용 시 그 방의 아이템과 픽업을 다른 아이템으로 바꿉니다."..
         "#{{ArrowGrayRight}} 바뀐 아이템의 배열은 랜덤으로 결정됩니다."
     )
