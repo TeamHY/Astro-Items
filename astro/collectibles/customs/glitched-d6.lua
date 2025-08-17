@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.GLITCHED_D6,
         "글리치드 6각 주사위",
-        "...",
+        "따따따따따따따따따따",
         "사용 시 {{Card41}}Soul of Isaac를 4번 발동합니다."
     )
 end
