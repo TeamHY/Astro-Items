@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.GRADUATION_CERTIFICATE,
         "졸업증명서",
-        "...",
+        "무얼 얻었지?",
         "사용 시 소지중인 아이템이 있는 방으로 이동합니다."
     )
 end
