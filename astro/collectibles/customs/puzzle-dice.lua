@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.PUZZLE_DICE,
         "퍼즐 주사위",
-        "...",
+        "운명을 맞춰라",
         "사용 시 그 방의 아이템을 아무 세트에 포함된 아이템으로 바꿉니다."
     )
 end
