@@ -242,7 +242,7 @@ local function RenderStat(mult, pos, alpha)
     StatsFont:DrawString(
         value,
         pos.X,
-        pos.Y,
+        pos.Y + 3,    -- 리펜플 오프셋
         KColor(255 / 255, 153 / 255, 255 / 255, alpha),
         0,
         true
