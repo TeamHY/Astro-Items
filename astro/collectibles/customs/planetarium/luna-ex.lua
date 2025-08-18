@@ -7,7 +7,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.LUNA_EX,
         "초 달",
-        "...",
+        "찬란한 축복을 그대에게",
         "{{Collectible589}}Luna, {{Collectible76}}X-Ray Vision 효과가 적용됩니다." ..
         "#맵에 {{SecretRoom}}비밀방, {{SuperSecretRoom}}일급비밀방, {{UltraSecretRoom}}특급비밀방 위치가 표시됩니다."..
         "#!!! 이번 게임에서 {{Collectible589}}Luna가 등장하지 않습니다."
