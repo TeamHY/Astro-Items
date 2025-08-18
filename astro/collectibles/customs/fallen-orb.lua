@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(Astro.Collectible.FALLEN_ORB, "타락한 오브", "불행한 운명", "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 다른 아이템으로 바꿉니다.#바뀐 아이템은 콘솔에서 확인할 수 있습니다.")
+            Astro:AddEIDCollectible(Astro.Collectible.FALLEN_ORB, "타락한 오브", "불행해질 운명이니라", "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 다른 아이템으로 바꿉니다.#바뀐 아이템은 콘솔에서 확인할 수 있습니다.")
         end
 
         Astro:AddRerollCondition(
