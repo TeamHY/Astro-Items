@@ -10,7 +10,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.PURPLE_CANDLE,
                 "보라 양초",
-                "밝혀라",
+                "저주 면역 + 악함 증가 + 개안",
                 "{{Collectible260}} Black Candle 효과가 적용됩니다." ..
                 "#{{CurseBlindSmall}} 가려진 아이템을 알 수 있게 됩니다." ..
                 "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다." ..
