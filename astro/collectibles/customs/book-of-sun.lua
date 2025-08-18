@@ -20,7 +20,7 @@ Astro:AddCallback(
                 Astro.Collectible.BOOK_OF_SUN,
                 "태양의 서",
                 "충전식 화염 공격",
-                "사용 시 모든 적을 불 태우고 게임당 한번 {{Card20}}XIX - The Sun을 소환합니다." ..
+                "사용 시 그 방의 모든 적을 불 태우고 게임당 한번 {{Card20}}XIX - The Sun을 소환합니다." ..
                 "#소지중일 때 10% 확률로 적이 죽은 자리에 빨간 불을 소환합니다." ..
                 "#다음 게임에서 Burning Basement 스테이지가 등장하지 않습니다."
                 "#!!! {{LuckSmall}}행운 수치 비례: 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
@@ -30,7 +30,7 @@ Astro:AddCallback(
                 Astro.Collectible.BOOK_OF_ECLIPSE,
                 "개기일식의 서",
                 "불타오르네",
-                "사용 시 모든 적을 불 태우고 게임당 한번 {{Card75}}XIX - The Sun?을 소환합니다." ..
+                "사용 시 그 방의 모든 적을 불 태우고 게임당 한번 {{Card75}}XIX - The Sun?을 소환합니다." ..
                 "#소지중일 때 10% 확률로 적이 죽은 자리에 파란 불을 소환합니다." ..
                 "#다음 게임에서 Burning Basement 스테이지가 등장하지 않습니다."
                 "#!!! {{LuckSmall}}행운 수치 비례: 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
