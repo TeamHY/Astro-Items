@@ -181,3 +181,34 @@ Astro:AddCallback(
         )
     end
 )
+
+local isRunDogmaDeathEvent = false
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function()
+        isRunDogmaDeathEvent = false
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NPC_RENDER,
+    ---@param npc EntityNPC
+    ---@param offset Vector
+    function(_, npc, offset)
+        if not isRunDogmaDeathEvent and npc.Variant == 2 then
+            local sprite = npc:GetSprite()
+            
+            if sprite:IsPlaying("Death") then
+                for i = 1, Game():GetNumPlayers() do
+                    local player = Isaac.GetPlayer(i - 1)
+                
+                    player:UseCard(Card.RUNE_ALGIZ, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
+                end
+
+                isRunDogmaDeathEvent = true
+            end
+        end
+    end,
+    EntityType.ENTITY_DOGMA
+)
