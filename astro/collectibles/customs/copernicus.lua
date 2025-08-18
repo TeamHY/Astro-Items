@@ -10,7 +10,7 @@ Astro:AddCallback(
 				"지동설",
 				"↑ {{TearsSmall}}연사 +0.77" ..
 				"#공격이 적에게 명중 시 적 주변에 유령 탄환이 돌아갑니다." ..
-				"#{ArrowRightGray}} 각 적당 일정 횟수 이상 명중 시 유령 탄환이 적을 공격합니다."
+				"#{{ArrowRightGray}} 각 적당 일정 횟수 이상 명중 시 유령 탄환이 적을 공격합니다."
 			)
 		end
     end
