@@ -13,7 +13,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.VENUS_EX,
         "초 금성",
-        "...",
+        "미인이시네요",
         "{{Collectible591}} Venus 효과가 적용됩니다." ..
         "#{{Charm}} 매혹 상태 적에게 50% 추가 피해를 입힙니다." ..
         "#중첩 시 추가 피해가 합 연산으로 증가합니다." ..
