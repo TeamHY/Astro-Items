@@ -13,7 +13,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.SAGITTARIUS_EX,
         "초 사수자리",
-        "...",
+        "관통 공격 + 추가 피해",
         "{{Collectible48}} 공격이 적을 관통합니다."..
         "#보스를 제외한 적에게 20% 추가 피해를 입힙니다."..
         "#{{ArrowGrayRight}} {{LuckSmall}}행운 1당 1% 추가 피해를 입힙니다."..
