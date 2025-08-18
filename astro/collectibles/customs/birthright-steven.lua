@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_STEVEN,
                 "스티븐의 생득권",
-                "그는 살아있다",
+                "그는 살아 있다",
                 "{{BossRoom}} 보스방에서 {{Collectible100}}Little Steven만 등장합니다." ..
                 "#2개 이상 중첩 시 {{Collectible100}}Little Steven이 추가로 소환됩니다."
             )
