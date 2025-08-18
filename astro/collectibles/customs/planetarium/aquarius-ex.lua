@@ -10,7 +10,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.AQUARIUS_EX,
         "초 물병자리",
-        "...",
+        "눈물 분수",
         "공격 당한 몬스터에서 눈물이 뿜어져 나옵니다." ..
         "#페널티 피격 시 10초 동안 효과가 중지됩니다."
     )
