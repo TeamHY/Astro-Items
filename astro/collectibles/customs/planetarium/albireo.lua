@@ -15,10 +15,10 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.ALBIREO,
                 "알비레오",
-                "...",
+                "하나가 될 수 없는 쌍성",
                 "!!! 일회용 (스텔라 제외)" ..
                 "#사용 시 방에 있는 별자리/행성 아이템이 강화됩니다." ..
-                "#{{Collectible" .. Astro.Collectible.CYGNUS .. "}}Cygnus 소지 시;#{{ArrowGrayRight}} 모든 능력치 x1.1"
+                "#{{Collectible" .. Astro.Collectible.CYGNUS .. "}} Cygnus 소지 시 모든 능력치 x1.1"
             )
         end
     end
