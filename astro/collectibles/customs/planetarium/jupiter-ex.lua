@@ -13,7 +13,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.JUPITER_EX,
         "초 목성",
-        "...",
+        "가스 초거성이다!",
         "{{Collectible594}}Jupiter, {{Collectible180}}Black Bean 효과가 적용됩니다." ..
         "#5초마다 {{Collectible486}}Dull Razor를 1번 발동합니다." ..
         "#{{ArrowGrayRight}} 중첩 시 횟수가 늘어납니다." ..
