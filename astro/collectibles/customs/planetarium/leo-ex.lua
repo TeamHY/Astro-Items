@@ -12,7 +12,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.LEO_EX = Isaac.GetItemIdByName("Leo EX")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.LEO_EX, "초 사자자리", "...", "{{Trinket188}} 방 입장 시 모든 몬스터가 50% 확률로 5초간 {{Freezing}}빙결 상태가 됩니다.#다음 게임에서 {{Collectible302}}Leo를 들고 시작합니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.LEO_EX, "초 사자자리", "동작 그만", "{{Trinket188}} 방 입장 시 모든 몬스터가 50% 확률로 5초간 {{Freezing}}빙결 상태가 됩니다.#다음 게임에서 {{Collectible302}}Leo를 들고 시작합니다.")
 end
 
 ---@type Entity[]
