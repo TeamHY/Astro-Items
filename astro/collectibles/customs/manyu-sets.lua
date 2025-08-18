@@ -76,8 +76,10 @@ if EID then
         Astro.Collectible.SAMSARA,
         "삼사라",
         "...",
-        "적 처치 시 {{Collectible522}}Telekinesis가 발동합니다. (방마다 최대 1번)" ..
-        "#중첩 시 여러 번 발동할 수 있습니다." ..
+        "{{Collectible522}} 적 처치 시 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
+        "#{{ArrowGrayRight}} 3초가 끝나면 붙잡은 탄환을 다시 되돌려 발사합니다." ..
+        "#{{Blank}} {{ColorGray}}(방마다 최대 1번){{CR}}" ..
+        "#{{ArrowGrayRight}} 중첩 시 여러 번 발동할 수 있습니다." ..
         "#Astrobirth의 NextBan 시스템이 무효화됩니다."
     )
 end
