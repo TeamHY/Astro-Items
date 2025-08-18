@@ -13,7 +13,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.SATURNUS_EX,
         "초 토성",
-        "...",
+        "눈물 방어막",
         "{{Collectible595}} Saturnus 효과가 적용됩니다." ..
         "#10초마다 {{Collectible522}}Telekinesis를 1회 발동합니다." ..
         "#{{ArrowGrayRight}} 중첩 시 횟수가 늘어납니다." ..
