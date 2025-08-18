@@ -6,7 +6,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.GEMINI_EX,
         "초 쌍둥이자리",
-        "...",
+        "넌 어떤 걸 고를래?",
         "현재 소지중인 아이템 중 무작위로 5개를 소환합니다.#하나를 선택하면 나머지는 사라집니다."
     )
 end
