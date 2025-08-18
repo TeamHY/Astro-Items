@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.ASTRO_GODHEAD,
                 "우주신",
-                "...",
+                "진정한 신의 눈물",
                 "↑ {{DamageSmall}}공격력 +1" ..
                 "#↓ {{TearsSmall}}연사 -0.3" ..
                 "#↓ {{ShotspeedSmall}}탄속 -0.3" ..
