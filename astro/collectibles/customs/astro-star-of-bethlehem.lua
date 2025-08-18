@@ -8,7 +8,7 @@ if EID then
         "베들레헴의 한별",
         "빛을 경배하라",
         "클리어하지 않은 방에 입장 시 {{Collectible651}}Star of Bethlehem를 획득합니다. 방 클리어 시 제거됩니다." ..
-        "#{{ArrowGrayRight}}중첩 시 {{Collectible242}}Infamy 효과가 적용되고 방 입장 시 {{Card2}}I - The Magician이 발동됩니다."
+        "#{{ArrowGrayRight}} 중첩 시 {{Collectible242}}Infamy 효과가 적용되고 방 입장 시 {{Card2}}I - The Magician이 발동됩니다."
     )
 end
 
