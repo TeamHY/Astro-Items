@@ -19,9 +19,7 @@ if EID then
         Astro.Collectible.COIN_DETONATOR,
         "동전 기폭제",
         "원격으로 동전 폭파",
-        "#소지중일 때 아래 효과 발동;" ..
-        "#{{ArrowGrayRight}} {{Collectible375}} Host Hat 효과가 적용됩니다." ..
-        "#{{ArrowGrayRight}} 공격이 적에게 명중 시 10초 후 사라지는 끈적이 니켈을 소환합니다." ..
+        "#소지중일 때 공격이 적에게 명중 시 10초 후 사라지는 끈적이 니켈을 소환합니다." ..
         "#사용 시 소환한 끈적이 니켈이 기가 폭탄으로 변해 터집니다."
     )
 end
