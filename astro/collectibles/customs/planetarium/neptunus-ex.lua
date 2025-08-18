@@ -13,7 +13,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.NEPTUNUS_EX,
         "초 해왕성",
-        "...",
+        "개방",
         "{{Collectible597}} Neptunus 효과가 적용됩니다." ..
         "#방 클리어 시 {{TearsSmall}}연사(고정) +0.05" ..
         "#{{ArrowGrayRight}} 스테이지 입장 시 초기화됩니다." ..
