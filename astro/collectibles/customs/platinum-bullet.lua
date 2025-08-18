@@ -1,7 +1,13 @@
 Astro.Collectible.PLATINUM_BULLET = Isaac.GetItemIdByName("Platinum Bullet")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.PLATINUM_BULLET, "백금 탄환", "...", "방 클리어 시 {{DamageSmall}}공격력(고정) 및 {{TearsSmall}}연사(고정) +0.02#중첩 시 다음 증가량부터 적용됩니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.PLATINUM_BULLET,
+        "백금 탄환",
+        "백만 번 이상 사용됨",
+        "방 클리어 시 {{DamageSmall}}공격력 및 {{TearsSmall}}연사 +0.02(고정)" ..
+        "#{{ArrowRightGray}} 중첩 시 다음 증가량부터 적용됩니다."
+    )
 end
 
 Astro:AddCallback(
