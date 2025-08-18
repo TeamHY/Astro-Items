@@ -17,7 +17,7 @@ Astro:AddCallback(
                 "창조의 기둥",
                 "...",
                 "스테이지 입장 시 {{Planetarium}}천체방으로 이동 가능한 기둥이 생성됩니다." ..
-                "#{{Coin}} " .. COIN_COST .. "개의 코인이 필요합니다." ..
+                "#{{ArrowGrayRight}} 입장엔 {{Coin}}" .. COIN_COST .. "개의 동전이 필요합니다." ..
                 "#방을 이동하면 사라집니다. 중첩 시 사라지지 않습니다."
             )
         end
