@@ -6,7 +6,7 @@ if EID then
         Astro.Collectible.BOOK_OF_MOON,
         "달의 서",
         "충전식 달빛",
-        "사용 시 현재 방이 어두워지고 중앙에 달빛이 생깁니다. 스테이지당 한번 {{Card19}}XVIII - The Moon을 소환합니다." ..
+        "사용 시 그 방이 어두워지고 중앙에 달빛이 생기며, 스테이지당 한번 {{Card19}}XVIII - The Moon을 소환합니다." ..
         "#{{SecretRoom}}비밀방, {{SuperSecretRoom}}일급 비밀방, {{UltraSecretRoom}}특급 비밀방 최초 입장 시 중앙에 달빛이 생깁니다."
     )
 
@@ -14,7 +14,7 @@ if EID then
         Astro.Collectible.BOOK_OF_LUNAR_ECLIPSE,
         "개기월식의 서",
         "붉은 달",
-        "사용 시 현재 방이 어두워지고 중앙에 달빛이 생깁니다. 게임당 한번 {{Card19}}XVIII - The Moon?을 소환합니다." ..
+        "사용 시 그 방이 어두워지고 중앙에 달빛이 생기며, 게임당 한번 {{Card19}}XVIII - The Moon?을 소환합니다." ..
         "#{{TreasureRoom}}보물방, {{Shop}}상점, {{BossRoom}}보스스방 최초 입장 시 중앙에 달빛이 생깁니다."
     )
 end
