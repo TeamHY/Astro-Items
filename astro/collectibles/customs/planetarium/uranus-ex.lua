@@ -7,7 +7,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.URANUS_EX,
         "초 천왕성",
-        "...",
+        "꽁꽁꽁",
         "{{Collectible596}}Uranus, {{Collectible530}}Death's List 효과가 적용됩니다." ..
         "#!!! 이번 게임에서 {{Collectible596}}Uranus가 등장하지 않습니다."
     )
