@@ -1,7 +1,7 @@
 Astro.Collectible.SCORPIO_EX = Isaac.GetItemIdByName("Scorpio EX")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.SCORPIO_EX, "초 전갈자리", "...", "공격 시 30%의 확률로 {{Poison}}독성 파리를 소환합니다.#중첩 시 중첩된 수만큼 소환을 시도하고 쿨타임이 줄어듭니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 14 이상일 때 100% 확률 ({{LuckSmall}}행운 1당 +5%p)")
+    Astro:AddEIDCollectible(Astro.Collectible.SCORPIO_EX, "초 전갈자리", "맹독 파리", "공격 시 30%의 확률로 {{Poison}}독성 파리를 소환합니다.#중첩 시 중첩된 수만큼 소환을 시도하고 쿨타임이 줄어듭니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 14 이상일 때 100% 확률 ({{LuckSmall}}행운 1당 +5%p)")
 end
 
 local cooldownTime = 5 -- 5 프레임 당 하나
