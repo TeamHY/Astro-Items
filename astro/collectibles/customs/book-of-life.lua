@@ -1,13 +1,19 @@
 Astro.Collectible.BOOK_OF_LIFE = Isaac.GetItemIdByName("Book of Life")
 
 if EID then
+    local astrobirthtext
+    if Astro.Fight then
+        astrobirthtext = "이번 게임의 금지 아이템 중 하나를 소환합니다."
+    else
+        astrobirthtext = "사용 시 이번 게임에서 등장했던 아이템 중 소지 중이지 않은 아이템 하나를 소환합니다."
+    end
+
     Astro:AddEIDCollectible(
         Astro.Collectible.BOOK_OF_LIFE,
         "생자의 서",
         "금단의 주술",
         "#!!! 일회용 아이템" ..
-        "#사용 시 이번 게임에서 등장했던 아이템 중 보유하지 않은 아이템 하나를 소환합니다." ..
-        "#만약 Astrobirth 모드가 활성화되어 있다면 위 효과 대신 이번 게임 금지 아이템 중 하나를 소환합니다." ..
+        "#" .. astrobirthtext ..
         "#소지 중 사망 시 그 방에서 부활하고 해당 아이템은 사라집니다."
     )
 end
