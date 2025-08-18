@@ -11,9 +11,10 @@ if EID then
         Astro.Collectible.URINARY_INCONTINENCE,
         "요실금",
         "골든 샤워",
-        "전투 중일 때 15초마다 {{Collectible578}}Free Lemonade가 발동됩니다." ..
-        "#몬스터 처치 시 {{Collectible56}}Lemon Mishap이 발동됩니다." ..
-        "#중첩 시 방 내에서 {{Collectible56}}Lemon Mishap 발동 횟수가 증가합니다."
+        "{{Collectible578}} 방에 적이 있을 때 15초마다 캐릭터의 주위에 커다란 노란 장판이 생깁니다." ..
+        "#{{Collectible56}} 몬스터 처치 시 캐릭터의 주위에 노란 장판을 생성합니다." ..
+        "#{{ArrowGrayRight}} 두 장판은 지상 위의 적에게 초당 24의 피해를 줍니다." ..
+        "#중첩 시 방 내에서 노란 장판의 생성 횟수가 증가합니다."
     )
 end
 
