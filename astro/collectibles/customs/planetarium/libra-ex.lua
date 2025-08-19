@@ -5,7 +5,7 @@ Astro.Collectible.LIBRA_EX = Isaac.GetItemIdByName("Libra EX")
 if EID then
     EID:assignTransformation("collectible", Astro.Collectible.LIBRA_EX, "Chubby")
     
-    Astro:AddEIDCollectible(Astro.Collectible.LIBRA_EX, "초 천칭자리", "완벽한 균형", "↑ 모든 세트 +1")
+    Astro:AddEIDCollectible(Astro.Collectible.LIBRA_EX, "초 천칭자리", "아주 균형 잡힌 느낌", "↑ 모든 세트 +1")
 end
 
 Astro:AddCallbackCustom(
