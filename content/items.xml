@@ -1,6 +1,6 @@
 <items gfxroot="gfx/items/" version="1">
 	<passive gfx="Cygnus.png" quality="4" devilprice="2" name="Cygnus" description="..." />
-	<passive tags="dead tech battery syringe mom guppy fly bob mushroom baby angel devil poop book spider" gfx="Libra.png" devilprice="2" quality="3" shopprice="30" name="Libra EX" description="Perfect balance" />
+	<passive tags="dead tech battery syringe mom guppy fly bob mushroom baby angel devil poop book spider" gfx="Libra.png" devilprice="2" quality="3" shopprice="30" name="Libra EX" description="You feel very balanced" />
 	<passive gfx="Cancer.png" quality="2" devilprice="1" shopprice="20" name="Cancer EX" description="Painful for everyone" />
 	<passive gfx="Scorpio.png" quality="3" shopprice="20" name="Scorpio EX" description="Poison fly" />
 	<passive gfx="Capricorn.png" quality="2" devilprice="2" shopprice="15" name="Capricorn EX" description="Preparing the offerings" />
