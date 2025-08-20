@@ -1,7 +1,7 @@
 Astro.Collectible.BACHELORS_DEGREE = Isaac.GetItemIdByName("Bachelor's Degree")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.BACHELORS_DEGREE, "학사학위", "...", "{{Pill1}}Gulp!와 능력치 관련 알약만 등장합니다.#긍정/부정적인 알약 효과가 전부 무시됩니다")
+    Astro:AddEIDCollectible(Astro.Collectible.BACHELORS_DEGREE, "학사학위", "더 좋은? 알약들", "{{Pill1}}Gulp!와 능력치 관련 알약만 등장합니다.#긍정/부정적인 알약 효과가 전부 무시됩니다")
 end
 
 local normalWhitelist = {

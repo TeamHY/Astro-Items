@@ -14,7 +14,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.TERRA_EX,
         "초 지구",
-        "...",
+        "이 땅으로 돌아가",
         "{{Collectible592}} Terra 효과가 적용됩니다." ..
         "#방 입장 시 {{DamageSmall}}공격력 x1.1 ~ x1.5" ..
         "#방 클리어 시 {{Card32}}Hagalaz를 발동합니다." ..

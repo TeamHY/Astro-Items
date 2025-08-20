@@ -14,7 +14,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.DRY_EYE_SYNDROME,
         "안구건조증",
-        "...",
+        "장거리 최강 눈물",
         "공격 키를 누르고 있으면 {{DamageSmall}}공격력이 점점 증가합니다. 최대 50%p 증가하고 공격 키를 떼면 원래대로 돌아옵니다." ..
         "#{{ArrowGrayRight}} 중첩이 가능합니다."
     )

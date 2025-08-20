@@ -13,7 +13,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.BANDAGE_GIRL,
                 "밴디지 걸",
-                "...",
+                "여자친구",
                 "최초 획득 시 {{Collectible207}}Ball of Bandages를 2개까지 지급합니다." ..
                 "#스테이지 입장 시 {{Collectible207}}Ball of Bandages를 획득합니다. 중첩이 가능합니다. {{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}}Blood Trail의 중첩에도 영향을 줍니다."
             )

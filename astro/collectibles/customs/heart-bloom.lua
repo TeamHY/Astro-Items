@@ -2,7 +2,7 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.HEART_BLOOM = Isaac.GetItemIdByName("Heart Bloom")
 
-Astro:AddEIDCollectible(Astro.Collectible.HEART_BLOOM, "하트 꽃", "...", "{{Burning}} 30%의 확률로 적에게 달라붙는 씨앗 공격이 나갑니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 70 이상일 때 100% 확률 (행운 1당 +1%p)#적에게 달라붙은 씨앗은 2초 후 공격력 x6 +35의 폭발 피해를 줍니다. (자해 없음)")
+Astro:AddEIDCollectible(Astro.Collectible.HEART_BLOOM, "하트 꽃", "식물 대 아이작", "{{Burning}} 30%의 확률로 적에게 달라붙는 씨앗 공격이 나갑니다.#!!! {{LuckSmall}}행운 수치 비례: 행운 70 이상일 때 100% 확률 (행운 1당 +1%p)#적에게 달라붙은 씨앗은 2초 후 공격력 x6 +35의 폭발 피해를 줍니다. (자해 없음)")
 
 local tearChance = 0.3
 

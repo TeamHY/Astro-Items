@@ -14,9 +14,10 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.BLOOD_TRAIL,
                 "블러드 트레일",
-                "...",
-                "최초 획득 시 {{Collectible73}}Cube of Meat를 2개까지 지급합니다." ..
-                "#스테이지 입장 시 {{Collectible73}}Cube of Meat를 획득합니다. 중첩이 가능합니다. {{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}}Bandage Girl의 중첩에도 영향을 줍니다."
+                "믿으라구!",
+                "최초 획득 시 {{Collectible73}}Cube of Meat를 2개 지급합니다." ..
+                "#스테이지를 넘어갈 때마다 {{Collectible73}}Cube of Meat를 획득합니다." ..
+                "#중첩이 가능하며 {{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}}Bandage Girl의 중첩에도 영향을 줍니다."
             )
         end
     end

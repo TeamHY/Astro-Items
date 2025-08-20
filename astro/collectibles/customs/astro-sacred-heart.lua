@@ -8,11 +8,18 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.ASTRO_SACRED_HEART,
-                "아스트로 성스러운 심장",
-                "...",
-                "#{{Collectible182}} Sacred Heart 효과가 적용됩니다." ..
-                "#적이 피해를 입을 때 피해량의 2.3배가 적용됩니다." ..
-                "#{{ArrowGrayRight}}중첩 시 피해량이 합 연산으로 증가합니다."
+                "광휘로운 심장",
+                "유도 공격 + 공격력 증가 + 추가 피해",
+                "↑ {{Heart}}최대 체력 +1" ..
+                "#{{HealingRed}} 체력을 모두 회복합니다." ..
+                "#↑ {{DamageSmall}}공격력 +1" ..
+                "#↑ {{DamageSmall}}공격력 배율 x2.3" ..
+                "#↓ {{TearsSmall}}연사 -0.4" ..
+                "#↓ {{ShotspeedSmall}}탄속 -0.25" ..
+                "#공격에 유도 효과가 생깁니다." ..
+                "#폭탄에 유도 효과가 생깁니다." ..
+                "#적이 피해를 입을 때 피해량이 2.3배로 증가합니다." ..
+                "#{{ArrowGrayRight}} 중첩 시 피해량이 합 연산으로 증가합니다."
             )
         end
     end

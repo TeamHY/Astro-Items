@@ -7,7 +7,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.MARS_EX,
         "초 화성",
-        "...",
+        "난폭한 돌진",
         "{{Collectible593}} Mars 효과가 적용됩니다." ..
         "#방마다 최대 1번;#{{ArrowGrayRight}} 페널티 피격 시 돌진하며, 접촉한 적에게 {{DamageSmall}}공격력 x4 +8의 피해를 입힙니다.#{{ArrowGrayRight}} 중첩 시 횟수가 증가합니다."..
         "#!!! 이번 게임에서 {{Collectible593}}Mars가 등장하지 않습니다."

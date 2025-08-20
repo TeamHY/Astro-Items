@@ -16,9 +16,9 @@ Astro:AddCallback(
                 Astro.Collectible.PILLARS_OF_CREATION,
                 "창조의 기둥",
                 "...",
-                "스테이지 입장 시 {{Planetarium}}천체방으로 이동 가능한 기둥이 생성됩니다." ..
-                "#{{Coin}} " .. COIN_COST .. "개의 코인이 필요합니다." ..
-                "#방을 이동하면 사라집니다. 중첩 시 사라지지 않습니다."
+                "{{Planetarium}} 스테이지 첫 방에 천체관으로 갈 수 있는 사다리가 생성됩니다." ..
+                "#{{ArrowGrayRight}} 입장엔 {{Coin}}" .. COIN_COST .. "개의 동전이 필요합니다." ..
+                "#!!! 기둥은 방을 벗어나면 사라집니다. (중첩 시 사라지지 않음)"
             )
         end
     end

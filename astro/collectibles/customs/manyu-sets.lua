@@ -66,17 +66,20 @@ if EID then
         "마트료시카",
         "...",
         "상자를 열 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.5(고정)" ..
-        "#중첩 시 다음 증가량부터 적용됩니다." ..
-        "#{{WoodenChest}}나무상자를 열 때 50% 확률로 작은 상자가 소환됩니다. {{Collectible" .. Astro.Collectible.CHUBBYS_TAIL .. "}}Chubby's Tail 소지 시 20% 확률로 소환됩니다." ..
-        "#{{ColorRed}}BUG: 상자에서 패시브, 액티브 아이템이 등장할 경우 능력치가 증가하지 않습니다."
+        "#{{ArrowGrayRight}} 상자에서 패시브/액티브 아이템이 등장할 경우 능력치가 증가하지 않습니다." ..
+        "#{{ArrowGrayRight}} 중첩이 가능하며 다음 증가량부터 적용됩니다." ..
+        "#{{WoodenChest}} 나무상자를 열 때 50% 확률로 작은 상자가 소환됩니다." ..
+        "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CHUBBYS_TAIL .. "}}Chubby's Tail 소지 시 20% 확률로 소환됩니다."
     )
 
     Astro:AddEIDCollectible(
         Astro.Collectible.SAMSARA,
         "삼사라",
         "...",
-        "적 처치 시 {{Collectible522}}Telekinesis가 발동합니다. (방마다 최대 1번)" ..
-        "#중첩 시 여러 번 발동할 수 있습니다." ..
+        "{{Collectible522}} 적 처치 시 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
+        "#{{ArrowGrayRight}} 3초가 끝나면 붙잡은 탄환을 다시 되돌려 발사합니다." ..
+        "#{{Blank}} {{ColorGray}}(방마다 최대 1번){{CR}}" ..
+        "#{{ArrowGrayRight}} 중첩 시 여러 번 발동할 수 있습니다." ..
         "#Astrobirth의 NextBan 시스템이 무효화됩니다."
     )
 end

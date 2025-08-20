@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.Oblivion,
         "망각",
-        "...",
+        "흡수?",
         "사용 시 {{Card41}}Black Rune 효과를 발동합니다."
     )
 end

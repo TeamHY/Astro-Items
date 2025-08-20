@@ -5,7 +5,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.SCHRODINGERS_CAT,
         "슈뢰딩거의 고양이",
-        "",
+        "살아있으면서 죽어있는",
         "스테이지 입장 시 50% 확률로 Guppy 세트 +1#다음 스테이지 입장 시 효과는 초기화됩니다.#중첩이 가능합니다."
     )
 end

@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.WARD,
                 "와드",
-                "...",
+                "벽 너머가 보인다",
                 "사용 시 그 방과 다음 방 한번까지 {{Collectible91}}Spelunker Hat, {{Collectible" .. Astro.Collectible.PURPLE_CANDLE .."}}Purple Candle 효과가 적용됩니다."
             )
         end

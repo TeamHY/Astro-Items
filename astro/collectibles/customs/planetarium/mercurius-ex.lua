@@ -14,7 +14,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.MERCURIUS_EX,
         "초 수성",
-        "...",
+        "열려라 참깨",
         "{{Collectible590}} Mercurius 효과가 적용됩니다." ..
         "#방 클리어 시 50% 확률로 {{Card83}}Soul of Cain을 발동합니다." ..
         "#!!! 이번 게임에서 {{Collectible590}}Mercurius가 등장하지 않습니다."

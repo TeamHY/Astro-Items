@@ -9,9 +9,9 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_EDEN_B,
                 "더럽혀진 에덴의 생득권",
-                "...",
-                "사용 시 {{Collectible619}}Birthright를 획득합니다." ..
-                "#소지 시 {{Collectible258}}Missing No. 효과가 적용됩니다."
+                "??!",
+                "{{Collectible619}} 사용 시 Birthright를 획득합니다." ..
+                "#{{Collectible258}} 획득 시 및 소지중에 스테이지를 넘어갈 때마다 소지중인 아이템과 능력치를 모두 바꿉니다."
             )
         end
     end

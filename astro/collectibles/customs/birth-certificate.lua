@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BIRTH_CERTIFICATE,
         "출생증명서",
-        "...",
+        "언제 태어났지?",
         "사용 시 {{Quality2}}등급 이하의 아이템이 있는 방으로 이동합니다."
     )
 end

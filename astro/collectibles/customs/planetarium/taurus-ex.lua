@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.TAURUS_EX,
         "초 황소자리",
-        "...",
+        "실전 압축",
         "{{BossRoom}} 보스방 입장 시 아래 효과들이 적용됩니다." ..
         "#{{ArrowGrayRight}} {{TearsSmall}}연사(상한) +2" ..
         "#{{ArrowGrayRight}} {{DamageSmall}}공격력 +2" ..

@@ -19,7 +19,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_CAIN,
                 "카인의 생득권",
-                "...",
+                "더 재밌는 도박",
                 "{{Slotmachine}} 슬롯머신에 동전을 소비할 때 25% 확률로 동전이 소비되지 않습니다." ..
                 "#{{ArcadeRoom}} 야바위를 {{CraneGame}}크레인 게임으로 변경합니다."
             )

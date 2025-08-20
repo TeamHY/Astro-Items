@@ -19,7 +19,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.ABORTION,
                 "낙태",
-                "...",
+                "태아 공격?",
                 "공격 시 50%의 확률로 적 명중 시 {{Collectible678}}태아로 변하는 눈물을 발사합니다." ..
                 "#중첩 시 최종 확률이 합 연산으로 증가하고 쿨타임이 줄어듭니다." ..
                 "#!!! {{LuckSmall}}행운 수치 비례: 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"

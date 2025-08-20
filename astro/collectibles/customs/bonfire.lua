@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BONFIRE,
         "화톳불",
-        "...",
+        "화르륵",
         "#!!! 일회용 아이템#사용 시 화염 관련 아이템 1개를 소환하며, 하나를 선택하면 나머지는 사라집니다.#캐릭터가 디아벨스타일 경우 2개를 소환합니다."
     )
 end

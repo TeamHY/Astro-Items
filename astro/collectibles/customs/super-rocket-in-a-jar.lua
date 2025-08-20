@@ -9,9 +9,9 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SUPER_ROCKET_IN_A_JAR,
                 "슈퍼 로켓 든 병",
-                "...",
-                "#{{Collectible583}} Rocket in a Jar 효과가 적용됩니다." ..
-                "#로켓이 기가 로켓으로 변경됩니다."
+                "엄청난 로켓 발사! + 폭탄 5개",
+                "↑ {{Bomb}}폭탄 +5" ..
+                "#{{Collectible583}} 폭탄 대신 기가 로켓이 나가며 기가 로켓은 캐릭터의 공격방향으로 날아가 폭발합니다."
             )
         end
     end

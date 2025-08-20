@@ -7,7 +7,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.PLUTO_EX,
         "초 명왕성",
-        "...",
+        "모두 크기 감소",
         "{{Collectible597}} Pluto 효과가 적용됩니다." ..
         "#방 입장 시 모든 적이 작아집니다." ..
         "#!!! 이번 게임에서 {{Collectible597}}Pluto가 등장하지 않습니다."
