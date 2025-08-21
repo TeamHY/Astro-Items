@@ -7,7 +7,7 @@ if EID then
         Astro.Collectible.GREED,
         "탐욕",
         "...",
-        "!!! 획득 시 사라지고 에러방으로 이동합니다.#!!! {{Collectible223}}Pyromaniac과 {{Collectible375}}Host Hat을 제거합니다."
+        "!!! 획득 시 Ultra Greedier가 있는 {{ErrorRoom}}오류방으로 이동하며, {{Collectible223}}Pyromaniac과 {{Collectible375}}Host Hat을 제거합니다."
     )
 end
 

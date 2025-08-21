@@ -33,7 +33,15 @@ Astro:AddCallback(
             end
 
         
-            Astro:AddEIDCollectible(Astro.Collectible.VERY_EZ_MODE, "엄청 쉬움 모드", "...", "↑ {{SoulHeart}}소울하트 +1#후반 스테이지 체력 제한 시스템이 6칸만 적용됩니다.#!!! 아래 아이템이 등장하지 않습니다.#" .. veryEZModeEIDString)
+            Astro:AddEIDCollectible(
+                Astro.Collectible.VERY_EZ_MODE,
+                "엄청 쉬움 모드",
+                "...",
+                "↑ {{SoulHeart}}소울하트 +1" ..
+                "#Womb/Corpse 이후 스테이지의 체력 제한 시스템이 6칸까지만 적용됩니다." ..
+                "#!!! 아래 아이템이 등장하지 않습니다:" ..
+                "#{{ArrowGrayRight}} " .. veryEZModeEIDString
+            )
         end
     end
 )

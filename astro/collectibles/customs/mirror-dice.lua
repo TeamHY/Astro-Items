@@ -5,10 +5,9 @@ if EID then
         Astro.Collectible.MIRROR_DICE,
         "거울 주사위",
         "운명을 비춰라",
-        "사용 시 그 방의 아이템을;"..
-        "#{{ArrowGrayRight}} 현재 소지중인 아이템으로 변경합니다."..
-        "#{{ArrowGrayRight}} {{Quality0}}/{{Quality1}}등급 아이템은 등장하지 않습니다."..
-        "#보유한 아이템이 없을 경우 사용할 수 없습니다."
+        "!!! 소지중인 아이템이 없을 경우 사용 불가!" ..
+        "#사용 시 그 방의 아이템을 소지중인 아이템 중 하나로 변경합니다."..
+        "#{{ArrowGrayRight}} {{Quality0}}/{{Quality1}}등급 아이템은 등장하지 않습니다."
     )
 end
 

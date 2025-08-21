@@ -5,7 +5,9 @@ if EID then
         Astro.Collectible.BONFIRE,
         "화톳불",
         "화르륵",
-        "#!!! 일회용 아이템#사용 시 화염 관련 아이템 1개를 소환하며, 하나를 선택하면 나머지는 사라집니다.#캐릭터가 디아벨스타일 경우 2개를 소환합니다."
+        "!!! 일회용" ..
+        "#{{Burning}} 사용 시 {{Collectible164}}The Candle/{{Collectible289}}Red Candle 중 하나를 소환합니다." ..
+        "#캐릭터가 Diabellstar이거나 둘 다 소환될 경우 하나를 선택하면 나머지는 사라집니다."
     )
 end
 

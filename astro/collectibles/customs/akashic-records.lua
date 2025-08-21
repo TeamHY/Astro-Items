@@ -28,8 +28,8 @@ if EID then
         Astro.Collectible.AKASHIC_RECORDS,
         "아카식 레코드",
         "초차원적 정보의 집합체",
-        "책 종류 아이템 사용 시 일시적 효과가 계속 적용됩니다. AstroItems에 추가된 책은 적용되지 않습니다." ..
-        "#중첩 시 맵에 {{Library}}책방의 위치가 표시되고 {{Library}}책방 입장 시 {{Card83}}Soul of Cain을 발동합니다."
+        "책 종류 아이템 사용 시 그 책의 일시적 효과가 영구적으로 유지됩니다. {{ColorGray}}(AstroItems에 추가된 책은 미적용){{CR}}" ..
+        "#중첩 시 맵에 {{Library}}책방의 위치가 표시되며, 책방 입장 시 {{Card83}}Soul of Cain을 발동합니다."
     )
 end
 

@@ -36,7 +36,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BLACK_CUBE,
         "블랙 큐브",
-        "...",
+        "강력한 잠재능력 추가",
         "사용 시 {{Coin}}동전 " .. BLACK_COST_COINS .. "개를 소모하고 아래 옵션 중 2가지를 얻습니다." ..
         "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BLACK_MAX_STAT .. "%p" ..
         "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BLACK_MAX_BOSS .. "%p" ..
@@ -46,7 +46,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.RED_CUBE,
         "레드 큐브",
-        "...",
+        "잠재능력 추가",
         "사용 시 {{Coin}}동전 " .. RED_COST_COINS .. "개를 소모하고 아래 옵션 중 하나를 얻습니다." ..
         "#{{ArrowGrayRight}} 공력력 +1%p~+" .. RED_MAX_STAT .. "%p" ..
         "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. RED_MAX_BOSS .. "%p" ..
@@ -56,7 +56,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BONUS_POTENTIAL_CUBE,
         "에디셔널 큐브",
-        "...",
+        "더 많은 잠재능력",
         "사용 시 {{Coin}}동전 " .. BONUS_POTENTIAL_COST_COINS .. "개를 소모하고, 아래 옵션 중 하나를 얻습니다." ..
         "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BONUS_POTENTIAL_MAX_STAT .. "%p" ..
         "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_BOSS .. "%p" ..

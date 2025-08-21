@@ -21,10 +21,10 @@ Astro:AddCallback(
                 Astro.Collectible.MAW_OF_THE_VOID_EX,
                 "초 공허의 구렁텅이",
                 "향상된 어둠의 입구",
+                "#!!! 소지중일 때 {{Collectible399}}Maw Of The Void 미등장" ..
                 "↑ {{DamageSmall}}공격력 +1" ..
                 "#{{Collectible399}} Maw Of The Void 효과가 적용됩니다." ..
-                "#적을 처치할 때 10% 확률로 {{BlackHeart}} 블랙하트를 떨어뜨립니다." ..
-                "#!!! 소지중일 때 {{Collectible399}}Maw Of The Void이 등장하지 않습니다."
+                "#적을 처치할 때 10%의 확률로 {{BlackHeart}} 블랙하트를 떨어뜨립니다."
             )
         end
 

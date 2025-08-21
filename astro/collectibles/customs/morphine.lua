@@ -1,7 +1,12 @@
 Astro.Collectible.MORPHINE = Isaac.GetItemIdByName("Morphine")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.MORPHINE, "모르핀", "...", "적에게 준 피해의 1/10 만큼 보스가 아닌 모든 적들에게 피해를 입힙니다.#Death's Head를 제외한 무적 상태의 적에게도 피해를 입힙니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.MORPHINE,
+        "모르핀", "...",
+        "적에게 준 피해의 1/10 만큼 보스가 아닌 모든 적들에게 피해를 줍니다." ..
+        "#Death's Head를 제외한 무적 상태의 적에게도 피해를 입줍니다."
+    )
 end
 
 Astro:AddCallback(

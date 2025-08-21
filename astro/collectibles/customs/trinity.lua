@@ -7,10 +7,11 @@ if EID then
         Astro.Collectible.TRINITY,
         "삼위일체",
         "...",
-        "{{BossRoom}} 보스방 클리어 시 {{Collectible333}}The Mind, {{Collectible334}}The Body, {{Collectible335}}The Soul을 제거합니다." ..
-        "#스테이지를 넘어갈 때마다 소지된 아이템 중 하나를 제거하며, {{Room}}시작방에 제거된 아이템과 위 세 아이템 중 하나를 소환합니다." ..
-        "#{{ArrowRightGray}} 하나를 선택하면 나머지는 사라집니다." ..
-        "#!!! 이번 게임에서 {{Collectible333}}/{{Collectible334}}/{{Collectible335}}이 등장하지 않음"
+        "#!!! 획득 이후 {{Collectible333}}The Mind, {{Collectible334}}The Body, {{Collectible335}}The Soul이 모든 배열에서 제거됨" ..
+        "#{{BossRoom}} 보스방 클리어 시 {{Collectible333}}/{{Collectible334}}/{{Collectible335}}을 제거합니다." ..
+        "#스테이지를 넘어갈 때마다 소지중인 아이템 중 하나를 제거하며;" ..
+        "#{{ArrowRightGray}} 제거된 아이템과 {{Collectible333}}/{{Collectible334}}/{{Collectible335}} 중 하나를 소환합니다." ..
+        "#{{ArrowRightGray}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다."
     )
 end
 

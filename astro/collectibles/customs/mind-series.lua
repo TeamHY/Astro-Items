@@ -74,7 +74,7 @@ if EID then
         "...",
         "사용 시 그 방의 아이템을 {{Collectible" .. Astro.Collectible.CALM_MIND .. "}}Calm Mind, {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind, {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}}Blue Mind, {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}}Lucky Mind 중 하나로 변경합니다. (동일한 아이템이 여러 개 등장할 수 있음)" ..
         "#이동속도가 2.0 이상일 경우 {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind는 등장하지 않습니다." ..
-        "#레아가 사용할 경우 충전량이 6칸 남습니다."
+        "#Leah가 사용할 경우 충전량이 6칸 남습니다."
     )
 end
 

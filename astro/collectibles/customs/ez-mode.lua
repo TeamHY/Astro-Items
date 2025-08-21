@@ -23,7 +23,20 @@ local LIMIT_LUCK_DECREMENT = -10
 Astro.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.EZ_MODE, "쉬운 모드", "...", "↓ {{LuckSmall}}행운 -1#후반 스테이지 진입 전까지 피격 페널티가 발생하지 않습니다. 대신 모든 스탯이 감소됩니다. 각 스탯마다 감소량에 제한이 있습니다.#소울 하트 1개가 증가됩니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.EZ_MODE,
+        "쉬운 모드",
+        "...",
+        "↑ {{SoulHeart}}소울하트 +1" ..
+        "#↓ {{LuckSmall}}행운 -1" ..
+        "#Womb/Corpse 스테이지 전까지 페널티 피격 시 해당 피격을 무효화하는 대신 모든 능력치가 감소합니다." ..
+        "#{{ArrowGrayRight}} {{DamageSmall}}공격력 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{ArrowGrayRight}} {{TearsSmall}}연사 -0.005 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{ArrowGrayRight}} {{RangeSmall}}사거리 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도 -0.025 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{ArrowGrayRight}} {{ShotspeedSmall}}탄속 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{ArrowGrayRight}} {{LuckSmall}}행운 -3 {{ColorGray}}(최대 10){{CR}}"
+    )
 end
 
 Astro:AddCallback(

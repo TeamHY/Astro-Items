@@ -8,7 +8,7 @@ if EID then
         "베들레헴의 한별",
         "빛을 경배하라",
         "클리어하지 않은 방에 입장 시 {{Collectible651}}Star of Bethlehem를 획득합니다. (방 클리어 시 제거)" ..
-        "#!!! 중첩 시 아래 효과 적용;" ..
+        "#중첩 시 아래 효과가 적용됩니다:" ..
         "#{{ArrowGrayRight}} {{Collectible242}} 적 탄환에 맞았을 때 50% 확률로 피해를 무시합니다." ..
         "#{{ArrowGrayRight}} {{Collectible192}} 방 입장 시 {{RangeSmall}}사거리 +3#{{Blank}} 공격이 적에게 유도됩니다."
     )

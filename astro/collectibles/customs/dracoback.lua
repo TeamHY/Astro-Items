@@ -15,11 +15,10 @@ if EID then
         Astro.Collectible.DRACOBACK,
         "기룡 드라코백",
         "...",
-        "방 입장 시 적 하나가 지워집니다."..
-        "#{{ArrowGrayRight}} {{BossRoom}}보스방에서는 발동하지 않습니다."..
-        "#{{ArrowGrayRight}} 중첩 시 방 마다 지워지는 적의 수가 증가합니다."..
-        "#{{ArrowGrayRight}} 스테이지마다 최대 2회, 성전의 수견사와 일리걸 나이트는 최대 5회까지 발동됩니다."..
-        "#!!! 성전의 수견사, 일리걸 나이트가 획득 시 모든 능력치 x1.1"
+        "방 입장 시 스테이지마다 최대 2회 적 하나가 지워집니다. ({{BossRoom}}보스방에서는 무효과)"..
+        "#{{ArrowGrayRight}} 중첩 시 방마다 지워지는 적의 수가 증가합니다."..
+        "#Water Enchantress와 Illegal Knight는 획득 시 모든 능력치 x1.1;" ..
+        "#{{ArrowGrayRight}} 적 제거 발동 제한이 스테이지마다 최대 5회로 증가합니다."
     )
 end
 

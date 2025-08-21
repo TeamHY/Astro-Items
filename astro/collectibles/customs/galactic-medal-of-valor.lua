@@ -8,7 +8,13 @@ local EXTRA_DAMAGE_MULTIPLIER = 0.3
 Astro.Collectible.GALACTIC_MEDAL_OF_VALOR = Isaac.GetItemIdByName("Galactic Medal Of Valor")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.GALACTIC_MEDAL_OF_VALOR, "은하 용맹 훈장", "...", "보스에게 직접 공격 시 30% 추가 피해를 입힙니다.#중첩 시 추가 피해가 합 연산으로 증가합니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.GALACTIC_MEDAL_OF_VALOR,
+        "은하 용맹 훈장",
+        "용기를 치하하며",
+        "공격이 보스에게 명중 시 30%의 추가 피해를 입힙니다." ..
+        "#중첩 시 추가 피해가 합 연산으로 증가합니다."
+    )
 end
 
 Astro:AddCallback(

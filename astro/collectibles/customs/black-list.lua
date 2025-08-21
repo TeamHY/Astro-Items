@@ -16,9 +16,9 @@ Astro:AddCallback(
                 Astro.Collectible.BLACK_LIST,
                 "블랙 리스트",
                 "...",
-                "{{Collectible530}}Death's List 효과가 적용됩니다." ..
-                "#방 입장 시 1분간 Brimstone Mark가 적용됩니다." ..
-                "#!!! 소지중일 때 {{Collectible530}}Death's List가 등장하지 않습니다."
+                "!!! 소지중일 때 {{Collectible530}}Death's List 미등장" ..
+                "{{DeathMark}} 해골마크가 뜬 적을 순차적으로 처치 시 픽업이 드랍되거나 랜덤 능력치가 하나 증가합니다." ..
+                "#방 입장 시 그 방의 적에게 1분간 혈사류 공격에 공격력 x2 +3의 피해를 주는 {{BrimstoneCurse}}유황 표식이 걸립니다."
             )
         end
 

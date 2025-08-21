@@ -14,7 +14,7 @@ if EID then
         "뜨거운 감자",
         "화젯거리",
         "↑ {{Bomb}}폭탄 +2"..
-        "#{{Collectible40}} 4초마다 폭발을 일으킵니다." ..
+        "#{{Collectible40}} 4초마다 캐릭터의 위치에 공격력 185의 폭발을 일으킵니다." ..
         "#{{Collectible375}} Host Hat 효과가 적용됩니다."
     )
 end

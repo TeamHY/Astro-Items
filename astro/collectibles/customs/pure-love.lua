@@ -13,10 +13,13 @@ Astro:AddCallback(
                 Astro.Collectible.PURE_LOVE,
                 "순애",
                 "...",
-                "{{SuperSecretRoom}} 일급비밀방에서 사용 시;#{{ArrowGrayRight}} {{LuckSmall}}행운 -1#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}} 아이템 1개를 소환하며, 하나를 선택하면 나머지는 사라집니다." ..
-                "#Jacob, Esau, Tainted Jacob, 레아, 라헬이 사용 시 행운이 감소되지 않고 소지중인 아이템 대신 {{Quality3}}/{{Quality4}}등급 아이템 1개가 더 소환됩니다." ..
-                "#1스테이지일 경우 맵에 {{SuperSecretRoom}}일급비밀방 위치가 표시됩니다." ..
-                "#스테이지 진입 시 쿨타임이 채워집니다."
+                "{{SuperSecretRoom}} 일급비밀방에서 사용 시:" ..
+                "#{{ArrowGrayRight}} {{LuckSmall}}행운 -1"..
+                "#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}}등급 아이템 1개를 소환합니다." ..
+                "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
+                "#{{Player19}} Jacob, {{Player20}}Esau, {{Player37}}Tainted Jacob, Leah, Rachel이 사용하면 행운이 감소하지 않으며 소지중인 아이템 대신 {{Quality3}}/{{Quality4}}등급 아이템 1개가 더 소환됩니다." ..
+                "#소지중일 때 1스테이지 맵에 {{SuperSecretRoom}}일급비밀방 위치가 표시됩니다."..
+                "#스테이지를 넘어갈 때마다 충전량이 모두 채워집니다."
             )
         end
 

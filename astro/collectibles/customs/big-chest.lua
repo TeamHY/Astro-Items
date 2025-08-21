@@ -25,9 +25,9 @@ Astro:AddCallback(
                 Astro.Collectible.BIG_CHEST,
                 "큰 상자",
                 "안락한 곳이야",
-                "방 클리어 시 25% 확률로 {{Heart}}하트, {{Coin}}동전, {{Key}}열쇠 중 하나를 소환합니다." ..
-                "#5개의 방을 클리어할 때마다 무작위 장신구를 소환합니다." ..
-                "#!!! 소지 중일 때 {{Collectible362}}Lil Chest가 등장하지 않습니다."
+                "!!! 소지중일 때 {{Collectible362}}Lil Chest 미등장" ..
+                "#방 클리어 시 25% 확률로 {{Heart}}하트, {{Coin}}동전, {{Key}}열쇠 중 하나를 소환합니다." ..
+                "#5개의 방을 클리어할 때마다 무작위 장신구를 소환합니다."
             )
         end
 

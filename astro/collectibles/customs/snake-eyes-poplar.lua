@@ -16,8 +16,8 @@ Astro:AddCallback(
                 Astro.Collectible.SNAKE_EYES_POPLAR,
                 "스네이크아이즈 포프루스",
                 "...",
-                "5초마다 무작위 유령을 하나 소환합니다." ..
-                "#디아벨스타, 디아벨제의 경우 하나 더 소환합니다."
+                "5초마다 랜덤 유령을 하나 소환합니다." ..
+                "#{{ArrowGrayRight}} Diabellstar, Diabellze의 경우 하나 더 소환합니다."
             )
         end
     end

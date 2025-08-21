@@ -5,8 +5,7 @@ if EID then
         Astro.Collectible.HAPPY_ONION,
         "행복한 양파",
         "칭찬받은 양파",
-        "방 클리어 시 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}속도, {{LuckSmall}}행운 중 하나 +0.7(고정)" ..
-        "#{{ArrowGrayRight}} {{ColorGray}}(최대 10번까지 누적){{CR}}" ..
+        "방 클리어 시 최대 10번 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.7(고정)" ..
         "#{{ArrowGrayRight}} 스테이지 입장 시 증가된 능력치는 초기화됩니다." ..
         "#{{ArrowGrayRight}} 중첩이 가능하며 다음 증가량부터 적용됩니다."
     )

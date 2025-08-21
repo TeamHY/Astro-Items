@@ -14,8 +14,8 @@ if EID then
         "산데비스탄",
         "...",
         "{{Collectible677}} 사용 시 잠시 유체이탈 상태가 됩니다." ..
-        "#데이비드, 루시의 경우 순간적으로 높은 {{DamageSmall}}공격력과 {{TearsSmall}}연사를 얻고 10초간 무적이 됩니다." ..
-        "#데이비드, 루시가 아닌 경우 20% 확률로 {{Collectible582}}Wavy Cap 효과가 발동됩니다."
+        "#{{ArrowGrayRight}} David, Lucy의 경우 순간적으로 높은 {{DamageSmall}}공격력과 {{TearsSmall}}연사를 얻고 10초간 무적이 됩니다." ..
+        "#{{ArrowGrayRight}} David, Lucy가 아닌 경우 20%의 확률로 {{Collectible582}}Wavy Cap이 발동됩니다."
     )
 end
 

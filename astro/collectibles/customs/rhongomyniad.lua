@@ -42,12 +42,13 @@ Astro:AddCallback(
                 Astro.Collectible.RHONGOMYNIAD,
                 "론고미니아드",
                 "...",
-                "#!!! 일회용 (삼손 제외)" ..
-                "사용 시 쌓인 스택만큼" .. rhongomyniadEIDString .. " 중에서 소환하며, 하나를 선택하면 나머지는 사라집니다." ..
-                "방 클리어 시 20% 확률로 스택이 증가합니다." ..
-                "#!!! {{LuckSmall}}행운 수치 비례: 행운 40 이상일 때 100% 확률 ({{LuckSmall}}행운 1당 +2%p)" ..
-                "#!!! {{SecretRoom}}비밀방과 {{SuperSecretRoom}}일급비밀방에서는 사용할 수 없습니다." ..
-                "#!!! {{ColorRed}}방을 이동할 경우 소환된 아이템들은 제거됩니다."
+                "!!! 일회용 (삼손 제외)" ..
+                "#!!! {{SecretRoom}}비밀방과 {{SuperSecretRoom}}일급비밀방에서 사용 불가" ..
+                "#방 클리어 시 20% 확률로 스택이 증가합니다." ..
+                "#{{LuckSmall}} 행운 40 이상일 때 100% 확률 (행운 1당 +2%p)" ..
+                "#사용 시 " .. rhongomyniadEIDString .. " 중에서 쌓인 스택만큼 아이템을 소환합니다." ..
+                "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
+                "#{{ArrowGrayRight}} {{ColorRed}}방을 이동할 경우 소환된 아이템들은 제거됩니다.{{CR}}"
             )
         end
     end

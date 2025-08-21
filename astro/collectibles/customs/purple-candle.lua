@@ -10,11 +10,13 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.PURPLE_CANDLE,
                 "보라 양초",
-                "저주 면역 + 악함 증가 + 개안",
-                "{{Collectible260}} Black Candle 효과가 적용됩니다." ..
-                "#{{CurseBlindSmall}} 가려진 아이템을 알 수 있게 됩니다." ..
-                "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다." ..
-                "#!!! 소지중일 때 {{Collectible260}}Black Candle이 등장하지 않습니다."
+                "저주 면역 + 개안",
+                "!!! 소지중일 때 {{Collectible260}}Black Candle 미등장" ..
+                "#↑ {{DevilChanceSmall}}악마방 확률 +15%" ..
+                "#{{CurseCursedSmall}} 스테이지에 입장할 때 저주에 걸리지 않습니다." ..
+                "#{{CurseCursedSmall}} 획득 시 Labyrinth/챌린지/특수 시드를 제외한 모든 저주를 제거합니다." ..
+                "#{{CurseBlindSmall}} 가려진 아이템을 볼 수 있습니다." ..
+                "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다."
             )
         end
 

@@ -17,8 +17,8 @@ if EID then
         Astro.Collectible.BUNNY_HOP,
         "토끼뜀",
         "버그가 아니라 스킬",
-        "↑ {{SpeedSmall}}아동 속도 +0.3" ..
-        "#대각선으로 이동 시 이동 속도가 2배 증가합니다."
+        "↑ {{SpeedSmall}}아동속도 +0.3" ..
+        "#{{SpeedSmall}} 대각선으로 이동 시 이동속도 x2"
     )
 end
 

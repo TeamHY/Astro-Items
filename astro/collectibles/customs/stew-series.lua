@@ -23,8 +23,8 @@ if EID then
         "...",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
         "↑ {{TearsSmall}}연사(고정) +21.6"..
-        "#{{ArrowGrayRight}} 증가한 {{TearsSmall}}연사는 1초마다 -0.12" ..
-        "#{{ArrowGrayRight}} 감소 중 적 처치 시 {{TearsSmall}}연사 +0.12"
+        "#{{ArrowGrayRight}} 증가한 연사는 1초마다 -0.12씩 감소합니다." ..
+        "#{{ArrowGrayRight}} 연사 감소 도중 적 처치시 연사 +0.12 회복"
     )
 
     Astro:AddEIDCollectible(
@@ -33,8 +33,8 @@ if EID then
         "...",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
         "↑ {{LuckSmall}}행운 +21.6"..
-        "#{{ArrowGrayRight}} 증가한 {{LuckSmall}}행운은 1초마다 -0.12" ..
-        "#{{ArrowGrayRight}} 감소 중 적 처치 시 {{LuckSmall}}행운 +0.12"
+        "#{{ArrowGrayRight}} 증가한 행운은 1초마다 -0.12씩 감소합니다." ..
+        "#{{ArrowGrayRight}} 행운 감소 도중 적 처치시 행운 +0.12 회복"
     )
 
     Astro:AddEIDCollectible(
@@ -43,8 +43,8 @@ if EID then
         "...",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
         "↑ {{SpeedSmall}}이동속도 +1.08"..
-        "#{{ArrowGrayRight}} 증가한 {{SpeedSmall}}이동속도는 1초마다 -0.006" ..
-        "#{{ArrowGrayRight}} 감소 중 적 처치 시 {{SpeedSmall}}이동속도 +0.006"
+        "#{{ArrowGrayRight}} 증가한 이동속도는 1초마다 -0.006씩 감소합니다." ..
+        "#{{ArrowGrayRight}} 이동속도 감소 도중 적 처치시 이동속도 +0.006 회복"
     )
 end
 

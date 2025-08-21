@@ -34,11 +34,12 @@ Astro:AddCallback(
                 Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
                 "빛의 성검 단넬",
                 "...",
-                "적 처치 시 영혼을 흡수합니다. 몬스터 공격 시 영혼 당 1%p 추가 피해를 입힙니다." ..
-                "#영혼은 최대 50개까지 저장할 수 있습니다." ..
-                "#방 클리어 시 영혼이 5개 감소합니다." ..
-                "#성전의 수견사, 일리걸 나이트일 경우 방 클리어 시 영혼이 10개 감소하지만 영혼을 최대 100개까지 저장할 수 있습니다." ..
-                "#소지 중일 때 {{Collectible" .. Astro.Collectible.MORPHINE .. "}}Morphine! 효과가 적용됩니다."
+                "{{Collectible" .. Astro.Collectible.MORPHINE .. "}} 소지중일 때 적에게 준 피해의 10%만큼 보스가 아닌 모든 적들에게 피해를 줍니다." ..
+                "#적 처치 시 영혼을 흡수하며;" ..
+                "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .."개까지 저장할 수 있습니다." ..
+                "#{{ArrowGrayRight}} 공격이 적에게 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..
+                "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .."개 감소합니다." ..
+                "#Water Enchantress와 Illegal Knight는 방 클리어 시 영혼이" .. SOUL_DECREASE_FOR_ADVENTURER .. "개 감소하지만 영혼을 최대 " .. MAXIMUM_FOR_ADVENTURER .. "개 저장할 수 있습니다."
             )
         end
 

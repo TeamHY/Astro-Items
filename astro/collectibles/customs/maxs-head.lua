@@ -16,10 +16,10 @@ Astro:AddCallback(
                 Astro.Collectible.MAXS_HEAD,
                 "맥스의 머리",
                 "공격력 증가",
-                "↑ {{DamageSmall}}공격력 +0.5" ..
+                "!!! 소지중일 때 {{Collectible4}}Cricket's Head 미등장" ..
+                "#↑ {{DamageSmall}}공격력 +0.5" ..
                 "#↑ {{DamageSmall}}공격력 배율 x1.5" ..
-                "#중첩 시 배율은 곱 연산으로 적용됩니다." ..
-                "#!!! 소지 중일 때 {{Collectible4}}Cricket's Head가 등장하지 않습니다."
+                "#{{ArrowGrayRight}} 중첩이 가능하며 공격력 배율이 곱 연산으로 적용됩니다."
             )
         end
 

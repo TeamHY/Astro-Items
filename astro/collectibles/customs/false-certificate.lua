@@ -117,7 +117,7 @@ if EID then
         Astro.Collectible.FALSE_CERTIFICATE,
         "위조 증명서",
         "공문서 위조는 중범죄입니다",
-        "사용 시 {{UltraSecretRoom}}특급비밀방 배열 아이템이 있는 방으로 이동합니다."
+        "{{UltraSecretRoom}} 사용 시 특급비밀방 배열 아이템이 있는 방으로 이동합니다."
     )
 end
 

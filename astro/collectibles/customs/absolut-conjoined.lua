@@ -7,7 +7,7 @@ if EID then
         Astro.Collectible.ABSOLUT_CONJOINED,
         "앱솔루트 종양",
         "...",
-        "!!! 처음 획득 시 3개를 획득합니다."
+        "Conjoined 세트가 적용됩니다."
     )
 end
 

@@ -7,7 +7,13 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
     function(_, isContinued)
         if EID then
-            Astro:AddEIDCollectible(Astro.Collectible.RITE_OF_ARAMESIR, "아라메시아의 의", "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다.", "사용 시;#{{ArrowGrayRight}} {{LuckSmall}}행운 -2 (성전의 수견사, 일리걸 나이트 제외)#{{ArrowGrayRight}} {{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}}Black Mirror를 소환합니다.#스테이지 진입 시 쿨타임이 채워집니다.")
+            Astro:AddEIDCollectible(
+                Astro.Collectible.RITE_OF_ARAMESIR,
+                "아라메시아의 의",
+                "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다.",
+                "사용 시 {{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}}Black Mirror를 소환하며;" ..
+                "#{{ArrowGrayRight}} Water Enchantress와 Illegal Knight가 아니라면 {{LuckSmall}}행운 -2" ..
+                "#스테이지를 넘어갈 때마다 충전량이 모두 채워집니다.")
         end
 
         if not isContinued then

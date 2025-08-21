@@ -61,10 +61,10 @@ Astro:AddCallback(
                 Astro.Collectible.WITCHCRAFT,
                 "위치크래프트",
                 "...",
-                "{{Collectible451}}Tarot Cloth 효과가 적용됩니다." ..
-                "#2개 이상 소지 시 {{Collectible251}}Starter Deck 효과가 적용됩니다." ..
-                "#특정 카드 사용 시 일시적 효과가 계속 적용됩니다." ..
-                "#!!! 소지중일 때 {{Collectible451}}Tarot Cloth가 등장하지 않습니다."
+                "!!! 소지중일 때 {{Collectible451}}Tarot Cloth 미등장" ..
+                "#{{Collectible451}}Tarot Cloth 효과가 적용됩니다." ..
+                "#중첩 시 {{Collectible251}}Starter Deck 효과가 적용됩니다." ..
+                "#특정 카드 사용 시 카드의 일시적 효과가 영구적으로 유지됩니다."
             )
         end
 

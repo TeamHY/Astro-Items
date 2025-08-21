@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
         "반역의 죄보 - 스네이크아이",
         "...",
-        "공격 시 10%의 확률로{{Collectible634}} Purgatory 유령을 소환합니다." ..
+        "공격 시 10%의 확률로{{Collectible634}}Purgatory 유령을 소환합니다." ..
         "#중첩 시 기본 확률이 합 연산으로 증가하고 쿨타임이 줄어듭니다." ..
         "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
     )

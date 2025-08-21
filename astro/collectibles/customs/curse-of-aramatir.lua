@@ -20,11 +20,13 @@ Astro:AddCallback(
                 Astro.Collectible.CURSE_OF_ARAMATIR,
                 "금주 아라마티아",
                 "...",
-                "!!! 일회용(성전의 수견사, 일리걸 나이트는 스테이지당 한 번 사용 가능)"..
-                "#{{SuperSecretRoom}} 일급비밀방에서 사용 시 소지중인 {{Quality3}}/{{Quality4}}등급 아이템을 " .. SPAWN_COLLECTIBLE_COUNT .. "개 소환하며, 하나를 선택하면 나머지는 사라집니다." ..
-                "#{{ArrowGrayRight}} {{ColorRed}}소환된 아이템은 방을 나갈 경우 사라집니다.{{CR}}" ..
+                "!!! 일회용"..
+                "#!!! 소지중인 아이템이 없거나 {{SuperSecretRoom}}일급비밀방이 아니면 사용 불가" ..
+                "#사용 시 소지중인 {{Quality3}}/{{Quality4}}등급 아이템을 " .. SPAWN_COLLECTIBLE_COUNT .. "개 소환하며;" ..
+                "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
+                "#{{ArrowGrayRight}} {{ColorRed}}소환된 아이템은 방을 나가면 사라집니다." ..
                 "#{{Room}} 1스테이지의 맵에 {{SuperSecretRoom}}일급비밀방 위치를 표시합니다." ..
-                "#!!! 소지한 아이템이 없을 경우 사용할 수 없습니다."
+                "#Water Enchantress와 Illegal Knight는 스테이지마다 한 번 사용 가능합니다."
             )
         end
     end

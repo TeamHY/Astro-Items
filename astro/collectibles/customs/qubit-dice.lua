@@ -8,7 +8,7 @@ Astro:AddCallback(
                 Astro.Collectible.QUBIT_DICE,
                 "양자 주사위",
                 "...",
-                "")
+                "설명준비중")
         end
     end
 )

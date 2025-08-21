@@ -11,8 +11,8 @@ Astro:AddCallback(
                 Astro.Collectible.UNHOLY_MANTLE,
                 "불경스런 망토",
                 "타락한 방패",
-                "{{Collectible313}} Holy Mantle 효과가 적용됩니다." ..
-                "#!!! 소지중일 때 {{Collectible313}}Holy Mantle이 등장하지 않습니다."
+                "!!! 소지중일 때 {{Collectible313}}Holy Mantle 미등장" ..
+                "#{{Collectible313}} Holy Mantle 효과가 적용됩니다."
             )
         end
 
