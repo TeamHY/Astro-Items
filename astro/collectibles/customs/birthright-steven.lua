@@ -11,8 +11,9 @@ Astro:AddCallback(
                 "스티븐의 생득권",
                 "그는 살아 있다",
                 "{{BossRoom}} 보스방 보상 아이템이 {{Collectible100}}Little Steven으로 고정됩니다." ..
-                "#{{ArrowGrayRight}} 중첩 시 Little Steven이 추가로 소환됩니다." ..
-                "!!! 소지중인 Little Steven이 4개 이상일 경우 이 아이템은 제거됩니다."
+                "#!!! 소지중인 Little Steven이 4개 이상일 경우 이 아이템은 제거됩니다.",
+                -- 중첩 시
+                "중첩된 수만큼 Little Steven 추가 소환"
             )
         end
 

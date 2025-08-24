@@ -10,15 +10,21 @@ local FRAME_COUNT = 10 * 30
 
 Astro.Collectible.DRY_EYE_SYNDROME = Isaac.GetItemIdByName("Dry Eye Syndrome")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.DRY_EYE_SYNDROME,
-        "안구건조증",
-        "장거리 최강 눈물",
-        "공격 키를 누르고 있으면 {{DamageSmall}}공격력이 최대 50%p까지 지속적으로 증가합니다." ..
-        "#중첩이 가능합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.DRY_EYE_SYNDROME,
+                "안구건조증",
+                "장거리 최강 눈물",
+                "{{DamageSmall}} 공격 키를 누르고 있으면 공격력이 최대 +50%p까지 지속적으로 증가합니다.",
+                -- 중첩 시
+                "상한량이 (중첩된 수 * 50%p)까지 증가"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,

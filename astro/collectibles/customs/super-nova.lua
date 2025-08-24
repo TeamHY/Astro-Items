@@ -17,17 +17,23 @@ local COOLDOWN_TIME = 450 -- 30 프레임 = 1초 (쿨타임)
 
 Astro.Collectible.SUPER_NOVA = Isaac.GetItemIdByName("Super Nova")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.SUPER_NOVA,
-        "초신성",
-        "광활한 별들의 폭발",
-        "공격 시 10%의 확률로 십자 모양 광선을 소환합니다." ..
-        "#{{TimerSmall}} (쿨타임 10초)" ..
-        "#중첩 시 기본 확률이 합 연산으로 증가하고 쿨타임이 줄어듭니다." ..
-        "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +1%p)"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SUPER_NOVA,
+                "초신성",
+                "광활한 별들의 폭발",
+                "적 명중 시 10%의 확률로 십자 모양 광선을 소환합니다." ..
+                "#{{TimerSmall}} (쿨타임 10초)" ..
+                "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +1%p)",
+                -- 중첩 시
+                "#소환 확률이 중첩된 수만큼 합 연산으로 증가하며 쿨타임이 줄어듭니다."
+            )
+        end
+    end
+)
 
 local SUPER_NOVA_VARIANT = Isaac.GetEntityVariantByName("Super Nova");
 

@@ -6,8 +6,8 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.GO_HOME,
         "집으로!",
-        "...",
-        "!!! 획득 시 아이템이 사라지고 Home으로 이동합니다."
+        "stage 13a",
+        "!!! 획득 시 Home 스테이지로 이동"
     )
 end
 

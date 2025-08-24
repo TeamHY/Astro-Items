@@ -25,11 +25,11 @@ Astro.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.EZ_MODE,
-        "쉬운 모드",
-        "...",
+        "쉬움 모드",
+        "이-지",
         "↑ {{SoulHeart}}소울하트 +1" ..
         "#↓ {{LuckSmall}}행운 -1" ..
-        "#Womb/Corpse 스테이지 전까지 페널티 피격 시 해당 피격을 무효화하는 대신 모든 능력치가 감소합니다." ..
+        "#!!! Womb/Corpse 스테이지 전까지 페널티 피격 시 해당 피격을 무효화하는 대신 모든 능력치가 감소합니다:" ..
         "#{{ArrowGrayRight}} {{DamageSmall}}공격력 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
         "#{{ArrowGrayRight}} {{TearsSmall}}연사 -0.005 {{ColorGray}}(최대 1){{CR}}" ..
         "#{{ArrowGrayRight}} {{RangeSmall}}사거리 -0.05 {{ColorGray}}(최대 1){{CR}}" ..

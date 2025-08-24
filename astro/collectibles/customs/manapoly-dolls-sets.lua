@@ -34,14 +34,15 @@ Astro:AddCallback(
                 Astro.Collectible.TAANA_DEFENSE_HELPER,
                 "TAANA - 방어 도우미",
                 "행운을 지켜 주는 기계 인형",
-                "{{Trinket145}} 페널티 피격으로 인해 Perfection이 떨어질 때 스테이지마다 한번 사라지기 전에 주울 수 있습니다."
+                "{{Trinket145}} 페널티 피격으로 인해 Perfection이 떨어질 때;" ..
+                "#{{ArrowGrayRight}} 스테이지 당 한번 사라지기 전에 주울 수 있습니다."
             )
 
             Astro:AddEIDCollectible(
                 Astro.Collectible.SEERI_COMBAT_HELPER,
                 "SEERI - 전투 도우미",
                 "친구를 만들어주는 기계 인형",
-                "공격 시 1% 확률로 그 방에서 {{Collectible100}}Little Steven을 소환합니다. (최대 5번)" ..
+                "{{Collectible100}} 공격 시 1%의 확률로 그 방에서 최대 5번 Little Steven을 소환합니다." ..
                 "#{{LuckSmall}} 행운 99 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
 
@@ -49,7 +50,7 @@ Astro:AddCallback(
                 Astro.Collectible.KAAEN_AUTO_RELOADER,
                 "KAAEN - 재장전 도우미",
                 "재충전해주는 기계 인형",
-                "방 클리어 시 20% 확률로 {{Crafting19}}리틀 배터리를 소환합니다."
+                "방 클리어 시 20%의 확률로 {{Crafting19}}리틀 배터리를 소환합니다."
             )
         end
     end

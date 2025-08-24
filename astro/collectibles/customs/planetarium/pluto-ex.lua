@@ -8,9 +8,10 @@ if EID then
         Astro.Collectible.PLUTO_EX,
         "초 명왕성",
         "모두 크기 감소",
-        "{{Collectible597}} Pluto 효과가 적용됩니다." ..
-        "#방 입장 시 모든 적이 작아집니다." ..
-        "#!!! 이번 게임에서 {{Collectible597}}Pluto가 등장하지 않습니다."
+        "!!! 획득 이후 {{Collectible598}}Pluto 미등장" ..
+        "#↑ {{TearsSmall}}연사 +0.7" ..
+        "#{{Collectible598}} 캐릭터와 크기가 대폭 작아집니다." ..
+        "{{Shrink}} 방 입장 시 5초간 그 방의 적이 작아지며 작아진 적은 밟아 죽일 수 있습니다."
     )
 end
 

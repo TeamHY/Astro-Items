@@ -1,15 +1,26 @@
 Astro.Collectible.BONFIRE = Isaac.GetItemIdByName("Bonfire")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BONFIRE,
-        "화톳불",
-        "화르륵",
-        "!!! 일회용" ..
-        "#{{Burning}} 사용 시 {{Collectible164}}The Candle/{{Collectible289}}Red Candle 중 하나를 소환합니다." ..
-        "#캐릭터가 Diabellstar이거나 둘 다 소환될 경우 하나를 선택하면 나머지는 사라집니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BONFIRE,
+                "화톳불",
+                "화염족 아이템 1장을 패에 넣는다",
+                "!!! 일회용" ..
+                "#사용 시 {{Collectible164}}The Candle과 {{Collectible289}}Red Candle 중 하나를 소환합니다."
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.BONFIRE),
+                { Astro.Players.DIABELLSTAR },
+                "{{ColorIsaac}}둘 다 소환{{CR}}하며 하나를 선택하면 나머지는 사라집니다.",
+                nil, "ko_kr", nil
+            )
+        end
+    end
+)
 
 --- @type CollectibleType[]
 local fireItems = {}

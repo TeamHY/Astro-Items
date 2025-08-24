@@ -1,15 +1,20 @@
 Astro.Collectible.STEAM_BUNDLE = Isaac.GetItemIdByName("Steam Bundle")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.STEAM_BUNDLE,
-        "스팀 번들",
-        "사장님이 미쳤어요",
-        "{{Collectible203}} {{Heart}}빨간하트, {{Coin}}동전, {{Bomb}}폭탄, {{Key}}열쇠 픽업이 1+1로 나옵니다." ..
-        "#중첩 시 스테이지 입장할 때 {{GoldenKey}}황금 열쇠, {{GoldenBomb}}황금 폭탄를 소환합니다."
-    )
-end
-
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.STEAM_BUNDLE,
+                "스팀 번들",
+                "사장님이 미쳤어요",
+                "{{Collectible203}} {{Heart}}빨간하트, {{Coin}}동전, {{Bomb}}폭탄, {{Key}}열쇠 픽업이 1+1로 나옵니다.",
+                -- 중첩 시
+                "스테이지 진입 시 {{GoldenKey}}황금 열쇠와 {{GoldenBomb}}황금 폭탄 소환"
+            )
+        end
+    end
+)
 
 
 Astro:AddCallback(

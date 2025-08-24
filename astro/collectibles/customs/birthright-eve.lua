@@ -10,8 +10,9 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_EVE,
                 "이브의 생득권",
                 "영원한 저주",
-                "{{Collectible122}} {{Collectible117}} Whore of Babylon과 Dead Bird의 효과가 항상 발동됩니다." ..
-                "#중첩이 가능합니다."
+                "{{Collectible122}} {{Collectible117}} Whore of Babylon과 Dead Bird의 효과가 항상 발동됩니다.",
+                -- 중첩 시
+                "중첩된 수만큼 발동"
             )
         end
     end

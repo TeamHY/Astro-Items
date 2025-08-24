@@ -3,8 +3,9 @@ Astro.Collectible.BACHELORS_DEGREE = Isaac.GetItemIdByName("Bachelor's Degree")
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BACHELORS_DEGREE,
-        "학사학위", "더 좋은? 알약들",
-        "{{Pill1}}Gulp!와 능력치 관련 알약만 등장하며, 그 외의 알약 효과가 등장하지 않습니다."
+        "학사학위",
+        "더 좋은? 알약들",
+        "{{Pill1}} Gulp!와 능력치 관련 알약만 등장하며, 그 외의 알약 효과가 등장하지 않습니다."
     )
 end
 

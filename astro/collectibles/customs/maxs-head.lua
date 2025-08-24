@@ -18,8 +18,9 @@ Astro:AddCallback(
                 "공격력 증가",
                 "!!! 소지중일 때 {{Collectible4}}Cricket's Head 미등장" ..
                 "#↑ {{DamageSmall}}공격력 +0.5" ..
-                "#↑ {{DamageSmall}}공격력 배율 x1.5" ..
-                "#{{ArrowGrayRight}} 중첩이 가능하며 공격력 배율이 곱 연산으로 적용됩니다."
+                "#↑ {{DamageSmall}}공격력 배율 x1.5",
+                -- 중첩 시
+                "공격력 배율이 중첩된 수만큼 곱 연산으로 적용"
             )
         end
 

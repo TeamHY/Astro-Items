@@ -12,7 +12,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.FORTUNE_COIN, 
         "포츈 코인",
-        "...",
+        "올인",
         "!!! 일회용" ..
         "#사용 시 30%의 확률로 그 방의 아이템을 소환합니다." ..
         "#{{ArrowGrayRight}} 실패 시 {{BrokenHeart}}소지 불가능 체력 +3" ..

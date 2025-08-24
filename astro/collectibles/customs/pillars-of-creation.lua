@@ -15,10 +15,12 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.PILLARS_OF_CREATION,
                 "창조의 기둥",
-                "...",
+                "가슴 시리도록 아름다워",
                 "{{Planetarium}} 스테이지 첫 방에 천체관으로 갈 수 있는 사다리가 생성됩니다." ..
                 "#{{ArrowGrayRight}} 입장엔 {{Coin}}" .. COIN_COST .. "개의 동전이 필요합니다." ..
-                "#!!! 기둥은 방을 벗어나면 사라집니다. (중첩 시 사라지지 않음)"
+                "#!!! 기둥은 방을 벗어나면 사라집니다.",
+                -- 중첩 시
+                "방을 벗어나도 기둥이 사라지지 않음"
             )
         end
     end

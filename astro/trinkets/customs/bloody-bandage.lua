@@ -1,14 +1,19 @@
 Astro.Trinket.BLOODY_BANDAGE = Isaac.GetTrinketIdByName("Bloody Bandage")
 
-if EID then
-    Astro:AddEIDTrinket(
-        Astro.Trinket.BLOODY_BANDAGE,
-        "{{CursedRoom}}저주방 입장/퇴장 시 피해를 입지 않습니다.#{{ColorGold}}맵에 {{CursedRoom}}저주방의 위치가 표시됩니다.",
-        "피의 붕대", "..."
-    )
-
-    -- Astro:AddGoldenTrinketDescription(Astro.Trinket.BLOODY_BANDAGE, "")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDTrinket(
+                Astro.Trinket.BLOODY_BANDAGE,
+                "피투성이 붕대", "이제 괜찮아...",
+                "{{CursedRoom}} 저주방 입장/퇴장 시 피해를 입지 않습니다.",
+                -- 황금
+                "{{CursedRoom}} 맵에 저주방의 위치를 보여줍니다."
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,

@@ -8,8 +8,9 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.DUALITY_LIGHT_AND_DARKNESS,
-                "표리일체", "...",
-                "!!! 획득 이후 {{Collectible675}}Cracked Orb, {{Collectible691}}Sacred Orb, {{Collectible" .. Astro.Collectible.FALLEN_ORB .. "}}Fallen Orb가 모든 배열에서 제거됨" ..
+                "표리일체",
+                "반짝이는 수수께끼",
+                "!!! 획득 이후 {{Collectible675}}Cracked Orb, {{Collectible691}}Sacred Orb, {{Collectible" .. Astro.Collectible.FALLEN_ORB .. "}}Fallen Orb 미등장" ..
                 "#스테이지를 넘어갈 때마다 소지중인 아이템 중 하나와 {{Collectible675}}/{{Collectible691}}/{{Collectible" .. Astro.Collectible.FALLEN_ORB .. "}}를 제거하며;" ..
                 "#{{ArrowGrayRight}} 제거된 아이템과 {{Collectible675}}/{{Collectible691}}/{{Collectible" .. Astro.Collectible.FALLEN_ORB .. "}} 중 하나를 소환합니다." ..
                 "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다."

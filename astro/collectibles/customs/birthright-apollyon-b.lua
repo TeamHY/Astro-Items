@@ -8,8 +8,9 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_APOLLYON_B,
                 "더럽혀진 아폴리온의 생득권",
                 "재앙의 동료",
-                "클리어하지 않은 방에 입장 시 {{Card38}}Berkano가 발동됩니다." ..
-                "#중첩 시 발동 횟수가 증가합니다."
+                "{{Collectible706}} 클리어하지 않은 방에 입장 시 심연의 파리 3마리를 소환합니다.",
+                -- 중첩 시
+                "중첩된 수만큼 소환 시도"
             )
         end
     end

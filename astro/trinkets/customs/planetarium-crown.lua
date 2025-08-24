@@ -5,11 +5,13 @@ Astro.Trinket.PLANETARIUM_CROWN = Isaac.GetTrinketIdByName("Planetarium Crown")
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.PLANETARIUM_CROWN,
-        "!!! 효과가 발동한 뒤 사라집니다.#{{TreasureRoom}}보물방 입장 시 {{Planetarium}}천체관 아이템 1개가 소환됩니다.",
-        "천체 왕관", "별들의 특별한 손님"
+        "천체 왕관",
+        "별들의 특별한 손님",
+        "!!! 일회용" ..
+        "#{{TreasureRoom}} 보물방에 {{Planetarium}}천체관 배열의 아이템을 1개 소환합니다."
     )
 
-    Astro:AddGoldenTrinketDescription(Astro.Trinket.PLANETARIUM_CROWN, "", 1)
+    Astro:AddGoldenTrinketDescription(Astro.Trinket.PLANETARIUM_CROWN, "", 1, 2)
 end
 
 Astro:AddCallback(

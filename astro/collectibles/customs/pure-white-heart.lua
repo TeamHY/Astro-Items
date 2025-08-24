@@ -4,8 +4,8 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.PURE_WHITE_HEART,
         "순백의 심장",
-        "...",
-        "!!! 효과가 발동된 후 이 아이템은 사라집니다." ..
+        "시작부터 마음 속에 있으니",
+        "!!! 효과를 발동한 후 이 아이템은 사라집니다." ..
         "#소지중일 때 {{BossRoom}}보스방 클리어 시 소지중인 아이템 중 1개와 {{AngelRoom}}천사방 아이템 2개를 소환합니다." ..
         "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다."
     )

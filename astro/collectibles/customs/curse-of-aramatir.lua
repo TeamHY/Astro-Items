@@ -19,14 +19,22 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.CURSE_OF_ARAMATIR,
                 "금주 아라마티아",
-                "...",
+                "리타마라",
                 "!!! 일회용"..
                 "#!!! 소지중인 아이템이 없거나 {{SuperSecretRoom}}일급비밀방이 아니면 사용 불가" ..
                 "#사용 시 소지중인 {{Quality3}}/{{Quality4}}등급 아이템을 " .. SPAWN_COLLECTIBLE_COUNT .. "개 소환하며;" ..
-                "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
-                "#{{ArrowGrayRight}} {{ColorRed}}소환된 아이템은 방을 나가면 사라집니다." ..
-                "#{{Room}} 1스테이지의 맵에 {{SuperSecretRoom}}일급비밀방 위치를 표시합니다." ..
-                "#Water Enchantress와 Illegal Knight는 스테이지마다 한 번 사용 가능합니다."
+                "#{{ArrowGrayRight}} 소환된 아이템은 {{ColorError}}방 이동 시 사라지며{{CR}}, 하나를 선택하면 나머지는 사라집니다." ..
+                "#{{SuperSecretRoom}} 1스테이지의 맵에 일급비밀방 위치를 표시합니다."
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.CURSE_OF_ARAMATIR),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "!!! 일회용",
+                    "!!! {{Player" .. Astro.Players.WATER_ENCHANTRESS .. "}}¤/ {{Player" .. Astro.Players.WATER_ENCHANTRESS_B .. "}}: {{ColorIsaac}}스테이지 당 한번만{{CR}} 사용 가능"
+                },
+                nil, "ko_kr", nil
             )
         end
     end

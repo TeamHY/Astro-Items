@@ -14,14 +14,19 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.ZOLTRAAK = Isaac.GetItemIdByName("Zoltraak")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.ZOLTRAAK,
-        "졸트라크",
-        "사람을 죽이는 마법",
-        "사용 시 공격방향으로 {{DamageSmall}}공격력 2배의 광선을 발사합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.ZOLTRAAK,
+                "졸트라크",
+                "사람을 죽이는 마법",
+                "사용 시 공격방향으로 공격력 2배의 광선을 발사합니다."
+            )
+        end
+    end
+)
 
 local ZOLTRAAK_STAFF_VARIANT = Isaac.GetEntityVariantByName("Zoltraak Staff")
 local ZOLTRAAK_STAFF_MAGIC_VARIANT = Isaac.GetEntityVariantByName("Zoltraak Staff Magic")

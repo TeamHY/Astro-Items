@@ -61,7 +61,7 @@ if EID then
         "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BONUS_POTENTIAL_MAX_STAT .. "%p" ..
         "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_BOSS .. "%p" ..
         "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_MONSTER .. "%p" ..
-        "#{{Collectible" .. Astro.Collectible.BLACK_CUBE .. "}}Black Cube, {{Collectible" .. Astro.Collectible.RED_CUBE .. "}}Red Cube와 별개로 적용됩니다."
+        "#!!! {{Collectible" .. Astro.Collectible.BLACK_CUBE .. "}}Black Cube 및 {{Collectible" .. Astro.Collectible.RED_CUBE .. "}}Red Cube와 별개로 적용"
     )
 end
 

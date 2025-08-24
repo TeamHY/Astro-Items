@@ -5,10 +5,12 @@ Astro.Collectible.PIRATE_MAP = Isaac.GetItemIdByName("Pirate Map")
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.PIRATE_MAP,
-        "해적 지도", "...",
-        "맵에 랜덤한 방 위치 2개를 밝힙니다." ..
-        "#{{ArrowGrayRight}} {{LuckSmall}}행운 2당 1개의 방을 추가로 보여줍니다." ..
-        "#{{ArrowGrayRight}} 중첩 시마다 2개의 방을 추가로 보여줍니다.")
+        "해적 지도",
+        "내 어린 시절 우연히",
+        "맵에 랜덤 방의 위치를 일정 개수만큼 보여줍니다." ..
+        "#!!! 보여지는 방의 개수: ({{Collectible" .. Astro.Collectible.PIRATE_MAP .. "}} 개수 * 2)개" ..
+        "#{{ArrowGrayRight}} {{LuckSmall}}행운 2당 1개의 방을 추가로 보여줍니다."
+    )
 end
 
 ---@param count integer

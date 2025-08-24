@@ -17,7 +17,7 @@ local LUCK = 0
 Astro.Collectible.CRACKED_BOTTOM = Isaac.GetItemIdByName("Cracked Bottom")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.CRACKED_BOTTOM, "깨진 밑바닥", "이보다 밑은 없겠지", "능력치가 {{Player0}}Isaac보다 낮아지지 않습니다.")
+    Astro:AddEIDCollectible(Astro.Collectible.CRACKED_BOTTOM, "깨진 밑바닥", "이보다 밑은 없겠지", "{{Player0}} 능력치가 Isaac의 기본 능력치보다 낮아지지 않습니다.")
 end
 
 Astro:AddCallback(

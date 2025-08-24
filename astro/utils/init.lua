@@ -53,6 +53,7 @@ end
 ---@param numbersToMultiply number | table | nil
 ---@param maxMultiplier number | table | nil
 function Astro:AddGoldenTrinketDescription(id, appendText, numbersToMultiply, maxMultiplier)
+    if not EID then return end
     local data = EID.GoldenTrinketData[id]
 
     if data then

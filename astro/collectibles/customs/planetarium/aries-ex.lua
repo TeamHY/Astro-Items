@@ -5,9 +5,9 @@ if EID then
         Astro.Collectible.ARIES_EX,
         "초 양자리",
         "일시적 저항",
-        "피격 시 그 피격은 무효화되며, 10초간 무적이 됩니다." ..
-        "#{{Timer}} 쿨타임 60초"..
-        "#{{ArrowGrayRight}} 중첩 시 지속 시간이 증가합니다."
+        "피격 시 피해를 무시하고 일시적으로 무적이 됩니다." ..
+        "#!!! 지속시간: (10 * {{Collectible" .. Astro.Collectible.ARIES_EX .."}}개수)초" ..
+        "#{{TimerSmall}} 쿨타임 60초"
     )
 end
 

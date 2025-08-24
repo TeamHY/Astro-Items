@@ -6,8 +6,10 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.VEGA,
         "베가",
-        "...",
-        "획득 시 {{Collectible534}}Schoolbag, {{Collectible458}}Belly Button, {{Collectible454}}Polydactyly를 소환하며, 하나를 선택하면 나머지는 사라집니다.#다음 게임에서 {{Card36}}Rune of Ansuz를 소환합니다."
+        "위쪽에서 빛나는 여름의 대삼각형",
+        "획득 시 {{Collectible534}}Schoolbag, {{Collectible458}}Belly Button, {{Collectible454}}Polydactyly를 소환하며;".. 
+        "#소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
+        "#다음 게임에서 {{Card36}}Rune of Ansuz를 소환합니다."
     )
 end
 

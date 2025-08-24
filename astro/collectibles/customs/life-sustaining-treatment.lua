@@ -7,7 +7,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.LIFE_SUSTAINING_TREATMENT,
         "연명치료",
-        "주삿바늘 공격",
+        "이토록 시린 아픔만이",
         "확률적으로 공격력 x3의 적을 즉사시키며 눈물이 10방향으로 퍼지는 공격이 나갑니다." ..
         "#{{LuckSmall}} 행운 14.5 이상일 때 100% 확률"
     )

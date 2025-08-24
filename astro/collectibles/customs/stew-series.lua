@@ -20,7 +20,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BLUE_STEW,
         "푸른 스튜",
-        "...",
+        "일시적 공격 속도 증가",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
         "↑ {{TearsSmall}}연사(고정) +21.6"..
         "#{{ArrowGrayRight}} 증가한 연사는 1초마다 -0.12씩 감소합니다." ..
@@ -30,7 +30,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.GREEN_STEW,
         "초록 스튜",
-        "...",
+        "일시적 행운 증가",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
         "↑ {{LuckSmall}}행운 +21.6"..
         "#{{ArrowGrayRight}} 증가한 행운은 1초마다 -0.12씩 감소합니다." ..
@@ -40,7 +40,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BROWN_STEW,
         "갈색 스튜",
-        "...",
+        "일시적 이동 속도 증가",
         -- "{{HealingRed}} 체력을 모두 회복합니다." .. 
         "↑ {{SpeedSmall}}이동속도 +1.08"..
         "#{{ArrowGrayRight}} 증가한 이동속도는 1초마다 -0.006씩 감소합니다." ..

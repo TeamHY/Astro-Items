@@ -3,13 +3,13 @@ Astro.Trinket.ABSOLUTE_ZERO = Isaac.GetTrinketIdByName("Absolute Zero")
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.ABSOLUTE_ZERO,
-        "#{{Freezing}} 10%의 확률로 적 처치 시 적이 얼어붙는 눈물이 나갑니다." ..
-        "#{{ArrowGrayRight}} 얼어붙은 적은 접촉 시 직선으로 날아가 10방향으로 고드름 눈물을 발사합니다." ..
-        "#!!! {{LuckSmall}}행운 수치 비례: 행운 45 이상일 때 100% 확률 ({{LuckSmall}}행운 1당 +2%p)",
-        "절대 영도", "-273.15도"
+        "절대 영도", "-273.15도",
+        "{{Collectible596}} 공격 시 10%의 확률로 적이 얼어붙는 눈물이 나갑니다." ..
+        "#{{ArrowGrayRight}} {{Freezing}} 얼어붙은 적은 접촉 시 직선으로 날아가 10방향으로 고드름 눈물을 발사합니다." ..
+        "#{{LuckSmall}} 행운 45 이상일 때 100% 확률 (행운 1당 +2%p)"
     )
 
-    Astro:AddGoldenTrinketDescription(Astro.Trinket.ABSOLUTE_ZERO, "", 10)
+    Astro:AddGoldenTrinketDescription(Astro.Trinket.ABSOLUTE_ZERO, "", 10, 2)
 end
 
 Astro:AddCallback(

@@ -1,14 +1,21 @@
 Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE = Isaac.GetItemIdByName("Original Sinful Spoils - Snake Eye")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
-        "원죄보 - 스네이크아이", "...",
-        "공격 시 10%의 확률로 여러 유령을 소환합니다." ..
-        "#{{TimerSmall}} (쿨타임 2.5초)" ..
-        "#{{ArrowGrayRight}} 중첩 시 기본 확률이 합 연산으로 증가하고 유령이 소환되는 쿨타임이 줄어듭니다." ..
-        "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
+                "원죄보 - 스네이크아이", "...",
+                "적 명중 시 10%의 확률로 여러 유령을 소환합니다." ..
+                "#{{TimerSmall}} (쿨타임 2.5초)" ..
+                "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
+                -- 중첩 시
+                "유령의 소환 확률이 중첩된 수만큼 합 연산으로 증가하며 소환 쿨타임이 줄어듭니다."
+            )
+        end
+    end
+)
 
 local spawnChance = 0.1
 

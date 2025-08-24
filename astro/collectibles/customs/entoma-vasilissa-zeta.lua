@@ -10,7 +10,7 @@ Astro:AddCallback(
                 Astro.Collectible.ENTOMA_VASILISSA_ZETA,
                 "엔토마 바실리사 제타",
                 "벌레를 사랑하는 메이드",
-                "공격이 적에게 명중 시 진드기를 소환합니다."
+                "적 명중 시 공격력 x2의 진드기를 소환합니다."
             )
         end
     end

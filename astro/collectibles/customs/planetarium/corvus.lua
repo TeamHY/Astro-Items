@@ -2,10 +2,23 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.CORVUS = Isaac.GetItemIdByName("Corvus")
 
-if EID then
-    -- 20초 -> 10초 -> 6.66초
-    Astro:AddEIDCollectible(Astro.Collectible.CORVUS, "까마귀자리", "...", "게임 시간 10초마다 {{Card86}}Soul of Eve가 발동됩니다. #다음 게임에서 {{Card86}}Soul of Eve을 소환합니다.#중첩이 가능하며, 발동 간격이 줄어듭니다.")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            -- 20초 -> 10초 -> 6.66초
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CORVUS,
+                "까마귀자리",
+                "날개 쳐라",
+                "{{Card86}} 10초마다 그 방에서 {{Collectible117}}Dead Bird 패밀리어를 14마리 소환합니다." ..
+                "#다음 게임에서 첫 스테이지에 {{Card86}}Soul of Eve을 소환합니다.",
+                -- 중첩 시
+                "중첩된 수만큼 소환 쿨타임이 절반으로 감소하며, 다음 게임에서 첫 스테이지에 Soul of Eve를 중첩된 수만큼 소환합니다."
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_PEFFECT_UPDATE,

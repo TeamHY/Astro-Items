@@ -9,17 +9,24 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.VENUS_EX = Isaac.GetItemIdByName("VENUS EX")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.VENUS_EX,
-        "초 금성",
-        "미인이시네요",
-        "{{Collectible591}} Venus 효과가 적용됩니다." ..
-        "#{{Charm}} 매혹 상태 적에게 50% 추가 피해를 입힙니다." ..
-        "#중첩 시 추가 피해가 합 연산으로 증가합니다." ..
-        "#!!! 이번 게임에서 {{Collectible591}}Venus가 등장하지 않습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.VENUS_EX,
+                "초 금성",
+                "미인이시네요",
+                "!!! 획득 이후 {{Collectible591}}Venus 미등장" ..
+                "#↑ {{Heart}}최대 체력 +1" ..
+                "#↑ {{HealingRed}}빨간하트 +1" ..
+                "#{{Collectible591}} 캐릭터와 가까이 있는 적을 {{Charm}}매혹시키며 매혹된 적에게 50%의 추가 피해를 줍니다.",
+                -- 중첩 시
+                "추가 피해량이 중첩된 수만큼 합 연산으로 증가"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,

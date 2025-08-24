@@ -34,12 +34,31 @@ Astro:AddCallback(
                 Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
                 "빛의 성검 단넬",
                 "...",
-                "{{Collectible" .. Astro.Collectible.MORPHINE .. "}} 소지중일 때 적에게 준 피해의 10%만큼 보스가 아닌 모든 적들에게 피해를 줍니다." ..
+                "{{Collectible" .. Astro.Collectible.MORPHINE .. "}} 소지중일 때 적에게 준 피해의 10%만큼 그 방의 적에게 피해를 줍니다. (보스 제외)" ..
                 "#적 처치 시 영혼을 흡수하며;" ..
-                "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .."개까지 저장할 수 있습니다." ..
-                "#{{ArrowGrayRight}} 공격이 적에게 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..
-                "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .."개 감소합니다." ..
-                "#Water Enchantress와 Illegal Knight는 방 클리어 시 영혼이" .. SOUL_DECREASE_FOR_ADVENTURER .. "개 감소하지만 영혼을 최대 " .. MAXIMUM_FOR_ADVENTURER .. "개 저장할 수 있습니다."
+                "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .. "개까지 저장하며;" ..
+                "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..
+                "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소합니다."
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "영혼은 최대 " .. MAXIMUM .. "개까지",
+                    "영혼은 최대 {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}}개까지"
+                },
+                nil, "ko_kr", nil
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "영혼이 " .. SOUL_DECREASE .. "개 감소",
+                    "영혼이 {{ColorIsaac}}" .. SOUL_DECREASE_FOR_ADVENTURER .."{{CR}}개 감소"
+                },
+                nil, "ko_kr", nil
             )
         end
 

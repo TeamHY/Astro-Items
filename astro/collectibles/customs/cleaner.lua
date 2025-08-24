@@ -29,8 +29,7 @@ Astro:AddCallback(
                 Astro.Collectible.CLEANER,
                 "클리너",
                 "말끔하게",
-                "!!! 효과가 발동된 후 이 아이템은 사라집니다." ..
-                "#!!! 획득 시 아래 아이템이 제거됩니다:" ..
+                "#!!! 획득 시 아래 아이템 제거:" ..
                 "#{{Blank}} " .. Astro.CleanerEIDString
             )
         end

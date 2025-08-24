@@ -22,11 +22,12 @@ Astro:AddCallback(
                 Astro.Collectible.RGB,
                 "삼원색",
                 "불 좀 꺼줄래?",
-                "방의 색상을 변경하며, 색상에 따라 효과가 달라집니다:" ..
+                "방의 색상을 변경하며 색상에 따라 효과가 달라집니다:" ..
                 "#{{ArrowGrayRight}} {{ColorRed}}(빨강){{CR}} {{DamageSmall}}공격력 배율 x1.4" ..
                 "#{{ArrowGrayRight}} {{ColorGreen}}(초록){{CR}} {{LuckSmall}}행운 배율 x1.5" ..
-                "#{{ArrowGrayRight}} {{ColorBlue}}(파랑){{CR}} {{TearsSmall}}연사 배율 x1.2" ..
-                "#중첩 시 곱 연산으로 적용됩니다."
+                "#{{ArrowGrayRight}} {{ColorBlue}}(파랑){{CR}} {{TearsSmall}}연사 배율 x1.2",
+                -- 중첩 시
+                "해당 배율이 중첩된 수만큼 곱 연산으로 적용"
             )
         end
     end

@@ -5,8 +5,7 @@ if EID then
         Astro.Collectible.FORBIDDEN_DICE,
         "금지된 주사위",
         "싫은 건 굴릴래!",
-        "사용 시 그 방의 아이템을 다른 아이템으로 바꿉니다."..
-        "#{{ArrowGrayRight}} 액티브 아이템 등장 시 다시 바꿉니다."
+        "{{Trinket88}} 사용 시 그 방의 아이템을 다른 패시브 아이템으로 바꿉니다."
     )
 end
 

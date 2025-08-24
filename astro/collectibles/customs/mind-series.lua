@@ -21,62 +21,82 @@ Astro.Collectible.BLUE_MIND = Isaac.GetItemIdByName("Blue Mind")
 Astro.Collectible.LUCKY_MIND = Isaac.GetItemIdByName("Lucky Mind")
 Astro.Collectible.QUANTUM_MIND = Isaac.GetItemIdByName("Quantum Mind")
 
-if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.AMPLIFYING_MIND,
-        "증폭하는 마음",
-        "...",
-        "{{Collectible" .. Astro.Collectible.CALM_MIND .. "}}Calm Mind, {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind, {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}}Blue Mind, {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}}Lucky Mind, {{Collectible" .. Astro.Collectible.QUANTUM_MIND .. "}}Quantum Mind의 증가 수치가 2배로 증가합니다."
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(Astro.Collectible.AMPLIFYING_MIND,
+                "증폭하는 마음",
+                "의지",
+                "!!! 소지중일 때 아래 아이템들의 효과 두 배:" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}} Lucky Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.QUANTUM_MIND .. "}} Quantum Mind"
+            )
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.CALM_MIND,
-        "침착한 정신",
-        "...",
-        "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
-        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
-        "#중첩 시 다음 증가량부터 적용됩니다."
-    )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CALM_MIND,
+                "침착한 정신",
+                "압도적인 힘",
+                "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
+                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
+                "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+            )
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.SWIFT_MIND,
-        "신속한 정신",
-        "...",
-        "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
-        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
-        "#중첩 시 다음 증가량부터 적용됩니다."
-    )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SWIFT_MIND,
+                "신속한 정신",
+                "토끼처럼 가볍게",
+                "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
+                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
+                "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+            )
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BLUE_MIND,
-        "우울한 정신",
-        "...",
-        "{{Timer}} 1초마다 {{TearsSmall}}연사(고정) +0.0019" ..
-        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
-        "#중첩 시 다음 증가량부터 적용됩니다."
-    )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BLUE_MIND,
+                "우울한 정신",
+                "누가 양파를 써나?",
+                "{{Timer}} 1초마다 {{TearsSmall}}연사(고정) +0.0019" ..
+                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
+                "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+            )
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.LUCKY_MIND,
-        "행운의 정신",
-        "...",
-        "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.0087" ..
-        "#{{ArrowGrayRight}} 시작 방에서는 증가하지 않습니다." ..
-        "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다." ..
-        "#중첩 시 다음 증가량부터 적용됩니다."
-    )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.LUCKY_MIND,
+                "행운의 정신",
+                "행운을 빌어요",
+                "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.0087" ..
+                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
+                "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+            )
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.QUANTUM_MIND,
-        "퀀텀 마인드",
-        "...",
-        "사용 시 그 방의 아이템을 {{Collectible" .. Astro.Collectible.CALM_MIND .. "}}Calm Mind, {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind, {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}}Blue Mind, {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}}Lucky Mind 중 하나로 변경합니다. (동일한 아이템이 여러 개 등장할 수 있음)" ..
-        "#이동속도가 2.0 이상일 경우 {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind는 등장하지 않습니다." ..
-        "#Leah가 사용할 경우 충전량이 6칸 남습니다."
-    )
-end
+            Astro:AddEIDCollectible(
+                Astro.Collectible.QUANTUM_MIND,
+                "퀀텀 마인드",
+                "집합체",
+                "사용 시 그 방의 아이템을 아래 아이템 중 하나로 변경:" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}} Lucky Mind" ..
+                "#!!! 동일한 아이템이 여러 개 등장할 수 있으며 {{SpeedSmall}}이동속도가 2.0 이상일 경우 {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind는 등장하지 않습니다."
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.QUANTUM_MIND),
+                { Astro.Players.LEAH },
+                "사용 후 충전량을 6칸 보존",
+                nil, "ko_kr", nil
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,

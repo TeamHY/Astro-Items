@@ -17,10 +17,10 @@ local function trimString(text, max_len)    -- 번역이 너무 길면 화면 �
 end
 
 
-local PocketItemStrings = {}
+Astro.pocketItemStr = {}
 
 local function BuildPocketItemStrings()
-    PocketItemStrings = {}
+    Astro.pocketItemStr = {}
 
     local ic = Isaac.GetItemConfig()
     local numPlayers = Game():GetNumPlayers()
@@ -32,25 +32,32 @@ local function BuildPocketItemStrings()
         end
 
         local TrslName = nil
-        local IsActiveItem = false
-        local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+        local card = player:GetCard(0)
+        local pill = player:GetPill(0)
 
-        if pocketItem and pocketItem ~= 0 then
-            local item = Astro.EID[pocketItem]
-            if item and item.name and
-               item.name ~= ic:GetCollectible(pocketItem).Name then    -- 액티브의 원본 이름이 다를 때만 작동
-                TrslName = item.name
+        if card ~= 0 then
+            goto skip
+        elseif pill ~= 0 and pill ~= 14 then
+            goto skip
+        else
+            local pocketItem = player:GetActiveItem(ActiveSlot.SLOT_POCKET)
+            if pocketItem and pocketItem ~= 0 then
+                local item = Astro.EID[pocketItem]
+                if item and item.name and
+                item.name ~= ic:GetCollectible(pocketItem).Name then    -- 액티브의 원본 이름이 다를 때만 작동
+                    TrslName = item.name
 
-                if Input.IsActionPressed(ButtonAction.ACTION_MAP, player.ControllerIndex) and item.description then
-                    TrslName = trimString(item.description, 17)
+                    if Input.IsActionPressed(ButtonAction.ACTION_MAP, player.ControllerIndex) and item.description then
+                        TrslName = trimString(item.description, 17)
+                    end
+
+                    IsActiveItem = true
                 end
-
-                IsActiveItem = true
             end
         end
 
-        local id = #PocketItemStrings + 1
-        PocketItemStrings[id] = {
+        local id = #Astro.pocketItemStr + 1
+        Astro.pocketItemStr[id] = {
             Name = TrslName or "",
             IsActiveItem = IsActiveItem,
             PType = player:GetPlayerType(),
@@ -63,7 +70,7 @@ end
 
 Astro:AddCallback(ModCallbacks.MC_POST_GAME_STARTED, function(_, cont)
     if not cont then
-        PocketItemStrings = {}
+        Astro.pocketItemStr = {}
     end 
 end)
 
@@ -77,7 +84,7 @@ local function RenderPocketItemName()
     local shakeOffset = Game().ScreenShakeOffset
     local fontSize, sizeOffset = 1, -2
 
-    for i, k in pairs(PocketItemStrings) do
+    for i, k in pairs(Astro.pocketItemStr) do
         if not k or not k.Name or k.Name == "" then
             goto skip
         end

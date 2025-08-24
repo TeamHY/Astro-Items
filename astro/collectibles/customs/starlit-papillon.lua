@@ -24,20 +24,33 @@ Astro.Collectible.STARLIT_PAPILLON = Isaac.GetItemIdByName("Starlit Papillon")
 
 -- local useSound = Isaac.GetSoundIdByName('Specialsummon')
 -- local useSoundVoulme = 1 -- 0 ~ 1
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.STARLIT_PAPILLON,
+                "스타리트 파피용",
+                "...",
+                "적 처치 시 영혼을 흡수하며;" ..
+                "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 입힙니다." ..
+                "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .. "개까지 저장할 수 있습니다." ..
+                "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소합니다." ..
+                "#소지중일 때 {{Collectible492}}YO LISTEN! 효과가 적용됩니다."
+            )
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.STARLIT_PAPILLON,
-        "스타리트 파피용",
-        "...",
-        "적 처치 시 영혼을 흡수하며;" ..
-        "#{{ArrowGrayRight}} 공격이 적에게 명중 시 영혼 1개당 1%p 추가 피해를 입힙니다." ..
-        "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .. "개까지 저장할 수 있습니다." ..
-        "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소합니다." ..
-        "#{{ArrowGrayRight}} Water Enchantress와 Illegal Knight는 방 클리어 시 영혼이 10개 감소하지만 영혼을 최대 " .. MAXIMUM_FOR_ADVENTURER .. "개까지 저장할 수 있습니다." ..
-        "#소지중일 때 {{Collectible492}}YO LISTEN! 효과가 적용됩니다."
-    )
-end
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.STARLIT_PAPILLON),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "최대 " .. MAXIMUM .. "개까지 저장할 수 있습니다.#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소",
+                    "최대 {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}}개까지 저장할 수 있습니다.#{{ArrowGrayRight}} 방 클리어 시 영혼이 {{ColorIsaac}}" .. SOUL_DECREASE_FOR_ADVENTURER .. "{{CR}}개 감소"
+                },
+                nil, "ko_kr", nil
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,

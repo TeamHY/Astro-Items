@@ -1,7 +1,13 @@
 Astro.Collectible.OMEGA_321 = Isaac.GetItemIdByName("Omega 321")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.OMEGA_321, "오메가 321", "달에 간 시계", "{{Slow}} 방 입장 시 모든 적들을 8초간 둔화시킵니다.#중첩이 가능합니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.OMEGA_321,
+        "오메가 321",
+        "달에 간 시계",
+        "{{Slow}} 방 입장 시 모든 적을 일정 시간동안 둔화시킵니다." ..
+        "@!!! 지속시간: ({{Collectible" .. Astro.Collectible.OMEGA_321 .."}} 개수 * 8)초"
+    )
 end
 
 Astro:AddCallback(

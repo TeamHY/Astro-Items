@@ -5,8 +5,11 @@ Astro.Trinket.NOSTALGIA = Isaac.GetTrinketIdByName("Nostalgia")
 if EID then
     Astro:AddEIDTrinket(
 		Astro.Trinket.NOSTALGIA,
-		"!!! 효과가 발동한 뒤 사라집니다.#소지중인 상태에서 {{BossRoom}}보스방 클리어 시 The Binding of Isaac: Wrath of the Lamb에서 등장한 아이템 2개를 소환합니다.#!!! 획득 시 바로 흡수됩니다.",
-		"노스텔지아", "그 때 그 시절로"
+		"노스텔지아",
+		"그 때 그 시절로",
+		"!!! 일회용" ..
+		"#!!! 획득한 즉시 흡수됨" ..
+		"#{{BossRoom}} 보스방 클리어 시 {{ColorGreen}}아이작의 번제: 어린 양의 분노{{CR}}에서 등장한 아이템을 2개 소환합니다."
 	)
 end
 

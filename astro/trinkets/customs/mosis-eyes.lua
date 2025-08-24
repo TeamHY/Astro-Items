@@ -5,8 +5,11 @@ Astro.Trinket.MOSIS_EYES = Isaac.GetTrinketIdByName("Mosi's Eyes")
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.MOSIS_EYES,
-        "↓ {{LuckSmall}}행운 -5#캐릭터가 있는 방에서 2칸 이내에 있는 스테이지 구조를 맵에 표시합니다.#{{CurseBlindSmall}} 가려진 아이템을 알 수 있게 됩니다.",
-        "모시의 눈", "..."
+        "모시의 눈",
+        "...",
+        "↓ {{LuckSmall}}행운 -5" ..
+        "#캐릭터가 있는 방에서 2칸 이내에 있는 스테이지 구조를 맵에 표시합니다." ..
+        "#{{CurseBlindSmall}} 가려진 아이템을 알 수 있게 됩니다."
     )
 
     -- Astro:AddGoldenTrinketDescription(Astro.Trinket.MOSIS_EYES, "", 1)

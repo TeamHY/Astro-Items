@@ -6,8 +6,8 @@ if EID then
         Astro.Collectible.BOOK_OF_MOON,
         "달의 서",
         "충전식 달빛",
-        "사용 시 아래 효과 발동:" ..
-        "#{{ArrowGrayRight}} 그 방이 어두워지고 중앙에 달빛이 생깁니다." ..
+        "사용 시;" ..
+        "#{{ArrowGrayRight}} 그 방이 어두워지고 중앙에 달빛이 생기며;" ..
         "#{{ArrowGrayRight}} 스테이지당 한번 {{Card19}}XVIII - The Moon을 소환합니다." ..
         "#소지중일 때 {{SecretRoom}}비밀방, {{SuperSecretRoom}}일급비밀방, {{UltraSecretRoom}}특급비밀방 최초 입장 시 중앙에 달빛이 생깁니다." ..
         "#{{Collectible589}} {{ColorGray}}(달빛과 접촉 시 그 스테이지에서 {{HalfSoulHeart}}소울하트 +0.5, {{TearsSmall}}연사(+상한) +0.5){{CR}}"
@@ -16,9 +16,9 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BOOK_OF_LUNAR_ECLIPSE,
         "개기월식의 서",
-        "붉은 달",
-        "사용 시 아래 효과 발동:" ..
-        "#{{ArrowGrayRight}} 그 방이 어두워지고 중앙에 달빛이 생깁니다." ..
+        "붉게 뜬 달빛에 모습을 감추고서",
+        "사용 시;" ..
+        "#{{ArrowGrayRight}} 그 방이 어두워지고 중앙에 달빛이 생기며;" ..
         "#{{ArrowGrayRight}} 게임당 한번 {{Card19}}XVIII - The Moon?을 소환합니다." ..
         "#소지중일 때 {{TreasureRoom}}보물방, {{Shop}}상점, {{BossRoom}}보스방 최초 입장 시 중앙에 달빛이 생깁니다." ..
         "#{{Collectible589}} {{ColorGray}}(달빛과 접촉 시 그 스테이지에서 {{HalfSoulHeart}}소울하트 +0.5, {{TearsSmall}}연사(+상한) +0.5){{CR}}"

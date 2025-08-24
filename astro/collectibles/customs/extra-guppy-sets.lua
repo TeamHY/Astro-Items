@@ -2,9 +2,26 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.ABSOLUT_GUPPY = Isaac.GetItemIdByName("Absolut Guppy")
 Astro.Collectible.DELIRIUM_GUPPY = Isaac.GetItemIdByName("Delirium Guppy")
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.ABSOLUT_GUPPY,
+                "앱솔루트 구피", 
+                "파리 두 배",
+                "파란 아군 파리가 2배로 소환됩니다."
+            )
 
-Astro:AddEIDCollectible(Astro.Collectible.ABSOLUT_GUPPY, "앱솔루트 구피", "...", "파란 아군 파리가 2배로 소환됩니다.")
-Astro:AddEIDCollectible(Astro.Collectible.DELIRIUM_GUPPY, "섬망 구피", "...", "획득 시 {{Trinket117}}Locust of Conquest를 소환합니다.#적이 죽은 위치에 파란 아군 파리가 소환됩니다.")
+            Astro:AddEIDCollectible(
+                Astro.Collectible.DELIRIUM_GUPPY,
+                "섬망 구피",
+                "내 진정한 친구마저",
+                "획득 시 {{Trinket117}}Locust of Conquest를 소환합니다.#적이 죽은 위치에 파란 아군 파리가 소환됩니다."
+            )
+        end
+    end
+)
 
 local ABSOLUT_GUPPY_SUBTYPE = 1000
 

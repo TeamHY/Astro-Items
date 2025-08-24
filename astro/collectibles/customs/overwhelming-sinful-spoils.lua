@@ -14,13 +14,22 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
             Astro.Collectible.OVERWHELMING_SINFUL_SPOILS,
-            "폭주하는 죄보",
-            "...",
-            "적 처치 시 영혼을 최대 2개까지 흡수합니다." ..
-            "#사용 시 영혼을 소모해 여러 유령을 소환하며;" ..
-            "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}/{{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}의 소환 쿨타임을 4초간 무시합니다." ..
-            "#{{ArrowGrayRight}} Diabellstar, Diabellze의 경우 영혼을 5개까지 흡수할 수 있습니다."
-        )
+                "폭주하는 죄보",
+                "...",
+                "적 처치 시 영혼을 최대 2개까지 흡수합니다." ..
+                "#사용 시 영혼을 소모해 여러 유령을 소환하며;" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}/" ..
+                                    "{{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}의 유령 소환 쿨타임을 4초간 무시합니다."
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.OVERWHELMING_SINFUL_SPOILS),
+                { Astro.Players.DIABELLSTAR, Astro.Players.DIABELLSTAR_B },
+                {
+                    "영혼을 최대 2개까지",
+                    "영혼을 최대 {{ColorIsaac}}5{{CR}}개까지"
+                },
+                nil, "ko_kr", nil
+            )
         end
 
         if not isContinued then

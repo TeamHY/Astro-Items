@@ -8,15 +8,22 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.DENEB = Isaac.GetItemIdByName("Deneb")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.DENEB,
-        "데네브",
-        "...",
-        "다음 게임에서 애프터버스 변종 스테이지 (Burning Basement, Flooded Caves, Dank Depths, Scarred Womb) 등장하지 않습니다." ..
-        "#변종 몬스터 직접 공격 시 30% 추가 피해를 입힙니다. 중첩 시 추가 피해가 합 연산으로 증가합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.DENEB,
+                "데네브",
+                "왼쪽에서 빛나는 여름의 대삼각형",
+                "다음 게임에서 애프터버스 변종 스테이지(Burning Basement, Flooded Caves, Dank Depths, Scarred Womb) 등장하지 않습니다." ..
+                "#변종 몬스터 직접 공격 시 30%의 추가 피해를 입힙니다.",
+                -- 중첩 시
+                "추가 피해가 중첩된 수만큼 합 연산으로 증가"
+            )
+        end
+    end
+)
 
 local function TryChangeStage()
     if Astro.Data.BanAfterbirthStage then

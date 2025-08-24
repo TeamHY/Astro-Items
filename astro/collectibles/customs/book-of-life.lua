@@ -5,16 +5,17 @@ if EID then
     if Astro.Fight then
         astrobirthtext = "이번 게임의 금지 아이템 중 하나를 소환합니다."
     else
-        astrobirthtext = "사용 시 이번 게임에서 등장했던 아이템 중 소지 중이지 않은 아이템 하나를 소환합니다."
+        astrobirthtext = "사용 시 이번 게임에서 등장한 아이템 중 소지중이지 않은 아이템 하나를 소환합니다."
     end
 
     Astro:AddEIDCollectible(
         Astro.Collectible.BOOK_OF_LIFE,
         "생자의 서",
         "금단의 주술",
-        "#!!! 일회용" ..
-        "#" .. astrobirthtext ..
-        "#소지중에 사망 시 그 방에서 부활하며 이 아이템은 사라집니다."
+        "!!! 일회용" ..
+        "#↑ 소지중일 때 목숨 +1" ..
+        "#{{ArrowGrayRight}} 사망 시 그 방에서 즉시 체력 0.5로 부활하며 이 아이템은 사라집니다." ..
+        "#" .. astrobirthtext
     )
 end
 

@@ -18,10 +18,10 @@ Astro:AddCallback(
                 Astro.Collectible.MARKER_POCKET, 
                 "표식 주머니", 
                 "...", 
-                "!!! 일급비밀방에서만 사용 가능" ..
+                "!!! {{SuperSecretRoom}}일급비밀방에서만 사용 가능" ..
                 "#사용 시 소지중인 아이템 하나와 {{Collectible1}}/{{Collectible2}}/{{Collectible3}} 중 하나를 소환합니다." ..
                 "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
-                "#{{SuperSecretRoom}} 소지중일 때 1스테이지의 맵에 일급비밀방 위치를 표시합니다."
+                "#{{SuperSecretRoom}} 1스테이지의 맵에 일급비밀방 위치를 표시합니다."
             )
         end
     end

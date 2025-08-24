@@ -14,9 +14,9 @@ Astro:AddCallback(
                 Astro.Collectible.BANDAGE_GIRL,
                 "밴디지 걸",
                 "여자친구",
-                "최초 획득 시 {{Collectible207}}Ball of Bandages를 2개 얻습니다." ..
-                "#스테이지를 넘어갈 때마다 {{Collectible207}}Ball of Bandages를 획득합니다." ..
-                "중첩이 가능하며 {{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}}Blood Trail의 중첩에도 영향을 줍니다."
+                "!!! 최초 획득 시 {{Collectible207}}Ball of Bandages 2개 획득" ..
+                "#{{Collectible207}} 스테이지 입장 시 Ball of Bandages를 획득합니다." ..
+                "#!!! 획득량: ({{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}}개수+{{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}}개수)개"
             )
         end
     end

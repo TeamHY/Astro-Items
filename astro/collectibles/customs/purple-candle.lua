@@ -11,7 +11,7 @@ Astro:AddCallback(
                 Astro.Collectible.PURPLE_CANDLE,
                 "보라 양초",
                 "저주 면역 + 개안",
-                "!!! 소지중일 때 {{Collectible260}}Black Candle 미등장" ..
+                "!!! 획득 이후 {{Collectible260}}Black Candle 미등장" ..
                 "#↑ {{DevilChanceSmall}}악마방 확률 +15%" ..
                 "#{{CurseCursedSmall}} 스테이지에 입장할 때 저주에 걸리지 않습니다." ..
                 "#{{CurseCursedSmall}} 획득 시 Labyrinth/챌린지/특수 시드를 제외한 모든 저주를 제거합니다." ..

@@ -3,13 +3,20 @@ Astro.Trinket.FLUNK = Isaac.GetTrinketIdByName("Flunk")
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.FLUNK,
-        "#↓ 행운 -2#{{ArrowGrayRight}} {{ColorGold}}행운 감소 효과가 적용되지 않습니다.{{CR}}" ..
-        "#{{Trinket145}} Perfection과 같은 판정을 가집니다." ..
-        "#{{Collectible" .. Astro.Collectible.EZ_MODE .. "}}EZ Mode 소지 시 사라지지 않습니다.",
-        "낙제", "행운 감소? 아무튼 잃지 말라구!"
+        "낙제",
+        "행운 감소? 아무튼 잃지 말라구!",
+        "↓ {{LuckSmall}}행운 -2" ..
+        "#{{Trinket145}} Perfection과 같은 판정을 가집니다.",
+        -- 황금
+        "행운 감소 페널티 무효화"
     )
 
-    -- Astro:AddGoldenTrinketDescription(Astro.Trinket.FLUNK, "")
+    EID:addCondition(
+        "5.350." .. tostring(Astro.Trinket.FLUNK),
+        { "5.100." .. tostring(Astro.Collectible.EZ_MODE) },
+        "피격을 당해도 사라지지 않음",
+        nil, "ko_kr", nil
+    )
 end
 
 Astro:AddCallback(

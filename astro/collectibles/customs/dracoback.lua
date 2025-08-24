@@ -10,17 +10,39 @@ local WATER_ENCHANTRESS_MAX_COUNT = 5
 
 Astro.Collectible.DRACOBACK = Isaac.GetItemIdByName("Dracoback, the Rideable Dragon")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.DRACOBACK,
-        "기룡 드라코백",
-        "...",
-        "방 입장 시 스테이지마다 최대 2회 적 하나가 지워집니다. ({{BossRoom}}보스방에서는 무효과)"..
-        "#{{ArrowGrayRight}} 중첩 시 방마다 지워지는 적의 수가 증가합니다."..
-        "#Water Enchantress와 Illegal Knight는 획득 시 모든 능력치 x1.1;" ..
-        "#{{ArrowGrayRight}} 적 제거 발동 제한이 스테이지마다 최대 5회로 증가합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.DRACOBACK,
+                "기룡 드라코백",
+                "...",
+                "{{Collectible638}} {{ColorOrange}}보스방을 제외한{{CR}} 방 입장 시 스테이지 당 최대 ".. MAX_COUNT .. "번 랜덤 적 하나가 지워집니다.",
+                -- 중첩 시
+                "중첩된 수만큼 적을 지우려 시도"
+            )
+
+            -- 캐릭터 시너지
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DRACOBACK),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "최대 ".. MAX_COUNT .. "번",
+                    "최대 {{ColorIsaac}}".. WATER_ENCHANTRESS_MAX_COUNT .. "{{CR}}번"
+                },
+                nil, "ko_kr", nil
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DRACOBACK),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                "{{DamageSmall}}공격력, ¤¤{{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{ShotspeedSmall}}탄속, {{LuckSmall}}행운이 1.1배 증가합니다.",
+                nil, "ko_kr", nil
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,

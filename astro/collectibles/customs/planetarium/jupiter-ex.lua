@@ -9,18 +9,24 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.JUPITER_EX = Isaac.GetItemIdByName("JUPITER EX")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.JUPITER_EX,
-        "초 목성",
-        "가스 초거성이다!",
-        "{{Collectible594}}Jupiter, {{Collectible180}}Black Bean 효과가 적용됩니다." ..
-        "#5초마다 {{Collectible486}}Dull Razor를 1번 발동합니다." ..
-        "#{{ArrowGrayRight}} 중첩 시 횟수가 늘어납니다." ..
-        "#최초 획득 시 {{Card71}}XV - The Devil?을 발동합니다." ..
-        "#!!! 이번 게임에서 {{Collectible594}}Jupiter가 등장하지 않습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.JUPITER_EX,
+                "초 목성",
+                "가스 초거성이다!",
+                "!!! 획득 이후 {{Collectible594}}Jupiter가 모든 배열에서 제거됨" ..
+                "#{{Card71}} 최초 획득 시 {{Collectible33}}The Bible을 사용하며 30초간 비행 상태가 되고 {{Collectible390}}Seraphim 패밀리어를 소환합니다." ..
+                "#{{Collectible594}} Jupiter, {{Collectible180}}Black Bean 효과가 적용됩니다." ..
+                "#{{Collectible486}} 5초마다 피해를 입지 않고 피격 시 발동 효과를 발동합니다.",
+                -- 중첩 시
+                "피격 시 발동 효과가 중첩된 수만큼 발동"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_PEFFECT_UPDATE,

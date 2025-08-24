@@ -5,7 +5,12 @@ local subScale = 0.5
 local subDamageMultiplier = 0.5
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.PTOLEMAEUS, "프톨레마이오스", "천동설", "발사한 눈물 주변을 회전하는 공격력 x0.5의 눈물이 생깁니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.PTOLEMAEUS,
+        "프톨레마이오스",
+        "천동설",
+        "눈물에 눈물 주변을 도는 공격력 x0.5의 눈물이 생깁니다."
+    )
 end
 
 Astro:AddCallback(

@@ -9,8 +9,9 @@ Astro.Trinket.LAVA_HAND = Isaac.GetTrinketIdByName("Lava Hand")
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.LAVA_HAND,
-        "{{Collectible479}} 장신구 소지 시 5원을 소모하고 흡수합니다.",
-        "용암 손", "..."
+        "용암 손",
+        "녹아내려",
+        "{{Collectible479}} 획득 이후 장신구를 획득한 즉시 동전 5원을 소모하고 해당 장신구를 흡수해 효과를 영구적으로 얻습니다."
     )
 
 -- Astro:AddGoldenTrinketDescription(Astro.Trinket.LAVA_HAND, "", 10)

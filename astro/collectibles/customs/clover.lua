@@ -1,15 +1,21 @@
 Astro.Collectible.CLOVER = Isaac.GetItemIdByName("Clover")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.CLOVER,
-        "클로버",
-        "행운 + 공격력 증가",
-        "↑ {{LuckSmall}}행운 +1" ..
-        "#{{LuckSmall}} 행운 1당 {{DamageSmall}}공격력 +1%p" ..
-        "#중첩이 가능합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CLOVER,
+                "클로버",
+                "행운 + 공격력 증가",
+                "↑ {{LuckSmall}}행운 +1" ..
+                "#{{LuckSmall}} 행운 1당 {{DamageSmall}}공격력 +1%p",
+                -- 중첩 시
+                "증가량이 중첩된 수만큼 합 연산으로 증가"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,

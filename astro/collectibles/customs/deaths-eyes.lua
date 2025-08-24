@@ -2,16 +2,22 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.DEATHS_EYES = Isaac.GetItemIdByName("Death's Eyes")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.DEATHS_EYES,
-        "사신의 눈",
-        "사신의 눈물",
-        "!!! 획득 이후 {{Collectible331}}Godhead가 모든 배열에서 제거됨" ..
-        "{{Collectible331}} 25%의 확률로 눈물에 후광이 생기며 후광에 닿은 적은 프레임당 2의 피해를 입습니다." ..
-        "#중첩 시 확률이 합 연산으로 증가합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.DEATHS_EYES,
+                "사신의 눈",
+                "사신의 눈물",
+                "!!! 획득 이후 {{Collectible331}}Godhead 미등장" ..
+                "#{{Collectible331}} 25%의 확률로 눈물에 후광이 생기며 후광에 닿은 적은 프레임당 2의 피해를 입습니다.",
+                -- 중첩 시
+                "후광이 생길 확률이 중첩된 수만큼 합 연산으로 증가"
+            )
+        end
+    end
+)
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,

@@ -6,8 +6,10 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.COMET,
         "혜성",
-        "...",
-        "획득 시 {{Card78}}Cracked Key가 드랍됩니다.#다음 게임에서 {{Card78}}Cracked Key를 소환합니다.#중첩이 가능합니다.#{{Room}} 맵에 {{UltraSecretRoom}}특급비밀방의 위치가 표시됩니다."
+        "혜성같이 나타날 보상",
+        "{{Card78}} 획득 시 Cracked Key가 드랍되며;" ..
+        "#{{ArrowGrayRight}} 다음 게임에서 첫 스테이지에 Cracked Key를 이 아이템의 개수만큼 소환합니다." ..
+        "#{{UltraSecretRoom}} 맵에 특급비밀방의 위치가 표시됩니다."
     )
 end
 

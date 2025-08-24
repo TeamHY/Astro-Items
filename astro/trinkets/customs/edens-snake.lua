@@ -3,10 +3,10 @@ Astro.Trinket.EDENS_SNAKE = Isaac.GetTrinketIdByName("Eden's Snake")
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.EDENS_SNAKE,
-        "!!! 효과가 발동된 뒤 사라집니다." ..
-        "#소지중인 상태에서 {{MegaSatanSmall}}Mega Satan, {{DeliriumSmall}}Delirium, {{MotherSmall}}Mother 처치 시 {{Collectible381}}Eden's Blessing 1개를 소환합니다." ..
-        "#Dogma 처치 시 {{Collectible381}}Eden's Blessing 1개를 획득합니다.",
-        "에덴의 뱀", "..."
+        "에덴의 뱀",
+        "선악과",
+        "!!! 효과를 발동한 후 이 장신구는 사라집니다." ..
+        "#{{Collectible381}} 소지중인 상태에서 {{MegaSatanSmall}}Mega Satan, {{DeliriumSmall}}Delirium, {{MotherSmall}}Mother, {{Collectible633}}Dogma 처치시 Eden's Blessing을 1개 소환(획득)합니다."
     )
 
     Astro:AddGoldenTrinketDescription(Astro.Trinket.EDENS_SNAKE, "", 1, 2)

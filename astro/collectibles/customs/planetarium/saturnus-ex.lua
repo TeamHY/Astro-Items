@@ -9,17 +9,24 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.SATURNUS_EX = Isaac.GetItemIdByName("SATURNUS EX")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.SATURNUS_EX,
-        "초 토성",
-        "눈물 방어막",
-        "{{Collectible595}} Saturnus 효과가 적용됩니다." ..
-        "#10초마다 {{Collectible522}}Telekinesis를 1회 발동합니다." ..
-        "#{{ArrowGrayRight}} 중첩 시 횟수가 늘어납니다." ..
-        "#!!! 이번 게임에서 {{Collectible595}}Saturnus가 등장하지 않습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SATURNUS_EX,
+                "초 토성",
+                "눈물 방어막",
+                "!!! 획득 이후 {{Collectible595}}Saturnus 미등장" ..
+                "#{{Collectible595}} Saturnus 효과가 적용됩니다." ..
+                "#{{Collectible522}} 10초마다 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
+                "#{{ArrowGrayRight}} 3초가 끝나면 붙잠은 탄환을 다시 되돌려 발사합니다.",
+                -- 중첩 시
+                "중첩된 수만큼 Telekinesis 발동"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_PEFFECT_UPDATE,

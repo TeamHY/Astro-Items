@@ -5,12 +5,12 @@ if EID then
         Astro.Collectible.TAURUS_EX,
         "초 황소자리",
         "실전 압축",
-        "{{BossRoom}} 보스방 입장 시 아래 효과들이 적용됩니다." ..
+        "{{BossRoom}} 보스방 입장 시 아래 효과 중 하나 적용:" ..
         "#{{ArrowGrayRight}} {{TearsSmall}}연사(상한) +2" ..
         "#{{ArrowGrayRight}} {{DamageSmall}}공격력 +2" ..
-        "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도를 최대치로 설정합니다.#{{Blank}} (이미 최대라면 미선택)" ..
-        "#{{ArrowGrayRight}} {{RangeSmall}}사거리 +3#{{Blank}} 공격이 적에게 유도됩니다." ..
-        "#중첩이 가능합니다."
+        "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도(고정) +2#{{Blank}} (이미 2.0라면 건너뜀)" ..
+        "#{{ArrowGrayRight}} {{Collectible192}} 공격이 적에게 유도되며 {{RangeSmall}}사거리가 3 증가합니다." ..
+        "#{{ArrowGrayRight}} (네 효과 모두 중첩 가능)"
     )
 end
 

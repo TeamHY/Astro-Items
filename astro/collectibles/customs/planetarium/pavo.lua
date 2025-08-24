@@ -1,8 +1,21 @@
 Astro.Collectible.PAVO = Isaac.GetItemIdByName("Pavo")
 
-if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.PAVO, "공작자리", "...", "{{MegaSatanSmall}} Mega Satan(1페이즈)의 체력이 10% 감소됩니다.#Mega Satan(1페이즈)을 제외한 모든 몬스터들의 체력이 20% 감소됩니다.#중첩 시 체력 감소 효과가 곱 연산으로 적용됩니다.#{{Blank}} ({{MegaSatanSmall}}Mega Satan(1페이즈) 제외)")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.PAVO,
+                "공작자리",
+                "100개의 눈",
+                "{{MegaSatanSmall}} Mega Satan(1페이즈)의 체력이 10% 감소됩니다." ..
+                "#Mega Satan(1페이즈)을 제외한 모든 적들의 체력이 20% 감소됩니다.",
+                -- 중첩 시
+                "체력 감소 효과가 중첩된 수만큼 곱 연산으로 적용 (Mega Satan(1페이즈) 제외)"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NPC_INIT,

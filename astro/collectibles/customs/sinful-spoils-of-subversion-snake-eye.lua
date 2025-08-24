@@ -1,15 +1,21 @@
 Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE = Isaac.GetItemIdByName("Sinful Spoils of Subversion - Snake Eye")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
-        "반역의 죄보 - 스네이크아이",
-        "...",
-        "공격 시 10%의 확률로{{Collectible634}}Purgatory 유령을 소환합니다." ..
-        "#중첩 시 기본 확률이 합 연산으로 증가하고 쿨타임이 줄어듭니다." ..
-        "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
+                "반역의 죄보 - 스네이크아이",
+                "...",
+                "적 명중 시 10%의 확률로{{Collectible634}}Purgatory 유령을 소환합니다." ..
+                "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
+                -- 중첩 시
+                "유령의 소환 확률이 중첩된 수만큼 합 연산으로 증가하며 소환 쿨타임이 줄어듭니다."
+            )
+        end
+    end
+)
 
 local spawnChance = 0.1
 

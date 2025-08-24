@@ -6,20 +6,45 @@ Astro.Collectible.CHUBBYS_TAIL = Isaac.GetItemIdByName("Chubby's Tail")
 
 local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
-if EID then
-    EID:createTransformation("Chubby", "처비")
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            EID:createTransformation("Chubby", "처비")
 
-    EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_HEAD, "Chubby")
-    EID:assignTransformation("collectible", Astro.Collectible.SLEEPING_PUPPY, "Chubby")
-    EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_TAIL, "Chubby")
-    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "Chubby")
-    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "Chubby")
-    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "Chubby")
+            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_HEAD, "Chubby")
+            EID:assignTransformation("collectible", Astro.Collectible.SLEEPING_PUPPY, "Chubby")
+            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_TAIL, "Chubby")
+            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "Chubby")
+            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "Chubby")
+            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "Chubby")
 
-    Astro:AddEIDCollectible(Astro.Collectible.CHUBBYS_HEAD, "처비의 머리", "고정 공격력 증가", "↑ {{DamageSmall}}공격력(고정) +3.5#중첩이 가능합니다.")
-    Astro:AddEIDCollectible(Astro.Collectible.SLEEPING_PUPPY, "잠자는 강아지", "드르렁...", "↑ {{DamageSmall}}공격력(고정) +0.35#9개의 방을 클리어할 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.35(고정)#{{ArrowGrayRight}} 중첩 시 다음 증가량부터 적용됩니다.")
-    Astro:AddEIDCollectible(Astro.Collectible.CHUBBYS_TAIL, "처비의 꼬리", "추가 상자", "{{WoodenChest}} 나무상자 등장 시 33%의 확률로 한 개 더 등장합니다.#중첩 시 확률이 합 연산으로 증가합니다.")
-end
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CHUBBYS_HEAD,
+                "처비의 머리",
+                "고정 공격력 증가",
+                "↑ {{DamageSmall}}공격력(고정) +3.5" ..
+                "#{{Blank}} (중첩 가능)"
+            )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SLEEPING_PUPPY,
+                "잠자는 강아지",
+                "드르렁...",
+                "↑ {{DamageSmall}}공격력(고정) +0.35" ..
+                "#9개의 방을 클리어할 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.35(고정)" ..
+                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)"
+            )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CHUBBYS_TAIL,
+                "처비의 꼬리",
+                "추가 상자",
+                "{{WoodenChest}} 나무상자 등장 시 33%의 확률로 한개 더 등장합니다.",
+                -- 중첩 시
+                "추가 등장 확률이 합 연산으로 증가"
+            )
+        end
+    end
+)
 
 -- 처비셋 목록
 local CHUBBY_SET_LIST = {

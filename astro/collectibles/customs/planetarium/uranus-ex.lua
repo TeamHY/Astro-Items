@@ -3,15 +3,22 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.URANUS_EX = Isaac.GetItemIdByName("URANUS EX")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.URANUS_EX,
-        "초 천왕성",
-        "꽁꽁꽁",
-        "{{Collectible596}}Uranus, {{Collectible530}}Death's List 효과가 적용됩니다." ..
-        "#!!! 이번 게임에서 {{Collectible596}}Uranus가 등장하지 않습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.URANUS_EX,
+                "초 천왕성",
+                "꽁꽁꽁",
+                "!!! 획득 이후 {{Collectible596}}Uranus 미등장" ..
+                "#{{Freezing}} 적 처치시 적이 얼어붙으며;" ..
+                "#{{ArrowGrayRight}} {{Collectible596}}얼어붙은 적은 접촉 시 직선으로 날아가 10방향으로 고드름 눈물을 발사합니다." ..
+                "#{{Collectible530}} {{DeathMark}}해골마크가 뜬 적을 순차적으로 처치시 픽업이 드랍되거나 랜덤 능력치가 하나 증가합니다."
+            )
+        end
+    end
+)
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,

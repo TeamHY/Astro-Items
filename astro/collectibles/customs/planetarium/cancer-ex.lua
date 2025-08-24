@@ -1,7 +1,13 @@
 Astro.Collectible.CANCER_EX = Isaac.GetItemIdByName("Cancer EX")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.CANCER_EX, "초 게자리", "너도나도 고통스럽게", "적에게 준 피해의 1/10 만큼 모든 적들에게 피해를 입힙니다.#중첩이 가능합니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.CANCER_EX,
+        "초 게자리",
+        "너도나도 고통스럽게",
+        "적에게 준 피해의 일정량만큼 그 방의 적에게 피해를 줍니다." ..
+        "#!!! 피해량: ({{Collectible" .. Astro.Collectible.CANCER_EX .. "}} 개수 * 적에게 준 피해량의 10%)"
+    )
 end
 
 Astro:AddCallback(

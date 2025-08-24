@@ -6,17 +6,23 @@ local PENALTY_TIME = 2 * 60 * 30
 
 Astro.Collectible.CYGNUS = Isaac.GetItemIdByName("Cygnus")
 
-if EID then
-    -- 15초 -> 7.5초 -> 5초
-    Astro:AddEIDCollectible(
-        Astro.Collectible.CYGNUS,
-        "백조자리",
-        "...",
-        "게임 시간 15초마다 2번 빛줄기를 소환합니다." ..
-        "#중첩 시 발동 간격이 줄어듭니다." ..
-        "#페널티 피격 시 2분 동안 효과가 중지됩니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            -- 15초 -> 7.5초 -> 5초
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CYGNUS,
+                "백조자리",
+                "백조같이 도망가던 신",
+                "15초마다 빛줄기가 2번 떨어집니다." ..
+                "!!! 페널티 피격 시 2분동안 효과가 중지됩니다.",
+                -- 중첩 시
+                "빛줄기 소환 쿨타임 감소"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_PEFFECT_UPDATE,

@@ -14,11 +14,12 @@ if EID then
         Astro.Collectible.NEPTUNUS_EX,
         "초 해왕성",
         "개방",
-        "{{Collectible597}} Neptunus 효과가 적용됩니다." ..
-        "#방 클리어 시 {{TearsSmall}}연사(고정) +0.05" ..
+        "!!! 획득 이후 {{Collectible597}}Neptunus 미등장" ..
+        "#{{TearsSmall}} 방 클리어 시 연사(고정) +0.05" ..
+        "#{{Blank}} (중첩 가능)" ..
         "#{{ArrowGrayRight}} 스테이지 입장 시 초기화됩니다." ..
-        "#{{ArrowGrayRight}} 중첩이 가능합니다." ..
-        "#!!! 이번 게임에서 {{Collectible597}}Neptunus가 등장하지 않습니다."
+        "#{{Chargeable}} 공격하지 않으면 눈물을 충전합니다." ..
+        "#{{Collectible597}} 공격 시 충전한 눈물을 한번에 발사합니다."
     )
 end
 

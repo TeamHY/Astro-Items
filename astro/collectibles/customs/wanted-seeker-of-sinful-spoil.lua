@@ -1,14 +1,19 @@
 Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL = Isaac.GetItemIdByName("WANTED: Seeker of Sinful Spoil")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL,
-        "죄보사냥의 악마",
-        "...",
-        "!!! 일회용" ..
-        "#사용 시 캐릭터를 Diabellstar로 변경합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL,
+                "죄보사냥의 악마",
+                "\"죄보\"를 둘러싼 이야기를 쫓는 당신에게",
+                "!!! 일회용" ..
+                "#{{Player" .. Astro.Players.DIABELLSTAR .. "}} 사용 시 캐릭터를 Diabellstar로 변경합니다."
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,

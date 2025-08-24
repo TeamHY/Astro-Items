@@ -6,12 +6,11 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDTrinket(
                 Astro.Trinket.YES,
+                "좋아!",
+                "필요해!",
                 "모든 액티브 아이템이 등장하기 전까지 패시브 아이템이 등장하지 않습니다." ..
-                "#리롤된 아이템은 콘솔창에서 확인할 수 있습니다",
-                "좋아!", "필요해!"
+                "#리롤된 패시브 아이템은 콘솔창에서 확인할 수 있습니다."
             )
-        
-            Astro:AddGoldenTrinketDescription(Astro.Trinket.YES, "", 10)
         end
 
         Astro:AddRerollCondition(

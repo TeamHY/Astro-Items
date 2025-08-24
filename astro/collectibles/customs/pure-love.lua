@@ -12,14 +12,31 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.PURE_LOVE,
                 "순애",
-                "...",
-                "{{SuperSecretRoom}} 일급비밀방에서 사용 시:" ..
+                "야곱의 사랑",
+                "!!! {{SuperSecretRoom}}일급비밀방에서만 사용 가능" ..
+                "#사용 시:" ..
                 "#{{ArrowGrayRight}} {{LuckSmall}}행운 -1"..
-                "#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}}등급 아이템 1개를 소환합니다." ..
+                "#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}}등급의 아이템을 하나 소환합니다." ..
                 "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
-                "#{{Player19}} Jacob, {{Player20}}Esau, {{Player37}}Tainted Jacob, Leah, Rachel이 사용하면 행운이 감소하지 않으며 소지중인 아이템 대신 {{Quality3}}/{{Quality4}}등급 아이템 1개가 더 소환됩니다." ..
-                "#소지중일 때 1스테이지 맵에 {{SuperSecretRoom}}일급비밀방 위치가 표시됩니다."..
-                "#스테이지를 넘어갈 때마다 충전량이 모두 채워집니다."
+                "#{{SuperSecretRoom}} 1스테이지 맵에 일급비밀방 위치가 표시됩니다."..
+                "#스테이지 진입 시 충전량이 모두 채워집니다."
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.PURE_LOVE),
+                { PlayerType.PLAYER_JACOB, PlayerType.PLAYER_JACOB_B, PlayerType.PLAYER_JACOB2_B, Astro.Players.LEAH, Astro.Players.LEAH_B },
+                {
+                    "#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}}등급의 아이템을 하나 소환합니다.",
+                    "#{{ArrowGrayRight}} {{Quality3}}/{{Quality4}}등급의 아이템을 {{ColorIsaac}}2{{CR}}개 소환합니다."
+                },
+                nil, "ko_kr", nil
+            )
+            
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.PURE_LOVE),
+                { PlayerType.PLAYER_JACOB, PlayerType.PLAYER_JACOB_B, PlayerType.PLAYER_JACOB2_B, Astro.Players.LEAH, Astro.Players.LEAH_B },
+                "행운 감소 페널티 미적용",
+                nil, "ko_kr", nil
             )
         end
 

@@ -1,19 +1,33 @@
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.MY_MOON_MY_MAN = Isaac.GetItemIdByName("My Moon My Man")
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.MY_MOON_MY_MAN,
+                "나의 달 나의 그대",
+                "이대로 네 집에 계속 머물고 싶어",
+                "!!! 효과가 발동된 후 이 아이템은 사라집니다." ..
+                "#{wakaba_md1} 키로 소지중인 액티브 아이템과 카드/알약 슬롯 액티브 아이템을 교체합니다." ..
+                "#{{ArrowGrayRight}} 카드/알약 슬롯이 비어있을 경우 액티브 아이템을 그 슬롯으로 옮깁니다." ..
+                "#{{ArrowGrayRight}} 일부 아이템은 카드/알약 슬롯으로 옮길 수 없습니다." ..
+                "#!!! 캐릭터 변경 시 카드/알약 슬롯의 액티브 아이템은 사라집니다."
+            )
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.MY_MOON_MY_MAN,
-        "나의 달 나의 그대",
-        "...",
-        "#{wakaba_md1} 키로 소지중인 액티브 아이템과 카드/알약 슬롯 액티브 아이템을 교체합니다." ..
-        "#{{ArrowGrayRight}} 카드/알약 슬롯이 비어있을 경우 액티브 아이템을 그 슬롯으로 옮깁니다." ..
-        "#{{ArrowGrayRight}} 일부 아이템은 카드/알약 슬롯으로 옮길 수 없습니다." ..
-        "#!!! 효과를 발동시킨 캐릭터가 David와 Lucy가 아니라면 효과가 발동된 후 이 아이템은 사라집니다." ..
-        "#!!! 캐릭터 변경 시 카드/알약 슬롯의 액티브 아이템은 사라집니다."
-    )
-end
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.MY_MOON_MY_MAN),
+                { Astro.Players.DAVID_MARTINEZ, Astro.Players.DAVID_MARTINEZ_B },
+                {
+                    "!!! 효과가 발동된 후 이 아이템은 사라집니다.#",
+                    ""
+                },
+                nil, "ko_kr", nil
+            )
+        end
+    end
+)
 
 -- 아이템 위치 바꾸는 키
 local SWAP_KEY = Keyboard.KEY_8

@@ -21,10 +21,12 @@ Astro:AddCallback(
                 Astro.Collectible.MAW_OF_THE_VOID_EX,
                 "초 공허의 구렁텅이",
                 "향상된 어둠의 입구",
-                "#!!! 소지중일 때 {{Collectible399}}Maw Of The Void 미등장" ..
-                "↑ {{DamageSmall}}공격력 +1" ..
-                "#{{Collectible399}} Maw Of The Void 효과가 적용됩니다." ..
-                "#적을 처치할 때 10%의 확률로 {{BlackHeart}} 블랙하트를 떨어뜨립니다."
+                "#!!! 획득 이후 {{Collectible399}}Maw Of The Void 미등장" ..
+                "#↑ {{DamageSmall}}공격력 +1" ..
+                "#{{Chargeable}} 공격키를 2.5초 이상 누르면 충전되며 공격키를 떼면 캐릭터 주위에 검은 고리가 둘러집니다." ..
+                "#{{Collectible399}} 고리는 다단히트로 접촉한 적에게 최대 공격력 x30의 피해를 줍니다.",
+                -- 중첩 시
+                "적 처치 시 10% 확률로 {{BlackHeart}}블랙하트를 드랍합니다."
             )
         end
 

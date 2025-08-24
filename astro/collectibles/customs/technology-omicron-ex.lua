@@ -1,23 +1,30 @@
 Astro.Collectible.TECHNOLOGY_OMICRON_EX = Isaac.GetItemIdByName("Technology Omicron EX")
 
-if EID then
-	Astro:AddEIDCollectible(
-		Astro.Collectible.TECHNOLOGY_OMICRON_EX,
-		"테크놀로지 오미크론 EX",
-		"진정한 레이저 고리 눈물",
-		"↓ {{TearsSmall}}연사 x0.8" ..
-		"#공격 시 50%의 확률로 눈물 주변에 레이저가 생깁니다." ..
-		"#{{TimerSmall}} (레이저 쿨타임 0.1초)" ..
-		"#중첩 시 기본 확률이 합 연산으로 증가하고 쿨타임이 줄어들며, 레이저 고리가 추가됩니다." ..
-		"#{{LuckSmall}} 행운 10 이상일 때 100% 확률 (행운 1당 +5%p)"
-	)
-end
 
 local spawnChance = 0.5
 
 local luckMultiply = 5 / 100
 
 local cooldownTime = 3 -- 30 프레임 = 1초
+
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+		if EID then
+			Astro:AddEIDCollectible(
+				Astro.Collectible.TECHNOLOGY_OMICRON_EX,
+				"테크놀로지 오미크론 EX",
+				"진정한 레이저 고리 눈물",
+				"↓ {{TearsSmall}}연사 x0.8" ..
+				"#눈물에 50%의 확률로 눈물 주변을 감싸는 레이저 고리가 생깁니다." ..
+				"#!!! 레이저 생성 쿨타임: ({{Collectible" .. Astro.Collectible.TECHNOLOGY_OMICRON_EX .. "}}개수 * 0.1)초" ..
+				"#{{LuckSmall}} 행운 10 이상일 때 100% 확률 (행운 1당 +5%p)",
+				-- 중첩 시
+				"레이저 고리 생성 확률이 중첩된 수만큼 합 연산으로 증가하며 레이저 고리가 한층 더 추가됩니다."
+			)
+		end
+	end
+)
 
 ---@param player EntityPlayer
 ---@return boolean

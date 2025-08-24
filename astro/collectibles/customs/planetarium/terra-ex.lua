@@ -15,11 +15,13 @@ if EID then
         Astro.Collectible.TERRA_EX,
         "초 지구",
         "이 땅으로 돌아가",
-        "{{Collectible592}} Terra 효과가 적용됩니다." ..
-        "#방 입장 시 {{DamageSmall}}공격력 x1.1 ~ x1.5" ..
-        "#방 클리어 시 {{Card32}}Hagalaz를 발동합니다." ..
-        "#중첩이 가능합니다." ..
-        "#!!! 이번 게임에서 {{Collectible592}}Terra가 등장하지 않습니다."
+        "!!! 획득 이후 {{Collectible592}}Terra 미등장" ..
+        "#↑ {{DamageSmall}}공격력 +1" ..
+        "#{{Collectible592}} 공격이 확률적으로 장애물을 부수며;" ..
+        "#{{ArrowGrayRight}} 눈물을 발사할 때마다 눈물 공격력이 x0.5~x2.0로 증감하고;" ..
+        "#{{ArrowGrayRight}} 공격이 적을 더욱 밀쳐냅니다." ..
+        "#{{DamageSmall}} 방 입장 시 공격력 x" .. MIN_DAMAGE_MULTIPLIER .. " ~ x" .. MAX_DAMAGE_MULTIPLIER ..
+        "#{{Card32}} 방 클리어 시 그 방의 장애물을 제거합니다."
     )
 end
 

@@ -1,15 +1,22 @@
 Astro.Collectible.DIVINE_LIGHT = Isaac.GetItemIdByName("Divine Light")
 
-if EID then
-    -- 중첩 수 만큼 독립 시행으로 반복하기 때문에 여러번 발동할 수 있음.
-    Astro:AddEIDCollectible(
-        Astro.Collectible.DIVINE_LIGHT,
-        "신의 조명",
-        "천벌 받으리",
-        "공격이 적에게 명중 시 10%의 확률로 빛줄기를 소환합니다." ..
-        "#중첩이 가능합니다." ..
-        "#{{LuckSmall}} 행운 18 이상일 때 100% 확률 (행운 1당 +5%p)")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            -- 중첩 수 만큼 독립 시행으로 반복하기 때문에 여러번 발동할 수 있음.
+            Astro:AddEIDCollectible(
+                Astro.Collectible.DIVINE_LIGHT,
+                "신의 조명",
+                "천벌 받으리",
+                "적 명중 시 10%의 확률로 빛줄기를 소환합니다." ..
+                "#{{LuckSmall}} 행운 18 이상일 때 100% 확률 (행운 1당 +5%p)",
+                -- 중첩 시
+                "중첩된 수만큼 빛줄기 소환 시도"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,

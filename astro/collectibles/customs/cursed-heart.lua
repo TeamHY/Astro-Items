@@ -7,10 +7,10 @@ if EID then
         Astro.Collectible.CURSED_HEART,
         "저주받은 심장",
         "유도 공격? + 공격력 증가",
-        "#!!! 획득 이후 {{Collectible182}}Sacred Heart가 모든 배열에서 제거됨" ..
-        "↑ {{DamageSmall}}공격력 배율 x1.25" ..
-        "#공격이 50%의 확률로 적에게 유도됩니다." ..
-        "#공격력 배율 중첩이 가능합니다."
+        "#!!! 획득 이후 {{Collectible182}}Sacred Heart 미등장" ..
+        "#↑ {{DamageSmall}}공격력 배율 x1.25" ..
+        "#{{Blank}} (중첩 가능)" ..
+        "#공격이 50%의 확률로 적에게 유도됩니다."
     )
 end
 

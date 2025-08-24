@@ -11,8 +11,9 @@ Astro:AddCallback(
                 Astro.Collectible.UNHOLY_MANTLE,
                 "불경스런 망토",
                 "타락한 방패",
-                "!!! 소지중일 때 {{Collectible313}}Holy Mantle 미등장" ..
-                "#{{Collectible313}} Holy Mantle 효과가 적용됩니다."
+                "!!! 획득 이후 {{Collectible313}}Holy Mantle 미등장" ..
+                "#{{HolyMantleSmall}} 피격 시 방당 1회 한정으로 피해를 무시합니다." ..
+                "#!!! 헌혈류 피격은 막아주지 않습니다."
             )
         end
 

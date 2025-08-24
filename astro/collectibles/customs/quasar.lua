@@ -1,15 +1,21 @@
 Astro.Collectible.QUASAR = Isaac.GetItemIdByName("Quasar")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.QUASAR,
-        "퀘이사",
-        "가장 밝은 천체",
-        "{{Collectible512}} 방마다 처음 죽은 적의 위치에 블랙홀을 소환합니다." ..
-        "#방 클리어 시 10초 동안 무적이 됩니다." ..
-        "#중첩 시 방 입장 시에도 10초 동안 무적이 됩니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.QUASAR,
+                "퀘이사",
+                "가장 밝은 천체",
+                "{{Collectible512}} 방마다 처음으로 죽은 적의 위치에 블랙홀을 소환합니다." ..
+                "#방 클리어 시 10초동안 무적이 됩니다.",
+                -- 중첩 시
+                "방 입장 시 10초동안 무적"
+            )
+        end
+    end
+)
 
 local remaining = 0
 

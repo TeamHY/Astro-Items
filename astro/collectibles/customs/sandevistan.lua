@@ -8,16 +8,30 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.SANDEVISTAN = Isaac.GetItemIdByName("Sandevistan")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.SANDEVISTAN,
-        "산데비스탄",
-        "...",
-        "{{Collectible677}} 사용 시 잠시 유체이탈 상태가 됩니다." ..
-        "#{{ArrowGrayRight}} David, Lucy의 경우 순간적으로 높은 {{DamageSmall}}공격력과 {{TearsSmall}}연사를 얻고 10초간 무적이 됩니다." ..
-        "#{{ArrowGrayRight}} David, Lucy가 아닌 경우 20%의 확률로 {{Collectible582}}Wavy Cap이 발동됩니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SANDEVISTAN,
+                "산데비스탄",
+                "신경 가속",
+                "{{Collectible677}} 사용 시 잠시 유체이탈 상태가 되며;" ..
+                "#{{ArrowGrayRight}} 20%의 확률로 {{Collectible582}}Wavy Cap을 발동합니다."
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.SANDEVISTAN),
+                { Astro.Players.DAVID_MARTINEZ, Astro.Players.DAVID_MARTINEZ_B },
+                {
+                    "20%의 확률로 {{Collectible582}}Wavy Cap을 발동합니다.",
+                    "순간적으로 높은 {{DamageSmall}}공격력과 {{TearsSmall}}연사를 얻으며 10초동안 무적이 됩니다."
+                },
+                nil, "ko_kr", nil
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,

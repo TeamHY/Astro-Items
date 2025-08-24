@@ -2,18 +2,24 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.BLOOD_OF_HATRED = Isaac.GetItemIdByName("Blood Of Hatred")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BLOOD_OF_HATRED,
-        "증오의 피",
-        "...",
-        "!!! 처음 획득 시 2개를 획득합니다." ..
-        "#↑ {{BlackHeart}}블랙하트 +1" ..
-        "#{{BleedingOut}} 방 입장 시 12.5% 확률로 적을 출혈시킵니다." ..
-        "#{{ArrowGrayRight}} 중첩 시 기본 확률이 합 연산으로 증가합니다." ..
-        "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +2.5%p)"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BLOOD_OF_HATRED,
+                "증오의 피",
+                "피 한 방울에 서린 증오",
+                "!!! 최초 획득 시 2개 획득" ..
+                "#↑ {{BlackHeart}}블랙하트 +1" ..
+                "#{{BleedingOut}} 방 입장 시 12.5% 확률로 적을 출혈시킵니다." ..
+                "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +2.5%p)",
+                -- 중첩 시
+                "출혈 확률이 중첩된 수만큼 합 연산으로 증가"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

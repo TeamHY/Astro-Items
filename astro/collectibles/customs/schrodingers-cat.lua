@@ -1,16 +1,33 @@
 Astro.Collectible.SCHRODINGERS_CAT = Isaac.GetItemIdByName("Schrodinger's Cat")
 Astro.Collectible.GUPPY_PART = Isaac.GetItemIdByName("Guppy Part")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.SCHRODINGERS_CAT,
-        "슈뢰딩거의 고양이",
-        "살아있으면서 죽어있는",
-        "스테이지 진입 시 50%의 확률로 Guppy 세트 +1;" ..
-        "#{{ArrowGrayRight}}다음 스테이지 진입 시 효과는 초기화됩니다." ..
-        "#중첩이 가능합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SCHRODINGERS_CAT,
+                "슈뢰딩거의 고양이",
+                "살아있으면서 죽어있는",
+                "{{Guppy}} 스테이지 진입 시 50%의 확률로 Guppy 세트에 포함됩니다." ..
+                "#다음 스테이지 진입 시 효과가 초기화됩니다.",
+                -- 중첩 시
+                {
+                    "Guppy 세트에 포함됩니다.",
+                    "Guppy 세트에 중첩된 수만큼 포함됩니다."
+                }
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.GUPPY_PART,
+                "구피의 조각",
+                "How much can one cat take?",    -- https://youtu.be/trUCcvtN1lA
+                "!!! {{Collectible" .. Astro.Collectible.SCHRODINGERS_CAT .."}}Schrodinger's Cat의 효과로 획득" ..
+                "#다음 스테이지 진입 시 이 아이템은 모두 제거됩니다."
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,

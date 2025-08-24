@@ -2,15 +2,21 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.BIRTHRIGHT_JUDAS = Isaac.GetItemIdByName("Birthright - Judas")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BIRTHRIGHT_JUDAS,
-        "유다의 생득권",
-        "에너지가 힘이 되리라",
-        "{{DamageSmall}} 액티브 아이템 사용 시 충전량 한칸당 공격력 +1 (최대 +5)" ..
-        "#{{ArrowGrayRight}} 중첩 시 증가량과 최대치가 증가합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BIRTHRIGHT_JUDAS,
+                "유다의 생득권",
+                "에너지가 힘이 되리라",
+                "{{DamageSmall}} 액티브 아이템 사용 시 충전량 한칸당 공격력 +1 (최대 +5)",
+                -- 중첩 시
+                "증가량과 최대치 증가"
+            )
+        end
+    end
+)
 
 local damageIncrement = 1
 

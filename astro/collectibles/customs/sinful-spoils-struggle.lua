@@ -12,8 +12,9 @@ Astro:AddCallback(
                 "죄보합전",
                 "...",
                 "{{Collectible684}} {{Collectible634}} {{Collectible727}} Hungry Soul, Purgatory, Ghost Bombs 효과가 적용됩니다." ..
-                "#중첩 시 {{Collectible" .. Astro.Collectible.SNAKE_EYES_POPLAR .. "}}Snake-Eyes Poplar 효과가 적용됩니다." ..
-                "#소환되는 유령의 속도가 2배 빨라집니다."
+                "#소환되는 유령의 속도가 2배 빨라집니다.",
+                -- 중첩 시
+                "{{Collectible" .. Astro.Collectible.SNAKE_EYES_POPLAR .. "}}Snake-Eyes Poplar 효과 적용"
             )
         end
     end

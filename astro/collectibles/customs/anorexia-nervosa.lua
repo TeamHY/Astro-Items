@@ -21,7 +21,7 @@ Astro:AddCallback(
                 Astro.Collectible.ANOREXIA_NERVOSA,
                 "거식증",
                 "식욕이 없어요...",
-                "음식 관련{{ColorGray}}({{Heart}}최대 체력 증가){{CR}} 아이템이 등장하지 않습니다."
+                "음식 관련({{Heart}}최대 체력 증가) 아이템이 등장하지 않습니다."
             )
         end
 

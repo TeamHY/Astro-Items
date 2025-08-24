@@ -5,8 +5,8 @@ Astro.Trinket.OBSIDIAN_HAND = Isaac.GetTrinketIdByName("Obsidian Hand")
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.OBSIDIAN_HAND,
-        "스테이지 입장 시 {{Collectible479}}Smelter 1회를 발동합니다.",
-        "옵시디언 손", "..."
+        "옵시디언 손", "...",
+        "{{Collectible479}} 스테이지 진입 시 소지중인 장신구를 흡수해 효과를 영구적으로 얻습니다."
     )
 
 -- Astro:AddGoldenTrinketDescription(Astro.Trinket.OBSIDIAN_HAND, "", 10)

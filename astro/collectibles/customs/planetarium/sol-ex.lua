@@ -8,9 +8,9 @@ if EID then
         Astro.Collectible.SOL_EX,
         "초 태양",
         "광나는 승리",
-        "{{Collectible588}} Sol 효과가 적용됩니다." ..
-        "#{{BossRoom}} 보스방 클리어 시;#{{ArrowGrayRight}} {{Collectible633}}Dogma를 획득합니다. (최대 1번)#{{ArrowGrayRight}} 무작위 장신구 1개를 소환합니다." ..
-        "#!!! 이번 게임에서 {{Collectible588}}Sol이 등장하지 않습니다."
+        "!!! 획득 이후 {{Collectible588}}Sol 미등장" ..
+        "#{{Collectible588}} Sol 효과가 적용됩니다." ..
+        "#{{BossRoom}} 보스방 클리어 시 {{Collectible633}}Dogma를 획득하며 랜덤 장신구를 하나 소환합니다."
     )
 end
 

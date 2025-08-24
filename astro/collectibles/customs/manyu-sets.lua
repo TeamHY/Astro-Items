@@ -45,48 +45,66 @@ local MANYU_SET_LIST = {
 
 local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
-if EID then
-    -- NOTE: 불교 용어인듯하여 음역했습니다
-    --       ㄴ 던파 영문위키에 Cycle of Life Set로 번역돼있어 이로 수정했습니다
-    EID:createTransformation("Cycle of Life Set", "만유의 생멸")
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            -- NOTE: 불교 용어인듯하여 음역했습니다
+            --       ㄴ 던파 영문위키에 Cycle of Life Set로 번역돼있어 이로 수정했습니다
+            EID:createTransformation("Cycle of Life Set", "만유의 생멸")
 
-    EID:assignTransformation("collectible", Astro.Collectible.REINCARNATION, "Cycle of Life Set")
-    EID:assignTransformation("collectible", Astro.Collectible.MATRYOSHKA, "Cycle of Life Set")
-    EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "Cycle of Life Set")
+            EID:assignTransformation("collectible", Astro.Collectible.REINCARNATION, "Cycle of Life Set")
+            EID:assignTransformation("collectible", Astro.Collectible.MATRYOSHKA, "Cycle of Life Set")
+            EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "Cycle of Life Set")
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.REINCARNATION,
-        "리인카네이션",
-        "회귀의 생명",
-        "{{DamageSmall}} 소지중인 부활류 아이템 하나당 공격력 +50%p" ..
-        "#다음 게임에서 랜덤 부활류 아이템 중 하나를 소환합니다."
-    )
+            ----
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.MATRYOSHKA,
-        "마트료시카",
-        "무한한 탄생",
-        "상자를 열 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.5(고정)" ..
-        "#{{Blank}} (상자에서 받침대 아이템이 등장할 경우 무효과)" ..
-        "#{{ArrowGrayRight}} 중첩이 가능하며 다음 증가량부터 적용됩니다." ..
-        "#{{WoodenChest}} 나무상자를 열 때 50% 확률로 작은 상자를 소환합니다." ..
-        "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CHUBBYS_TAIL .. "}}Chubby's Tail 소지 시 20% 확률로 소환합니다."
-    )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.REINCARNATION,
+                "리인카네이션",
+                "회귀의 생명",
+                "{{DamageSmall}} 소지중인 부활류 아이템 하나당 공격력 +50%p" ..
+                "#다음 게임에서 랜덤 부활류 아이템 중 하나를 소환합니다."
+            )
 
-    local AstroFight_SAMSARA = ""
-    if Astro.Fight then
-        AstroFight_SAMSARA = "#Astrobirth의 NextBan 시스템이 무효화됩니다."
+            ----
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.MATRYOSHKA,
+                "마트료시카",
+                "무한한 탄생",
+                "상자를 열 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.5(고정)" ..
+                "#!!! 상자에서 받침대 아이템이 등장할 경우 무효과" ..
+                "#{{ArrowGrayRight}} 중첩이 가능하며 다음 증가량부터 적용됩니다." ..
+                "#{{WoodenChest}} 나무상자를 열 때 50%의 확률로 작은 상자를 소환합니다."
+            )
+
+            EID:addCondition(
+                "5.100." .. tostring(Astro.Collectible.MATRYOSHKA),
+                { "5.100." .. tostring(Astro.Collectible.CHUBBYS_TAIL) },
+                "작은 상자 소환 확률이 20%로 감소",
+                nil, "ko_kr", nil
+            )
+
+            ----
+
+            local AstroFight_SAMSARA = ""
+            if Astro.Fight then
+                AstroFight_SAMSARA = "#Astrobirth의 NextBan 시스템이 무효화됩니다."
+            end
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SAMSARA,
+                "삼사라",
+                "윤회하는 시간",
+                "{{Collectible522}} 방마다 최대 1번 적 처치시 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
+                "#{{ArrowGrayRight}} 3초가 끝나면 붙잡은 탄환을 다시 되돌려 발사합니다." .. AstroFight_SAMSARA,
+                -- 중첩 시
+                "중첩된 수만큼 발동"
+            )
+        end
     end
-
-    Astro:AddEIDCollectible(
-        Astro.Collectible.SAMSARA,
-        "삼사라",
-        "윤회하는 시간",
-        "{{Collectible522}} 방마다 최대 1번 적 처치 시 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
-        "#{{ArrowGrayRight}} 3초가 끝나면 붙잡은 탄환을 다시 되돌려 발사합니다." ..
-        "#{{ArrowGrayRight}} 중첩 시 여러 번 발동할 수 있습니다." .. AstroFight_SAMSARA
-    )
-end
+)
 
 --#region Reincarnation
 
