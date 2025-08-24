@@ -1,11 +1,11 @@
 local isc = require("astro.lib.isaacscript-common")
 
-Astro.Trinket.MOSIS_EYES = Isaac.GetTrinketIdByName("Mosi's Eyes")
+Astro.Trinket.MOSIS_EYES = Isaac.GetTrinketIdByName("Moxie's Eyes")
 
 if EID then
     Astro:AddEIDTrinket(
         Astro.Trinket.MOSIS_EYES,
-        "모시의 눈",
+        "목시의 눈",
         "...",
         "↓ {{LuckSmall}}행운 -5" ..
         "#캐릭터가 있는 방에서 2칸 이내에 있는 스테이지 구조를 맵에 표시합니다." ..

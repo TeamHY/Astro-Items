@@ -202,7 +202,7 @@
 	<trinket gfx="Lava Hand.png" name="Lava Hand" description="It's melt" />
 	<trinket gfx="Nostalgia.png" name="Nostalgia" description="Back then" />
 	<trinket gfx="Doctrine.png" name="Doctrine" description="Blessed be the name of the Lord!" />
-	<trinket cache="luck" gfx="Mosi's Eyes.png" name="Mosi's Eyes" description="..." />
+	<trinket cache="luck" gfx="Mosi's Eyes.png" name="Moxie's Eyes" description="..." />
 	<trinket gfx="Planetarium Crown.png" name="Planetarium Crown" description="The stars' special customer" />
 	<trinket cache="luck" gfx="Flunk.png" name="Flunk" description="Luck down? Anyway, don't lose it!" />
 	<trinket gfx="Yes.png" name="Yes!" description="I need it!" />
