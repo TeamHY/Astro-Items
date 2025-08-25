@@ -11,9 +11,9 @@ local LUCK_CHANCE = 0.02
 
 Astro.Collectible.RHONGOMYNIAD = Isaac.GetItemIdByName("Rhongomyniad")
 
-local collectibles = {}
-
 local optionsPickupIndex = Astro.Collectible.RHONGOMYNIAD * 10000
+
+local collectibles = {}
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
@@ -49,17 +49,22 @@ Astro:AddCallback(
                 "#사용 시 " .. rhongomyniadEIDString .. " 중에서 쌓인 스택만큼 아이템을 소환합니다." ..
                 "#{{ArrowGrayRight}} 소환된 아이템은 {{ColorError}}방 이동 시 사라지며{{CR}}, 하나를 선택하면 나머지는 사라집니다."
             )
-
-            EID:addPlayerCondition(
-                "5.100." .. tostring(Astro.Collectible.RHONGOMYNIAD),
-                { PlayerType.PLAYER_SAMSON },
-                {
-                    "!!! 일회용#!!!",
-                    "!!!"
-                },
-                nil, "ko_kr", nil
-            )
         end
+    end
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        EID:addPlayerCondition(
+            "5.100." .. tostring(Astro.Collectible.RHONGOMYNIAD),
+            { PlayerType.PLAYER_SAMSON },
+            {
+                "!!! 일회용#!!!",
+                "!!!"
+            },
+            nil, "ko_kr", nil
+        )
     end
 )
 

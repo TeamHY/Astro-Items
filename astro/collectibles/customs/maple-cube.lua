@@ -32,38 +32,43 @@ Astro.Collectible.BLACK_CUBE = Isaac.GetItemIdByName("Black Cube")
 Astro.Collectible.RED_CUBE = Isaac.GetItemIdByName("Red Cube")
 Astro.Collectible.BONUS_POTENTIAL_CUBE = Isaac.GetItemIdByName("Bonus Potential Cube")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BLACK_CUBE,
-        "블랙 큐브",
-        "강력한 잠재능력 추가",
-        "사용 시 {{Coin}}동전 " .. BLACK_COST_COINS .. "개를 소모하고 아래 옵션 중 2가지를 얻습니다." ..
-        "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BLACK_MAX_STAT .. "%p" ..
-        "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BLACK_MAX_BOSS .. "%p" ..
-        "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BLACK_MAX_MONSTER .. "%p"
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BLACK_CUBE,
+                "블랙 큐브",
+                "강력한 잠재능력 추가",
+                "사용 시 {{Coin}}동전 " .. BLACK_COST_COINS .. "개를 소모하고 아래 옵션 중 2가지를 얻습니다." ..
+                "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BLACK_MAX_STAT .. "%p" ..
+                "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BLACK_MAX_BOSS .. "%p" ..
+                "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BLACK_MAX_MONSTER .. "%p"
+            )
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.RED_CUBE,
-        "레드 큐브",
-        "잠재능력 추가",
-        "사용 시 {{Coin}}동전 " .. RED_COST_COINS .. "개를 소모하고 아래 옵션 중 하나를 얻습니다." ..
-        "#{{ArrowGrayRight}} 공력력 +1%p~+" .. RED_MAX_STAT .. "%p" ..
-        "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. RED_MAX_BOSS .. "%p" ..
-        "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. RED_MAX_MONSTER .. "%p"
-    )
+            Astro:AddEIDCollectible(
+                Astro.Collectible.RED_CUBE,
+                "레드 큐브",
+                "잠재능력 추가",
+                "사용 시 {{Coin}}동전 " .. RED_COST_COINS .. "개를 소모하고 아래 옵션 중 하나를 얻습니다." ..
+                "#{{ArrowGrayRight}} 공력력 +1%p~+" .. RED_MAX_STAT .. "%p" ..
+                "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. RED_MAX_BOSS .. "%p" ..
+                "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. RED_MAX_MONSTER .. "%p"
+            )
 
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BONUS_POTENTIAL_CUBE,
-        "에디셔널 큐브",
-        "더 많은 잠재능력",
-        "사용 시 {{Coin}}동전 " .. BONUS_POTENTIAL_COST_COINS .. "개를 소모하고, 아래 옵션 중 하나를 얻습니다." ..
-        "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BONUS_POTENTIAL_MAX_STAT .. "%p" ..
-        "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_BOSS .. "%p" ..
-        "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_MONSTER .. "%p" ..
-        "#!!! {{Collectible" .. Astro.Collectible.BLACK_CUBE .. "}}Black Cube 및 {{Collectible" .. Astro.Collectible.RED_CUBE .. "}}Red Cube와 별개로 적용"
-    )
-end
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BONUS_POTENTIAL_CUBE,
+                "에디셔널 큐브",
+                "더 많은 잠재능력",
+                "사용 시 {{Coin}}동전 " .. BONUS_POTENTIAL_COST_COINS .. "개를 소모하고, 아래 옵션 중 하나를 얻습니다." ..
+                "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BONUS_POTENTIAL_MAX_STAT .. "%p" ..
+                "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_BOSS .. "%p" ..
+                "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_MONSTER .. "%p" ..
+                "#!!! {{Collectible" .. Astro.Collectible.BLACK_CUBE .. "}}Black Cube 및 {{Collectible" .. Astro.Collectible.RED_CUBE .. "}}Red Cube와 별개로 적용"
+            )
+        end
+    end
+)
 
 -- 표기 순서 문제로 역순 정렬 함.
 local OptionType = {

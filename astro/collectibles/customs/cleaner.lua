@@ -17,7 +17,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_SPIRIT_SWORD,
             CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE
         }
-
+        
         if EID then
             Astro.CleanerEIDString = ""
 

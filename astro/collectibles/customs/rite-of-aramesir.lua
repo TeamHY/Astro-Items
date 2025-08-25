@@ -4,8 +4,8 @@ local useSound = Isaac.GetSoundIdByName('RiteofAramesir')
 local useSoundVoulme = 1 -- 0 ~ 1
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    function(_, isContinued)
+    Astro.Callbacks.MOD_INIT,
+    function(_)
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.RITE_OF_ARAMESIR,
@@ -22,7 +22,12 @@ Astro:AddCallback(
                 nil, "ko_kr", nil
             )
         end
+    end
+)
 
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    function(_, isContinued)
         if not isContinued then
             Astro.Data.RiteOfAramesir = {
                 luck = 0

@@ -8,9 +8,8 @@ local useSound = Isaac.GetSoundIdByName('OverwhelmingSinfulSpoils')
 local useSoundVoulme = 1 -- 0 ~ 1
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    ---@param isContinued boolean
-    function(_, isContinued)
+    Astro.Callbacks.MOD_INIT,
+    function(_)
         if EID then
             Astro:AddEIDCollectible(
             Astro.Collectible.OVERWHELMING_SINFUL_SPOILS,
@@ -31,7 +30,13 @@ Astro:AddCallback(
                 nil, "ko_kr", nil
             )
         end
+    end
+)
 
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    ---@param isContinued boolean
+    function(_, isContinued)
         if not isContinued then
              Astro.Data.OverwhelmingSinfulSpoils = {
                 Souls = 0

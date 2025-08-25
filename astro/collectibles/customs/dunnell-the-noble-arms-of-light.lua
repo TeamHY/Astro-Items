@@ -26,9 +26,8 @@ Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT = Isaac.GetItemIdByName("Dunne
 -- local useSoundVoulme = 1 -- 0 ~ 1
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    ---@param isContinued boolean
-    function(_, isContinued)
+    Astro.Callbacks.MOD_INIT,
+    function(_)
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
@@ -61,7 +60,13 @@ Astro:AddCallback(
                 nil, "ko_kr", nil
             )
         end
+    end
+)
 
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    ---@param isContinued boolean
+    function(_, isContinued)
         if not isContinued then
              Astro.Data.Dunnell = {
                 Souls = 0
