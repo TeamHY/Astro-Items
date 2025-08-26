@@ -132,7 +132,7 @@
 	<active cache="all" gfx="Albireo.png" quality="3" devilprice="2" maxcharges="6" shopprice="12" name="Albireo" description="Hitotsu ni narenai rensei" />
 	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="offensive summonable" description="Heliocentrism" />
 	<passive cache="damage luck firedelay" gfx="RGB.png" quality="3" devilprice="2" shopprice="25" name="RGB" description="Could you turn off the lights?" />
-	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" description="Fetus shots?" />
+	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" description="Fetus tears" />
 	<familiar tags="baby" gfx="Snake-Eyes Poplar.png" quality="2" devilprice="1" shopprice="10" name="Snake-Eyes Poplar" description="..." />
 	<active gfx="Staff of Ainz Ooal Gown.png" quality="4" devilprice="2" initcharge="0" maxcharges="100" shopprice="25" name="Staff of Ainz Ooal Gown" description="..." />
 	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="3" devilprice="2" shopprice="22" name="TAANA - Defense Helper" description="A mechanical doll that protects luck" />
