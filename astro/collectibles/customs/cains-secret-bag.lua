@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.CAINS_SECRET_BAG,
         "카인의 비밀 주머니",
         "비밀 한가득",
-        "!!! {{SuperSecretRoom}}일급비밀방에서만 사용 가능" ..
+        "!!! 일급비밀방에서만 사용 가능" ..
         "#!!! 사용 시 소지중인 아이템 중 하나를 제거하며;" ..
         "#{{ArrowGrayRight}} 제거된 아이템과 {{IsaacsRoom}}침대방 아이템 2개를 소환합니다." ..
         "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..

@@ -75,7 +75,7 @@
 	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="7" name="Birthright - Judas" description="May your energy bring power" />
 	<passive gfx="Birthright - The Lost.png" quality="4" devilprice="2" shopprice="22" name="Birthright - The Lost" description="Better destiny" />
 	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="20" name="Amazing Chaos Scroll" tags="offensive summonable tearsup" description="Plus-minus" />
-	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" description="..." />
+	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" description="No." />
 	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" />
 	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" />
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" description="..." />
@@ -202,7 +202,7 @@
 	<trinket gfx="Lava Hand.png" name="Lava Hand" description="It's melt" />
 	<trinket gfx="Nostalgia.png" name="Nostalgia" description="Back then" />
 	<trinket gfx="Doctrine.png" name="Doctrine" description="Blessed be the name of the Lord!" />
-	<trinket cache="luck" gfx="Mosi's Eyes.png" name="Moxie's Eyes" description="..." />
+	<trinket cache="luck" gfx="Mosi's Eyes.png" name="Moxie's Eyes" description="When restless longing touches my heart" />
 	<trinket gfx="Planetarium Crown.png" name="Planetarium Crown" description="The stars' special customer" />
 	<trinket cache="luck" gfx="Flunk.png" name="Flunk" description="Luck down? Anyway, don't lose it!" />
 	<trinket gfx="Yes.png" name="Yes!" description="I need it!" />

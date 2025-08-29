@@ -13,7 +13,7 @@ Astro:AddCallback(
                 Astro.Collectible.PURE_LOVE,
                 "순애",
                 "야곱의 사랑",
-                "!!! {{SuperSecretRoom}}일급비밀방에서만 사용 가능" ..
+                "!!! 일급비밀방에서만 사용 가능" ..
                 "#사용 시:" ..
                 "#{{ArrowGrayRight}} {{LuckSmall}}행운 -1"..
                 "#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}}등급의 아이템을 하나 소환합니다." ..

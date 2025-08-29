@@ -296,7 +296,7 @@ Astro:AddCallback(
                 )
 
                 EID:addEntity(-997, -1,
-                    Astro.Players.DAVID_MARTINEZ,
+                    Astro.Players.DAVID_MARTINEZ_B,
                     "루시",
                     "루시는 {{ColorYellow}}사이버펑크: 엣지러너{{CR}}에서 등장하였습니다."
                     .. "#데이비드의 애인으로 달에 가고 싶어하는 소망이 있습니다."
