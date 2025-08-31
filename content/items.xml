@@ -119,7 +119,7 @@
 	<passive tags="tearflag" gfx="PLUTO EX.png" quality="4" devilprice="2" shopprice="30" name="PLUTO EX" description="All size down" />
 	<active tags="luck" gfx="Pure Love.png" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" description="Jacob's Love" />
 	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="15" name="Restock Dice" description="Restock your destiny" />
-	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Sacred Dice" description="To greatness destiny" />
+	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="18" name="Sacred Dice" description="To greatness destiny" />
 	<active gfx="Forbidden Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Forbidden Dice" description="No way!" />
 	<active gfx="Dad's Box.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Dad's Box" description="What's inside..." />
 	<passive tags="damage firedelay speed luck" gfx="Matryoshka.png" quality="2" devilprice="1" shopprice="12" name="Matryoshka" description="Infinite Birth" />
