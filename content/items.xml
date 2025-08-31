@@ -148,7 +148,7 @@
 	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" shopprice="20" name="Unholy Mantle" description="Unholy shield" />
 	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="10" name="Birthright - Steven" description="He lives" />
 	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="4" name="Birthright - Apollyon B" description="Companionship of calamity" />
-	<active gfx="Birthright - Eden B.png" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" description="??!" />
+	<active gfx="Birthright - Eden B.png" hidden="true" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" description="??!" />
 	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="10" name="Purple Candle" description="Curse immunity + open one's eyes" />
 	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Godhead" description="True god tears" />
 	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" />
@@ -165,7 +165,7 @@
 	<passive gfx="Super Rocket in a Jar.png" quality="3" devilprice="2" shopprice="15" name="Super Rocket in a Jar" description="Super rocket propulsion +5 bombs" />
 	<passive gfx="Giga Boom.png" quality="3" devilprice="2" shopprice="15" name="Giga Boom" description="10 bigger bombs" />
 	<active gfx="Coin Detonator.png" quality="3" devilprice="2" shopprice="15" maxcharges="240" chargetype="timed" name="Coin Detonator" description="Remote coin detonation" />
-	<active gfx="Marker Pocket.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Marker Pocket" description="..." />
+	<active gfx="Marker Pocket.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Marker Pocket" description="..." />
 	<passive cache="damage" gfx="Maw Of The Void EX.png" quality="3" devilprice="2" shopprice="15" name="Maw Of The Void EX" description="Enhanced entrance to darkness" />
 	<passive gfx="Steam Bundle.png" quality="3" devilprice="2" shopprice="30" name="Steam Bundle" description="Shut up and take my money" />
 	<passive gfx="Astro Star of Bethlehem.png" quality="3" devilprice="2" shopprice="15" name="Astro Star of Bethlehem" description="Worship the light" />
@@ -186,10 +186,10 @@
 	<active tags="book" cache="firedelay" gfx="Book of Despair.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Book of Despair" description="Reusable tears up" />
 	<passive gfx="Witchcraft.png" quality="3" devilprice="2" shopprice="15" name="Witchcraft" description="We take magic commissions" />
 	<active gfx="Glitched D6.png" quality="4" devilprice="1" shopprice="30" maxcharges="6" name="Glitched D6" description="t's broken9Reroll your dest" />
-	<active gfx="Zoltraak.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Zoltraak" description="Killing magic" />
-	<passive tags="book" gfx="Flammes Grimoire.png" quality="2" devilprice="1" shopprice="15" name="Flamme's Grimoire" description="..." />
-	<passive gfx="Pillars of Creation.png" quality="3" devilprice="2" shopprice="20" name="Pillars of Creation" description="So heartbreakingly beautiful" />
-	<passive gfx="IBN 5100.png" quality="3" devilprice="2" shopprice="20" name="IBN 5100" description="First portable computer" />
+	<active gfx="Zoltraak.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Zoltraak" description="Killing magic" />
+	<passive tags="book" hidden="true" gfx="Flammes Grimoire.png" quality="2" devilprice="1" shopprice="15" name="Flamme's Grimoire" description="..." />
+	<passive gfx="Pillars of Creation.png" hidden="true" quality="3" devilprice="2" shopprice="20" name="Pillars of Creation" description="So heartbreakingly beautiful" />
+	<passive gfx="IBN 5100.png" hidden="true" quality="3" devilprice="2" shopprice="20" name="IBN 5100" description="First portable computer" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" description="All-seeing eye" cache="tearflag" />
