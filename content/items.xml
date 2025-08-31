@@ -159,7 +159,7 @@
 	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="0" shopprice="25" name="Birth Certificate" description="1995.11.15" />
 	<passive gfx="Birthright - Tainted Lost.png" quality="3" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" description="Better destiny?" />
 	<active gfx="False Certificate.png" quality="4" devilprice="2" maxcharges="0" shopprice="25" name="False Certificate" description="Falsifying official documents is a serious crime" />
-	<active gfx="Puzzle Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="18" name="Puzzle Dice" description="Align your destiny" />
+	<active gfx="Puzzle Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="17" name="Puzzle Dice" description="Align your destiny" />
 	<passive gfx="Bandage Girl.png" quality="3" devilprice="1" shopprice="20" name="Bandage Girl" description="His girlfriend" />
 	<active gfx="Graduation Certificate.png" quality="4" devilprice="2" shopprice="30" maxcharges="0" name="Graduation Certificate" description="Be happy wherever you are" />
 	<passive gfx="Super Rocket in a Jar.png" quality="3" devilprice="2" shopprice="15" name="Super Rocket in a Jar" description="Super rocket propulsion +5 bombs" />
