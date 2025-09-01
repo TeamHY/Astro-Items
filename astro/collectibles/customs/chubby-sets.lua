@@ -10,14 +10,17 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            EID:createTransformation("Chubby", "처비")
+            local chubbyIcon = Sprite()
+            chubbyIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
+            EID:addIcon("TransformChubby", "Transformation1", 0, 16, 16, 0, -1, chubbyIcon)
+            EID:createTransformation("TransformChubby", "Chubby!!!")
 
-            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_HEAD, "Chubby")
-            EID:assignTransformation("collectible", Astro.Collectible.SLEEPING_PUPPY, "Chubby")
-            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_TAIL, "Chubby")
-            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "Chubby")
-            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "Chubby")
-            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "Chubby")
+            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_HEAD, "TransformChubby")
+            EID:assignTransformation("collectible", Astro.Collectible.SLEEPING_PUPPY, "TransformChubby")
+            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_TAIL, "TransformChubby")
+            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "TransformChubby")
+            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "TransformChubby")
+            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "TransformChubby")
 
             Astro:AddEIDCollectible(
                 Astro.Collectible.CHUBBYS_HEAD,
@@ -272,8 +275,15 @@ Astro:AddCallbackCustom(
             Astro.Data.ChubbySet = Astro.Data.ChubbySet + 1
 
             if Astro.Data.ChubbySet == 3 then
+                local Flavor
+                if Options.Language == "kr" or REPKOR then
+                    Flavor = "처비!!!"
+                else
+                    Flavor = "Chubby!!!"
+                end
+
                 SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
-                Game():GetHUD():ShowItemText("처비!!!", '')
+                Game():GetHUD():ShowItemText(Flavor)
             end
         end
     end

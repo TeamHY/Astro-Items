@@ -9,7 +9,7 @@ Astro:AddCallback(
                 "양자 주사위",
                 "-3 ~ +3",
                 "사용 시 그 방의 아이템을:" ..
-                "{{ArrowGrayRight}} {{Collectible723}} 코드 1~3번 앞의 번호의 아이템으로 바꾸거나;" ..
+                "#{{ArrowGrayRight}} {{Collectible723}} 코드 1~3번 앞의 번호의 아이템으로 바꾸거나;" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SPINUP_DICE .. "}} 코드 1~3번 뒤의 번호의 아이템으로 바꿉니다." ..
                 "#!!! 일부 아이템은 등장하지 않습니다."
             )

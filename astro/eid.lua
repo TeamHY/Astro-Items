@@ -17,7 +17,7 @@ EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
 ---@param copied string
 function Astro:AddEIDCollectible(id, name, description, eidDescription, copied)
     if EID then
-        EID:addCollectible(id, eidDescription, name)
+        EID:addCollectible(id, eidDescription, name, "ko_kr")
 
         if copied and Astro.Trinket then
             EID:addCondition(
@@ -46,7 +46,7 @@ end
 ---@param golden string
 function Astro:AddEIDTrinket(id, name, description, eidDescription, golden)
     if EID then
-        EID:addTrinket(id, eidDescription, name)
+        EID:addTrinket(id, eidDescription, name, "ko_kr")
 
         if golden then
             EID:addGoldenTrinketMetadata(id, golden, nil, nil, "ko_kr")
@@ -98,7 +98,7 @@ Astro:AddCallback(
             EID:addIcon("Stellar", "Players", 8, 16, 16, 0, 3, player_icons)
             EID:addIcon("Nayuta", "Players", 9, 16, 16, 0, 3, player_icons)
             EID:addIcon("AinzOoalGown", "Players", 10, 16, 16, 0, 3, player_icons)
-            -- EID:addIcon("AinzOoalGownB", "Players", 11, 16, 16, 0, 3, player_icons)
+            EID:addIcon("PandorasActor", "Players", 11, 16, 16, 0, 3, player_icons)
 
             EID.InlineIcons["Player" .. Astro.Players.LEAH] = EID.InlineIcons["Leah"]
             EID.InlineIcons["Player" .. Astro.Players.LEAH_B] = EID.InlineIcons["Rachel"]
@@ -111,7 +111,7 @@ Astro:AddCallback(
             EID.InlineIcons["Player" .. Astro.Players.STELLAR] = EID.InlineIcons["Stellar"]
             EID.InlineIcons["Player" .. Astro.Players.STELLAR_B] = EID.InlineIcons["Nayuta"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN] = EID.InlineIcons["AinzOoalGown"]
-            -- EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN_B] = EID.InlineIcons["AinzOoalGownB"]
+            EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN_B] = EID.InlineIcons["PandorasActor"]
         end
     end
 )

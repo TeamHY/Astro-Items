@@ -31,11 +31,11 @@ if EID then
         "#↓ {{LuckSmall}}행운 -1" ..
         "#!!! Womb/Corpse 스테이지 전까지 페널티 피격 시 해당 피격을 무효화하는 대신 모든 능력치가 감소합니다:" ..
         "#{{ArrowGrayRight}} {{DamageSmall}}공격력 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
-        "#{{ArrowGrayRight}} {{TearsSmall}}연사 -0.005 {{ColorGray}}(최대 1){{CR}}" ..
-        "#{{ArrowGrayRight}} {{RangeSmall}}사거리 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
-        "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도 -0.025 {{ColorGray}}(최대 1){{CR}}" ..
-        "#{{ArrowGrayRight}} {{ShotspeedSmall}}탄속 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
-        "#{{ArrowGrayRight}} {{LuckSmall}}행운 -3 {{ColorGray}}(최대 10){{CR}}"
+        "#{{Blank}} {{TearsSmall}}연사 -0.005 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{Blank}} {{RangeSmall}}사거리 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{Blank}} {{SpeedSmall}}이동속도 -0.025 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{Blank}} {{ShotspeedSmall}}탄속 -0.05 {{ColorGray}}(최대 1){{CR}}" ..
+        "#{{Blank}} {{LuckSmall}}행운 -3 {{ColorGray}}(최대 10){{CR}}"
     )
 end
 

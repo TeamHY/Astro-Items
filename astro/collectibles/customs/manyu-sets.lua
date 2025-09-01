@@ -51,11 +51,14 @@ Astro:AddCallback(
         if EID then
             -- NOTE: 불교 용어인듯하여 음역했습니다
             --       ㄴ 던파 영문위키에 Cycle of Life Set로 번역돼있어 이로 수정했습니다
-            EID:createTransformation("Cycle of Life Set", "만유의 생멸")
+            local manyuIcon = Sprite()
+            manyuIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
+            EID:addIcon("TransformManyu", "Transformation2", 0, 16, 16, 0, -1, manyuIcon)
+            EID:createTransformation("TransformManyu", "Cycle of Life")
 
-            EID:assignTransformation("collectible", Astro.Collectible.REINCARNATION, "Cycle of Life Set")
-            EID:assignTransformation("collectible", Astro.Collectible.MATRYOSHKA, "Cycle of Life Set")
-            EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "Cycle of Life Set")
+            EID:assignTransformation("collectible", Astro.Collectible.REINCARNATION, "TransformManyu")
+            EID:assignTransformation("collectible", Astro.Collectible.MATRYOSHKA, "TransformManyu")
+            EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "TransformManyu")
 
             ----
 
@@ -349,8 +352,15 @@ Astro:AddCallbackCustom(
             Astro.Data.ManyuSet = Astro.Data.ManyuSet + 1
 
             if Astro.Data.ManyuSet == 3 then
+                local Flavor
+                if Options.Language == "kr" or REPKOR then
+                    Flavor = "만유의 생멸"
+                else
+                    Flavor = "Cycle of Life"
+                end
+
                 SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
-                Game():GetHUD():ShowItemText("만유의 생멸", '')
+                Game():GetHUD():ShowItemText(Flavor)
             end
         end
     end

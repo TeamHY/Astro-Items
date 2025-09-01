@@ -17,8 +17,15 @@ Astro:AddCallbackCustom(
             Astro.Data.ChubbySet = Astro.Data.ChubbySet + 1
 
             if Astro.Data.ChubbySet == 3 then
+                local Flavor
+                if Options.Language == "kr" or REPKOR then
+                    Flavor = "처비!!!"
+                else
+                    Flavor = "Chubby!!!"
+                end
+
                 SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
-                Game():GetHUD():ShowItemText("처비!!!", '')
+                Game():GetHUD():ShowItemText(Flavor)
             end
         end
     end
