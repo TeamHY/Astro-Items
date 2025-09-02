@@ -60,7 +60,7 @@
 	<passive gfx="Pink Ward.png" quality="2" devilprice="1" shopprice="18" name="Pink Ward" description="See-through enemies" />
 	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" description="..." />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" description="Revealing hidden artifacts" />
-	<passive cache="damage" gfx="Amplifying Mind.png" quality="2" devilprice="2" shopprice="15" name="Amplifying Mind" description="Determination" />
+	<passive cache="damage" gfx="Amplifying Mind.png" hidden="true" quality="5" devilprice="2" shopprice="25" name="Amplifying Mind" description="Determination" />
 	<passive cache="all" gfx="EZ Mode.png" quality="0" devilprice="2" hidden="true" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" description="EASY" />
 	<passive gfx="Birthright - Eden.png" quality="2" devilprice="2" shopprice="15" name="Birthright - Eden" description="???" />
 	<passive gfx="Birthright - Isaac.png" quality="4" devilprice="2" shopprice="30" name="Birthright - Isaac" description="More options" />
@@ -106,17 +106,17 @@
 	<passive gfx="Blue Mind.png" quality="4" devilprice="2" shopprice="15" name="Blue Mind" description="Who is cutting onions?" />
 	<passive gfx="Lucky Mind.png" quality="3" devilprice="2" shopprice="15" name="Lucky Mind" description="Good luck" />
 	<active gfx="Quantum Mind.png" quality="4" devilprice="2" maxcharges="12"  shopprice="15" name="Quantum Mind" description="Aggregation" />
-	<passive gfx="SOL EX.png" quality="4" devilprice="2" shopprice="30" name="SOL EX" description="Mania victory" />
-	<passive gfx="LUNA EX.png" quality="4" devilprice="2" shopprice="30" name="LUNA EX" description="The radiant blessing of the moon shines upon you" />
-	<passive gfx="MERCURIUS EX.png" quality="4" devilprice="2" shopprice="30" name="MERCURIUS EX" description="Open, sesame" />
-	<passive gfx="VENUS EX.png" quality="4" devilprice="2" shopprice="30" name="VENUS EX" description="You are beautiful" />
-	<passive tags="damage" gfx="TERRA EX.png" quality="4" devilprice="2" shopprice="30" name="TERRA EX" description="Return to rock" />
-	<passive gfx="MARS EX.png" quality="4" devilprice="2" shopprice="30" name="MARS EX" description="Unstoppable dash" />
-	<passive gfx="JUPITER EX.png" quality="4" devilprice="2" shopprice="30" name="JUPITER EX" description="You're a gas supergiant!" />
-	<passive gfx="SATURNUS EX.png" quality="4" devilprice="2" shopprice="30" name="SATURNUS EX" description="Shield of tears" />
-	<passive gfx="URANUS EX.png" quality="4" devilprice="2" shopprice="30" name="URANUS EX" description="Icee" />
-	<passive tags="firedelay" gfx="NEPTUNUS EX.png" quality="4" devilprice="2" shopprice="30" name="NEPTUNUS EX" description="It is open" />
-	<passive tags="tearflag" gfx="PLUTO EX.png" quality="4" devilprice="2" shopprice="30" name="PLUTO EX" description="All size down" />
+	<passive gfx="SOL EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="SOL EX" description="Mania victory" />
+	<passive gfx="LUNA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="LUNA EX" description="The radiant blessing of the moon shines upon you" />
+	<passive gfx="MERCURIUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MERCURIUS EX" description="Open, sesame" />
+	<passive gfx="VENUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="VENUS EX" description="You are beautiful" />
+	<passive tags="damage" gfx="TERRA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="TERRA EX" description="Return to rock" />
+	<passive gfx="MARS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MARS EX" description="Unstoppable dash" />
+	<passive gfx="JUPITER EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="JUPITER EX" description="You're a gas supergiant!" />
+	<passive gfx="SATURNUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="SATURNUS EX" description="Shield of tears" />
+	<passive gfx="URANUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="URANUS EX" description="Icee" />
+	<passive tags="firedelay" gfx="NEPTUNUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="NEPTUNUS EX" description="It is open" />
+	<passive tags="tearflag" gfx="PLUTO EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="PLUTO EX" description="All size down" />
 	<active tags="luck" gfx="Pure Love.png" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" description="Jacob's Love" />
 	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="15" name="Restock Dice" description="Restock your destiny" />
 	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="18" name="Sacred Dice" description="To greatness destiny" />
