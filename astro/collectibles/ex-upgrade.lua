@@ -17,7 +17,7 @@ Astro.PLANETARIUM_UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_URANUS] = { Id = Astro.Collectible.URANUS_EX, Chance = 0 },
     [CollectibleType.COLLECTIBLE_NEPTUNUS] = { Id = Astro.Collectible.NEPTUNUS_EX, Chance = 0 },
     [CollectibleType.COLLECTIBLE_PLUTO] = { Id = Astro.Collectible.PLUTO_EX, Chance = 0 },
-    -- 위의 행성은 별도의 업그레이드 로직을 따름
+    -- 위의 행성은 별도의 업그레이드 로직을 따름 (초행성은 특정방에서만 등장함)
     [CollectibleType.COLLECTIBLE_AQUARIUS] = { Id = Astro.Collectible.AQUARIUS_EX, Chance = 0 },
     [CollectibleType.COLLECTIBLE_PISCES] = { Id = Astro.Collectible.PISCES_EX, Chance = 0 },
     [CollectibleType.COLLECTIBLE_ARIES] = { Id = Astro.Collectible.ARIES_EX, Chance = 0 },
@@ -31,7 +31,7 @@ Astro.PLANETARIUM_UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_SAGITTARIUS] = { Id = Astro.Collectible.SAGITTARIUS_EX, Chance = 0 },
     [CollectibleType.COLLECTIBLE_CAPRICORN] = { Id = Astro.Collectible.CAPRICORN_EX, Chance = 0 },
     -- 위의 별자리는 자동으로 업그레이드 되지 않음
-    [CollectibleType.COLLECTIBLE_SACRED_HEART] = { Id = Astro.Collectible.ASTRO_SACRED_HEART, Chance = 0.2 },
+    [CollectibleType.COLLECTIBLE_SACRED_HEART] = { Id = Astro.Collectible.ASTRO_SACRED_HEART, Chance = 1.0 },
     [CollectibleType.COLLECTIBLE_GODHEAD] = { Id = Astro.Collectible.ASTRO_GODHEAD, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_STAR_OF_BETHLEHEM] = { Id = Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM, Chance = 0.6 },
     [CollectibleType.COLLECTIBLE_WE_NEED_TO_GO_DEEPER] = { Id = Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO, Chance = 0.2 },
@@ -60,7 +60,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_BLACK_CANDLE] = { Id = Astro.Collectible.PURPLE_CANDLE, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_ROCKET_IN_A_JAR] = { Id = Astro.Collectible.SUPER_ROCKET_IN_A_JAR, Chance = 0.6 },
     [CollectibleType.COLLECTIBLE_HUMBLEING_BUNDLE] = { Id = Astro.Collectible.STEAM_BUNDLE, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_LIL_CHEST] = { Id = Astro.Collectible.BIG_CHEST, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_LIL_CHEST] = { Id = Astro.Collectible.BIG_CHEST, Chance = 0.6 },
     [CollectibleType.COLLECTIBLE_CRICKETS_HEAD] = { Id = Astro.Collectible.MAXS_HEAD, Chance = 0.3 }
 }
 
