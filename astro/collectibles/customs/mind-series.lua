@@ -1,5 +1,7 @@
 ---
 
+local AMPLIFYING_MIND_CHANGE_CHANCE = 0.5
+
 local DELAY_FRAME = 30
 
 local DAMAGE_INCREMENT = 0.007
@@ -28,7 +30,8 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(Astro.Collectible.AMPLIFYING_MIND,
                 "증폭하는 마음",
                 "의지",
-                "!!! 소지중일 때 아래 아이템들의 효과 두 배:" ..
+                "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 50% 확률로 아래 아이템 중 하나로 바꿉니다." ..
+                "#!!! 소지중일 때 아래 아이템들의 효과 두 배:" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind" ..
@@ -95,6 +98,36 @@ Astro:AddCallback(
                 nil, "ko_kr", nil
             )
         end
+
+        Astro:AddRerollCondition(
+            function(selectedCollectible, itemPoolType, decrease, seed)
+                if Astro:HasCollectible(Astro.Collectible.AMPLIFYING_MIND) then
+                    local itemConfigItem = Isaac.GetItemConfig():GetCollectible(selectedCollectible)
+
+                    if itemConfigItem.Quality <= 1 then
+                        return false
+                    end
+
+                    local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.AMPLIFYING_MIND)
+                    local mindSeries = {
+                        Astro.Collectible.CALM_MIND,
+                        Astro.Collectible.SWIFT_MIND,
+                        Astro.Collectible.BLUE_MIND,
+                        Astro.Collectible.LUCKY_MIND
+                    }
+
+                    if rng:RandomFloat() < AMPLIFYING_MIND_CHANGE_CHANCE then
+                        return {
+                            reroll = true,
+                            newItem = mindSeries[rng:RandomInt(#mindSeries) + 1],
+                            modifierName = "Amplifying Mind"
+                        }
+                    end
+                end
+
+                return false
+            end
+        )
     end
 )
 
