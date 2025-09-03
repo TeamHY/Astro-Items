@@ -83,11 +83,11 @@ local function TryUpgradePlanet(selectedCollectible, seed)
         local room = Game():GetRoom()
         local roomType = room:GetType()
 
-        if roomType == RoomType.ROOM_SECRET or roomType == RoomType.ROOM_SUPERSECRET or roomType == RoomType.ROOM_ULTRASECRET then
+        if roomType == RoomType.ROOM_SECRET or roomType == RoomType.ROOM_SUPERSECRET or roomType == RoomType.ROOM_PLANETARIUM then
             local rng = RNG()
             rng:SetSeed(seed, 35)
 
-            if rng:RandomFloat() < 1 then
+            if rng:RandomFloat() < upgradeData.Chance then
                 return upgradeData.Id
             end
         end
@@ -103,7 +103,7 @@ local function TryUpgrade(selectedCollectible, seed)
         local rng = RNG()
         rng:SetSeed(seed, 35)
 
-        if rng:RandomFloat() < 1 then
+        if rng:RandomFloat() < upgradeData.Chance then
             return upgradeData.Id
         end
     end
