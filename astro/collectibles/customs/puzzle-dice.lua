@@ -24,7 +24,7 @@ local TAG_LIST = {
     ItemConfig.TAG_SPIDER,
 }
 
-local ASTRO_SETS_LIST = {
+Astro.ASTRO_SETS_LIST = {
     Astro.Collectible.CHUBBYS_HEAD,
     Astro.Collectible.SLEEPING_PUPPY,
     Astro.Collectible.CHUBBYS_TAIL,
@@ -60,7 +60,7 @@ Astro:AddCallback(
                     end
                 end
         
-                for _, astroItem in ipairs(ASTRO_SETS_LIST) do
+                for _, astroItem in ipairs(Astro.ASTRO_SETS_LIST) do
                     if itemConfigItem.ID == astroItem then
                         isAstroSet = true
                         break
