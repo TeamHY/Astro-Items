@@ -15,7 +15,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SNAKE_EYES_POPLAR,
                 "스네이크아이즈 포프루스",
-                "...",
+                "원죄보에서 태어난 존재",
                 "5초마다 랜덤 유령을 하나 소환합니다."
             )
 

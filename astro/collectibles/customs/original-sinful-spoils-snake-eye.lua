@@ -6,7 +6,8 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
-                "원죄보 - 스네이크아이", "...",
+                "원죄보 - 스네이크아이",
+                "반역의 눈",
                 "적 명중 시 10%의 확률로 여러 유령을 소환합니다." ..
                 "#{{TimerSmall}} (쿨타임 2.5초)" ..
                 "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",

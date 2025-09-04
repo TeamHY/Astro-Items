@@ -10,7 +10,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SINFUL_SPOILS_STRUGGLE,
                 "죄보합전",
-                "...",
+                "드디어 깨어났다",
                 "{{Collectible684}} {{Collectible634}} {{Collectible727}} Hungry Soul, Purgatory, Ghost Bombs 효과가 적용됩니다." ..
                 "#소환되는 유령의 속도가 2배 빨라집니다.",
                 -- 중첩 시

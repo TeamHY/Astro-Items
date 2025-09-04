@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.PINK_WARD,
                 "핑크 와드",
-                "땅 밑도 보인다",
+                "땅 밑까지 보인다",
                 "스테이지 중심 5x5의 방을 보여줍니다." ..
                 "#숨어 있는 적을 아군으로 만듭니다.",
                 -- 중첩 시
