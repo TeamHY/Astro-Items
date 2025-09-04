@@ -84,6 +84,8 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            EID:setModIndicatorName("AstroItems")
+            ----
             local player_icons = Sprite()
             player_icons:Load("gfx/ui/eid_astrocharacter_icons.anm2", true)
 
