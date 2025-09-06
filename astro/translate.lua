@@ -1,5 +1,87 @@
 -- 사왈이 제작
+------ VS ------
+local minibossNames = {
+    [EntityType.ENTITY_SLOTH] = {
+        [0] = "나태",
+        [1] = "초 나태",
+        [2] = "왕 교만"
+    },
+    [EntityType.ENTITY_LUST] = {
+        [0] = "성욕",
+        [1] = "초 성욕"
+    },
+    [EntityType.ENTITY_WRATH] = {
+        [0] = "분노",
+        [1] = "초 분노"
+    },
+    [EntityType.ENTITY_GLUTTONY] = {
+        [0] = "대식",
+        [1] = "초 대식"
+    },
+    [EntityType.ENTITY_GREED] = {
+        [0] = "탐욕",
+        [1] = "초 탐욕"
+    },
+    [EntityType.ENTITY_ENVY] = {
+        [0] = "질투",
+        [1] = "초 질투"
+    },
+    [EntityType.ENTITY_PRIDE] = {
+        [0] = "교만",
+        [1] = "초 교만"
+    },
+    [EntityType.ENTITY_FALLEN] = {
+        [1] = "크람푸스"
+    }
+}
 
+local playerNames = {
+    [Astro.Players.LEAH] = "레아",
+    [Astro.Players.LEAH_B] = "라헬",
+    [Astro.Players.DIABELLSTAR] = "디아벨스타",
+    [Astro.Players.DIABELLSTAR_B] = "디아벨제",
+    [Astro.Players.WATER_ENCHANTRESS] = "성전의 수견사",
+    [Astro.Players.WATER_ENCHANTRESS_B] = "일리걸 나이트",
+    [Astro.Players.DAVID_MARTINEZ] = "데이비드",
+    [Astro.Players.DAVID_MARTINEZ_B] = "루시",
+    [Astro.Players.STELLAR] = "스텔라",
+    [Astro.Players.STELLAR_B] = "나유타",
+    [Astro.Players.AINZ_OOAL_GOWN] = "아인즈",
+    [Astro.Players.AINZ_OOAL_GOWN_B] = "판도라즈 액터",
+}
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function()
+        local player = Isaac.GetPlayer(0)    -- 0번 컨트롤러의 화면에서 표시되어야 하므로
+        local pType = player:GetPlayerType()
+        if not playerNames[pType] then return end
+        if not REPKOR then return end
+
+        local room = Game():GetRoom()
+        local rType = room:GetType()
+        if rType ~= RoomType.ROOM_SHOP and
+           rType ~= RoomType.ROOM_DEVIL and
+           rType ~= RoomType.ROOM_MINIBOSS and
+           rType ~= RoomType.ROOM_SECRET
+        then return end
+
+        for _, ent in ipairs(Isaac.GetRoomEntities()) do
+            if ent:IsActiveEnemy() and minibossNames[ent.Type] then
+                local playerName = playerNames[pType] or player:GetName()
+
+                local nameTable = minibossNames[ent.Type]
+                local vb = ent.Variant or 0
+                local minibossName = nameTable[vb] or nameTable[0]
+
+                Game():GetHUD():ShowItemText(playerName .. " VS " .. minibossName)
+                break
+            end
+        end
+    end
+)
+
+------ 포켓 아이템 ------
 local function utf8_sub(str, start_char, num_chars)
     local start_idx = utf8.offset(str, start_char)
     local end_idx = utf8.offset(str, start_char + num_chars) and utf8.offset(str, start_char + num_chars) - 1 or #str
@@ -15,7 +97,6 @@ local function trimString(text, max_len)    -- 번역이 너무 길면 화면 �
         return text
     end
 end
-
 
 Astro.pocketItemStr = {}
 

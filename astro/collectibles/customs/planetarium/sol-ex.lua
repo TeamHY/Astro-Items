@@ -9,8 +9,15 @@ if EID then
         "초 태양",
         "광나는 승리",
         "!!! 획득 이후 {{Collectible588}}Sol 미등장" ..
-        "#{{Collectible588}} Sol 효과가 적용됩니다." ..
-        "#{{BossRoom}} 보스방 클리어 시 {{Collectible633}}Dogma를 획득하며 랜덤 장신구를 하나 소환합니다."
+        "#{{BossRoom}} 맵에 보스방의 위치가 표시됩니다." ..
+        "#{{Collectible588}} {{ColorOrange}}표시된 방의 보스 처치{{CR}}시 다음 효과 발동:" ..
+        "#{{ArrowGrayRight}} {{Card20}}맵에 스테이지 구조, 특수방, 일반비밀방 위치 표시" ..
+        "#{{ArrowGrayRight}} {{Heart}}체력을 모두 회복" ..
+        "#{{ArrowGrayRight}} 그 스테이지에서 {{DamageSmall}}+3/{{LuckSmall}}+1" ..
+        "#{{ArrowGrayRight}} {{CurseCursedSmall}}스테이지의 저주 제거" ..
+        "#{{ArrowGrayRight}} {{Collectible633}}Dogma 획득" ..
+        "#{{ArrowGrayRight}} 랜덤 장신구 소환" ..
+        "#{{ArrowGrayRight}} {{Battery}}액티브 아이템의 충전량을 모두 채워줍니다."
     )
 end
 

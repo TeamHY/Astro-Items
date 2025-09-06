@@ -13,7 +13,7 @@ Astro:AddCallback(
                 "난폭한 돌진",
                 "!!! 획득 이후 {{Collectible593}}Mars 미등장" ..
                 "#{{Collectible593}} 이동키를 두번 누르면 누른 방향으로 돌진하여 접촉한 적에게 공격력 x4 +8의 피해를 줍니다." ..
-                "{{ArrowGrayRight}} 돌진 중 적 및 장애물에 부딪힐 시 주변의 적에게 10의 {{Burning}}화염 피해를 줍니다." ..
+                "#{{ArrowGrayRight}} 돌진 중 적 및 장애물에 부딪힐 시 주변의 적에게 10의 {{Burning}}화염 피해를 줍니다." ..
                 "#{{TimerSmall}} (쿨타임 3초/{{Collectible130}}{{Collectible181}}1초)" ..
                 "#페널티 피격 시 방마다 최대 1번 해당 피해를 무시한 후 즉시 돌진합니다.",
                 -- 중첩 시

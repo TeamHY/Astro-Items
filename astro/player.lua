@@ -204,7 +204,7 @@ Astro:AddPriorityCallback(
 --             sprite:Render(Astro:ToScreen(player.Position), Vector.Zero, Vector.Zero)
 --         end
 --     end
--- )s
+-- )
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -250,8 +250,7 @@ Astro:AddCallback(
                     "디아벨스타는 {{ColorMaroon}}유희왕 오피셜 카드게임{{CR}}의 죄보 테마에서 등장하였습니다."
                     .. "#뱀눈의 용, 포프루스라는 펫과 함께 지냅니다."
                     .. "#{{DamageSmall}} 공격력이 높습니다."
-                    .. "#{{Collectible" .. Astro.Collectible.SNAKE_EYES_POPLAR .. "}} 기본 소지 아이템 : 스네이크아이즈 포프루스"
-                    .. "#{{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}} 기본 소지 아이템 : 반역의 죄보 - 스네이크 아이",
+                    .. "#{{Collectible" .. Astro.Collectible.SNAKE_EYES_POPLAR .. "}} 기본 소지 아이템 : 스네이크아이즈 포프루스",
                     "ko_kr"
                 )
 
@@ -280,7 +279,7 @@ Astro:AddCallback(
                     Astro.Players.WATER_ENCHANTRESS_B,
                     "일리걸 나이트",
                     "일리걸 나이트는 {{ColorMaroon}}유희왕 오피셜 카드게임{{CR}}의 용사 이야기에서 등장하였습니다."
-                    .. "유적 안에서 만난 사검을 지닌 마법검사입니다."
+                    .. "#유적 안에서 만난 사검을 지닌 마법검사입니다."
                     .. "#{{Collectible" .. Astro.Collectible.CURSE_OF_ARAMATIR .. "}} 고유 능력 : 금주 아라마티아"
                     .. "#{{Blank}} 금주 아라마티아를 스테이지 당 한번 사용할 수 있습니다.",
                     "ko_kr"
