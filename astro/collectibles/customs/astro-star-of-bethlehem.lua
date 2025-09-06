@@ -10,7 +10,10 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM,
                 "베들레헴의 한별",
                 "빛을 경배하라",
-                "클리어하지 않은 방에 입장 시 {{Collectible651}}Star of Bethlehem를 획득합니다. (방 클리어 시 제거)",
+                "{{Collectible651}} 클리어하지 않은 방에 입장 시 오라가 생기며 오라 안에 있을 시:" ..
+                "#{{ArrowGrayRight}} {{DamageSmall}}공격력 배율 x1.2" ..
+                "#{{ArrowGrayRight}} {{TearsSmall}}연사 배율 x2.5" ..
+                "#{{ArrowGrayRight}} 피해를 확률적으로 무시하고 공격에 유도 효과가 생깁니다.",
                 -- 중첩 시
                 "{{Collectible242}} 적 탄환에 맞았을 때 50% 확률로 피해를 무시하며, {{Collectible192}} 방 입장 시 공격이 적에게 유도되며 사거리가 3 증가합니다."
             )

@@ -1,12 +1,12 @@
 local isc = require("astro.lib.isaacscript-common")
 
-Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To Go Deeper! (Astro)")
+Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To Go Astro!")
 
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO,
-        "더 깊은 한울로",
-        "...",
+        "더 깊은 한울로!",
+        "다락문 너머의 별들",
         "사용 시 다음 스테이지로 가는 다락문을 생성합니다." ..
         "#{{Collectible602}} 치장성 타일(풀, 돌 조각 등) 위에 사용 시 특수한 상점으로 가는 다락문을 생성합니다."
     )

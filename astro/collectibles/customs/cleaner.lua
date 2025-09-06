@@ -3,8 +3,8 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.CLEANER = Isaac.GetItemIdByName("Cleaner")
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    function(_, isContinued)
+    Astro.Callbacks.MOD_INIT,
+    function()
         Astro.CleanerList = {
             CollectibleType.COLLECTIBLE_MOMS_KNIFE,
             CollectibleType.COLLECTIBLE_BRIMSTONE,

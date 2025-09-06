@@ -7,7 +7,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
                 "반역의 죄보 - 스네이크아이",
-                "...",
+                "요동치는 에너지를 내뿜는 구체",
                 "적 명중 시 10%의 확률로{{Collectible634}}Purgatory 유령을 소환합니다." ..
                 "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
                 -- 중첩 시

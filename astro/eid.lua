@@ -67,12 +67,12 @@ Astro:AddCallbackCustom(
         if Options.Language == "kr" or REPKOR then
             if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
                 local item = Astro.EID[pickingUpItem.subType]
-                if item then
+                if item and not REPENTOGON then
                     Game():GetHUD():ShowItemText(item.name or '', item.description or '')
                 end
             else
                 local trinket = Astro.EID.Trinket[pickingUpItem.subType]
-                if trinket then
+                if trinket and not REPENTOGON then
                     Game():GetHUD():ShowItemText(trinket.name or '', trinket.description or '')
                 end
             end
@@ -84,6 +84,8 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            EID:setModIndicatorName("AstroItems")
+            ----
             local player_icons = Sprite()
             player_icons:Load("gfx/ui/eid_astrocharacter_icons.anm2", true)
 
@@ -115,3 +117,38 @@ Astro:AddCallback(
         end
     end
 )
+
+if REPENTOGON then
+	Astro:AddPriorityCallback(
+        Astro.Callbacks.MOD_INIT,
+        CallbackPriority.LATE,
+        function()
+            if not (REPKOR or Options.Language == "kr") then goto continue end
+            local conf = Isaac.GetItemConfig()
+
+            if Astro.EID then
+                for key, entry in pairs(Astro.EID) do
+                    local id = tonumber(key)
+                    if id and id ~= -1 then
+                        local cfg = conf:GetCollectible(id)
+                        cfg.Name = entry.name
+                        cfg.Description = entry.description
+                    end
+                end
+            end
+
+            if Astro.EID.Trinket then
+                for key, entry in pairs(Astro.EID.Trinket) do
+                    local id = tonumber(key)
+                    if id and id ~= -1 then
+                        local cfg = conf:GetTrinket(id)
+                        cfg.Name = entry.name
+                        cfg.Description = entry.description
+                    end
+                end
+            end
+
+            ::continue::
+        end
+    )
+end
