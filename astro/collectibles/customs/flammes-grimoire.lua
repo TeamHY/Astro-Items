@@ -6,7 +6,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.FLAMMES_GRIMOIRE,
         "플람메의 마도서",
-        "...",
+        "마법은, 사람의 마음을 이어주는 증거야",
         "방 입장 시 모든 가시 돌이 제거되며, 돌 위에 꽃을 피웁니다." ..
         "#{{ArrowGrayRight}} 꽃이 핀 돌은 방 클리어 시 파괴됩니다."
     )

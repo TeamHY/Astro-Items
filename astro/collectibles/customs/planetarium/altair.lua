@@ -6,7 +6,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.ALTAIR,
         "알타일",
-        "오른쪽에서 빛나는 여름의 대삼각형",
+        "여름의 밤하늘에서",
         "{{Trinket23}} 획득 시 Missing Poster를 소환합니다." ..
         "#다음 게임의 첫 스테이지에 하얀 모닥불을 소환합니다."
     )

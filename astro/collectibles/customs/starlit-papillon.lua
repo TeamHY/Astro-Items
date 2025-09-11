@@ -31,7 +31,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.STARLIT_PAPILLON,
                 "스타리트 파피용",
-                "...",
+                "용사 파티의 길라잡이",
                 "적 처치 시 영혼을 흡수하며;" ..
                 "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 입힙니다." ..
                 "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .. "개까지 저장할 수 있습니다." ..

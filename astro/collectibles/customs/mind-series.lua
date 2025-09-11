@@ -63,7 +63,7 @@ Astro:AddCallback(
                 Astro.Collectible.BLUE_MIND,
                 "우울한 정신",
                 "누가 양파를 써나?",
-                "{{Timer}} 1초마다 {{TearsSmall}}연사(고정) +0.0019" ..
+                "{{Timer}} 1초마다 {{TearsSmall}}연사 +0.0019" ..
                 "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."

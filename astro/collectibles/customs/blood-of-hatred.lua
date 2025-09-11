@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.BLOOD_OF_HATRED,
                 "증오의 피",
-                "피 한 방울에 서린 증오",
+                "피 한 방울에 서린 복수심",
                 "!!! 최초 획득 시 2개 획득" ..
                 "#↑ {{BlackHeart}}블랙하트 +1" ..
                 "#{{BleedingOut}} 방 입장 시 12.5% 확률로 적을 출혈시킵니다." ..

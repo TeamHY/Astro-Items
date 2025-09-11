@@ -15,7 +15,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.LEO_EX,
         "초 사자자리",
-        "동작 그만",
+        "위엄",
         "{{Trinket188}} 방 입장 시 모든 적이 50%의 확률로 5초간 {{Freezing}}빙결 상태가 됩니다." ..
         "#다음 게임에서 {{Collectible302}}Leo를 들고 시작합니다."
     )

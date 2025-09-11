@@ -6,8 +6,8 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.SOLAR_SYSTEM,
         "태양계",
-        "수금지화목토천해",
-        "!!! 획득 시 소지중인 {{Planetarium}}천체관 관련 아이템 모두 제거" ..
+        "고향별",
+        "!!! 획득 시 소지중인 {{Planetarium}}천체관 관련 아이템을 모두 제거하며;" ..
         "#{{ArrowGrayRight}} 제거한 만큼 {{Planetarium}}천체관 관련 아이템을 소환합니다."
     )
 end

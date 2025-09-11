@@ -8,7 +8,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.DIVINE_LIGHT,
                 "신의 조명",
-                "천벌 받으리",
+                "앞을 밝히노니",
                 "적 명중 시 10%의 확률로 빛줄기를 소환합니다." ..
                 "#{{LuckSmall}} 행운 18 이상일 때 100% 확률 (행운 1당 +5%p)",
                 -- 중첩 시

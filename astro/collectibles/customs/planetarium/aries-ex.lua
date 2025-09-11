@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.ARIES_EX,
         "초 양자리",
-        "일시적 저항",
+        "순수함에 보호받다",
         "피격 시 피해를 무시하고 일시적으로 무적이 됩니다." ..
         "#!!! 지속시간: (10 * {{Collectible" .. Astro.Collectible.ARIES_EX .."}}개수)초" ..
         "#{{TimerSmall}} 쿨타임 60초"

@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "밴디지 걸",
                 "여자친구",
                 "!!! 최초 획득 시 {{Collectible207}}Ball of Bandages 2개 획득" ..
-                "#{{Collectible207}} 스테이지 입장 시 Ball of Bandages를 획득합니다." ..
+                "#{{Collectible207}} 스테이지 진입 시 Ball of Bandages를 획득합니다." ..
                 "#!!! 획득량: ({{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}}개수+{{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}}개수)개"
             )
         end

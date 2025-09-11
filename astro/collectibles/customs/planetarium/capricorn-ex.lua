@@ -3,7 +3,12 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.CAPRICORN_EX = Isaac.GetItemIdByName("Capricorn EX")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.CAPRICORN_EX, "초 염소자리", "제물 준비", "{{Trinket174}} Number Magnet, {{Pill1}}Gulp!를 소환합니다.")
+    Astro:AddEIDCollectible(
+        Astro.Collectible.CAPRICORN_EX,
+        "초 염소자리",
+        "제물 준비",
+        "{{Trinket174}} Number Magnet과 {{Pill1}}Gulp!를 소환합니다."
+    )
 end
 
 Astro:AddCallbackCustom(

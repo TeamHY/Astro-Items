@@ -7,7 +7,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.QUASAR,
                 "퀘이사",
-                "가장 밝은 천체",
+                "초강력 블랙홀",
                 "{{Collectible512}} 방마다 처음으로 죽은 적의 위치에 블랙홀을 소환합니다." ..
                 "#방 클리어 시 10초동안 무적이 됩니다.",
                 -- 중첩 시

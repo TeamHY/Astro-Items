@@ -17,7 +17,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.DRACOBACK,
                 "기룡 드라코백",
-                "...",
+                "호감패",
                 "{{Collectible638}} {{ColorOrange}}보스방을 제외한{{CR}} 방 입장 시 스테이지 당 최대 ".. MAX_COUNT .. "번 랜덤 적 하나가 지워집니다.",
                 -- 중첩 시
                 "중첩된 수만큼 적을 지우려 시도"

@@ -8,8 +8,8 @@ if EID then
         "프로메테우스",
         "불을 훔친 자",
         "↑ {{DamageSmall}}공격력 x1.25" ..
-        "#{{Blank}} (중첩 가능)" ..
-        "#{{CurseDarknessSmall}} 항상 Curse of Dakrness 저주에 걸립니다."
+        "#{{CurseDarknessSmall}} 항상 Curse of Dakrness 저주에 걸립니다.",
+        "중첩 가능"
     )
 end
 

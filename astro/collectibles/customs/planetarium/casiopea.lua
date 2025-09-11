@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.CASIOPEA,
                 "카시오페아",
-                "닻별",
+                "자만과 허영",
                 "#{{Trinket}} 획득 시 랜덤 황금 장신구와 {{Pill1}}Gulp!를 소환합니다." ..
                 "#다음 게임에서 랜덤 황금 장신구를 하나 소환합니다.",
                 -- 중첩 시

@@ -15,7 +15,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.DENEB,
                 "데네브",
-                "왼쪽에서 빛나는 여름의 대삼각형",
+                "가장 밝게 빛나는",
                 "다음 게임에서 애프터버스 변종 스테이지(Burning Basement, Flooded Caves, Dank Depths, Scarred Womb) 등장하지 않습니다." ..
                 "#변종 몬스터 직접 공격 시 30%의 추가 피해를 입힙니다.",
                 -- 중첩 시

@@ -6,7 +6,8 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDTrinket(
                 Astro.Trinket.BLOODY_BANDAGE,
-                "피투성이 붕대", "이제 괜찮아...",
+                "피투성이 붕대",
+                "이제 괜찮아...",
                 "{{CursedRoom}} 저주방 입장/퇴장 시 피해를 입지 않습니다.",
                 -- 황금
                 "{{CursedRoom}} 맵에 저주방의 위치를 보여줍니다."

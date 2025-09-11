@@ -17,7 +17,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN,
                 "스태프 오브 아인즈 울 고운",
-                "...",
+                "가볼까, 우리 길드의 상징이여",
                 "{{Collectible512}} 사용 시 방 중앙에 블랙홀을 생성하고 10초 동안 무적이 됩니다." ..
                 "#{{Collectible647}} 적에게 일정량의 피해를 줄 때마다 액티브 충전량을 한칸 충전합니다." ..
                 "#!!! 한 칸 충전에 필요한 피해량:" ..

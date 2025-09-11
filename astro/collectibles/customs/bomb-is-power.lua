@@ -7,8 +7,8 @@ if EID then
         Astro.Collectible.BOMB_IS_POWER,
         "폭탄 = 힘",
         "펑펑펑 = 공격력",
-        "{{DamageSmall}} 폭탄 1개당 공격력(고정) +0.16" ..
-        "#{{Blank}} (중첩 가능)"
+        "{{DamageSmall}} 폭탄 1개당 공격력 +0.16",
+        "#중첩 가능"
     )
 end
 

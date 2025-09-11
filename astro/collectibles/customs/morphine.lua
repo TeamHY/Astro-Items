@@ -4,7 +4,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.MORPHINE,
         "모르핀",
-        "행복해",
+        "헤롱헤롱",
         "적에게 준 피해량의 10%만큼 그 방의 적에게 피해를 줍니다. (보스 제외)" ..
         "#Death's Head를 제외한 무적 상태의 적에게도 피해를 줍니다."
     )

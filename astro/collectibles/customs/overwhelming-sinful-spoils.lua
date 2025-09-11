@@ -14,7 +14,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
             Astro.Collectible.OVERWHELMING_SINFUL_SPOILS,
                 "폭주하는 죄보",
-                "...",
+                "엑셀 일소시?",
                 "적 처치 시 영혼을 최대 2개까지 흡수합니다." ..
                 "#사용 시 영혼을 소모해 여러 유령을 소환하며;" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}/" ..

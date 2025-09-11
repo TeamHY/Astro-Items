@@ -16,7 +16,7 @@ Astro:AddCallback(
                 Astro.Collectible.STRAWBERRY_MILK,
                 "딸기 우유",
                 "공격 속도 증가 + 추가 눈물",
-                "↑ {{TearsSmall}}연사(고정) +0.25" ..
+                "↑ {{TearsSmall}}연사 +0.25" ..
                 "#공격 시 대각선 4방향으로 유도 눈물을 발사합니다."
             )
         end

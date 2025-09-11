@@ -7,8 +7,8 @@ if EID then
         Astro.Collectible.KEY_IS_POWER,
         "열쇠 = 힘",
         "찰랑찰랑 = 공격력",
-        "{{DamageSmall}} 열쇠 1개당 공격력(고정) +0.16" ..
-        "#{{Blank}} (중첩 가능)"
+        "{{DamageSmall}} 열쇠 1개당 공격력 +0.16",
+        "중첩 가능"
     )
 end
 

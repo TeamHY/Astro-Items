@@ -32,8 +32,8 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
                 "빛의 성검 단넬",
-                "...",
-                "{{Collectible" .. Astro.Collectible.MORPHINE .. "}} 소지중일 때 적에게 준 피해의 10%만큼 그 방의 적에게 피해를 줍니다. (보스 제외)" ..
+                "용사 파티를 수호하는 성검",
+                "{{Collectible" .. Astro.Collectible.MORPHINE .. "}} 소지중일 때 적에게 준 피해의 10%만큼 그 방의 적에게 피해를 줍니다." ..
                 "#적 처치 시 영혼을 흡수하며;" ..
                 "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .. "개까지 저장하며;" ..
                 "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..

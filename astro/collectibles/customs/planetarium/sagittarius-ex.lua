@@ -16,11 +16,11 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SAGITTARIUS_EX,
                 "초 사수자리",
-                "관통 공격 + 추가 피해",
+                "꿰뚫기",
                 "{{Collectible48}} 공격이 적을 관통합니다." ..
-                "#공격이 보스를 제외한 적이 피해를 입을 때 20%의 추가 피해를 줍니다." ..
+                "#보스를 제외한 적이 피해를 입을 때 20%의 추가 피해를 줍니다." ..
                 "#{{ArrowGrayRight}} {{LuckSmall}}행운 1당 1%의 추가 피해를 줍니다." ..
-                "#다음 게임에서 {{Collectible48}}Cupid's Arrow를 들고 시작합니다.",
+                "#{{Collectible48}} 다음 게임에서 Cupid's Arrow를 들고 시작합니다.",
                 -- 중첩 시
                 "추가 피해량이 중첩된 수만큼 합 연산으로 증가"
             )

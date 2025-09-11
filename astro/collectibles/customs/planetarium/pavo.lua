@@ -7,7 +7,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.PAVO,
                 "공작자리",
-                "100개의 눈",
+                "우아한 자태",
                 "{{MegaSatanSmall}} Mega Satan(1페이즈)의 체력이 10% 감소됩니다." ..
                 "#Mega Satan(1페이즈)을 제외한 모든 적들의 체력이 20% 감소됩니다.",
                 -- 중첩 시

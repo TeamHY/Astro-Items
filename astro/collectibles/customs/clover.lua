@@ -7,7 +7,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.CLOVER,
                 "클로버",
-                "행운 + 공격력 증가",
+                "럭키 가이!",
                 "↑ {{LuckSmall}}행운 +1" ..
                 "#{{LuckSmall}} 행운 1당 {{DamageSmall}}공격력 +1%p",
                 -- 중첩 시
