@@ -7,7 +7,7 @@ if EID then
         "칭찬받은 양파",
         "방 클리어 시 최대 10번 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.7" ..
         "#{{ArrowGrayRight}} 스테이지 입장 시 증가된 능력치는 초기화됩니다.",
-        "중첩 가능, 다음 증가량부터 적용"
+        "(중첩 가능, 다음 증가량부터 적용)"
     )
 end
 

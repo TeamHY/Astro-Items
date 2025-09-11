@@ -26,8 +26,8 @@ Astro:AddCallback(
                 Astro.Collectible.CHUBBYS_HEAD,
                 "처비의 머리",
                 "'^'",
-                "↑ {{DamageSmall}} 공격력 +3.5",
-                "중첩 가능"
+                "↑ {{DamageSmall}} 최종 격력 +3.5",
+                "(중첩 가능)"
             )
             Astro:AddEIDCollectible(
                 Astro.Collectible.SLEEPING_PUPPY,
@@ -35,7 +35,7 @@ Astro:AddCallback(
                 "드르렁...",
                 "↑ {{DamageSmall}} 공격력 +0.35" ..
                 "#9개의 방을 클리어할 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.35",
-                "#중첩 가능, 다음 증가량부터 적용"
+                "(중첩 가능, 다음 증가량부터 적용)"
             )
             Astro:AddEIDCollectible(
                 Astro.Collectible.CHUBBYS_TAIL,

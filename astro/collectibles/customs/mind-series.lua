@@ -44,7 +44,6 @@ Astro:AddCallback(
                 "침착한 정신",
                 "압도적인 힘",
                 "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
-                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
             )
@@ -54,9 +53,9 @@ Astro:AddCallback(
                 "신속한 정신",
                 "토끼처럼 가볍게",
                 "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
-                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                "(중첩 가능, 다음 증가량부터 적용)"
             )
 
             Astro:AddEIDCollectible(
@@ -64,9 +63,9 @@ Astro:AddCallback(
                 "우울한 정신",
                 "누가 양파를 써나?",
                 "{{Timer}} 1초마다 {{TearsSmall}}연사 +0.0019" ..
-                "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                "(중첩 가능, 다음 증가량부터 적용)"
             )
 
             Astro:AddEIDCollectible(
@@ -76,7 +75,8 @@ Astro:AddCallback(
                 "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.0087" ..
                 "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                "(중첩 가능, 다음 증가량부터 적용)"
             )
 
             Astro:AddEIDCollectible(
