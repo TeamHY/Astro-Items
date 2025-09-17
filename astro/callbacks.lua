@@ -104,11 +104,13 @@ Astro:AddPriorityCallback(
                     playerData["lastPenaltyFrame"] = Game():GetFrameCount()
                 end
 
-                Isaac.RunCallback(Astro.Callbacks.POST_PLAYER_TAKE_PENALTY, player)
+                local result = Isaac.RunCallback(Astro.Callbacks.POST_PLAYER_TAKE_PENALTY, player)
 
-                if player:HasTrinket(TrinketType.TRINKET_PERFECTION) and not player:HasCollectible(Astro.Collectible.TAANA_DEFENSE_HELPER) then
+                if result ~= false and player:HasTrinket(TrinketType.TRINKET_PERFECTION) and not player:HasCollectible(Astro.Collectible.TAANA_DEFENSE_HELPER) then
                     Isaac.RunCallback(Astro.Callbacks.REMOVED_PERFECTION, player.Position)
                 end
+
+                return result
             end
         end
     end
