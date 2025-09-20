@@ -56,9 +56,9 @@ background:Play("Idle", true)
 
 local warnings = {}
 
-if not REPENTANCE_PLUS then
-	table.insert(warnings, "Repentance+ DLC가 필요합니다.")
-end
+-- if not REPENTANCE_PLUS then
+-- 	table.insert(warnings, "Repentance+ DLC가 필요합니다.")
+-- end
 
 -- if not HY_POCKETS then
 -- 	table.insert(warnings, "추가 소모성 모드가 필요합니다.")
