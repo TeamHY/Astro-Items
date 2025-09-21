@@ -1,4 +1,4 @@
-local PENALTY_DEATHS_HEAD_COUNT = 1 -- 빠가지 소환 개수
+local PENALTY_DEATHS_HEAD_COUNT = 2 -- 빠가지 소환 개수
 
 local PENALTY_DEATHS_HEAD_CHANCE = 1 -- 빠가지 소환 확률
 
@@ -16,6 +16,7 @@ local PENALTY_REMOVE_ITEMS = {
         CollectibleType.COLLECTIBLE_DEAD_CAT,
         Astro.Collectible.UNHOLY_MANTLE,
         CollectibleType.COLLECTIBLE_TAURUS,
+        Astro.Collectible.OMEGA_321,
     },
     trinket = {
         TrinketType.TRINKET_JAW_BREAKER,
