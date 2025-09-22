@@ -7,9 +7,11 @@ local LASER_DAMAGE_MULTIPLY = 0.35
 -- 90도 마다 레이저가 생성됩니다. (360도 / 90도 = 4개)
 local LASER_ANGLE_STEP = 30
 
+local LASER_ALPHA = 1 -- 레이저 투명도
+
 local SPAWN_CHANCE = 0.1 -- 기본 발동 확률
 
-local LUCK_MULTIPLY = 3 / 100 -- 행운 1당 +1%p
+local LUCK_MULTIPLY = 3 / 100 -- 행운 1당 +3%p
 
 local COOLDOWN_TIME = 450 -- 30 프레임 = 1초 (쿨타임)
 
@@ -26,8 +28,8 @@ Astro:AddCallback(
                 "초신성",
                 "광활한 별들의 폭발",
                 "적 명중 시 10%의 확률로 십자 모양 광선을 소환합니다." ..
-                "#{{TimerSmall}} (쿨타임 10초)" ..
-                "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +1%p)",
+                "#{{TimerSmall}} (쿨타임 15초)" ..
+                "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +3%p)",
                 -- 중첩 시
                 "소환 확률이 중첩된 수만큼 합 연산으로 증가하며 쿨타임이 줄어듭니다."
             )
@@ -73,6 +75,7 @@ local function RunAttack(player, position)
         laser.OneHit = false
         laser.DisableFollowParent = true
         laser:GetData().AstroSuperNovaLaser = true
+        laser:GetSprite().Color = Color(1, 1, 1, LASER_ALPHA)
     end
 
     for _, projectile in ipairs(Isaac.FindByType(EntityType.ENTITY_PROJECTILE)) do
@@ -174,7 +177,8 @@ Astro:AddCallback(
                     local baseChance = SPAWN_CHANCE * player:GetCollectibleNum(Astro.Collectible.SUPER_NOVA)
 
                     if rng:RandomFloat() < baseChance + player.Luck * LUCK_MULTIPLY then
-                        Isaac.Spawn(EntityType.ENTITY_EFFECT, SUPER_NOVA_VARIANT, 0, entity.Position, Vector.Zero, player)
+                        local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, SUPER_NOVA_VARIANT, 0, entity.Position, Vector.Zero, player)
+                        effect:GetSprite().Color = Color(1, 1, 1, LASER_ALPHA)
 
                         data["superNovaCooldown"] = Game():GetFrameCount() + COOLDOWN_TIME / player:GetCollectibleNum(Astro.Collectible.SUPER_NOVA)
                     end
