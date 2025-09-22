@@ -14,7 +14,7 @@ EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
 ---@param name string
 ---@param description string
 ---@param eidDescription string
----@param copied string
+---@param copied string?
 function Astro:AddEIDCollectible(id, name, description, eidDescription, copied)
     if EID then
         EID:addCollectible(id, eidDescription, name, "ko_kr")
