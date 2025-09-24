@@ -17,6 +17,12 @@ local PENALTY_REMOVE_ITEMS = {
         Astro.Collectible.UNHOLY_MANTLE,
         CollectibleType.COLLECTIBLE_TAURUS,
         Astro.Collectible.OMEGA_321,
+        CollectibleType.COLLECTIBLE_COMPASS,
+        CollectibleType.COLLECTIBLE_TREASURE_MAP,
+        CollectibleType.COLLECTIBLE_BLUE_MAP,
+        CollectibleType.COLLECTIBLE_CRYSTAL_BALL,
+        CollectibleType.COLLECTIBLE_SPELUNKER_HAT,
+        CollectibleType.COLLECTIBLE_MIND,
     },
     trinket = {
         TrinketType.TRINKET_JAW_BREAKER,
