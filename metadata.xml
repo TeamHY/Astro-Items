@@ -6,6 +6,6 @@
     <description>인터넷 방송인 오헌영 내수용 모드
 
 다른 모드와 호환해서 사용할 수 있으며, 대결 모드(astro) 설치했다면 꼭 같이 깔아주세요</description>
-    <version>1.136</version>
+    <version>1.137</version>
     <visibility>Public</visibility>
 </metadata>
