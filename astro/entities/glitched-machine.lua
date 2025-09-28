@@ -33,6 +33,7 @@ Astro:AddCallback(
                 return nil
             end
 
+            player:AddCoins(-PRICE)
             sprite:Play("Initiate")
         end
     end
@@ -61,8 +62,8 @@ Astro:AddCallbackCustom(
         local sprite = slot:GetSprite()
 
         if sprite:IsFinished("Initiate") then
-            sprite:Play("Wiggle")
-        elseif sprite:IsFinished("Wiggle") then
+            sprite:Play("Glitching")
+        elseif sprite:IsFinished("Glitching") then
             sprite:Play("Death")
         elseif sprite:IsFinished("Death") then
             sprite:Play("Broken")
