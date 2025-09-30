@@ -190,6 +190,7 @@
 	<passive tags="book" hidden="true" gfx="Flammes Grimoire.png" quality="2" devilprice="1" shopprice="15" name="Flamme's Grimoire" description="Magic is the bond linking human hearts" />
 	<passive gfx="Pillars of Creation.png" hidden="true" quality="3" devilprice="2" shopprice="20" name="Pillars of Creation" description="So heartbreakingly beautiful" />
 	<passive gfx="IBN 5100.png" hidden="true" quality="3" devilprice="2" shopprice="20" name="IBN 5100" description="First portable computer" />
+	<passive gfx="Expired Milk.png" quality="2" devilprice="2" shopprice="15" name="Expired Milk" description="..." />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
