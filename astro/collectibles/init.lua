@@ -139,6 +139,7 @@ require "astro.collectibles.customs.life-sustaining-treatment"
 require "astro.collectibles.customs.flammes-grimoire"
 require "astro.collectibles.customs.pillars-of-creation"
 require "astro.collectibles.customs.ibn-5100"
+require "astro.collectibles.customs.lucky-coin-bundle"
 
 --#region PLANETARIUM
 

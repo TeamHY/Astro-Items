@@ -55,4 +55,8 @@
     <entity anm2path="uranus_ex_halo.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="32" friction="1" id="1000" name="Uranus Ex Halo" numGridCollisionPoints="0" shadowSize="0" stageHP="0" variant="3108">
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
     </entity>
+    <entity anm2path="double_lucky_penny.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Double Lucky Penny" numGridCollisionPoints="24" shadowSize="14" stageHP="0" subtype="3100" variant="20">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
+        <preload-snd id="234"/>
+    </entity>
 </entities>
