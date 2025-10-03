@@ -25,6 +25,7 @@
 		<Item Name="Laniakea Supercluster" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Copernicus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Super Nova" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
     <Pool Name="secret">
@@ -81,6 +82,9 @@
 
 		<Item Name="Dry Eye Syndrome" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Glitched D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
     <Pool Name="greedSecret">
@@ -197,6 +201,7 @@
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -325,6 +330,7 @@
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -394,6 +400,7 @@
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="greedCurse">
@@ -523,6 +530,7 @@
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -596,6 +604,7 @@
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedAngel">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -820,6 +829,13 @@
 
 		<Item Name="Urinary Incontinence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Glitched D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Lucky Coin Bundle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Expired Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="IBN 5100" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -1052,6 +1068,15 @@
 
 		<Item Name="Urinary Incontinence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Glitched D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="IBN 5100" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Expired Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Lucky Coin Bundle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Stairway to Hell" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
 
 	<Pool Name="shop">
@@ -1172,6 +1197,13 @@
 		<Item Name="Urinary Incontinence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Glitched D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="IBN 5100" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Expired Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Lucky Coin Bundle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Stairway to Hell" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1353,6 +1385,13 @@
 		<Item Name="Urinary Incontinence" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Glitched D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="IBN 5100" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Expired Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Lucky Coin Bundle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Stairway to Hell" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="boss">
 
@@ -1401,6 +1440,7 @@
 			<Item Name="Book of Sun" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 			<Item Name="Book of Moon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 			<Item Name="Book of Eclipse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-			<Item Name="Book of Lunar Eclipse" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
+			<Item Name="Book of Lunar Eclipse" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+			<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 </ItemPools>
