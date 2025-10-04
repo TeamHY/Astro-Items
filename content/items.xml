@@ -192,6 +192,7 @@
 	<passive gfx="IBN 5100.png" quality="2" devilprice="1" shopprice="5" name="IBN 5100" description="First portable computer" />
 	<passive gfx="Expired Milk.png" quality="2" devilprice="1" shopprice="10" name="Expired Milk" description="..." />
 	<passive cache="luck" gfx="Lucky Coin Bundle.png" quality="2" devilprice="1" shopprice="4" name="Lucky Coin Bundle" description="..." />
+	<passive gfx="Retrograde Arcana.png" quality="3" devilprice="2" shopprice="15" name="Retrograde Arcana" description="..." />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
