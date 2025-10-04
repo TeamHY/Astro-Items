@@ -29,7 +29,7 @@ Astro:AddCallback(
 
             local sprite = collider:GetSprite()
 
-            if not sprite:IsPlaying("Idle") then
+            if not sprite:GetAnimation() == "Idle" then
                 return nil
             end
 
