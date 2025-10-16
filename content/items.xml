@@ -188,7 +188,7 @@
 	<active gfx="Glitched D6.png" quality="5" devilprice="2" shopprice="30" maxcharges="8" name="Glitched D6" description="t's broken9Reroll your dest" />
 	<active gfx="Zoltraak.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Zoltraak" description="Killing magic" />
 	<passive tags="book" gfx="Flammes Grimoire.png" quality="2" devilprice="1" shopprice="5" name="Flamme's Grimoire" description="Magic is the bond linking human hearts" />
-	<passive gfx="Pillars of Creation.png" quality="4" devilprice="2" shopprice="20" name="Pillars of Creation" description="So heartbreakingly beautiful" />
+	<passive gfx="Pillars of Creation.png" quality="4" devilprice="2" shopprice="10" name="Pillars of Creation" description="So heartbreakingly beautiful" />
 	<passive gfx="IBN 5100.png" quality="2" devilprice="1" shopprice="1" name="IBN 5100" description="First portable computer" />
 	<passive gfx="Expired Milk.png" quality="2" devilprice="1" shopprice="10" name="Expired Milk" description="..." />
 	<passive cache="luck" gfx="Lucky Coin Bundle.png" quality="2" devilprice="1" shopprice="4" name="Lucky Coin Bundle" description="..." />
