@@ -10,9 +10,10 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.RETROGRADE_ARCANA,
                 "역행 아르카나",
-                "...",
-                "{{Card}}정방향 카드를 역방향 카드로 변경합니다.",
-                "{{Collectible454}}Polydactyly 효과가 적용됩니다."
+                "명운 된로꾸거",
+                "!!! 모든 {{Card}}정방향 카드가 역방향 카드로 교체됩니다.",
+                -- 중첩 시
+                "{{Collectible454}}Polydactyly 효과 적용"
             )
         end
     end

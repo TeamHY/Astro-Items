@@ -6,7 +6,7 @@ if EID then
         "IBN 5100",
         "최초의 휴대용 컴퓨터",
         "{{TreasureRoom}} 보물방 입장 시 IBN 5100 머신을 1개 소환합니다." ..
-        "#{{ArrowGrayRight}} 머신에 접촉 시 {{Coin}}동전 10개를 소모하여 {{Collectible422}}Glowing Hourglass를 발동합니다."
+        "#{{Collectible422}} 머신에 접촉 시 {{Coin}}동전 10개를 소모하여 모든 상태를 이전 방의 시점으로 시간을 되돌립니다."
     )
 end
 

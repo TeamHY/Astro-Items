@@ -4,8 +4,8 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.LUCKY_COIN_BUNDLE,
         "행운 동전 번들",
-        "...",
-        "{{LuckSmall}} 등장하는 모든 행운 동전이 더블 행운 동전으로 바뀝니다."
+        "운칠기삼",
+        "{{Crafting11}} 행운 동전이 픽업이 1+1로 나옵니다."
     )
 end
 
