@@ -32,10 +32,10 @@ Astro:AddCallback(
                 "의지",
                 "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 50% 확률로 아래 아이템 중 하나로 바꿉니다." ..
                 "#!!! 소지중일 때 아래 아이템들의 효과 두 배:" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}} Lucky Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind {{ColorGray}}(공격력 증가){{CR}}" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind {{ColorGray}}(연사 증가){{CR}}" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind {{ColorGray}}(이동속도 증가){{CR}}" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}} Lucky Mind {{ColorGray}}(행운 증가){{CR}}" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.QUANTUM_MIND .. "}} Quantum Mind"
             )
 
@@ -45,7 +45,9 @@ Astro:AddCallback(
                 "압도적인 힘",
                 "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다."
+                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                -- 중첩 시
+                "중첩 가능, 다음 증가량부터 적용"
             )
 
             Astro:AddEIDCollectible(
@@ -55,7 +57,8 @@ Astro:AddCallback(
                 "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
-                "(중첩 가능, 다음 증가량부터 적용)"
+                -- 중첩 시
+                "중첩 가능, 다음 증가량부터 적용"
             )
 
             Astro:AddEIDCollectible(
@@ -65,7 +68,8 @@ Astro:AddCallback(
                 "{{Timer}} 1초마다 {{TearsSmall}}연사 +0.0019" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
-                "(중첩 가능, 다음 증가량부터 적용)"
+                -- 중첩 시
+                "중첩 가능, 다음 증가량부터 적용"
             )
 
             Astro:AddEIDCollectible(
@@ -76,7 +80,8 @@ Astro:AddCallback(
                 "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
-                "(중첩 가능, 다음 증가량부터 적용)"
+                -- 중첩 시
+                "중첩 가능, 다음 증가량부터 적용"
             )
 
             Astro:AddEIDCollectible(
@@ -84,10 +89,10 @@ Astro:AddCallback(
                 "퀀텀 마인드",
                 "집합체",
                 "사용 시 그 방의 아이템을 아래 아이템 중 하나로 변경:" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind" ..
-                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}} Lucky Mind" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind {{ColorGray}}(공격력 증가){{CR}}" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind {{ColorGray}}(연사 증가){{CR}}" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind {{ColorGray}}(이동속도 증가){{CR}}" ..
+                "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}} Lucky Mind {{ColorGray}}(행운 증가){{CR}}" ..
                 "#!!! 동일한 아이템이 여러 개 등장할 수 있으며 {{SpeedSmall}}이동속도가 2.0 이상일 경우 {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}}Swift Mind는 등장하지 않습니다."
             )
 

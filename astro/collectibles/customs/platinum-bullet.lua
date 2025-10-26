@@ -5,8 +5,9 @@ if EID then
         Astro.Collectible.PLATINUM_BULLET,
         "백금 탄환",
         "백만 번 이상 사용됨",
-        "방 클리어 시 {{DamageSmall}}공격력 및 {{TearsSmall}}연사 +0.02(고정)" ..
-        "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)"
+        "방 클리어 시 {{DamageSmall}}공격력 및 {{TearsSmall}}연사 +0.02(고정)",
+        -- 중첩 시
+        "중첩 가능, 다음 증가량부터 적용"
     )
 end
 

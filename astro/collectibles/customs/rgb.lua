@@ -27,7 +27,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} {{ColorGreen}}(초록){{CR}} {{LuckSmall}}행운 배율 x1.5" ..
                 "#{{ArrowGrayRight}} {{ColorBlue}}(파랑){{CR}} {{TearsSmall}}연사 배율 x1.2",
                 -- 중첩 시
-                "해당 배율이 중첩된 수만큼 곱 연산으로 적용"
+                "중첩 시 해당 배율이 중첩된 수만큼 곱 연산으로 적용"
             )
         end
     end

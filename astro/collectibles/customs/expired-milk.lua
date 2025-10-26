@@ -8,11 +8,11 @@ if EID then
         "상한 우유",
         "피부에 양보하세요",
         "{{Collectible330}} 클리어하지 않은 방에 입장 시:" ..
-        "#{{ArrowGrayRIght}} {{DamageSmall}}공격력 배율 x0.2" ..
-        "#{{ArrowGrayRIght}} {{TearsSmall}}연사 배율 x5.5" ..
-        "#{{ArrowGrayRIght}} {{TearsizeSmall}}눈물크기 -0.3" ..
-        "#{{ArrowGrayRIght}} {{Chargeable}}충전이 필요한 공격이 충전 없이 자동으로 발사됩니다."
-        "#!!! {{BossRoom}}보스방에서는 미발동",
+        "#{{ArrowGrayRight}} {{DamageSmall}}공격력 배율 x0.2" ..
+        "#{{ArrowGrayRight}} {{TearsSmall}}연사 배율 x5.5" ..
+        "#{{ArrowGrayRight}} {{TearsizeSmall}}눈물크기 -0.3" ..
+        "#{{ArrowGrayRight}} {{Chargeable}} 충전이 필요한 공격이 충전 없이 자동으로 발사됩니다." ..
+        "#!!! 보스방에서는 미발동",
         -- 중첩 시
         "{{Collectible69}}Chocolate Milk 효과 적용"
     )

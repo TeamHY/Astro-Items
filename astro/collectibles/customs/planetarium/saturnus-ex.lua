@@ -24,7 +24,7 @@ Astro:AddCallback(
                 "#{{Collectible522}} 10초마다 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
                 "#{{ArrowGrayRight}} 3초가 끝나면 붙잠은 탄환을 다시 되돌려 발사합니다.",
                 -- 중첩 시
-                "중첩된 수만큼 Telekinesis 발동"
+                "중첩 시 중첩된 수만큼 Telekinesis 발동"
             )
         end
     end

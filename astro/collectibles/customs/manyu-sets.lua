@@ -103,7 +103,7 @@ Astro:AddCallback(
                 "{{Collectible522}} 방마다 최대 1번 적 처치시 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
                 "#{{ArrowGrayRight}} 3초가 끝나면 붙잡은 탄환을 다시 되돌려 발사합니다." .. AstroFight_SAMSARA,
                 -- 중첩 시
-                "중첩된 수만큼 발동"
+                "중첩 시 중첩된 수만큼 발동"
             )
         end
     end

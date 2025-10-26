@@ -20,7 +20,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 입장엔 {{Coin}}" .. COIN_COST .. "개의 동전이 필요합니다." ..
                 "#!!! 기둥은 방을 벗어나면 사라집니다.",
                 -- 중첩 시
-                "방을 벗어나도 기둥이 사라지지 않음"
+                "중첩 시 방을 벗어나도 기둥이 사라지지 않음"
             )
         end
     end
@@ -56,17 +56,42 @@ Astro:AddCallback(
             local player = Isaac.GetPlayer()
             local data = Astro.SaveManager.GetFloorSave(player)
 
+            if data["lockedToPillar"] then
+                local toCenter = effect.Position - player.Position
+                local dist = toCenter:Length()
+                if dist > 0.5 then
+                    player.Velocity = toCenter * 0.25
+                else
+                    player.Velocity = Vector(0,0)
+                    player.Position = effect.Position
+                end
+                player.ControlsEnabled = false
+
+                goto continue
+            end
+
             if player:GetNumCoins() >= COIN_COST and not data["runPillarsOfCreation"] then
-                player:AnimateLightTravel()
                 player:AddCoins(-COIN_COST)
+                player:AnimateLightTravel()
+                player.Velocity = (effect.Position - player.Position) * 0.12
+                player.ControlsEnabled = false
+
                 effect:GetSprite():Play("teleport", true)
                 SFXManager():Play(Isaac.GetSoundIdByName("PillarTeleport"))
                 data["runPillarsOfCreation"] = true
+                data["lockedToPillar"] = true
                 
                 Astro:ScheduleForUpdate(function()
+                    player.ControlsEnabled = true
                     Isaac.ExecuteCommand("goto s.planetarium")
                 end, 32)
+            elseif player:GetNumCoins() < COIN_COST and not data["runPillarsOfCreation"] then
+                local dirVec = player.Position - effect.Position
+                dirVec = dirVec:Normalized()
+                player:AddVelocity(dirVec * 1.5)
             end
+
+            ::continue::
         end
     end,
     PILLARS_OF_CREATION_VARIANT

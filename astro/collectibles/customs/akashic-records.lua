@@ -33,8 +33,7 @@ Astro:AddCallback(
                 "초차원적 정보의 집합체",
                 "책 종류 아이템 사용 시 그 책의 일시적 효과가 영구적으로 유지됩니다. {{ColorGray}}(AstroItems에 추가된 책은 미적용){{CR}}",
                 -- 중첩 시
-                "맵에 {{Library}}책방의 위치가 표시되며;" ..
-                "#{{ArrowGrayRight}] 책방 입장 시 {{Card83}}Soul of Cain을 발동합니다."
+                "중첩 시 맵에 {{Library}}책방의 위치가 표시되며 책방 입장 시 {{Card83}}Soul of Cain을 발동합니다."
             )
         end
     end

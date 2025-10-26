@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} {{TearsSmall}}연사 배율 x2.5" ..
                 "#{{ArrowGrayRight}} 피해를 확률적으로 무시하고 공격에 유도 효과가 생깁니다.",
                 -- 중첩 시
-                "{{Collectible242}} 적 탄환에 맞았을 때 50% 확률로 피해를 무시하며, {{Collectible192}} 방 입장 시 공격이 적에게 유도되며 사거리가 3 증가합니다."
+                "중첩 시 {{Collectible242}} 적 탄환에 맞았을 때 50% 확률로 피해를 무시하며, {{Collectible192}} 방 입장 시 공격이 적에게 유도되고 사거리가 3 증가합니다."
             )
         end
     end

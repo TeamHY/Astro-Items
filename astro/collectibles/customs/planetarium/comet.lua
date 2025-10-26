@@ -11,7 +11,7 @@ if EID then
         "#{{ArrowGrayRight}} 다음 게임에서 첫 스테이지에 Cracked Key를 하나 소환합니다." ..
         "#{{UltraSecretRoom}} 맵에 특급비밀방의 위치가 표시됩니다.",
         -- 중첩 시
-        "중첩된 수만큼 Cracked Key 소환"
+        "중첩 시 중첩된 수만큼 Cracked Key 소환"
     )
 end
 

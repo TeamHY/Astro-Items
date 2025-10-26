@@ -9,7 +9,8 @@ if EID then
         "불을 훔친 자",
         "↑ {{DamageSmall}}공격력 x1.25" ..
         "#{{CurseDarknessSmall}} 항상 Curse of Dakrness 저주에 걸립니다.",
-        "(중첩 가능)"
+        -- 중첩 시
+        "중첩 가능"
     )
 end
 

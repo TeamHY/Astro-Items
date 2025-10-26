@@ -26,8 +26,9 @@ Astro:AddCallback(
                 Astro.Collectible.CHUBBYS_HEAD,
                 "처비의 머리",
                 "'^'",
-                "↑ {{DamageSmall}} 최종 격력 +3.5",
-                "(중첩 가능)"
+                "↑ {{DamageSmall}} 최종 공격력 +3.5",
+                -- 중첩 시
+                "중첩 가능"
             )
             Astro:AddEIDCollectible(
                 Astro.Collectible.SLEEPING_PUPPY,
@@ -35,7 +36,8 @@ Astro:AddCallback(
                 "드르렁...",
                 "↑ {{DamageSmall}} 공격력 +0.35" ..
                 "#9개의 방을 클리어할 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.35",
-                "(중첩 가능, 다음 증가량부터 적용)"
+                -- 중첩 시
+                "중첩 가능, 다음 증가량부터 적용"
             )
             Astro:AddEIDCollectible(
                 Astro.Collectible.CHUBBYS_TAIL,
@@ -43,7 +45,7 @@ Astro:AddCallback(
                 "살랑살랑",
                 "{{WoodenChest}} 나무상자 등장 시 33%의 확률로 한개 더 등장합니다.",
                 -- 중첩 시
-                "추가 등장 확률이 합 연산으로 증가"
+                "중첩 시 추가 등장 확률이 합 연산으로 증가"
             )
         end
     end

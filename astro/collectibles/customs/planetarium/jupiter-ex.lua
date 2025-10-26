@@ -22,7 +22,7 @@ Astro:AddCallback(
                 "#{{Collectible594}} Jupiter, {{Collectible180}}Black Bean 효과가 적용됩니다." ..
                 "#{{Collectible486}} 5초마다 피해를 입지 않고 피격 시 발동 효과를 발동합니다.",
                 -- 중첩 시
-                "피격 시 발동 효과가 중첩된 수만큼 발동"
+                "중첩 시 피격 시 발동 효과가 중첩된 수만큼 발동"
             )
         end
     end

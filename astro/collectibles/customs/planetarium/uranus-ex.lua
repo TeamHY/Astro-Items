@@ -24,7 +24,7 @@ Astro:AddCallback(
                 "!!! 획득 이후 {{Collectible596}}Uranus 미등장" ..
                 "#{{Freezing}} 적 처치시 적이 얼어붙으며;" ..
                 "#{{ArrowGrayRight}} {{Collectible596}}얼어붙은 적은 접촉 시 직선으로 날아가 10방향으로 고드름 눈물을 발사합니다." ..
-                "#캐릭터 주변에 후광이 생깁니다. 적 접촉 시 느려집니다."
+                "#{{Slow}} 캐릭터에게 오라가 생기며 오라 안에 들어온 적을 둔화시킵니다."
             )
         end
     end

@@ -9,8 +9,9 @@ if EID then
         "#{{ArrowGrayRight}} {{TearsSmall}}연사(상한) +2" ..
         "#{{ArrowGrayRight}} {{DamageSmall}}공격력 +2" ..
         "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도(고정) +2#{{Blank}} (이미 2.0라면 건너뜀)" ..
-        "#{{ArrowGrayRight}} {{Collectible192}} 공격이 적에게 유도되며 {{RangeSmall}}사거리가 3 증가합니다." ..
-        "#{{ArrowGrayRight}} (네 효과 모두 중첩 가능)"
+        "#{{ArrowGrayRight}} {{Collectible192}} 공격이 적에게 유도되며 {{RangeSmall}}사거리가 3 증가합니다.",
+        -- 중첩 시
+        "중첩 가능"
     )
 end
 

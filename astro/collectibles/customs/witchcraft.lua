@@ -62,10 +62,12 @@ Astro:AddCallback(
                 "위치크래프트",
                 "마법 의뢰 받습니다",
                 "!!! 획득 이후 {{Collectible451}}Tarot Cloth 미등장" ..
-                "#{{Collectible451}}Tarot Cloth 효과가 적용됩니다." ..
+                "#{{Card}} 카드를 하나 드랍합니다." ..
+                "#{{Collectible451}} 타로 타입 카드에 추가적인 효과를 부여하며;" ..
+                "#{{ArrowGrayRight}} 일부 카드의 추가적인 효과는 {{Collectible286}}Blank Card로 사용 시 적용되지 않거나 약화됩니다." ..
                 "#특정 카드 사용 시 카드의 일시적 효과가 영구적으로 유지됩니다.",
                 -- 중첩 시
-                "{{Collectible251}}Starter Deck 효과 적용"
+                "중첩 시 {{Collectible251}}Starter Deck 효과 적용"
             )
         end
 
