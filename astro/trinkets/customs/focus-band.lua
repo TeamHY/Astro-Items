@@ -1,7 +1,7 @@
 Astro.Trinket.FOCUS_BAND = Isaac.GetTrinketIdByName("Focus Band")
 
 ------
-local SURVIVAL_SOURCE = 1    -- 100 -> 1/100 (1%), 10 -> 1/10 (10%)
+local SURVIVAL_SOURCE = 100    -- 100 -> 1/100 (1%), 10 -> 1/10 (10%)
 local SURVIVAL_LUCK = 1      -- 행운 1당 증가할 확률 (예: 2 -> 2%p)
 local SURVIVAL_MAX = 10      -- 최대 발동 확률
 
@@ -17,10 +17,10 @@ Astro:AddCallback(
                 "기합의 머리띠",
                 "마지막 수단",
                 "#피격 시 체력이 없을 때 1%의 확률로 피해를 무시하고 3초 동안 무적이 됩니다." ..
-                "#{{LuckSmall}} 행운 9 이상일 때" .. SURVIVAL_MAX .. "% 확률 (행운 1당 +" .. SURVIVAL_LUCK .. "%p)"
-
-                Astro:AddGoldenTrinketDescription(Astro.Trinket.FOCUS_BAND, "", 3, 6)
+                "#{{LuckSmall}} 행운 9 이상일 때 " .. SURVIVAL_MAX .. "% 확률 (행운 1당 +" .. SURVIVAL_LUCK .. "%p)"
             )
+
+            Astro:AddGoldenTrinketDescription(Astro.Trinket.FOCUS_BAND, "", 3, 2)
         end
     end
 )
@@ -63,7 +63,7 @@ Astro:AddCallback(
 
                     player:AddVelocity(dirVec * 6)
                     player:AnimateTrinket(Astro.Trinket.FOCUS_BAND, "Pickup", "PlayerPickupSparkle")
-                    player:SetMinDamageCooldown(SURVIVAL_COOL * (player:GetTrinketMultiplier(Astro.Trinket.FOCUS_BAND) + 1))
+                    player:SetMinDamageCooldown(SURVIVAL_COOL * (player:GetTrinketMultiplier(Astro.Trinket.FOCUS_BAND)))
 
                     SURVIVAL_MESSAGE_TIME = 180
                     SURVIVAL_PLAYER_INDEX = player.ControllerIndex

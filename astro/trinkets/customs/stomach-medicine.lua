@@ -8,8 +8,10 @@ Astro:AddCallback(
                 Astro.Trinket.STOMACH_MEDICINE,
                 "위장약",
                 "상상으로 만든 복통",
-                "{{Collectible35}} {{Pill}}알약을 사용할 때마다 그 방의 적에게 40의 방어 무시 피해를 줍니다."
+                "{{Pill}} 알약 사용 시 {{Collectible35}} 그 방의 적에게 40의 방어 무시 피해를 줍니다."
             )
+
+            Astro:AddGoldenTrinketDescription(Astro.Trinket.STOMACH_MEDICINE, "", 40, 2)
         end
     end
 )
@@ -23,7 +25,9 @@ Astro:AddCallback(
     ---@param flag UseFlags
     function(_, pillEffect, player, flag)
         if player:HasTrinket(Astro.Trinket.STOMACH_MEDICINE) then
-            player:UseActiveItem(CollectibleType.COLLECTIBLE_NECRONOMICON, false)
+            for i = 1, player:GetTrinketMultiplier(Astro.Trinket.STOMACH_MEDICINE) do
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_NECRONOMICON, false)
+            end
         end
     end
 )
