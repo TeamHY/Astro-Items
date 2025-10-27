@@ -86,6 +86,8 @@
 		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 	</Pool>
     <Pool Name="greedSecret">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -202,6 +204,8 @@
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
@@ -331,6 +335,8 @@
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="curse">
@@ -401,6 +407,8 @@
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="greedCurse">
@@ -531,6 +539,8 @@
 
 		<Item Name="Dry Eye Syndrome" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -605,6 +615,8 @@
 
 		<Item Name="Dry Eye Syndrome" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedAngel">
 		<Item Name="Cygnus" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -836,6 +848,8 @@
 		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 
 	</Pool>
