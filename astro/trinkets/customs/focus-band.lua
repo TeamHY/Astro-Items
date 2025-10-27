@@ -8,6 +8,7 @@ local SURVIVAL_MAX = 10      -- 최대 발동 확률
 local SURVIVAL_COOL = 180    -- 기본 무적 시간 (60프레임)
 ------
 
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
@@ -38,6 +39,9 @@ Astro:AddCallback(
     function(_, entity, amount, damageFlags, source, countdownFrames)
         local player = entity:ToPlayer()
         local currentHP = player:GetHearts() + player:GetSoulHearts() + player:GetEternalHearts() + player:GetBoneHearts()
+        if player:GetEffects():HasNullEffect(NullItemID.ID_LOST_CURSE) then
+            currentHP = 0
+        end
 
         if amount >= currentHP then
             if player:HasTrinket(Astro.Trinket.FOCUS_BAND) then
