@@ -14,6 +14,8 @@ Astro:AddCallback(
     end
 )
 
+
+-- 에코 챔버 테스트안해봄
 Astro:AddCallback(
     ModCallbacks.MC_USE_PILL,
     ---@param pillEffect PillEffect

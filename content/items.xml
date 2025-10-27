@@ -210,5 +210,7 @@
 	<trinket gfx="Planetarium Crown.png" name="Planetarium Crown" description="The stars' special customer" />
 	<trinket cache="luck" gfx="Flunk.png" name="Flunk" description="Luck down? Anyway, don't lose it!" />
 	<trinket gfx="Yes.png" name="Yes!" description="I need it!" />
-	<trinket gfx="Obsidian Hand.png" name="Obsidian Hand" description="..." />
+	<trinket gfx="Obsidian Hand.png" name="Obsidian Hand" description="Sharp dream" />
+	<trinket gfx="Stomach Medicine.png" name="Stomach Medicine" description="Imaginary stomachache" />
+	<trinket gfx="Focus Band.png" name="Focus Band" description="Last Resort" />
 </items>
