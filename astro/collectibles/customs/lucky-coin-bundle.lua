@@ -5,7 +5,7 @@ if EID then
         Astro.Collectible.LUCKY_COIN_BUNDLE,
         "행운 동전 번들",
         "운칠기삼",
-        "{{Crafting11}} 행운 동전이 픽업이 1+1로 나옵니다."
+        "{{Crafting11}} 행운 동전 픽업이 1+1로 나옵니다."
     )
 end
 

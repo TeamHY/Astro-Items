@@ -194,6 +194,7 @@
 	<passive cache="luck" gfx="Lucky Coin Bundle.png" quality="2" devilprice="1" shopprice="4" name="Lucky Coin Bundle" description="Luck is 70%, skill is 30%" />
 	<passive gfx="Retrograde Arcana.png" quality="3" devilprice="2" shopprice="15" name="Retrograde Arcana" description="ynitsed desreveR" />
 	<passive gfx="Techrapod.png" quality="3" devilprice="2" shopprice="15" name="Techrapod" description="Triangular laser" />
+	<passive gfx="Throw Bomb.png" quality="2" devilprice="1" shopprice="15" name="Throw Bomb" description="Fire in the hole!" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

@@ -131,7 +131,6 @@ Astro:AddCallback(
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
     ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
     function(_, player)
         player:AddBombs(5)
     end,
