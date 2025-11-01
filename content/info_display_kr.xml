@@ -1,0 +1,832 @@
+<collectibles>
+	<collectible id="1">
+		<info text="15초마다 10개의 빛줄기가 내립니다"/>
+		<info text="아이작이 피격당할 때마다 20초 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
+	</collectible>
+	<collectible id="2">
+	</collectible>
+	<collectible id="3">
+		<info text="적에게 준 피해의 10%만큼을 그 방의 모든 적에게 줍니다"/>
+	</collectible>
+	<collectible id="4">
+		<info text="적을 명중하면 확률적으로 아군 독 파리를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="5">
+		<info text="숫자 자석과 꿀꺽!을 소환합니다"/>
+	</collectible>
+	<collectible id="6">
+		<info text="망원경 렌즈, 꿀꺽!을 소환합니다"/>
+		<info text="천체관의 위치를 맵에 표시합니다"/>
+		<info text="다음 게임의 시작 층에 망원경 렌즈, 마법의 8번 공 중 하나를 생성합니다"/>
+	</collectible>
+	<collectible id="7">
+		<info text="방에 입장할 때 적들이 50% 확률로 5초 동안 얼어붙습니다"/>
+		<info text="다음 게임에서 사자자리를 들고 시작합니다"/>
+	</collectible>
+	<collectible id="8">
+		<info text="아이작이 피격당할 때 피해를 무시하고 10초 동안 무적 상태가 됩니다"/>
+		<info text="무적 효과가 발동되고서 60초의 대기 시간을 가집니다"/>
+	</collectible>
+	<collectible id="9">
+		<info text="아이작이 보스방에 입장할 때마다 이동 속도, 공격 속도, 공격력 증가 또는 천재반을 위한 텔레파시 효과를 얻습니다"/>
+	</collectible>
+	<collectible id="10">
+		<info text="적을 명중하면 그 적에게서 눈물이 뿜어져 나옵니다"/>
+		<info text="아이작이 피격당할 때마다 10초 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
+	</collectible>
+	<collectible id="11">
+		<info text="획득 시 무작위 황금 장신구와 꿀꺽!을 소환합니다"/>
+		<info text="다음 게임의 시작 층에 무작위 황금 장신구 1개를 생성합니다"/>
+	</collectible>
+	<collectible id="12">
+		<info text="10초마다 죽은 새 패밀리어 14마리를 소환합니다"/>
+		<info text="다음 게임의 시작 층에 이브의 영혼을 생성합니다"/>
+	</collectible>
+	<collectible id="13">
+		<info text="메가 사탄의 체력이 소량 감소합니다"/>
+		<info text="메가 사탄을 제외한 모든 적의 체력이 감소합니다"/>
+	</collectible>
+	<collectible id="14">
+		<info text="획득 시 금이 간 열쇠를 드롭합니다"/>
+		<info text="다음 게임의 시작 층에 금이 간 열쇠 1개를 생성합니다"/>
+		<info text="특급 비밀방의 위치를 맵에 표시합니다"/>
+	</collectible>
+	<collectible id="15">
+		<info text="2분마다 1분 동안 가까운 적과 투사체를 밀어냅니다"/>
+		<info text="다음 게임의 시작 층에 I - 마술사?를 생성합니다"/>
+	</collectible>
+	<collectible id="16">
+		<info text="획득 시 소지 중인 아이템 5개를 생성합니다. 1개를 획득하면 나머지 4개는 사라집니다"/>
+	</collectible>
+	<collectible id="17">
+		<info text="왕 심한 탐욕의 오류방으로 이동합니다"/>
+		<info text="소지 중인 방화광, 호스트 모자를 제거합니다"/>
+	</collectible>
+	<collectible id="18">
+		<info text="x1.25 공격력 배율"/>
+		<info text="아이작이 항상 어둠의 저주에 걸립니다"/>
+	</collectible>
+	<collectible id="19">
+		<info text="보스방 보상에 더해 소지 중인 아이템 1개를 소환하고, 1개를 획득하면 나머지 1개는 사라지는 천사방 아이템 2개를 소환합니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="20">
+		<info text="방을 클리어할 때마다 공격 속도와 공격력이 소폭 증가합니다"/>
+	</collectible>
+	<collectible id="21">
+		<info text="25% 확률로 눈물에 초당 60의 피해를 주는 신성한 오라가 생깁니다"/>
+	</collectible>
+	<collectible id="22">
+		<info text="획득 시 실종 포스터를 드롭합니다"/>
+		<info text="다음 게임의 시작 층에 하얀 모닥불을 생성합니다"/>
+	</collec`ible>
+	<collectible id="23">
+		<info text="다음 게임에서 불타는 지하실, 침수된 동굴, 습한 나락, 상처난 자궁 층이 등장하지 않습니다"/>
+		<info text="생성되지 않는 층에서 등장하는 적을 명중하면 추가적으로 피해를 줍니다"/>
+	</collectible>
+	<collectible id="24">
+		<info text="획득 시 책가방, 배꼽, 다지증을 소환합니다. 1개를 획득하면 나머지 2개는 사라집니다"/>
+		<info text="다음 게임의 시작 층에 안수즈 1개를 생성합니다"/>
+	</collectible>
+	<collectible id="25">
+		<info text="x1.25 공격력 배율"/>
+		<info text="50% 확률로 적용되는 유도 눈물을 얻습니다"/>
+	</collectible>
+	<collectible id="26">
+		<info text="QuickPick 모드의 사거리 제한을 풉니다"/>
+	</collectible>
+	<collectible id="27">
+		<info text="획득 시 소지 중인 천체관 아이템을 모두 제거하고 제거한 만큼 천체관 아이템을 소환합니다"/>
+	</collectible>
+	<collectible id="28">
+		<info text="눈물에 공격력 x0.5의 피해량을 지닌 작은 눈물이 공전합니다"/>
+	</collectible>
+	<collectible id="29">
+	</collectible>
+	<collectible id="30">
+		<info text="방 안의 받침대형 아이템을 모두 흡수하고 흡수한 만큼 무작위 능력치가 증가합니다"/>
+		<info text="방 안의 픽업들을 파란 파리와 거미로 바꿉니다"/>
+		<info text="방 안의 모든 적에게 40의 피해를 줍니다"/>
+	</collectible>
+	<collectible id="31">
+		<info text="집으로 이동합니다"/>
+	</collectible>
+	<collectible id="32">
+		<info text="앞으로 받침대형 아이템들의 등급이 소폭 상승합니다"/>
+	</collectible>
+	<collectible id="33">
+		<info text="보스를 처치하면 소지 중인 정신, 신체, 영혼을 제거합니다"/>
+		<info text="새 층을 시작할 때마다 소지 중인 아이템 1개를 제거하고 제거한 아이템과 정신, 신체, 영혼 중 하나를 소환합니다. 1개를 획득하면 나머지 1개는 사라집니다"/>
+	</collectible>
+	<collectible id="34">
+		<info text="방에 입장할 때마다 확률적으로 적들을 출혈시킵니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="35">
+		<info text="적을 명중하면 확률적으로 적에게 피해를 주는 빛줄기를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="36">
+		<info text="방에 입장할 때마다 적들이 8초 동안 둔화합니다"/>
+	</collectible>
+	<collectible id="37">
+		<info text="소지 중인 부활류 아이템마다 공격력 증가 효과를 얻습니다"/>
+		<info text="다음 게임의 시작 층에 무작위 부활류 아이템 1개를 생성합니다"/>
+	</collectible>
+	<collectible id="38">
+		<info text="확률적으로 적에게 달라붙는 코딱지 눈물을 발사합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="39">
+		<info text="아이작을 글리치 기계가 있는 천체관으로 순간이동시키고 망원경 렌즈를 생성합니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="40">
+		<info text="소지 중인 공격 교체형 아이템들을 제거합니다"/>
+	</collectible>
+	<collectible id="41">
+		<info text="행운에 비례해 공격력이 증가합니다"/>
+	</collectible>
+	<collectible id="42">
+		<info text="보스를 명중할 때 추가 피해를 줍니다"/>
+	</collectible>
+	<collectible id="43">
+		<info text="무작위 방들의 위치를 맵에 표시합니다"/>
+		<info text="표시되는 방의 개수는 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="44">
+		<info text="적에게 준 피해의 10%만큼을 보스를 제외한 그 방의 모든 적에게 줍니다"/>
+	</collectible>
+	<collectible id="45">
+		<info text="싸우는 도중 처음으로 처치한 적의 위치에 블랙홀을 생성합니다"/>
+		<info text="방을 클리어하면 10초 동안 무적 상태가 됩니다"/>
+	</collectible>
+	<collectible id="46">
+		<info text="그 방의 모든 아이템, 장신구, 픽업을 리롤합니다"/>
+		<info text="아이템은 무작위 배열로 리롤합니다"/>
+	</collectible>
+	<collectible id="47">
+		<info text="새 층을 시작할 때마다 소지 중인 아이템 1개와 오브류 아이템을 제거하고 제거된 아이템과 오브류 아이템 중 하나를 소환합니다. 1개를 획득하면 나머지 1개는 사라집니다"/>
+	</collectible>
+	<collectible id="48">
+		<info text="관통 눈물을 얻습니다"/>
+		<info text="적들이 피해를 받을 때 행운에 비례해 증가하는 추가 피해를 줍니다"/>
+		<info text="다음 게임에서 큐피드의 화살을 들고 시작합니다"/>
+	</collectible>
+	<collectible id="49">
+		<info text="활성화한 방과 그 다음 방까지 탐험가 모자, 보라 양초 효과를 얻습니다"/>
+	</collectible>
+	<collectible id="50">
+	</collectible>
+	<collectible id="51">
+		<info text="9개의 방을 클리어할 때마다 무작위 능력치 하나가 증가합니다"/>
+	</collectible>
+	<collectible id="52">
+		<info text="일반 상자가 등장할 때 확률적으로 하나 더 등장합니다"/>
+	</collectible>
+	<collectible id="53">
+		<info text="방을 클리어할 때마다 최대 10번 무작위 능력치 하나가 증가합니다"/>
+		<info text="새 층을 시작할 때마다 추가 능력치는 초기화됩니다"/>
+	</collectible>
+	<collectible id="54">
+		<info text="소지 중인 열쇠 하나당 공격력이 소량 증가합니다"/>
+	</collectible>
+	<collectible id="55">
+		<info text="소지 중인 폭탄 하나당 공격력이 소량 증가합니다"/>
+	</collectible>
+	<collectible id="56">
+		<info text="확률적으로 그 방 배열의 아이템을 소환하며, 소환에 실패하면 부서진 심장 3개를 얻습니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="57">
+		<info text="모든 알약을 &lt;size=0.75&gt;말&lt;size=0.5&gt;약으로 교체합니다"/>
+		<info text="사용하기 전 알약을 식별할 수 있습니다"/>
+	</collectible>
+	<collectible id="58">
+		<info text="대부분의 알약 효과를 꿀꺽!과 능력치 관련 효과로 바꿉니다"/>
+	</collectible>
+	<collectible id="59">
+		<info text="소지 중일 때 그 층의 중심 5x5의 방을 맵에 표시합니다"/>
+		<info text="숨어 있는 적을 아군으로 만듭니다"/>
+	</collectible>
+	<collectible id="60">
+		<info text="방을 클리어할 때마다 확률적으로 스택이 누적됩니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="비밀방을 제외한 다른 방에서 활성화 시 누적된 스택만큼 공격 교체형 아이템을 소환합니다. 소환된 아이템은 방을 나가면 사라지며 1개를 획득하면 나머지는 사라집니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="61">
+		<info text="새 층을 시작할 때마다 소지 중인 아이템 1개를 제거하고 제거된 아이템과 서큐버스를 소환합니다. 1개를 획득하면 나머지 1개는 사라집니다"/>
+		<info text="서큐버스를 4개 이상 소지 중이면 이 아이템은 사라집니다"/>
+	</collectible>
+	<collectible id="62">
+		<info text="낮은 등급의 받침대형 아이템이 등장하면 50% 확률로 정신류 아이템으로 바꿉니다"/>
+		<info text="정신류 아이템의 효과가 두 배로 증가합니다"/>
+	</collectible>
+	<collectible id="63">
+		<info text="Astro-rules 전용"/>
+		<info text="4챕터 전까지 아이작이 피격당할 때 피해를 무시하는 대신 모든 능력치가 소폭 감소합니다 (자해로 인한 피해 제외)"/>
+	</collectible>
+	<collectible id="64">
+		<info text="획득 시 황금방 배열의 받침대형 아이템 3개를 소환합니다. 1개를 획득하면 나머지 2개는 사라집니다"/>
+	</collectible>
+	<collectible id="65">
+		<info text="새 받침대형 아이템이 서로 다른 아이템 2개로 순환하며, 그 중 1개를 선택할 수 있습니다"/>
+	</collectible>
+	<collectible id="66">
+		<info text="이번 게임에서 공격력이 하락하는 것을 방지합니다"/>
+	</collectible>
+	<collectible id="67">
+		<info text="이번 게임에서 공격 속도가 하락하는 것을 방지합니다"/>
+	</collectible>
+	<collectible id="68">
+		<info text="이번 게임에서 행운이 하락하는 것을 방지합니다"/>
+	</collectible>
+	<collectible id="69">
+		<info text="적을 명중하면 확률적으로 연옥 유령을 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="70">
+		<info text="적을 명중하면 확률적으로 여러 종류의 유령을 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="71">
+		<info text="확률적으로 적에게 달라붙어 2초 후 큰 폭발 피해를 주는 씨앗 공격을 발사합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="72">
+		<info text="파란 파리가 소환될 때 두 배로 소환됩니다"/>
+	</collectible>
+	<collectible id="73">
+		<info text="획득 시 정복의 메뚜기를 드롭합니다"/>
+		<info text="적을 처치하면 그 자리에 파란 파리가 소환됩니다"/>
+	</collectible>
+	<collectible id="74">
+		<info text="액티브 아이템을 활성화할 때마다 충전량 1칸당 최대 +5까지 증가하는 +1의 추가 공격력을 얻습니다"/>
+	</collectible>
+	<collectible id="75">
+		<info text="체력 증가와 같이 더 로스트에게 실질적으로 도움되지 않는 아이템을 모든 배열에서 제거합니다"/>
+	</collectible>
+	<collectible id="76">
+		<info text="체력, 영혼 심장 또는 검은 심장 1개를 얻습니다"/>
+		<info text="모든 능력치의 배율이 증가하거나 감소합니다"/>
+	</collectible>
+	<collectible id="77">
+		<info text="개발 중 (WIP)"/>
+	</collectible>
+	<collectible id="78">
+		<info text="적을 명중하면 적에게 피해를 주는 12방향의 광선이 확률적으로 발사됩니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="79">
+		<info text="-2 행운"/>
+		<info text="검은 거울을 드롭합니다"/>
+		<info text="층을 시작할 때마다 완전히 충전됩니다"/>
+	</collectible>
+	<collectible id="80">
+		<info text="적을 처치하면 최대 2개까지 적의 영혼을 흡수해 저장합니다"/>
+		<info text="활성화 시 영혼을 소모해 죄보 아이템들의 대기 시간을 무시하고 여러 종류의 유령을 소환합니다"/>
+	</collectible>
+	<collectible id="81">
+		<info text="눈물에 확률적으로 눈물을 감싸는 레이저 고리가 생깁니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="82">
+		<info text="Astro-rules 전용"/>
+		<info text="4챕터 체력 제한이 6칸까지만 적용됩니다"/>
+		<info text="방어, 맵 관련 아이템을 모든 배열에서 제거합니다"/>
+	</collectible>
+	<collectible id="83">
+		<info text="1층 일급 비밀방의 위치를 맵에 표시합니다"/>
+		<info text="소지 중인 높은 등급의 아이템 3개를 소환합니다. 소환된 아이템은 방을 나가면 사라지며 1개를 획득하면 나머지 2개는 사라집니다"/>
+		<info text="소지 중인 아이템이 없거나 일급 비밀방이 아니면 활성화할 수 없습니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="84">
+		<info text="소지 중인 아이템 1개를 제거하고 제거된 아이템과 침실 아이템 2개를 소환합니다. 1개를 획득하면 나머지 2개는 사라집니다"/>
+		<info text="층을 시작할 때마다 완전히 충전됩니다"/>
+	</collectible>
+	<collectible id="85">
+		<info text="보물방, 천사방, 비밀방 아이템을 하나씩 소환합니다. 1개를 획득하면 나머지 2개는 사라집니다"/>
+	</collectible>
+	<collectible id="86">
+		<info text="책 종류 아이템을 사용할 때 발동되는 일시적인 효과들을 영구적으로 유지되게 합니다"/>
+	</collectible>
+	<collectible id="87">
+		<info text="클리어한 방에서 이동 속도 +2"/>
+		<info text="클리어하지 않은 방에서 이동 속도 -0.3"/>
+	</collectible>
+	<collectible id="88">
+		<info text="소지 중일 때 적에게 준 피해의 10%만큼을 그 방의 모든 적에게 줍니다"/>
+		<info text="적을 처치하면 최대 50개까지 적의 영혼을 흡수해 저장합니다"/>
+		<info text="적을 명중할 때 저장한 영혼 하나당 소량의 추가 피해를 줍니다"/>
+		<info text="방을 클리어하면 저장한 영혼이 5개 감소합니다"/>
+	</collectible>
+	<collectible id="89">
+		<info text="소지 중일 때 Yo, 리슨! 효과를 얻습니다"/>
+		<info text="적을 처치하면 최대 50개까지 적의 영혼을 흡수해 저장합니다"/>
+		<info text="적을 명중할 때 저장한 영혼 하나당 소량의 추가 피해를 줍니다"/>
+		<info text="방을 클리어하면 저장한 영혼이 5개 감소합니다"/>
+	</collectible>
+	<collectible id="90">
+		<info text="배고픈 영혼, 연옥, 유령 폭탄 효과를 얻습니다"/>
+		<info text="소환되는 유령들의 속도가 2배로 증가합니다"/>
+	</collectible>
+	<collectible id="91">
+		<info text="새 층을 시작할 때마다 고기조각을 얻습니다"/>
+	</collectible>
+	<collectible id="92">
+		<info text="활성화 시 아이작이 3초 동안 각성하며 확률적으로 공격 속도가 증가, 이동 속도가 조금 감소하고 화면과 소리가 약간 왜곡됩니다"/>
+		<info text="각성 중에는 게임 속도가 느려지며 비행 능력과 유령 눈물을 얻고, 피격을 1회 무시합니다"/>
+	</collectible>
+	<collectible id="93">
+		<info text="숫자 8키로 액티브 아이템의 위치를 소모품 슬롯으로 옮깁니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="94">
+		<info text="예 측 불 허 ."/>
+	</collectible>
+	<collectible id="95">
+		<info text="샴쌍둥이 변신에 필요한 아이템 3개로 취급됩니다"/>
+	</collectible>
+	<collectible id="96">
+		<info text="방 안에 있는 각각의 받침대형 아이템을 바로 이후 아이템 ID의 아이템으로 리롤합니다"/>
+	</collectible>
+	<collectible id="97">
+		<info text="양초 또는 붉은 양초를 드롭합니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="98">
+		<info text="아이작이 대각선으로 이동할수록 이동 속도가 +0.3까지 증가합니다"/>
+	</collectible>
+	<collectible id="99">
+		<info text="방 안의 모든 받침대형 아이템을 소지 중인 아이템 중 하나로 리롤합니다"/>
+		<info text="아이템은 높은 등급으로 리롤합니다"/>
+	</collectible>
+	<collectible id="100">
+		<info text="동전 10개를 소모하고 아래 옵션 중 2가지를 얻습니다:"/>
+		<info text="공격력 +1%p~+50%p"/>
+		<info text="보스 공격력 +1%p~+50%p"/>
+		<info text="일반 몬스터 공격력 +1%p~+50%p"/>
+	</collectible>
+	<collectible id="101">
+		<info text="동전 5개를 소모하고 아래 옵션 중 2가지를 얻습니다:"/>
+		<info text="공격력 +1%p~+25%p"/>
+		<info text="보스 공격력 +1%p~+25%p"/>
+		<info text="일반 몬스터 공격력 +1%p~+25%p"/>
+	</collectible>
+	<collectible id="102">
+		<info text="현재 캐릭터를 디아벨스타로 바꿉니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="103">
+		<info text="1초마다 공격력이 미미하게 증가합니다"/>
+		<info text="시작방에선 증가하지 않습니다"/>
+		<info text="아이작이 피격당할 때마다 1분 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
+	</collectible>
+	<collectible id="104">
+		<info text="1초마다 이동 속도가 미미하게 증가합니다"/>
+		<info text="시작방에선 증가하지 않습니다"/>
+		<info text="아이작이 피격당할 때마다 1분 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
+	</collectible>
+	<collectible id="105">
+		<info text="1초마다 공격 속도가 미미하게 증가합니다"/>
+		<info text="시작방에선 증가하지 않습니다"/>
+		<info text="아이작이 피격당할 때마다 1분 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
+	</collectible>
+	<collectible id="106">
+		<info text="1초마다 행운이 미미하게 증가합니다"/>
+		<info text="시작방에선 증가하지 않습니다"/>
+		<info text="아이작이 피격당할 때마다 1분 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
+	</collectible>
+	<collectible id="107">
+		<info text="방 안의 모든 받침대형 아이템을 정신류 아이템으로 리롤합니다"/>
+		<info text="이동 속도가 최대치라면 신속한 정신은 등장하지 않습니다"/>
+	</collectible>
+	<collectible id="108">
+		<info text="보스방의 위치를 맵에 표시합니다"/>
+		<info text="해당 층의 보스를 처치하면 자동으로 아래 효과가 모두 발동합니다:"/>
+		<info text='"태양" 타로 카드 효과 발동'/>
+		<info text="아이작이 액티브 아이템을 완전히 충전하고 신조를 획득"/>
+		<info text="무작위 장신구 1개 드롭"/>
+		<info text="그 층의 저주를 없애고 층이 끝날 때까지 공격력과 행운이 증가"/>
+	</collectible>
+	<collectible id="109">
+		<info text="층마다 비밀방 1개와 일급 비밀방 1개를 추가됩니다"/>
+		<info text="모든 비밀방 입구를 밝혀내 엽니다"/>
+		<info text="비밀방과 일급 비밀방에 빛이 생깁니다. 빛 속으로 걸어가면 영혼 심장 반 개를 얻고 해당 층이 끝날 때까지 공격 속도가 증가합니다"/>
+		<info text="맵에 비밀방, 일급 비밀방, 특급 비밀방의 위치를 표시합니다"/>
+	</collectible>
+	<collectible id="110">
+		<info text="적들이 있는 방의 대부분의 문이 열려 있습니다"/>
+		<info text="보스방 문이나 열쇠가 필요한 문에는 효과가 적용되지 않습니다"/>
+		<info text="방을 클리어하면 50% 확률로 카인의 영혼 효과를 발동합니다"/>
+	</collectible>
+	<collectible id="111">
+		<info text="근처 적을 매혹합니다"/>
+		<info text="매혹된 적은 피해를 받을 때 1.5배의 피해량으로 받습니다"/>
+	</collectible>
+	<collectible id="112">
+		<info text="눈물을 대부분의 장애물을 파괴할 수 있고 넉백이 증가된 바위로 교체합니다"/>
+		<info text="발사된 바위는 각각 피해량이 절반부터 두 배까지 무작위로 변하는 공격력 보정치를 가집니다"/>
+		<info text="방에 입장할 때마다 x1.1~x1.5의 추가 공격력 배율을 얻습니다"/>
+		<info text="방을 클리어하면 방 안의 부술 수 있는 모든 장애물과 포탑을 파괴하고 대부분의 석재형 적을 처치하거나 표면을 벗깁니다"/>
+	</collectible>
+	<collectible id="113">
+		<info text="이동 버튼을 두 번 눌러 발동할 수 있는 돌진 공격을 얻습니다"/>
+		<info text="아이작은 돌진 중 대부분의 피해를 무시하며, 눈물 피해량에 비례하는 접촉 피해를 줍니다"/>
+		<info text="돌진 후 무언가에 부딪히면 추가적인 피해를 주고 화상을 입히는 작은 불꽃 고리를 소환합니다"/>
+	</collectible>
+	<collectible id="114">
+		<info text="획득 시 30초 동안 성경 효과와 세라핌 패밀리어를 얻습니다"/>
+		<info text="가만히 서있을 때 아이작은 최대 +0.5까지 이동 속도가 증가하며, 이동 시 증가한 이동 속도를 소모해 적을 중독시키는 방귀 구름을 생성합니다"/>
+		<info text="아이작에게 적이 생성한 독 가스에 면역이 생기며 아이작이 피격을 당하면 적을 밀쳐내고 피해를 주며 중독시키는 방귀를 뀝니다"/>
+		<info text="5초마다 아이작이 체력을 소모하지 않는 피격을 당하고 짧게 무적 생태가 되며, 피격을 당할 때 발동되는 효과를 발동합니다"/>
+	</collectible>
+	<collectible id="115">
+		<info text="새 방을 시작할 때마다 7개의 눈물이 공전하는 넓은 후광을 얻습니다"/>
+		<info text="적의 공격이 후광으로 들어오면 확률적으로 공전 궤도에 흡수되어 적에게 피해를 줄 수 있습니다"/>
+		<info text="10초마다 아이작 주변의 적을 밀어내고 적의 공격을 붙잡는 고리를 만듭니다"/>
+		<info text="3초 후 고리가 사라지고 붙잡은 모든 공격을 바깥으로 반사합니다"/>
+	</collectible>
+	<collectible id="116">
+		<info text="적을 둔화시키는 얼음 눈물을 얻습니다"/>
+		<info text="얼음 눈물로 적을 처치하면 그 적이 얼어붙으며, 밀어서 깨뜨리면 얼음 눈물 고리가 발사됩니다"/>
+		<info text="들어온 적을 둔화시키는 차가운 오라를 얻습니다."/>
+	</collectible>
+	<collectible id="117">
+		<info text="눈물을 발사하지 않을 때 눈물을 빠르게 장전해 연사할 수 있습니다"/>
+		<info text="눈물을 발사하면 눈물이 점점 소모되며 최대 3초까지 지속됩니다"/>
+		<info text="방을 클리어할 때마다 추가 공격 속도 +0.05를 얻습니다"/>
+		<info text="새 층을 시작할 때마다 추가 능력치는 초기화됩니다"/>
+	</collectible>
+	<collectible id="118">
+		<info text="아이작의 크기가 대폭 감소합니다"/>
+		<info text="방에 입장하면 5초 동안 그 방의 적이 축소하며 축소된 적은 밟아 처치할 수 있습니다"/>
+	</collectible>
+	<collectible id="119">
+		<info text="-1 행운"/>
+		<info text="소지 중인 아이템 1개와 높은 등급의 아이템 1개를 소환합니다. 1개를 선택하면 나머지 1개는 사라집니다"/>
+		<info text="1층 일급 비밀방의 위치를 맵에 표시합니다"/>
+		<info text="층을 시작할 때마다 완전히 충전됩니다"/>
+	</collectible>
+	<collectible id="120">
+		<info text="방 안의 모든 빈 받침대에 그 방 배열의 아이템 중 하나를 생성합니다"/>
+	</collectible>
+	<collectible id="121">
+		<info text="방 안의 모든 받침대형 아이템을 그 방 배열의 아이템으로 리롤합니다"/>
+		<info text="아이템은 높은 등급으로 리롤합니다"/>
+	</collectible>
+	<collectible id="122">
+		<info text="방 안의 모든 받침대형 아이템을 그 방 배열의 패시브 아이템으로 리롤합니다"/>
+	</collectible>
+	<collectible id="123">
+		<info text="황금 장신구를 소환합니다"/>
+	</collectible>
+	<collectible id="124">
+		<info text="상자를 열 때마다 이동 속도, 공격 속도, 공격력, 사거리 중 하나가 +0.5 증가합니다"/>
+		<info text="일반 상자를 열 때 50% 확률로 작은 상자를 소환합니다"/>
+	</collectible>
+	<collectible id="125">
+		<info text="싸우는 도중 처음 적을 처치하면 3초 동안 아이작 주변의 적을 밀어내고 적의 공격을 붙잡는 고리를 만듭니다"/>
+		<info text="3초 후 고리가 사라지고 붙잡은 모든 공격을 바깥으로 반사합니다"/>
+	</collectible>
+	<collectible id="126">
+		<info text="초기엔 매우 높지만 시간이 지날 수록 감소하는 공격 속도 증가 효과를 얻습니다"/>
+		<info text="효과가 활성화된 상태에서 적을 처치할 때마다 지속 시간이 소폭 연장됩니다"/>
+	</collectible>
+	<collectible id="127">
+		<info text="초기엔 매우 높지만 시간이 지날 수록 감소하는 행운 증가 효과를 얻습니다"/>
+		<info text="효과가 활성화된 상태에서 적을 처치할 때마다 지속 시간이 소폭 연장됩니다"/>
+	</collectible>
+	<collectible id="128">
+		<info text="초기엔 매우 높지만 시간이 지날 수록 감소하는 이동 속도 증가 효과를 얻습니다"/>
+		<info text="효과가 활성화된 상태에서 적을 처치할 때마다 지속 시간이 소폭 연장됩니다"/>
+	</collectible>
+	<collectible id="129">
+		<info text="방에 입장할 때마다 무작위 적 한 마리를 지우며, 이번 게임이 끝날 때까지 그 적이 다시는 등장되지 않습니다"/>
+		<info text="층마다 최대 2번 발동합니다"/>
+	</collectible>
+	<collectible id="130">
+		<info text="체력, 영혼 심장 또는 검은 심장 1개를 얻습니다"/>
+		<info text="모든 능력치의 배율이 증가합니다"/>
+	</collectible>
+	<collectible id="131">
+		<info text="방 안의 별 아이템을 강화합니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="132">
+		<info text="적을 명중하면 적 주변을 공전하는 유령 눈물을 소환하며, 일정 횟수 이상 명중하면 유령 눈물이 적을 향해 나아갑니다"/>
+	</collectible>
+	<collectible id="133">
+		<info text="방에 입장할 때마다 방의 색을 빨간색, 초록색, 파란색 중 하나로 바꾸며 아이작은 색에 따라 추가 능력치를 얻습니다"/>
+		<info text="빨간색 - x1.4 공격력 배율"/>
+		<info text="초록색 - x1.5 행운 배율"/>
+		<info text="파란색 - x1.2 공격 속도 배율"/>
+	</collectible>
+	<collectible id="134">
+		<info text="확률적으로 적을 명중하면 태아로 변신하는 눈물을 발사합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="태아는 몇 초 동안 유지되며 적을 겨냥해 빠른 접촉 피해를 줍니다"/>
+	</collectible>
+	<collectible id="135">
+		<info text="5초마다 무작위 유령 1마리를 소환합니다"/>
+	</collectible>
+	<collectible id="136">
+		<info text="활성화 시 10초 동안 무적 상태가 되며, 6초 동안 방 중앙에 픽업과 적들을 끌어당기고 주변 장애물을 파괴하는 블랙홀을 생성합니다"/>
+		<info text="적에게 피해를 줄 때마다 점점 충전되며, 60의 피해량마다 충전량 1칸이 채워집니다"/>
+	</collectible>
+	<collectible id="137">
+		<info text="피격으로 인해 올백이 떨궈질 때 층마다 1번 다시 주울 수 있게 하는 패밀리어"/>
+	</collectible>
+	<collectible id="138">
+		<info text="눈물을 발사할 때마다 낮은 확률로 리틀 스티븐 패밀리어를 최대 5번까지 소환하는 패밀리어"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="139">
+		<info text="방을 클리어하면 20% 확률로 작은 배터리를 드롭하는 패밀리어"/>
+	</collectible>
+	<collectible id="140">
+		<info text="방 안에 있는 각각의 받침대형 아이템을 1~3번 앞 또는 1~3번 뒤의 아이템 ID를 가진 아이템으로 리롤합니다"/>
+	</collectible>
+	<collectible id="141">
+		<info text="눈물을 발사할 때마다 피해량 절반의 추가 유도 눈물을 4방향으로 발사합니다"/>
+	</collectible>
+	<collectible id="142">
+		<info text="적을 명중할 때마다 2.7초 동안 유지되는 진드기를 소환합니다"/>
+		<info text="진드기는 적에게 눈물 공격력 2배의 지속 피해를 주며, 가까운 적 중 가장 체력이 높은 적을 추적해 나아갑니다"/>
+	</collectible>
+	<collectible id="143">
+		<info text="항상 바빌론의 창녀, 죽은 새 효과가 적용됩니다"/>
+	</collectible>
+	<collectible id="144">
+		<info text="영혼 심장 추가량이 2배로 증가합니다"/>
+	</collectible>
+	<collectible id="145">
+		<info text="슬롯머신을 사용할 때 25% 확률로 동전을 소모하지 않습니다"/>
+		<info text="야바위 거지를 인형 뽑기로 대체합니다"/>
+	</collectible>
+	<collectible id="146">
+		<info text="아이작에게 폭발 피해와 위에서 떨어지는 투사체로부터의 피해에 면역이 생깁니다."/>
+		<info text="4초마다 아이작이 폭발을 일으킵니다"/>
+		<info text="확률적으로 적의 공격을 막고 탄환 3발을 발사해 반격합니다"/>
+	</collectible>
+	<collectible id="147">
+		<info text="방마다 처음으로 받는 피해를 무시합니다"/>
+		<info text="자해를 제외한 피격을 당하면 이 아이템은 사라집니다"/>
+	</collectible>
+	<collectible id="148">
+		<info text="보스방 보상이 리틀 스티븐으로 고정됩니다"/>
+		<info text="리틀 스티븐을 4개 이상 소지 중이면 이 아이템은 사라집니다"/>
+	</collectible>
+	<collectible id="149">
+		<info text="적이 있는 방에 입장하면 무저갱 메뚜기 3마리를 소환합니다"/>
+	</collectible>
+	<collectible id="150">
+		<info text="획득 시 아이작의 능력치와 획득한 모든 아이템을 리롤합니다"/>
+		<info text="이 효과는 새 층을 시작할 때마다 다시 발동됩니다"/>
+		<info text="활성화 시 아이작이 생득권을 획득합니다"/>
+	</collectible>
+	<collectible id="151">
+		<info text="저주와 특정 아이템의 부정적인 효과에 면역이 생깁니다"/>
+		<info text="가려진 아이템을 식별할 수 있습니다"/>
+		<info text="방에 입장하면 자동으로 보라색 모닥불이 꺼집니다"/>
+		<info text="악마방 또는 천사방이 나타날 확률이 증가합니다"/>
+	</collectible>
+	<collectible id="152">
+		<info text="유도 눈물을 얻습니다"/>
+		<info text="눈물에 초당 눈물 공격력 30%의 피해를 주는 신성한 오라가 생깁니다"/>
+	</collectible>
+	<collectible id="153">
+		<info text="유도 눈물을 얻습니다"/>
+		<info text="2.3x 공격력 배율"/>
+		<info text="적들이 피해를 받을 때 2.3배의 피해량으로 받습니다"/>
+	</collectible>
+	<collectible id="154">
+		<info text="동전 5개를 소모하고 다른 큐브와 별도로 적용되는 아래 옵션 중 2가지를 얻습니다:"/>
+		<info text="공격력 +1%p~+25%p"/>
+		<info text="보스 공격력 +1%p~+25%p"/>
+		<info text="일반 몬스터 공격력 +1%p~+25%p"/>
+	</collectible>
+	<collectible id="155">
+		<info text="이 아이템은 층을 시작할 때 50% 확률로 구피 변신에 필요한 아이템 1개로 취급됩니다"/>
+		<info text="새 층을 시작할 때마다 효과가 초기화됩니다"/>
+	</collectible>
+	<collectible id="156">
+		<info text="슈뢰딩거의 고양이 효과로 획득합니다."/>
+		<info text="새 층을 시작할 때마다 이 아이템은 모두 사라집니다"/>
+	</collectible>
+	<collectible id="157">
+		<info text="이번 게임에서 능력치가 아이작의 기본 능력치보다 하락하는 것을 방지합니다"/>
+	</collectible>
+	<collectible id="158">
+		<info text="소모 시 아이작이 게임 내 획득할 수 있는 모든 중간 등급의 받침대형 아이템을 보관 중인 방으로 이루어진 특별한 층으로 순간이동됩니다"/>
+		<info text="받침대형 아이템 1개를 획득하면 아이작이 사망 증명서를 사용한 위치로 다시 순간이동됩니다"/>
+	</collectible>
+	<collectible id="159">
+		<info text="공격형 아이템을 모든 배열에서 제거합니다"/>
+	</collectible>
+	<collectible id="160">
+		<info text="소모 시 아이작이 게임 내 획득할 수 있는 모든 특급 비밀방 배열의 아이템을 보관 중인 방으로 이루어진 특별한 층으로 순간이동됩니다"/>
+		<info text="받침대형 아이템 1개를 획득하면 아이작이 사망 증명서를 사용한 위치로 다시 순간이동됩니다"/>
+	</collectible>
+	<collectible id="161">
+		<info text="방 안의 모든 받침대형 아이템을 아무 변신에 필요한 아이템 중 하나로 리롤합니다"/>
+	</collectible>
+	<collectible id="162">
+		<info text="새 층을 시작할 때마다 밴드 덩어리를 얻습니다"/>
+	</collectible>
+	<collectible id="163">
+		<info text="소모 시 아이작이 소지 중인 모든 아이템을 보관 중인 방으로 이루어진 특별한 층으로 순간이동됩니다"/>
+		<info text="받침대형 아이템 1개를 획득하면 아이작이 사망 증명서를 사용한 위치로 다시 순간이동됩니다"/>
+	</collectible>
+	<collectible id="164">
+		<info text="공격 버튼을 누른 상태에서 폭탄을 설치하면 해당 방향으로 로켓처럼 기가 폭탄을 발사합니다"/>
+		<info text="일반적인 고정형 폭탄을 설치하려면 공격 버튼을 누르지 않으면 됩니다"/>
+	</collectible>
+	<collectible id="165">
+		<info text="획득 시 기가 폭탄 10개를 드롭합니다"/>
+	</collectible>
+	<collectible id="166">
+		<info text="소지 중일 때 적을 명중하면 10초 뒤에 사라지는 끈적이 니켈을 드롭됩니다"/>
+		<info text="활성화 시 소환된 끈적이 니켈을 점화된 폭탄으로 만듭니다"/>
+	</collectible>
+	<collectible id="167">
+		<info text="개발 중 (WIP)"/>
+	</collectible>
+	<collectible id="168">
+		<info text="아이작 주변에 검은 고리를 생성하는 추가 충전형 공격을 얻습니다"/>
+		<info text="고리는 접촉한 적에게 빠른 지속 피해를 줍니다"/>
+	</collectible>
+	<collectible id="169">
+		<info text="동전, 폭탄, 열쇠, 빨간 심장이 두 배로 등장합니다"/>
+	</collectible>
+	<collectible id="170">
+		<info text="방 중앙에서 소환되어 보스방으로 천천히 직행하는 밝은 오라를 가진 별을 얻습니다"/>
+		<info text="오라 안에 서 있으면 유도 눈물을 얻고 공격력과 공격 속도가 매우 크게 증가합니다"/>
+		<info text="별은 적이 있는 방에서만 소환되며 방을 클리어하면 사라집니다"/>
+	</collectible>
+	<collectible id="171">
+		<info text="다음 층으로 가는 다락문을 생성합니다"/>
+		<info text="바닥 장식 위에 사용하면 특별한 추가 상점을 생성합니다"/>
+	</collectible>
+	<collectible id="172">
+		<info text="적이 있는 방에서 15초마다 길게 지속되는 커다랗고 노란 장판을 생성합니다"/>
+		<info text="적을 처치하면 지속 피해를 주는 작은 노란 장판을 생성합니다"/>
+	</collectible>
+	<collectible id="173">
+		<info text="음식 아이템을 모든 배열에서 제거합니다"/>
+	</collectible>
+	<collectible id="174">
+		<info text="방에 입장할 때마다 무작위 적에게 해골 표식을, 또 다른 무작위 적에게 유황 표식이 나타납니다"/>
+		<info text="해골 표식이 나타난 적을 먼저 처치하면 해골 표식이 다른 적에게로 이동합니다"/>
+		<info text="표식된 순서대로 적을 처치하면 아이작은 픽업을 얻거나 영구적인 능력치 상승 효과를 얻습니다"/>
+		<info text="순서대로 처치하지 않으면 해골 표식은 사라지며 추가 보상도 없어집니다"/>
+		<info text="유황 표식이 나타난 적은 1분 동안 혈사포 공격으로부터의 피해가 증가합니다"/>
+	</collectible>
+	<collectible id="175">
+		<info text="아무 방향으로 공격을 지속하면 공격력이 최대 1.5배까지 점점 증가합니다"/>
+		<info text="아이작이 공격을 멈추거나 다른 방향으로 공격하면 추가 공격력은 초기화됩니다"/>
+	</collectible>
+	<collectible id="176">
+		<info text="처음 활성화 시 XIX - 태양 카드를 드롭합니다"/>
+		<info text="활성화 시 방 안의 적 한 마리에게 화상을 입힙니다" />
+		<info text="소지 중일 때 적을 처치하면 확률적으로 그 자리에 불꽃 투사체를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="다음 게임에서 불타는 지하실 층이 등장하지 않습니다"/>
+	</collectible>
+	<collectible id="177">
+		<info text="처음 활성화 시 XVIII - 달 카드를 드롭합니다"/>
+		<info text="활성화 시 방이 어두워지고 중앙에 빛이 생깁니다. 빛 속으로 걸어가면 영혼 심장 반 개를 얻고 해당 층이 끝날 때까지 공격 속도가 증가합니다"/>
+		<info text="소지 중일 때 비밀방과 일급 비밀방, 특급 비밀방에도 똑같은 빛이 나타납니다"/>
+	</collectible>
+	<collectible id="178">
+		<info text="처음 활성화 시 XIX - 태양? 카드를 드롭합니다"/>
+		<info text="활성화 시 방 안의 적 한 마리에게 화상을 입힙니다" />
+		<info text="소지 중일 때 적을 처치하면 확률적으로 그 자리에 유령 불꽃 투사체를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="다음 게임에서 불타는 지하실 층이 등장하지 않습니다"/>
+	</collectible>
+	<collectible id="179">
+		<info text="처음 활성화 시 XVIII - 달? 카드를 드롭합니다"/>
+		<info text="활성화 시 방이 어두워지고 중앙에 빛이 생깁니다. 빛 속으로 걸어가면 영혼 심장 반 개를 얻고 해당 층이 끝날 때까지 공격 속도가 증가합니다"/>
+		<info text="소지 중일 때 보물방과 상점, 보스방에 처음 입장할 때 똑같은 빛이 나타납니다"/>
+	</collectible>
+	<collectible id="180">
+		<info text="새 층마다 시작방에 악마방으로 이어지는 사다리를 생성합니다"/>
+		<info text="사다리는 시작방을 나가면 사라집니다"/>
+	</collectible>
+	<collectible id="181">
+		<info text="소지 중일 때 사망 시 체력 반 개로 부활합니다"/>
+		<info text="활성화 시 이번 게임에서 조우한 아이템 중 소지 중이지 않은 아이템 1개를 소환합니다"/>
+		<info text="일회용"/>
+	</collectible>
+	<collectible id="182">
+		<info text="확률적으로 아이작의 공격력 x3의 피해를 주는 주삿바늘 공격을 발사합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="주삿바늘 공격는 일반 몬스터를 즉시 처치함과 동시에 주삿바늘 공격 10발의 고리가 발사됩니다"/>
+	</collectible>
+	<collectible id="183">
+		<info text="방을 클리어할 때마다 확률적으로 심장, 동전, 열쇠 중 하나를 드롭하고 5개의 방마다 무작위 장신구를 드롭하는 패밀리어"/>
+	</collectible>
+	<collectible id="184">
+		<info text="x1.5 공격력 배율"/>
+	</collectible>
+	<collectible id="185">
+		<info text="소지 중일 때 +0.5 공격 속도"/>
+		<info text="활성화 시 그 방에서 +2 공격 속도"/>
+	</collectible>
+	<collectible id="186">
+		<info text="대부분의 카드 효과가 두 배가 되며, 카드의 일시적인 효과들을 영구적으로 유지되게 합니다"/>
+		<info text="획득 시 카드 1개를 드롭합니다"/>
+	</collectible>
+	<collectible id="187">
+		<info text="방 안의 모든 받침대형 아이템에 각기 다른 4개의 아이템이 추가되어 빠르게 전환됩니다"/>
+	</collectible>
+	<collectible id="188">
+		<info text="아이작의 공격 방향으로 공격력 x2의 광선을 발사합니다"/>
+	</collectible>
+	<collectible id="189">
+		<info text="방에 입장할 때 가시 돌을 모두 파괴하고 모든 돌 위에 꽃을 피웁니다"/>
+		<info text="꽃이 핀 돌은 방을 클리어하면 자동으로 파괴됩니다"/>
+	</collectible>
+	<collectible id="190">
+		<info text="새 층마다 시작방에 천체관으로 이어지는 기둥을 생성합니다"/>
+		<info text="기둥은 동전 30개를 소모하고 들어갈 수 있으며, 시작방을 나가면 사라집니다"/>
+	</collectible>
+	<collectible id="191">
+		<info text="보물방에 항상 IBN 5100이 등장합니다"/>
+		<info text="IBN 5100에 동전 10개를 소모하여 시간을 되돌려 아이작을 이전 방으로 이동시키고, 발동한 방에서 발생한 모든 일을 되돌릴 수 있습니다"/>
+	</collectible>
+	<collectible id="192">
+		<info text="적이 있는 방에서 두유 효과를 얻어 공격 속도가 증가하고 공격력, 눈물 크기 및 넉백이 큰 폭으로 감소합니다"/>
+	</collectible>
+	<collectible id="193">
+		<info text="행운의 동전이 두 배로 등장합니다"/>
+	</collectible>
+	<collectible id="194">
+		<info text="모든 정방향 카드가 역방향 카드로 교체됩니다"/>
+	</collectible>
+	<collectible id="195">
+		<info text="아이작 주변에 적을 관통하고 빠르게 지속 피해를 주는 삼각 레이저를 생성합니다"/>
+	</collectible>
+	<collectible id="196">
+		<info text="폭탄 버튼을 누르면 아이작이 폭탄을 설치하지 않고 손에 들어 공격 방향으로 던지게 합니다"/>
+	</collectible>
+</collectibles>
+
+<trinkets>
+	<trinket id="1">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="2">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="3">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="4">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="5">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="6">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="7">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="8">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="9">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="10">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="11">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="12">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="13">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="14">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="15">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="16">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="17">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+</trinkets>

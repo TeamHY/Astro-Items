@@ -46,172 +46,172 @@
 	<passive gfx="Quasar.png" quality="4" devilprice="2" name="Quasar" description="Supermassive black hole" id="45" />
 	<active gfx="Chaos Dice.png" quality="3" devilprice="2" initcharge="2" maxcharges="6" name="Chaos Dice" description="Chaos! Chaos!" id="46" />
 	<passive gfx="Duality - Light and Darkness.png" quality="2" devilprice="1" shopprice="20" name="Duality - Light and Darkness" description="Glittering mystery" id="47" />
-	<passive cache="tearflag" gfx="Sagittarius EX.png" quality="3" devilprice="2" name="Sagittarius EX" description="Piercing through" />
-	<active gfx="Ward.png" quality="2" devilprice="2" shopprice="19" maxcharges="6" name="Ward" description="Sup gap" />
-	<passive cache="damage" gfx="Chubby's Head.png" quality="4" devilprice="2" name="Chubby's Head" description="&apos;^&apos;" />
-	<passive cache="damage firedelay range speed luck" gfx="Sleeping Puppy.png" quality="2" devilprice="1" name="Sleeping Puppy" description="Zzz..." />
-	<passive gfx="Chubby's Tail.png" quality="2" devilprice="1" name="Chubby's Tail" description="Extra chest" />
-	<passive cache="damage firedelay range speed luck" gfx="Happy Onion.png" quality="3" devilprice="2" name="Happy Onion" description="Complimentary onion" />
-	<passive gfx="Key Is Power.png" quality="2" devilprice="1" name="Key Is Power" description="Clatter = DMG" />
-	<passive gfx="Bomb Is Power.png" quality="2" devilprice="1" name="Bomb Is Power" description="Boom = DMG" />
-	<active gfx="Fortune Coin.png" quality="1" devilprice="1" maxcharges="1" shopprice="1" name="Fortune Coin" description="All in" />
-	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="13" name="Master's Degree" description="Bigger pills" />
-	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" description="Better pills?" />
-	<passive gfx="Pink Ward.png" quality="2" devilprice="1" shopprice="18" name="Pink Ward" description="See-through enemies" />
-	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" description="..." />
-	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" description="Revealing hidden artifacts" />
-	<passive cache="damage" gfx="Amplifying Mind.png" hidden="true" quality="5" devilprice="2" shopprice="25" name="Amplifying Mind" description="Determination" />
-	<passive cache="all" gfx="EZ Mode.png" quality="0" devilprice="2" hidden="true" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" description="EASY" />
-	<passive gfx="Birthright - Eden.png" quality="2" devilprice="2" shopprice="15" name="Birthright - Eden" description="???" />
-	<passive gfx="Birthright - Isaac.png" quality="4" devilprice="2" shopprice="30" name="Birthright - Isaac" description="More options" />
-	<passive cache="damage" gfx="Power Rock Bottom.png" quality="4" devilprice="2" shopprice="30" name="Power Rock Bottom" description="It’s only getting stronger from there" />
-	<passive cache="firedelay" gfx="Rapid Rock Bottom.png" quality="3" devilprice="2" shopprice="30" name="Rapid Rock Bottom" description="It’s only getting faster from there" />
-	<passive cache="luck" gfx="Lucky Rock Bottom.png" quality="3" devilprice="2" shopprice="16" name="Lucky Rock Bottom" description="It’s only getting luckier from there" />
-	<passive gfx="Sinful Spoils of Subversion - Snake Eye.png" quality="2" devilprice="1" shopprice="10" name="Sinful Spoils of Subversion - Snake Eye" description="A sphere pulsating with energy" />
-	<passive gfx="Original Sinful Spoils - Snake Eye.png" quality="2" devilprice="1" shopprice="10" name="Original Sinful Spoils - Snake Eye" description="Eye of Subversion" />
-	<passive gfx="Heart Bloom.png" quality="2" devilprice="1" shopprice="15" tags="summonable" name="Heart Bloom" description="Bloom and Doom" />
-	<passive tags="guppy" gfx="Absolut Guppy.png" quality="2" devilprice="2" shopprice="15" name="Absolut Guppy" description="Double fly" />
-	<passive tags="guppy" gfx="Delirium Guppy.png" quality="2" devilprice="1" shopprice="15" name="Delirium Guppy" description="And even my true friend" />
-	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="7" name="Birthright - Judas" description="May your energy bring power" />
-	<passive gfx="Birthright - The Lost.png" quality="4" devilprice="2" shopprice="22" name="Birthright - The Lost" description="Better destiny" />
-	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="20" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" />
-	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" description="No." />
-	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" />
-	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" />
-	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" description="When excel is normal summoned" />
-	<passive cache="firedelay" gfx="Technology Omicron.png" quality="4" tags="summonable tech" name="Technology Omicron EX" description="Laser aura tears"/>
-	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" hidden="true" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" description="You are playing it wrong. Give me the controller" />
-	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="0" shopprice="16" name="Curse of Aramatir" description="Reset marathon" />
-	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" description="Gives secrets" />
-	<active gfx="The Holy Blood and the Holy Grail.png" quality="3" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" description="The bloodstained saint, Magdalena's chalice" />
-	<passive tags="book" gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="20" name="Akashic Records" description="A compendium of memories" />
-	<passive tags="speed" gfx="Terraspark Boots.png" quality="2" devilprice="1" shopprice="10" name="Terraspark Boots" description="Boots of the hero" />
-	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" description="Adventurer party's guardian sword" />
-	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" maxcharges="1" name="Starlit Papillon" description="Adventurer party's guide" />
-	<passive gfx="Sinful Spoils Struggle.png" quality="2" devilprice="1" shopprice="18" name="Sinful Spoils Struggle" description="Awakened" />
-	<passive gfx="Blood Trail.png" quality="3" devilprice="1" shopprice="20" name="Blood Trail" description="Well played" />
-	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="300" chargetype="timed" shopprice="15" name="Sandevistan" description="Neural acceleration" />
-	<passive gfx="My Moon My Man.png" quality="4" devilprice="2" shopprice="30" name="My Moon My Man" description="I really want to stay at your house" />
-	<passive gfx="3 Body Problem.png" quality="2" devilprice="2" shopprice="20" name="3 Body Problem" description="Unpredictable" />
-	<passive tags="baby" gfx="Absolut Conjoined.png" quality="2" devilprice="1" shopprice="15" name="Absolut Conjoined" description="Siamese twins" />
-	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" description="+1" />
-	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" description="Add 1 Pyro item from your Deck" />
-	<passive gfx="Bunny Hop.png" quality="2" devilprice="1" shopprice="8" name="Bunny Hop" description="It's a skill" />
-	<active gfx="Mirror Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="15" name="Mirror Dice" description="Reflect your destiny" />
-	<active tags="damage" gfx="Black Cube.png" quality="3" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" description="Powerful potential ablity" />
-	<active tags="damage" gfx="Red Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Red Cube" description="Potential ablity" />
-	<active gfx="WANTED Seeker of Sinful Spoil.png" quality="3" devilprice="2" maxcharges="1" shopprice="15" name="WANTED: Seeker of Sinful Spoil" description="For those of you following the story of the &quot;Sinful Spouils.&quot;" />
-	<passive gfx="Calm Mind.png" quality="4" devilprice="2" shopprice="15" name="Calm Mind" description="Overpowered" />
-	<passive gfx="Swift Mind.png" quality="2" devilprice="2" shopprice="12" name="Swift Mind" description="Light as a rabbit" />
-	<passive gfx="Blue Mind.png" quality="4" devilprice="2" shopprice="15" name="Blue Mind" description="Who is cutting onions?" />
-	<passive gfx="Lucky Mind.png" quality="3" devilprice="2" shopprice="15" name="Lucky Mind" description="Good luck" />
-	<active gfx="Quantum Mind.png" quality="4" devilprice="2" maxcharges="12"  shopprice="15" name="Quantum Mind" description="Aggregation" />
-	<passive gfx="SOL EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="SOL EX" description="Mania victory" />
-	<passive gfx="LUNA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="LUNA EX" description="The radiant blessing of the moon shines upon you" />
-	<passive gfx="MERCURIUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MERCURIUS EX" description="Open, sesame" />
-	<passive gfx="VENUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="VENUS EX" description="You are beautiful" />
-	<passive tags="damage" gfx="TERRA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="TERRA EX" description="Return to rock" />
-	<passive gfx="MARS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MARS EX" description="Unstoppable dash" />
-	<passive gfx="JUPITER EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="JUPITER EX" description="You're a gas supergiant!" />
-	<passive gfx="SATURNUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="SATURNUS EX" description="Shield of tears" />
-	<passive gfx="URANUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="URANUS EX" description="Icee" />
-	<passive tags="firedelay" gfx="NEPTUNUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="NEPTUNUS EX" description="It is open" />
-	<passive tags="tearflag" gfx="PLUTO EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="PLUTO EX" description="All size down" />
-	<active tags="luck" gfx="Pure Love.png" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" description="Jacob's Love" />
-	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="15" name="Restock Dice" description="Restock your destiny" />
-	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="18" name="Sacred Dice" description="To greatness destiny" />
-	<active gfx="Forbidden Dice.png" quality="4" devilprice="1" maxcharges="8" shopprice="18" name="Forbidden Dice" description="No way!" />
-	<active gfx="Dad's Box.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Dad's Box" description="What's inside..." />
-	<passive tags="damage firedelay speed luck" gfx="Matryoshka.png" quality="2" devilprice="1" shopprice="12" name="Matryoshka" description="Infinite Birth" />
-	<passive tags="damage firedelay speed luck" gfx="Samsara.png" quality="3" devilprice="1" shopprice="15" name="Samsara" description="Returning Life" />
-	<passive tags="firedelay" gfx="Blue Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Blue Stew" description="Temporary tears up" />
-	<passive tags="luck" gfx="Green Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Green Stew" description="Temporary luck up" />
-	<passive tags="speed" gfx="Brown Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Brown Stew" description="Temporary speed up" />
-	<passive cache="all" gfx="Dracoback, the Rideable Dragon.png" quality="2" devilprice="1" shopprice="12" name="Dracoback, the Rideable Dragon" description="Bad hand" />
-	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="4" devilprice="2" shopprice="30" name="Amazing Chaos Scroll of Goodness" tags="summonable tearsup" description="Normalization" />
-	<active cache="all" gfx="Albireo.png" quality="3" devilprice="2" maxcharges="6" shopprice="12" name="Albireo" description="Hitotsu ni narenai rensei" />
-	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="summonable" description="Heliocentrism" />
-	<passive cache="damage luck firedelay" gfx="RGB.png" quality="3" devilprice="2" shopprice="25" name="RGB" description="Could you turn off the lights?" />
-	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" description="Fetus tears" />
-	<familiar tags="baby" gfx="Snake-Eyes Poplar.png" quality="2" devilprice="1" shopprice="10" name="Snake-Eyes Poplar" description="Born from the Original Sinful Spoil" />
-	<active gfx="Staff of Ainz Ooal Gown.png" quality="4" devilprice="2" initcharge="0" maxcharges="100" shopprice="25" name="Staff of Ainz Ooal Gown" description="Let's go, testament to our guild" />
-	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="3" devilprice="2" shopprice="22" name="TAANA - Defense Helper" description="A mechanical doll that protects luck" />
-	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="3" devilprice="2" shopprice="16" name="SEERI the Combat Helper" description="A mechanical doll that creates friends" />
-	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="1" devilprice="1" shopprice="8" name="KAAEN - Auto Reloader" description="A mechanical doll that recharges" />
-	<active gfx="Qubit Dice.png" quality="4" devilprice="1" maxcharges="12" shopprice="18" name="Qubit Dice" description="-3 ~ +3" />
-	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="2" devilprice="1" shopprice="15" name="Strawberry Milk" description="Tears Up + extra tears" />
-	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="20" name="Entoma Vasilissa Zeta" description="Insect Loving Maid" />
-	<passive gfx="Birthright - Eve.png" quality="3" devilprice="1" shopprice="15" name="Birthright - Eve" description="Forever cursed" />
-	<passive gfx="Birthright - Blue Baby.png" quality="2" devilprice="1" shopprice="7" soulhearts="2" name="Birthright - Blue Baby" description="Stronger spirit" />
-	<passive gfx="Birthright - Cain.png" quality="2" devilprice="1" shopprice="5" name="Birthright - Cain" description="Better gambles" />
-	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" description="Hot topic" />
-	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" shopprice="20" name="Unholy Mantle" description="Unholy shield" />
-	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="10" name="Birthright - Steven" description="He lives" />
-	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="4" name="Birthright - Apollyon B" description="Companionship of calamity" />
-	<active gfx="Birthright - Eden B.png" hidden="true" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" description="??!" />
-	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="10" name="Purple Candle" description="Curse immunity + open one's eyes" />
-	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Godhead" description="True god tears" />
-	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" />
-	<active tags="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" description="More potentials" />
-	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="5" name="Schrodinger's Cat" description="Quantum mechanic" />
-	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" hidden="true" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" description="How much can one cat take?" />
-	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="1" shopprice="12" name="Cracked Bottom" description="It can't get any lower than this" />
-	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="0" shopprice="25" name="Birth Certificate" description="1995.11.15" />
-	<passive gfx="Birthright - Tainted Lost.png" quality="3" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" description="Better destiny?" />
-	<active gfx="False Certificate.png" quality="4" devilprice="2" maxcharges="0" shopprice="25" name="False Certificate" description="Falsifying official documents is a serious crime" />
-	<active gfx="Puzzle Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="17" name="Puzzle Dice" description="Align your destiny" />
-	<passive gfx="Bandage Girl.png" quality="3" devilprice="1" shopprice="20" name="Bandage Girl" description="His girlfriend" />
-	<active gfx="Graduation Certificate.png" quality="4" devilprice="2" shopprice="30" maxcharges="0" name="Graduation Certificate" description="Be happy wherever you are" />
-	<passive gfx="Super Rocket in a Jar.png" quality="3" devilprice="2" shopprice="15" name="Super Rocket in a Jar" description="Super rocket propulsion +5 bombs" />
-	<passive gfx="Giga Boom.png" quality="3" devilprice="2" shopprice="15" name="Giga Boom" description="10 bigger bombs" />
-	<active gfx="Coin Detonator.png" quality="3" devilprice="2" shopprice="15" maxcharges="240" chargetype="timed" name="Coin Detonator" description="Remote coin detonation" />
-	<active gfx="Marker Pocket.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Marker Pocket" description="..." />
-	<passive cache="damage" gfx="Maw Of The Void EX.png" quality="3" devilprice="2" shopprice="15" name="Maw Of The Void EX" description="Enhanced entrance to darkness" />
-	<passive gfx="Steam Bundle.png" quality="3" devilprice="2" shopprice="30" name="Steam Bundle" description="Shut up and take my money" />
-	<passive gfx="Astro Star of Bethlehem.png" quality="3" devilprice="2" shopprice="15" name="Astro Star of Bethlehem" description="Worship the light" />
-	<active gfx="We Need To Go Deeper! (Astro).png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="We Need To Go Astro!" description="Stella beyond the trapdoor" />
-	<passive gfx="Urinary Incontinence.png" quality="2" devilprice="1" shopprice="5" name="Urinary Incontinence" description="Golden shower" />
-	<passive gfx="Anorexia Nervosa.png" quality="3" devilprice="2" shopprice="15" maxhearts="6" name="Anorexia Nervosa" description="Don't feel like eating..." />
-	<passive gfx="Black List.png" quality="3" devilprice="2" shopprice="15" name="Black List" description="* [Redacted]" />
-	<passive cache="damage" gfx="Dry Eye Syndrome.png" quality="3" devilprice="2" shopprice="25" name="Dry Eye Syndrome" description="Long range mega tears" />
-	<active tags="book" gfx="Book of Sun.png" quality="2" devilprice="1" shopprice="10" maxcharges="3" name="Book of Sun" description="Reusable mass room flame damage" />
-	<active tags="book" gfx="Book of Moon.png" quality="3" devilprice="1" shopprice="15" maxcharges="12" name="Book of Moon" description="Reusable moonlight" />
-	<active tags="book" gfx="Book of Eclipse.png" quality="2" devilprice="1" shopprice="15" maxcharges="3" name="Book of Eclipse" description="It burns" />
-	<active tags="book" gfx="Book of Lunar Eclipse.png" quality="4" devilprice="1" shopprice="30" maxcharges="12" name="Book of Lunar Eclipse" description="Bloodmoon" />
-	<passive gfx="Stairway to Hell.png" quality="4" devilprice="1" shopprice="25" name="Stairway to Hell" description="May you get what you waited for" />
-	<active tags="book" customtags="revive" gfx="Book of Life.png" quality="3" devilprice="2" shopprice="15" maxcharges="0" name="Book of Life" description="Forbidden spell" />
-	<passive tags="syringe" gfx="Life-Sustaining Treatment.png" quality="5" devilprice="2" shopprice="30" name="Life-Sustaining Treatment" description="What a bitter pain" />
-	<familiar gfx="Big Chest.png" quality="3" devilprice="2" shopprice="15" name="Big Chest" description="It's comfortable" />
-	<passive cache="damage" gfx="Max's Head.png" quality="5" devilprice="2" shopprice="25" name="Max's Head" description="DMG up" />
-	<active tags="book" cache="firedelay" gfx="Book of Despair.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Book of Despair" description="Reusable tears up" />
-	<passive gfx="Witchcraft.png" quality="3" devilprice="2" shopprice="15" name="Witchcraft" description="We take magic commissions" />
-	<active gfx="Glitched D6.png" quality="5" devilprice="2" shopprice="30" maxcharges="8" name="Glitched D6" description="t's broken9Reroll your dest" />
-	<active gfx="Zoltraak.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Zoltraak" description="Killing magic" />
-	<passive tags="book" gfx="Flammes Grimoire.png" quality="2" devilprice="1" shopprice="5" name="Flamme's Grimoire" description="Magic is the bond linking human hearts" />
-	<passive gfx="Pillars of Creation.png" quality="4" devilprice="2" shopprice="10" name="Pillars of Creation" description="So heartbreakingly beautiful" />
-	<passive gfx="IBN 5100.png" quality="2" devilprice="1" shopprice="1" name="IBN 5100" description="First portable computer" />
-	<passive gfx="Expired Milk.png" quality="2" devilprice="1" shopprice="10" name="Expired Milk" description="Give way to your skin" />
-	<passive cache="luck" gfx="Lucky Coin Bundle.png" quality="2" devilprice="1" shopprice="4" name="Lucky Coin Bundle" description="Luck is 70%, skill is 30%" />
-	<passive gfx="Retrograde Arcana.png" quality="3" devilprice="2" shopprice="15" name="Retrograde Arcana" description="ynitsed desreveR" />
-	<passive gfx="Techrapod.png" quality="3" devilprice="2" shopprice="15" name="Techrapod" description="Triangular laser" />
-	<passive gfx="Throw Bomb.png" quality="2" devilprice="1" shopprice="15" name="Throw Bomb" description="Fire in the hole!" />
+	<passive cache="tearflag" gfx="Sagittarius EX.png" quality="3" devilprice="2" name="Sagittarius EX" description="Piercing through" id="48" />
+	<active gfx="Ward.png" quality="2" devilprice="2" shopprice="19" maxcharges="6" name="Ward" description="Sup gap" id="49" />
+	<passive cache="damage" gfx="Chubby's Head.png" quality="4" devilprice="2" name="Chubby's Head" description="&apos;^&apos;" id="50" />
+	<passive cache="damage firedelay range speed luck" gfx="Sleeping Puppy.png" quality="2" devilprice="1" name="Sleeping Puppy" description="Zzz..." id="51" />
+	<passive gfx="Chubby's Tail.png" quality="2" devilprice="1" name="Chubby's Tail" description="Extra chest" id="52" />
+	<passive cache="damage firedelay range speed luck" gfx="Happy Onion.png" quality="3" devilprice="2" name="Happy Onion" description="Complimentary onion" id="53" />
+	<passive gfx="Key Is Power.png" quality="2" devilprice="1" name="Key Is Power" description="Clatter = DMG" id="54" />
+	<passive gfx="Bomb Is Power.png" quality="2" devilprice="1" name="Bomb Is Power" description="Boom = DMG" id="55" />
+	<active gfx="Fortune Coin.png" quality="1" devilprice="1" maxcharges="1" shopprice="1" name="Fortune Coin" description="All in" id="56" />
+	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="13" name="Master's Degree" description="Bigger pills" id="57" />
+	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" description="Better pills?" id="58" />
+	<passive gfx="Pink Ward.png" quality="2" devilprice="1" shopprice="18" name="Pink Ward" description="See-through enemies" id="59" />
+	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" description="..." id="60" />
+	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" description="Revealing hidden artifacts" id="61" />
+	<passive cache="damage" gfx="Amplifying Mind.png" hidden="true" quality="5" devilprice="2" shopprice="25" name="Amplifying Mind" description="Determination" id="62" />
+	<passive cache="all" gfx="EZ Mode.png" quality="0" devilprice="2" hidden="true" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" description="EASY" id="63" />
+	<passive gfx="Birthright - Eden.png" quality="2" devilprice="2" shopprice="15" name="Birthright - Eden" description="???" id="64" />
+	<passive gfx="Birthright - Isaac.png" quality="4" devilprice="2" shopprice="30" name="Birthright - Isaac" description="More options" id="65" />
+	<passive cache="damage" gfx="Power Rock Bottom.png" quality="4" devilprice="2" shopprice="30" name="Power Rock Bottom" description="It’s only getting stronger from there" id="66" />
+	<passive cache="firedelay" gfx="Rapid Rock Bottom.png" quality="3" devilprice="2" shopprice="30" name="Rapid Rock Bottom" description="It’s only getting faster from there" id="67" />
+	<passive cache="luck" gfx="Lucky Rock Bottom.png" quality="3" devilprice="2" shopprice="16" name="Lucky Rock Bottom" description="It’s only getting luckier from there" id="68" />
+	<passive gfx="Sinful Spoils of Subversion - Snake Eye.png" quality="2" devilprice="1" shopprice="10" name="Sinful Spoils of Subversion - Snake Eye" description="A sphere pulsating with energy" id="69" />
+	<passive gfx="Original Sinful Spoils - Snake Eye.png" quality="2" devilprice="1" shopprice="10" name="Original Sinful Spoils - Snake Eye" description="Eye of Subversion" id="70" />
+	<passive gfx="Heart Bloom.png" quality="2" devilprice="1" shopprice="15" tags="summonable" name="Heart Bloom" description="Bloom and Doom" id="71" />
+	<passive tags="guppy" gfx="Absolut Guppy.png" quality="2" devilprice="2" shopprice="15" name="Absolut Guppy" description="Double fly" id="72" />
+	<passive tags="guppy" gfx="Delirium Guppy.png" quality="2" devilprice="1" shopprice="15" name="Delirium Guppy" description="And even my true friend" id="73" />
+	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="7" name="Birthright - Judas" description="May your energy bring power" id="74" />
+	<passive gfx="Birthright - The Lost.png" quality="4" devilprice="2" shopprice="22" name="Birthright - The Lost" description="Better destiny" id="75" />
+	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="20" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" id="76" />
+	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" description="No." id="77" />
+	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" id="78" />
+	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" id="79" />
+	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" description="When excel is normal summoned" id="80" />
+	<passive cache="firedelay" gfx="Technology Omicron.png" quality="4" tags="summonable tech" name="Technology Omicron EX" description="Laser aura tears" id="81" />
+	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" hidden="true" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" description="You are playing it wrong. Give me the controller" id="82" />
+	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="0" shopprice="16" name="Curse of Aramatir" description="Reset marathon" id="83" />
+	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" description="Gives secrets" id="84" />
+	<active gfx="The Holy Blood and the Holy Grail.png" quality="3" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" description="The bloodstained saint, Magdalena's chalice" id="85" />
+	<passive tags="book" gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="20" name="Akashic Records" description="A compendium of memories" id="86" />
+	<passive tags="speed" gfx="Terraspark Boots.png" quality="2" devilprice="1" shopprice="10" name="Terraspark Boots" description="Boots of the hero" id="87" />
+	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" description="Adventurer party's guardian sword" id="88" />
+	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" maxcharges="1" name="Starlit Papillon" description="Adventurer party's guide" id="89" />
+	<passive gfx="Sinful Spoils Struggle.png" quality="2" devilprice="1" shopprice="18" name="Sinful Spoils Struggle" description="Awakened" id="90" />
+	<passive gfx="Blood Trail.png" quality="3" devilprice="1" shopprice="20" name="Blood Trail" description="Well played" id="91" />
+	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="300" chargetype="timed" shopprice="15" name="Sandevistan" description="Neural acceleration" id="92" />
+	<passive gfx="My Moon My Man.png" quality="4" devilprice="2" shopprice="30" name="My Moon My Man" description="I really want to stay at your house" id="93" />
+	<passive gfx="3 Body Problem.png" quality="2" devilprice="2" shopprice="20" name="3 Body Problem" description="Unpredictable" id="94" />
+	<passive tags="baby" gfx="Absolut Conjoined.png" quality="2" devilprice="1" shopprice="15" name="Absolut Conjoined" description="Siamese twins" id="95" />
+	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" description="+1" id="96" />
+	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" description="Add 1 Pyro item from your Deck" id="97" />
+	<passive gfx="Bunny Hop.png" quality="2" devilprice="1" shopprice="8" name="Bunny Hop" description="It's a skill" id="98" />
+	<active gfx="Mirror Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="15" name="Mirror Dice" description="Reflect your destiny" id="99" />
+	<active tags="damage" gfx="Black Cube.png" quality="3" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" description="Powerful potential ablity" id="100" />
+	<active tags="damage" gfx="Red Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Red Cube" description="Potential ablity" id="101" />
+	<active gfx="WANTED Seeker of Sinful Spoil.png" quality="3" devilprice="2" maxcharges="1" shopprice="15" name="WANTED: Seeker of Sinful Spoil" description="For those of you following the story of the &quot;Sinful Spouils.&quot;" id="102" />
+	<passive gfx="Calm Mind.png" quality="4" devilprice="2" shopprice="15" name="Calm Mind" description="Overpowered" id="103" />
+	<passive gfx="Swift Mind.png" quality="2" devilprice="2" shopprice="12" name="Swift Mind" description="Light as a rabbit" id="104" />
+	<passive gfx="Blue Mind.png" quality="4" devilprice="2" shopprice="15" name="Blue Mind" description="Who is cutting onions?" id="105" />
+	<passive gfx="Lucky Mind.png" quality="3" devilprice="2" shopprice="15" name="Lucky Mind" description="Good luck" id="106" />
+	<active gfx="Quantum Mind.png" quality="4" devilprice="2" maxcharges="12"  shopprice="15" name="Quantum Mind" description="Aggregation" id="107" />
+	<passive gfx="SOL EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="SOL EX" description="Mania victory" id="108" />
+	<passive gfx="LUNA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="LUNA EX" description="The radiant blessing of the moon shines upon you" id="109" />
+	<passive gfx="MERCURIUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MERCURIUS EX" description="Open, sesame" id="110" />
+	<passive gfx="VENUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="VENUS EX" description="You are beautiful" id="111" />
+	<passive tags="damage" gfx="TERRA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="TERRA EX" description="Return to rock" id="112" />
+	<passive gfx="MARS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MARS EX" description="Unstoppable dash" id="113" />
+	<passive gfx="JUPITER EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="JUPITER EX" description="You're a gas supergiant!" id="114" />
+	<passive gfx="SATURNUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="SATURNUS EX" description="Shield of tears" id="115" />
+	<passive gfx="URANUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="URANUS EX" description="Icee" id="116" />
+	<passive tags="firedelay" gfx="NEPTUNUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="NEPTUNUS EX" description="It is open" id="117" />
+	<passive tags="tearflag" gfx="PLUTO EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="PLUTO EX" description="All size down" id="118" />
+	<active tags="luck" gfx="Pure Love.png" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" description="Jacob's Love" id="119" />
+	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="15" name="Restock Dice" description="Restock your destiny" id="120" />
+	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="18" name="Sacred Dice" description="To greatness destiny" id="121" />
+	<active gfx="Forbidden Dice.png" quality="4" devilprice="1" maxcharges="8" shopprice="18" name="Forbidden Dice" description="No way!" id="122" />
+	<active gfx="Dad's Box.png" quality="2" devilprice="2" maxcharges="12" shopprice="15" name="Dad's Box" description="What's inside..." id="123" />
+	<passive tags="damage firedelay speed luck" gfx="Matryoshka.png" quality="2" devilprice="1" shopprice="12" name="Matryoshka" description="Infinite Birth" id="124" />
+	<passive tags="damage firedelay speed luck" gfx="Samsara.png" quality="3" devilprice="1" shopprice="15" name="Samsara" description="Returning Life" id="125" />
+	<passive tags="firedelay" gfx="Blue Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Blue Stew" description="Temporary tears up" id="126" />
+	<passive tags="luck" gfx="Green Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Green Stew" description="Temporary luck up" id="127" />
+	<passive tags="speed" gfx="Brown Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Brown Stew" description="Temporary speed up" id="128" />
+	<passive cache="all" gfx="Dracoback, the Rideable Dragon.png" quality="2" devilprice="1" shopprice="12" name="Dracoback, the Rideable Dragon" description="Bad hand" id="129" />
+	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="4" devilprice="2" shopprice="30" name="Amazing Chaos Scroll of Goodness" tags="summonable tearsup" description="Normalization" id="130" />
+	<active cache="all" gfx="Albireo.png" quality="3" devilprice="2" maxcharges="6" shopprice="12" name="Albireo" description="Hitotsu ni narenai rensei" id="131" />
+	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="summonable" description="Heliocentrism" id="132" />
+	<passive cache="damage luck firedelay" gfx="RGB.png" quality="3" devilprice="2" shopprice="25" name="RGB" description="Could you turn off the lights?" id="133" />
+	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" description="Fetus tears" id="134" />
+	<familiar tags="baby" gfx="Snake-Eyes Poplar.png" quality="2" devilprice="1" shopprice="10" name="Snake-Eyes Poplar" description="Born from the Original Sinful Spoil" id="135" />
+	<active gfx="Staff of Ainz Ooal Gown.png" quality="4" devilprice="2" initcharge="0" maxcharges="100" shopprice="25" name="Staff of Ainz Ooal Gown" description="Let's go, testament to our guild" id="136" />
+	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="3" devilprice="2" shopprice="22" name="TAANA - Defense Helper" description="A mechanical doll that protects luck" id="137" />
+	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="3" devilprice="2" shopprice="16" name="SEERI the Combat Helper" description="A mechanical doll that creates friends" id="138" />
+	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="1" devilprice="1" shopprice="8" name="KAAEN - Auto Reloader" description="A mechanical doll that recharges" id="139" />
+	<active gfx="Qubit Dice.png" quality="4" devilprice="1" maxcharges="12" shopprice="18" name="Qubit Dice" description="-3 ~ +3" id="140" />
+	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="2" devilprice="1" shopprice="15" name="Strawberry Milk" description="Tears Up + extra tears" id="141" />
+	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="20" name="Entoma Vasilissa Zeta" description="Insect Loving Maid" id="142" />
+	<passive gfx="Birthright - Eve.png" quality="3" devilprice="1" shopprice="15" name="Birthright - Eve" description="Forever cursed" id="143" />
+	<passive gfx="Birthright - Blue Baby.png" quality="2" devilprice="1" shopprice="7" soulhearts="2" name="Birthright - Blue Baby" description="Stronger spirit" id="144" />
+	<passive gfx="Birthright - Cain.png" quality="2" devilprice="1" shopprice="5" name="Birthright - Cain" description="Better gambles" id="145" />
+	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" description="Hot topic" id="146" />
+	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" shopprice="20" name="Unholy Mantle" description="Unholy shield" id="147" />
+	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="10" name="Birthright - Steven" description="He lives" id="148" />
+	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="4" name="Birthright - Apollyon B" description="Companionship of calamity" id="149" />
+	<active gfx="Birthright - Eden B.png" hidden="true" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" description="??!" id="150" />
+	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="10" name="Purple Candle" description="Curse immunity + open one's eyes" id="151" />
+	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Godhead" description="True god tears" id="152" />
+	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" id="153" />
+	<active tags="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" description="More potentials" id="154" />
+	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="5" name="Schrodinger's Cat" description="Quantum mechanic" id="155" />
+	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" hidden="true" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" description="How much can one cat take?" id="156" />
+	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="1" shopprice="12" name="Cracked Bottom" description="It can't get any lower than this" id="157" />
+	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="0" shopprice="25" name="Birth Certificate" description="1995.11.15" id="158" />
+	<passive gfx="Birthright - Tainted Lost.png" quality="3" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" description="Better destiny?" id="159" />
+	<active gfx="False Certificate.png" quality="4" devilprice="2" maxcharges="0" shopprice="25" name="False Certificate" description="Falsifying official documents is a serious crime" id="160" />
+	<active gfx="Puzzle Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="17" name="Puzzle Dice" description="Align your destiny" id="161" />
+	<passive gfx="Bandage Girl.png" quality="3" devilprice="1" shopprice="20" name="Bandage Girl" description="His girlfriend" id="162" />
+	<active gfx="Graduation Certificate.png" quality="4" devilprice="2" shopprice="30" maxcharges="0" name="Graduation Certificate" description="Be happy wherever you are" id="163" />
+	<passive gfx="Super Rocket in a Jar.png" quality="3" devilprice="2" shopprice="15" name="Super Rocket in a Jar" description="Super rocket propulsion +5 bombs" id="164" />
+	<passive gfx="Giga Boom.png" quality="3" devilprice="2" shopprice="15" name="Giga Boom" description="10 bigger bombs" id="165" />
+	<active gfx="Coin Detonator.png" quality="3" devilprice="2" shopprice="15" maxcharges="240" chargetype="timed" name="Coin Detonator" description="Remote coin detonation" id="166" />
+	<active gfx="Marker Pocket.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Marker Pocket" description="..." id="167" />
+	<passive cache="damage" gfx="Maw Of The Void EX.png" quality="3" devilprice="2" shopprice="15" name="Maw Of The Void EX" description="Enhanced entrance to darkness" id="168" />
+	<passive gfx="Steam Bundle.png" quality="3" devilprice="2" shopprice="30" name="Steam Bundle" description="Shut up and take my money" id="169" />
+	<passive gfx="Astro Star of Bethlehem.png" quality="3" devilprice="2" shopprice="15" name="Astro Star of Bethlehem" description="Worship the light" id="170" />
+	<active gfx="We Need To Go Deeper! (Astro).png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="We Need To Go Astro!" description="Stella beyond the trapdoor" id="171" />
+	<passive gfx="Urinary Incontinence.png" quality="2" devilprice="1" shopprice="5" name="Urinary Incontinence" description="Golden shower" id="172" />
+	<passive gfx="Anorexia Nervosa.png" quality="3" devilprice="2" shopprice="15" maxhearts="6" name="Anorexia Nervosa" description="Don't feel like eating..." id="173" />
+	<passive gfx="Black List.png" quality="3" devilprice="2" shopprice="15" name="Black List" description="* [Redacted]" id="174" />
+	<passive cache="damage" gfx="Dry Eye Syndrome.png" quality="3" devilprice="2" shopprice="25" name="Dry Eye Syndrome" description="Long range mega tears" id="175" />
+	<active tags="book" gfx="Book of Sun.png" quality="2" devilprice="1" shopprice="10" maxcharges="3" name="Book of Sun" description="Reusable mass room flame damage" id="176" />
+	<active tags="book" gfx="Book of Moon.png" quality="3" devilprice="1" shopprice="15" maxcharges="12" name="Book of Moon" description="Reusable moonlight" id="177" />
+	<active tags="book" gfx="Book of Eclipse.png" quality="2" devilprice="1" shopprice="15" maxcharges="3" name="Book of Eclipse" description="It burns" id="178" />
+	<active tags="book" gfx="Book of Lunar Eclipse.png" quality="4" devilprice="1" shopprice="30" maxcharges="12" name="Book of Lunar Eclipse" description="Bloodmoon" id="179" />
+	<passive gfx="Stairway to Hell.png" quality="4" devilprice="1" shopprice="25" name="Stairway to Hell" description="May you get what you waited for" id="180" />
+	<active tags="book" customtags="revive" gfx="Book of Life.png" quality="3" devilprice="2" shopprice="15" maxcharges="0" name="Book of Life" description="Forbidden spell" id="181" />
+	<passive tags="syringe" gfx="Life-Sustaining Treatment.png" quality="5" devilprice="2" shopprice="30" name="Life-Sustaining Treatment" description="What a bitter pain" id="182" />
+	<familiar gfx="Big Chest.png" quality="3" devilprice="2" shopprice="15" name="Big Chest" description="It's comfortable" id="183" />
+	<passive cache="damage" gfx="Max's Head.png" quality="5" devilprice="2" shopprice="25" name="Max's Head" description="DMG up" id="184" />
+	<active tags="book" cache="firedelay" gfx="Book of Despair.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Book of Despair" description="Reusable tears up" id="185" />
+	<passive gfx="Witchcraft.png" quality="3" devilprice="2" shopprice="15" name="Witchcraft" description="We take magic commissions" id="186" />
+	<active gfx="Glitched D6.png" quality="5" devilprice="2" shopprice="30" maxcharges="8" name="Glitched D6" description="t's broken9Reroll your dest" id="187" />
+	<active gfx="Zoltraak.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Zoltraak" description="Killing magic" id="188" />
+	<passive tags="book" gfx="Flammes Grimoire.png" quality="2" devilprice="1" shopprice="5" name="Flamme's Grimoire" description="Magic is the bond linking human hearts" id="189" />
+	<passive gfx="Pillars of Creation.png" quality="4" devilprice="2" shopprice="10" name="Pillars of Creation" description="So heartbreakingly beautiful" id="190" />
+	<passive gfx="IBN 5100.png" quality="2" devilprice="1" shopprice="1" name="IBN 5100" description="First portable computer" id="191" />
+	<passive gfx="Expired Milk.png" quality="2" devilprice="1" shopprice="10" name="Expired Milk" description="Give way to your skin" id="192" />
+	<passive cache="luck" gfx="Lucky Coin Bundle.png" quality="2" devilprice="1" shopprice="4" name="Lucky Coin Bundle" description="Luck is 70%, skill is 30%" id="193" />
+	<passive gfx="Retrograde Arcana.png" quality="3" devilprice="2" shopprice="15" name="Retrograde Arcana" description="ynitsed desreveR" id="194" />
+	<passive gfx="Techrapod.png" quality="3" devilprice="2" shopprice="15" name="Techrapod" description="Triangular laser" id="195" />
+	<passive gfx="Throw Bomb.png" quality="2" devilprice="1" shopprice="15" name="Throw Bomb" description="Fire in the hole!" id="196" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
-	<trinket gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
-	<trinket gfx="The Left Foot.png" name="The Left Foot" description="The left-foot path reaps dark rewards" />
-	<trinket gfx="Absolute Zero.png" name="Absolute Zero" description="-273.15 degrees celsius" />
-	<trinket gfx="Bloody Bandage.png" name="Bloody Bandage" description="It's okay now..." />
-	<trinket gfx="Eden's Snake.png" name="Eden's Snake" description="Tree of the knowledge of good and evil" />
-	<trinket gfx="Electronic Penny.png" name="Electronic Penny" description="Wealth of energy" />
-	<trinket gfx="Black Mirror.png" name="Black Mirror" description="On every wall, desk, and hand" />
-	<trinket gfx="Lava Hand.png" name="Lava Hand" description="It's melt" />
-	<trinket gfx="Nostalgia.png" name="Nostalgia" description="Back then" />
-	<trinket gfx="Doctrine.png" name="Doctrine" description="Blessed be the name of the Lord!" />
-	<trinket cache="luck" gfx="Mosi's Eyes.png" name="Moxie's Eyes" description="When restless longing touches my heart" />
-	<trinket gfx="Planetarium Crown.png" name="Planetarium Crown" description="The stars' special customer" />
-	<trinket cache="luck" gfx="Flunk.png" name="Flunk" description="Luck down? Anyway, don't lose it!" />
-	<trinket gfx="Yes.png" name="Yes!" description="I need it!" />
-	<trinket gfx="Obsidian Hand.png" name="Obsidian Hand" description="Sharp dream" />
-	<trinket gfx="Stomach Medicine.png" name="Stomach Medicine" description="Imaginary stomachache" />
-	<trinket gfx="Focus Band.png" name="Focus Band" description="Last Resort" />
+	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
+	<trinket id="2" gfx="The Left Foot.png" name="The Left Foot" description="The left-foot path reaps dark rewards" />
+	<trinket id="3" gfx="Absolute Zero.png" name="Absolute Zero" description="-273.15 degrees celsius" />
+	<trinket id="4" gfx="Bloody Bandage.png" name="Bloody Bandage" description="It's okay now..." />
+	<trinket id="5" gfx="Eden's Snake.png" name="Eden's Snake" description="Tree of the knowledge of good and evil" />
+	<trinket id="6" gfx="Electronic Penny.png" name="Electronic Penny" description="Wealth of energy" />
+	<trinket id="7" gfx="Black Mirror.png" name="Black Mirror" description="On every wall, desk, and hand" />
+	<trinket id="8" gfx="Lava Hand.png" name="Lava Hand" description="It's melt" />
+	<trinket id="9" gfx="Nostalgia.png" name="Nostalgia" description="Back then" />
+	<trinket id="10" gfx="Doctrine.png" name="Doctrine" description="Blessed be the name of the Lord!" />
+	<trinket id="11" cache="luck" gfx="Mosi's Eyes.png" name="Moxie's Eyes" description="When restless longing touches my heart" />
+	<trinket id="12" gfx="Planetarium Crown.png" name="Planetarium Crown" description="The stars' special customer" />
+	<trinket id="13" cache="luck" gfx="Flunk.png" name="Flunk" description="Luck down? Anyway, don't lose it!" />
+	<trinket id="14" gfx="Yes.png" name="Yes!" description="I need it!" />
+	<trinket id="15" gfx="Obsidian Hand.png" name="Obsidian Hand" description="Sharp dream" />
+	<trinket id="16" gfx="Stomach Medicine.png" name="Stomach Medicine" description="Imaginary stomachache" />
+	<trinket id="17" gfx="Focus Band.png" name="Focus Band" description="Last Resort" />
 </items>

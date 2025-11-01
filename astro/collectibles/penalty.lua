@@ -1,3 +1,5 @@
+if not Astro.IsFight then return end
+
 local PENALTY_DEATHS_HEAD_COUNT = 2 -- 빠가지 소환 개수
 
 local PENALTY_DEATHS_HEAD_CHANCE = 1 -- 빠가지 소환 확률

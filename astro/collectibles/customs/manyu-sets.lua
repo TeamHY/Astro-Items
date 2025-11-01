@@ -76,7 +76,7 @@ Astro:AddCallback(
                 Astro.Collectible.MATRYOSHKA,
                 "마트료시카",
                 "무한한 탄생",
-                "{{WoodenChest}} 나무상자를 열 때 50%의 확률로 작은 상자를 소환합니다." ..
+                "{{Chest}} 일반상자를 열 때 50%의 확률로 작은 상자를 소환합니다." ..
                 "#상자를 열 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.5(고정)" ..
                 "#{{ArrowGrayRight}} 중첩이 가능하며 다음 증가량부터 적용됩니다." ..
                 "#!!! 상자에서 받침대 아이템이 등장할 경우 무효과"

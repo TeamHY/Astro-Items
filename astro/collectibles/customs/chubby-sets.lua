@@ -43,7 +43,7 @@ Astro:AddCallback(
                 Astro.Collectible.CHUBBYS_TAIL,
                 "처비의 꼬리",
                 "살랑살랑",
-                "{{WoodenChest}} 나무상자 등장 시 33%의 확률로 한개 더 등장합니다.",
+                "{{Chest}} 일반상자 등장 시 33%의 확률로 한개 더 등장합니다.",
                 -- 중첩 시
                 "중첩 시 추가 등장 확률이 합 연산으로 증가"
             )

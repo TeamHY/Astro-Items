@@ -1,0 +1,831 @@
+<collectibles>
+	<collectible id="1">
+		<info text="Drops 10 beams of light every 15 seconds"/>
+		<info text="Stops the effect for 20 seconds every time Isaac takes damage (except self-inflicted damage)"/>
+	</collectible>
+	<collectible id="2">
+	</collectible>
+	<collectible id="3">
+		<info text="Deals 10% of the damage dealt to enemies to all enemies in the room"/>
+	</collectible>
+	<collectible id="4">
+		<info text="Chance to spawn a friendly poison fly on hit"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="5">
+		<info text="Spawns Number Magnet and Gulp"/>
+	</collectible>
+	<collectible id="6">
+		<info text="Spawns Telescope Lens, Gulp"/>
+		<info text="Reveals the location of planetariums on the map"/>
+		<info text="Spawns one of Telescope Lens or Magic 8 Ball in the starting room of the next run"/>
+	</collectible>
+	<collectible id="7">
+		<info text="50% chance to freeze all enemies in the room for 5 seconds upon entering"/>
+		<info text="Start the next run with Leo"/>
+	</collectible>
+	<collectible id="8">
+		<info text="Negates damage and grants invincibility for 10 seconds when Isaac takes damage"/>
+		<info text="Has a 60 second cooldown after activation"/>
+	</collectible>
+	<collectible id="9">
+		<info text="Gain a speed up, tears up, damage up, or Telepathy for Dummies effect upon entering a boss room"/>
+	</collectible>
+	<collectible id="10">
+		<info text="Tears burst from enemies on hit"/>
+		<info text="Stops the effect for 10 seconds every time Isaac takes damage (except self-inflicted damage)"/>
+	</collectible>
+	<collectible id="11">
+		<info text="Spawns a random golden trinket and Gulp on pickup"/>
+		<info text="Spawns 1 random golden trinket in the starting room of the next run"/>
+	</collectible>
+	<collectible id="12">
+		<info text="Spawns 14 Dead Birds every 10 seconds"/>
+		<info text="Spawns Soul of Eve in the starting room of the next run"/>
+	</collectible>
+	<collectible id="13">
+		<info text="Reduces Mega Satan's health slightly"/>
+		<info text="Reduces the health of all enemies except Mega Satan"/>
+	</collectible>
+	<collectible id="14">
+		<info text="Drops Cracked Key on pickup"/>
+		<info text="Spawns 1 Cracked Key in the starting room of the next run"/>
+		<info text="Reveals the location of ultra secret rooms on the map"/>
+	</collectible>
+	<collectible id="15">
+		<info text="Repels nearby enemies and projectiles for 1 minute every 2 minutes"/>
+		<info text="Spawns I - The Magician? in the starting room of the next run"/>
+	</collectible>
+	<collectible id="16">
+		<info text="Spawns 5 held items on pickup. Picking up one makes the other 4 disappear"/>
+	</collectible>
+	<collectible id="17">
+		<info text="Astro-rules only"/>
+		<info text="Teleports to the I AM ERROR room of the Ultra Greedier"/>
+		<info text="Removes Pyromaniac and Host Hat if held"/>
+	</collectible>
+	<collectible id="18">
+		<info text="x1.25 damage multiplier"/>
+		<info text="Isaac is always affected by Curse of Darkness"/>
+	</collectible>
+	<collectible id="19">
+		<info text="Spawns 2 angel room items in addition to boss room rewards, which disappear when one is picked up"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="20">
+		<info text="Slightly increases tears and damage every time a room is cleared"/>
+	</collectible>
+	<collectible id="21">
+		<info text="25% chance for tears to gain a holy aura that deals 60 damage per second"/>
+	</collectible>
+	<collectible id="22">
+		<info text="Drops Missing Poster on pickup"/>
+		<info text="Spawns Blanket in the starting room of the next run"/>
+	</collectible>
+	<collectible id="23">
+		<info text="Burning Basement, Flooded Caves, Dank Depths, and Scarred Womb floors will not appear in the next run"/>
+		<info text="Deals extra damage to enemies that appear on floors that are not generated"/>
+	</collectible>
+	<collectible id="24">
+		<info text="Spawns Satchel, Belly Button, and Polydactyly on pickup. Picking up one makes the other 2 disappear"/>
+		<info text="Spawns 1 Ansuz in the starting room of the next run"/>
+	</collectible>
+	<collectible id="25">
+		<info text="x1.25 damage multiplier"/>
+		<info text="50% chance for homing tears"/>
+	</collectible>
+	<collectible id="26">
+		<info text="Unlocks range limit in QuickPick mod"/>
+	</collectible>
+	<collectible id="27">
+		<info text="Removes all held planetarium items and spawns as many planetarium items as removed on pickup"/>
+	</collectible>
+	<collectible id="28">
+		<info text="Small tears orbit tears dealing x0.5 Isaac's damage"/>
+	</collectible>
+	<collectible id="29">
+	</collectible>
+	<collectible id="30">
+		<info text="Absorbs all pedestal items in the room and grants random stat ups for each absorbed"/>
+		<info text="Turns all pickups in the room into blue flies and spiders"/>
+		<info text="Deals 40 damage to all enemies in the room"/>
+	</collectible>
+	<collectible id="31">
+		<info text="Astro-rules only"/>
+		<info text="Teleports home"/>
+	</collectible>
+	<collectible id="32">
+		<info text="Slightly increases the item quality of future pedestal items"/>
+	</collectible>
+	<collectible id="33">
+		<info text="Removes held the Mind/Body/Soul upon defeating a boss"/>
+		<info text="Spawns 1 held item and one of the Mind/Body/Soul upon starting a new floor. Picking up one makes the other disappear"/>
+	</collectible>
+	<collectible id="34">
+		<info text="Chance to inflict bleed on all enemies upon entering a room"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="35">
+		<info text="Chance to spawn a beam of light on hit that damages enemies"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="36">
+		<info text="Slows all enemies for 8 seconds upon entering a room"/>
+	</collectible>
+	<collectible id="37">
+		<info text="Grants damage ups for each revival item held"/>
+		<info text="Spawns 1 random revival item in the starting room of the next run"/>
+	</collectible>
+	<collectible id="38">
+		<info text="Chance to fire booger tears that stick to enemies"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="39">
+		<info text="Teleports to a planetarium with a glitch machine and spawns Telescope Lens"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="40">
+		<info text="Removes all held tear replacement items"/>
+	</collectible>
+	<collectible id="41">
+		<info text="Damage increases with luck"/>
+	</collectible>
+	<collectible id="42">
+		<info text="Deals extra damage to bosses"/>
+	</collectible>
+	<collectible id="43">
+		<info text="Reveals random rooms on the map"/>
+		<info text="Number of revealed rooms increases with luck"/>
+	</collectible>
+	<collectible id="44">
+		<info text="Deals 10% of the damage dealt to enemies to all enemies in the room except bosses"/>
+	</collectible>
+	<collectible id="45">
+		<info text="Spawns a black hole at the location of the first enemy killed during combat"/>
+		<info text="Grants invincibility for 10 seconds upon clearing a room"/>
+	</collectible>
+	<collectible id="46">
+		<info text="Rerolls all items, trinkets, and pickups in the room"/>
+		<info text="Items are rerolled from random pools"/>
+	</collectible>
+	<collectible id="47">
+		<info text="Removes 1 held item and spawns the removed item and one of Orbs upon starting a new floor. Picking up one makes the other disappear"/>
+	</collectible>
+	<collectible id="48">
+		<info text="Piercing tears"/>
+		<info text="Enemies take extra damage that increases with luck"/>
+		<info text="Start the next run with Cupid's Arrow"/>
+	</collectible>
+	<collectible id="49">
+		<info text="Grants Treasure Map and Purple Candle effects for the activated room and the next room"/>
+	</collectible>
+	<collectible id="50">
+	</collectible>
+	<collectible id="51">
+		<info text="Grants a random stat up every 9 rooms cleared"/>
+	</collectible>
+	<collectible id="52">
+		<info text="Chance for an extra chest to spawn when a normal chest appears"/>
+	</collectible>
+	<collectible id="53">
+		<info text="Grants a random stat up up to 10 times every time a room is cleared"/>
+		<info text="Extra stats reset upon starting a new floor"/>
+	</collectible>
+	<collectible id="54">
+		<info text="Grants a small damage up for each key held"/>
+	</collectible>
+	<collectible id="55">
+		<info text="Grants a small damage up for each bomb held"/>
+	</collectible>
+	<collectible id="56">
+		<info text="Chance to spawn an item from the room's pool, or gain 3 broken hearts if failed"/>
+		<info text="Chance increases with luck"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="57">
+		<info text="Replaces all pills with horse pills"/>
+		<info text="Identifies pills before using them"/>
+	</collectible>
+	<collectible id="58">
+		<info text="Replaces most pill effects with PHD and stat-related effects"/>
+	</collectible>
+	<collectible id="59">
+		<info text="Reveals the central 5x5 rooms of the floor on the map while held"/>
+		<info text="Turns hidden enemies into friendly ones"/>
+	</collectible>
+	<collectible id="60">
+		<info text="Stacks accumulate with chance every time a room is cleared"/>
+		<info text="Chance increases with luck"/>
+		<info text="Spawns tear replacement items equal to accumulated stacks in non-secret rooms. Spawned items disappear upon leaving the room, and picking up one makes the others disappear"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="61">
+		<info text="Removes 1 held item and spawns the removed item and Succubus upon starting a new floor. Picking up one makes the other disappear"/>
+		<info text="Disappears if holding 4 or more Succubus"/>
+	</collectible>
+	<collectible id="62">
+		<info text="50% chance to replace low-quality pedestal items with essence items"/>
+		<info text="Doubles the effects of essence items"/>
+	</collectible>
+	<collectible id="63">
+		<info text="Astro-rules only"/>
+		<info text="Reduces all stats slightly instead of taking damage before chapter 4 (except self-inflicted damage)"/>
+	</collectible>
+	<collectible id="64">
+		<info text="Spawns 3 treasure room pool items on pickup. Picking up one makes the other 2 disappear"/>
+	</collectible>
+	<collectible id="65">
+		<info text="New pedestal items cycle between two different items, allowing choice of one"/>
+	</collectible>
+	<collectible id="66">
+		<info text="Prevents damage stat from being lowered for the remainder of the run"/>
+	</collectible>
+	<collectible id="67">
+		<info text="Prevents tears stat from being lowered for the remainder of the run"/>
+	</collectible>
+	<collectible id="68">
+		<info text="Prevents luck stat from being lowered for the remainder of the run"/>
+	</collectible>
+	<collectible id="69">
+		<info text="Chance to spawn a Purgatory ghost on hit"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="70">
+		<info text="Chance to spawn various types of ghosts on hit"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="71">
+		<info text="Chance to fire seed tears that stick to enemies and explode after 2 seconds dealing large damage"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="72">
+		<info text="Doubles the number of blue flies spawned"/>
+	</collectible>
+	<collectible id="73">
+		<info text="Drops Locust of Conquest on pickup"/>
+		<info text="Spawns a blue fly at the location of killed enemies"/>
+	</collectible>
+	<collectible id="74">
+		<info text="Grants +1 extra damage up to +5 for each charge of the active item upon activation"/>
+	</collectible>
+	<collectible id="75">
+		<info text="Removes all items that do not practically help the Lost from all pools"/>
+	</collectible>
+	<collectible id="76">
+		<info text="Gain 1 health, soul heart, or black heart"/>
+		<info text="Multiplies all stats up or down"/>
+	</collectible>
+	<collectible id="77">
+		<info text="WIP"/>
+	</collectible>
+	<collectible id="78">
+		<info text="Chance to fire a 12-way beam on hit that damages enemies"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="79">
+		<info text="-2 luck"/>
+		<info text="Drops Black Mirror"/>
+		<info text="Fully charges upon starting a floor"/>
+	</collectible>
+	<collectible id="80">
+		<info text="Absorbs and stores up to 2 enemy souls upon killing enemies"/>
+		<info text="Consumes souls to ignore cooldowns of sin items and spawn various types of ghosts upon activation"/>
+	</collectible>
+	<collectible id="81">
+		<info text="Chance for tears to gain a laser ring"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="82">
+		<info text="Astro-rules only"/>
+		<info text="Chapter 4 health limit applies up to 6 hearts only"/>
+		<info text="Removes defense and map-related items from all pools"/>
+	</collectible>
+	<collectible id="83">
+		<info text="Reveals the location of the first floor super secret room on the map"/>
+		<info text="Spawns 3 high-quality held items. Spawned items disappear upon leaving the room, and picking up one makes the others disappear"/>
+		<info text="Cannot be activated if no items are held or not in a super secret room"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="84">
+		<info text="Removes 1 held item and spawns the removed item and 2 bedroom items. Picking up one makes the others disappear"/>
+		<info text="Fully charges upon starting a floor"/>
+	</collectible>
+	<collectible id="85">
+		<info text="Spawns one item each from treasure, angel, and secret pools. Picking up one makes the other 2 disappear"/>
+	</collectible>
+	<collectible id="86">
+		<info text="Makes temporary effects from book items permanent"/>
+	</collectible>
+	<collectible id="87">
+		<info text="+2 speed in cleared rooms"/>
+		<info text="-0.3 speed in uncleared rooms"/>
+	</collectible>
+	<collectible id="88">
+		<info text="Deals 10% of the damage dealt to enemies to all enemies in the room while held"/>
+		<info text="Absorbs and stores up to 50 enemy souls upon killing enemies"/>
+		<info text="Deals extra damage on hit for each stored soul"/>
+		<info text="Stored souls decrease by 5 upon clearing a room"/>
+	</collectible>
+	<collectible id="89">
+		<info text="Grants Yo Listen! effect while held"/>
+		<info text="Absorbs and stores up to 50 enemy souls upon killing enemies"/>
+		<info text="Deals extra damage on hit for each stored soul"/>
+		<info text="Stored souls decrease by 5 upon clearing a room"/>
+	</collectible>
+	<collectible id="90">
+		<info text="Grants Hungry Soul, Purgatory, and Ghost Bombs effects"/>
+		<info text="Doubles the speed of spawned ghosts"/>
+	</collectible>
+	<collectible id="91">
+		<info text="Gain a Meat Cleaver upon starting a new floor"/>
+	</collectible>
+	<collectible id="92">
+		<info text="Isaac awakens for 3 seconds upon activation with chance for increased tears, slightly decreased speed, and slight screen and sound distortion"/>
+		<info text="During awakening, slows game speed, grants flight and spectral tears, and negates one hit"/>
+	</collectible>
+	<collectible id="93">
+		<info text="Moves active item to consumable slot with number 8 key"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="94">
+		<info text="No prediction allowed."/>
+	</collectible>
+	<collectible id="95">
+		<info text="Counts as 3 items for Siamese Twins transformation"/>
+	</collectible>
+	<collectible id="96">
+		<info text="Rerolls all pedestal items in the room to the next item ID"/>
+	</collectible>
+	<collectible id="97">
+		<info text="Drops Candle or Red Candle"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="98">
+		<info text="Speed increases by +0.3 up to the diagonal direction Isaac is moving"/>
+	</collectible>
+	<collectible id="99">
+		<info text="Rerolls all pedestal items in the room to one of held items"/>
+		<info text="Items are rerolled to higher quality"/>
+	</collectible>
+	<collectible id="100">
+		<info text="Consume 10 coins and gain 2 of the following options:"/>
+		<info text="Damage +1%~+50%"/>
+		<info text="Boss damage +1%~+50%"/>
+		<info text="Normal monster damage +1%~+50%"/>
+	</collectible>
+	<collectible id="101">
+		<info text="Consume 5 coins and gain 2 of the following options:"/>
+		<info text="Damage +1%~+25%"/>
+		<info text="Boss damage +1%~+25%"/>
+		<info text="Normal monster damage +1%~+25%"/>
+	</collectible>
+	<collectible id="102">
+		<info text="Changes current character to Diabellstar"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="103">
+		<info text="Damage increases slightly every second"/>
+		<info text="Does not increase in starting rooms"/>
+		<info text="Resets every time Isaac takes damage for 1 minute"/>
+	</collectible>
+	<collectible id="104">
+		<info text="Speed increases slightly every second"/>
+		<info text="Does not increase in starting rooms"/>
+		<info text="Resets every time Isaac takes damage for 1 minute"/>
+	</collectible>
+	<collectible id="105">
+		<info text="Tears increases slightly every second"/>
+		<info text="Does not increase in starting rooms"/>
+		<info text="Resets every time Isaac takes damage for 1 minute"/>
+	</collectible>
+	<collectible id="106">
+		<info text="Luck increases slightly every second"/>
+		<info text="Does not increase in starting rooms"/>
+		<info text="Resets every time Isaac takes damage for 1 minute"/>
+	</collectible>
+	<collectible id="107">
+		<info text="Rerolls all pedestal items in the room into essence items"/>
+		<info text="Swift Essence does not appear if speed is at maximum"/>
+	</collectible>
+	<collectible id="108">
+		<info text="Reveals the boss room on the map"/>
+		<info text="Automatically activates all the following effects upon defeating the floor's boss:"/>
+		<info text="Activates The Sun tarot card effect"/>
+		<info text="Fully charges Isaac's active item and grants Dogma"/>
+		<info text="Drops 1 random trinket"/>
+		<info text="Removes the floor's curse and increases damage and luck until the floor ends"/>
+	</collectible>
+	<collectible id="109">
+		<info text="Adds 1 secret room and 1 super secret room per floor"/>
+		<info text="Reveals and opens all secret room entrances"/>
+		<info text="Creates lights in secret and super secret rooms. Walking into the light grants half soul heart and tears up until the floor ends"/>
+		<info text="Reveals locations of secret, super secret, and ultra secret rooms on the map"/>
+	</collectible>
+	<collectible id="110">
+		<info text="Most doors in rooms with enemies are open"/>
+		<info text="Does not affect boss room doors or doors requiring keys"/>
+		<info text="50% chance to activate Soul of Cain upon clearing a room"/>
+	</collectible>
+	<collectible id="111">
+		<info text="Charms nearby enemies"/>
+		<info text="Charmed enemies take 1.5x damage"/>
+	</collectible>
+	<collectible id="112">
+		<info text="Destroys all spiked rocks and blooms flowers on all rocks in the room upon entering"/>
+		<info text="Bloomed rocks are automatically destroyed upon clearing the room"/>
+	</collectible>
+	<collectible id="113">
+		<info text="Grants a chargeable dash attack activated by double-tapping movement keys"/>
+		<info text="Isaac ignores most damage during dash and deals contact damage proportional to tear damage"/>
+		<info text="Creates a small ring of flames that deals damage and burns upon colliding during dash"/>
+	</collectible>
+	<collectible id="114">
+		<info text="Grants Bible effect and Seraphim familiar for 30 seconds on pickup"/>
+		<info text="Speed increases up to +0.3 while standing still, consumed upon moving to create poison cloud that grants damage and tears ups while standing in it"/>
+		<info text="Grants immunity to poison gas created by enemies and farts that repel, damage, and poison enemies upon taking damage"/>
+		<info text="Takes non-health-consuming damage every 5 seconds and becomes briefly invincible, triggering on-hit effects"/>
+	</collectible>
+	<collectible id="115">
+		<info text="Grants a wide halo with 7 orbiting tears upon starting a new room"/>
+		<info text="Chance for enemy projectiles entering the halo to be absorbed into the orbiting path and damage enemies"/>
+		<info text="Creates a ring every 10 seconds that repels enemies and captures projectiles"/>
+		<info text="Ring disappears after 3 seconds and reflects all captured projectiles outward"/>
+	</collectible>
+	<collectible id="116">
+		<info text="Ice tears that slow enemies"/>
+		<info text="Killing enemies with ice tears freezes them, and pushing to shatter fires an ice tear ring"/>
+		<info text="Grants a cold aura that slows entering enemies"/>
+	</collectible>
+	<collectible id="117">
+		<info text="Quickly charges tears while not firing for burst fire"/>
+		<info text="Firing consumes tears gradually up to 3 seconds"/>
+		<info text="Grants +0.05 tears up every time a room is cleared"/>
+		<info text="Extra stats reset upon starting a new floor"/>
+	</collectible>
+	<collectible id="118">
+		<info text="Isaac's size decreases greatly"/>
+		<info text="Shrinks all enemies in the room for 5 seconds upon entering, allowing them to be crushed"/>
+	</collectible>
+	<collectible id="119">
+		<info text="-1 luck"/>
+		<info text="Spawns 1 held item and 1 high-quality item. Picking up one makes the other disappear"/>
+		<info text="Reveals the location of the first floor super secret room on the map"/>
+		<info text="Fully charges upon starting a floor"/>
+	</collectible>
+	<collectible id="120">
+		<info text="Spawns one item from the room's pool on each empty pedestal in the room"/>
+	</collectible>
+	<collectible id="121">
+		<info text="Rerolls all pedestal items in the room to items from the room's pool"/>
+		<info text="Items are rerolled to higher quality"/>
+	</collectible>
+	<collectible id="122">
+		<info text="Rerolls all pedestal items in the room to passive items from the room's pool"/>
+	</collectible>
+	<collectible id="123">
+		<info text="Spawns a golden trinket"/>
+	</collectible>
+	<collectible id="124">
+		<info text="Increases one of speed, tears, damage, or range by +0.5 every time a chest is opened"/>
+		<info text="50% chance to spawn a small chest when opening a normal chest"/>
+	</collectible>
+	<collectible id="125">
+		<info text="Creates a ring that repels enemies and captures projectiles for 3 seconds upon killing the first enemy during combat"/>
+		<info text="Ring disappears after 3 seconds and reflects all captured projectiles outward"/>
+	</collectible>
+	<collectible id="126">
+		<info text="Grants very high but decreasing tears up over time"/>
+		<info text="Duration slightly extends every time an enemy is killed while the effect is active"/>
+	</collectible>
+	<collectible id="127">
+		<info text="Grants very high but decreasing luck up over time"/>
+		<info text="Duration slightly extends every time an enemy is killed while the effect is active"/>
+	</collectible>
+	<collectible id="128">
+		<info text="Grants very high but decreasing speed up over time"/>
+		<info text="Duration slightly extends every time an enemy is killed while the effect is active"/>
+	</collectible>
+	<collectible id="129">
+		<info text="Erases one random enemy upon entering a room with enemies, preventing that enemy from appearing again until the run ends"/>
+		<info text="Activates up to 2 times per floor"/>
+	</collectible>
+	<collectible id="130">
+		<info text="Gain 1 health, soul heart, or black heart"/>
+		<info text="Multiplies all stats up"/>
+	</collectible>
+	<collectible id="131">
+		<info text="Enhances all star items in the room"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="132">
+		<info text="Spawns ghost tears orbiting enemies on hit, which fly toward the enemy after enough hits"/>
+	</collectible>
+	<collectible id="133">
+		<info text="Changes the room's color to red, green, or blue upon entering, granting Isaac extra stats based on color"/>
+		<info text="Red - x1.4 damage multiplier"/>
+		<info text="Green - x1.5 luck multiplier"/>
+		<info text="Blue - x1.2 tears multiplier"/>
+	</collectible>
+	<collectible id="134">
+		<info text="Chance to fire tears that transform enemies into fetuses"/>
+		<info text="Chance increases with luck"/>
+		<info text="Fetuses last for a few seconds and deal rapid contact damage targeting enemies"/>
+	</collectible>
+	<collectible id="135">
+		<info text="Spawns a random ghost every 5 seconds"/>
+	</collectible>
+	<collectible id="136">
+		<info text="Creates a black hole at the center for 10 seconds upon activation that pulls in pickups and enemies, destroys obstacles around"/>
+		<info text="Charges gradually with damage dealt, gaining 1 charge every 60 damage"/>
+	</collectible>
+	<collectible id="137">
+		<info text="Familiar that allows picking up Holy Mantle again once per floor when dropped due to hit"/>
+	</collectible>
+	<collectible id="138">
+		<info text="Familiar that spawns a Little Steven familiar up to 5 times with low chance every time tears are fired"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="139">
+		<info text="Familiar that drops a lil battery with 20% chance upon clearing a room"/>
+	</collectible>
+	<collectible id="140">
+		<info text="Rerolls each pedestal item in the room to 1-3 ahead or 1-3 behind item ID"/>
+	</collectible>
+	<collectible id="141">
+		<info text="Fires 4-way extra homing tears dealing half damage every time tears are fired"/>
+	</collectible>
+	<collectible id="142">
+		<info text="Spawns a tick that lasts for 2.7 seconds on hit"/>
+		<info text="Ticks deal rapid sustained damage x2 tear damage and track to the nearest highest-health enemy"/>
+	</collectible>
+	<collectible id="143">
+		<info text="Always applies Whore of Babylon and Dead Bird effects"/>
+	</collectible>
+	<collectible id="144">
+		<info text="Doubles extra soul hearts"/>
+	</collectible>
+	<collectible id="145">
+		<info text="25% chance not to consume coins when using slot machines"/>
+		<info text="Replaces shell game beggars with crane games"/>
+	</collectible>
+	<collectible id="146">
+		<info text="Grants immunity to explosion damage and falling projectiles"/>
+		<info text="Isaac explodes every 4 seconds"/>
+		<info text="Chance to block enemy projectiles and counter with 3 bullets"/>
+	</collectible>
+	<collectible id="147">
+		<info text="Negates the first damage taken per room"/>
+		<info text="Disappears upon taking damage except self-damage"/>
+	</collectible>
+	<collectible id="148">
+		<info text="Boss room rewards are fixed to Little Steven"/>
+		<info text="Disappears if holding 4 or more Little Stevens"/>
+	</collectible>
+	<collectible id="149">
+		<info text="Spawns 3 Abyss locusts upon entering a room with enemies"/>
+	</collectible>
+	<collectible id="150">
+		<info text="Rerolls Isaac's stats and all acquired items on pickup"/>
+		<info text="Effect reactivates upon starting a new floor"/>
+		<info text="Grants Birthright upon activation"/>
+	</collectible>
+	<collectible id="151">
+		<info text="Grants immunity to curses and negative effects of certain items"/>
+		<info text="Identifies blinded items"/>
+		<info text="Automatically extinguishes purple fires upon entering a room"/>
+		<info text="Increases chance for devil or angel rooms to appear"/>
+	</collectible>
+	<collectible id="152">
+		<info text="Homing tears"/>
+		<info text="Tears gain a holy aura dealing 30% tear damage per second"/>
+	</collectible>
+	<collectible id="153">
+		<info text="Homing tears"/>
+		<info text="x2.3 damage multiplier"/>
+		<info text="Enemies take damage at 2.3x the amount"/>
+	</collectible>
+	<collectible id="154">
+		<info text="Consume 5 coins and gain 2 of the following options separately from other cubes:"/>
+		<info text="Damage +1%~+25%"/>
+		<info text="Boss damage +1%~+25%"/>
+		<info text="Normal monster damage +1%~+25%"/>
+	</collectible>
+	<collectible id="155">
+		<info text="Counts as 1 item for Guppy transformation with 50% chance upon starting a floor"/>
+		<info text="Effect resets upon starting a new floor"/>
+	</collectible>
+	<collectible id="156">
+		<info text="Obtained with Schrodinger's Cat effect."/>
+		<info text="Disappears upon starting a new floor"/>
+	</collectible>
+	<collectible id="157">
+		<info text="Prevents stats from falling below Isaac's base stats in this run"/>
+	</collectible>
+	<collectible id="158">
+		<info text="Consumes to teleport to a special floor consisting of rooms holding all obtainable mid-quality pedestal items in the game"/>
+		<info text="Picking up 1 pedestal item teleports Isaac back to the location where Death Certificate was used"/>
+	</collectible>
+	<collectible id="159">
+		<info text="Removes offensive items from all pools"/>
+	</collectible>
+	<collectible id="160">
+		<info text="Consumes to teleport to a special floor consisting of rooms holding all ultra secret room pool items in the game"/>
+		<info text="Picking up 1 pedestal item teleports Isaac back to the location where Death Certificate was used"/>
+	</collectible>
+	<collectible id="161">
+		<info text="Rerolls all pedestal items in the room to one of any transformation items"/>
+	</collectible>
+	<collectible id="162">
+		<info text="Gain a Lump of Band upon starting a new floor"/>
+	</collectible>
+	<collectible id="163">
+		<info text="Consumes to teleport to a special floor consisting of rooms holding all held items"/>
+		<info text="Picking up 1 pedestal item teleports Isaac back to the location where Death Certificate was used"/>
+	</collectible>
+	<collectible id="164">
+		<info text="Holding bomb button while placing a bomb throws it in the Isaac's direction like a rocket instead"/>
+		<info text="Place normal stationary bombs without holding the shoot button"/>
+	</collectible>
+	<collectible id="165">
+		<info text="Drops 10 giga bombs on pickup"/>
+	</collectible>
+	<collectible id="166">
+		<info text="Drops sticky nickels that disappear after 10 seconds on hit while held"/>
+		<info text="Turns spawned sticky nickels into lit bombs upon activation"/>
+	</collectible>
+	<collectible id="167">
+		<info text="WIP"/>
+	</collectible>
+	<collectible id="168">
+		<info text="Grants an additional charged attack that creates a black ring around Isaac when released"/>
+		<info text="The ring deals rapid damage to enemies in contact with it"/>
+	</collectible>
+	<collectible id="169">
+		<info text="Doubles coins, bombs, keys, and red hearts"/>
+	</collectible>
+	<collectible id="170">
+		<info text="Spawns a star with a bright aura at the center that slowly heads straight to the boss room"/>
+		<info text="Standing in the aura grants homing tears and greatly increased damage and tears"/>
+		<info text="Star only spawns in rooms with enemies and disappears upon clearing the room"/>
+	</collectible>
+	<collectible id="171">
+		<info text="Creates a ladder to the next floor"/>
+		<info text="Creates a special extra shop when used on floor decorations"/>
+	</collectible>
+	<collectible id="172">
+		<info text="Creates a large long-lasting yellow creep in rooms with enemies every 15 seconds"/>
+		<info text="Creates small yellow creep that deals sustained damage upon killing enemies"/>
+	</collectible>
+	<collectible id="173">
+		<info text="Removes food items from all pools"/>
+	</collectible>
+	<collectible id="174">
+		<info text="Marks a random enemy with a skull mark and another with a brimstone mark upon entering a room"/>
+		<info text="Killing the skull-marked enemy first moves the skull mark to another enemy"/>
+		<info text="Killing in marked order grants pickups or permanent stat ups to Isaac"/>
+		<info text="Killing out of order removes the skull mark and no extra rewards"/>
+		<info text="Brimstone-marked enemy takes increased damage from Brimstone attacks for 1 minute"/>
+	</collectible>
+	<collectible id="175">
+		<info text="Damage increases up to x1.5 gradually while sustaining fire in the same direction"/>
+		<info text="Extra damage resets upon stopping fire or changing direction"/>
+	</collectible>
+	<collectible id="176">
+		<info text="Drops XIX - The Sun on first activation"/>
+		<info text="Burns one enemy in the room upon activation"/>
+		<info text="Chance to spawn a flame projectile at killed enemies' location while held"/>
+		<info text="Chance increases with luck"/>
+		<info text="Burning Basement floors will not appear in the next run"/>
+	</collectible>
+	<collectible id="177">
+		<info text="Drops XVIII - The Moon on first activation"/>
+		<info text="Darkens the room and creates a light at the center upon activation. Walking into the light grants half soul heart and tears up until the floor ends"/>
+		<info text="Same light appears in secret rooms, super secret rooms, and ultra secret rooms while held"/>
+	</collectible>
+	<collectible id="178">
+		<info text="Drops XIX - The Sun? on first activation"/>
+		<info text="Burns one enemy in the room upon activation"/>
+		<info text="Chance to spawn a ghost flame projectile at killed enemies' location while held"/>
+		<info text="Chance increases with luck"/>
+		<info text="Burning Basement floors will not appear in the next run"/>
+	</collectible>
+	<collectible id="179">
+		<info text="Drops XVIII - The Moon? on first activation"/>
+		<info text="Darkens the room and creates a light at the center upon activation. Walking into the light grants half soul heart and tears up until the floor ends"/>
+		<info text="Same light appears upon first entering treasure rooms, shops, and boss rooms while held"/>
+	</collectible>
+	<collectible id="180">
+		<info text="Creates a ladder to a devil room in the starting room every new floor"/>
+		<info text="Ladder disappears upon leaving the starting room"/>
+	</collectible>
+	<collectible id="181">
+		<info text="Revives with half heart upon death while held"/>
+		<info text="Spawns 1 item not held from items encountered in this run upon activation"/>
+		<info text="Single use"/>
+	</collectible>
+	<collectible id="182">
+		<info text="Fires needle shots dealing x3 Isaac's damage with low chance"/>
+		<info text="Chance increases with luck"/>
+		<info text="Needle shots instantly kill normal monsters and fire a 10-way needle ring"/>
+	</collectible>
+	<collectible id="183">
+		<info text="Familiar that drops one of hearts, coins, or keys with chance upon clearing a room, and a random trinket every 5 rooms"/>
+	</collectible>
+	<collectible id="184">
+		<info text="x1.5 damage multiplier"/>
+	</collectible>
+	<collectible id="185">
+		<info text="+0.5 tears while held"/>
+		<info text="+2 tears in the room upon activation"/>
+	</collectible>
+	<collectible id="186">
+		<info text="Doubles most card effects and makes temporary card effects permanent"/>
+		<info text="Drops 1 card on pickup"/>
+	</collectible>
+	<collectible id="187">
+		<info text="Adds 4 different items to each pedestal item in the room that switch rapidly"/>
+	</collectible>
+	<collectible id="188">
+		<info text="Fires a beam dealing x2 damage in Isaac's direction"/>
+	</collectible>
+	<collectible id="189">
+		<info text="Destroys all spiked rocks and blooms flowers on all rocks upon entering a room"/>
+		<info text="Bloomed rocks are automatically destroyed upon clearing the room"/>
+	</collectible>
+	<collectible id="190">
+		<info text="Creates a pillar to a planetarium in the starting room every new floor"/>
+		<info text="Pillar can be entered by consuming 30 coins and disappears upon leaving the starting room"/>
+	</collectible>
+	<collectible id="191">
+		<info text="Treasure rooms always contain IBN 5100"/>
+		<info text="IBN 5100 rewinds time by consuming 10 coins, moving Isaac to the previous room and undoing all events in the activated room"/>
+	</collectible>
+	<collectible id="192">
+		<info text="Grants Soy Milk effect in rooms with enemies, increasing tears and greatly decreasing damage, tear size, and knockback"/>
+	</collectible>
+	<collectible id="193">
+		<info text="Doubles lucky pennies"/>
+	</collectible>
+	<collectible id="194">
+		<info text="Replaces all upright cards with reversed cards"/>
+	</collectible>
+	<collectible id="195">
+		<info text="Creates a triangular laser around Isaac that pierces enemies and deals rapid sustained damage"/>
+	</collectible>
+	<collectible id="196">
+		<info text="Holding bomb key while placing a bomb holds it in hand to throw in the Isaac's direction"/>
+	</collectible>
+</collectibles>
+<trinkets>
+	<trinket id="1">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="2">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="3">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="4">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="5">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="6">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="7">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="8">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="9">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="10">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="11">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="12">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="13">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="14">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="15">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="16">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+	<trinket id="17">
+		<info text="작성 중 (Description in progess)"/>
+	</trinket>
+</trinkets>

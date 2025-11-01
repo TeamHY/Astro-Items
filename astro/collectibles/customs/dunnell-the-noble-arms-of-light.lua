@@ -34,8 +34,7 @@ Astro:AddCallback(
                 "빛의 성검 단넬",
                 "용사 파티를 수호하는 성검",
                 "{{Collectible" .. Astro.Collectible.MORPHINE .. "}} 소지중일 때 적에게 준 피해의 10%만큼 그 방의 적에게 피해를 줍니다." ..
-                "#적 처치 시 영혼을 흡수하며;" ..
-                "#{{ArrowGrayRight}} 영혼은 최대 " .. MAXIMUM .. "개까지 저장하며;" ..
+                "#적 처치 시 최대 " .. MAXIMUM .. "개까지 영혼을 흡수해 저장하며;" ..
                 "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..
                 "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소합니다."
             )

@@ -46,7 +46,7 @@ Astro:AddCallback(
                 "#!!! 비밀방과 일급비밀방에서 사용 불가" ..
                 "#방 클리어 시 20%의 확률로 스택이 증가합니다." ..
                 "#{{LuckSmall}} 행운 40 이상일 때 100% 확률 (행운 1당 +2%p)" ..
-                "#사용 시#{{Blank}}" .. rhongomyniadEIDString .. "#{{Blank}} 중에서 쌓인 스택만큼 아이템을 소환합니다." ..
+                "#사용 시#{{Blank}} " .. rhongomyniadEIDString .. "#{{Blank}} 중에서 쌓인 스택만큼 아이템을 소환합니다." ..
                 "#{{ArrowGrayRight}} 소환된 아이템은 {{ColorError}}방 이동 시 사라지며{{CR}}, 하나를 선택하면 나머지는 사라집니다."
             )
 

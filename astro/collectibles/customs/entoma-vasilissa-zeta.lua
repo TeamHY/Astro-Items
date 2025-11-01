@@ -79,7 +79,7 @@ Astro:AddCallback(
             end
         end
         if familiar.FrameCount > 80 then familiar:Kill() end
-        if familiar.Target ~= nil and familiar.FrameCount % 2 == 1 or familiar.FramCount == 1 then
+        if familiar.Target ~= nil and familiar.FrameCount % 2 == 1 or familiar.FrameCount == 1 then
             familiar.Velocity = familiar.Velocity + ((familiar.Target.Position - familiar.Position):Resized(2.65+math.abs(math.cos(familiar.FrameCount / 2) * 0.5)))
             familiar.Velocity = familiar.Velocity * 0.8
         end
