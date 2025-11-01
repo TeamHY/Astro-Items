@@ -2,7 +2,7 @@
 	<Info CreatedBy="sawalk" CreatedOn="2025-08-23 20:48:00" Version="20" Fps="6"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="eid_astrocharacter_icons.png" Id="0"/>
+			<Spritesheet Path="astro_character_icons.png" Id="0"/>
 		</Spritesheets>
 		<Layers>
 			<Layer Name="Main" Id="0" SpritesheetId="0"/>

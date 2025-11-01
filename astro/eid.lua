@@ -87,7 +87,7 @@ Astro:AddCallback(
             EID:setModIndicatorName("AstroItems")
             ----
             local player_icons = Sprite()
-            player_icons:Load("gfx/ui/eid_astrocharacter_icons.anm2", true)
+            player_icons:Load("gfx/ui/eid/astro_character_icons.anm2", true)
 
             EID:addIcon("Leah", "Players", 0, 16, 16, 0, 3, player_icons)
             EID:addIcon("Rachel", "Players", 1, 16, 16, 0, 3, player_icons)

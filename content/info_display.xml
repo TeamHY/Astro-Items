@@ -486,8 +486,8 @@
 		<info text="Spawns a golden trinket"/>
 	</collectible>
 	<collectible id="124">
-		<info text="Increases one of speed, tears, damage, or range by +0.5 every time a chest is opened"/>
-		<info text="50% chance to spawn a small chest when opening a normal chest"/>
+		<info text="Increases one of speed, tears, damage, or range by +0.05 every time a chest is opened"/>
+		<info text="40% chance to spawn a small chest when opening a normal chest"/>
 	</collectible>
 	<collectible id="125">
 		<info text="Creates a ring that repels enemies and captures projectiles for 3 seconds upon killing the first enemy during combat"/>
