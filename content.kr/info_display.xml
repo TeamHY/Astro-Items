@@ -775,6 +775,10 @@
 	<collectible id="196">
 		<info text="폭탄 버튼을 누르면 아이작이 폭탄을 설치하지 않고 손에 들어 공격 방향으로 던지게 합니다"/>
 	</collectible>
+	<collectible id="197">
+		<info text="빨간하트 한 칸 또는 소울하트 한 칸을 소모해 적에게 편지를 발사합니다."/>
+		<info text="편지에 맞은 적은 해당 게임에서 영원히 아군이 됩니다."/>
+	</collectible>
 </collectibles>
 
 <trinkets>

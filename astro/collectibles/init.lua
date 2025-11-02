@@ -143,6 +143,7 @@ require "astro.collectibles.customs.ibn-5100"
 require "astro.collectibles.customs.lucky-coin-bundle"
 require "astro.collectibles.customs.techrapod"
 require "astro.collectibles.customs.throw-bomb"
+require "astro.collectibles.customs.love-letter"
 
 --#region PLANETARIUM
 
