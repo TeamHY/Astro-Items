@@ -5,7 +5,7 @@
 			<Spritesheet Path="TitleMenu.png" Id="0"/>
 			<Spritesheet Path="logo.png" Id="1"/>
 			<Spritesheet Path="titlemenuspace.png" Id="2"/>
-			<Spritesheet Path="titlemenu_chos.png" Id="3"/>
+			<Spritesheet Path="titlemenu_chaos.png" Id="3"/>
 			<Spritesheet Path="titlemenu glitch\tg1_1.png" Id="4"/>
 			<Spritesheet Path="titlemenu glitch\tg1_2.png" Id="5"/>
 			<Spritesheet Path="titlemenu glitch\tg1_3.png" Id="6"/>
