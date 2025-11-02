@@ -18,7 +18,7 @@ Astro:AddCallback(
                 Astro.Collectible.TECHRAPOD,
                 "테크라포드",
                 "삼각 레이저",
-                "캐릭터 주변에 정삼각형 모양의 레이저가 생깁니다." ..
+                "클리어하지 않은 방에서 캐릭터 주변에 정삼각형 모양의 레이저가 생깁니다." ..
                 "#레이저는 적을 관통하며, 프레임당 캐릭터의 공격력 x0.n의 피해를 줍니다.",
                 -- 중첩 시
                 "중첩할수록 레이저의 굵기 증가"
@@ -51,8 +51,6 @@ local function GetLasers(player)
         local laserEntity = laser:ToLaser() ---@cast laserEntity EntityLaser
         local data = laserEntity:GetData()
 
-        print(data.AstroTechrapodLaser)
-
         if data.AstroTechrapodLaser and laserEntity.Parent:ToPlayer():GetPlayerIndex() == player:GetPlayerIndex() then
             table.insert(result, laserEntity)
         end
@@ -73,11 +71,30 @@ end
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function()
+        local room = Game():GetRoom()
+
+        if not room:IsClear() then
+            for i = 1, Game():GetNumPlayers() do
+                local player = Isaac.GetPlayer(i - 1)
+            
+                if player:HasCollectible(Astro.Collectible.TECHRAPOD) then
+                    SpawnLasers(player)
+                end
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
+    ---@param rng RNG
+    ---@param spawnPosition Vector
+    function(_, rng, spawnPosition)
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
         
             if player:HasCollectible(Astro.Collectible.TECHRAPOD) then
-                SpawnLasers(player)
+                RemoveLasers(player)
             end
         end
     end
@@ -88,7 +105,9 @@ Astro:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        if #GetLasers(player) == 0 then
+        local room = Game():GetRoom()
+
+        if not room:IsClear() and #GetLasers(player) == 0 then
             SpawnLasers(player)
         end
     end,
