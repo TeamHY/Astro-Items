@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
-    <name>!#AstroItems</name>
+    <name>!#Astrobirth</name>
     <directory>astro-items</directory>
     <id>3260980911</id>
-    <description>인터넷 방송인 오헌영 내수용 모드
+    <description>[img=https://i.imgur.com/yks9vy5.png]
+Astrobirth is a content mod derived from streamer [url=https://www.youtube.com/@아이작오헌영]OHY[/url]'s 1vs1 time attack battles. Experience more thrilling moments with Isaac, including the following features!
+[list]
+[*][b]150+ new items[/b]
+[*][b]30+ glowing planetarium items[/b]
+[*][b]10+[/b] [strike]seems familiar[/strike] [b]characters[/b]
+[*]20+ distinctive trinket
+[*]New machines that'll make your dopamine surge
+[*]And more!
+[/list]
+Discover surprising pickups with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3460799883] Subscribe to [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3460799883]Astro-pockets[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3338495603]Golden Item Mode[/url] to enjoy Astrobirth even more!
 
-다른 모드와 호환해서 사용할 수 있으며, 대결 모드(astro) 설치했다면 꼭 같이 깔아주세요</description>
-    <version>1.142</version>
+[h1]Compatibility[/h1]
+Sorry, there isn't much synergy. But I guarantee it won't conflict with most mods!
+[list]
+[*]Repentance+ and Internal Item Description (English)
+[*][url=https://repentogon.com/]REPENTOGON+[/url] (recommended for a better experience)
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=836319872]External Item Description[/url] (Korean)
+[/list]
+
+[h1]Credits[/h1]
+[list]
+[*][url=https://www.youtube.com/@아이작오헌영]OHY[/url] (Director/Manager)
+[*]Pdom (Main Programming)
+[*]AGF1674 (Arts)
+[*]sawalk (Graphics/Translation)
+[*]Heart_bit, Piissii, 리셰 (Special Thanks)
+[/list]</description>
+    <version>1.148</version>
     <visibility>Public</visibility>
 </metadata>
