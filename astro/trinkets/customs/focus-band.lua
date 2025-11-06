@@ -63,7 +63,9 @@ Astro:AddCallback(
                     end
 
                     Game():ShakeScreen(15)
-                    SFXManager():Play(SoundEffect.SOUND_DEAD_SEA_SCROLLS)
+                    if not REPENTOGON then
+                        SFXManager():Play(SoundEffect.SOUND_DEAD_SEA_SCROLLS)
+                    end
 
                     player:AddVelocity(dirVec * 6)
                     player:AnimateTrinket(Astro.Trinket.FOCUS_BAND, "Pickup", "PlayerPickupSparkle")
