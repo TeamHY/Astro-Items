@@ -19,7 +19,7 @@
 	<passive cache="damage" gfx="Prometheus.png" quality="3" devilprice="2" name="Prometheus" description="The god who stole fire" id="18" />
 	<passive gfx="Pure White Heart.png" quality="3" devilprice="2" shopprice="20" name="Pure White Heart" description="It's in your heart from the beginning" id="19" />
 	<passive cache="damage firedelay" gfx="Platinum Bullet.png" quality="3" devilprice="2" name="Platinum Bullet" description="Over one million served" id="20" />
-	<passive tags="devil" gfx="Death's Eyes.png" quality="3" devilprice="2" name="Death's Eyes" description="Death tears" id="21" />
+	<passive tags="devil" gfx="Death's Eyes.png" quality="3" devilprice="2" name="Death's Eyes" description="Gott ist tot" id="21" />
 	<passive gfx="Altair.png" quality="3" devilprice="2" shopprice="30" tags="noeden" name="Altair" description="In the summer night sky" id="22" />
 	<passive gfx="Deneb.png" quality="3" devilprice="1" shopprice="10" name="Deneb" description="That shine the brightest" id="23" />
 	<passive gfx="Vega.png" quality="4" devilprice="2" shopprice="30" name="Vega" description="The three stars" id="24" />
@@ -79,7 +79,7 @@
 	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" id="78" />
 	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" id="79" />
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" description="When excel is normal summoned" id="80" />
-	<passive cache="firedelay" gfx="Technology Omicron.png" quality="4" tags="summonable tech" name="Technology Omicron EX" description="Laser aura tears" id="81" />
+	<passive cache="firedelay" gfx="Godtech.png" quality="4" tags="summonable tech" name="Godtech" description="Cutting-edge divine punishment" id="81" />
 	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" hidden="true" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" description="You are playing it wrong. Give me the controller" id="82" />
 	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="0" shopprice="16" name="Curse of Aramatir" description="Reset marathon" id="83" />
 	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" description="Gives secrets" id="84" />
@@ -150,7 +150,7 @@
 	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="4" name="Birthright - Apollyon B" description="Companionship of calamity" id="149" />
 	<active gfx="Birthright - Eden B.png" hidden="true" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Birthright - Eden B" description="??!" id="150" />
 	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="10" name="Purple Candle" description="Curse immunity + open one's eyes" id="151" />
-	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Godhead" description="True god tears" id="152" />
+	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Godhead" description="Unrepentant God" id="152" />
 	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" id="153" />
 	<active tags="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" description="More potentials" id="154" />
 	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="5" name="Schrodinger's Cat" description="Quantum mechanic" id="155" />

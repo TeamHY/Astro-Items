@@ -9,7 +9,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.ASTRO_GODHEAD,
                 "우주신",
-                "진정한 신의 눈물",
+                "회개하지 않은 신", -- 간접적으로 리펜 이전 갓헤드라 설명
                 "↑ {{DamageSmall}}공격력 +1" ..
                 "#↓ {{TearsSmall}}연사 -0.3" ..
                 "#↓ {{ShotspeedSmall}}탄속 -0.3" ..

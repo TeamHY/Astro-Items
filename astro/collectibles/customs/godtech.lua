@@ -1,4 +1,4 @@
-Astro.Collectible.TECHNOLOGY_OMICRON_EX = Isaac.GetItemIdByName("Technology Omicron EX")
+Astro.Collectible.GODTECH = Isaac.GetItemIdByName("Godtech")
 
 
 local spawnChance = 0.5
@@ -12,12 +12,13 @@ Astro:AddCallback(
     function()
 		if EID then
 			Astro:AddEIDCollectible(
-				Astro.Collectible.TECHNOLOGY_OMICRON_EX,
-				"테크놀로지 오미크론 EX",
-				"진정한 레이저 고리 눈물",
+				Astro.Collectible.GODTECH,
+				"신기술",
+				"첨단 천벌",
 				"↓ {{TearsSmall}}연사 x0.8" ..
 				"#눈물에 50%의 확률로 눈물 주변을 감싸는 레이저 고리가 생깁니다." ..
-				"#!!! 레이저 생성 쿨타임: ({{Collectible" .. Astro.Collectible.TECHNOLOGY_OMICRON_EX .. "}}개수 * 0.1)초" ..
+				"#!!! 레이저 생성 쿨타임: ({{Collectible" .. Astro.Collectible.GODTECH .. "}}개수 * 0.1)초" ..
+				"#레이저 고리는 적에게 프레임당 캐릭터의 공격력 x1.0의 피해를 줍니다." ..
 				"#{{LuckSmall}} 행운 10 이상일 때 100% 확률 (행운 1당 +5%p)",
 				-- 중첩 시
 				"중첩 시 레이저 고리 생성 확률이 중첩된 수만큼 합 연산으로 증가하며 레이저 고리가 한층 더 추가됩니다."
@@ -31,15 +32,15 @@ Astro:AddCallback(
 local function TryRandom(player)
 	local data = player:GetData()
 
-	if data["technologyOmicronCooldown"] == nil or data["technologyOmicronCooldown"] < Game():GetFrameCount() then
-		local rng = player:GetCollectibleRNG(Astro.Collectible.TECHNOLOGY_OMICRON_EX)
-		local num = player:GetCollectibleNum(Astro.Collectible.TECHNOLOGY_OMICRON_EX)
+	if data["godtechCooldown"] == nil or data["godtechCooldown"] < Game():GetFrameCount() then
+		local rng = player:GetCollectibleRNG(Astro.Collectible.GODTECH)
+		local num = player:GetCollectibleNum(Astro.Collectible.GODTECH)
 
 		if
 			rng:RandomFloat() <
 				(spawnChance * num) + player.Luck * luckMultiply
 		 then
-			data["technologyOmicronCooldown"] = Game():GetFrameCount() + cooldownTime / num
+			data["godtechCooldown"] = Game():GetFrameCount() + cooldownTime / num
 
 			return true
 		end
@@ -85,21 +86,21 @@ Astro:AddPriorityCallback(
 	ModCallbacks.MC_EVALUATE_CACHE,
 	Astro.CallbackPriority.MULTIPLY,
 	function(_, player)
-		for i = 1, player:GetCollectibleNum(Astro.Collectible.TECHNOLOGY_OMICRON_EX) do
+		for i = 1, player:GetCollectibleNum(Astro.Collectible.GODTECH) do
 			player.MaxFireDelay = MultiplyTears(player.MaxFireDelay, GetTearsMultiplier(player, 0.8))
 		end
 	end,
 	CacheFlag.CACHE_FIREDELAY
 )
 
-local function addTechOmicronLaser(tear, count)
+local function addGodtechLaser(tear, count)
 	local data = tear:GetData()
 	local player = Astro:GetPlayerFromEntity(tear)
 	local scale = tear.Size + 10
 
-	count = count or math.max(1, player:GetCollectibleNum(Astro.Collectible.TECHNOLOGY_OMICRON_EX))
+	count = count or math.max(1, player:GetCollectibleNum(Astro.Collectible.GODTECH))
 
-	data.technologyOmicronLasers = {}
+	data.godtechLasers = {}
 
 	for i = 1, count do
 		local laser = player:FireTechXLaser(tear.Position, tear.Velocity, scale, player)
@@ -107,7 +108,7 @@ local function addTechOmicronLaser(tear, count)
 		laser.SubType = LaserSubType.LASER_SUBTYPE_RING_FOLLOW_PARENT
 		laser:Update()
 
-		laser:GetData().isTechOmicronLaser = true
+		laser:GetData().isGodtechLaser = true
 
 		for _, effect in pairs(Isaac.FindByType(1000, 50)) do
 			if effect.SpawnerEntity and GetPtrHash(effect.SpawnerEntity) == GetPtrHash(laser) then
@@ -116,21 +117,21 @@ local function addTechOmicronLaser(tear, count)
 			end
 		end
 
-		table.insert(data.technologyOmicronLasers, laser)
+		table.insert(data.godtechLasers, laser)
 		scale = scale + 15
 	end
 end
 
-local function RemoveTechOmicronLasers(entity)
+local function RemoveGodtechLasers(entity)
 	local data = entity:GetData()
-	if data.technologyOmicronLasers then
-		for _, laser in pairs(data.technologyOmicronLasers) do
+	if data.godtechLasers then
+		for _, laser in pairs(data.godtechLasers) do
 			if laser:Exists() then
 				laser:Remove()
 			end
 		end
 
-		data.technologyOmicronLasers = nil
+		data.godtechLasers = nil
 	end
 end
 
@@ -279,9 +280,9 @@ end
 
 -- Astro:AddCallback(mod.Callback.REAL_FIRE_TEAR, function(_, tear, player)
 local function RealFireTear(tear, player)
-	if player:HasCollectible(Astro.Collectible.TECHNOLOGY_OMICRON_EX) and ShouldTearGetEffects(tear) and TryRandom(player) then
-		tear:GetData().technologyOmicron = true
-		addTechOmicronLaser(tear)
+	if player:HasCollectible(Astro.Collectible.GODTECH) and ShouldTearGetEffects(tear) and TryRandom(player) then
+		tear:GetData().godtech = true
+		addGodtechLaser(tear)
 	end
 end
 -- end)
@@ -319,15 +320,15 @@ Astro:AddCallback(
 ---@param knife EntityKnife
 ---@param player EntityPlayer
 local function PostThrowKnife(knife, player)
-	if player:HasCollectible(Astro.Collectible.TECHNOLOGY_OMICRON_EX) and TryRandom(player) then -- or mod.HasPridePinEffect(player, mod.PridePinEffect.TECH_OMICRON) then
-		knife:GetData().technologyOmicron = true
+	if player:HasCollectible(Astro.Collectible.GODTECH) and TryRandom(player) then -- or mod.HasPridePinEffect(player, mod.PridePinEffect.GODTECH) then
+		knife:GetData().godtech = true
 
 		local data = knife:GetData()
 		local scale = knife.Size + 10
 
-		data.technologyOmicronLasers = {}
+		data.godtechLasers = {}
 
-		for i = 1, player:GetCollectibleNum(Astro.Collectible.TECHNOLOGY_OMICRON_EX) do
+		for i = 1, player:GetCollectibleNum(Astro.Collectible.GODTECH) do
 			local laser = player:FireTechXLaser(knife.Position, knife.Velocity, scale, player)
 			laser.SubType = LaserSubType.LASER_SUBTYPE_RING_FOLLOW_PARENT
 			laser.Parent = knife
@@ -339,7 +340,7 @@ local function PostThrowKnife(knife, player)
 			end
 
 			laser:Update()
-			laser:GetData().isTechOmicronLaser = true
+			laser:GetData().isGodtechLaser = true
 
 			for _, effect in pairs(Isaac.FindByType(1000, 50)) do
 				if effect.SpawnerEntity and GetPtrHash(effect.SpawnerEntity) == GetPtrHash(laser) then
@@ -348,7 +349,7 @@ local function PostThrowKnife(knife, player)
 				end
 			end
 
-			table.insert(data.technologyOmicronLasers, laser)
+			table.insert(data.godtechLasers, laser)
 			scale = scale + 15
 		end
 	end
@@ -379,7 +380,7 @@ Astro:AddCallback(
 
 				data.retributionLastFrameWasReturning = isReturning
 			elseif data.retributionLastFrameWasFlying then
-				RemoveTechOmicronLasers(knife)
+				RemoveGodtechLasers(knife)
 				data.retributionTearEffectEntityBlacklist = {}
 				data.retributionKnifeIsReturning = false
 			end
@@ -405,12 +406,12 @@ Astro:AddCallback(
 	ModCallbacks.MC_POST_TEAR_UPDATE,
 	function(_, tear)
 		local data = tear:GetData()
-		if data.technologyOmicron then
-			if not data.technologyOmicronLasers then
-				addTechOmicronLaser(tear)
+		if data.godtech then
+			if not data.godtechLasers then
+				addGodtechLaser(tear)
 			end
-		elseif data.technologyOmicronLasers then
-			RemoveTechOmicronLasers(tear)
+		elseif data.godtechLasers then
+			RemoveGodtechLasers(tear)
 		end
 	end
 )
@@ -419,7 +420,7 @@ Astro:AddCallback(
 	ModCallbacks.MC_POST_LASER_UPDATE,
 	function(_, laser)
 		local player = laser.SpawnerEntity and laser.SpawnerEntity:ToPlayer()
-		if player and player:HasCollectible(Astro.Collectible.TECHNOLOGY_OMICRON_EX) and TryRandom(player) then
+		if player and player:HasCollectible(Astro.Collectible.GODTECH) and TryRandom(player) then
 			laser.Variant = 9
 			laser.CollisionDamage = laser.CollisionDamage * 1.5
 
@@ -435,10 +436,10 @@ Astro:AddCallback(
 Astro:AddCallback(
 	ModCallbacks.MC_POST_LASER_UPDATE,
 	function(_, laser)
-		if laser:GetData().isTechOmicronLaser then
+		if laser:GetData().isGodtechLaser then
 			if
 				laser.SpawnerEntity and laser.Parent and
-					(laser.SpawnerEntity.Type == 1 or laser.SpawnerEntity:GetData().technologyOmicron)
+					(laser.SpawnerEntity.Type == 1 or laser.SpawnerEntity:GetData().godtech)
 			 then
 				laser.PositionOffset = laser.Parent.PositionOffset
 				laser.ParentOffset = laser.Parent.Velocity
