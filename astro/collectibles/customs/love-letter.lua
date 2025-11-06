@@ -10,8 +10,6 @@ if EID then
     )
 end
 
-local A = false
-
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
     ---@param collectibleID CollectibleType
@@ -32,9 +30,13 @@ Astro:AddCallback(
             }
         end
 
-        A = not A
+        local data = player:GetData()
 
-        player:AnimateCollectible(Astro.Collectible.LOVE_LETTER)
+        if data["astroUsedLoveLetter"] == nil then
+            data["astroUsedLoveLetter"] = Game():GetFrameCount()
+        else
+            data["astroUsedLoveLetter"] = nil
+        end
 
         return {
             Discharge = false,
@@ -79,4 +81,21 @@ Astro:AddCallback(
         -- }
     end,
     Astro.Collectible.LOVE_LETTER
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PLAYER_UPDATE,
+    ---@param player EntityPlayer
+    function(_, player)
+        local data = player:GetData()
+
+        if data["astroUsedLoveLetter"] == nil then
+            player:StopExtraAnimation()
+            return
+        end
+
+        if (Game():GetFrameCount() - data["astroUsedLoveLetter"]) % 36 == 0 then
+            player:AnimateCollectible(Astro.Collectible.LOVE_LETTER)
+        end
+    end
 )
