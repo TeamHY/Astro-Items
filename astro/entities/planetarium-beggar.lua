@@ -36,12 +36,12 @@ Astro:AddCallback(
             local rng = player:GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_APOLLYON_B)
 
             if rng:RandomFloat() < SUCCESS_CHANCE then
-                sprite:Play("PayPrize")
+                sprite:Play("PayPrize", true)
 
                 local data = collider:GetData()
                 data.player = player
             else
-                sprite:Play("PayNothing")
+                sprite:Play("PayNothing", true)
             end
         end
     end

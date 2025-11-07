@@ -34,7 +34,7 @@ Astro:AddCallback(
             end
 
             player:AddCoins(-PRICE)
-            sprite:Play("Initiate")
+            sprite:Play("Initiate", true)
         end
     end
 )

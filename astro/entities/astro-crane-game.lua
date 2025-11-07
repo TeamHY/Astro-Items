@@ -68,7 +68,7 @@ Astro:AddCallback(
                 player:AddCoins(-data.price)
             end
 
-            sprite:Play("Initiate")
+            sprite:Play("Initiate", true)
         end
     end
 )
