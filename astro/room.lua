@@ -162,6 +162,8 @@ Astro:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
     ---@param rng RNG
     function(_, rng)
+        if not Astro.IsFight then return end
+ 
         Astro:ScheduleForUpdate(
             function()
                 local room = Game():GetRoom()
@@ -196,6 +198,8 @@ Astro:AddCallback(
     ---@param npc EntityNPC
     ---@param offset Vector
     function(_, npc, offset)
+        if not Astro.IsFight then return end
+ 
         if not isRunDogmaDeathEvent and npc.Variant == 2 then
             local sprite = npc:GetSprite()
             

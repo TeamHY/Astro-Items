@@ -17,13 +17,14 @@ Astro:AddCallback(
 )
 
 
--- 에코 챔버 테스트안해봄
 Astro:AddCallback(
     ModCallbacks.MC_USE_PILL,
     ---@param pillEffect PillEffect
     ---@param player EntityPlayer
     ---@param flag UseFlags
     function(_, pillEffect, player, flag)
+        if flag >= 2048 then return end    -- 에코 챔버
+
         if player:HasTrinket(Astro.Trinket.STOMACH_MEDICINE) then
             for i = 1, player:GetTrinketMultiplier(Astro.Trinket.STOMACH_MEDICINE) do
                 player:UseActiveItem(CollectibleType.COLLECTIBLE_NECRONOMICON, false)

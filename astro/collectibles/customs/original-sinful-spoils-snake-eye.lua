@@ -8,8 +8,8 @@ Astro:AddCallback(
                 Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
                 "원죄보 - 스네이크아이",
                 "반역의 눈",
-                "적 명중 시 10%의 확률로 여러 유령을 소환합니다." ..
-                "#{{TimerSmall}} (쿨타임 2.5초)" ..
+                "적 명중 시 20%의 확률로 여러 유령을 소환합니다." ..
+                "#{{TimerSmall}} (쿨타임 1.5초)" ..
                 "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
                 -- 중첩 시
                 "중첩 시 유령의 소환 확률이 중첩된 수만큼 합 연산으로 증가하며 소환 쿨타임이 줄어듭니다."
@@ -18,11 +18,11 @@ Astro:AddCallback(
     end
 )
 
-local spawnChance = 0.1
+local spawnChance = 0.2
 
 local luckMultiply = 1 / 100
 
-local cooldownTime = 75 -- 30 프레임 = 1초
+local cooldownTime = 45 -- 30 프레임 = 1초
 
 ---@param player EntityPlayer
 ---@return number

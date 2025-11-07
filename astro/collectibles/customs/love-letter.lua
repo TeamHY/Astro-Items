@@ -85,6 +85,7 @@ Astro:AddCallback(
     Astro.Collectible.LOVE_LETTER
 )
 
+--[[ sawalk -- 게임에서 한 번 픽업을 들고 나면 영원히 픽업을 못 들어서 주석 처리
 Astro:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,
     ---@param player EntityPlayer
@@ -101,3 +102,4 @@ Astro:AddCallback(
         end
     end
 )
+]]
