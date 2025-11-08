@@ -8,7 +8,9 @@ if EID then
         "플람메의 마도서",
         "마법은, 사람의 마음을 이어주는 증거야",
         "방 입장 시 모든 가시 돌이 제거되며, 돌 위에 꽃을 피웁니다." ..
-        "#{{ArrowGrayRight}} 꽃이 핀 돌은 방 클리어 시 파괴됩니다."
+        "#{{ArrowGrayRight}} 꽃이 핀 돌은 방 클리어 시 파괴됩니다.",
+        -- 중첩 시
+        "중첩 시 파괴할 수 없는 벽과 기둥도 파괴됩니다."
     )
 end
 
@@ -37,7 +39,8 @@ local function SpawnFlowersOnRocks()
     end
 end
 
-local function DestroyAllRocks()
+---@param force boolean
+local function DestroyAllRocks(force)
     local room = Game():GetRoom()
     local width = room:GetGridWidth()
     local height = room:GetGridHeight()
@@ -47,6 +50,14 @@ local function DestroyAllRocks()
         local rock = gridEntity and gridEntity:ToRock()
 
         if rock then
+            if force then
+                local type = rock:GetType()
+
+                if type == GridEntityType.GRID_WALL or type == GridEntityType.GRID_PILLAR then
+                    rock:SetType(GridEntityType.GRID_ROCK)
+                end
+            end
+
             rock:Destroy(false)
         end
     end
@@ -98,7 +109,7 @@ Astro:AddCallback(
                             return
                         end
 
-                        DestroyAllRocks()
+                        DestroyAllRocks(Astro:GetCollectibleNum(Astro.Collectible.FLAMMES_GRIMOIRE) > 1)
                         RemoveAllFlowers()
                     end,
                     60
@@ -112,7 +123,7 @@ Astro:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
     function(_)
         if Astro:HasCollectible(Astro.Collectible.FLAMMES_GRIMOIRE) then
-            DestroyAllRocks()
+            DestroyAllRocks(Astro:GetCollectibleNum(Astro.Collectible.FLAMMES_GRIMOIRE) > 1)
             RemoveAllFlowers()
         end
     end
