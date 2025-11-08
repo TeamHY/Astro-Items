@@ -66,7 +66,7 @@ local function ApplyGoldenEffect()
 end
 
 local function HasMidasTouch()
-    return Astro:AnyPlayerHasCollectable(CollectibleType.COLLECTIBLE_MIDAS_TOUCH)
+    return Astro:HasCollectible(CollectibleType.COLLECTIBLE_MIDAS_TOUCH)
 end
 
 local function ExistMidasTouchEntity()
