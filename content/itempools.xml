@@ -184,7 +184,7 @@
 		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
@@ -257,7 +257,7 @@
 		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
@@ -315,7 +315,7 @@
 		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
@@ -387,7 +387,7 @@
 		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
@@ -459,7 +459,7 @@
 		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
@@ -516,7 +516,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -592,7 +592,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -669,7 +669,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Curse of Aramatir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -755,7 +755,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Overwhelming Sinful Spoils" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -930,7 +930,7 @@
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Technology Omicron EX" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amazing Chaos Scroll" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Overwhelming Sinful Spoils" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
