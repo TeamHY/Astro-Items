@@ -21,7 +21,8 @@ Astro:AddCallback(
                 "카인의 생득권",
                 "더 재밌는 도박",
                 "{{Slotmachine}} 도박기계를 사용할 때 25%의 확률로 동전이 소모되지 않습니다." ..
-                "#{{ArcadeRoom}} 야바위를 {{CraneGame}}크레인 게임으로 변경합니다."
+                "#{{ArcadeRoom}} 야바위를 {{CraneGame}}크레인 게임으로 변경합니다." ..
+                "#{{ArcadeRoom}} {{Slotmachine}}슬롯머신을 {{Slotmachine}}글리치드 머신으로 변경합니다."
             )
         end
     end
@@ -64,6 +65,7 @@ Astro:AddCallbackCustom(
 )
 
 -- astro/entities/astro-crane-game.lua에 추가 구현 있음.
+-- astro/entities/glitched-machine.lua에 추가 구현 있음.
 
 -- 야바위 게임
 Astro:AddCallbackCustom(

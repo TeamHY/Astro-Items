@@ -45,7 +45,7 @@ Astro:AddCallbackCustom(
     function(_, slot)
         local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_EVE)
 
-        if slot.SubType ~= INIT_CHECK_SUBTYPE and rng:RandomFloat() < CHANGE_CHANCE then
+        if (slot.SubType ~= INIT_CHECK_SUBTYPE and rng:RandomFloat() < CHANGE_CHANCE) or Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_CAIN) then
             slot:Remove()
             Isaac.Spawn(EntityType.ENTITY_SLOT, Astro.Entity.GlitchedMachine.Variant, 0, slot.Position, Vector(0, 0), nil)
         elseif slot.SubType ~= INIT_CHECK_SUBTYPE then
