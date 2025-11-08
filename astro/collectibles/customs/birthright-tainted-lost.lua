@@ -1,5 +1,3 @@
-local isc = require("astro.lib.isaacscript-common")
-
 Astro.Collectible.BIRTHRIGHT_TAINTED_LOST = Isaac.GetItemIdByName("Birthright - Tainted Lost")
 
 Astro:AddCallback(
@@ -10,8 +8,9 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
                 "더럽혀진 로스트의 생득권",
                 "더 나은 운명?",
-                "{{Player31}} 'offensive' 태그의 아이템 등장 시 다른 아이템으로 바꿉니다." ..
-                "#{{ArrowGrayRight}} 바뀐 아이템은 콘솔에서 확인할 수 있습니다."
+                "↑ 소지중일 때 목숨 +1" ..
+                "#{{Quality0}}/{{Quality1}}/{{Quality2}}등급 아이템 등장 시 다른 아이템으로 바꿉니다." ..
+                "#{{Blank}} {{ColorGray}}(바뀐 아이템은 콘솔에서 확인 가능){{CR}}"
             )
         end
 
@@ -22,7 +21,7 @@ Astro:AddCallback(
         
                 if Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_TAINTED_LOST) then
                     return {
-                        reroll = not itemConfigitem:HasTags(ItemConfig.TAG_OFFENSIVE),
+                        reroll = itemConfigitem.Quality <= 2,
                         modifierName = "Birthright - Tainted Lost"
                     }
                 end
@@ -32,3 +31,16 @@ Astro:AddCallback(
         )
     end
 )
+
+if REPENTOGON then
+    Astro:AddCallback(
+        ModCallbacks.MC_PRE_TRIGGER_PLAYER_DEATH,
+        function(_, player)
+            if player:HasCollectible(Astro.Collectible.BIRTHRIGHT_TAINTED_LOST, true) then
+                player:RemoveCollectible(Astro.Collectible.BIRTHRIGHT_TAINTED_LOST)
+                player:SetMinDamageCooldown(120)
+                return false
+            end
+        end
+    )
+end
