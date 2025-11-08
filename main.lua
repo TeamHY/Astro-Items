@@ -19,6 +19,9 @@ require "astro.save"
 require "astro.callbacks"
 require "astro.eid"
 require "astro.utils.init"
+require "astro.upgrade-action"
+require "astro.dss"
+require "astro.mega-ui"
 require "astro.entities.init"
 require "astro.collectibles.init"
 require "astro.trinkets.init"
@@ -26,6 +29,7 @@ require "astro.player"
 require "astro.ban"
 require "astro.room"
 require "astro.curse"
+require "astro.large-sprite"
 
 local function GetCurrentModPath()
 	if debug then

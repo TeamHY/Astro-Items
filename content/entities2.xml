@@ -59,4 +59,10 @@
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
         <preload-snd id="234"/>
     </entity>
+    <entity name="Scales of Obedience" anm2path="scales_of_obedience.anm2" id="1000" variant="3109" collisionMass="1" friction="1">
+    </entity>
+    <entity name="Legacy Angel" anm2path="legacy_angel.anm2" id="1000" variant="3110" subtype="0" collisionMass="1" friction="1">
+    </entity>
+    <entity name="Legacy Evil" anm2path="legacy_evil.anm2" id="1000" variant="3111" subtype="1" collisionMass="1" friction="1">
+    </entity>
 </entities>

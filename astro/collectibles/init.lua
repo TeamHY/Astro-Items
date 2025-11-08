@@ -144,6 +144,20 @@ require "astro.collectibles.customs.lucky-coin-bundle"
 require "astro.collectibles.customs.techrapod"
 require "astro.collectibles.customs.throw-bomb"
 require "astro.collectibles.customs.love-letter"
+require "astro.collectibles.customs.mayushiis-pocket-watch"
+require "astro.collectibles.customs.scales-of-obedience"
+require "astro.collectibles.customs.artifact-ignition"
+require "astro.collectibles.customs.skeleton-guppy"
+require "astro.collectibles.customs.blighted-guppy"
+require "astro.collectibles.customs.golden-guppy"
+require "astro.collectibles.customs.blood-guppy"
+require "astro.collectibles.customs.divine-guppy"
+require "astro.collectibles.customs.mega-d4"
+require "astro.collectibles.customs.mega-d6"
+require "astro.collectibles.customs.mega-d8"
+require "astro.collectibles.customs.marigold"
+require "astro.collectibles.customs.legacy"
+require "astro.collectibles.customs.p-key"
 
 --#region PLANETARIUM
 
@@ -193,6 +207,9 @@ require "astro.collectibles.reroll"
 ---@type ItemConfigItem[]
 Astro.CollectableConfigs = {}
 
+---@type CollectibleType[]
+Astro.SetsCollectibles = {}
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
@@ -209,6 +226,22 @@ Astro:AddCallback(
 
             if itemConfigItem ~= nil then
                 table.insert(Astro.CollectableConfigs, itemConfigItem)
+
+                if Astro and Astro.ASTRO_SETS_LIST then
+                    for _, item in ipairs(Astro.ASTRO_SETS_LIST) do
+                        if item == itemConfigItem.ID then
+                            table.insert(Astro.SetsCollectibles, itemConfigItem.ID)
+                            break
+                        end
+                    end
+                end
+
+                for _, tag in ipairs(Astro.SetsTagList) do
+                    if itemConfigItem:HasTags(tag) then
+                        table.insert(Astro.SetsCollectibles, itemConfigItem.ID)
+                        break
+                    end
+                end
             end
 
             id = id + 1

@@ -2,13 +2,18 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.EID = {}
 Astro.EID.Trinket = {}
+Astro.EID.Hints = {}
+Astro.EID.ShowHint = false
+Astro.EID.HintAdded = false
 
 Astro.EID.QualityIcon = Sprite()
 Astro.EID.QualityIcon:Load("gfx/ui/eid/quality.anm2")
 Astro.EID.QualityIcon:LoadGraphics()
 
-EID:addIcon("Quality5", "Quality5", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
-EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
+if EID then
+    EID:addIcon("Quality5", "Quality5", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
+    EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
+end
 
 ---@param id CollectibleType
 ---@param name string
@@ -58,6 +63,48 @@ function Astro:AddEIDTrinket(id, name, description, eidDescription, golden)
         description = description
     }
 end
+
+---@param id CollectibleType
+---@param description table
+function Astro:AddCraftHint(id, description)
+    if EID then
+        local language = EID:getLanguage()
+        Astro.EID.Hints[id] = description
+    end
+end
+
+local function GetCraftHint(descObj)
+    if not EID then return end
+    if not Astro.EID.ShowHint then return end
+
+    local hint = Astro.EID.Hints[descObj.ObjSubType]
+    if not hint then return end
+
+    local language = EID:getLanguage() or "en_us"
+    text = hint[language]
+    if text then
+        EID:appendToDescription(descObj, text)
+    end
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PLAYER_UPDATE,
+
+    ---@param player EntityPlayer
+    function(_, player)
+        if not EID then return end
+
+        if Astro.EID.ShowHint and not Astro.EID.HintAdded then
+            EID:addDescriptionModifier("Astrobirth", GetCraftHint)
+            Astro.EID.HintAdded = true
+        end
+
+        if not Astro.EID.ShowHint and Astro.EID.HintAdded then
+            EID:removeDescriptionModifier("Astrobirth")
+            Astro.EID.HintAdded = false
+        end
+    end
+)
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.PRE_ITEM_PICKUP,

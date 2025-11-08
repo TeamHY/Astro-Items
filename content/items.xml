@@ -196,6 +196,20 @@
 	<passive gfx="Techrapod.png" quality="3" devilprice="2" shopprice="15" name="Techrapod" description="Triangular laser" id="195" />
 	<passive gfx="Throw Bomb.png" quality="2" devilprice="1" shopprice="15" name="Throw Bomb" description="Fire in the hole!" id="196" />
 	<active gfx="Love Letter.png" quality="2" devilprice="2" maxcharges="3" shopprice="15" name="Love Letter" description="Return to Sender" id="197" />
+	<passive gfx="Mayushii's Pocket Watch.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Mayushii's Pocket Watch" description="..." id="198" />
+	<passive gfx="Scales of Obedience.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Scales of Obedience" description="..." id="199" />
+	<passive gfx="Artifact Ignition.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Artifact Ignition" description="..." id="200" />
+	<passive tags="guppy" gfx="Skeleton Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Skeleton Guppy" description="..." id="201" />
+	<passive tags="guppy" gfx="Blighted Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Blighted Guppy" description="..." id="202" />
+	<passive tags="guppy" gfx="Golden Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Golden Guppy" description="..." id="203" />
+	<passive tags="guppy" gfx="Blood Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Blood Guppy" description="..." id="204" />
+	<passive tags="guppy" gfx="Divine Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Divine Guppy" description="..." id="205" />
+	<active gfx="Mega D4.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D4" description="..." id="206" />
+	<active gfx="Mega D6.png" quality="5" devilprice="2" shopprice="15" maxcharges="6" name="Mega D6" description="Reroll reroll reroll" id="207" />
+	<active cache="damage firedelay speed range shotspeed luck" gfx="Mega D8.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D8" description="..." id="208" />
+	<passive gfx="Marigold.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Marigold" description="..." id="209" />
+	<passive gfx="Legacy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Legacy" description="..." id="210" />
+	<active gfx="P Key.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="3" initcharge="0" name="P Key" description="..." id="211" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

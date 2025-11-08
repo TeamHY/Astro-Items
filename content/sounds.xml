@@ -27,4 +27,16 @@
     <sound name="ZoltraakShot">
         <sample weight="1" path="feedback/zoltraak-shot.wav" />
     </sound>
+    <sound name="MayushiisPocketWatchAppear">
+        <sample weight="1" path="feedback/mayushiis-pocket-watch-appear.wav" />
+    </sound>
+    <sound name="ScalesOfObedienceAppear">
+        <sample weight="1" path="feedback/scales-of-obedience-appear.wav" />
+    </sound>
+    <sound name="LegacyAppear">
+        <sample weight="1" path="feedback/legacy-appear.wav" />
+    </sound>
+    <sound name="LegacyUse">
+        <sample weight="1" path="feedback/legacy-use.wav" />
+    </sound>
 </sounds>
