@@ -15,6 +15,8 @@ if EID then
     EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
 end
 
+
+------ 함수 ------
 ---@param id CollectibleType
 ---@param name string
 ---@param description string
@@ -42,6 +44,30 @@ function Astro:AddEIDCollectible(id, name, description, eidDescription, copied)
         name = name,
         description = description
     }
+end
+
+---@param lang string
+---@param id CollectibleType
+---@param name string
+---@param eidDescription string
+---@param copied string?
+function Astro:AddEIDCollectible2(lang, id, name, eidDescription, copied)
+    if EID then
+        EID:addCollectible(id, eidDescription, name, lang)
+
+        if copied and Astro.Trinket then
+            EID:addCondition(
+                "5.100." .. tostring(id),
+                {
+                    "5.100." .. tostring(id),
+                    "5.350." .. tostring(Astro.Trinket.BLACK_MIRROR),
+                    "5.100.347", "5.100.485"
+                },
+                copied,
+                nil, lang, nil
+            )
+        end
+    end
 end
 
 ---@param id TrinketType
@@ -87,6 +113,8 @@ local function GetCraftHint(descObj)
     end
 end
 
+
+------ 콜백 ------
 Astro:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,
 
@@ -127,6 +155,8 @@ Astro:AddCallbackCustom(
     end
 )
 
+local eideng = require "astro.collectibles.eid-dlatlduddjtjfaud"
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
@@ -161,9 +191,22 @@ Astro:AddCallback(
             EID.InlineIcons["Player" .. Astro.Players.STELLAR_B] = EID.InlineIcons["Nayuta"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN] = EID.InlineIcons["AinzOoalGown"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN_B] = EID.InlineIcons["PandorasActor"]
+
+
+            -- 사왈 / 급하게 AI 돌려서 넣은거라 개떡같이 추가해놨습니다. 설명 검수 안했고 작동만 확인함
+            -- eid 설명 한 곳으로 중앙화 해야할 듯합니다 한국어만 있었다가 영어 들어가려니까 시간 소모 너무큼
+            -- 5퀄템들은 손볼 시간이 없어서 냅뒀습니다
+            for i = Astro.Collectible.CYGNUS, Astro.Collectible.LOVE_LETTER do
+                local modItemOffset = i - 733
+                local desc = eideng[733 + modItemOffset]
+                Astro:AddEIDCollectible2("en_us", i, "", desc)
+            end
         end
     end
 )
+
+--[[
+영문 EID를 위해 임시 주석처리
 
 if REPENTOGON then
 	Astro:AddPriorityCallback(
@@ -199,3 +242,4 @@ if REPENTOGON then
         end
     )
 end
+]]

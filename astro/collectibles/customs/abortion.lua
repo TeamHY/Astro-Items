@@ -27,6 +27,18 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 시 발사 확률이 중첩된 수만큼 합 연산으로 증가하며 쿨타임이 줄어듭니다."
             )
+
+            Astro:AddEIDCollectible2(
+                "en_us",
+                Astro.Collectible.ABORTION,
+                "Abortion",
+                "50% chance to fire tears that turn into fetuses on hit." ..
+                "#{{Timer}} (0.5s cooldown)" ..
+                "#{{Luck}} 100% chance at 50 Luck (+1% per Luck)" ..
+                "#{{Collectible678}} Fetuses home in on enemies and deal 2.25x damage per second.",
+                -- Self
+                "Stacks additively increase proc chance and reduce cooldown."
+            )
         end
     end
 )
