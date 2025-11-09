@@ -16,11 +16,12 @@ if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
         "사용 시 그 방 아이템에 {{ColorOrange}}아래 효과 중 하나를 골라{{CR}} 발동합니다:" ..
-            "#{{ArrowGrayRight}} 다른 아이템으로 바꿉니다." ..
-                "#{{ArrowGrayRight}} 같은 유형(패시브/액티브)의 다른 아이템으로 바꿉니다." ..
-                    "#{{ArrowGrayRight}} 같은 등급의 다른 아이템으로 바꿉니다." ..
-                        "#{{ArrowGrayRight}} {{Player31}}Tainted Lost에게 등장하지 않는 아이템으로 바꿉니다." ..
-                            "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다.",
+        "#{{ArrowGrayRight}} 다른 아이템으로 바꿉니다." ..
+        "#{{ArrowGrayRight}} 같은 유형(패시브/액티브)의 다른 아이템으로 바꿉니다." ..
+        "#{{ArrowGrayRight}} 같은 등급의 다른 아이템으로 바꿉니다." ..
+        "#{{ArrowGrayRight}} {{Player31}}Tainted Lost에게 등장하지 않는 아이템으로 바꿉니다." ..
+        "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다." ..
+        "#{{ColorRed}}리펜토곤이 없으면 작동하지 않습니다.",
         "대왕 주사위",
         "굴려 굴려 굴려",
         "ko_kr"
@@ -29,24 +30,18 @@ if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
         "When used, {{ColorOrange}}applies one of the following effects{{CR}} to all items in the room:" ..
-            "#{{ArrowGrayRight}} Changes them to different items." ..
-                "#{{ArrowGrayRight}} Preserves passive/active type and changes to different items." ..
-                    "#{{ArrowGrayRight}} Preserves quality and changes to different items." ..
-                        "#{{ArrowGrayRight}} Changes to useless items for {{Player31}}Tainted Lost." ..
-                            "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups.",
+        "#{{ArrowGrayRight}} Changes them to different items." ..
+        "#{{ArrowGrayRight}} Preserves passive/active type and changes to different items." ..
+        "#{{ArrowGrayRight}} Preserves quality and changes to different items." ..
+        "#{{ArrowGrayRight}} Changes to useless items for {{Player31}}Tainted Lost." ..
+        "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups." ..
+        "#{{ColorRed}}Does not work without Repentogon.",
         "Mega D6",
         "Reroll reroll reroll",
         "en_us"
     )
 end
 
---[[ TODO:
-1. 대왕 주사위의 ui를 펼친 뒤 다른 액티브로 교체해도 ui가 남으며,
-   그 액티브를 사용하면 ui가 사라지지 않고 ui에 선택된 효과가 발동됨 -> 해결했습니다.
-
-2. 자세힌 모릅니다 대왕 주사위가 아예 발동되지 않는 문제가 있음
-   와카바님 피셜) '아이템 ui 자체가 계속 열려있는 상태로 판단해서 안열린 듯' -> 버그 재현은 못하였으나 로직 수정하면서 고쳐졌을 가능성도 있습니다. 다시 발생하면 말씀해주세요.
-]]
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
     ---@param collectible CollectibleType
@@ -179,6 +174,10 @@ local megaUI =
                     ::continue::
                 end
             elseif choice == 4 then
+                if not REPENTOGON then
+                    return
+                end
+
                 local findEntities =
                     Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, -1, true, false)
                 local itemPool = Game():GetItemPool()

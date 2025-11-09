@@ -16,7 +16,8 @@ if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
         "{{Quality0}} 사용 시 등급을 선택하며;" ..
-        "#{{ArrowGrayRight}} 소지중인 아이템 중 선택한 등급의 아이템을 그 방 배열의 아이템으로 바꿉니다.",
+        "#{{ArrowGrayRight}} 소지중인 아이템 중 선택한 등급의 아이템을 그 방 배열의 아이템으로 바꿉니다." ..
+        "#{{ColorRed}}리펜토곤이 없으면 작동하지 않습니다.",
         "대왕 4면체 주사위",
         "...",
         "ko_kr"
@@ -24,7 +25,8 @@ if EID then
 
     Astro:AddEIDCollectible(
         ITEM_ID,
-        "On use, lets you choose a quality. Rerolls all items of the selected quality in your inventory into items from the current room's item pool.",
+        "On use, lets you choose a quality. Rerolls all items of the selected quality in your inventory into items from the current room's item pool." ..
+        "#{{ColorRed}}Does not work without Repentogon.",
         "Mega D4",
         "...",
         "en_us"
@@ -103,6 +105,10 @@ local megaUI =
         onChoiceSelected = function(player, choice)
             local targetQuality = choice - 1
             local rng = player:GetCollectibleRNG(ITEM_ID)
+
+            if not REPENTOGON then
+                return
+            end
             
             local itemsToReroll = GetCollectibleToReroll(targetQuality, player)
             local newItems = GetCollectiblesWithQuality(targetQuality, player)

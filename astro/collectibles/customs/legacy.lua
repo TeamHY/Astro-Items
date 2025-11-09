@@ -368,85 +368,87 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_FIRE_TECH_LASER,
-    ---@param laser EntityLaser
-    function(_, laser)
-        local player = Astro:GetPlayerFromEntity(laser)
-        
-        if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
-            if CheckNeedleChance(player) then
-                if not laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                    laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    laser.CollisionDamage = laser.CollisionDamage * 3
+if REPENTOGON then
+    Astro:AddCallback(
+        ModCallbacks.MC_POST_FIRE_TECH_LASER,
+        ---@param laser EntityLaser
+        function(_, laser)
+            local player = Astro:GetPlayerFromEntity(laser)
+            
+            if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
+                if CheckNeedleChance(player) then
+                    if not laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                        laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
+                        laser.CollisionDamage = laser.CollisionDamage * 3
+                    end
+                elseif laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                    laser:ClearTearFlags(TearFlags.TEAR_NEEDLE)
+                    laser.CollisionDamage = laser.CollisionDamage / 3
                 end
-            elseif laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                laser:ClearTearFlags(TearFlags.TEAR_NEEDLE)
-                laser.CollisionDamage = laser.CollisionDamage / 3
             end
         end
-    end
-)
+    )
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_FIRE_TECH_X_LASER,
-    ---@param laser EntityLaser
-    function(_, laser)
-        local player = Astro:GetPlayerFromEntity(laser)
+    Astro:AddCallback(
+        ModCallbacks.MC_POST_FIRE_TECH_X_LASER,
+        ---@param laser EntityLaser
+        function(_, laser)
+            local player = Astro:GetPlayerFromEntity(laser)
 
-        if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
-            if CheckNeedleChance(player) then
-                if not laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                    laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    laser.CollisionDamage = laser.CollisionDamage * 3
+            if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
+                if CheckNeedleChance(player) then
+                    if not laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                        laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
+                        laser.CollisionDamage = laser.CollisionDamage * 3
+                    end
+                elseif laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                    laser:ClearTearFlags(TearFlags.TEAR_NEEDLE)
+                    laser.CollisionDamage = laser.CollisionDamage / 3
                 end
-            elseif laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                laser:ClearTearFlags(TearFlags.TEAR_NEEDLE)
-                laser.CollisionDamage = laser.CollisionDamage / 3
             end
         end
-    end
-)
+    )
 
-Astro:AddCallback(
-    ModCallbacks.MC_POST_FIRE_BRIMSTONE_BALL,
-    ---@param laser EntityLaser
-    function(_, laser)
-        local player = Astro:GetPlayerFromEntity(laser)
+    Astro:AddCallback(
+        ModCallbacks.MC_POST_FIRE_BRIMSTONE_BALL,
+        ---@param laser EntityLaser
+        function(_, laser)
+            local player = Astro:GetPlayerFromEntity(laser)
 
-        if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
-            if CheckNeedleChance(player) then
-                if not laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                    laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    laser.CollisionDamage = laser.CollisionDamage * 3
+            if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
+                if CheckNeedleChance(player) then
+                    if not laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                        laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
+                        laser.CollisionDamage = laser.CollisionDamage * 3
+                    end
+                elseif laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                    laser:ClearTearFlags(TearFlags.TEAR_NEEDLE)
+                    laser.CollisionDamage = laser.CollisionDamage / 3
                 end
-            elseif laser:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                laser:ClearTearFlags(TearFlags.TEAR_NEEDLE)
-                laser.CollisionDamage = laser.CollisionDamage / 3
             end
         end
-    end
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_FIRE_SWORD,
-    ---@param knife EntityKnife
-    function(_, knife)
-        local player = Astro:GetPlayerFromEntity(knife)
-        
-        if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
-            if CheckNeedleChance(player) then
-                if not knife:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                    knife:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    knife.CollisionDamage = knife.CollisionDamage * 3
+    )
+    
+    Astro:AddCallback(
+        ModCallbacks.MC_POST_FIRE_SWORD,
+        ---@param knife EntityKnife
+        function(_, knife)
+            local player = Astro:GetPlayerFromEntity(knife)
+            
+            if player ~= nil and ShouldEnhance(player, PlayerForm.PLAYERFORM_DRUGS) and player:HasCollectible(CollectibleType.COLLECTIBLE_EUTHANASIA) then
+                if CheckNeedleChance(player) then
+                    if not knife:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                        knife:AddTearFlags(TearFlags.TEAR_NEEDLE)
+                        knife.CollisionDamage = knife.CollisionDamage * 3
+                    end
+                elseif knife:HasTearFlags(TearFlags.TEAR_NEEDLE) then
+                    knife:ClearTearFlags(TearFlags.TEAR_NEEDLE)
+                    knife.CollisionDamage = knife.CollisionDamage / 3
                 end
-            elseif knife:HasTearFlags(TearFlags.TEAR_NEEDLE) then
-                knife:ClearTearFlags(TearFlags.TEAR_NEEDLE)
-                knife.CollisionDamage = knife.CollisionDamage / 3
             end
         end
-    end
-)
+    )
+end
 --#endregion
 
 --#region Mom
