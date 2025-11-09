@@ -142,12 +142,14 @@ Astro:AddCallbackCustom(
         if Options.Language == "kr" or REPKOR then
             if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
                 local item = Astro.EID[pickingUpItem.subType]
-                if item and not REPENTOGON then
+             -- if item and not REPENTOGON then
+                if item then
                     Game():GetHUD():ShowItemText(item.name or '', item.description or '')
                 end
             else
                 local trinket = Astro.EID.Trinket[pickingUpItem.subType]
-                if trinket and not REPENTOGON then
+             -- if trinket and not REPENTOGON then
+                if trinket then
                     Game():GetHUD():ShowItemText(trinket.name or '', trinket.description or '')
                 end
             end
