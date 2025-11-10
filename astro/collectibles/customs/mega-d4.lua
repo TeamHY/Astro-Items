@@ -7,6 +7,9 @@ local ITEM_ID = Astro.Collectible.MEGA_D4
 ---
 
 if EID then
+    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorRed}}REPENTOGON이 없으면 작동하지 않습니다.#"
+    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorRed}}Does not work without REPENTOGON.#"
+
     local CRAFT_HINT = {
         ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
         ["en_us"] = "#{{DiceRoom}} Can be transformed {{ColorYellow}}using it in the Dice Room{{CR}}"
@@ -15,21 +18,19 @@ if EID then
 
     Astro:AddEIDCollectible(
         ITEM_ID,
-        "{{Quality0}} 사용 시 등급을 선택하며;" ..
-        "#{{ArrowGrayRight}} 소지중인 아이템 중 선택한 등급의 아이템을 그 방 배열의 아이템으로 바꿉니다." ..
-        "#{{ColorRed}}리펜토곤이 없으면 작동하지 않습니다.",
         "대왕 4면체 주사위",
         "...",
-        "ko_kr"
+        rgonWarning ..
+        "{{Quality0}} 사용 시 등급을 선택하며;" ..
+        "#{{ArrowGrayRight}} 소지중인 아이템 중 선택한 등급의 아이템을 그 방 배열의 아이템으로 바꿉니다."
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
-        "On use, lets you choose a quality. Rerolls all items of the selected quality in your inventory into items from the current room's item pool." ..
-        "#{{ColorRed}}Does not work without Repentogon.",
         "Mega D4",
-        "...",
-        "en_us"
+        rgonWarningENG ..
+        "On use, lets you choose a quality. Rerolls all items of the selected quality in your inventory into items from the current room's item pool."
     )
 end
 

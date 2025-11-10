@@ -15,20 +15,21 @@ if EID then
 
     Astro:AddEIDCollectible(
         ITEM_ID,
-        "패널티 피격 시 해당 피격을 무력화 이후 퍼즈 키 클릭" ..
+        "P키", "...",
+        "!!! 개발중입니다" ..
+        "#패널티 피격 시 해당 피격을 무력화 이후 퍼즈 키 클릭" ..
         "#패널티 피격 시마다 쿨타임이 충전되며, 쿨타임이 완충되었을 경우 해당 아이템 자동 제거" ..
-        "#에덴 소울처럼 최초 획득 시 기본 쿨 제거시켜놓고 테스트",
-        "P Key", "...",
-        "ko_kr"
+        "#에덴 소울처럼 최초 획득 시 기본 쿨 제거시켜놓고 테스트"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
-        "When taking penalty damage, nullifies the damage and forces pause key input" ..
+        "P Key",
+        "!!! WIP ITEM" ..
+        "#When taking penalty damage, nullifies the damage and forces pause key input" ..
         "#Each penalty hit charges cooldown, removes item when cooldown is full" ..
-        "#Initially starts with no cooldown like Eden's Soul",
-        "P Key", "...",
-        "en_us"
+        "#Initially starts with no cooldown like Eden's Soul"
     )
 end
 

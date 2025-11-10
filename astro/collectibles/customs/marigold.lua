@@ -15,19 +15,19 @@ local dropActionPressTime = 0
 if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "마리골드",
+        "...",
         "{{BossRoom}} 보스방 클리어 시 {{ColorGold}}황금 장신구{{CR}} 3개를 소환합니다." ..
         "#{{ButtonRT}} (Ctrl)키를 누르고 있으면 소지중인 장신구를 흡수하며, 그 방의 장신구가 {{ColorGold}}황금 장신구{{CR}}로 바꿉니다." ..
-        "#중첩이 가능합니다.",
-        "마리골드", "...",
-        "ko_kr"
+        "#중첩이 가능합니다."
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Marigold",
         "Spawns 3 golden trinkets when clearing boss rooms. Can stack." ..
-        "#Holding Drop key makes all trinkets in the room golden and absorbs held trinkets.",
-        "Marigold", "...",
-        "en_us"
+        "#Holding Drop key makes all trinkets in the room golden and absorbs held trinkets."
     )
 end
 

@@ -17,20 +17,20 @@ local FLY_COLOR = Color(1, 1, 1, 1, 1, 0.8, 0)
 if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "황금 구피",
+        "...",
         "파란 파리가 소환될 때, 50% 확률로 황금 파리를 추가로 소환합니다." ..
         "#{{ArrowGrayRight}] 황금 파리는 적에게 접촉시 3초간 접촉한 적을 멈추게 만들며, 멈춘 적은 처치시 {{Coin}}동전을 1~3개 드랍합니다." ..
-        "#{{LuckSmall}} 행운이 50 이상일 때 100% 확률 행운 1당 +1%p",
-        "황금 구피", "...",
-        "ko_kr"
+        "#{{LuckSmall}} 행운이 50 이상일 때 100% 확률 행운 1당 +1%p"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Golden Guppy",
         "50% chance to spawn an additional golden fly." ..
         "#Golden flies turn monsters into gold for 3 seconds when dealing damage." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        "Golden Guppy", "...",
-        "en_us"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
     )
 end
 

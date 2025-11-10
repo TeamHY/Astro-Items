@@ -17,20 +17,20 @@ local FLY_COLOR = Color(1, 1, 1, 1, 1, 1, 1)
 if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "신성한 구피",
+        "...",
         "파란 파리가 소환될 때 50% 확률로 신성한 파리를 추가로 소환합니다." ..
-        "#{{ArrowGrayRight}} 신성한 파리는 적에게 접촉시 그 자리에 빛줄기가 떨어집니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
-        "신성한 구피", "...",
-        "ko_kr"
+        "#{{ArrowGrayRight}} 신성한 파리는 적에게 접촉시 그 자리에 빛줄기를 내립니다." ..
+        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Divine Guppy",
         "50% chance to spawn an additional holy-themed fly." ..
         "#Holy flies cause light rays to fall when dealing damage to monsters." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        "Divine Guppy", "...",
-        "en_us"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
     )
 end
 

@@ -23,18 +23,18 @@ if EID then
 
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "병든 구피",
+        "...",
         "파란 파리가 소환될 때 50% 확률로 파란 파리를 추가로 소환합니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
-        "병든 구피", "...",
-        "ko_kr"
+        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Blighted Guppy",
         "50% chance to spawn an additional blue fly." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        "Blighted Guppy", "...",
-        "en_us"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
     )
 end
 

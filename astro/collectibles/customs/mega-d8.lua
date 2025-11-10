@@ -39,18 +39,18 @@ if EID then
 
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "대왕 8면체 주사위",
+        "능력치 증폭기",  --임시 플레이버
         "사용 시 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{ShotspeedSmall}}탄속, {{LuckSmall}}행운 중 하나를 선택하며;" ..
         "#{{ArrowGrayRight}} 선택한 능력치의 배율을 x1.0 ~ x3.0로 바꿉니다." ..
-        "#!!! 같은 능력치에 재사용 시 기존 능력치 초기화",
-        "대왕 8면체 주사위", "능력치 증폭기",  --임시 플레이버
-        "ko_kr"
+        "#!!! 같은 능력치에 재사용 시 기존 능력치 초기화"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
-        "On use, choose one stat to boost. The chosen stat is multiplied by x1.0 ~ x3.0. Using on the same stat resets the previous multiplier.",
-        "Mega D8", "...",
-        "en_us"
+        "Mega D8",
+        "On use, choose one stat to boost. The chosen stat is multiplied by x1.0 ~ x3.0. Using on the same stat resets the previous multiplier."
     )
 end
 

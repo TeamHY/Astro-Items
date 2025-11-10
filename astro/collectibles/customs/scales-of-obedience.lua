@@ -13,18 +13,17 @@ local SCALES_OF_OBEDIENCE_VARIANT = Isaac.GetEntityVariantByName("Scales of Obed
 if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "복종의 천칭",
         "↑ {{ColorCyan}}모든 세트 적용{{CR}}" ..
-        "#공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)",
-        "복종의 천칭", "...",
-        "ko_kr"
+        "#공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Scales of Obedience",
         "Activates all set effects." ..
-        "#Erases monsters if your damage exceeds their hit points. Does not work on boss monsters.",
-        "Scales of Obedience", "...",
-        "en_us"
+        "#Erases monsters if your damage exceeds their hit points. Does not work on boss monsters."
     )
 end
 

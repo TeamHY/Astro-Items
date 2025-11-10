@@ -19,20 +19,19 @@ local FLY_COLOR = Color(1, 1, 1, 1, 0.4, 0.4, 0.2)
 if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "스켈레톤 구피", "...",
         "파리가 소환될 때 50% 확률로 뼈 파리를 추가로 소환합니다." ..
         "#{{ArrowGrayRight}} 뼈 파리는 적에게 접촉시 4방향으로 무언가에 부딪힐 때 1~3갈래로 갈라지는 뼈 눈물을 발사합니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
-        "스켈레톤 구피", "...",
-        "ko_kr"
+        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Skeleton Guppy",
         "50% chance to spawn an additional bone-themed fly." ..
         "#Bone flies deal bone splash damage when hitting monsters." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        "Skeleton Guppy", "...",
-        "en_us"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
     )
 end
 

@@ -15,22 +15,22 @@ local FLY_SUBTYPE = 1001
 local FLY_COLOR = Color(1, 1, 1, 1, 1, 0, 0)
 
 if EID then
-    Astro:AddEIDCollectible(    -- `혈사 파리`는 틀린 명칭입니다. 컨셉이 유황이면 영어명을 `Brimstone Guppy`, 한국어명을 `유황 구피` 또는 `유황불 구피`로 바꿔주세요.
-        ITEM_ID,                                          -- 컨셉이 혈액이면 한국어명을 `핏빛 구피`/`핏덩이 구피`/`피투성이 구피`로 바꿔주세요
+    Astro:AddEIDCollectible(    -- `혈사 구피`는 틀린 명칭입니다. 컨셉이 유황이면 영어명을 `Brimstone Guppy`, 한국어명을 `유황 구피` 또는 `유황불 구피`로 바꿔주세요.
+        ITEM_ID,                                               -- 컨셉이 혈액이면 한국어명을 `핏빛 구피`/`핏덩이 구피`/`피투성이 구피`로 바꿔주세요
+        "혈사 구피",
+        "...",
         "파란 파리가 소환될 때 50% 확률로 혈사 파리를 추가로 소환합니다." ..
         "#{{ArrowGrayRight}} 혈사 파리는 적에게 접촉시 해당 위치에 {{Collectible118}}Brimstone 혈사포가 소환됩니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
-        "혈사 구피", "...",
-        "ko_kr"
+        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Blood Guppy",
         "50% chance to spawn an additional blood fly." ..
         "#Blood flies spawn {{Collectible118}}Brimstone laser at monster location when dealing damage." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        "Blood Guppy", "...",
-        "en_us"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
     )
 end
 

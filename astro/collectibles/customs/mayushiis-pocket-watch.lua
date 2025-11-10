@@ -13,21 +13,21 @@ local LUCK_CHANCE = 0.01
 if EID then
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "마유시의 회중시계",
+        "...",
         "페널티 피격 시 50% 확률로 {{Collectible422}}Glowing Hourglass가 발동됩니다." ..
         "#{{Blank}} {{ColorGray}}(클리어한 방과 {{BossRoom}}보스방에서는 미발동){{CR}}" ..
         "#중첩 시 최종 확률이 합 연산으로 증가합니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
-        "마유시의 회중시계", "...",
-        "ko_kr"
+        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Mayushii's Pocket Watch", 
         "50% chance to trigger {{Collectible422}}Glowing Hourglass when taking penalty damage. Does not activate in cleared rooms or {{BossRoom}}boss rooms." ..
         "#Stacking increases the final chance by additive calculation." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        "Mayushii's Pocket Watch", "...",
-        "en_us"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
     )
 end
 

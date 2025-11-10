@@ -7,6 +7,9 @@ local ITEM_ID = Astro.Collectible.MEGA_D6
 ---
 
 if EID then
+    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorRed}}REPENTOGON이 없으면 작동하지 않습니다.#"
+    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorRed}}Does not work without REPENTOGON.#"
+
     local CRAFT_HINT = {
         ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
         ["en_us"] = "#{{DiceRoom}} Can be transformed {{ColorYellow}}using it in the Dice Room{{CR}}"
@@ -15,30 +18,28 @@ if EID then
 
     Astro:AddEIDCollectible(
         ITEM_ID,
+        "대왕 주사위",
+        "굴려 굴려 굴려",
+        rgonWarning ..
         "사용 시 그 방 아이템에 {{ColorOrange}}아래 효과 중 하나를 골라{{CR}} 발동합니다:" ..
         "#{{ArrowGrayRight}} 다른 아이템으로 바꿉니다." ..
         "#{{ArrowGrayRight}} 같은 유형(패시브/액티브)의 다른 아이템으로 바꿉니다." ..
         "#{{ArrowGrayRight}} 같은 등급의 다른 아이템으로 바꿉니다." ..
         "#{{ArrowGrayRight}} {{Player31}}Tainted Lost에게 등장하지 않는 아이템으로 바꿉니다." ..
-        "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다." ..
-        "#{{ColorRed}}리펜토곤이 없으면 작동하지 않습니다.",
-        "대왕 주사위",
-        "굴려 굴려 굴려",
-        "ko_kr"
+        "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다."
     )
 
-    Astro:AddEIDCollectible(
+    Astro:AddEIDCollectible2(
+        "en_us",
         ITEM_ID,
+        "Mega D6",
+        rgonWarningENG ..
         "When used, {{ColorOrange}}applies one of the following effects{{CR}} to all items in the room:" ..
         "#{{ArrowGrayRight}} Changes them to different items." ..
         "#{{ArrowGrayRight}} Preserves passive/active type and changes to different items." ..
         "#{{ArrowGrayRight}} Preserves quality and changes to different items." ..
         "#{{ArrowGrayRight}} Changes to useless items for {{Player31}}Tainted Lost." ..
-        "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups." ..
-        "#{{ColorRed}}Does not work without Repentogon.",
-        "Mega D6",
-        "Reroll reroll reroll",
-        "en_us"
+        "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups."
     )
 end
 
