@@ -142,14 +142,12 @@ Astro:AddCallbackCustom(
         if Options.Language == "kr" or REPKOR then
             if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
                 local item = Astro.EID[pickingUpItem.subType]
-             -- if item and not REPENTOGON then
-                if item then
+                if item and not REPENTOGON then
                     Game():GetHUD():ShowItemText(item.name or '', item.description or '')
                 end
             else
                 local trinket = Astro.EID.Trinket[pickingUpItem.subType]
-             -- if trinket and not REPENTOGON then
-                if trinket then
+                if trinket and not REPENTOGON then
                     Game():GetHUD():ShowItemText(trinket.name or '', trinket.description or '')
                 end
             end
@@ -207,15 +205,13 @@ Astro:AddCallback(
     end
 )
 
---[[
-영문 EID를 위해 임시 주석처리
-
 if REPENTOGON then
 	Astro:AddPriorityCallback(
         Astro.Callbacks.MOD_INIT,
         CallbackPriority.LATE,
         function()
-            if not (REPKOR or Options.Language == "kr") then goto continue end
+            if not (Options.Language == "kr" or REPKOR) then goto continue end
+
             local conf = Isaac.GetItemConfig()
 
             if Astro.EID then
@@ -244,4 +240,3 @@ if REPENTOGON then
         end
     )
 end
-]]
