@@ -62,10 +62,10 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_HUMBLEING_BUNDLE] = { Id = Astro.Collectible.STEAM_BUNDLE, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_LIL_CHEST] = { Id = Astro.Collectible.BIG_CHEST, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_CRICKETS_HEAD] = { Id = Astro.Collectible.MAXS_HEAD, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_BIRTHRIGHT] = { Id = Astro.Collectible.LEGACY, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_D4] = { Id = Astro.Collectible.MEGA_D4, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_D6] = { Id = Astro.Collectible.MEGA_D6, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_D8] = { Id = Astro.Collectible.MEGA_D8, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_BIRTHRIGHT] = { Id = Astro.Collectible.LEGACY, Chance = 0.1 },
+    [CollectibleType.COLLECTIBLE_D4] = { Id = Astro.Collectible.MEGA_D4, Chance = 0.0 },
+    [CollectibleType.COLLECTIBLE_D6] = { Id = Astro.Collectible.MEGA_D6, Chance = 0.1 },
+    [CollectibleType.COLLECTIBLE_D8] = { Id = Astro.Collectible.MEGA_D8, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_MIDAS_TOUCH] = { Id = Astro.Collectible.MARIGOLD, Chance = 0.3 },
 }
 
