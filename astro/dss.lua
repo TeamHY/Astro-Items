@@ -32,7 +32,7 @@ end
 --
 
 -- Change this variable to match your mod. The standard is "Dead Sea Scrolls (Mod Name)"
-local DSSModName = "Astrobirth"
+local DSSModName = "astrobirth"
 
 -- Every MenuProvider function below must have its own implementation in your mod, in order to
 -- handle menu save data.
@@ -132,7 +132,7 @@ local exampledirectory = {
     -- The keys in this table are used to determine button destinations.
     main = {
         -- "title" is the big line of text that shows up at the top of the page!
-        title = 'Astrobirth',
+        title = 'astrobirth',
         -- "buttons" is a list of objects that will be displayed on this page. The meat of the menu!
         buttons = {
             -- The simplest button has just a "str" tag, which just displays a line of text.
@@ -217,7 +217,7 @@ local exampledirectorykey = {
     Path = {},
 }
 
-DeadSeaScrollsMenu.AddMenu("Astrobirth", {
+DeadSeaScrollsMenu.AddMenu("astrobirth", {
     -- The Run, Close, and Open functions define the core loop of your menu. Once your menu is
     -- opened, all the work is shifted off to your mod running these functions, so each mod can have
     -- its own independently functioning menu. The `init` function returns a table with defaults
