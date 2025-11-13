@@ -3,7 +3,7 @@
     <name>!#Astrobirth</name>
     <directory>astro-items</directory>
     <id>3260980911</id>
-    <description>[img=https://i.imgur.com/yks9vy5.png]
+    <description>[img=https://i.imgur.com/CYd21ua.png]
 Astrobirth is a content mod derived from streamer [url=https://www.youtube.com/@아이작오헌영]OHY[/url]'s 1vs1 time attack battles. Experience more thrilling moments with Isaac, including the following features!
 [list]
 [*][b]150+ new items[/b]
@@ -19,7 +19,7 @@ Discover surprising pickups with [url=https://steamcommunity.com/sharedfiles/fil
 Sorry, there isn't much synergy. But I guarantee it won't conflict with most mods!
 [list]
 [*]Repentance+ and Internal Item Description (English)
-[*][url=https://repentogon.com/]REPENTOGON+[/url] (recommended for a better experience)
+[*][url=https://repentogon.com/]REPENTOGON+[/url](If it's missing, a few items won't work)
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=836319872]External Item Description[/url] (Korean / AI Translation English)
 [/list]
 
@@ -33,4 +33,10 @@ Sorry, there isn't much synergy. But I guarantee it won't conflict with most mod
 [/list]</description>
     <version>1.153</version>
     <visibility>Public</visibility>
+    <tag id="Lua"/>
+    <tag id="Items"/>
+    <tag id="Active Items"/>
+    <tag id="Trinkets"/>
+    <tag id="Player Characters"/>
+    <tag id="Familiars"/>
 </metadata>

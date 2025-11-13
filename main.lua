@@ -30,6 +30,7 @@ require "astro.ban"
 require "astro.room"
 require "astro.curse"
 require "astro.large-sprite"
+require "astro.birthright"
 
 local function GetCurrentModPath()
 	if debug then

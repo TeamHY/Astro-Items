@@ -2,6 +2,7 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.EID = {}
 Astro.EID.Trinket = {}
+Astro.EID.Birthright = {}
 Astro.EID.Hints = {}
 Astro.EID.ShowHint = false
 Astro.EID.HintAdded = false
@@ -90,6 +91,22 @@ function Astro:AddEIDTrinket(id, name, description, eidDescription, golden)
     }
 end
 
+---@param player PlayerType
+---@param eidDescription string
+---@param falvorText string
+---@param language string
+function Astro:AddEIDBirthright(player, eidDescription, falvorText, language)
+    if EID then
+        EID:addBirthright(player, eidDescription, EID:getPlayerName(player), language)
+    end
+
+    if language == "ko_kr" then
+        Astro.EID.Birthright[player] = {
+            description = falvorText
+        }
+    end
+end
+
 ---@param id CollectibleType
 ---@param description table
 function Astro:AddCraftHint(id, description)
@@ -141,9 +158,16 @@ Astro:AddCallbackCustom(
     function(_, player, pickingUpItem)
         if Options.Language == "kr" or REPKOR then
             if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
-                local item = Astro.EID[pickingUpItem.subType]
-                if item and not REPENTOGON then
-                    Game():GetHUD():ShowItemText(item.name or '', item.description or '')
+                if pickingUpItem.subType == CollectibleType.COLLECTIBLE_BIRTHRIGHT then
+                    local birthright = Astro.EID.Birthright[player:GetPlayerType()]
+                    if birthright then
+                        Game():GetHUD():ShowItemText("생득권", birthright.description or "???")
+                    end
+                else
+                    local item = Astro.EID[pickingUpItem.subType]
+                    if item and not REPENTOGON then
+                        Game():GetHUD():ShowItemText(item.name or '', item.description or '')
+                    end
                 end
             else
                 local trinket = Astro.EID.Trinket[pickingUpItem.subType]
@@ -155,7 +179,7 @@ Astro:AddCallbackCustom(
     end
 )
 
-local eideng = require "astro.collectibles.eid-dlatlduddjtjfaud"
+local eideng = require "astro.collectibles.eid-draft-translation"
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -193,9 +217,8 @@ Astro:AddCallback(
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN_B] = EID.InlineIcons["PandorasActor"]
 
 
-            -- 사왈 / 급하게 AI 돌려서 넣은거라 개떡같이 추가해놨습니다. 설명 검수 안했고 작동만 확인함
+            -- 사왈 / 급하게 AI 돌려서 넣은거라 개떡같이 추가해놨습니다.
             -- eid 설명 한 곳으로 중앙화 해야할 듯합니다 한국어만 있었다가 영어 들어가려니까 시간 소모 너무큼
-            -- 5퀄템들은 손볼 시간이 없어서 냅뒀습니다
             for i = Astro.Collectible.CYGNUS, Astro.Collectible.LOVE_LETTER do
                 local modItemOffset = i - 733
                 local desc = eideng[733 + modItemOffset]
