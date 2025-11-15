@@ -3,7 +3,7 @@
 -- Use your own mod's functions for this if it has them! If not, however, feel free to copy this and
 -- change the mod name.
 --
-local myMod = Astro
+local myMod = Astro.DDSMyMod
 myMod.menusavedata = nil
 
 local json = require("json")
