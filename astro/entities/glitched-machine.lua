@@ -17,6 +17,27 @@ Astro.Entity.GlitchedMachine = {
 local INIT_CHECK_SUBTYPE = 1000
 
 Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            EID:addEntity(
+                Astro.Entity.GlitchedMachine.Type, Astro.Entity.GlitchedMachine.Variant, Astro.Entity.GlitchedMachine.SubType,
+                "글리치 머신",
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} 동전 " .. PRICE .. "원을 소모하여 그 방의 아이템을 0.2초마다 4개의 랜덤 아이템과 전환시킵니다.",
+                "ko_kr"
+            )
+
+            EID:addEntity(
+                Astro.Entity.GlitchedMachine.Type, Astro.Entity.GlitchedMachine.Variant, Astro.Entity.GlitchedMachine.SubType,
+                "Glitched Machine",
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} Insert " .. PRICE .. " coin to swap the room's item with 4 random items every 0.2 seconds.",
+                "en_us"
+            )
+        end
+    end
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_PRE_PLAYER_COLLISION,
     ---@param player EntityPlayer
     ---@param collider Entity

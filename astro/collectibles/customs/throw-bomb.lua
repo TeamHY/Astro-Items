@@ -106,7 +106,9 @@ Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
     ---@param player EntityPlayer
     function(_, player)
-        player:AddBombs(5)
+        if Astro:IsFirstAdded(Astro.Collectible.THROW_BOMB) then
+            player:AddBombs(5)
+        end
     end,
     Astro.Collectible.THROW_BOMB
 )

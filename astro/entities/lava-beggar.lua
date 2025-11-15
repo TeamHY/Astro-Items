@@ -18,6 +18,27 @@ local INIT_CHECK_SUBTYPE = 1000
 local LAVA_BEGGAR_VARIANT = 3101
 
 Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            EID:addEntity(
+                EntityType.ENTITY_SLOT, LAVA_BEGGAR_VARIANT, 0,
+                "용암 거지",
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_SMELTER .. "}} 동전 " .. PRICE .. "원을 기부하여 소지중인 장신구를 모두 흡수합니다.",
+                "ko_kr"
+            )
+
+            EID:addEntity(
+                EntityType.ENTITY_SLOT, LAVA_BEGGAR_VARIANT, 0,
+                "Lava Beggar",
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_SMELTER .. "}} Donate " .. PRICE .. " coins to absorb all trinkets you are holding.",
+                "en_us"
+            )
+        end
+    end
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_PRE_PLAYER_COLLISION,
     ---@param player EntityPlayer
     ---@param collider Entity
@@ -73,16 +94,39 @@ Astro:AddCallbackCustom(
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_SLOT_INIT,
     ---@param slot Entity
-    function(_, slot)        
+    function(_, slot)
         slot.SpriteOffset = Vector(0, 5)
+
+        --[[ 스폰 효과 쓸거면 쓰고 안쓸거면 말고
+        local save = Astro.SaveManager.GetRunSave()
+        local slotIndex = Astro.SaveManager.Utility.GetSaveIndex(slot)
+        save._ASTRO_LAVA_BEGGAR_spawned = save._ASTRO_LAVA_BEGGAR_spawned or {}
+
+        if not save._ASTRO_LAVA_BEGGAR_spawned[slotIndex] then
+            Game():SpawnParticles(slot.Position + Vector(0, 3), 16, 2, 0, nil, nil, 66)
+            save._ASTRO_LAVA_BEGGAR_spawned[slotIndex] = true
+        end]]
     end,
     LAVA_BEGGAR_VARIANT
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_UPDATE,
+    function(_)
+        local slots = Isaac.FindByType(EntityType.ENTITY_SLOT, LAVA_BEGGAR_VARIANT, -1, true)
+        if #slots > 0 then
+            for _, slot in ipairs(slots) do
+                slot.SpriteOffset = Vector(0, 5)
+            end
+        end
+    end
 )
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_SLOT_UPDATE,
     ---@param slot Entity
     function(_, slot)
+        slot.SpriteOffset = Vector(0, 5)
         local sprite = slot:GetSprite()
 
         if sprite:IsFinished("PayPrize") then
