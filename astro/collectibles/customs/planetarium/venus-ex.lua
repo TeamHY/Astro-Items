@@ -57,6 +57,10 @@ Astro:AddCallbackCustom(
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_VENUS) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_VENUS)
         end
+
+        if Astro:IsLeah(player) then
+            player:RemoveCostume(Isaac.GetItemConfig():GetCollectible(CollectibleType.COLLECTIBLE_VENUS))
+        end
     end,
     Astro.Collectible.VENUS_EX
 )
