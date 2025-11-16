@@ -39,6 +39,13 @@ Astro:AddCallback(
 
         if #players > 0 then
             Isaac.ExecuteCommand("goto s.devil")
+            
+            Astro:ScheduleForUpdate(
+                function()
+                    Astro:SpawnCard(Card.CARD_FOOL, Game():GetRoom():GetCenterPos())
+                end,
+                10
+            )
         end
     end,
     STAIRWAY_TO_HELL_VARIANT
