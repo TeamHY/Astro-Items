@@ -195,7 +195,7 @@
 	<passive gfx="Retrograde Arcana.png" quality="3" devilprice="2" shopprice="15" name="Retrograde Arcana" description="ynitsed desreveR" id="194" />
 	<passive gfx="Techrapod.png" quality="3" devilprice="2" shopprice="15" name="Techrapod" description="Triangular laser" id="195" />
 	<passive gfx="Throw Bomb.png" quality="2" devilprice="1" shopprice="15" name="Throw Bomb" description="Fire in the hole!" id="196" />
-	<active gfx="Love Letter.png" quality="2" devilprice="2" maxcharges="3" shopprice="15" name="Love Letter" description="Return to Sender" id="197" />
+	<active gfx="Love Letter.png" quality="2" devilprice="2" maxcharges="0" shopprice="15" name="Love Letter" description="Return to Sender" id="197" />
 	<passive gfx="Mayushii's Pocket Watch.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Mayushii's Pocket Watch" description="..." id="198" />
 	<passive gfx="Scales of Obedience.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Scales of Obedience" description="..." id="199" />
 	<passive gfx="Artifact Ignition.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Artifact Ignition" description="..." id="200" />

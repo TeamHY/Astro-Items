@@ -65,4 +65,6 @@
     </entity>
     <entity name="Legacy Evil" anm2path="legacy_evil.anm2" id="1000" variant="3111" subtype="1" collisionMass="1" friction="1">
     </entity>
+    <entity name="Love Letter" anm2path="love_letter.anm2" id="2" variant="3100" subtype="0" collisionMass="8" collisionRadius="7" friction="1" >
+    </entity>
 </entities>
