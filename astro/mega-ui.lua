@@ -43,6 +43,8 @@ function Astro.MegaUI:CreateInstance(config)
                 instance:ApplyChoice(player)
                 return {Discharge = true, Remove = false, ShowAnim = true} 
             end
+
+            return {Discharge = false, Remove = false, ShowAnim = false}
         end,
         config.itemId
     )
