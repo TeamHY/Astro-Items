@@ -7,8 +7,8 @@ local ITEM_ID = Astro.Collectible.MEGA_D6
 ---
 
 if EID then
-    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorRed}}REPENTOGON이 없으면 작동하지 않습니다.#"
-    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorRed}}Does not work without REPENTOGON.#"
+    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
+    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
 
     local CRAFT_HINT = {
         ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
@@ -21,7 +21,7 @@ if EID then
         "대왕 주사위",
         "굴려 굴려 굴려",
         rgonWarning ..
-        "사용 시 그 방 아이템에 {{ColorOrange}}아래 효과 중 하나를 골라{{CR}} 발동합니다:" ..
+        "사용 시 그 방의 아이템에 {{ColorOrange}}아래 효과 중 하나를 골라{{CR}} 발동합니다:" ..
         "#{{ArrowGrayRight}} 다른 아이템으로 바꿉니다." ..
         "#{{ArrowGrayRight}} 같은 유형(패시브/액티브)의 다른 아이템으로 바꿉니다." ..
         "#{{ArrowGrayRight}} 같은 등급의 다른 아이템으로 바꿉니다." ..

@@ -3,14 +3,29 @@ Astro.Collectible.LOVE_LETTER = Isaac.GetItemIdByName("Love Letter")
 local LOVE_LETTER_VARIANT = Isaac.GetEntityVariantByName("Love Letter")
 
 if EID then
+    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
+    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
+
     Astro:AddEIDCollectible(
         Astro.Collectible.LOVE_LETTER,
         "고백 편지",
         "전해지지 않은 러브레터",
+        rgonWarning ..
         "사용 시 {{Heart}}/{{BoneHeart}}1칸 또는 {{SoulHeart}}2칸을 {{BrokenHeart}}소지 불가능 체력 1칸으로 바꿔 공격방향으로 편지를 발사합니다." ..
         "#편지에 맞은 적은 해당 게임에서 영원히 아군이 됩니다." ..
         "#{{ArrowGrayRight}} 아군 적은 그 방에서만 유지됩니다." ..
         "#스테이지 당 한번 사용할수 있습니다."
+    )
+
+    Astro:AddEIDCollectible(
+        Astro.Collectible.LOVE_LETTER,
+        "고백 편지",
+        "전해지지 않은 러브레터",
+        rgonWarning ..
+        "Converts {{Heart}}/{{BoneHeart}} 1 or {{SoulHeart}} 2 to 1 {{BrokenHeart}} Broken Heart and fires letter in attack direction." ..
+        "#Hit enemies become permanent allies this run." ..
+        "#{{ArrowGrayRight}} Ally enemies last in the room." ..
+        "#Usable once per stage."
     )
 end
 

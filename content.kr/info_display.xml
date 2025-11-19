@@ -626,7 +626,7 @@
 		<info text="받침대형 아이템 1개를 획득하면 아이작이 사망 증명서를 사용한 위치로 다시 순간이동됩니다"/>
 	</collectible>
 	<collectible id="159">
-		<info text="공격형 아이템을 모든 배열에서 제거합니다"/>
+		<info text="앞으로 받침대형 아이템들의 등급이 상승합니다"/>
 	</collectible>
 	<collectible id="160">
 		<info text="소모 시 아이작이 게임 내 획득할 수 있는 모든 특급 비밀방 배열의 아이템을 보관 중인 방으로 이루어진 특별한 층으로 순간이동됩니다"/>
@@ -776,8 +776,10 @@
 		<info text="폭탄 버튼을 누르면 아이작이 폭탄을 설치하지 않고 손에 들어 공격 방향으로 던지게 합니다"/>
 	</collectible>
 	<collectible id="197">
-		<info text="빨간하트 한 칸 또는 소울하트 한 칸을 소모해 적에게 편지를 발사합니다."/>
-		<info text="편지에 맞은 적은 해당 게임에서 영원히 아군이 됩니다."/>
+		<info text="NEED REPENTOGON"/>
+	</collectible>
+	<collectible id="198">
+		<info text="NEED REPENTOGON"/>
 	</collectible>
 </collectibles>
 
