@@ -161,38 +161,38 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function(_)
-        local input = Input.GetActionValue(ButtonAction.ACTION_DROP, 0)
-        
-        if input > 0 then
-            dropActionPressTime = dropActionPressTime + 1
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            if not player:HasCollectible(ITEM_ID) then return end
 
-            if dropActionPressTime >= LEFT_CTRL_HOLD_DURATION * 2 then
-                local entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TRINKET, -1, true, false)
+            local input = Input.GetActionValue(ButtonAction.ACTION_DROP, 0)
+            
+            if input > 0 then
+                dropActionPressTime = dropActionPressTime + 1
 
-                for _, entity in ipairs(entities) do
-                    local pickup = entity:ToPickup() ---@cast pickup -nil
+                if dropActionPressTime >= LEFT_CTRL_HOLD_DURATION * 2 then
+                    local entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_TRINKET, -1, true, false)
 
-                    if pickup.SubType & TrinketType.TRINKET_GOLDEN_FLAG == 0 then
-                        pickup:Morph(
-                            EntityType.ENTITY_PICKUP,
-                            PickupVariant.PICKUP_TRINKET,
-                            pickup.SubType | TrinketType.TRINKET_GOLDEN_FLAG
-                        )
+                    for _, entity in ipairs(entities) do
+                        local pickup = entity:ToPickup() ---@cast pickup -nil
+
+                        if pickup.SubType & TrinketType.TRINKET_GOLDEN_FLAG == 0 then
+                            pickup:Morph(
+                                EntityType.ENTITY_PICKUP,
+                                PickupVariant.PICKUP_TRINKET,
+                                pickup.SubType | TrinketType.TRINKET_GOLDEN_FLAG
+                            )
+                        end
                     end
-                end
-                
-                ApplyGoldenEffect()
-
-                for i = 1, Game():GetNumPlayers() do
-                    local player = Isaac.GetPlayer(i - 1)
-                
+                    
+                    ApplyGoldenEffect()
                     player:UseActiveItem(CollectibleType.COLLECTIBLE_SMELTER, UseFlag.USE_NOANIM)
+                    
+                    dropActionPressTime = 0
                 end
-                
+            else
                 dropActionPressTime = 0
             end
-        else
-            dropActionPressTime = 0
         end
     end
 )
