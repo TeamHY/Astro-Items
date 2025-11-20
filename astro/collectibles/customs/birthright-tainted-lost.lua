@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            local rgon = "↑ 목숨 +1#"
+            local rgon = REPENTOGON and "↑ 목숨 +1#" or ""
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
                 "더럽혀진 로스트의 생득권",
