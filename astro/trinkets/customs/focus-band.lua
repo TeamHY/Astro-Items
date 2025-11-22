@@ -1,3 +1,5 @@
+local isc = require("astro.lib.isaacscript-common")
+
 Astro.Trinket.FOCUS_BAND = Isaac.GetTrinketIdByName("Focus Band")
 
 ------
@@ -17,8 +19,20 @@ Astro:AddCallback(
                 Astro.Trinket.FOCUS_BAND,
                 "기합의 머리띠",
                 "마지막 수단",
+		        "#!!! 획득한 즉시 흡수됨" ..
                 "#피격 시 체력이 없을 때 1%의 확률로 피해를 무시하고 3초 동안 무적이 됩니다." ..
                 "#{{LuckSmall}} 행운 9 이상일 때 " .. SURVIVAL_MAX .. "% 확률 (행운 1당 +" .. SURVIVAL_LUCK .. "%p)"
+            )
+
+            Astro:AddEIDTrinket(
+                Astro.Trinket.FOCUS_BAND,
+                "Focus Band",
+                "",
+		        "#!!! It absorbs immediately when picked up" ..
+                "#When taking damage and your health is low, there is a 1% chance to ignore the damage and become invulnerable for 3 seconds." ..
+                "#{{Luck}} " .. SURVIVAL_MAX .. "% chance at 9 luck (" .. SURVIVAL_LUCK .. "%p per luck)",
+                nil,
+                "en_us"
             )
 
             Astro:AddGoldenTrinketDescription(Astro.Trinket.FOCUS_BAND, "", 3, 2)
@@ -63,9 +77,7 @@ Astro:AddCallback(
                     end
 
                     Game():ShakeScreen(15)
-                    if not REPENTOGON then
-                        SFXManager():Play(SoundEffect.SOUND_DEAD_SEA_SCROLLS)
-                    end
+                    SFXManager():Play(861)
 
                     player:AddVelocity(dirVec * 6)
                     player:AnimateTrinket(Astro.Trinket.FOCUS_BAND, "Pickup", "PlayerPickupSparkle")
@@ -110,6 +122,23 @@ Astro:AddCallback(
             if not Game():IsPaused() then
                 SURVIVAL_MESSAGE_TIME = SURVIVAL_MESSAGE_TIME - 1
             end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PEFFECT_UPDATE,
+    ---@param player EntityPlayer
+    function(_, player)
+        local trinket0 = player:GetTrinket(0)
+        local trinket1 = player:GetTrinket(1)
+
+        if Astro:CheckTrinket(trinket0, Astro.Trinket.FOCUS_BAND) then
+            player:TryRemoveTrinket(trinket0)
+            isc:smeltTrinket(player, Astro.Trinket.FOCUS_BAND)
+        elseif Astro:CheckTrinket(trinket1, Astro.Trinket.FOCUS_BAND) then
+            player:TryRemoveTrinket(trinket1)
+            isc:smeltTrinket(player, Astro.Trinket.FOCUS_BAND)
         end
     end
 )

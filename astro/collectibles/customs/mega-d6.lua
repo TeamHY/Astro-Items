@@ -204,8 +204,9 @@ local megaUI =
                     )
                 end
             else
-                player:UseCard(Card.CARD_SOUL_EDEN, UseFlag.USE_NOANIM)
+                player:UseCard(Card.CARD_SOUL_EDEN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
             end
+            SFXManager():Play(910)
         end
     }
 )

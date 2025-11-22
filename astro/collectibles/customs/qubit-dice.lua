@@ -91,7 +91,6 @@ local function SpindownModifierCallback(descObj)
     end
     if firstID ~= 0 and EID.TabPreviewID == 0 then
         EID.TabPreviewID = firstID
-        EID:appendToDescription(descObj, "#{{Blank}} " .. EID:getDescriptionEntry("FlipItemToggleInfo"))
     end
     return descObj
 end
@@ -117,13 +116,13 @@ Astro:AddCallback(
         
         local number = rngObj:RandomInt(3) + 1
         if rngObj:RandomFloat() < 0.5 then
-            for _ = 1, rngObj:RandomInt(3) + 1 do
+            for _ = 1, number do
                 playerWhoUsedItem:UseActiveItem(Astro.Collectible.SPINUP_DICE, false)
             end
 
             Game():GetHUD():ShowFortuneText("+" .. number, stringUp)
         else
-            for _ = 1, rngObj:RandomInt(3) + 1 do
+            for _ = 1, number do
                 playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_SPINDOWN_DICE, false)
             end
 

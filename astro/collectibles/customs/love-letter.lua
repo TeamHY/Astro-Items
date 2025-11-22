@@ -180,7 +180,7 @@ Astro:AddCallback(
         end
 
         game:SpawnParticles(tear.Position, EffectVariant.TEAR_POOF_A, 1, 1, Color(1,1,1,1,0.66,0.5,0.66))
-        SFXManager():Play(SoundEffect.SOUND_BOX_OF_FRIENDS)
+        SFXManager():Play(857)
         tear:Remove()
     end,
     LOVE_LETTER_VARIANT
