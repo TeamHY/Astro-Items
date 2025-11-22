@@ -776,7 +776,10 @@
 		<info text="Holding bomb key while placing a bomb holds it in hand to throw in the Isaac's direction"/>
 	</collectible>
 	<collectible id="197">
-		<info text="NEED REPENTOGON"/>
+		<info text="Throws the Love letter in the direction of your choice"/>
+		<info text="Upon striking an enemy, the Love Letter will instantly charm it and its copies during this run"/>
+		<info text="Does not charm bosses and only deals minor damage to them"/>
+		<info text="Can be thrown once per floor. Cannot be recharged through normal methods"/>
 	</collectible>
 	<collectible id="207">
 		<info text="NEED REPENTOGON"/>
