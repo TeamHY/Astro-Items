@@ -7,8 +7,8 @@ local ITEM_ID = Astro.Collectible.MEGA_D4
 ---
 
 if EID then
-    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorRed}}REPENTOGON이 없으면 작동하지 않습니다.#"
-    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorRed}}Does not work without REPENTOGON.#"
+    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
+    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
 
     local CRAFT_HINT = {
         ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",

@@ -75,7 +75,7 @@ return {
     [806] = "+1 Damage per active charge on use (max +5)",
     [807] = "{{Player10}} Prevents items that only grant health, flight, spectral tears, or on-hit activation.",
     [808] = "↑ One of {{Heart}} Heart container, {{BlackHeart}} Black Heart, {{SoulHeart}} Soul Heart +1#{{ArrowUpDown}} {{Damage}} x0.85~1.35 Damage multiplier#{{ArrowUpDown}} {{Tears}} /0.85~1.35 Tear delay#{{ArrowUpDown}} {{Range}} x0.85~1.35 Range multiplier#{{ArrowUpDown}} {{Speed}} x0.85~1.35 Speed multiplier#{{ArrowUpDown}} {{Shotspeed}} x0.85~1.35 Shot speed multiplier#{{ArrowUpDown}} {{Luck}} x0.85~1.35 Luck multiplier#!!! Health from this item doesn't apply immediately; die if no health after pickup.",
-    [809] = "Enter EID description here",
+ -- [809] = "Enter EID description here",
     [810] = "10% chance to summon cross-shaped beam on hit.#{{Timer}} (15s cooldown)#{{Luck}} 100% chance at 30 Luck (+3%p per Luck)",
     [811] = "{{Trinket196}} Spawns Black Mirror on use; -2 Luck.#Fully charges on stage entry.",
     [812] = "Absorbs up to 2 souls on enemy kill.#Consumes souls to summon multiple ghosts;#{{ArrowGrayRight}} Ignores 4s cooldown for {{Collectible801}}/{{Collectible802}}.",
@@ -163,7 +163,7 @@ return {
     [894] = "!!! +2 {{Collectible207}} Ball of Bandages on first pickup#Spawns Ball of Bandages on stage entry.#!!! Amount: ({{Collectible894}} count + {{Collectible823}} count)",
     [895] = "Teleports to room with held items.",
     [896] = "↑ {{Bomb}} +5 Bombs#{{Collectible583}} Throws giga rocket instead of bombs that flies and explodes.",
-    [897] = "Spawns 10 giga bomb pickups.",
+    [897] = "{{Crafting17}} Spawns 10 giga bomb pickups.",
     [898] = "Spawns sticky nickel that disappears after 10 seconds on hit.#Turns summoned sticky nickels into giga bombs that explode on use.",
     [899] = "!!! Usable only in Super Secret Room#Removes one held item on use;#{{ArrowGrayRight}} Spawns removed item and one of {{Collectible1}}/{{Collectible2}}/{{Collectible3}}.#Choose one; the rest disappear.#{{SuperSecretRoom}} Reveals Super Secret Room on stage 1 map.",
     [900] = "!!! {{Collectible399}} Maw Of The Void doesn't appear after pickup#↑ {{Damage}} +1 Damage#{{Chargeable}} Charges after 2.5 seconds hold; releases black ring around character.#{{Collectible399}} Ring multi-hits for up to x30 damage.",
@@ -175,9 +175,9 @@ return {
     [906] = "!!! {{Collectible530}} Death's List doesn't appear after pickup#{{DeathMark}} Sequential kills of skull-marked enemies drop pickups or +1 random stat.#Applies {{BrimstoneCurse}} brimstone mark to room enemies;#{{ArrowGrayRight}} Marked enemies take x2 +3 damage from brimstone for 1 minute.",
     [907] = "{{Damage}} Holding attack key increases damage up to +50%.",
     [908] = "{{Burning}} Burns room enemies on use;#{{ArrowGrayRight}} Spawns {{Card20}} XIX - The Sun once per game.#10% chance to spawn red fire at enemy death while held.#{{Luck}} 100% chance at 90 Luck (+1%p per Luck)#No Burning Basement in next game.",
-    [909] = "Darkens room and creates moonlight in center on use;#{{ArrowGrayRight}} Spawns {{Card19}} XVIII - The Moon once per stage.#Creates moonlight in center on first entry to {{SecretRoom}} secret, {{SuperSecretRoom}} super secret, {{UltraSecretRoom}} ultra secret.#{{Collectible589}} {{ColorGray}}(Moonlight contact: +0.5 {{HalfSoulHeart}} Soul Heart, +0.5 Fire rate (cap) for stage){{CR}}",
+    [909] = "Darkens room and creates moonlight in center on use;#{{ArrowGrayRight}} Spawns {{Card19}} XVIII - The Moon once per stage.#Creates moonlight in center on first entry to {{SecretRoom}} secret room, {{SuperSecretRoom}} super secret room, {{UltraSecretRoom}} ultra secret room.#{{Collectible589}} {{ColorGray}}(Moonlight contact: +0.5 {{HalfSoulHeart}} Soul Heart, +0.5 Fire rate (cap) for stage){{CR}}",
     [910] = "{{Burning}} Burns room enemies on use;#{{ArrowGrayRight}} Spawns {{Card75}} XIX - The Sun? once per game.#10% chance to spawn blue fire at enemy death while held.#{{Luck}} 100% chance at 90 Luck (+1%p per Luck)#No Burning Basement in next game.",
-    [911] = "Darkens room and creates moonlight in center on use;#{{ArrowGrayRight}} Spawns {{Card19}} XVIII - The Moon? once per game.#Creates moonlight in center on first entry to {{TreasureRoom}} treasure, {{Shop}} shop, {{BossRoom}} boss.#{{Collectible589}} {{ColorGray}}(Moonlight contact: +0.5 {{HalfSoulHeart}} Soul Heart, +0.5 Fire rate (cap) for stage){{CR}}",
+    [911] = "Darkens room and creates moonlight in center on use;#{{ArrowGrayRight}} Spawns {{Card74}} XVIII - The Moon? once per game.#Creates moonlight in center on first entry to {{TreasureRoom}} treasure room, {{Shop}} shop, {{BossRoom}} boss room.#{{Collectible589}} {{ColorGray}}(Moonlight contact: +0.5 {{HalfSoulHeart}} Soul Heart, +0.5 Fire rate (cap) for stage){{CR}}",
     [912] = "{{DevilRoom}} Creates ladder to Devil room in stage first room.#!!! Ladder disappears on room exit.",
     [913] = "!!! Single use#↑ +1 life while held#{{ArrowGrayRight}} Revives with 0.5 health in the room on death; item disappears.#Spawns one non-held item from appeared items this game.",
     [914] = "Randomly instantly kills enemies with x3 damage tears that burst in 10 directions.#{{Luck}} 100% chance at 14.5 Luck",
@@ -194,6 +194,6 @@ return {
     [925] = "{{Crafting11}} Lucky penny pickups spawn as 1+1.",
     [926] = "!!! Replaces all upright {{Card}} cards with reversed.",
     [927] = "Creates equilateral triangle laser around character in uncleared rooms.#Laser pierces and deals x1 damage per frame.",
-    [928] = "↑ {{Bomb}} +5 Bombs#Throws bombs instead of placing.",
-    [929] = "Converts {{Heart}}/{{BoneHeart}} 1 or {{SoulHeart}} 2 to 1 {{BrokenHeart}} Broken Heart and fires letter in attack direction.#Hit enemies become permanent allies this game.#{{ArrowGrayRight}} Ally enemies last in the room.#Usable once per stage; doesn't charge with batteries or clears."
+    [928] = "↑ {{Bomb}} +5 Bombs#Throws bombs instead of placing."
+ -- [929] = "Converts {{Heart}}/{{BoneHeart}} 1 or {{SoulHeart}} 2 to 1 {{BrokenHeart}} Broken Heart and fires letter in attack direction.#Hit enemies become permanent allies this run.#{{ArrowGrayRight}} Ally enemies last in the room.#Usable once per stage."
 }

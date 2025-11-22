@@ -42,6 +42,5 @@ Astro:AddCallback(
                 return false
             end
         end
-    end,
-    EntityType.ENTITY_PLAYER
+    end
 )

@@ -626,7 +626,7 @@
 		<info text="Picking up 1 pedestal item teleports Isaac back to the location where Death Certificate was used"/>
 	</collectible>
 	<collectible id="159">
-		<info text="Removes offensive items from all pools"/>
+		<info text="Increases the item quality of future pedestal items"/>
 	</collectible>
 	<collectible id="160">
 		<info text="Consumes to teleport to a special floor consisting of rooms holding all ultra secret room pool items in the game"/>
@@ -774,6 +774,12 @@
 	</collectible>
 	<collectible id="196">
 		<info text="Holding bomb key while placing a bomb holds it in hand to throw in the Isaac's direction"/>
+	</collectible>
+	<collectible id="197">
+		<info text="NEED REPENTOGON"/>
+	</collectible>
+	<collectible id="198">
+		<info text="NEED REPENTOGON"/>
 	</collectible>
 </collectibles>
 <trinkets>
