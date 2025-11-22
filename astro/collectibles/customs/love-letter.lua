@@ -123,15 +123,18 @@ Astro:AddCallback(
         if not data["loveLetterUsed"] then return end
 
         data["loveLetterUsed"] = false
+        tear.Scale = 0
+        tear:Remove()
 
         local position = tear.Position
         local velocity = tear.Velocity
-        tear:Remove()
 
         if hasEnoughHearts(player) then
             consumeHearts(player)
-            
+            local position = tear.Position
+            local velocity = tear.Velocity
             Isaac.Spawn(EntityType.ENTITY_TEAR, LOVE_LETTER_VARIANT, 0, position, velocity, player)
+
             loveLetterRotation = math.abs(velocity.Y) > math.abs(velocity.X) and 90 or 0
         end
     end,
