@@ -210,6 +210,7 @@
 	<passive gfx="Marigold.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Marigold" description="..." id="209" />
 	<passive gfx="Legacy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Legacy" description="..." id="210" />
 	<active gfx="P Key.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="3" initcharge="0" name="P Key" description="..." id="211" />
+	<active gfx="Bicorn.png" quality="2" devilprice="1" maxcharges="3" shopprice="15" name="Bicorn" description="..." id="212" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
