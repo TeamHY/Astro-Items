@@ -11,9 +11,13 @@ Astro.EID.QualityIcon = Sprite()
 Astro.EID.QualityIcon:Load("gfx/ui/eid/quality.anm2")
 Astro.EID.QualityIcon:LoadGraphics()
 
+Astro.EID.ModIndicator = Sprite()
+Astro.EID.ModIndicator:Load("gfx/ui/eid/astro_indicator.anm2", true)
+
 if EID then
     EID:addIcon("Quality5", "Quality5", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
     EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
+    EID:addIcon("ASTRO_EID_INDICATOR", "Idle", 0, 16, 16, 1, -3, Astro.EID.ModIndicator)
 end
 
 
@@ -23,9 +27,16 @@ end
 ---@param description string
 ---@param eidDescription string
 ---@param copied string?
-function Astro:AddEIDCollectible(id, name, description, eidDescription, copied)
+---@param language string?
+function Astro:AddEIDCollectible(id, name, description, eidDescription, copied, language)
+    if not language then
+        language = "ko_kr"
+    end
+
     if EID then
-        EID:addCollectible(id, eidDescription, name, "ko_kr")
+        EID:setModIndicatorName("Astrobirth")
+        EID:setModIndicatorIcon("ASTRO_EID_INDICATOR")
+        EID:addCollectible(id, eidDescription, name, language)
 
         if copied and Astro.Trinket then
             EID:addCondition(
@@ -36,38 +47,16 @@ function Astro:AddEIDCollectible(id, name, description, eidDescription, copied)
                     "5.100.347", "5.100.485"
                 },
                 copied,
-                nil, "ko_kr", nil
+                nil, language, nil
             )
         end
     end
 
-    Astro.EID[id] = {
-        name = name,
-        description = description
-    }
-end
-
----@param lang string
----@param id CollectibleType
----@param name string
----@param eidDescription string
----@param copied string?
-function Astro:AddEIDCollectible2(lang, id, name, eidDescription, copied)
-    if EID then
-        EID:addCollectible(id, eidDescription, name, lang)
-
-        if copied and Astro.Trinket then
-            EID:addCondition(
-                "5.100." .. tostring(id),
-                {
-                    "5.100." .. tostring(id),
-                    "5.350." .. tostring(Astro.Trinket.BLACK_MIRROR),
-                    "5.100.347", "5.100.485"
-                },
-                copied,
-                nil, lang, nil
-            )
-        end
+    if language == "ko_kr" then
+        Astro.EID[id] = {
+            name = name,
+            description = description
+        }
     end
 end
 
@@ -76,19 +65,28 @@ end
 ---@param description string
 ---@param eidDescription string
 ---@param golden string
-function Astro:AddEIDTrinket(id, name, description, eidDescription, golden)
-    if EID then
-        EID:addTrinket(id, eidDescription, name, "ko_kr")
-
-        if golden then
-            EID:addGoldenTrinketMetadata(id, golden, nil, nil, "ko_kr")
-        end
+---@param language string?
+function Astro:AddEIDTrinket(id, name, description, eidDescription, golden, language)
+    if not language then
+        language = "ko_kr"
     end
 
-    Astro.EID.Trinket[id] = {
-        name = name,
-        description = description
-    }
+    if EID then
+        EID:setModIndicatorName("Astrobirth")
+        EID:setModIndicatorIcon("ASTRO_EID_INDICATOR")
+        EID:addTrinket(id, eidDescription, name, language)
+
+        if golden then
+            EID:addGoldenTrinketMetadata(id, golden, nil, nil, language)
+        end
+    end
+    
+    if language == "ko_kr" then
+        Astro.EID.Trinket[id] = {
+            name = name,
+            description = description
+        }
+    end
 end
 
 ---@param player PlayerType
@@ -185,7 +183,12 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            EID:setModIndicatorName("AstroItems")
+            EID:setModIndicatorName("Astrobirth")
+            for i = Astro.Collectible.CYGNUS, Astro.Collectible.LOVE_LETTER do
+                local modItemOffset = i - 733
+                local desc = eideng[733 + modItemOffset]
+                Astro:AddEIDCollectible(i, "", "", desc, nil, "en_us")
+            end
             ----
             local player_icons = Sprite()
             player_icons:Load("gfx/ui/eid/astro_character_icons.anm2", true)
@@ -215,15 +218,6 @@ Astro:AddCallback(
             EID.InlineIcons["Player" .. Astro.Players.STELLAR_B] = EID.InlineIcons["Nayuta"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN] = EID.InlineIcons["AinzOoalGown"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN_B] = EID.InlineIcons["PandorasActor"]
-
-
-            -- 사왈 / 급하게 AI 돌려서 넣은거라 개떡같이 추가해놨습니다.
-            -- eid 설명 한 곳으로 중앙화 해야할 듯합니다 한국어만 있었다가 영어 들어가려니까 시간 소모 너무큼
-            for i = Astro.Collectible.CYGNUS, Astro.Collectible.LOVE_LETTER do
-                local modItemOffset = i - 733
-                local desc = eideng[733 + modItemOffset]
-                Astro:AddEIDCollectible2("en_us", i, "", desc)
-            end
         end
     end
 )

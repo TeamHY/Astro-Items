@@ -19,12 +19,13 @@ if EID then
         "#최대 10개까지 획득할 수 있습니다."
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
-        "Artifact Ignition",
+        "Artifact Ignition", "",
         "Every 120 seconds, grants a {{Collectible417}}Succubus." ..
-        "#Maximum of 10 Succubus can be granted."
+        "#Maximum of 10 Succubus can be granted.",
+        nil,
+        "en_us"
     )
 end
 

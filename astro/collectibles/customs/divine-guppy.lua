@@ -24,13 +24,15 @@ if EID then
         "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
         "Divine Guppy",
+        "",
         "50% chance to spawn an additional holy-themed fly." ..
         "#Holy flies cause light rays to fall when dealing damage to monsters." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
+        nil,
+        "en_us"
     )
 end
 

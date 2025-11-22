@@ -21,13 +21,15 @@ if EID then
         "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
-        "Mayushii's Pocket Watch", 
+        "Mayushii's Pocket Watch",
+        "",
         "50% chance to trigger {{Collectible422}}Glowing Hourglass when taking penalty damage. Does not activate in cleared rooms or {{BossRoom}}boss rooms." ..
         "#Stacking increases the final chance by additive calculation." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
+        nil,
+        "en_us"
     )
 end
 

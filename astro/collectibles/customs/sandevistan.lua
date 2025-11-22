@@ -12,22 +12,45 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
+            local chance = string.format("%d", PENALTY_CHANCE * 100)
             Astro:AddEIDCollectible(
                 Astro.Collectible.SANDEVISTAN,
                 "산데비스탄",
                 "신경 가속",
-                "{{Collectible677}} 사용 시 잠시 유체이탈 상태가 되며;" ..
-                "#{{ArrowGrayRight}} 20%의 확률로 {{Collectible582}}Wavy Cap을 발동합니다."
+                "{{Collectible677}} 사용 시 2초간 게임 속도가 느려지며;" ..
+                "#{{ArrowGrayRight}} " .. chance .. "%의 확률로 {{Collectible582}}Wavy Cap을 발동합니다."
             )
 
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.SANDEVISTAN),
                 { Astro.Players.DAVID_MARTINEZ, Astro.Players.DAVID_MARTINEZ_B },
                 {
-                    "20%의 확률로 {{Collectible582}}Wavy Cap을 발동합니다.",
-                    "순간적으로 높은 {{DamageSmall}}공격력과 {{TearsSmall}}연사를 얻으며 10초동안 무적이 됩니다."
+                    "#{{ArrowGrayRight}} " .. chance .. "%의 확률로 {{Collectible582}}Wavy Cap을 발동합니다.",
+                    "#{{ArrowGrayRight}} 순간적으로 높은 {{DamageSmall}}공격력과 {{TearsSmall}}연사를 얻으며 10초동안 무적이 됩니다."
                 },
                 nil, "ko_kr", nil
+            )
+
+            ----
+            
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SANDEVISTAN,
+                "Sandevistan",
+                "",
+                "{{Collectible677}} Stops time for 2 seconds;" ..
+                "#{{ArrowGrayRight}} " .. chance .. "% chance to trigger {{Collectible582}}Wavy Cap.",
+                nil,
+                "en_us"
+            )
+            
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.SANDEVISTAN),
+                { Astro.Players.DAVID_MARTINEZ, Astro.Players.DAVID_MARTINEZ_B },
+                {
+                    "#{{ArrowGrayRight}} " .. chance .. "% chance to trigger {{Collectible582}}Wavy Cap.",
+                    "#{{ArrowGrayRight}} Greatly increases speed and fire rate for 2 seconds and grants invincibility for 10 seconds."
+                },
+                nil, "en_us", nil
             )
         end
     end

@@ -18,12 +18,14 @@ if EID then
         "#공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)"
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
         "Scales of Obedience",
+        "",
         "Activates all set effects." ..
-        "#Erases monsters if your damage exceeds their hit points. Does not work on boss monsters."
+        "#Erases monsters if your damage exceeds their hit points. Does not work on boss monsters.",
+        nil,
+        "en_us"
     )
 end
 

@@ -75,7 +75,7 @@ return {
     [806] = "+1 Damage per active charge on use (max +5)",
     [807] = "{{Player10}} Prevents items that only grant health, flight, spectral tears, or on-hit activation.",
     [808] = "↑ One of {{Heart}} Heart container, {{BlackHeart}} Black Heart, {{SoulHeart}} Soul Heart +1#{{ArrowUpDown}} {{Damage}} x0.85~1.35 Damage multiplier#{{ArrowUpDown}} {{Tears}} /0.85~1.35 Tear delay#{{ArrowUpDown}} {{Range}} x0.85~1.35 Range multiplier#{{ArrowUpDown}} {{Speed}} x0.85~1.35 Speed multiplier#{{ArrowUpDown}} {{Shotspeed}} x0.85~1.35 Shot speed multiplier#{{ArrowUpDown}} {{Luck}} x0.85~1.35 Luck multiplier#!!! Health from this item doesn't apply immediately; die if no health after pickup.",
- -- [809] = "Enter EID description here",
+ -- [809] = "설명이 없음",
     [810] = "10% chance to summon cross-shaped beam on hit.#{{Timer}} (15s cooldown)#{{Luck}} 100% chance at 30 Luck (+3%p per Luck)",
     [811] = "{{Trinket196}} Spawns Black Mirror on use; -2 Luck.#Fully charges on stage entry.",
     [812] = "Absorbs up to 2 souls on enemy kill.#Consumes souls to summon multiple ghosts;#{{ArrowGrayRight}} Ignores 4s cooldown for {{Collectible801}}/{{Collectible802}}.",
@@ -90,7 +90,7 @@ return {
     [821] = "{{Collectible492}} Applies YO LISTEN! while held.#Absorbs up to 50 souls on enemy kill;#{{ArrowGrayRight}} +1% extra damage per soul on hit.#{{ArrowGrayRight}} -5 souls on room clear.",
     [822] = "Applies {{Collectible634}} Hungry Soul, {{Collectible727}} Purgatory, {{Collectible684}} Ghost Bombs.#Doubles summoned ghost speed.",
     [823] = "!!! +2 {{Collectible73}} Cube of Meat on first pickup#Spawns Cube of Meat on stage entry.#!!! Amount: ({{Collectible823}} count + {{Collectible894}} count)",
-    [824] = "{{Collectible677}} Temporarily phases out on use;#{{ArrowGrayRight}} 20% chance to activate {{Collectible582}} Wavy Cap.",
+ -- [824] = "설명 분리됨",
     [825] = "!!! Disappears after activation.#Swaps held active with card/pill slot active with 8 key.#{{ArrowGrayRight}} Moves active to slot if empty.#{{ArrowGrayRight}} Some items can't move to slot.#!!! Card/pill slot active disappears on character change.",
     [826] = "The three-body problem is unpredictable.",
     [827] = "Applies Conjoined transformation.",
@@ -132,7 +132,7 @@ return {
     [863] = "!!! Single use#Upgrades constellation/planet items in the room on use.",
     [864] = "↑ {{Tears}} +0.77 Fire rate#Spawns orbiting ghost projectiles on hit;#{{ArrowGrayRight}} Ghosts attack enemy after certain hits per enemy.",
     [865] = "Changes room color with effects:#{{ArrowGrayRight}} {{ColorRed}}(Red){{CR}} x1.4 Damage multiplier#{{ArrowGrayRight}} {{ColorGreen}}(Green){{CR}} x1.5 Luck multiplier#{{ArrowGrayRight}} {{ColorBlue}}(Blue){{CR}} x1.2 Fire rate multiplier",
- -- [866] = "50% chance to fire tears that turn into fetuses on hit.#{{Timer}} (0.5s cooldown)#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)#{{Collectible678}} Fetuses home and deal x2.25 damage per second.",
+ -- [866] = "설명 분리됨",
     [867] = "Spawns one random ghost every 5 seconds.",
     [868] = "{{Collectible512}} Spawns black hole in room center and invincible for 10 seconds on use.#{{Collectible647}} Charges one bar per certain damage dealt.#!!! Damage needed per bar:#{{Blank}} (Stage * 20) + 40",
     [869] = "{{Trinket145}} When Perfection drops on penalty hit;#{{ArrowGrayRight}} Can be picked up once per stage before disappearing.",
@@ -195,5 +195,5 @@ return {
     [926] = "!!! Replaces all upright {{Card}} cards with reversed.",
     [927] = "Creates equilateral triangle laser around character in uncleared rooms.#Laser pierces and deals x1 damage per frame.",
     [928] = "↑ {{Bomb}} +5 Bombs#Throws bombs instead of placing."
- -- [929] = "Converts {{Heart}}/{{BoneHeart}} 1 or {{SoulHeart}} 2 to 1 {{BrokenHeart}} Broken Heart and fires letter in attack direction.#Hit enemies become permanent allies this run.#{{ArrowGrayRight}} Ally enemies last in the room.#Usable once per stage."
+ -- [929] = "설명 분리됨"
 }

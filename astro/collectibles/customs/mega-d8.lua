@@ -46,11 +46,13 @@ if EID then
         "#!!! 같은 능력치에 재사용 시 기존 능력치 초기화"
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
         "Mega D8",
-        "On use, choose one stat to boost. The chosen stat is multiplied by x1.0 ~ x3.0. Using on the same stat resets the previous multiplier."
+        "",
+        "On use, choose one stat to boost. The chosen stat is multiplied by x1.0 ~ x3.0. Using on the same stat resets the previous multiplier.",
+        nil,
+        "en_us"
     )
 end
 

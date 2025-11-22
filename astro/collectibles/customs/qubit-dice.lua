@@ -110,20 +110,24 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
+        local stringUp, stringDown = "Spinup", "Spindown"
+        if Options.Language == "kr" or REPKOR then
+            stringUp, stringDown = "스핀업", "스핀다운"
+        end
+        
         local number = rngObj:RandomInt(3) + 1
-
         if rngObj:RandomFloat() < 0.5 then
             for _ = 1, rngObj:RandomInt(3) + 1 do
                 playerWhoUsedItem:UseActiveItem(Astro.Collectible.SPINUP_DICE, false)
             end
 
-            Game():GetHUD():ShowFortuneText("+" .. number, " 스핀업")
+            Game():GetHUD():ShowFortuneText("+" .. number, stringUp)
         else
             for _ = 1, rngObj:RandomInt(3) + 1 do
                 playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_SPINDOWN_DICE, false)
             end
 
-            Game():GetHUD():ShowFortuneText("-" .. number, " 스핀다운")
+            Game():GetHUD():ShowFortuneText("-" .. number, stringDown)
         end
 
         return {

@@ -21,12 +21,12 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        if player:GetPlayerType() == Astro.Players.LEAH and collectibleType == CollectibleType.COLLECTIBLE_BIRTHRIGHT then
+        if player:GetPlayerType() == Astro.Players.LEAH and Astro:IsFirstAdded(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
             for i = 1, 7 do
                 local minisaac = player:AddMinisaac(player.Position)
                 if minisaac then
                     local d = minisaac:GetData()
-                    d.Astro_isInvulMinisaac = true
+                    d.Astro_isLeahBirthright = true
 
                     minisaac:AddEntityFlags(EntityFlag.FLAG_PERSISTENT)
                 end
@@ -45,14 +45,31 @@ Astro:AddCallback(
     ---@param countdownFrames number
     function(_, entity, amount, damageFlags, source, countdownFrames)
         if entity.Type == EntityType.ENTITY_FAMILIAR and entity.Variant == FamiliarVariant.MINISAAC then
-            local d = entity:GetData()
-            if d and d.Astro_isInvulMinisaac then
-                if Astro.isFight and Astro:IsLatterStage() then
-                    return true
+            local entityData = entity:GetData()
+            if entityData and entityData.Astro_isLeahBirthright then
+                for i = 1, Game():GetNumPlayers() do
+                    local player = Isaac.GetPlayer(i - 1)
+                    local playerData = Astro:GetPersistentPlayerData(player)
+
+                    if Astro.isFight and (Astro:IsLatterStage() or playerData["ASTRO_LeahBirthrightPenalty"]) then
+                        return true
+                    end
                 end
                 return false
             end
         end
     end
 )
-]]
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_TAKE_PENALTY,
+    ---@param player EntityPlayer
+    function(_, player)
+        if player:GetPlayerType() ~= Astro.Players.LEAH then return end
+
+        if player:HasCollectible(CollectibleType.COLLECTIBLE_BIRTHRIGHT) then
+            local playerData = Astro:GetPersistentPlayerData(player)
+            playerData["ASTRO_LeahBirthrightPenalty"] = true
+        end
+    end
+)]]
