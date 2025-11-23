@@ -90,7 +90,8 @@ local function SpinupModifierCallback(descObj)
             refID = spinnedID
 
             if refID < 4294960000 then
-                if EID.itemConfig:GetCollectible(refID) == nil then EID:appendToDescription(descObj, "Loops back to {{Collectible1}}") break
+                local loopsBackString = (Options.Language == "kr" or REPKOR) and "{{Collectible1}}로 돌아감" or "Loops back to {{Collectible1}}" 
+                if EID.itemConfig:GetCollectible(refID) == nil then EID:appendToDescription(descObj, loopsBackString) break
                 else
                     if i == 1 then firstID = refID end
                     EID:appendToDescription(descObj, "{{Collectible"..refID.."}}")
@@ -103,7 +104,7 @@ local function SpinupModifierCallback(descObj)
                 end
             end
         end
-        if hasCarBattery then EID:appendToDescription(descObj, " (Results with {{Collectible356}})") end
+        if hasCarBattery then EID:appendToDescription(descObj, " " .. EID:ReplaceVariableStr(EID:getDescriptionEntry("ResultsWithX"), 1, "{{Collectible356}}")) end
         if firstID ~= 0 and EID.TabPreviewID == 0 then
             EID.TabPreviewID = firstID
             if not EID.inModifierPreview then EID:appendToDescription(descObj, "#{{Blank}} " .. EID:getDescriptionEntry("FlipItemToggleInfo")) end

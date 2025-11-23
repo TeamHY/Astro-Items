@@ -29,17 +29,19 @@ if EID then
         "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다."
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
         "Mega D6",
+        "",
         rgonWarningENG ..
         "When used, {{ColorOrange}}applies one of the following effects{{CR}} to all items in the room:" ..
         "#{{ArrowGrayRight}} Changes them to different items." ..
         "#{{ArrowGrayRight}} Preserves passive/active type and changes to different items." ..
         "#{{ArrowGrayRight}} Preserves quality and changes to different items." ..
         "#{{ArrowGrayRight}} Changes to useless items for {{Player31}}Tainted Lost." ..
-        "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups."
+        "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups.",
+        nil,
+        "en_us"
     )
 end
 
@@ -202,8 +204,9 @@ local megaUI =
                     )
                 end
             else
-                player:UseCard(Card.CARD_SOUL_EDEN, UseFlag.USE_NOANIM)
+                player:UseCard(Card.CARD_SOUL_EDEN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
             end
+            SFXManager():Play(910)
         end
     }
 )

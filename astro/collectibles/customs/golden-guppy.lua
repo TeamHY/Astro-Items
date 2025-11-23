@@ -24,13 +24,14 @@ if EID then
         "#{{LuckSmall}} 행운이 50 이상일 때 100% 확률 행운 1당 +1%p"
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
-        "Golden Guppy",
+        "Golden Guppy", "",
         "50% chance to spawn an additional golden fly." ..
         "#Golden flies turn monsters into gold for 3 seconds when dealing damage." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)"
+        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
+        nil,
+        "en_us"
     )
 end
 

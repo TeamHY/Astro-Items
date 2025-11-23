@@ -11,23 +11,30 @@ local USE_SOUND_VOLUME = 1.0
 ---
 
 if EID then
+    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
+    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
+
     Astro:AddEIDCollectible(
         ITEM_ID,
         "유산",
-        "...",
+        "다시 나에게로",
+        rgonWarning ..
         "숫자 7키를 누르면 스테이지당 한번;" ..
-        "{{ArrowGrayRight}} 방 안의 모든 아이템을 아무 변신세트 아이템으로 바꿉니다." .. 
-        "모든 변신세트의 효과가 강화됩니다." ..
+        "#{{ArrowGrayRight}} 방 안의 모든 아이템을 아무 변신세트 아이템으로 바꿉니다." .. 
+        "#모든 변신세트의 효과가 강화됩니다." ..
         "{{ColorGray}} (Bookworm 효과 미구현)"
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
-        "Legacy", 
+        "Legacy",
+        "",
+        rgonWarningENG ..
         "Press 7 to transform all items in the room into random set items. Can only be used once per floor." ..
         "All transformation effects are enhanced." ..
-        "{{ColorGray}} Bookworm effect not implemented"
+        "{{ColorGray}} Bookworm effect not implemented",
+        nil,
+        "en_us"
     )
 end
 

@@ -22,12 +22,13 @@ if EID then
         "#중첩이 가능합니다."
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
-        "Marigold",
+        "Marigold", "",
         "Spawns 3 golden trinkets when clearing boss rooms. Can stack." ..
-        "#Holding Drop key makes all trinkets in the room golden and absorbs held trinkets."
+        "#Holding Drop key makes all trinkets in the room golden and absorbs held trinkets.",
+        nil,
+        "en_us"
     )
 end
 

@@ -22,14 +22,15 @@ if EID then
         "#에덴 소울처럼 최초 획득 시 기본 쿨 제거시켜놓고 테스트"
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
-        "P Key",
+        "P Key", "",
         "!!! WIP ITEM" ..
         "#When taking penalty damage, nullifies the damage and forces pause key input" ..
         "#Each penalty hit charges cooldown, removes item when cooldown is full" ..
-        "#Initially starts with no cooldown like Eden's Soul"
+        "#Initially starts with no cooldown like Eden's Soul",
+        nil,
+        "en_us"
     )
 end
 

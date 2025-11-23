@@ -25,12 +25,14 @@ if EID then
         "#{{ArrowGrayRight}} 소지중인 아이템 중 선택한 등급의 아이템을 그 방 배열의 아이템으로 바꿉니다."
     )
 
-    Astro:AddEIDCollectible2(
-        "en_us",
+    Astro:AddEIDCollectible(
         ITEM_ID,
         "Mega D4",
+        "",
         rgonWarningENG ..
-        "On use, lets you choose a quality. Rerolls all items of the selected quality in your inventory into items from the current room's item pool."
+        "On use, lets you choose a quality. Rerolls all items of the selected quality in your inventory into items from the current room's item pool.",
+        nil,
+        "en_us"
     )
 end
 
