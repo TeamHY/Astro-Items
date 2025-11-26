@@ -157,7 +157,7 @@
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" hidden="true" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" description="How much can one cat take?" id="156" />
 	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="1" shopprice="12" name="Cracked Bottom" description="It can't get any lower than this" id="157" />
 	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="0" shopprice="25" name="Birth Certificate" description="1995.11.15" id="158" />
-	<passive gfx="Birthright - Tainted Lost.png" quality="3" devilprice="2" shopprice="23" name="Birthright - Tainted Lost" description="Better destiny?" id="159" />
+	<passive gfx="Birthright - Tainted Lost.png" quality="3" devilprice="2" hidden="true" shopprice="23" name="Birthright - Tainted Lost" description="Better destiny?" id="159" />
 	<active gfx="False Certificate.png" quality="4" devilprice="2" maxcharges="0" shopprice="25" name="False Certificate" description="Falsifying official documents is a serious crime" id="160" />
 	<active gfx="Puzzle Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="17" name="Puzzle Dice" description="Align your destiny" id="161" />
 	<passive gfx="Bandage Girl.png" quality="3" devilprice="1" shopprice="20" name="Bandage Girl" description="His girlfriend" id="162" />
