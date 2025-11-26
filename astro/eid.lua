@@ -29,9 +29,7 @@ end
 ---@param copied string?
 ---@param language string?
 function Astro:AddEIDCollectible(id, name, description, eidDescription, copied, language)
-    if not language then
-        language = "ko_kr"
-    end
+    language = language or "ko_kr"
 
     if EID then
         EID:setModIndicatorName("Astrobirth")
@@ -67,9 +65,7 @@ end
 ---@param golden string
 ---@param language string?
 function Astro:AddEIDTrinket(id, name, description, eidDescription, golden, language)
-    if not language then
-        language = "ko_kr"
-    end
+    language = language or "ko_kr"
 
     if EID then
         EID:setModIndicatorName("Astrobirth")
@@ -92,8 +88,10 @@ end
 ---@param player PlayerType
 ---@param eidDescription string
 ---@param falvorText string
----@param language string
+---@param language string?
 function Astro:AddEIDBirthright(player, eidDescription, falvorText, language)
+    language = language or "ko_kr"
+
     if EID then
         EID:addBirthright(player, eidDescription, EID:getPlayerName(player), language)
     end
@@ -184,9 +182,10 @@ Astro:AddCallback(
     function()
         if EID then
             EID:setModIndicatorName("Astrobirth")
-            for i = Astro.Collectible.CYGNUS, Astro.Collectible.LOVE_LETTER do
-                local modItemOffset = i - 733
-                local desc = eideng[733 + modItemOffset]
+            for i = Astro.Collectible.CYGNUS, Astro.Collectible.BICORN do
+                local vanillaEnd = CollectibleType.NUM_COLLECTIBLES
+                local modItemOffset = i - vanillaEnd
+                local desc = eideng[vanillaEnd + modItemOffset]
                 Astro:AddEIDCollectible(i, "", "", desc, nil, "en_us")
             end
             ----

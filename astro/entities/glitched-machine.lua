@@ -23,7 +23,7 @@ Astro:AddCallback(
             EID:addEntity(
                 Astro.Entity.GlitchedMachine.Type, Astro.Entity.GlitchedMachine.Variant, Astro.Entity.GlitchedMachine.SubType,
                 "글리치 머신",
-                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} 동전 " .. PRICE .. "원을 소모하여 그 방의 아이템을 0.2초마다 4개의 랜덤 아이템과 전환시킵니다.",
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} 동전 " .. PRICE .. "원을 소모하여  0.2초마다 그 방의 아이템을 4개의 랜덤 아이템과 전환시킵니다.",
                 "ko_kr"
             )
 
@@ -50,7 +50,7 @@ Astro:AddCallback(
 
             local sprite = collider:GetSprite()
 
-            if not sprite:GetAnimation() == "Idle" then
+            if sprite:GetAnimation() ~= "Idle" then
                 return nil
             end
 
