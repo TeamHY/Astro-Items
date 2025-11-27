@@ -541,6 +541,13 @@
 		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Love Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Throw Bomb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	</Pool>
+
+	<Pool Name="bombBum">
+		<Item Name="Throw Bomb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="angel">
@@ -851,6 +858,9 @@
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Throw Bomb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Love Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 	</Pool>
 	<Pool Name="greedTreasure">
@@ -1091,6 +1101,7 @@
 		<Item Name="Lucky Coin Bundle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Stairway to Hell" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Throw Bomb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 
 	<Pool Name="shop">
@@ -1218,6 +1229,9 @@
 		<Item Name="Expired Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Coin Bundle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Stairway to Hell" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Throw Bomb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Love Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1450,11 +1464,11 @@
 		<Item Name="Delirium Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Schrodinger's Cat" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
-		<Pool Name="library">
-			<Item Name="Book of Sun" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-			<Item Name="Book of Moon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-			<Item Name="Book of Eclipse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-			<Item Name="Book of Lunar Eclipse" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
-			<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+	<Pool Name="library">
+		<Item Name="Book of Sun" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Book of Moon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Book of Eclipse" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Book of Lunar Eclipse" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 </ItemPools>
