@@ -1,4 +1,3 @@
-local isc = require("astro.lib.isaacscript-common")
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.SUPER_ROCKET_IN_A_JAR = Isaac.GetItemIdByName("Super Rocket in a Jar")
@@ -126,15 +125,4 @@ Astro:AddCallback(
     function(_, player)
         hiddenItemManager:CheckStack(player, CollectibleType.COLLECTIBLE_ROCKET_IN_A_JAR, player:HasCollectible(Astro.Collectible.SUPER_ROCKET_IN_A_JAR) and 1 or 0, "ASTRO_ASTRO_SUPER_ROCKET_IN_A_JAR")
     end
-)
-
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
-    ---@param player EntityPlayer
-    function(_, player)
-        if Astro:IsFirstAdded(Astro.Collectible.SUPER_ROCKET_IN_A_JAR) then
-            player:AddBombs(5)
-        end
-    end,
-    Astro.Collectible.SUPER_ROCKET_IN_A_JAR
 )

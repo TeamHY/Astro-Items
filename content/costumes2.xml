@@ -11,8 +11,9 @@
 	<costume anm2path="character_stellarb_hair.anm2" type="none" priority="99" />
 	<costume anm2path="character_ainz_ooal_gown_hair.anm2" type="none" priority="99" />
 	<costume anm2path="character_ainz_ooal_gownb_hair.anm2" type="none" priority="99" />
-	<costume id="28" anm2path="costume_ptolemaeus.anm2" type="passive"/>
+	<costume id="28" anm2path="costume_ptolemaeus.anm2" type="passive" />
 	<costume id="71" anm2path="costume_heartbloom.anm2" type="passive" hasSkinAlt="false" />
 	<costume id="81" anm2path="costume_godtech.anm2" type="passive" />
 	<costume id="132" anm2path="costume_copernicus.anm2" type="passive" />
+	<costume id="146" anm2path="256_hotbombs.anm2" type="passive" />
 </costumes>

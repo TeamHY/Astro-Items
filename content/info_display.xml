@@ -569,9 +569,7 @@
 		<info text="Replaces shell game beggars with crane games"/>
 	</collectible>
 	<collectible id="146">
-		<info text="Grants immunity to explosion damage and falling projectiles"/>
-		<info text="Isaac explodes every 4 seconds"/>
-		<info text="Chance to block enemy projectiles and counter with 3 bullets"/>
+		<info text="Isaac explodes every 4 seconds (immunity to explosion damage)"/>
 	</collectible>
 	<collectible id="147">
 		<info text="Negates the first damage taken per room"/>

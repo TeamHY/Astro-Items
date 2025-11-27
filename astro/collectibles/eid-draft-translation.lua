@@ -144,7 +144,7 @@ return {
     [875] = "{{Collectible122}} {{Collectible117}} Whore of Babylon and Dead Bird always active.",
     [876] = "↑ {{SoulHeart}} +2 Soul Hearts#Increases {{SoulHeart}} Soul Heart gains.#!!! Amount: Base * ({{Collectible876}} count + 1)",
     [877] = "25% chance not to consume coin on {{Slotmachine}} slot machine use.#Changes {{ArcadeRoom}} shell games to {{CraneGame}} crane games.#Changes {{Slotmachine}} slot machines to {{Slotmachine}} glitched machines.",
-    [878] = "↑ {{Bomb}} +5 Bombs#{{Collectible40}} Explodes at character position dealing 185 damage every 4 seconds.#{{Collectible375}} Immune to explosion damage;#{{ArrowGrayRight}} 20% chance to ignore projectile damage and fire 3 tears like character's;#{{ArrowGrayRight}} Immune to falling projectiles.",
+ -- [878] = "설명 분리됨",
     [879] = "!!! {{Collectible313}} Holy Mantle doesn't appear after pickup#{{HolyMantle}} Ignores damage once per room.#!!! Doesn't block blood donation damage.",
     [880] = "{{BossRoom}} Boss rewards fixed as {{Collectible100}} Little Steven.#!!! Removed if 4+ Little Steven held.",
     [881] = "{{Collectible706}} Spawns 3 Abyss flies in uncleared rooms.",

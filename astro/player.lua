@@ -63,12 +63,16 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     function(_, player)
         if player:GetPlayerType() == Astro.Players.LEAH then
+            local ref = EntityRef(player)
+
             if not player:GetEffects():HasNullEffect(LEAH_HAIR) then
                 player:GetEffects():AddNullEffect(LEAH_HAIR, true)
+                player:AddCharmed(ref, -1)
             end
         else
             if player:GetEffects():HasNullEffect(LEAH_HAIR) then
                 player:GetEffects():RemoveNullEffect(LEAH_HAIR)
+                player:ClearEntityFlags(EntityFlag.FLAG_CHARM)
             end
         end
 

@@ -569,9 +569,7 @@
 		<info text="야바위 거지를 인형 뽑기로 대체합니다"/>
 	</collectible>
 	<collectible id="146">
-		<info text="아이작에게 폭발 피해와 위에서 떨어지는 투사체로부터의 피해에 면역이 생깁니다."/>
-		<info text="4초마다 아이작이 폭발을 일으킵니다"/>
-		<info text="확률적으로 적의 공격을 막고 탄환 3발을 발사해 반격합니다"/>
+		<info text="4초마다 아이작이 폭발을 일으킵니다 (피해를 받지 않습니다)"/>
 	</collectible>
 	<collectible id="147">
 		<info text="방마다 처음으로 받는 피해를 무시합니다"/>

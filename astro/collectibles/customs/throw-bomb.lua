@@ -1,5 +1,3 @@
-local isc = require("astro.lib.isaacscript-common")
-
 Astro.Collectible.THROW_BOMB = Isaac.GetItemIdByName("Throw Bomb")
 
 Astro:AddCallback(
@@ -100,15 +98,4 @@ Astro:AddCallback(ModCallbacks.MC_POST_BOMB_UPDATE,
         bdata._ASTRO_throwSpawner = nil
         player:TryHoldEntity(bomb)
     end
-)
-
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
-    ---@param player EntityPlayer
-    function(_, player)
-        if Astro:IsFirstAdded(Astro.Collectible.THROW_BOMB) then
-            player:AddBombs(5)
-        end
-    end,
-    Astro.Collectible.THROW_BOMB
 )
