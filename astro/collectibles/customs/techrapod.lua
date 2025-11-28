@@ -86,6 +86,23 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
+    ModCallbacks.MC_POST_UPDATE,
+    function()
+        local room = Game():GetRoom()
+
+        if not room:IsClear() then
+            for i = 1, Game():GetNumPlayers() do
+                local player = Isaac.GetPlayer(i - 1)
+                
+                if player:HasCollectible(Astro.Collectible.TECHRAPOD) and #GetLasers(player) == 0 then
+                    SpawnLasers(player)
+                end
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
     ---@param rng RNG
     ---@param spawnPosition Vector

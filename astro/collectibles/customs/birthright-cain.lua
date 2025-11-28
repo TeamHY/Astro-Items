@@ -10,7 +10,7 @@ local isc = require("astro.lib.isaacscript-common")
 
 local INIT_CHECK_SUBTYPE = 1000
 
-Astro.Collectible.BIRTHRIGHT_CAIN = Isaac.GetItemIdByName("Birthright - Cain")
+Astro.Collectible.BIRTHRIGHT_CAIN = Isaac.GetItemIdByName("Cain's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -18,7 +18,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_CAIN,
-                "카인의 생득권",
+                "카인의 액자",
                 "더 재밌는 도박",
                 "{{Slotmachine}} 도박기계를 사용할 때 25%의 확률로 동전이 소모되지 않습니다." ..
                 "#{{ArcadeRoom}} 야바위를 {{CraneGame}}크레인 게임으로 변경합니다." ..

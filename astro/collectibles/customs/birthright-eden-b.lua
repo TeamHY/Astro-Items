@@ -1,6 +1,6 @@
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
-Astro.Collectible.BIRTHRIGHT_EDEN_B = Isaac.GetItemIdByName("Birthright - Eden B")
+Astro.Collectible.BIRTHRIGHT_EDEN_B = Isaac.GetItemIdByName("Tainted Eden's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -8,9 +8,9 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_EDEN_B,
-                "더럽혀진 에덴의 생득권",
+                "에덴의 액자?",
                 "??!",
-                "{{Collectible619}} 사용 시 Birthright를 획득합니다." ..
+                "{{Collectible619}} 사용 시 Birthright를 얻습니다." ..
                 "#{{Collectible258}} 획득 시 및 스테이지 진입 시 소지중인 아이템과 능력치를 모두 바꿉니다."
             )
         end

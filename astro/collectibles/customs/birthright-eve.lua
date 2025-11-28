@@ -1,6 +1,6 @@
 local isc = require("astro.lib.isaacscript-common")
 
-Astro.Collectible.BIRTHRIGHT_EVE = Isaac.GetItemIdByName("Birthright - Eve")
+Astro.Collectible.BIRTHRIGHT_EVE = Isaac.GetItemIdByName("Eve's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -8,7 +8,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_EVE,
-                "이브의 생득권",
+                "이브의 액자",
                 "영원한 저주",
                 "{{Collectible122}} {{Collectible117}} Whore of Babylon과 Dead Bird의 효과가 항상 발동됩니다.",
                 -- 중첩 시

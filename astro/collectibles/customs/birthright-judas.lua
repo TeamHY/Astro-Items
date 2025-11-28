@@ -1,6 +1,6 @@
 local isc = require("astro.lib.isaacscript-common")
 
-Astro.Collectible.BIRTHRIGHT_JUDAS = Isaac.GetItemIdByName("Birthright - Judas")
+Astro.Collectible.BIRTHRIGHT_JUDAS = Isaac.GetItemIdByName("Judas's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -8,7 +8,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_JUDAS,
-                "유다의 생득권",
+                "유다의 액자",
                 "에너지가 힘이 되리라",
                 "{{DamageSmall}} 액티브 아이템 사용 시 충전량 한칸당 공격력 +1 (최대 +5)",
                 -- 중첩 시

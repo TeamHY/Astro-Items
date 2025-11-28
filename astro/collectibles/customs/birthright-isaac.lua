@@ -1,4 +1,4 @@
-Astro.Collectible.BIRTHRIGHT_ISAAC = Isaac.GetItemIdByName("Birthright - Isaac")
+Astro.Collectible.BIRTHRIGHT_ISAAC = Isaac.GetItemIdByName("Isaac's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -6,7 +6,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_ISAAC,
-                "아이작의 생득권",
+                "아이작의 액자",
                 "추가 선택지",
                 "{{Card81}} 그 방의 아이템이 랜덤 아이템과 1초마다 전환되며 두 아이템 중 하나를 선택할 수 있습니다.",
                 -- 중첩 시

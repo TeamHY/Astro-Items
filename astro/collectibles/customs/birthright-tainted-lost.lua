@@ -1,4 +1,4 @@
-Astro.Collectible.BIRTHRIGHT_TAINTED_LOST = Isaac.GetItemIdByName("Birthright - Tainted Lost")
+Astro.Collectible.BIRTHRIGHT_TAINTED_LOST = Isaac.GetItemIdByName("Tainted Lost's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -7,7 +7,7 @@ Astro:AddCallback(
             local rgon = REPENTOGON and "↑ 목숨 +1#" or ""
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
-                "더럽혀진 로스트의 생득권",
+                "더 로스트의 액자?",
                 "더 나은 운명?",
                 rgon ..
                 "{{Quality0}}/{{Quality1}}/{{Quality2}}등급 아이템 등장 시 다른 아이템으로 바꿉니다." ..

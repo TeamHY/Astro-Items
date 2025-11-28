@@ -1,4 +1,4 @@
-Astro.Collectible.BIRTHRIGHT_BLUE_BABY = Isaac.GetItemIdByName("Birthright - Blue Baby")
+Astro.Collectible.BIRTHRIGHT_BLUE_BABY = Isaac.GetItemIdByName("???'s Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -6,7 +6,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_BLUE_BABY,
-                "???의 생득권",
+                "???의 액자",
                 "더 강한 영혼",
                 "↑ {{SoulHeart}}소울하트 +2" ..
                 "#{{SoulHeart}} 소울하트 획득량이 증가합니다." ..

@@ -1,6 +1,6 @@
 local isc = require("astro.lib.isaacscript-common")
 
-Astro.Collectible.BIRTHRIGHT_STEVEN = Isaac.GetItemIdByName("Birthright - Steven")
+Astro.Collectible.BIRTHRIGHT_STEVEN = Isaac.GetItemIdByName("Steven's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -8,7 +8,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_STEVEN,
-                "스티븐의 생득권",
+                "스티븐의 액자",
                 "그는 살아 있다",
                 "{{BossRoom}} 보스방 보상 아이템이 {{Collectible100}}Little Steven으로 고정됩니다." ..
                 "#!!! 소지중인 Little Steven이 4개 이상일 경우 이 아이템은 제거됩니다.",

@@ -19,6 +19,8 @@ Astro:AddCallback(
     ---@param entity EntityPickup
     ---@param _offset Vector
     function(_, entity, _offset)
+        if not REPENTOGON then return end
+
         local largeSprite = largeSpriteItems[entity.SubType]
 
         if not largeSprite then

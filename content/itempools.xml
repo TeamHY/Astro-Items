@@ -59,8 +59,8 @@
 		<Item Name="Chubby's Head" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rhongomyniad" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Eden" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Power Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rapid Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -120,8 +120,8 @@
 		<Item Name="Chubby's Head" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rhongomyniad" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Eden" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Power Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rapid Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -181,7 +181,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
@@ -199,7 +199,7 @@
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -254,7 +254,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
@@ -312,7 +312,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
@@ -330,7 +330,7 @@
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -384,7 +384,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
@@ -402,7 +402,7 @@
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Unholy Mantle" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -456,7 +456,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.65" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Godtech" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
@@ -512,7 +512,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -533,7 +533,7 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -595,7 +595,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -616,7 +616,7 @@
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -672,7 +672,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -745,8 +745,8 @@
 		<Item Name="Pink Ward" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amplifying Mind" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Eden" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Power Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rapid Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
@@ -757,8 +757,8 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.9" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.9" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
@@ -810,17 +810,17 @@
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="???'s Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eve's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Entoma Vasilissa Zeta" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Steven" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Steven's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Apollyon's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -829,7 +829,7 @@
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Graduation Certificate" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
@@ -923,8 +923,8 @@
 		<Item Name="Pink Ward" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Amplifying Mind" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Eden" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Power Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rapid Rock Bottom" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
@@ -935,8 +935,8 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.9" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.9" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
@@ -990,13 +990,13 @@
 		<Item Name="Bachelor's Degree" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pink Ward" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Eden" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1052,17 +1052,17 @@
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="???'s Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eve's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Entoma Vasilissa Zeta" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Steven" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Steven's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Apollyon's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -1071,7 +1071,7 @@
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1119,13 +1119,13 @@
 		<Item Name="Bachelor's Degree" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pink Ward" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Eden" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1181,17 +1181,17 @@
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="???'s Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eve's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Entoma Vasilissa Zeta" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Steven" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Steven's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Apollyon's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -1200,7 +1200,7 @@
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1249,13 +1249,13 @@
 		<Item Name="Bachelor's Degree" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pink Ward" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Eden" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1310,13 +1310,13 @@
 		<Item Name="Bachelor's Degree" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pink Ward" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Eden" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Isaac" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eden's Frame" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Judas" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - The Lost" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rite of Aramesir" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1372,17 +1372,17 @@
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Eve" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Cain" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="???'s Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Eve's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Cain's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Entoma Vasilissa Zeta" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Qubit Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Steven" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Apollyon B" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Steven's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Apollyon's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Unholy Mantle" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -1391,7 +1391,7 @@
 		<Item Name="Cracked Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Birthright - Tainted Lost" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Tainted Lost's Frame" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="False Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Puzzle Dice" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1439,7 +1439,7 @@
 		<Item Name="Hot Potato" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Birthright - Blue Baby" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="???'s Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedBoss">
 

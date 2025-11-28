@@ -1,4 +1,4 @@
-Astro.Collectible.BIRTHRIGHT_APOLLYON_B = Isaac.GetItemIdByName("Birthright - Apollyon B")
+Astro.Collectible.BIRTHRIGHT_APOLLYON_B = Isaac.GetItemIdByName("Apollyon's Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -6,7 +6,7 @@ Astro:AddCallback(
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.BIRTHRIGHT_APOLLYON_B,
-                "더럽혀진 아폴리온의 생득권",
+                "아폴리온의 액자",
                 "재앙의 동료",
                 "{{Collectible706}} 클리어하지 않은 방에 입장 시 심연의 파리 3마리를 소환합니다.",
                 -- 중첩 시
