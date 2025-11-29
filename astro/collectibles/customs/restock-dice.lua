@@ -34,6 +34,8 @@ Astro:AddCallback(
                 local item = itemPool:GetCollectible(itemPoolType, true, rngObj:GetSeed(), CollectibleType.COLLECTIBLE_BREAKFAST)
 
                 entity:ToPickup():Morph(entity.Type, entity.Variant, item, true)
+                Game():SpawnParticles(entity.Position, EffectVariant.POOF01, 1, 0)
+                SFXManager():Play(910)
             end
         end
 

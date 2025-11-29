@@ -54,6 +54,8 @@ Astro:AddCallback(
 
                     -- 방에 있는 아이템을 필터링이 된 아이템중 하나로 변경
                     pickup:Morph(pickup.Type, pickup.Variant, randomItems[1], true)
+                    Game():SpawnParticles(entity.Position, EffectVariant.POOF01, 1, 0)
+                    SFXManager():Play(910)
                     transformed = true
 
                     ::continue::

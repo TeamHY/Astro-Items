@@ -93,6 +93,8 @@ Astro:AddCallback(
                 local item = filteredCollectibles[rngObj:RandomInt(#filteredCollectibles) + 1]
 
                 entity:ToPickup():Morph(entity.Type, entity.Variant, item, true)
+                Game():SpawnParticles(entity.Position, EffectVariant.POOF01, 1, 0)
+                SFXManager():Play(910)
             end
         end
 

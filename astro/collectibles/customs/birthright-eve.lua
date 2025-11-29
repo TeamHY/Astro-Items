@@ -10,7 +10,10 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_EVE,
                 "이브의 액자",
                 "영원한 저주",
-                "{{Collectible122}} {{Collectible117}} Whore of Babylon과 Dead Bird의 효과가 항상 발동됩니다.",
+                "{{Collectible122}} Whore of Babylon 효과 발동:" ..
+                "#{{ArrowGrayRight}} {{DamageSmall}}공격력 +1.5" ..
+                "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도 +0.3" ..
+                "#{{Collectible117}} 적을 따라다니며 접촉한 적에게 초당 4.3의 피해를 주는 Dead Bird 패밀리어를 얻습니다.",
                 -- 중첩 시
                 "중첩된 수만큼 발동"
             )
@@ -29,7 +32,9 @@ Astro:AddCallbackCustom(
         if targetNum > effectNum then
             local additionalEffects = targetNum - effectNum
 
-            player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_WHORE_OF_BABYLON, true, additionalEffects)
+            for _ = 1, targetNum do
+                player:UseCard(Card.CARD_EMPRESS, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
+            end
             player:GetEffects():AddCollectibleEffect(CollectibleType.COLLECTIBLE_DEAD_BIRD, true, additionalEffects)
         end
     end,

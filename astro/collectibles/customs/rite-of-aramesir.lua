@@ -11,7 +11,7 @@ Astro:AddCallback(
                 Astro.Collectible.RITE_OF_ARAMESIR,
                 "아라메시아의 의",
                 "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다",
-                "{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} 사용 시 Black Mirror를 소환하며, {{LuckSmall}}행운이 2 감소합니다." ..
+                "{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} 사용 시 Black Mirror(패시브 획득 시 한 번 더 획득)를 드랍하며, {{LuckSmall}}행운이 2 감소합니다." ..
                 "#스테이지 진입 시 충전량이 모두 채워집니다."
             )
 
