@@ -6,39 +6,48 @@ Astro.LatterStageBanItems = {
     }
 }
 
-if EID then
-    EID:addDescriptionModifier(
-        "AstroLatterStageBan",
-        function(descObj)
-            if descObj.ObjType == EntityType.ENTITY_PICKUP and (descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE or descObj.ObjVariant == PickupVariant.PICKUP_TRINKET) then
-                return true
-            end
-        end,
-        function(descObj)
-            if descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE then
-                for _, collectible in ipairs(Astro.LatterStageBanItems.collectible) do
-                    if descObj.ObjSubType == collectible then
-                        EID:appendToDescription(descObj, "#!!! {{ColorRed}}9 스테이지 이후 아이템이 제거됩니다.")
-                        break
-                    end
-                end
-            elseif descObj.ObjVariant == PickupVariant.PICKUP_TRINKET then
-                for _, trinket in ipairs(Astro.LatterStageBanItems.trinket) do
-                    if descObj.ObjSubType == trinket then
-                        EID:appendToDescription(descObj, "#!!! {{ColorRed}}9 스테이지 이후 아이템이 제거됩니다.")
-                        break
-                    end
-                end
-            end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            if not Astro.IsFight then return end
 
-            return descObj
+            EID:addDescriptionModifier(
+                "AstroLatterStageBan",
+                function(descObj)
+                    if descObj.ObjType == EntityType.ENTITY_PICKUP and (descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE or descObj.ObjVariant == PickupVariant.PICKUP_TRINKET) then
+                        return true
+                    end
+                end,
+                function(descObj)
+                    if descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE then
+                        for _, collectible in ipairs(Astro.LatterStageBanItems.collectible) do
+                            if descObj.ObjSubType == collectible then
+                                EID:appendToDescription(descObj, "#!!! {{ColorError}}9 스테이지 이후 아이템이 제거됩니다.")
+                                break
+                            end
+                        end
+                    elseif descObj.ObjVariant == PickupVariant.PICKUP_TRINKET then
+                        for _, trinket in ipairs(Astro.LatterStageBanItems.trinket) do
+                            if descObj.ObjSubType == trinket then
+                                EID:appendToDescription(descObj, "#!!! {{ColorError}}9 스테이지 이후 아이템이 제거됩니다.")
+                                break
+                            end
+                        end
+                    end
+
+                    return descObj
+                end
+            )
         end
-    )
-end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,
     function(_)
+        if not Astro.IsFight then return end
+        
         if Astro:IsLatterStage() then
             local itemPool = Game():GetItemPool()
 
@@ -71,6 +80,8 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     ---@param pickingUpItem { itemType: ItemType, subType: CollectibleType | TrinketType }
     function(_, player, pickingUpItem)
+        if not Astro.IsFight then return end
+
         if Astro:IsLatterStage() then
             if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
                 for _, collectible in ipairs(Astro.LatterStageBanItems.collectible) do

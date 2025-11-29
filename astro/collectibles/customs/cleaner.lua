@@ -53,6 +53,8 @@ Astro:AddCallbackCustom(
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
+        if not Astro.IsFight then return end
+
         local level = Game():GetLevel()
         local stage = level:GetAbsoluteStage()
         local currentRoom = level:GetCurrentRoom()

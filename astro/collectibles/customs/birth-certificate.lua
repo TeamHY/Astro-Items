@@ -1,13 +1,19 @@
 Astro.Collectible.BIRTH_CERTIFICATE = Isaac.GetItemIdByName("Birth Certificate")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.BIRTH_CERTIFICATE,
-        "출생증명서",
-        "1995.11.15",
-        "사용 시 {{Quality2}}등급 이하의 아이템이 있는 방으로 이동합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.BIRTH_CERTIFICATE,
+                "출생증명서",
+                "1995.11.15",
+                "사용 시 {{Quality2}}등급 이하의 아이템이 있는 방으로 이동합니다." ..
+                "#{{ArrowGrayRight}} 아이템 하나 획득 시 원래 있던 장소로 돌아갑니다."
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,

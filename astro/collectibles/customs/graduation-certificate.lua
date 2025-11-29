@@ -1,13 +1,19 @@
 Astro.Collectible.GRADUATION_CERTIFICATE = Isaac.GetItemIdByName("Graduation Certificate")
 
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.GRADUATION_CERTIFICATE,
-        "졸업증명서",
-        "안녕은 영원한 헤어짐은 아니겠지요",
-        "사용 시 소지중인 아이템이 있는 방으로 이동합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.GRADUATION_CERTIFICATE,
+                "졸업증명서",
+                "안녕은 영원한 헤어짐은 아니겠지요",
+                "사용 시 소지중인 아이템이 있는 방으로 이동합니다." ..
+                "#{{ArrowGrayRight}} 아이템 하나 획득 시 원래 있던 장소로 돌아갑니다."
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,

@@ -19,17 +19,39 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
-        if Game():GetRoom():IsClear() then return end
+        local game = Game()
 
-        for i = 1, Game():GetNumPlayers() do
+        for i = 1, game:GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
         
             if player:HasCollectible(Astro.Collectible.BIRTHRIGHT_APOLLYON_B) then
                 local num = player:GetCollectibleNum(Astro.Collectible.BIRTHRIGHT_APOLLYON_B)
+                local list = Isaac.FindByType(EntityType.ENTITY_FAMILIAR, FamiliarVariant.ABYSS_LOCUST)
 
-                if num >= 1 then
+                if game:GetRoom():IsClear() then
+                    for _, ent in ipairs(list) do
+                        local eData = ent:GetData()
+
+                        if eData.ASTRO_byApollyonsFrame then
+                            ent:Remove()
+                        end
+                    end
+                elseif num >= 1 then
+                    for _, ent in ipairs(list) do
+                        local eData = ent:GetData()
+
+                        if eData.ASTRO_byApollyonsFrame then
+                            ent:Remove()
+                        end
+                    end
+
                     for _ = 1, num do
-                        player:UseCard(Card.RUNE_BERKANO, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER | UseFlag.USE_NOHUD)
+                        for j = 1, 3 do
+                            local locust = Isaac.Spawn(EntityType.ENTITY_FAMILIAR, FamiliarVariant.ABYSS_LOCUST, 0, player.Position, Vector(0,0), player)
+                            local lData = locust:GetData()
+                            
+                            lData.ASTRO_byApollyonsFrame = true
+                        end
                     end
                 end
             end
