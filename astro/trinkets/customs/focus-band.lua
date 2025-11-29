@@ -62,8 +62,9 @@ Astro:AddCallback(
                 local luck = math.floor(player.Luck)
                 local chancePct = math.min(SURVIVAL_MAX, 1 + (luck * SURVIVAL_LUCK))
                 local rng = player:GetTrinketRNG(Astro.Trinket.FOCUS_BAND)
+                local chance = rng:RandomInt(SURVIVAL_SOURCE)
 
-                if rng:RandomInt(SURVIVAL_SOURCE) < chancePct then
+                if chance =< chancePct then
                     local dirVec
                     if source.Entity and source.Entity.Position then
                         dirVec = (player.Position - source.Entity.Position)

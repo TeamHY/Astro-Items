@@ -67,4 +67,6 @@
     </entity>
     <entity name="Love Letter" anm2path="love_letter.anm2" id="2" variant="3100" subtype="0" collisionMass="8" collisionRadius="7" friction="1" >
     </entity>
+    <entity name="Fool Devil Bum" anm2path="fool_devil_bum.anm2" id="6" variant="3106" collisionMass="3" friction="1" shadowSize="0" >
+    </entity>
 </entities>
