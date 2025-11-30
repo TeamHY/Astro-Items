@@ -37,6 +37,46 @@ local function GetData(subType)
     }
 end
 
+------ 사왈 수정
+Astro.EID.AstroCraneTarget = {}
+
+local function AstroCraneModifierCondition(descObj)
+    return descObj.ObjType == 6 and descObj.ObjVariant == 3100
+end 
+
+local function AstroCraneModifierCallback(descObj)
+    local entity = descObj.Entity
+    if entity then
+        local sprite = entity:GetSprite()
+        
+        if sprite:IsPlaying("Broken") then
+            return descObj
+        end
+
+        local craneItem = Astro.EID.AstroCraneTarget[tostring(entity.InitSeed)]
+
+        if craneItem then
+            local itemDesc = EID:getDescriptionObj(5, 100, craneItem)
+
+            descObj = itemDesc
+            return descObj
+        end
+    end
+    return descObj
+end
+
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            EID:addEntity(6, 3100, -1, "아스트로 크레인 게임", "동전 10~25개로 {{Shop}}상점 배열 아이템 1개를 드랍합니다.", "ko_kr")
+            EID:addEntity(6, 3100, -1, "Astro Crane Game", "Drops one item from the {{Shop}}shop pool for 10~25 coins", "en_us")
+            EID:addDescriptionModifier("Astro Crane Modifier", AstroCraneModifierCondition, AstroCraneModifierCallback)
+        end
+    end
+)
+------
+
 Astro:AddCallback(
     ModCallbacks.MC_PRE_PLAYER_COLLISION,
     ---@param player EntityPlayer
@@ -84,7 +124,7 @@ Astro:AddCallbackCustom(
             local collectible = itemPool:GetCollectible(ItemPoolType.POOL_SHOP, true)
 
             slot:Remove()
-            Isaac.Spawn(EntityType.ENTITY_SLOT, 3100, GetSubType(rng:RandomInt(4), collectible), slot.Position, Vector(0, 0), nil)
+            Isaac.Spawn(EntityType.ENTITY_SLOT, 3100, GetSubType(rng:RandomInt(4) * 10000, collectible), slot.Position, Vector(0, 0), nil)
         elseif slot.SubType ~= INIT_CHECK_SUBTYPE then
             slot.SubType = INIT_CHECK_SUBTYPE
         end
@@ -114,6 +154,11 @@ Astro:AddCallbackCustom(
         elseif data.priceType == 3 then
             sprite:Play("Idle_25")
         end
+
+        if EID then
+            local seed = tostring(slot.InitSeed)
+            Astro.EID.AstroCraneTarget[seed] = collectible
+        end
     end,
     3100
 )
@@ -123,6 +168,7 @@ Astro:AddCallbackCustom(
     ---@param slot Entity
     function(_, slot)
         local sprite = slot:GetSprite()
+        local entData = slot:GetData()
 
         if sprite:IsFinished("Initiate") then
             sprite:Play("Wiggle")
@@ -136,22 +182,29 @@ Astro:AddCallbackCustom(
         elseif sprite:IsFinished("Death") then
             sprite:Play("Broken")
             slot.GridCollisionClass = GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER
-            slot:Kill()
         end
 
         if sprite:IsEventTriggered("Explosion") then
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, slot.Position, Vector(0, 0), nil)
-            SFXManager():Play(SoundEffect.	SOUND_BOSS1_EXPLOSIONS, 1)
         end
 
         if sprite:IsEventTriggered("Prize") then
             local data = GetData(slot.SubType)
             Astro:SpawnCollectible(data.collectible, slot.Position)
+            data.EID_Hide = nil
+        end
+
+        if sprite:IsPlaying("Broken") then
+            if not entData.EID_Hide then
+                entData.EID_Hide = true
+                Astro.EID.AstroCraneTarget[tostring(slot.InitSeed)] = nil
+            end
+        elseif entData.EID_Hide then
+            entData.EID_Hide = nil
         end
 
         if slot.GridCollisionClass == GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER then
             sprite:Play("Broken")
-            slot:Kill()
         end
     end,
     3100
