@@ -46,13 +46,8 @@ end
 
 local function AstroCraneModifierCallback(descObj)
     local entity = descObj.Entity
+    
     if entity then
-        local sprite = entity:GetSprite()
-        
-        if sprite:IsPlaying("Broken") then
-            return descObj
-        end
-
         local craneItem = Astro.EID.AstroCraneTarget[tostring(entity.InitSeed)]
 
         if craneItem then
@@ -68,10 +63,23 @@ end
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
-        if EID then
-            EID:addEntity(6, 3100, -1, "아스트로 크레인 게임", "동전 10~25개로 {{Shop}}상점 배열 아이템 1개를 드랍합니다.", "ko_kr")
-            EID:addEntity(6, 3100, -1, "Astro Crane Game", "Drops one item from the {{Shop}}shop pool for 10~25 coins", "en_us")
-            EID:addDescriptionModifier("Astro Crane Modifier", AstroCraneModifierCondition, AstroCraneModifierCallback)
+        if not EID then return end
+
+        local function addAstroCraneToEID(subType)
+            subType = subType or -1
+            EID:addEntity(6, 3100, subType, "아스트로 크레인 게임", "동전 10~25개로 {{Shop}}상점 배열 아이템 1개를 드랍합니다.", "ko_kr")
+            EID:addEntity(6, 3100, subType, "Astro Crane Game", "Drops one item from the {{Shop}}shop pool for 10~25 coins", "en_us")
+        end
+
+        addAstroCraneToEID()
+        EID:addDescriptionModifier("Astro Crane Modifier", AstroCraneModifierCondition, AstroCraneModifierCallback)
+
+        -- EID 쪽 버그로 서브타입이 1, 3, 10, 31, 100, 310이면 등록이 안 됩니다.
+        for i = 1, 944 do
+            local getDesc = EID:getDescriptionObj(6, 3100, i)
+            if getDesc.Description == "(no description available)" then
+                addAstroCraneToEID(i)
+            end
         end
     end
 )
@@ -186,12 +194,12 @@ Astro:AddCallbackCustom(
 
         if sprite:IsEventTriggered("Explosion") then
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, slot.Position, Vector(0, 0), nil)
+            slot:TakeDamage(1, DamageFlag.DAMAGE_EXPLOSION, EntityRef(slot), 0)
         end
 
         if sprite:IsEventTriggered("Prize") then
             local data = GetData(slot.SubType)
             Astro:SpawnCollectible(data.collectible, slot.Position)
-            data.EID_Hide = nil
         end
 
         if sprite:IsPlaying("Broken") then
@@ -200,11 +208,12 @@ Astro:AddCallbackCustom(
                 Astro.EID.AstroCraneTarget[tostring(slot.InitSeed)] = nil
             end
         elseif entData.EID_Hide then
-            entData.EID_Hide = nil
+            entData.EID_Hide = false
         end
 
         if slot.GridCollisionClass == GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER then
             sprite:Play("Broken")
+            slot:TakeDamage(1, DamageFlag.DAMAGE_EXPLOSION, EntityRef(slot), 0)
         end
     end,
     3100
