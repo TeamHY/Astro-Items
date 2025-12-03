@@ -166,7 +166,7 @@
 	<passive gfx="Giga Boom.png" quality="3" devilprice="2" shopprice="15" name="Giga Boom" description="10 bigger bombs" id="165" />
 	<active gfx="Coin Detonator.png" quality="3" devilprice="2" shopprice="15" maxcharges="240" chargetype="timed" name="Coin Detonator" description="Remote coin detonation" id="166" />
 	<active gfx="Marker Pocket.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Marker Pocket" description="..." id="167" />
-	<passive cache="damage" gfx="Maw Of The Void EX.png" quality="3" devilprice="2" shopprice="15" name="Maw Of The Void EX" description="Enhanced entrance to darkness" id="168" />
+	<passive cache="damage" gfx="Maw Of The Void EX.png" quality="3" devilprice="2" shopprice="15" name="Maw Of The Void EX" description="The darkness of the unrepentant" id="168" />
 	<passive gfx="Steam Bundle.png" quality="3" devilprice="2" shopprice="30" name="Steam Bundle" description="Shut up and take my money" id="169" />
 	<passive gfx="Astro Star of Bethlehem.png" quality="3" devilprice="2" shopprice="15" name="Astro Star of Bethlehem" description="Worship the light" id="170" />
 	<active gfx="We Need To Go Deeper! (Astro).png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="We Need To Go Astro!" description="Stella beyond the trapdoor" id="171" />

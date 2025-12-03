@@ -713,8 +713,8 @@
 		<info text="Same light appears upon first entering treasure rooms, shops, and boss rooms while held"/>
 	</collectible>
 	<collectible id="180">
-		<info text="Creates a ladder to a devil room in the starting room every new floor"/>
-		<info text="Ladder disappears upon leaving the starting room"/>
+		<info text="Spawns a ladder in the starting room of each new floor, leading to a special devil room"/>
+		<info text="The ladder disappears after exiting the starting room"/>
 	</collectible>
 	<collectible id="181">
 		<info text="Revives with half heart upon death while held"/>

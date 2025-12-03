@@ -713,7 +713,7 @@
 		<info text="소지 중일 때 보물방과 상점, 보스방에 처음 입장할 때 똑같은 빛이 나타납니다"/>
 	</collectible>
 	<collectible id="180">
-		<info text="새 층마다 시작방에 악마방으로 이어지는 사다리를 생성합니다"/>
+		<info text="새 층마다 시작방에 특별한 악마방으로 이어지는 사다리를 생성합니다"/>
 		<info text="사다리는 시작방을 나가면 사라집니다"/>
 	</collectible>
 	<collectible id="181">

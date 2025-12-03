@@ -178,7 +178,7 @@ return {
     [909] = "Darkens room and creates moonlight in center on use;#{{ArrowGrayRight}} Spawns {{Card19}} XVIII - The Moon once per stage.#Creates moonlight in center on first entry to {{SecretRoom}} secret room, {{SuperSecretRoom}} super secret room, {{UltraSecretRoom}} ultra secret room.#{{Collectible589}} {{ColorGray}}(Moonlight contact: +0.5 {{HalfSoulHeart}} Soul Heart, +0.5 Fire rate (cap) for stage){{CR}}",
     [910] = "{{Burning}} Burns room enemies on use;#{{ArrowGrayRight}} Spawns {{Card75}} XIX - The Sun? once per game.#10% chance to spawn blue fire at enemy death while held.#{{Luck}} 100% chance at 90 Luck (+1%p per Luck)#No Burning Basement in next game.",
     [911] = "Darkens room and creates moonlight in center on use;#{{ArrowGrayRight}} Spawns {{Card74}} XVIII - The Moon? once per game.#Creates moonlight in center on first entry to {{TreasureRoom}} treasure room, {{Shop}} shop, {{BossRoom}} boss room.#{{Collectible589}} {{ColorGray}}(Moonlight contact: +0.5 {{HalfSoulHeart}} Soul Heart, +0.5 Fire rate (cap) for stage){{CR}}",
-    [912] = "{{DevilRoom}} Creates ladder to Devil room in stage first room.#!!! Ladder disappears on room exit.",
+ -- [912] = "설명 분리됨",
  -- [913] = "설명 분리됨",
     [914] = "Randomly instantly kills enemies with x3 damage tears that burst in 10 directions.#{{Luck}} 100% chance at 14.5 Luck",
     [915] = "!!! {{Collectible362}} Lil Chest doesn't appear after pickup#25% chance to spawn {{Heart}} Heart, {{Coin}} Coin, {{Key}} Key on room clear.#Spawns random trinket every 5 rooms cleared.",

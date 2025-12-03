@@ -13,8 +13,16 @@ Astro:AddCallback(
                 Astro.Collectible.STAIRWAY_TO_HELL,
                 "지옥의 계단",
                 "기다린 것을 얻을 수 있기를",
-                "{{DevilRoom}} 스테이지 첫 방에 {{BrokenHeart}}소지 불가능 체력으로 거래하는 악마방으로 갈 수 있는 사다리가 생성됩니다." ..
+                "{{DevilRoom}} 스테이지 첫 방에 {{BrokenHeart}}소지 불가능 체력 2칸으로 거래하는 악마방으로 갈 수 있는 사다리가 생성됩니다." ..
                 "#!!! 사다리는 방을 벗어나면 사라집니다."
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.STAIRWAY_TO_HELL,
+                "Stairway to Hell",
+                "",
+                "Spawns a ladder in the first room of every floor that leads to a unique {{DevilRoom}} Devil Room where all deals cost 2 {{BrokenHeart}} broken hearts",
+                nil, "en_us"
             )
         end
     end
@@ -42,7 +50,6 @@ Astro:AddCallback(
 
         if #players > 0 then
             Isaac.ExecuteCommand("goto s.devil")
-
             Astro:ScheduleForUpdate(
                 function()
                     local level = Game():GetLevel()
@@ -57,13 +64,245 @@ Astro:AddCallback(
                         spawnPos = room:GetDoorSlotPosition(DoorSlot.LEFT0)
                         spawnOffset = Vector(100, 50)
                     end
+
                     Astro:Spawn(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, 0, spawnPos + spawnOffset)
                 end,
-                3
+                2
             )
         end
     end,
     STAIRWAY_TO_HELL_VARIANT
+)
+
+
+------ 브로큰 하트 거래 by Epiphany ------
+Astro.PickupPrice = {}
+Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS = -15
+
+local BrokenHeartSprite = Sprite()
+BrokenHeartSprite:Load("gfx/items/shop/two_broken_hearts.anm2", true)
+BrokenHeartSprite:SetFrame("Default", 0)
+
+---@param pickup EntityPickup
+local function IsDevilDealItem(pickup)
+	return pickup.Price < 0 and pickup.Price ~= PickupPrice.PRICE_FREE and pickup.Price ~= PickupPrice.PRICE_SPIKES
+end
+
+---@param player EntityPlayer
+---@param pickup EntityPickup
+local function CanPickupDeal(player, pickup)
+	return IsDevilDealItem(pickup) and pickup.Price ~= PickupPrice.PRICE_SOUL
+end
+
+--- Kills all pedestals that cost hearts. For use when Lost buys a devil item
+---@param ignoredPickup? EntityPickup A pointer hash to a pedestal that will be ignored. In most cases, this should be a pedestal that the player just picked up.
+---@param filter? fun(Pedestal: EntityPickup): boolean
+local function KillDevilPedestals(ignoredPickup, filter)
+	local ignoredHash = GetPtrHash(ignoredPickup) or -1
+	local level = Game():GetLevel()
+
+	local ent = Isaac.FindByType(EntityType.ENTITY_PICKUP)
+    if #ent > 0 then
+        for _, p in ipairs(ent) do
+            local pickup = p:ToPickup() ---@cast pickup EntityPickup
+
+            if GetPtrHash(pickup) ~= ignoredHash
+                and IsDevilDealItem(pickup)
+                    and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE
+                and (not filter or filter(pickup))
+            then
+                Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, pickup.Position, Vector.Zero, nil)
+                pickup:Remove()
+            end
+        end
+    end
+end
+
+local function IsAnyLost(player, onlyReal)
+	local type = player:GetPlayerType()
+	return type == PlayerType.PLAYER_THELOST
+		or type == PlayerType.PLAYER_THELOST_B
+		or (not onlyReal and (type == PlayerType.PLAYER_JACOB2_B
+			or player:GetEffects():HasNullEffect(NullItemID.ID_LOST_CURSE)))
+end
+
+local function specialPickupEffect(pos, player, c)
+	local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF02, 1, pos, Vector.Zero, nil):ToEffect() ---@cast effect1 EntityEffect
+	effect.Color = c
+
+	if player then
+		effect:FollowParent(player)
+	end
+
+	Game():ShakeScreen(15)
+	SFXManager():Play(SoundEffect.SOUND_DEATH_CARD)
+end
+
+local PAY_PRICE = {}
+PAY_PRICE[Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS] = function(player)
+	if not IsAnyLost(player) then
+		player:AddBrokenHearts(2)
+	end
+	specialPickupEffect(player.Position, player, Color(0, 0, 0, 1, 1, 0, 0))
+end
+
+---@param pickup EntityPickup
+---Options? compatibility and Choice pedestals in general.
+---Kills choices connected to the pickup passed.
+local function KillChoice(pickup)
+	if pickup.OptionsPickupIndex ~= 0 then
+		local ents = Isaac.FindByType(EntityType.ENTITY_PICKUP)
+        
+        for _, e in ipairs(ents) do
+            local p = e:ToPickup()
+
+            if p and pickup.OptionsPickupIndex == p.OptionsPickupIndex and GetPtrHash(pickup) ~= GetPtrHash(p) then
+                Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, p.Position, Vector.Zero, nil)
+                p:Remove()
+            end
+        end
+	end
+end
+
+---@param pedestal EntityPickup
+---@param Price PickupPrice
+local function ForcePedestalPrice(pedestal, Price)
+    if pedestal.Price == 0 then return end
+    
+	local prpData = Astro.SaveManager.GetRerollPickupSave(pedestal)
+	prpData.Price = Price
+
+	if Astro:HasTrinket(TrinketType.TRINKET_YOUR_SOUL)
+		and prpData.Price < 0 and prpData.Price ~= PickupPrice.PRICE_FREE and prpData.Price ~= PickupPrice.PRICE_SPIKES then
+		pedestal.Price = PickupPrice.PRICE_SOUL
+	else
+		pedestal.Price = Price
+	end
+
+	pedestal.ShopItemId = -3
+	pedestal.AutoUpdatePrice = false
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PICKUP_UPDATE,
+    ---@param pickup EntityPickup
+    function(_, pickup)
+        local room = Game():GetLevel():GetCurrentRoom()
+        local roomType = room:GetType()
+        local slots = Isaac.FindByType(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, -1, true)
+
+        if Astro:HasCollectible(Astro.Collectible.STAIRWAY_TO_HELL)
+            and roomType == RoomType.ROOM_DEVIL
+            and pickup.SubType ~= CollectibleType.COLLECTIBLE_NULL
+            and pickup:Exists()
+            and #slots > 0
+        then
+            local pData = Astro.SaveManager.GetRerollPickupSave(pickup)
+
+            if not pData.prevSubType then
+                pData.prevSubType = pickup.SubType
+            elseif pData.prevSubType ~= pickup.SubType then
+                ForcePedestalPrice(pickup, Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS)
+                pData.prevSubType = pickup.SubType
+            end
+        end
+    end,
+    PickupVariant.PICKUP_COLLECTIBLE
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_PICKUP_COLLISION,
+    ---@param pickup EntityPickup
+    ---@param ent Entity
+    function(_, pickup, ent)
+        local player = ent:ToPlayer()
+
+        if not player then return end
+
+        if player:GetPlayerType() == PlayerType.PLAYER_THESOUL_B then
+            player = player:GetMainTwin()
+        end
+
+        if pickup.Price == Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS then
+            if pickup.SubType ~= CollectibleType.COLLECTIBLE_NULL
+                and pickup.Wait == 0
+                and not player:IsHoldingItem()
+                and player:CanPickupItem()
+                and player.ItemHoldCooldown == 0
+            then
+                PAY_PRICE[pickup.Price](player, pickup)
+                KillChoice(pickup)
+            else
+                return true
+            end
+        end
+    end
+)
+
+local function isPriced(pedestal)
+    return pedestal.Price == Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_PICKUP_COLLISION,
+    ---@param pickup EntityPickup
+    ---@param collider Entity
+    function(_, pickup, collider)
+        local player = collider:ToPlayer()
+    
+        if player and Astro:HasCollectible(Astro.Collectible.STAIRWAY_TO_HELL) and CanPickupDeal(player, pickup) then
+            local slots = Isaac.FindByType(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, -1, true)
+            
+            if #slots > 0 then
+                if pickup.Price == Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS then
+                    if IsAnyLost(player) then
+                        KillDevilPedestals(pickup, isPriced)
+                    end
+                end
+            end
+        end
+    end,
+    PickupVariant.PICKUP_COLLECTIBLE
+)
+
+---@param ent Entity | Vector
+---@param offset Vector
+---@param ignoreShake? boolean
+local function GetEntityRenderPos(ent, offset, ignoreShake)
+	local pos
+	if getmetatable(ent).__type == "Vector" then
+		---@cast ent Vector
+		pos = ent
+	else
+		---@cast ent Entity
+		pos = ent.Position + ent.PositionOffset
+
+		if ent:ToPlayer() and Game():GetLevel():GetCurrentRoom():GetRenderMode() ~= RenderMode.RENDER_WATER_REFLECT then
+			---@cast ent EntityPlayer
+			pos = pos + ent:GetFlyingOffset()
+		end
+	end
+
+	local renderPos = Isaac.WorldToRenderPosition(pos) + offset
+
+	if ignoreShake then
+		renderPos = renderPos - Game().ScreenShakeOffset
+	end
+
+	return renderPos
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PICKUP_RENDER, 
+    ---@param pickup EntityPickup
+    ---@param offset Vector
+    function(_, pickup, offset)
+        local renderPos = GetEntityRenderPos(pickup, offset)
+
+        if pickup.Price == Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS then
+            BrokenHeartSprite:Render(renderPos + Vector(0, 10))
+        end
+    end
 )
 
 
@@ -73,6 +312,25 @@ Astro:AddCallbackCustom(
     ---@param slot Entity
     function(_, slot)
         slot.SpriteOffset = Vector(0, -10)
+        
+        local room = Game():GetLevel():GetCurrentRoom()
+        local roomType = room:GetType()
+
+        if Astro:HasCollectible(Astro.Collectible.STAIRWAY_TO_HELL) and roomType == RoomType.ROOM_DEVIL then
+            local pickups = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, -1, false, false)
+
+            for _, p in ipairs(pickups) do
+                local pickup = p:ToPickup()
+                if pickup.SubType ~= CollectibleType.COLLECTIBLE_NULL then
+                    local pData = Astro.SaveManager.GetRerollPickupSave(pickup)
+                    if not pData.ASTRO_PlayerCheckedPedestal then
+                        ForcePedestalPrice(pickup, Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS)
+                        pData.ASTRO_PlayerCheckedPedestal = true
+                        pData.prevSubType = pickup.SubType
+                    end
+                end
+            end
+        end
     end,
     FOOL_DEVIL_BUM_VARIANT
 )
@@ -103,7 +361,7 @@ Astro:AddCallbackCustom(
         if sprite:IsFinished("Idle") then
             sprite:Play("exit")
         elseif sprite:IsFinished("exit") then
-            slot:Remove()
+            slot:Die()
         end
     end,
     FOOL_DEVIL_BUM_VARIANT

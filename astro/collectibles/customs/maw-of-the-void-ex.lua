@@ -20,7 +20,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.MAW_OF_THE_VOID_EX,
                 "초 공허의 구렁텅이",
-                "향상된 어둠의 입구",
+                "회개하지 못한 자들의 어둠", -- 간접적으로 리펜 이전 구렁텅이라 설명
                 "#!!! 획득 이후 {{Collectible399}}Maw Of The Void 미등장" ..
                 "#↑ {{DamageSmall}}공격력 +1" ..
                 "#{{Chargeable}} 공격키를 2.5초 이상 누르면 충전되며 공격키를 떼면 캐릭터 주위에 검은 고리가 둘러집니다." ..
