@@ -240,14 +240,26 @@ Astro:AddCallback(
             player = player:GetMainTwin()
         end
 
-        if pickup.Price == (Astro.PickupPrice.PRICE_BROKEN_HEART or Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS) then
+        if pickup.Price == (Astro.PickupPrice.PRICE_BROKEN_HEART) then
             if pickup.SubType ~= CollectibleType.COLLECTIBLE_NULL
                 and pickup.Wait == 0
                 and not player:IsHoldingItem()
                 and player:CanPickupItem()
                 and player.ItemHoldCooldown == 0
             then
-                PAY_PRICE[pickup.Price](player, pickup)
+                PAY_PRICE[pickup.Price](player)
+                KillChoice(pickup)
+            else
+                return true
+            end
+        elseif pickup.Price == (Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS) then
+            if pickup.SubType ~= CollectibleType.COLLECTIBLE_NULL
+                and pickup.Wait == 0
+                and not player:IsHoldingItem()
+                and player:CanPickupItem()
+                and player.ItemHoldCooldown == 0
+            then
+                PAY_PRICE[pickup.Price](player)
                 KillChoice(pickup)
             else
                 return true
