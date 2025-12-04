@@ -181,11 +181,9 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            EID:setModIndicatorName("Astrobirth")
             for i = Astro.Collectible.CYGNUS, Astro.Collectible.BICORN do
-                local vanillaEnd = CollectibleType.NUM_COLLECTIBLES
-                local modItemOffset = i - vanillaEnd
-                local desc = eideng[vanillaEnd + modItemOffset]
+                local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES -- 736 - 733
+                local desc = eideng[i - modItemOffset]
                 Astro:AddEIDCollectible(i, "", "", desc, nil, "en_us")
             end
             ----

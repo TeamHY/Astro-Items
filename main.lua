@@ -13,7 +13,24 @@ Astro.HiddenItemManager = hiddenItemManager
 Astro.SaveManager = saveManager
 Astro.DDSMyMod = mod
 
-Json = require "json"
+local function GetCurrentModPath()
+	if debug then
+		return string.sub(debug.getinfo(GetCurrentModPath).source, 2) .. "/../"
+	end
+	--use some very hacky trickery to get the path to this mod
+	local _, err = pcall(require, "")
+	local _, basePathStart = string.find(err, "no file '", 1)
+	local _, modPathStart = string.find(err, "no file '", basePathStart)
+	local modPathEnd, _ = string.find(err, ".lua'", modPathStart)
+	local modPath = string.sub(err, modPathStart + 1, modPathEnd - 1)
+	modPath = string.gsub(modPath, "\\", "/")
+	modPath = string.gsub(modPath, "//", "/")
+	modPath = string.gsub(modPath, ":/", ":\\")
+
+	return modPath
+end
+Astro.ModPath = GetCurrentModPath()
+local modPath = Astro.ModPath
 
 require "astro.constants"
 require "astro.save"
@@ -32,26 +49,8 @@ require "astro.room"
 require "astro.curse"
 require "astro.large-sprite"
 require "astro.birthright"
+require "astro.translate"
 
-local function GetCurrentModPath()
-	if debug then
-		return string.sub(debug.getinfo(GetCurrentModPath).source, 2) .. "/../"
-	end
-	--use some very hacky trickery to get the path to this mod
-	local _, err = pcall(require, "")
-	local _, basePathStart = string.find(err, "no file '", 1)
-	local _, modPathStart = string.find(err, "no file '", basePathStart)
-	local modPathEnd, _ = string.find(err, ".lua'", modPathStart)
-	local modPath = string.sub(err, modPathStart + 1, modPathEnd - 1)
-	modPath = string.gsub(modPath, "\\", "/")
-	modPath = string.gsub(modPath, "//", "/")
-	modPath = string.gsub(modPath, ":/", ":\\")
-
-	return modPath
-end
-Astro.ModPath = GetCurrentModPath()
-
-local modPath = Astro.ModPath
 local font = Font()
 font:Load(modPath .. "resources/font/eid_korean_soyanon.fnt")
 
@@ -90,5 +89,6 @@ Astro:AddCallback(
 	end
 )
 
--- 서순 문제로 여기에-사왈이
-require "astro.translate"
+Astro.ModVersion = 1.156
+Astro.ModVersionCommit = "60d781b"
+print("Astrobirth - " .. string.format("%.3f", Astro.ModVersion) .. "_" .. Astro.ModVersionCommit)

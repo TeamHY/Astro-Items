@@ -2,3 +2,4 @@ disable.it
 .vscode/settings.json
 .luarc.json
 .cursor/
+update-version.ps1
