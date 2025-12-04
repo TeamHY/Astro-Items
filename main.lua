@@ -88,7 +88,3 @@ Astro:AddCallback(
 		end
 	end
 )
-
-Astro.ModVersion = 1.156
-Astro.ModVersionCommit = "60d781b"
-print("Astrobirth - " .. string.format("%.3f", Astro.ModVersion) .. "_" .. Astro.ModVersionCommit)
