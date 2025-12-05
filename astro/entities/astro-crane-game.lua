@@ -132,7 +132,7 @@ Astro:AddCallbackCustom(
             local collectible = itemPool:GetCollectible(ItemPoolType.POOL_SHOP, true)
 
             slot:Remove()
-            Isaac.Spawn(EntityType.ENTITY_SLOT, 3100, GetSubType(rng:RandomInt(4) * 10000, collectible), slot.Position, Vector(0, 0), nil)
+            Isaac.Spawn(EntityType.ENTITY_SLOT, 3100, GetSubType(rng:RandomInt(4), collectible), slot.Position, Vector(0, 0), nil)
         elseif slot.SubType ~= INIT_CHECK_SUBTYPE then
             slot.SubType = INIT_CHECK_SUBTYPE
         end
@@ -190,11 +190,11 @@ Astro:AddCallbackCustom(
         elseif sprite:IsFinished("Death") then
             sprite:Play("Broken")
             slot.GridCollisionClass = GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER
+            slot:TakeDamage(1, DamageFlag.DAMAGE_EXPLOSION, EntityRef(slot), 0)
         end
 
         if sprite:IsEventTriggered("Explosion") then
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BOMB_EXPLOSION, 0, slot.Position, Vector(0, 0), nil)
-            slot:TakeDamage(1, DamageFlag.DAMAGE_EXPLOSION, EntityRef(slot), 0)
         end
 
         if sprite:IsEventTriggered("Prize") then
