@@ -175,15 +175,13 @@ Astro:AddCallbackCustom(
     end
 )
 
-local eideng = require "astro.collectibles.eid-draft-translation"
-
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
             for i = Astro.Collectible.CYGNUS, Astro.Collectible.BICORN do
                 local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES -- 736 - 733
-                local desc = eideng[i - modItemOffset]
+                local desc = Astro.EID.EnglishDescAI[i - modItemOffset]
                 Astro:AddEIDCollectible(i, "", "", desc, nil, "en_us")
             end
             ----
