@@ -782,6 +782,9 @@
 	<collectible id="207">
 		<info text="NEED REPENTOGON"/>
 	</collectible>
+	<collectible id="213">
+		<info text="클리어한 방에 입장할 때 확률적으로 그 방의 모든 적이 재생성됩니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

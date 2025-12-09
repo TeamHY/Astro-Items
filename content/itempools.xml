@@ -861,6 +861,8 @@
 		<Item Name="Throw Bomb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Love Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
+		<Item Name="Alcohol Bottle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
 
 	</Pool>
 	<Pool Name="greedTreasure">
@@ -1232,6 +1234,8 @@
 
 		<Item Name="Throw Bomb" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Love Letter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		
+		<Item Name="Alcohol Bottle" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>

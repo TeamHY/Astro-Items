@@ -782,6 +782,9 @@
 	<collectible id="207">
 		<info text="NEED REPENTOGON"/>
 	</collectible>
+	<collectible id="213">
+		<info text="Chance to respawns all enemies when entering a cleared room"/>
+	</collectible>
 </collectibles>
 <trinkets>
 	<trinket id="1">
