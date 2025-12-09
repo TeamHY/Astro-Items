@@ -785,6 +785,10 @@
 	<collectible id="213">
 		<info text="Chance to respawns all enemies when entering a cleared room"/>
 	</collectible>
+	<collectible id="214">
+		<info text="Spawn 4 Dip familiars"/>
+		<info text="Deals instant damage to Poop-type enemies in the room"/>
+	</collectible>
 </collectibles>
 <trinkets>
 	<trinket id="1">
