@@ -52,6 +52,10 @@ Astro:AddCallback(
                 
                 if float < chance then
                     currentRoom:RespawnEnemies()
+
+                    local writableRoomDesc = level:GetRoomByIdx(level:GetCurrentRoomIndex())
+                    writableRoomDesc.Flags = writableRoomDesc.Flags | RoomDescriptor.FLAG_NO_REWARD
+                    currentRoom:Update()
                 end
             end
         end
