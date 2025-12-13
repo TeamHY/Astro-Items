@@ -51,7 +51,7 @@ Astro:AddCallback(
                 local float = rng:RandomFloat()
                 
                 if float < chance then
-                    player:UseActiveItem(CollectibleType.COLLECTIBLE_D7, UseFlag.USE_NOANIM)
+                    currentRoom:RespawnEnemies()
                 end
             end
         end
@@ -76,8 +76,11 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
+        local alcoholNum = player:GetCollectibleNum(Astro.Collectible.ALCOHOL_BOTTLE)
+        local gbOffset = math.max(0.6, 1 - (0.2 * alcoholNum))
+
         player:AddEntityFlags(EntityFlag.FLAG_CONFUSION)
-        player:SetColor(Color(1, 0.85, 0.85, 1), -1, 1, false, false)
+        player:SetColor(Color(1, gbOffset, gbOffset, 1), -1, 1, false, false)
     end,
     Astro.Collectible.ALCOHOL_BOTTLE
 )

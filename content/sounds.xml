@@ -39,4 +39,13 @@
     <sound name="LegacyUse">
         <sample weight="1" path="feedback/legacy-use.wav" />
     </sound>
+    <sound name="SkillCheckAdvertise">
+        <sample weight="1" path="feedback/skill-check-advertise.wav" />
+    </sound>
+    <sound name="SkillCheckGood">
+        <sample weight="1" path="feedback/skill-check-good.wav" />
+    </sound>
+    <sound name="SkillCheckVeryGood">
+        <sample weight="1" path="feedback/skill-check-great.wav" />
+    </sound>
 </sounds>

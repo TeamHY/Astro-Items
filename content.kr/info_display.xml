@@ -789,6 +789,11 @@
 		<info text="딥 패밀리어 4마리를 소환합니다"/>
 		<info text="방 안의 응아 유형 적들에게 즉시 피해를 줍니다"/>
 	</collectible>
+	<collectible id="215">
+		<info text="피격당했을 때 층마다 한 번, 모든 적이 석화되고 QTE 이벤트가 발생합니다"/>
+		<info text="성공: 피해를 무시하고, 근처의 적을 출혈시키며, 순간적으로 높은 공격력과 공격 속도를 얻습니다"/>
+		<info text="실패: 영구적으로 공격력 배율이 소량 감소합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

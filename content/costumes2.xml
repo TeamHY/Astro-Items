@@ -16,4 +16,5 @@
 	<costume id="81" anm2path="costume_godtech.anm2" type="passive" />
 	<costume id="132" anm2path="costume_copernicus.anm2" type="passive" />
 	<costume id="146" anm2path="256_hotbombs.anm2" type="passive" />
+	<costume id="213" anm2path="106x_tropicamide.anm2" type="passive" hasSkinAlt="true"/>
 </costumes>

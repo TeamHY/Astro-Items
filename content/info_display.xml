@@ -789,6 +789,11 @@
 		<info text="Spawn 4 Dip familiars"/>
 		<info text="Deals instant damage to Poop-type enemies in the room"/>
 	</collectible>
+	<collectible id="215">
+		<info text="Once per floor upon taking damage, all enemies in the room freeze and a QTE event triggers"/>
+		<info text="Success: Negates damage, bleeds nearby enemies, grants rapidly decaying damage and tears up for the room"/>
+		<info text="Failure: Permanently decreases damage multiplier by a small amount"/>
+	</collectible>
 </collectibles>
 <trinkets>
 	<trinket id="1">
