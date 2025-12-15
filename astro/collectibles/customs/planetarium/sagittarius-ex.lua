@@ -11,14 +11,15 @@ Astro.Collectible.SAGITTARIUS_EX = Isaac.GetItemIdByName("Sagittarius EX")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
-    function()
+    function(_)
         if EID then
             Astro:AddEIDCollectible(
                 Astro.Collectible.SAGITTARIUS_EX,
                 "초 사수자리",
                 "꿰뚫기",
-                "공격이 적을 관통합니다." ..
-                "#보스를 제외한 적이 피해를 입을 때 20%의 추가 피해를 줍니다." ..
+                "공격이 적을 관통하며;" ..
+                "#{{ArrowGrayRight}} 관통한 공격은 적에게 유도됩니다." ..
+                "#보스를 제외한 적이 피해를 입을 때 " .. string.format("%.f", EXTRA_DAMAGE_MULTIPLIER * 100) .. "%의 추가 피해를 주며;" ..
                 "#{{ArrowGrayRight}} {{LuckSmall}}행운 1당 1%의 추가 피해를 줍니다." ..
                 "#{{Collectible48}} 다음 게임에서 Cupid's Arrow를 들고 시작합니다.",
                 -- 중첩 시
@@ -73,12 +74,44 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
         Astro.Data.RunSagittariusEx = true
     end,
     Astro.Collectible.SAGITTARIUS_EX
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_TEAR_INIT,
+    ---@param tear EntityTear
+    function(_, tear)
+        local player = Astro:GetPlayerFromEntity(tear)
+        
+        if player and player:HasCollectible(Astro.Collectible.SAGITTARIUS_EX) then
+            if tear.TearVariant == tear.BLUE then
+                tear:ChangeVariant(TearVariant.CUPID_BLUE)
+            elseif tear.TearVariant == TearVariant.BLOOD then
+                tear:ChangeVariant(TearVariant.CUPID_BLOOD)
+            end
+        end
+    end
+)
+
+
+------ 관통 시 직각 유도 추가 ------
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_TEAR_COLLISION,
+    ---@param tear EntityTear
+    ---@param collider Entity
+    ---@param low boolean
+    function(_, tear, collider, low)
+        local player = Astro:GetPlayerFromEntity(tear)
+
+        if player and player:HasCollectible(Astro.Collectible.SAGITTARIUS_EX) then
+            tear:AddTearFlags(TearFlags.TEAR_TURN_HORIZONTAL)
+        end
+    end
 )

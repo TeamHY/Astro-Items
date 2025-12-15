@@ -1,20 +1,29 @@
+local hiddenItemManager = require("astro.lib.hidden_item_manager")
+
+Astro.Collectible.AQUARIUS_EX = Isaac.GetItemIdByName("Aquarius EX")
+
 ---
 
 local PENALTY_TIME = 10 * 30
 
 ---
 
-Astro.Collectible.AQUARIUS_EX = Isaac.GetItemIdByName("Aquarius EX")
-
-if EID then
-    Astro:AddEIDCollectible(
-        Astro.Collectible.AQUARIUS_EX,
-        "초 물병자리",
-        "눈물 분수",
-        "적 명중 시 그 적에게서 눈물이 뿜어져 나옵니다." ..
-        "#!!! 페널티 피격 시 10초 동안 무효과"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDCollectible(
+                Astro.Collectible.AQUARIUS_EX,
+                "초 물병자리",
+                "눈물 분수",
+                "{{Collectible308}} 캐릭터가 지나간 자리에 파란 장판이 생깁니다." ..
+                "#{{ArrowGrayRight}} 파란 장판에 닿은 적은 공격력 x0.66의 피해를 받습니다." ..
+                "#적 명중 시 그 적에게서 눈물이 뿜어져 나옵니다." ..
+                "#!!! 페널티 피격 시 " .. string.format("%.f", PENALTY_TIME / 30) .. "초 동안 무효과"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,
@@ -69,4 +78,33 @@ Astro:AddCallback(
             end
         end
     end
+)
+
+
+------ 히든 아이템 ------
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        local itemPool = Game():GetItemPool()
+        itemPool:RemoveCollectible(CollectibleType.COLLECTIBLE_AQUARIUS)
+
+        if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_AQUARIUS) then
+            hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_AQUARIUS)
+        end
+    end,
+    Astro.Collectible.AQUARIUS_EX
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_AQUARIUS) then
+            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_AQUARIUS)
+        end
+    end,
+    Astro.Collectible.AQUARIUS_EX
 )
