@@ -14,7 +14,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.CAPRICORN_EX,
                 "초 염소자리",
-                "제물 준비",
+                "실속있는 제물",
                 "↑ {{DamageSmall}}최종 공격력 +1.5" ..
                 "#↑ {{TearsSmall}}연사 배율 x1.2" ..
                 "#↑ {{DevilChanceSmall}}악마방 확률 +10%" ..
@@ -25,6 +25,23 @@ Astro:AddCallback(
                 "#{{Trinket152}} Womb/Corpse 스테이지에서 천체방이 등장할 수 있습니다.",
                 -- 중첩 시
                 "공격력 및 연사만 곱연산으로 중첩 가능"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CAPRICORN_EX,
+                "Capricorn EX",
+                "",
+                "↑ {{Damage}} +1.5 Damage" ..
+                "#↑ {{Tears}} x1.2 Tears multiplier" ..
+                "#{{DevilChance}} +10% Devil Room chance" ..
+                "#{{PlanetariumChance}} +9% Planetarium chance" ..
+                "##Additional +15% chance if a Planetarium hasn't been entered yet" ..
+                "#{{Trinket174}} Prevents Krampus from appearing in Devil Rooms;" ..
+                "#{{ArrowGrayRight}} Devil Rooms are special variants with more deals, Black Hearts and enemies" ..
+                "#{{Trinket152}} Planetariums can spawn in the Womb and Corpse",
+                -- Stacks
+                "Only damage and tears can be stacked through multiplication.",
+                "en_us"
             )
         end
     end

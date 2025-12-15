@@ -21,14 +21,28 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.PISCES_EX,
                 "초 물고기자리",
-                "밀어내기",
+                "힘찬 연어들처럼",
                 "↑ {{TearsSmall}}연사(+상한) +0.5" ..
-                "#공격이 2발로 나가며, 적을 밀쳐냅니다." ..
+                "#공격이 파동 곡선을 그리면서 2발로 나가며 적을 밀쳐냅니다." ..
                 "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 적을 즉사시키는 눈물이 나갑니다." ..
                 "#{{LuckSmall}} 행운 15 이상일 때 20% 확률 (행운 1당 +1%p)" ..
                 "#{{TimerSmall}} (쿨타임 0.5초)",
                 -- 중첩 시
                 "중첩 시 발사 확률이 중첩된 수만큼 합 연산으로 증가 및 쿨타임 감소"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.PISCES_EX,
+                "Pisces EX",
+                "",
+                "↑ {{Tears}} +0.5 Fire rate" ..
+                "#Increases tear knockback" ..
+                "#Isaac shoots 2 tears at once and his tears move in waves" ..
+                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "% chance to fire a tear that instantly kill enemies" ..
+                "#{{LuckSmall}} 20% chance at 15 luck (+1%p per Luck)",
+                -- Stacks
+                "On stacking, the firing chance increases per stack",
+                "en_us"
             )
         end
     end

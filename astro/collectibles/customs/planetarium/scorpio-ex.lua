@@ -3,6 +3,7 @@ Astro.Collectible.SCORPIO_EX = Isaac.GetItemIdByName("Scorpio EX")
 ---
 
 local POISON_FLY_CHANCE = 0.3
+local POISON_FLY_COOL = 5 -- n프레임 당 하나
 
 ---
 
@@ -13,12 +14,24 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SCORPIO_EX,
                 "초 전갈자리",
-                "맹독 파리",
+                "순도 100% 독",
                 "{{Poison}} 항상 적을 중독시키는 공격이 나갑니다." ..
-                "#적 명중 시 " .. string.format("%.f", POISON_FLY_CHANCE * 100) .. "%의 확률로 {{Poison}}독성 파리를 소환합니다." ..
+                "#적 명중 시 " .. string.format("%.f", POISON_FLY_CHANCE * 100) .. "%의 확률로 독성 파리를 소환합니다." ..
                 "#{{LuckSmall}} 행운 14 이상일 때 100% 확률 (행운 1당 +5%p)",
                 -- 중첩 시
                 "중첩 시 중첩된 수만큼 소환 시도, 소환 쿨타임 감소"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SCORPIO_EX,
+                "Scorpio EX",
+                "",
+                "{{Poison}} Poison tears" ..
+                "#" .. string.format("%.f", POISON_FLY_CHANCE * 100) .. "% chance to spawn a poison fly on hit" ..
+                "#{{LuckSmall}} 100% chance at 14 Luck (+5%p per Luck)",
+                -- Stacks
+                "On stacking, attempts additional spawns per stack and reduces cooldown",
+                "en_us"
             )
         end
     end
@@ -26,8 +39,6 @@ Astro:AddCallback(
 
 
 ------ 독 파리 ------
-local cooldownTime = 5 -- 5 프레임 당 하나
-
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,
     ---@param entity Entity
@@ -48,7 +59,7 @@ Astro:AddCallback(
                     for _ = 1, player:GetCollectibleNum(Astro.Collectible.SCORPIO_EX) do
                         if rng:RandomFloat() < POISON_FLY_CHANCE + player.Luck / 20 then
                             Isaac.Spawn(EntityType.ENTITY_FAMILIAR, FamiliarVariant.BLUE_FLY, 2, player.Position, Vector(0, 0), player)
-                            data["scorpioExCooldown"] = Game():GetFrameCount() + cooldownTime / player:GetCollectibleNum(Astro.Collectible.SCORPIO_EX)
+                            data["scorpioExCooldown"] = Game():GetFrameCount() + POISON_FLY_COOL / player:GetCollectibleNum(Astro.Collectible.SCORPIO_EX)
                         end
                     end
                 end

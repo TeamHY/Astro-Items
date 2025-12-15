@@ -21,6 +21,17 @@ Astro:AddCallback(
                 "#적 명중 시 그 적에게서 눈물이 뿜어져 나옵니다." ..
                 "#!!! 페널티 피격 시 " .. string.format("%.f", PENALTY_TIME / 30) .. "초 동안 무효과"
             )
+            
+            Astro:AddEIDCollectible(
+                Astro.Collectible.AQUARIUS_EX,
+                "Aquarius EX",
+                "",
+                "{{Collectible308}} Isaac leaves a trail of creep" ..
+                "#{{Damage}} The creep deals 66% of Isaac's damage per second and inherits his tear effects" ..
+                "#Tears burst from hit enemies" ..
+                "#!!!  Ineffective for " .. string.format("%.f", PENALTY_TIME / 30) .. " seconds on taking penalty damage",
+                nil, "en_us"
+            )
         end
     end
 )

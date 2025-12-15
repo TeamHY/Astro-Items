@@ -13,7 +13,7 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.TAURUS_EX,
                 "초 황소자리",
-                "실전 압축",
+                "나 사나이다",
                 "이동키를 두번 누르면 누른 방향으로 돌진합니다:" ..
                 "#{{ArrowGrayRight}} 접촉한 적에게 공격력 x4 +28의 피해를 입히고 지나간 길에 빛줄기를 소환합니다." ..
                 "#{{ArrowGrayRight}} " .. string.format("%.f", TAURUS_COOLDOWN / 60) .. "초간 이동속도가 +0.28 증가하고 공격불능 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
@@ -21,6 +21,20 @@ Astro:AddCallback(
                 "#{{TimerSmall}} (쿨타임 3초)",
                 -- 중첩 시
                 "중첩 시 쿨타임 감소"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.TAURUS_EX,
+                "Taurus EX",
+                "",
+                "Double-tapping a movement key makes Isaac dash" .. 
+                "#{{Damage}} During a dash, Isaac is invincible and deals 4x his damage +28 and leaving behind beams of light;" ..
+                "#{{ArrowGrayRight}} Receive for " .. string.format("%.f", TAURUS_COOLDOWN / 60) .. "seconds at {{Speed}} +0.28 Speed and Isaac can't shoot but deals 40 contact damage per second;" ..
+                "#{{ArrowGrayRight}} Pauses all enemies in the room until Isaac shoots. Enemies unpause after 30 seconds" ..
+                "#{{Timer}} 3 seconds cooldown",
+                -- 중첩 시
+                "Cooldown reduced per stack",
+                "en_us"
             )
         end
     end
@@ -60,10 +74,29 @@ Astro:AddCallback(
             
             local sfx = SFXManager()
             sfx:Play(SoundEffect.SOUND_BEEP, 1, 2, false, 0.8)
+
+            local coolEffect = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.HALLOWED_GROUND, 0, player.Position, Vector.Zero, player)
+            local cData = coolEffect:GetData()
+            cData._ASTRO_taurusExFollow = true    -- FollowParent()를 쓰면 후광이 안 사라짐
+            coolEffect.SpriteScale = Vector(0.5, 0.5)
+            coolEffect.Color = Color(1, 0.8, 0.5, 1)
             
             pData._ASTRO_taurusExSound = true
         end
     end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local eData = effect:GetData()
+
+        if eData._ASTRO_taurusExFollow then
+            effect.Position = effect.SpawnerEntity.Position
+        end
+    end,
+    EffectVariant.HALLOWED_GROUND
 )
 
 local lastInput = {

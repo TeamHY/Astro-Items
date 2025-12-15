@@ -15,13 +15,26 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.CANCER_EX,
                 "초 게자리",
-                "너도나도 고통스럽게",
+                "순수함에 보호받다",
                 "↑ {{SoulHeart}}소울하트 +3" ..
                 "#{{Collectible301}} 피격 시 이후 그 방에서 받는 피해를 절반으로 줄여줍니다. (최소 반칸)" ..
                 "#{{Card57}} 2분마다 1분간 적과 탄환이 캐릭터에게 가까이 가지 못하게 합니다." ..
                 "#다음 게임에서 {{Card57}}I - The Magician?을 소환합니다.",
                 -- 중첩 시
                 "중첩 시 발동 쿨타임 감소"
+            )
+            
+            Astro:AddEIDCollectible(
+                Astro.Collectible.CANCER_EX,
+                "Cancer EX",
+                "",
+                "{{SoulHeart}} +3 Soul Hearts" ..
+                "#{{Collectible301}} Taking damage reduces all future damage in the room to half a heart" ..
+                "#{{Card57}} Grants an aura that repels enemies and projectiles for 60 seconds every 2 minutes" ..
+                "#Spawns {{Card57}} I - The Magician? in the next run",
+                -- Stacks
+                "Stacks reduce {{Card57}}'s cooldown",
+                "en_us"
             )
         end
     end

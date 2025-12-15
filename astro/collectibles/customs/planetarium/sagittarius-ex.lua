@@ -16,14 +16,28 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.SAGITTARIUS_EX,
                 "초 사수자리",
-                "꿰뚫기",
+                "꿰뚫어라",
                 "공격이 적을 관통하며;" ..
                 "#{{ArrowGrayRight}} 관통한 공격은 적이 있는 방향을 향해 직선으로 유도됩니다." ..
                 "#보스를 제외한 적이 피해를 입을 때 " .. string.format("%.f", EXTRA_DAMAGE_MULTIPLIER * 100) .. "%의 추가 피해를 주며;" ..
                 "#{{ArrowGrayRight}} {{LuckSmall}}행운 1당 1%의 추가 피해를 줍니다." ..
-                "#다음 게임에서 {{Collectible48}}Cupid's Arrow를 들고 시작합니다.",
+                "#다음 게임에서{{Collectible48}}Cupid's Arrow를 들고 시작합니다.",
                 -- 중첩 시
                 "중첩 시 추가 피해량이 중첩된 수만큼 합 연산으로 증가"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.SAGITTARIUS_EX,
+                "Sagittarius EX",
+                "",
+                "Piercing tears" ..
+                "#Hitting an enemy makes the tear homing" ..
+                "#Deals " .. string.format("%.f", EXTRA_DAMAGE_MULTIPLIER * 100) .. "% extra damage to non-boss enemies;" ..
+                "#{{ArrowGrayRight}} +1%p per Luck." ..
+                "#Grants{{Collectible48}} Cupid's Arrow at the start of the next run",
+                -- Stacks
+                "On stacking, extra damage increases per stack",
+                "en_us"
             )
         end
     end

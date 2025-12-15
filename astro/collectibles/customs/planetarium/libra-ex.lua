@@ -9,10 +9,20 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.LIBRA_EX,
                 "초 천칭자리",
-                "만능 열쇠",
+                "공평하게",
                 "적에게 준 피해의 10%만큼 그 방의 다른 적에게 피해를 줍니다.",
                 -- 중첩 시
                 "중첩 시 적에게 주는 피해량이 중첩된 수만큼 합연산으로 증가"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.LIBRA_EX,
+                "Libra EX",
+                "",
+                "Deals 10% damage given to enemies to all enemies in the room",
+                -- Stacks
+                "Increases damage dealt to all enemies in the room when stacked",
+                "en_us"
             )
         end
     end

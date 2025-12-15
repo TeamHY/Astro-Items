@@ -17,12 +17,23 @@ Astro:AddCallback(
                 Astro.Collectible.VIRGO_EX,
                 "초 처녀자리",
                 "하늘을 우러러 한 점 부끄럼 없이",
-                "#{{Collectible654}} 능력치 감소 알약 사용 시 {{DamageSmall}}공격력이 +0.6 증가하며;" ..
+                "{{Collectible654}} 능력치 감소 알약 사용 시 {{DamageSmall}}공격력이 +0.6 증가하며;" ..
                 "#{{ArrowGrayRight}} 비 능력치 관련 부정 알약 사용 시 블랙하트를 1개 드랍합니다." ..
                 "#패널티 피격 시 피해를 무시하고 10초 동안 무적이 됩니다." ..
                 "#{{TimerSmall}} (쿨타임 60초)",
                 -- 중첩 시
                 "중첩 시 공격력, 블랙하트 소환 개수, 무적 시간이 합연산으로 증가"
+            )
+            
+            Astro:AddEIDCollectible(
+                Astro.Collectible.VIRGO_EX,
+                "Virgo EX",
+                "",
+                "↑ {{Damage}} Eating a stat down pill grants +0.6 damage" ..
+                "#{{BlackHeart}} Eating other bad pills spawns a Black Heart" ..
+                "#Ignores penalty damage and becomes invincible for 10 seconds" ..
+                "#{{Timer}} 10 seconds cooldown",
+                nil, "en_us"
             )
         end
     end

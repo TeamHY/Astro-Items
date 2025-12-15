@@ -178,6 +178,13 @@ Astro:AddCallback(
                     end
     
                     pickup:Morph(pickup.Type, pickup.Variant, item, true)
+                    Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, nil, nil, 9)
+                    
+                    local sfx = SFXManager()
+                    if SoundEffect.SOUND_ITEM_RAISE and sfx:IsPlaying(SoundEffect.SOUND_ITEM_RAISE) then
+                        sfx:Stop(SoundEffect.SOUND_ITEM_RAISE)
+                        sfx:Play(SoundEffect.SOUND_DIPLOPIA, 0.75)
+                    end
                 end
             end
         end

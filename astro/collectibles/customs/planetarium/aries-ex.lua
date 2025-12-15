@@ -9,14 +9,28 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(
                 Astro.Collectible.ARIES_EX,
                 "초 양자리",
-                "순수함에 보호받다",
+                "실전 압축",
                 "↑ {{SpeedSmall}}이동속도 +0.25" ..
                 "#{{Collectible300}} 이동속도가 0.85 이상인 상태에서 높은 속도로 적과 접촉시 피해를 받지 않고 적에게 25의 피해를 줍니다." ..
                 "#{{BossRoom}} 보스방 입장 시 아래 효과 중 하나 적용:" ..
-                "#{{ArrowGrayRight}} {{TearsSmall}}연사(상한) +2" ..
+                "#{{ArrowGrayRight}} {{TearsSmall}}연사(+상한) +2" ..
                 "#{{ArrowGrayRight}} {{DamageSmall}}공격력 +2" ..
                 "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도(고정) +2#{{Blank}} (이미 2.0라면 건너뜀)" ..
                 "#{{ArrowGrayRight}} {{Collectible192}} 공격이 적에게 유도되며 {{RangeSmall}}사거리가 3 증가합니다."
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.ARIES_EX,
+                "Aries EX",
+                "",
+                "↑ {{Speed}} +0.25 Speed" ..
+                "#{{Collectible300}} Moving above 0.85 Speed makes Isaac immune to contact damage and deals 25 damage to enemies" ..
+                "#On entering {{BossRoom}} boss room, one of the following effects:" ..
+                "#{{ArrowGrayRight}} {{Tears}} +2 Tears" ..
+                "#{{ArrowGrayRight}} {{Damage}} +2 Damage" ..
+                "#{{ArrowGrayRight}} {{Speed}} +2 Speed#{{Blank}} (Skips if already 2.0)" ..
+                "#{{ArrowGrayRight}} {{Collectible192}} Homing tears and {{Range}} +3 Range",
+                nil, "en_us"
             )
         end
     end
