@@ -69,7 +69,7 @@ Astro:AddCallback(
                     data["dryEyeSyndromeMultiplier"] = 0
                 end
 
-                print(Game():GetFrameCount())
+                --print(Game():GetFrameCount())
 
                 if data["dryEyeSyndromeMultiplier"] < maxMultiplier then
                     -- 플레이어 업데이트는 사실 초당 60프레임이라서 2로 나눔

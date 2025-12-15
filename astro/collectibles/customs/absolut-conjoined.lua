@@ -5,8 +5,8 @@ Astro.Collectible.ABSOLUT_CONJOINED = Isaac.GetItemIdByName("Absolut Conjoined")
 if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.ABSOLUT_CONJOINED,
-        "앱솔루트 샴쌍둥이",
-        "종양",
+        "완전한 샴쌍둥이",
+        "종양!",
         "Conjoined 세트가 적용됩니다."
     )
 end

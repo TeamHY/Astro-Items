@@ -3,6 +3,7 @@
 		<info text="15초마다 10개의 빛줄기가 내립니다"/>
 		<info text="아이작이 피격당할 때마다 20초 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
 	</collectible>
+	<!-- WIP
 	<collectible id="2">
 	</collectible>
 	<collectible id="3">
@@ -35,6 +36,7 @@
 		<info text="적을 명중하면 그 적에게서 눈물이 뿜어져 나옵니다"/>
 		<info text="아이작이 피격당할 때마다 10초 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
 	</collectible>
+	-->
 	<collectible id="11">
 		<info text="획득 시 무작위 황금 장신구와 꿀꺽!을 소환합니다"/>
 		<info text="다음 게임의 시작 층에 무작위 황금 장신구 1개를 생성합니다"/>
@@ -52,6 +54,7 @@
 		<info text="다음 게임의 시작 층에 금이 간 열쇠 1개를 생성합니다"/>
 		<info text="특급 비밀방의 위치를 맵에 표시합니다"/>
 	</collectible>
+	<!-- WIP
 	<collectible id="15">
 		<info text="2분마다 1분 동안 가까운 적과 투사체를 밀어냅니다"/>
 		<info text="다음 게임의 시작 층에 I - 마술사?를 생성합니다"/>
@@ -59,6 +62,7 @@
 	<collectible id="16">
 		<info text="획득 시 소지 중인 아이템 5개를 생성합니다. 1개를 획득하면 나머지 4개는 사라집니다"/>
 	</collectible>
+	-->
 	<collectible id="17">
 		<info text="왕 심한 탐욕의 오류방으로 이동합니다"/>
 		<info text="소지 중인 방화광, 호스트 모자를 제거합니다"/>
@@ -80,7 +84,7 @@
 	<collectible id="22">
 		<info text="획득 시 실종 포스터를 드롭합니다"/>
 		<info text="다음 게임의 시작 층에 하얀 모닥불을 생성합니다"/>
-	</collec`ible>
+	</collecible>
 	<collectible id="23">
 		<info text="다음 게임에서 불타는 지하실, 침수된 동굴, 습한 나락, 상처난 자궁 층이 등장하지 않습니다"/>
 		<info text="생성되지 않는 층에서 등장하는 적을 명중하면 추가적으로 피해를 줍니다"/>
@@ -169,11 +173,11 @@
 	<collectible id="47">
 		<info text="새 층을 시작할 때마다 소지 중인 아이템 1개와 오브류 아이템을 제거하고 제거된 아이템과 오브류 아이템 중 하나를 소환합니다. 1개를 획득하면 나머지 1개는 사라집니다"/>
 	</collectible>
-	<collectible id="48">
+	<!-- WIP collectible id="48">
 		<info text="관통 눈물을 얻습니다"/>
 		<info text="적들이 피해를 받을 때 행운에 비례해 증가하는 추가 피해를 줍니다"/>
 		<info text="다음 게임에서 큐피드의 화살을 들고 시작합니다"/>
-	</collectible>
+	</collectible -->
 	<collectible id="49">
 		<info text="활성화한 방과 그 다음 방까지 탐험가 모자, 보라 양초 효과를 얻습니다"/>
 	</collectible>

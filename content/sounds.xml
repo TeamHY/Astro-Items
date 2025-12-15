@@ -15,7 +15,7 @@
     <sound name="Maple">
         <sample weight="1" path="feedback/maple.wav" />
     </sound>
-    <sound name="PiscesEX">
+    <sound name="CancerEX">
         <sample weight="1" path="feedback/pisces-ex.wav" />
     </sound>
     <sound name="StaffOfAinzOoalGown">

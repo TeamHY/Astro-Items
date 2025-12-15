@@ -49,9 +49,9 @@ Astro:AddCallback(
 
 ------ 칼찌 ------
 local skillCheckSfx = SFXManager()
-local veryGoodsound = Isaac.GetSoundIdByName("SkillCheckVeryGood")
-local goodSound = Isaac.GetSoundIdByName("SkillCheckGood")
-local advertiseSound = Isaac.GetSoundIdByName("SkillCheckAdvertise")
+local veryGoodsound = Astro.SoundEffect.SKILL_CHECK_GREAT
+local goodSound = Astro.SoundEffect.SKILL_CHECK_GOOD
+local advertiseSound = Astro.SoundEffect.SKILL_CHECK_APPEAR
 
 ---@param player EntityPlayer
 ---@param rng RNG

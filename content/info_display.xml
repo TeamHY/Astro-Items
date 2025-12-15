@@ -3,7 +3,7 @@
 		<info text="Drops 10 beams of light every 15 seconds"/>
 		<info text="Stops the effect for 20 seconds every time Isaac takes damage (except self-inflicted damage)"/>
 	</collectible>
-	<collectible id="2">
+	<!-- WIP collectible id="2">
 	</collectible>
 	<collectible id="3">
 		<info text="Deals 10% of the damage dealt to enemies to all enemies in the room"/>
@@ -34,7 +34,7 @@
 	<collectible id="10">
 		<info text="Tears burst from enemies on hit"/>
 		<info text="Stops the effect for 10 seconds every time Isaac takes damage (except self-inflicted damage)"/>
-	</collectible>
+	</collectible -->
 	<collectible id="11">
 		<info text="Spawns a random golden trinket and Gulp on pickup"/>
 		<info text="Spawns 1 random golden trinket in the starting room of the next run"/>
@@ -52,13 +52,13 @@
 		<info text="Spawns 1 Cracked Key in the starting room of the next run"/>
 		<info text="Reveals the location of ultra secret rooms on the map"/>
 	</collectible>
-	<collectible id="15">
+	<!-- WIP collectible id="15">
 		<info text="Repels nearby enemies and projectiles for 1 minute every 2 minutes"/>
 		<info text="Spawns I - The Magician? in the starting room of the next run"/>
 	</collectible>
 	<collectible id="16">
 		<info text="Spawns 5 held items on pickup. Picking up one makes the other 4 disappear"/>
-	</collectible>
+	</collectible -->
 	<collectible id="17">
 		<info text="Astro-rules only"/>
 		<info text="Teleports to the I AM ERROR room of the Ultra Greedier"/>
@@ -171,11 +171,11 @@
 	<collectible id="47">
 		<info text="Removes 1 held item and spawns the removed item and one of Orbs upon starting a new floor. Picking up one makes the other disappear"/>
 	</collectible>
-	<collectible id="48">
+	<!-- WIP collectible id="48">
 		<info text="Piercing tears"/>
 		<info text="Enemies take extra damage that increases with luck"/>
 		<info text="Start the next run with Cupid's Arrow"/>
-	</collectible>
+	</collectible -->
 	<collectible id="49">
 		<info text="Grants Treasure Map and Purple Candle effects for the activated room and the next room"/>
 	</collectible>

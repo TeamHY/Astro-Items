@@ -4,7 +4,6 @@ Astro.EID = {}
 Astro.EID.Trinket = {}
 Astro.EID.Birthright = {}
 Astro.EID.Hints = {}
-Astro.EID.ShowHint = false
 Astro.EID.HintAdded = false
 
 Astro.EID.QualityIcon = Sprite()
@@ -114,7 +113,7 @@ end
 
 local function GetCraftHint(descObj)
     if not EID then return end
-    if not Astro.EID.ShowHint then return end
+    if Astro.Data["ShowQ5Hint"] ~= 1 then return end
 
     local hint = Astro.EID.Hints[descObj.ObjSubType]
     if not hint then return end
@@ -135,12 +134,12 @@ Astro:AddCallback(
     function(_, player)
         if not EID then return end
 
-        if Astro.EID.ShowHint and not Astro.EID.HintAdded then
+        if Astro.Data["ShowQ5Hint"] == 1 and not Astro.EID.HintAdded then
             EID:addDescriptionModifier("Astrobirth", GetCraftHint)
             Astro.EID.HintAdded = true
         end
 
-        if not Astro.EID.ShowHint and Astro.EID.HintAdded then
+        if Astro.Data["ShowQ5Hint"] ~= 1 and Astro.EID.HintAdded then
             EID:removeDescriptionModifier("Astrobirth")
             Astro.EID.HintAdded = false
         end
