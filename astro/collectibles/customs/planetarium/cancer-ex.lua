@@ -36,7 +36,7 @@ Astro:AddCallback(
         if player:HasCollectible(Astro.Collectible.CANCER_EX) then
             if Game():GetFrameCount() % math.floor(3600 / player:GetCollectibleNum(Astro.Collectible.CANCER_EX)) == 0 then
                 player:UseCard(Card.CARD_REVERSE_MAGICIAN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
-                SFXManager():Play(Astro.SoundEffect.PISCES_EX, SOUND_VOLUME)
+                SFXManager():Play(Astro.SoundEffect.CANCER_EX, SOUND_VOLUME)
             end
         end
     end

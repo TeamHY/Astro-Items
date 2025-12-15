@@ -18,10 +18,10 @@ Astro:AddCallback(
                 "초 사수자리",
                 "꿰뚫기",
                 "공격이 적을 관통하며;" ..
-                "#{{ArrowGrayRight}} 관통한 공격은 적에게 유도됩니다." ..
+                "#{{ArrowGrayRight}} 관통한 공격은 적이 있는 방향을 향해 직선으로 유도됩니다." ..
                 "#보스를 제외한 적이 피해를 입을 때 " .. string.format("%.f", EXTRA_DAMAGE_MULTIPLIER * 100) .. "%의 추가 피해를 주며;" ..
                 "#{{ArrowGrayRight}} {{LuckSmall}}행운 1당 1%의 추가 피해를 줍니다." ..
-                "#{{Collectible48}} 다음 게임에서 Cupid's Arrow를 들고 시작합니다.",
+                "#다음 게임에서 {{Collectible48}}Cupid's Arrow를 들고 시작합니다.",
                 -- 중첩 시
                 "중첩 시 추가 피해량이 중첩된 수만큼 합 연산으로 증가"
             )
@@ -111,7 +111,7 @@ Astro:AddCallback(
         local player = Astro:GetPlayerFromEntity(tear)
 
         if player and player:HasCollectible(Astro.Collectible.SAGITTARIUS_EX) then
-            tear:AddTearFlags(TearFlags.TEAR_TURN_HORIZONTAL)
+            tear:AddTearFlags(TearFlags.TEAR_TURN_HORIZONTAL | TearFlags.TEAR_HOMING)
         end
     end
 )

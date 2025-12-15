@@ -12,9 +12,11 @@
 	<costume anm2path="character_ainz_ooal_gown_hair.anm2" type="none" priority="99" />
 	<costume anm2path="character_ainz_ooal_gownb_hair.anm2" type="none" priority="99" />
 	
+	<costume id="2" anm2path="304_libra.anm2" type="passive"  hasSkinAlt="true" />
 	<costume id="4" anm2path="305_scorpio.anm2" type="passive" />
 	<costume id="5" anm2path="307_capricorn.anm2" type="passive" />
 	<costume id="6" anm2path="303_virgo.anm2" type="passive" />
+	<costume id="9" anm2path="299_taurus.anm2" type="passive"  hasSkinAlt="true" />
 	<costume id="28" anm2path="costume_ptolemaeus.anm2" type="passive" />
 	<costume id="48" anm2path="306_sagittarius.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="71" anm2path="costume_heartbloom.anm2" type="passive" hasSkinAlt="false" />

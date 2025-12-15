@@ -24,7 +24,8 @@ if ModConfigMenu then
         end,
         OnChange = function(newOption)
             Astro.Data["ShowQ5Hint"] = newOption;
-        end
+        end,
+        Info = "The crafting recipe for a Q5 item is displayed in the EID."
     });
     ModConfigMenu.AddSetting("Astrobirth", nil,
     {
@@ -45,7 +46,8 @@ if ModConfigMenu then
         end,
         OnChange = function(newOption)
             Astro.Data["TaurusExMode"] = newOption;
-        end
+        end,
+        Info = "Choose whether Taurus EX’s dash is triggered by double-tapping a movement key (like Mars) or by pressing a separate assigned key once."
     });
     ModConfigMenu.AddSetting("Astrobirth", nil,
     {
@@ -75,7 +77,8 @@ if ModConfigMenu then
             end
             return "Press any key to set as toggle key.$newline$newline" ..
                 keepSettingString .. "Press ESCAPE to clear this setting."
-        end
+        end,
+        Info = "(Functions when the Taurus EX Mode option is set to Single tap) Configure the key to trigger the Taurus EX dash."
     });
 end
 

@@ -1,10 +1,16 @@
 ---
 
-local SOUND_VOLUME = 1
+local SPAWN_CHANCE = 0.05    -- 기본 소환 확률
+
+local MAX_CHANCE = 0.2    -- 최대 소환 확률
+
+local LUCK_MULTIPLY = 1 / 100    -- 행운 1당 몇 %p으로 할진
+
+local COOLDOWN_TIME = 15    -- 30 프레임 = 1초
+
+local TEARS_INCREMENT = 0.5    -- 연사 상한 증가량
 
 ---
-
-local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.PISCES_EX = Isaac.GetItemIdByName("Pisces EX")
 
@@ -16,58 +22,132 @@ Astro:AddCallback(
                 Astro.Collectible.PISCES_EX,
                 "초 물고기자리",
                 "밀어내기",
-                "{{Card57}} 2분마다 1분간 적과 탄환이 캐릭터에게 가까이 가지 못합니다." ..
-                "#다음 게임에서 {{Card57}}I - The Magician?을 소환합니다.",
+                "↑ {{TearsSmall}}연사(+상한) +0.5" ..
+                "#공격이 2발로 나가며, 적을 밀쳐냅니다." ..
+                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 적을 즉사시키는 눈물이 나갑니다." ..
+                "#{{LuckSmall}} 행운 15 이상일 때 20% 확률 (행운 1당 +1%p)" ..
+                "#{{TimerSmall}} (쿨타임 0.5초)",
                 -- 중첩 시
-                "중첩 시 발동 쿨타임 감소"
+                "중첩 시 발사 확률이 중첩된 수만큼 합 연산으로 증가 및 쿨타임 감소"
             )
         end
     end
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_PEFFECT_UPDATE,
+    ModCallbacks.MC_POST_PLAYER_UPDATE,
     ---@param player EntityPlayer
     function(_, player)
         if player:HasCollectible(Astro.Collectible.PISCES_EX) then
-            if Game():GetFrameCount() % math.floor(3600 / player:GetCollectibleNum(Astro.Collectible.PISCES_EX)) == 0 then
-                player:UseCard(Card.CARD_REVERSE_MAGICIAN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
-                SFXManager():Play(Astro.SoundEffect.PISCES_EX, SOUND_VOLUME)
+            local temporacyEffect = player:GetEffects()
+
+            if not temporacyEffect:HasCollectibleEffect(CollectibleType.COLLECTIBLE_20_20) then
+                temporacyEffect:AddCollectibleEffect(CollectibleType.COLLECTIBLE_20_20, false, 1)
             end
         end
     end
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    ---@param isContinued boolean
-    function(_, isContinued)
-        if not isContinued and Astro.Data.PiscesEXCount ~= nil and Astro.Data.PiscesEXCount > 0 then
-            local player = Isaac.GetPlayer()
-            local currentRoom = Game():GetLevel():GetCurrentRoom()
-
-            for _ = 1, Astro.Data.PiscesEXCount do
-                Isaac.Spawn(
-                    EntityType.ENTITY_PICKUP,
-                    PickupVariant.PICKUP_TAROTCARD,
-                    Card.CARD_REVERSE_MAGICIAN,
-                    currentRoom:FindFreePickupSpawnPosition(player.Position, 40, true),
-                    Vector.Zero,
-                    nil
-                )
+    ModCallbacks.MC_EVALUATE_CACHE,
+    ---@param player EntityPlayer
+    ---@param cacheFlag CacheFlag
+    function(_, player, cacheFlag)
+        if player:HasCollectible(Astro.Collectible.PISCES_EX) then
+            if cacheFlag == CacheFlag.CACHE_TEARFLAG then
+                player.TearFlags = player.TearFlags | TearFlags.TEAR_WIGGLE | TearFlags.TEAR_KNOCKBACK
+            elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
+                player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, TEARS_INCREMENT)
             end
-
-            Astro.Data.PiscesEXCount = 0
         end
     end
 )
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        Astro.Data.PiscesEXCount = player:GetCollectibleNum(Astro.Collectible.PISCES_EX)
+Astro:AddCallback(
+    ModCallbacks.MC_POST_FIRE_TEAR,
+    ---@param tear EntityTear
+    function(_, tear)
+        local player = Astro:GetPlayerFromEntity(tear)
+        local tearData = tear:GetData()
+
+        if player ~= nil and player:HasCollectible(Astro.Collectible.PISCES_EX) then
+            local data = player:GetData()
+
+            if (data["piscesExCooldown"] == nil or data["piscesExCooldown"] < Game():GetFrameCount()) then
+                local rng = player:GetCollectibleRNG(Astro.Collectible.PISCES_EX)
+                local collectibleNum = player:GetCollectibleNum(Astro.Collectible.PISCES_EX)
+
+                if rng:RandomFloat() < math.min(MAX_CHANCE, (SPAWN_CHANCE + player.Luck * LUCK_MULTIPLY) * collectibleNum) then
+                    tearData._ASTRO_piscesEx = {}
+
+                    local modifiedColor = Color(1,1,1,1,0,0,0)
+                    modifiedColor:SetColorize(1, 1.25, 4, 1.25)
+                    tear:ChangeVariant(TearVariant.BALLOON)
+                    tear.Color = modifiedColor
+
+                    data["piscesExCooldown"] = Game():GetFrameCount() + COOLDOWN_TIME / collectibleNum
+                end
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_TEAR_COLLISION,
+    ---@param tear EntityTear
+    ---@param collider Entity
+    ---@param low boolean
+    function(_, tear, collider, low)
+        if tear:GetData()._ASTRO_piscesEx ~= nil then
+            if
+                not collider:IsBoss()
+                and not collider:IsDead()
+                and collider:IsVulnerableEnemy()
+                and collider.Type ~= EntityType.ENTITY_FIREPLACE
+            then
+                local whirlpoolspawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.WHIRLPOOL, 0, collider.Position, Vector.Zero, tear)
+                local whirlpool = whirlpoolspawn:ToEffect()
+                local eData = whirlpool:GetData()
+                eData._ASTRO_piscesEx_EffectScaleDecrease = 0
+                whirlpool.SpriteScale = Vector(2/3, 2/3)
+                whirlpool:FollowParent(collider)
+
+                Astro:ScheduleForUpdate(
+                    function()
+                        local splashSpawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BIG_SPLASH, 0, collider.Position, Vector.Zero, nil)
+                        local splash = splashSpawn:ToEffect()
+                        splash:FollowParent(collider)
+
+                        local sfx = SFXManager()
+                        sfx:Play(SoundEffect.SOUND_BOSS2_DIVE, 0.75)
+
+                        collider:Die()
+                        eData._ASTRO_piscesEx_EffectScaleDecrease = 1
+                    end,
+                    12
+                )
+
+                tear:GetData()._ASTRO_piscesEx = nil
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local eData = effect:GetData()
+
+        if eData._ASTRO_piscesEx_EffectScaleDecrease < 1 then
+            effect.SpriteScale = Vector(2/3, 2/3)
+        elseif eData._ASTRO_piscesEx_EffectScaleDecrease >= 1 then
+            if effect.SpriteScale.X > 0 and effect.SpriteScale.Y > 0 then
+                effect.SpriteScale = effect.SpriteScale - Vector(0.05, 0.05)
+            else
+                effect:Remove()
+            end
+        end
     end,
-    Astro.Collectible.PISCES_EX
+    EffectVariant.WHIRLPOOL
 )

@@ -31,10 +31,13 @@ Astro.CallbackPriority = {
 
 Astro.SoundEffect = {
     MAPLE = Isaac.GetSoundIdByName("Maple"),
-    PISCES_EX = Isaac.GetSoundIdByName("PiscesEX"),
+    CANCER_EX = Isaac.GetSoundIdByName("CancerEX"),
     STAFF_OF_AINZ_OOAL_GOWN = Isaac.GetSoundIdByName("StaffOfAinzOoalGown"),
     MAYUSHIIS_POCKET_WATCH_APPEAR = Isaac.GetSoundIdByName("MayushiisPocketWatchAppear"),
     SCALES_OF_OBEDIENCE_APPEAR = Isaac.GetSoundIdByName("ScalesOfObedienceAppear"),
     LEGACY_APPEAR = Isaac.GetSoundIdByName("LegacyAppear"),
-    LEGACY_USE = Isaac.GetSoundIdByName("LegacyUse")
+    LEGACY_USE = Isaac.GetSoundIdByName("LegacyUse"),
+    SKILL_CHECK_APPEAR = Isaac.GetSoundIdByName("SkillCheckAdvertise"),
+    SKILL_CHECK_GOOD = Isaac.GetSoundIdByName("SkillCheckGood"),
+    SKILL_CHECK_GREAT = Isaac.GetSoundIdByName("SkillCheckVeryGood")
 }
