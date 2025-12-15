@@ -9,6 +9,65 @@ local DAMAGE_UP_INCREMENT = 0.6
 
 ---
 
+local damageUpPillEffects = {
+    PillEffect.PILLEFFECT_HEALTH_DOWN,   -- 6
+    PillEffect.PILLEFFECT_RANGE_DOWN,   -- 11
+    PillEffect.PILLEFFECT_SPEED_DOWN,   -- 13
+    PillEffect.PILLEFFECT_TEARS_DOWN,   -- 15
+    PillEffect.PILLEFFECT_LUCK_DOWN,   -- 17
+    PillEffect.PILLEFFECT_SHOT_SPEED_DOWN,   -- 47
+    PillEffect.PILLEFFECT_EXPERIMENTAL,   -- 49
+}
+
+local blackHeartPillEffects = {
+    PillEffect.PILLEFFECT_PARALYSIS,   -- 22
+    PillEffect.PILLEFFECT_AMNESIA,   -- 25
+    PillEffect.PILLEFFECT_WIZARD,   -- 27
+    PillEffect.PILLEFFECT_ADDICTED,   -- 29
+    PillEffect.PILLEFFECT_QUESTIONMARK,   -- 31
+    PillEffect.PILLEFFECT_RETRO_VISION,   -- 37
+    PillEffect.PILLEFFECT_IM_EXCITED,   -- 42
+}
+
+local function VirgoExModifierCondition(descObj)
+    if descObj.ObjType == 5 and descObj.ObjVariant == PickupVariant.PICKUP_PILL then
+        local numPlayers = Game():GetNumPlayers()
+        for i = 0, numPlayers - 1 do
+            local player = Isaac.GetPlayer(i)
+            if player:HasCollectible(Astro.Collectible.VIRGO_EX) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.VIRGO_EX)]) then
+                return true
+            end
+        end
+    end
+end 
+
+local function VirgoExModifierCallback(descObj)
+    local adjustedID = EID:getAdjustedSubtype(descObj.ObjType, descObj.ObjVariant, descObj.ObjSubType)
+    local data = EID.pillMetadata[adjustedID-1]
+    if data ~= nil then
+        local damageUp = string.find(data.class,"3") and string.find(data.class,"-")
+
+        if adjustedID-1 == PillEffect.PILLEFFECT_SHOT_SPEED_DOWN then
+            damageUp = true
+        end
+        local blackHeart = (string.find(data.class,"2") or string.find(data.class,"1")) and (string.find(data.class,"-") or adjustedID-1 == PillEffect.PILLEFFECT_IM_EXCITED)
+        
+        local text = ""
+        if damageUp then
+            text = EID:getDescriptionEntry("FalsePHDDamage")
+        elseif blackHeart then
+            text = EID:getDescriptionEntry("FalsePHDHeart")
+        end
+
+        if text ~= "" then
+            local iconStr = "#{{Collectible" .. Astro.Collectible.VIRGO_EX .. "}} "
+            EID:appendToDescription(descObj, iconStr..text)
+        end
+    end
+
+    return descObj
+end
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
@@ -17,7 +76,7 @@ Astro:AddCallback(
                 Astro.Collectible.VIRGO_EX,
                 "초 처녀자리",
                 "하늘을 우러러 한 점 부끄럼 없이",
-                "{{Collectible654}} 능력치 감소 알약 사용 시 {{DamageSmall}}공격력이 +0.6 증가하며;" ..
+                "{{Collectible654}} 능력치 감소 알약 사용 시 {{DamageSmall}}공격력이 +" .. DAMAGE_UP_INCREMENT .. " 증가하며;" ..
                 "#{{ArrowGrayRight}} 비 능력치 관련 부정 알약 사용 시 블랙하트를 1개 드랍합니다." ..
                 "#패널티 피격 시 피해를 무시하고 10초 동안 무적이 됩니다." ..
                 "#{{TimerSmall}} (쿨타임 60초)",
@@ -29,12 +88,14 @@ Astro:AddCallback(
                 Astro.Collectible.VIRGO_EX,
                 "Virgo EX",
                 "",
-                "↑ {{Damage}} Eating a stat down pill grants +0.6 damage" ..
+                "↑ {{Damage}} Eating a stat down pill grants +" .. DAMAGE_UP_INCREMENT .. " damage" ..
                 "#{{BlackHeart}} Eating other bad pills spawns a Black Heart" ..
                 "#Ignores penalty damage and becomes invincible for 10 seconds" ..
                 "#{{Timer}} 10 seconds cooldown",
                 nil, "en_us"
             )
+
+            EID:addDescriptionModifier("Virgo EX Modifier", VirgoExModifierCondition, VirgoExModifierCallback)
         end
     end
 )
@@ -69,25 +130,6 @@ Astro:AddCallback(
 
 
 ------ 위조 박사학위  ------
-local damageUpPillEffects = {
-    PillEffect.PILLEFFECT_HEALTH_DOWN,   -- 6
-    PillEffect.PILLEFFECT_RANGE_DOWN,   -- 11
-    PillEffect.PILLEFFECT_SPEED_DOWN,   -- 13
-    PillEffect.PILLEFFECT_TEARS_DOWN,   -- 15
-    PillEffect.PILLEFFECT_LUCK_DOWN,   -- 17
-    PillEffect.PILLEFFECT_SHOT_SPEED_DOWN,   -- 47
-    PillEffect.PILLEFFECT_EXPERIMENTAL,   -- 49
-}
-
-local blackHeartPillEffects = {
-    PillEffect.PILLEFFECT_PARALYSIS,   -- 22
-    PillEffect.PILLEFFECT_AMNESIA,   -- 25
-    PillEffect.PILLEFFECT_WIZARD,   -- 27
-    PillEffect.PILLEFFECT_ADDICTED,   -- 29
-    PillEffect.PILLEFFECT_QUESTIONMARK,   -- 31
-    PillEffect.PILLEFFECT_RETRO_VISION,   -- 37
-    PillEffect.PILLEFFECT_IM_EXCITED,   -- 42
-}
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,

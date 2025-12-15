@@ -68,6 +68,18 @@ Astro:AddCallback(
     end
 )
 
+Astro:AddCallback(
+    ModCallbacks.MC_POST_FIRE_TEAR,
+    ---@param tear EntityTear
+    function(_, tear)
+        local player = Astro:GetPlayerFromEntity(tear)
+        
+        if player ~= nil and player:HasCollectible(Astro.Collectible.SCORPIO_EX) then
+            tear.Color = Color(0.2, 1, 0.2, 1)
+        end
+    end
+)
+
 
 ------ 독 공격 ------
 Astro:AddCallback(
@@ -75,7 +87,7 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     ---@param cacheFlag CacheFlag
     function(_, player, cacheFlag)
-        if player:HasCollectible(Astro.Collectible.VIRGO_EX) then
+        if player:HasCollectible(Astro.Collectible.SCORPIO_EX) then
             if cacheFlag == CacheFlag.CACHE_TEARFLAG then
                 player.TearFlags = player.TearFlags | TearFlags.TEAR_POISON
             end
