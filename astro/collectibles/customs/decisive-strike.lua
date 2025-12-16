@@ -242,7 +242,7 @@ Astro:AddCallback(
                                 end
                             else
                                 if not pData["DecisiveStrike_PlayedSound"] then
-                                    sfx:Play(SoundEffect.SOUND_BOSS2INTRO_ERRORBUZZ)
+                                    skillCheckSfx:Play(SoundEffect.SOUND_BOSS2INTRO_ERRORBUZZ)
                                 end
 
                                 if damageInfo then

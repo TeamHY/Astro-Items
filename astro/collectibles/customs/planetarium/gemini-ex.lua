@@ -79,10 +79,8 @@ Astro:AddCallback(
             local player = Isaac.GetPlayer(i - 1)
             local pData = Astro:GetPersistentPlayerData(player)
 
-            if not isContinued then
-                pData["spawnedByGeminiEx"] = {}
-                Astro.Data["geminiExCooldown"] = 0
-            end
+            pData["spawnedByGeminiEx"] = pData["spawnedByGeminiEx"] or {}
+            Astro.Data["geminiExCooldown"] = Astro.Data["geminiExCooldown"] or 0
         end
     end
 )
@@ -91,7 +89,7 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_UPDATE,
     function(_)
-        if Astro.Data["geminiExCooldown"] > 0 then
+        if Astro.Data["geminiExCooldown"] and Astro.Data["geminiExCooldown"] > 0 then
             Astro.Data["geminiExCooldown"] = Astro.Data["geminiExCooldown"] - 1
         end
     end
