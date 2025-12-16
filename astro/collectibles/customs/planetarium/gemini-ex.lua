@@ -7,9 +7,10 @@ Astro:AddCallback(
             Astro:AddEIDCollectible(    
                 Astro.Collectible.GEMINI_EX,    
                 "초 쌍둥이자리",    
-                "사이좋게 지내렴",    
+                "사이좋게 지내렴",
                 "적을 따라다니며 접촉한 적에게 초당 65 + 공격력 x1.0의 피해를 줍니다." .. 
-                "#{{Collectible357}} 방 입장 시 소지중인 패밀리어를 복사합니다."
+                "#{{Collectible357}} 방 입장 시 소지중인 패밀리어를 복사합니다." ..
+                "#{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} 최초 획득 시 Black Mirror(패시브 획득 시 한 번 더 획득)를 드랍합니다."
             )
 
             Astro:AddEIDCollectible(    
@@ -18,7 +19,8 @@ Astro:AddCallback(
                 "",    
                 "Familiar that chases and damages enemies" ..
                 "#{{ArrowGrayRight}] Deals (65 + Isaac's damage) contact damage per second" .. 
-                "#{{Collectible357}} Duplicates all your familiars for the room",
+                "#{{Collectible357}} Duplicates all your familiars for the room" ..
+                "#{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} Spawns 1 Black Mirror(Gain passive item twice) on first pickup",
                 nil, "en_us"
             )
         end 
@@ -28,9 +30,15 @@ Astro:AddCallback(
 local game = Game()
 
 ---@param player EntityPlayer
+---@param num number?
 local function SpawnGeminiBaby(player)
     local gemini = Isaac.Spawn(EntityType.ENTITY_GEMINI, 10, 3, player.Position, Vector.Zero, player)
     gemini:AddCharmed(EntityRef(player), -1)
+    gemini:AddEntityFlags(EntityFlag.FLAG_PERSISTENT)
+
+    local color = Color(1,1,1,1,0,0,0) color:SetColorize(1,1,2,5)
+    color:SetColorize(1,1,5,5)
+    gemini:GetSprite().Color = color
 
     local pData = Astro:GetPersistentPlayerData(player)
     pData["spawnedByGeminiEx"][tostring(gemini.InitSeed)] = true
@@ -55,8 +63,9 @@ Astro:AddCallback(
             end
             ]]
             Astro:SpawnTrinket(Astro.Trinket.BLACK_MIRROR, player.Position)
-            SpawnGeminiBaby(player)
         end
+        
+        SpawnGeminiBaby(player)
     end,
     Astro.Collectible.GEMINI_EX
 )
@@ -76,6 +85,7 @@ Astro:AddCallback(
     end
 )
 
+--[[
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
@@ -87,6 +97,34 @@ Astro:AddCallback(
 
                 for j = 1, collectibleNum do
                     SpawnGeminiBaby(player)
+                    player:UseActiveItem(CollectibleType.COLLECTIBLE_BOX_OF_FRIENDS, UseFlag.USE_NOANIM)
+
+                    local sfx = SFXManager()
+                    if SoundEffect.SOUND_BOX_OF_FRIENDS and sfx:IsPlaying(SoundEffect.SOUND_BOX_OF_FRIENDS) then
+                        sfx:Stop(SoundEffect.SOUND_BOX_OF_FRIENDS)
+                    end
+                end
+            end
+        end
+    end
+)
+]]
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        for i = 1, game:GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            if player:HasCollectible(Astro.Collectible.GEMINI_EX) then
+                local geminies = Isaac.FindByType(EntityType.ENTITY_GEMINI, 10, 3)
+                if #geminies > 0 then
+                    for j, gemini in pairs(geminies) do
+                        gemini.Position = player.Position
+                    end
+                end
+
+                local collectibleNum = player:GetCollectibleNum(Astro.Collectible.GEMINI_EX)
+                for k = 1, collectibleNum do
                     player:UseActiveItem(CollectibleType.COLLECTIBLE_BOX_OF_FRIENDS, UseFlag.USE_NOANIM)
 
                     local sfx = SFXManager()
