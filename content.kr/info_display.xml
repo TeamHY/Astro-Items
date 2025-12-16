@@ -3,40 +3,53 @@
 		<info text="15초마다 10개의 빛줄기가 내립니다"/>
 		<info text="아이작이 피격당할 때마다 20초 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
 	</collectible>
-	<!-- WIP
 	<collectible id="2">
-	</collectible>
-	<collectible id="3">
 		<info text="적에게 준 피해의 10%만큼을 그 방의 모든 적에게 줍니다"/>
 	</collectible>
+	<collectible id="3">
+		<info text="피격을 당한 이후 그 방에서 다시 피해를 받을 때 그 피해량이 심장 반 개로 감소합니다"/>
+		<info text="2분마다 1분 동안 적과 투사체를 밀어내는 오라를 얻습니다"/>
+		<info text="다음 게임에서 마술사? 타로 카드를 소환합니다"/>
+	</collectible>
 	<collectible id="4">
+		<info text="독 눈물을 얻습니다"/>
 		<info text="적을 명중하면 확률적으로 아군 독 파리를 소환합니다"/>
 		<info text="확률은 행운에 비례해 증가합니다"/>
 	</collectible>
 	<collectible id="5">
-		<info text="숫자 자석과 꿀꺽!을 소환합니다"/>
+		<info text="악마방, 천사방, 천체관을 발견할 확률이 증가합니다"/>
+		<info text="악마방에서 크람푸스가 소환되지 않습니다"/>
+		<info text="악마방이 특수 변종으로 바뀝니다"/>
+		<info text="자궁과 시체에서 천체관이 생성될 수 있습니다"/>
 	</collectible>
 	<collectible id="6">
-		<info text="망원경 렌즈, 꿀꺽!을 소환합니다"/>
-		<info text="천체관의 위치를 맵에 표시합니다"/>
-		<info text="다음 게임의 시작 층에 망원경 렌즈, 마법의 8번 공 중 하나를 생성합니다"/>
-	</collectible>
-	<collectible id="7">
-		<info text="방에 입장할 때 적들이 50% 확률로 5초 동안 얼어붙습니다"/>
-		<info text="다음 게임에서 사자자리를 들고 시작합니다"/>
-	</collectible>
-	<collectible id="8">
+		<info text="능력치 감소 알약을 사용하면 공격력이 영구적으로 증가합니다"/>
+		<info text="다른 알약을 사용하면 검은 심장을 소환합니다"/>
 		<info text="아이작이 피격당할 때 피해를 무시하고 10초 동안 무적 상태가 됩니다"/>
 		<info text="무적 효과가 발동되고서 60초의 대기 시간을 가집니다"/>
 	</collectible>
-	<collectible id="9">
+	<collectible id="7">
+		<info text="아이작이 대부분의 장애물을 부수고 지나갈 수 있게 되며 바위 10개를 부술 때마다 스택이 누적됩니다"/>
+		<info text="공격 버튼을 두 번 눌러 누적된 스택만큼 공격 방향 범위 내 적들에게 고함과 충격파로 피해를 줍니다"/>
+		<info text="방에 입장하면 50% 확률로 적들이 석화됩니다"/>
+		<info text="석화된 적을 처치하면 적이 얼어붙습니다"/>
+		<info text="다음 게임에서 사자자리를 들고 시작합니다"/>
+	</collectible>
+	<collectible id="8">
+		<info text="일정 속도 이상으로 움직일 때 적과 접촉 시 접촉 피해를 주고 아이작이 받는 피해를 막습니다"/>
 		<info text="아이작이 보스방에 입장할 때마다 이동 속도, 공격 속도, 공격력 증가 또는 천재반을 위한 텔레파시 효과를 얻습니다"/>
 	</collectible>
+	<collectible id="9">
+		<info text="이동 버튼을 두 번 눌러 발동할 수 있는 돌진 공격을 얻습니다"/>
+		<info text="아이작은 돌진 중 눈물이 발사되지 않는 대신 대부분의 피해를 무시하며, 눈물 피해량에 비례하는 접촉 피해를 줍니다"/>
+		<info text="돌진 시 모든 적이 최대 30초 동안 멈춥니다"/>
+		<info text="아이작이 눈물을 발사하면 효과가 조기에 풀립니다"/>
+	</collectible>
 	<collectible id="10">
+		<info text="아이작의 공격력 66%의 피해를 주며 아이작의 눈물에 따라 효과가 달라지는 장판을 남깁니다"/>
 		<info text="적을 명중하면 그 적에게서 눈물이 뿜어져 나옵니다"/>
 		<info text="아이작이 피격당할 때마다 10초 동안 효과가 중지됩니다 (자해로 인한 피해 제외)"/>
 	</collectible>
-	-->
 	<collectible id="11">
 		<info text="획득 시 무작위 황금 장신구와 꿀꺽!을 소환합니다"/>
 		<info text="다음 게임의 시작 층에 무작위 황금 장신구 1개를 생성합니다"/>
@@ -54,16 +67,20 @@
 		<info text="다음 게임의 시작 층에 금이 간 열쇠 1개를 생성합니다"/>
 		<info text="특급 비밀방의 위치를 맵에 표시합니다"/>
 	</collectible>
-	<!-- WIP
 	<collectible id="15">
-		<info text="2분마다 1분 동안 가까운 적과 투사체를 밀어냅니다"/>
-		<info text="다음 게임의 시작 층에 I - 마술사?를 생성합니다"/>
+		<info text="넉백 증가"/>
+		<info text="한 번에 2개의 눈물을 발사합니다"/>
+		<info text="눈물이 파도치듯 날아갑니다"/>
+		<info text="확률적으로 일반 몬스터를 즉시 처치하는 눈물을 발사합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
 	</collectible>
 	<collectible id="16">
-		<info text="획득 시 소지 중인 아이템 5개를 생성합니다. 1개를 획득하면 나머지 4개는 사라집니다"/>
+		<info text="적들을 쫓아 적의 공격을 막아내고 강력한 지속 접촉 피해를 주는 패밀리어"/>
+		<info text="획득 시 검은 거울을 드롭합니다"/>
+		<info text="방에 입장할 때마다 아이작의 패밀리어를 복제합니다"/>
 	</collectible>
-	-->
 	<collectible id="17">
+		<info text="Astro-rules 전용"/>
 		<info text="왕 심한 탐욕의 오류방으로 이동합니다"/>
 		<info text="소지 중인 방화광, 호스트 모자를 제거합니다"/>
 	</collectible>
@@ -84,7 +101,7 @@
 	<collectible id="22">
 		<info text="획득 시 실종 포스터를 드롭합니다"/>
 		<info text="다음 게임의 시작 층에 하얀 모닥불을 생성합니다"/>
-	</collecible>
+	</collectible>
 	<collectible id="23">
 		<info text="다음 게임에서 불타는 지하실, 침수된 동굴, 습한 나락, 상처난 자궁 층이 등장하지 않습니다"/>
 		<info text="생성되지 않는 층에서 등장하는 적을 명중하면 추가적으로 피해를 줍니다"/>
@@ -114,6 +131,7 @@
 		<info text="방 안의 모든 적에게 40의 피해를 줍니다"/>
 	</collectible>
 	<collectible id="31">
+		<info text="Astro-rules 전용"/>
 		<info text="집으로 이동합니다"/>
 	</collectible>
 	<collectible id="32">
@@ -173,11 +191,12 @@
 	<collectible id="47">
 		<info text="새 층을 시작할 때마다 소지 중인 아이템 1개와 오브류 아이템을 제거하고 제거된 아이템과 오브류 아이템 중 하나를 소환합니다. 1개를 획득하면 나머지 1개는 사라집니다"/>
 	</collectible>
-	<!-- WIP collectible id="48">
+	<collectible id="48">
 		<info text="관통 눈물을 얻습니다"/>
+		<info text="적을 1마리라도 관통한 눈물은 유도성이 생깁니다"/>
 		<info text="적들이 피해를 받을 때 행운에 비례해 증가하는 추가 피해를 줍니다"/>
 		<info text="다음 게임에서 큐피드의 화살을 들고 시작합니다"/>
-	</collectible -->
+	</collectible>
 	<collectible id="49">
 		<info text="활성화한 방과 그 다음 방까지 탐험가 모자, 보라 양초 효과를 얻습니다"/>
 	</collectible>

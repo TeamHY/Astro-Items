@@ -111,20 +111,25 @@ Astro:AddCallback(
 ]]
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
-    function(_)
+    function()
         for i = 1, game:GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
 
             if player:HasCollectible(Astro.Collectible.GEMINI_EX) then
+                local collectibleNum = player:GetCollectibleNum(Astro.Collectible.GEMINI_EX)
                 local geminies = Isaac.FindByType(EntityType.ENTITY_GEMINI, 10, 3)
+
                 if #geminies > 0 then
                     for j, gemini in pairs(geminies) do
                         gemini.Position = player.Position
                     end
+                else
+                    for k = 1, collectibleNum do
+                        SpawnGeminiBaby(player)
+                    end
                 end
 
-                local collectibleNum = player:GetCollectibleNum(Astro.Collectible.GEMINI_EX)
-                for k = 1, collectibleNum do
+                for _ = 1, collectibleNum do
                     player:UseActiveItem(CollectibleType.COLLECTIBLE_BOX_OF_FRIENDS, UseFlag.USE_NOANIM)
 
                     local sfx = SFXManager()

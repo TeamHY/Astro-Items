@@ -14,7 +14,7 @@ if EID then
     Astro:AddEIDCollectible(
         Astro.Collectible.BOOK_OF_DESPAIR,
         "절망의 서",
-        "충전식 공격 속도 증가",
+        "일시적 공격 속도 증가",
         "{{TearsSmall}} 소지중일 때 연사 +0.5" ..
         "#{{Timer}} 사용 시 그 방에서 {{TearsSmall}}연사 +2"
     )

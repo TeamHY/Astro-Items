@@ -12,6 +12,16 @@ if EID then
         "#{{ArrowGrayRight}} 획득 이후 이 장신구는 사라집니다."
     )
 
+    Astro:AddEIDTrinket(
+        Astro.Trinket.BLACK_MIRROR,
+        "Black Mirror",
+        "",
+        "#!!! Consumed upon pickup" ..
+        "#{{Collectible347}} When Isaac picks up a passive item, he gains that item one more time;" ..
+        "#{{ArrowGrayRight}} This trinket will disappear",
+        nil, "en_us"
+    )
+
     -- Astro:AddGoldenTrinketDescription(Astro.Trinket.BLACK_MIRROR, "", 10)
 end
 

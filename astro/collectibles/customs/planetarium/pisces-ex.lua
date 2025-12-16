@@ -24,7 +24,8 @@ Astro:AddCallback(
                 "힘찬 연어들처럼",
                 "↑ {{TearsSmall}}연사(+상한) +0.5" ..
                 "#공격이 파동 곡선을 그리면서 2발로 나가며 적을 밀쳐냅니다." ..
-                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 적을 즉사시키는 눈물이 나갑니다." ..
+                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 적을 즉사시키는 눈물이 나가며;" ..
+                "#{{ArrowGrayRight}} 보스에겐 공격력 x2의 피해를 줍니다." ..
                 "#{{LuckSmall}} 행운 15 이상일 때 20% 확률 (행운 1당 +1%p)" ..
                 "#{{TimerSmall}} (쿨타임 0.5초)",
                 -- 중첩 시
@@ -38,7 +39,8 @@ Astro:AddCallback(
                 "↑ {{Tears}} +0.5 Fire rate" ..
                 "#Increases tear knockback" ..
                 "#Isaac shoots 2 tears at once and his tears move in waves" ..
-                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "% chance to fire a tear that instantly kill enemies" ..
+                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "% chance to fire a tear that instantly kill enemies;" ..
+                "#{{ArrowGrayRight}} Deal 2x Isaac's damage against bosses" ..
                 "#{{LuckSmall}} 20% chance at 15 luck (+1%p per Luck)",
                 -- Stacks
                 "On stacking, the firing chance increases per stack",
@@ -91,7 +93,7 @@ Astro:AddCallback(
                 local rng = player:GetCollectibleRNG(Astro.Collectible.PISCES_EX)
                 local collectibleNum = player:GetCollectibleNum(Astro.Collectible.PISCES_EX)
 
-                if rng:RandomFloat() < math.min(MAX_CHANCE, (SPAWN_CHANCE + player.Luck * LUCK_MULTIPLY) * collectibleNum) then
+                if rng:RandomFloat() < math.min(MAX_CHANCE + ((collectibleNum - 1) / 20), (SPAWN_CHANCE + player.Luck * LUCK_MULTIPLY) * collectibleNum) then
                     tearData._ASTRO_piscesEx = {}
 
                     local modifiedColor = Color(1,1,1,1,0,0,0)
@@ -113,33 +115,32 @@ Astro:AddCallback(
     ---@param low boolean
     function(_, tear, collider, low)
         if tear:GetData()._ASTRO_piscesEx ~= nil then
-            if
-                not collider:IsBoss()
-                and not collider:IsDead()
-                and collider:IsVulnerableEnemy()
-                and collider.Type ~= EntityType.ENTITY_FIREPLACE
-            then
-                local whirlpoolspawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.WHIRLPOOL, 0, collider.Position, Vector.Zero, tear)
-                local whirlpool = whirlpoolspawn:ToEffect()
-                local eData = whirlpool:GetData()
-                eData._ASTRO_piscesEx_EffectScaleDecrease = 0
-                whirlpool.SpriteScale = Vector(2/3, 2/3)
-                whirlpool:FollowParent(collider)
+            if not collider:IsDead() and collider:IsVulnerableEnemy() and collider.Type ~= EntityType.ENTITY_FIREPLACE then
+                if not collider:IsBoss() then
+                    local whirlpoolspawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.WHIRLPOOL, 0, collider.Position, Vector.Zero, tear)
+                    local whirlpool = whirlpoolspawn:ToEffect()
+                    local eData = whirlpool:GetData()
+                    eData._ASTRO_piscesEx_EffectScaleDecrease = 0
+                    whirlpool.SpriteScale = Vector(2/3, 2/3)
+                    whirlpool:FollowParent(collider)
 
-                Astro:ScheduleForUpdate(
-                    function()
-                        local splashSpawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BIG_SPLASH, 0, collider.Position, Vector.Zero, nil)
-                        local splash = splashSpawn:ToEffect()
-                        splash:FollowParent(collider)
+                    Astro:ScheduleForUpdate(
+                        function()
+                            local splashSpawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BIG_SPLASH, 0, collider.Position, Vector.Zero, nil)
+                            local splash = splashSpawn:ToEffect()
+                            splash:FollowParent(collider)
 
-                        local sfx = SFXManager()
-                        sfx:Play(SoundEffect.SOUND_BOSS2_DIVE, 0.75)
+                            local sfx = SFXManager()
+                            sfx:Play(SoundEffect.SOUND_BOSS2_DIVE, 0.75)
 
-                        collider:Die()
-                        eData._ASTRO_piscesEx_EffectScaleDecrease = 1
-                    end,
-                    12
-                )
+                            collider:Die()
+                            eData._ASTRO_piscesEx_EffectScaleDecrease = 1
+                        end,
+                        12
+                    )
+                else
+                    collider:TakeDamage(tear.BaseDamage, 0, EntityRef(tear), 0)
+                end
 
                 tear:GetData()._ASTRO_piscesEx = nil
             end

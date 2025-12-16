@@ -3,38 +3,53 @@
 		<info text="Drops 10 beams of light every 15 seconds"/>
 		<info text="Stops the effect for 20 seconds every time Isaac takes damage (except self-inflicted damage)"/>
 	</collectible>
-	<!-- WIP collectible id="2">
-	</collectible>
-	<collectible id="3">
+	<collectible id="2">
 		<info text="Deals 10% of the damage dealt to enemies to all enemies in the room"/>
 	</collectible>
+	<collectible id="3">
+		<info text="After taking damage, all additional damage in the room is reduced to 1/2 heart"/>
+		<info text="Grants a repelling aura that pushes away enemies and projectiles for 1 minute every 2 minutes"/>
+		<info text="Spawns the Magician? tarot card in the starting room of the next run"/>
+	</collectible>
 	<collectible id="4">
+		<info text="Grants poison tears"/>
 		<info text="Chance to spawn a friendly poison fly on hit"/>
 		<info text="Chance increases with luck"/>
 	</collectible>
 	<collectible id="5">
-		<info text="Spawns Number Magnet and Gulp"/>
+		<info text="Increases chance of finding devil rooms, angel rooms, and planetariums"/>
+		<info text="Krampus cannot spawn in devil rooms"/>
+		<info text="Devil rooms are replaced with special variants"/>
+		<info text="Planetariums can spawn in The Womb and Corpse"/>
 	</collectible>
 	<collectible id="6">
-		<info text="Spawns Telescope Lens, Gulp"/>
-		<info text="Reveals the location of planetariums on the map"/>
-		<info text="Spawns one of Telescope Lens or Magic 8 Ball in the starting room of the next run"/>
-	</collectible>
-	<collectible id="7">
-		<info text="50% chance to freeze all enemies in the room for 5 seconds upon entering"/>
-		<info text="Start the next run with Leo"/>
-	</collectible>
-	<collectible id="8">
+		<info text="Consuming any stat down pill will also grant a permanent damage up"/>
+		<info text="Consuming most other pill types will also spawn a black heart"/>
 		<info text="Negates damage and grants invincibility for 10 seconds when Isaac takes damage"/>
 		<info text="Has a 60 second cooldown after activation"/>
 	</collectible>
-	<collectible id="9">
+	<collectible id="7">
+		<info text="Isaac can break most obstacles by walking over them, and a stack is gained for every 10 rocks broken"/>
+		<info text="Double-tap any attack button to deal damage to enemies within the attack direction based on the number of accumulated stacks, using a yell and shockwaves" />
+		<info text="50% chance for enemies to be petrified when entering a room"/>
+		<info text="Killing a petrified enemy freezes them"/>
+		<info text="Grants Leo at the beginning of the next run"/>
+	</collectible>
+	<collectible id="8">
+		<info text="When moving fast enough, running into enemies will deal contact damage to the enemy and prevent contact damage dealt to Isaac"/>
 		<info text="Gain a speed up, tears up, damage up, or Telepathy for Dummies effect upon entering a boss room"/>
 	</collectible>
+	<collectible id="9">
+		<info text="Grants a dash attack that can be activated by double-tapping a move button"/>
+		<info text="Isaac is immune to most damage instead of firing tears while charging, and deals contact damage that scales with his tear damage"/>
+		<info text="Freezes all enemies while charging for up to 30 seconds"/>
+		<info text="The freeze effect ends early if Isaac fires a tear"/>
+	</collectible>
 	<collectible id="10">
+		<info text="Leaves a trail of creep that deals 66% of Isaac's damage and copies his tear effects"/>
 		<info text="Tears burst from enemies on hit"/>
 		<info text="Stops the effect for 10 seconds every time Isaac takes damage (except self-inflicted damage)"/>
-	</collectible -->
+	</collectible>
 	<collectible id="11">
 		<info text="Spawns a random golden trinket and Gulp on pickup"/>
 		<info text="Spawns 1 random golden trinket in the starting room of the next run"/>
@@ -52,13 +67,18 @@
 		<info text="Spawns 1 Cracked Key in the starting room of the next run"/>
 		<info text="Reveals the location of ultra secret rooms on the map"/>
 	</collectible>
-	<!-- WIP collectible id="15">
-		<info text="Repels nearby enemies and projectiles for 1 minute every 2 minutes"/>
-		<info text="Spawns I - The Magician? in the starting room of the next run"/>
+	<collectible id="15">
+		<info text="Increased knockback"/>
+		<info text="Fires 2 tears at a time"/>
+		<info text="Tears travel in a wave-like pattern"/>
+		<info text="Chance to fire tears that instantly kills normal monsters"/>
+		<info text="Chance increases with luck"/>
 	</collectible>
 	<collectible id="16">
-		<info text="Spawns 5 held items on pickup. Picking up one makes the other 4 disappear"/>
-	</collectible -->
+		<info text="Familiar that chases enemies, blocks enemy shots, and deals heavy contact damage over time"/>
+		<info text="Drops a Black Mirror on pickup"/>
+		<info text="Upon entering each room, creates a duplicate of each of Isaac's familiars"/>
+	</collectible>
 	<collectible id="17">
 		<info text="Astro-rules only"/>
 		<info text="Teleports to the I AM ERROR room of the Ultra Greedier"/>
@@ -171,11 +191,12 @@
 	<collectible id="47">
 		<info text="Removes 1 held item and spawns the removed item and one of Orbs upon starting a new floor. Picking up one makes the other disappear"/>
 	</collectible>
-	<!-- WIP collectible id="48">
+	<collectible id="48">
 		<info text="Piercing tears"/>
+		<info text="Tears that pierce through at least 1 enemy gain homing"/>
 		<info text="Enemies take extra damage that increases with luck"/>
-		<info text="Start the next run with Cupid's Arrow"/>
-	</collectible -->
+		<info text="Grants Cupid's Arrow at the beginning of the next run"/>
+	</collectible>
 	<collectible id="49">
 		<info text="Grants Treasure Map and Purple Candle effects for the activated room and the next room"/>
 	</collectible>
@@ -795,6 +816,7 @@
 		<info text="Failure: Permanently decreases damage multiplier by a small amount"/>
 	</collectible>
 </collectibles>
+
 <trinkets>
 	<trinket id="1">
 		<info text="작성 중 (Description in progess)"/>
