@@ -66,6 +66,7 @@ Astro:AddCallback(
         end
         
         SpawnGeminiBaby(player)
+        Astro.Data["geminiExCooldown"] = 60    -- 특정 상황에서 초쌍이 1개여도 2마리 생성될 때 있음
     end,
     Astro.Collectible.GEMINI_EX
 )
@@ -80,35 +81,22 @@ Astro:AddCallback(
 
             if not isContinued then
                 pData["spawnedByGeminiEx"] = {}
+                Astro.Data["geminiExCooldown"] = 0
             end
         end
     end
 )
 
---[[
+
 Astro:AddCallback(
-    ModCallbacks.MC_POST_NEW_ROOM,
+    ModCallbacks.MC_POST_UPDATE,
     function(_)
-        for i = 1, game:GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
-
-            if player:HasCollectible(Astro.Collectible.GEMINI_EX) then
-                local collectibleNum = player:GetCollectibleNum(Astro.Collectible.GEMINI_EX)
-
-                for j = 1, collectibleNum do
-                    SpawnGeminiBaby(player)
-                    player:UseActiveItem(CollectibleType.COLLECTIBLE_BOX_OF_FRIENDS, UseFlag.USE_NOANIM)
-
-                    local sfx = SFXManager()
-                    if SoundEffect.SOUND_BOX_OF_FRIENDS and sfx:IsPlaying(SoundEffect.SOUND_BOX_OF_FRIENDS) then
-                        sfx:Stop(SoundEffect.SOUND_BOX_OF_FRIENDS)
-                    end
-                end
-            end
+        if Astro.Data["geminiExCooldown"] > 0 then
+            Astro.Data["geminiExCooldown"] = Astro.Data["geminiExCooldown"] - 1
         end
     end
 )
-]]
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function()
@@ -125,7 +113,9 @@ Astro:AddCallback(
                     end
                 else
                     for k = 1, collectibleNum do
-                        SpawnGeminiBaby(player)
+                        if Astro.Data["geminiExCooldown"] == 0 then
+                            SpawnGeminiBaby(player)
+                        end
                     end
                 end
 
