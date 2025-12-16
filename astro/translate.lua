@@ -1,4 +1,6 @@
 -- 사왈이 제작
+Astro.EID.EnglishDescAI = require "astro.collectibles.eid-draft-translation"
+
 ------ VS ------
 local minibossNames = {
     [EntityType.ENTITY_SLOTH] = {

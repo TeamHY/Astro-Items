@@ -18,7 +18,7 @@ Astro:AddCallback(
                 "Gemini EX",
                 "",    
                 "Familiar that chases and damages enemies" ..
-                "#{{ArrowGrayRight}] Deals (65 + Isaac's damage) contact damage per second" .. 
+                "#{{ArrowGrayRight}} Deals (65 + Isaac's damage) contact damage per second" .. 
                 "#{{Collectible357}} Duplicates all your familiars for the room" ..
                 "#{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} Spawns 1 Black Mirror(Gain passive item twice) on first pickup",
                 nil, "en_us"
@@ -36,8 +36,8 @@ local function SpawnGeminiBaby(player)
     gemini:AddCharmed(EntityRef(player), -1)
     gemini:AddEntityFlags(EntityFlag.FLAG_PERSISTENT)
 
-    local color = Color(1,1,1,1,0,0,0) color:SetColorize(1,1,2,5)
-    color:SetColorize(1,1,5,5)
+    local color = Color(1, 1, 1, 1, 0, 0, 0) color:SetColorize(1, 1, 2, 5)
+    color:SetColorize(1, 1, 5, 5)
     gemini:GetSprite().Color = color
 
     local pData = Astro:GetPersistentPlayerData(player)
