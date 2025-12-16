@@ -12,6 +12,16 @@ Astro:AddCallback(
                 -- 황금
                 "{{CursedRoom}} 맵에 저주방의 위치를 보여줍니다."
             )
+
+            Astro:AddEIDTrinket(
+                Astro.Trinket.BLOODY_BANDAGE,
+                "Bloody Bandage",
+                "",
+                "Immune to curse room doors",
+                -- Golden
+                "{{CursedRoom}} Reveals curse room locations on the map",
+                "en_us"
+            )
         end
     end
 )

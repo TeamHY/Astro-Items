@@ -11,6 +11,15 @@ Astro:AddCallback(
                 "모든 액티브 아이템이 등장하기 전까지 패시브 아이템이 등장하지 않습니다." ..
                 "#리롤된 패시브 아이템은 콘솔창에서 확인할 수 있습니다."
             )
+
+            Astro:AddEIDTrinket(
+                Astro.Trinket.YES,
+                "Yes!",
+                "",
+                "Prevents passive items from spawning",
+                nil, "en_us"
+            )
+            
         end
 
         Astro:AddRerollCondition(

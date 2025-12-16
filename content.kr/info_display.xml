@@ -821,54 +821,67 @@
 
 <trinkets>
 	<trinket id="1">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="눈물을 발사할 때 확률적으로 눈물에 초당 60의 피해를 주는 신성한 오라가 생깁니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
 	</trinket>
 	<trinket id="2">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="붉은 상자가 생성될 때 확률적으로로 한 개 더 생성합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
 	</trinket>
 	<trinket id="3">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="확률적으로 적을 둔화시키는 얼음 눈물을 발사합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="얼음 눈물로 적을 처치하면 그 적이 얼어붙으며, 밀어서 깨뜨리면 얼음 눈물 고리가 발사됩니다"/>
 	</trinket>
 	<trinket id="4">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="저주방 문으로부터의 피해를 받지 않습니다"/>
+		<info tag="1" text="맵에 저주방을 표시합니다"/>
 	</trinket>
 	<trinket id="5">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="메가 사탄이나 섬망, 어머니 또는 도그마를 처치하면 이 장신구를 소모하고 에덴의 축복을 소환합니다"/>
 	</trinket>
 	<trinket id="6">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="동전을 주울 때 5% 확률로 작은 배터리를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
 	</trinket>
 	<trinket id="7">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="패시브 아이템을 획득할 때 아이템을 하나 더 얻습니다"/>
+		<info text="이 장신구는 발동된 후 소멸합니다"/>
 	</trinket>
 	<trinket id="8">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="장신구를 획득하면 즉시 동전 5개를 소모하여 장신구를 흡수해 효과를 영구적으로 얻습니다"/>
 	</trinket>
 	<trinket id="9">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="보스를 처치하면 어린 양의 분노에서 등장한 아이템 2개를 소환합니다"/>
+		<info text="이 장신구는 발동된 후 소멸합니다"/>
 	</trinket>
 	<trinket id="10">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="저주에 면역이 생깁니다"/>
+		<info text="새 층을 시작할 때마다 천사방이 등장할 확률이 증가합니다"/>
 	</trinket>
 	<trinket id="11">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="2칸 이내에 있는 방들의 구조를 맵에 표시합니다"/>
+		<info text="가려진 아이템을 밝힙니다"/>
 	</trinket>
 	<trinket id="12">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="보물방에 천체관 아이템 1개가 추가로 등장합니다"/>
+		<info text="이 장신구는 발동된 후 소멸합니다"/>
 	</trinket>
 	<trinket id="13">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Astro-rules 전용"/>
+		<info text="올백과 같은 판정을 가집니다"/>
 	</trinket>
 	<trinket id="14">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="패시브 아이템이 생성되지 않습니다"/>
 	</trinket>
 	<trinket id="15">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="새 층을 시작할 때마다 소지 중인 장신구를 흡수해 효과를 영구적으로 얻습니다"/>
 	</trinket>
 	<trinket id="16">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="아이작이 알약을 소모할 때마다 방 안의 모든 적에게 즉시 피해를 줍니다"/>
 	</trinket>
 	<trinket id="17">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="치명타를 입었을 때 이 장신구가 적은 확률로 사망을 무효로 해줍니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
 	</trinket>
 </trinkets>

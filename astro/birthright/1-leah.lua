@@ -1,6 +1,3 @@
---[[
-아이디어 구현본 겸 생득권 효과 구현 기반 다지기
-
 ---
 
 local SPAWN_AMOUNT = 7
@@ -30,9 +27,7 @@ Astro:AddCallback(
             local player = Isaac.GetPlayer(i - 1)
             local pData = Astro:GetPersistentPlayerData(player)
 
-            if not isContinued then
-                pData["spawnedByLeahBirhtight"] = {}
-            end
+            pData["spawnedByLeahBirhtight"] = pData["spawnedByLeahBirhtight"] or {}
         end
     end
 )
@@ -89,4 +84,4 @@ Astro:AddCallback(
             pData["LeahBirthrightPenalty"] = true
         end
     end
-)]]
+)

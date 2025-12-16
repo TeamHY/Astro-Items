@@ -2,17 +2,31 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Trinket.PLANETARIUM_CROWN = Isaac.GetTrinketIdByName("Planetarium Crown")
 
-if EID then
-    Astro:AddEIDTrinket(
-        Astro.Trinket.PLANETARIUM_CROWN,
-        "천체 왕관",
-        "별들의 특별한 손님",
-        "!!! 일회용" ..
-        "#{{TreasureRoom}} 보물방에 {{Planetarium}}천체관 배열의 아이템을 1개 소환합니다."
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDTrinket(
+                Astro.Trinket.PLANETARIUM_CROWN,
+                "천체 왕관",
+                "별들의 특별한 손님",
+                "#{{TreasureRoom}} 보물방에 {{Planetarium}}천체관 배열의 아이템 1개를 추가합니다." ..
+                "#!!! 효과 발동 시 사라집니다."
+            )
+            
+            Astro:AddEIDTrinket(
+                Astro.Trinket.PLANETARIUM_CROWN,
+                "Planetarium Crown",
+                "",
+                "#{{TreasureRoom}} Adding an extra {{Planetarium}}planetarium item in Treasure Rooms" ..
+                "#!!! Disappeared after triggering",
+                nil, "en_us"
+            )
 
-    Astro:AddGoldenTrinketDescription(Astro.Trinket.PLANETARIUM_CROWN, "", 1, 2)
-end
+            Astro:AddGoldenTrinketDescription(Astro.Trinket.PLANETARIUM_CROWN, "", 1, 2)
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

@@ -19,7 +19,7 @@ Astro:AddCallback(
                 Astro.Trinket.FOCUS_BAND,
                 "기합의 머리띠",
                 "마지막 수단",
-		        "#!!! 획득한 즉시 흡수됨" ..
+		        "!!! 획득한 즉시 흡수됨" ..
                 "#피격 시 체력이 없을 때 1%의 확률로 피해를 무시하고 3초 동안 무적이 됩니다." ..
                 "#{{LuckSmall}} 행운 9 이상일 때 " .. SURVIVAL_MAX .. "% 확률 (행운 1당 +" .. SURVIVAL_LUCK .. "%p)"
             )
@@ -28,7 +28,7 @@ Astro:AddCallback(
                 Astro.Trinket.FOCUS_BAND,
                 "Focus Band",
                 "",
-		        "#!!! It absorbs immediately when picked up" ..
+		        "!!! Consumed upon pickup" ..
                 "#When taking damage and your health is low, there is a 1% chance to ignore the damage and become invulnerable for 3 seconds." ..
                 "#{{Luck}} " .. SURVIVAL_MAX .. "% chance at 9 luck (" .. SURVIVAL_LUCK .. "%p per luck)",
                 nil,

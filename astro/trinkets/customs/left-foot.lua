@@ -1,16 +1,30 @@
 Astro.Trinket.LEFT_FOOT = Isaac.GetTrinketIdByName("The Left Foot")
 
-if EID then
-    Astro:AddEIDTrinket(
-        Astro.Trinket.LEFT_FOOT,
-        "왼발",
-        "어둠의 보상을 거두어들이다",
-        "{{RedChest}} 빨간상자 등장 시 30%의 확률로 빨간상자가 하나 더 드랍됩니다." ..
-        "#{{LuckSmall}} 행운 70 이상일 때 100% 확률 (행운 1당 +1%p)"
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDTrinket(
+                Astro.Trinket.LEFT_FOOT,
+                "왼발",
+                "어둠의 보상을 거두어들이다",
+                "{{RedChest}} 빨간상자 등장 시 30%의 확률로 빨간상자가 하나 더 드랍됩니다." ..
+                "#{{LuckSmall}} 행운 70 이상일 때 100% 확률 (행운 1당 +1%p)"
+            )
 
-    Astro:AddGoldenTrinketDescription(Astro.Trinket.LEFT_FOOT, "", 30, 2)
-end
+            Astro:AddEIDTrinket(
+                Astro.Trinket.LEFT_FOOT,
+                "The Left Foot",
+                "",
+                "{{RedChest}} 30% chance to spawn an additional red chest when one is spawned" ..
+                "#{{Luck}} 100% chance at 70 Luck (+1%p per Luck)",
+                nil, "en_us"
+            )
+
+            Astro:AddGoldenTrinketDescription(Astro.Trinket.LEFT_FOOT, "", 30, 2)
+        end
+    end
+)
 
 -- 중복 생성하지 않기 위해, 이미 존재하는 빨간 상자를 무시하기 위해 SubType을 사용한다.
 local LEFT_FOOT_SUBTYPE = 1000

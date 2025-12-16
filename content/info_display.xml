@@ -819,54 +819,68 @@
 
 <trinkets>
 	<trinket id="1">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Chance when firing tears that have a holy aura that deals 60 damage per second"/>
+		<info text="Chance increases with luck"/>
 	</trinket>
 	<trinket id="2">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Chance to spawn an additional red chest when one is spawned"/>
+		<info text="Chance increases with luck"/>
 	</trinket>
 	<trinket id="3">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Chance to fire ice tears that slow enemies"/>
+		<info text="Chance increases with luck"/>
+		<info text="Enemies killed by ice tears become frozen solid, and can be pushed to shatter into a ring of additional ice tears"/>
 	</trinket>
 	<trinket id="4">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Prevent damage from curse room doors"/>
+		<info text="Reveals curse rooms on the map"/>
 	</trinket>
 	<trinket id="5">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Defeating Mega Satan, Delirium, Mother, or Dogma spawns Eden's Blessing"/>
+		<info text="This trinket disappeared after triggering"/>
 	</trinket>
 	<trinket id="6">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Chance to spawn a lil' battery each time you pick up a coin"/>
+		<info text="Chance increases with luck"/>
 	</trinket>
 	<trinket id="7">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Gain an additional passive item on pickup"/>
+		<info text="This trinket disappeared after triggering"/>
 	</trinket>
 	<trinket id="8">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Consumes the held trinket by spending 5 coins upon pickup and grants its effect as a permanent passive effect"/>
 	</trinket>
 	<trinket id="9">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="After defeating the floor&apos;s boss, spawns 2 items of Wrath of the Lamb"/>
+		<info text="This trinket disappeared after triggering"/>
 	</trinket>
 	<trinket id="10">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Immunity to floor curses"/>
+		<info text="Increases chance of encountering angel rooms at the start of each new floor"/>
 	</trinket>
 	<trinket id="11">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Reveals the map up to 2 rooms away"/>
+		<info text="Reveal the blind item"/>
 	</trinket>
 	<trinket id="12">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="1 additional planetarium item will appear in treasure rooms"/>
+		<info text="This trinket disappeared after triggering"/>
 	</trinket>
 	<trinket id="13">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Astro-rules only"/>
+		<info text="This trinket has the same effect as Perfection"/>
 	</trinket>
 	<trinket id="14">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Prevents passive items from spawning"/>
 	</trinket>
 	<trinket id="15">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Consumes the held trinket at the start of each new floor and grants its effect as a permanent passive effect"/>
 	</trinket>
 	<trinket id="16">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Deals instant damage to all enemies in the room each time Isaac consumes a pill"/>
 	</trinket>
 	<trinket id="17">
-		<info text="작성 중 (Description in progess)"/>
+		<info text="Upon taking fatal damage, small chance to this item prevents death"/>
+		<info text="Chance increases with luck"/>
 	</trinket>
 </trinkets>

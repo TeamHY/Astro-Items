@@ -1,16 +1,30 @@
 Astro.Trinket.EYE_OF_GOD = Isaac.GetTrinketIdByName("Eye Of God")
 
-if EID then
-    Astro:AddEIDTrinket(
-        Astro.Trinket.EYE_OF_GOD,
-        "신의 눈",
-        "거룩한 시선",
-        "{{Collectible331}} 10%의 확률로 눈물에 후광이 생기며 후광에 닿은 적은 프레임당 2의 피해를 입습니다." ..
-        "#{{LuckSmall}} 행운 45 이상일 때 100% 확률 (행운 1당 +2%p)"
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDTrinket(
+                Astro.Trinket.EYE_OF_GOD,
+                "신의 눈",
+                "거룩한 시선",
+                "{{Collectible331}} 10%의 확률로 눈물에 후광이 생기며 후광에 닿은 적은 초당 60의 피해를 받습니다." ..
+                "#{{LuckSmall}} 행운 45 이상일 때 100% 확률 (행운 1당 +2%p)"
+            )
 
-    Astro:AddGoldenTrinketDescription(Astro.Trinket.EYE_OF_GOD, "", 10, 2)
-end
+            Astro:AddEIDTrinket(
+                Astro.Trinket.EYE_OF_GOD,
+                "Eye of God",
+                "",
+                "{{Collectible331}} 10% chance to Tears gain an aura that deals 60 damage per second" ..
+                "#{{Luck}} 100% chance at 45 Luck (+2%p per Luck)",
+                nil, "en_us"
+            )
+
+            Astro:AddGoldenTrinketDescription(Astro.Trinket.EYE_OF_GOD, "", 10, 2)
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_FIRE_TEAR,

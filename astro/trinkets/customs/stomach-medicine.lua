@@ -8,7 +8,15 @@ Astro:AddCallback(
                 Astro.Trinket.STOMACH_MEDICINE,
                 "위장약",
                 "상상으로 만든 복통",
-                "{{Pill}} 알약 사용 시 {{Collectible35}} 그 방의 적에게 40의 방어 무시 피해를 줍니다."
+                "{{Collectible35}} 알약 사용 시 그 방의 적에게 40의 방어 무시 피해를 줍니다."
+            )
+
+            Astro:AddEIDTrinket(
+                Astro.Trinket.STOMACH_MEDICINE,
+                "Stomach Medicine",
+                "",
+                "{{Collectible35}} Using a pill deals 40 damage to all enemies in the room",
+                nil, "en_us"
             )
 
             Astro:AddGoldenTrinketDescription(Astro.Trinket.STOMACH_MEDICINE, "", 40, 2)

@@ -2,18 +2,33 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Trinket.MOSIS_EYES = Isaac.GetTrinketIdByName("Moxie's Eyes")
 
-if EID then
-    Astro:AddEIDTrinket(
-        Astro.Trinket.MOSIS_EYES,
-        "목시의 눈",
-        "잠들지 못하는 그리움이 닿을 때면",
-        "↓ {{LuckSmall}}행운 -5" ..
-        "#캐릭터가 있는 방에서 2칸 이내에 있는 스테이지 구조를 맵에 표시합니다." ..
-        "#{{CurseBlindSmall}} 가려진 아이템을 알 수 있게 됩니다."
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDTrinket(
+                Astro.Trinket.MOSIS_EYES,
+                "목시의 눈",
+                "잠들지 못하는 그리움이 닿을 때면",
+                "↓ {{LuckSmall}}행운 -5" ..
+                "#캐릭터가 있는 방에서 2칸 이내에 있는 스테이지 구조를 맵에 표시합니다." ..
+                "#{{CurseBlindSmall}} 가려진 아이템을 볼 수 있습니다."
+            )
 
-    -- Astro:AddGoldenTrinketDescription(Astro.Trinket.MOSIS_EYES, "", 1)
-end
+            Astro:AddEIDTrinket(
+                Astro.Trinket.MOSIS_EYES,
+                "Moxie's Eyes",
+                "",
+                "↓ {{Luck}} -5 Luck" ..
+                "#Rooms on the map are revealed from further away" ..
+                "#{{CurseBlind}} Reveal the blind item",
+                nil, "en_us"
+            )
+
+            -- Astro:AddGoldenTrinketDescription(Astro.Trinket.MOSIS_EYES, "", 1)
+        end
+    end
+)
 
 
 local function DisplayNeighborRoom()

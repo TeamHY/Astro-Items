@@ -2,16 +2,31 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Trinket.NOSTALGIA = Isaac.GetTrinketIdByName("Nostalgia")
 
-if EID then
-    Astro:AddEIDTrinket(
-		Astro.Trinket.NOSTALGIA,
-		"노스텔지아",
-		"그 때 그 시절로",
-		"!!! 일회용" ..
-		"#!!! 획득한 즉시 흡수됨" ..
-		"#{{BossRoom}} 보스방 클리어 시 {{ColorGreen}}아이작의 번제: 어린 양의 분노{{CR}}에서 등장한 아이템을 2개 소환합니다."
-	)
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+		if EID then
+			Astro:AddEIDTrinket(
+				Astro.Trinket.NOSTALGIA,
+				"노스텔지아",
+				"그 때 그 시절로",
+				"!!! 획득한 즉시 흡수됨" ..
+				"#{{BossRoom}} 보스방 클리어 시 {{ColorGreen}}아이작의 번제: 어린 양의 분노{{CR}}에서 등장한 아이템을 2개 소환합니다." ..
+				"#!!! 효과 발동 시 사라집니다."
+			)
+
+			Astro:AddEIDTrinket(
+				Astro.Trinket.NOSTALGIA,
+				"Nostalgia",
+				"",
+				"!!! Consumed upon pickup" ..
+				"#{{BossRoom}} When the floor boss is defeated, spawns 2 items of {{ColorGreen}}Wrath of the Lamb{{CR}}" ..
+				"#!!! Disappeared after triggering",
+				nil, "en_us"
+			)
+		end
+	end
+)
 
 -- The Sad Onion(c1) ~ Box(c198)까지 포함되어 있습니다. 누락된 아이템이 있을 수 있습니다.
 local wolItemList = {

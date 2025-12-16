@@ -1,16 +1,30 @@
 Astro.Trinket.EDENS_SNAKE = Isaac.GetTrinketIdByName("Eden's Snake")
 
-if EID then
-    Astro:AddEIDTrinket(
-        Astro.Trinket.EDENS_SNAKE,
-        "에덴의 뱀",
-        "선악과",
-        "!!! 효과를 발동한 후 이 장신구는 사라집니다." ..
-        "#{{Collectible381}} 소지중인 상태에서 {{MegaSatanSmall}}Mega Satan, {{DeliriumSmall}}Delirium, {{MotherSmall}}Mother, {{Collectible633}}Dogma 처치시 Eden's Blessing을 1개 소환(획득)합니다."
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro:AddEIDTrinket(
+                Astro.Trinket.EDENS_SNAKE,
+                "에덴의 뱀",
+                "선악과",
+                "#{{Collectible381}} 소지중인 상태에서 {{MegaSatanSmall}}Mega Satan, {{DeliriumSmall}}Delirium, {{MotherSmall}}Mother, {{Collectible633}}Dogma 처치시 Eden's Blessing을 1개 소환(획득)합니다." ..
+                "#!!! 효과 발동 시 사라집니다."
+            )
 
-    Astro:AddGoldenTrinketDescription(Astro.Trinket.EDENS_SNAKE, "", 1, 2)
-end
+            Astro:AddEIDTrinket(
+                Astro.Trinket.EDENS_SNAKE,
+                "Eden's Snake",
+                "선악과",
+                "Defeating {{MegaSatan}}Mega Satan, {{Delirium}}Delirium, {{Mother}}Mother, and {{Collectible633}}Dogma spawns an Eden's Blessing" ..
+                "#!!! Disappeared after triggering",
+                nil, "en_us"
+            )
+
+            Astro:AddGoldenTrinketDescription(Astro.Trinket.EDENS_SNAKE, "", 1, 2)
+        end
+    end
+)
 
 local GRID_SIZE = 40
 
