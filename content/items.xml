@@ -4,7 +4,7 @@
 	<passive gfx="Cancer.png" quality="3" devilprice="1" shopprice="20" soulhearts="6" name="Cancer EX" description="Protected by purity" id="3" />
 	<passive cache="tearflag" gfx="Scorpio.png" devilprice="2" quality="3" shopprice="20" name="Scorpio EX" description="100% pure poison" id="4" />
 	<passive cache="damage firedelay" gfx="Capricorn.png" quality="3" devilprice="2" shopprice="15" name="Capricorn EX" description="Substantial offering" id="5" />
-	<passive cache="damage" gfx="Virgo.png" quality="2" devilprice="1" shopprice="15" tags="noeden" name="Virgo EX" description="Let me have no shame before heaven" id="6" />
+	<passive cache="damage" gfx="Virgo.png" quality="5" devilprice="1" shopprice="25" tags="noeden" name="Virgo EX" description="Let me have no shame before heaven" id="6" />
 	<passive gfx="Leo.png" quality="2" devilprice="1" shopprice="15" tags="noeden" name="Leo EX" description="The majesty of the king" id="7" />
 	<passive cache="firedelay speed" gfx="Aries.png" quality="3" devilprice="2" shopprice="30" name="Aries EX" description="Dense power" id="8" />
 	<passive cache="speed" gfx="Taurus.png" quality="4" devilprice="2" shopprice="25" name="Taurus EX" description="I am a man" id="9" />
