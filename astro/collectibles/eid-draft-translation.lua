@@ -91,7 +91,7 @@ return {
     [822] = "Applies {{Collectible634}} Hungry Soul, {{Collectible727}} Purgatory, {{Collectible684}} Ghost Bombs.#Doubles summoned ghost speed.",
     [823] = "!!! +2 {{Collectible73}} Cube of Meat on first pickup#Spawns Cube of Meat on stage entry.#!!! Amount: ({{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}} count + {{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}} count)",
  -- [824] = "설명 분리됨",
-    [825] = "!!! Disappears after activation.#Swaps held active with card/pill slot active with 8 key.#{{ArrowGrayRight}} Moves active to slot if empty.#{{ArrowGrayRight}} Some items can't move to slot.#!!! Card/pill slot active disappears on character change.",
+    [825] = "!!! Disappears after activation.#Swaps held active item with card/pill slot active item with 8 key.#{{ArrowGrayRight}} Moves active item to slot if empty.#{{ArrowGrayRight}} Some items can't move to slot.#!!! Card/pill slot active disappears on character change.",
     [826] = "The three-body problem is unpredictable.",
     [827] = "Applies Conjoined transformation.",
     [828] = "Rerolls room items to ID +1 number items.#!!! Some items don't appear.",

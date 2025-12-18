@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.STAIRWAY_TO_HELL = Isaac.GetItemIdByName("Stairway to Hell")
 
 local STAIRWAY_TO_HELL_VARIANT = 3103
-local FOOL_DEVIL_BUM_VARIANT = 3106
+local FOOL_DEVIL_BUM_VARIANT = 3100
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -49,6 +49,9 @@ Astro:AddCallback(
         local players = Isaac.FindInRadius(effect.Position, 20, EntityPartition.PLAYER)
 
         if #players > 0 then
+            for _, player in pairs(players) do
+                player:ToPlayer():GetEffects():RemoveNullEffect(NullItemID.ID_LOST_CURSE)
+            end
             Isaac.ExecuteCommand("goto s.devil")
             Astro:ScheduleForUpdate(
                 function()
@@ -65,7 +68,9 @@ Astro:AddCallback(
                         spawnOffset = Vector(100, 50)
                     end
 
-                    Astro:Spawn(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, 0, spawnPos + spawnOffset)
+                    room:GetDoor(enterDoor):SpawnDust()
+                    room:RemoveDoor(enterDoor)
+                    Astro:Spawn(EntityType.ENTITY_PICKUP, FOOL_DEVIL_BUM_VARIANT, 1, spawnPos + spawnOffset)
                 end,
                 2
             )
@@ -76,10 +81,6 @@ Astro:AddCallback(
 
 
 ------ 브로큰 하트 거래 by Epiphany ------
-Astro.PickupPrice = {}
-Astro.PickupPrice.PRICE_BROKEN_HEART = -14
-Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS = -15
-
 local BrokenHeartSprite1 = Sprite()
 BrokenHeartSprite1:Load("gfx/items/shop/broken_heart.anm2", true)
 
@@ -201,7 +202,7 @@ Astro:AddCallback(
     function(_, pickup)
         local room = Game():GetLevel():GetCurrentRoom()
         local roomType = room:GetType()
-        local slots = Isaac.FindByType(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, -1, true)
+        local slots = Isaac.FindByType(EntityType.ENTITY_PICKUP, FOOL_DEVIL_BUM_VARIANT, -1, true)
 
         if roomType == RoomType.ROOM_DEVIL
             and pickup.SubType ~= CollectibleType.COLLECTIBLE_NULL
@@ -276,7 +277,7 @@ Astro:AddCallback(
         local player = collider:ToPlayer()
     
         if player and CanPickupDeal(player, pickup) then
-            local slots = Isaac.FindByType(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, -1, true)
+            local slots = Isaac.FindByType(EntityType.ENTITY_PICKUP, FOOL_DEVIL_BUM_VARIANT, -1, true)
             
             if #slots > 0 then
                 if pickup.Price == (Astro.PickupPrice.PRICE_BROKEN_HEART or Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS) then
@@ -322,7 +323,7 @@ Astro:AddCallback(
     function()
         local room = Game():GetLevel():GetCurrentRoom()
         local roomType = room:GetType()
-        local slots = Isaac.FindByType(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, -1, true)
+        local slots = Isaac.FindByType(EntityType.ENTITY_PICKUP, FOOL_DEVIL_BUM_VARIANT, -1, true)
 
         if roomType == RoomType.ROOM_DEVIL and #slots > 0 then
             BrokenHeartSprite1:Update()
@@ -348,11 +349,15 @@ Astro:AddCallback(
 
 
 ------ 카드 주는 거지 ------
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_SLOT_INIT,
-    ---@param slot Entity
-    function(_, slot)
-        slot.SpriteOffset = Vector(0, -10)
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PICKUP_INIT,
+    ---@param pickup EntityPickup
+    function(_, pickup)
+        local sprite = pickup:GetSprite()
+	    sprite:Play("Appear", false)
+
+        pickup.SpriteOffset = Vector(0, -4)
+        pickup:AddEntityFlags(EntityFlag.FLAG_PERSISTENT | EntityFlag.FLAG_DONT_OVERWRITE | EntityFlag.FLAG_NO_KNOCKBACK)
         
         local room = Game():GetLevel():GetCurrentRoom()
         local roomType = room:GetType()
@@ -385,32 +390,30 @@ Astro:AddCallbackCustom(
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_UPDATE,
-    function(_)
-        local slots = Isaac.FindByType(EntityType.ENTITY_SLOT, FOOL_DEVIL_BUM_VARIANT, -1, true)
-        if #slots > 0 then
-            for _, slot in ipairs(slots) do
-                slot.SpriteOffset = Vector(0, -10)
-            end
+    ModCallbacks.MC_POST_PICKUP_UPDATE,
+    ---@param pickup EntityPickup
+    function(_, pickup)
+        pickup.SpriteOffset = Vector(0, -4)
+
+        local sprite = pickup:GetSprite()
+        if sprite:IsFinished("Appear") then
+            sprite:Play("Idle", true)
         end
-    end
+    end,
+    FOOL_DEVIL_BUM_VARIANT
 )
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_SLOT_UPDATE,
-    ---@param slot Entity
-    function(_, slot)
-        slot.SpriteOffset = Vector(0, -10)
-        local sprite = slot:GetSprite()
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_PICKUP_COLLISION,
+    ---@param pickup EntityPickup
+    ---@param collider Entity
+    ---@param low boolean
+    function(_, pickup, collider, low)
+        local player = collider:ToPlayer()
 
-        if sprite:IsEventTriggered("Drop") then
-            Astro:SpawnCard(Card.CARD_FOOL, slot.Position)
-        end
-
-        if sprite:IsFinished("Idle") then
-            sprite:Play("exit")
-        elseif sprite:IsFinished("exit") then
-            slot:Die()
+        if player then
+			player:UseCard(Card.CARD_FOOL, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
+            pickup:ClearEntityFlags(EntityFlag.FLAG_PERSISTENT)
         end
     end,
     FOOL_DEVIL_BUM_VARIANT

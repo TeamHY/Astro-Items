@@ -14,7 +14,7 @@ Astro:AddCallback(
                 Astro.Collectible.TAURUS_EX,
                 "초 황소자리",
                 "나 사나이다",
-                "이동키를 두번 누르면 누른 방향으로 돌진합니다:" ..
+                "{taurusKeySet} 돌진합니다:" ..
                 "#{{ArrowGrayRight}} 접촉한 적에게 공격력 x4 +28의 피해를 입히고 지나간 길에 빛줄기를 소환합니다." ..
                 "#{{ArrowGrayRight}} " .. string.format("%.f", TAURUS_COOLDOWN / 60) .. "초간 이동속도가 +0.28 증가하고 공격불능 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
                 "#{{ArrowGrayRight}} 그 방의 적의 움직임이 30초간 멈추며 공격키를 누르면 효과가 풀립니다." ..
@@ -27,7 +27,7 @@ Astro:AddCallback(
                 Astro.Collectible.TAURUS_EX,
                 "Taurus EX",
                 "",
-                "Double-tapping a movement key makes Isaac dash" .. 
+                "{taurusKeySet} makes Isaac dash" .. 
                 "#{{Damage}} During a dash, Isaac is invincible and deals 4x his damage +28 and leaving behind beams of light;" ..
                 "#{{ArrowGrayRight}} Receive for " .. string.format("%.f", TAURUS_COOLDOWN / 60) .. "seconds at {{Speed}} +0.28 Speed and Isaac can't shoot but deals 40 contact damage per second;" ..
                 "#{{ArrowGrayRight}} Pauses all enemies in the room until Isaac shoots. Enemies unpause after 30 seconds" ..
@@ -37,6 +37,36 @@ Astro:AddCallback(
                 "en_us"
             )
         end
+        
+        local HotkeyToString = {}
+        for key, num in pairs(Keyboard) do
+            local keyString = key
+            local keyStart, keyEnd = string.find(keyString, "KEY_")
+            keyString = string.sub(keyString, keyEnd + 1, string.len(keyString))
+            keyString = string.gsub(keyString, "_", " ")
+            HotkeyToString[num] = keyString
+        end
+        local function TaurusExCondition(descObj)
+            if descObj.ObjType == 5 and descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE then
+                return true
+            end
+            return false
+        end
+        local function TaurusExCallback(descObj)
+            if descObj.ObjSubType == Astro.Collectible.TAURUS_EX and Astro.Data["TaurusExMode"] and Astro.Data["TaurusExKeyBind"] then
+                local taurusKey = HotkeyToString[Astro.Data["TaurusExKeyBind"]]
+                local append1 = (EID:getLanguage() == "ko_kr") and "이동키를 두번 누르면 누른 방향으로"      or "Double-tapping a movement key"
+                local append2 = (EID:getLanguage() == "ko_kr") and taurusKey .. "키를 누르면 이동 방향으로 " or "Tapping a " .. taurusKey .. " key"
+                
+                if Astro.Data["TaurusExMode"] == 1 then
+                    descObj.Description = descObj.Description:gsub("{taurusKeySet}", append1)
+                elseif Astro.Data["TaurusExMode"] == 0 then
+                    descObj.Description = descObj.Description:gsub("{taurusKeySet}", append2)
+                end
+            end
+            return descObj
+        end
+        EID:addDescriptionModifier("Taurus EX Modifier", TaurusExCondition, TaurusExCallback)
     end
 )
 

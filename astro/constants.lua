@@ -41,3 +41,8 @@ Astro.SoundEffect = {
     SKILL_CHECK_GOOD = Isaac.GetSoundIdByName("SkillCheckGood"),
     SKILL_CHECK_GREAT = Isaac.GetSoundIdByName("SkillCheckVeryGood")
 }
+
+Astro.PickupPrice = {
+    PRICE_BROKEN_HEART = -14,
+    PRICE_TWO_BROKEN_HEARTS = -15
+}
