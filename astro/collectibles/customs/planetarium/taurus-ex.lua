@@ -101,7 +101,7 @@ Astro:AddCallback(
         if pData._ASTRO_taurusExCool >= taurusCooldown and not pData._ASTRO_taurusExSound then
             player:GetEffects():RemoveCollectibleEffect(CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN)
             player:AddCacheFlags(CacheFlag.CACHE_SPEED)
-            
+
             local sfx = SFXManager()
             sfx:Play(SoundEffect.SOUND_BEEP, 1, 2, false, 0.8)
 
@@ -179,6 +179,12 @@ Astro:AddCallback(
                                     player:UseActiveItem(CollectibleType.COLLECTIBLE_PAUSE, noAnim)
                                     player:UseActiveItem(CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN, noAnim)
                                     player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+                                    Astro:ScheduleForUpdate(
+                                        function()
+                                            player:SetMinDamageCooldown(30)
+                                        end,
+                                        taurusCooldown / 2
+                                    )
 
                                     pData._ASTRO_taurusExCool = 0
                                     pData._ASTRO_taurusExSound = false
@@ -196,6 +202,13 @@ Astro:AddCallback(
                         player:UseActiveItem(CollectibleType.COLLECTIBLE_WHITE_PONY, noAnim)
                         player:UseActiveItem(CollectibleType.COLLECTIBLE_PAUSE, noAnim)
                         player:UseActiveItem(CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN, noAnim)
+                        player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+                        Astro:ScheduleForUpdate(
+                            function()
+                                player:SetMinDamageCooldown(30)
+                            end,
+                            taurusCooldown / 2
+                        )
 
                         pData._ASTRO_taurusExCool = 0
                         pData._ASTRO_taurusExSound = false

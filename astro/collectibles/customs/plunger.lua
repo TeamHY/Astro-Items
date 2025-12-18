@@ -15,7 +15,7 @@ Astro:AddCallback(
                 Astro.Collectible.PLUNGER,
                 "뚫어뻥",
                 "미야옹!",
-                "사용 시 Dip 패밀리어 " .. PLUNGER_DIP .. "마리를 소환합니다." ..
+                "사용 시 랜덤한 Dip 패밀리어 " .. PLUNGER_DIP .. "마리를 소환합니다." ..
                 "#{{Poop}} 똥 타입 적과 보스에게 사용 시 40의 피해를 줍니다." ..
                 "#Clog 보스에게 사용 시 보스를 즉사시킵니다."
             )
@@ -26,7 +26,7 @@ Astro:AddCallback(
                 Astro.Collectible.PLUNGER,
                 "Plunger",
                 "",
-                "Spawn " .. PLUNGER_DIP .. " Dip familiars" ..
+                "Spawns " .. PLUNGER_DIP .. " random Dip familiars" ..
                 "#{{Poop}} Deals 40 damage when used against Poop-type enemies and bosses" ..
                 "#Kills Clog instantly",
                 nil, "en_us"
@@ -82,8 +82,10 @@ Astro:AddCallback(
             end
         end
         
+        local rng = playerWhoUsedItem:GetCollectibleRNG(collectibleID)
         for k = 1, spawnedAmount do
-            Isaac.Spawn(3, 201, 0, playerWhoUsedItem.Position, Vector(0,0), playerWhoUsedItem)
+            local randomSubType = rng:RandomInt(8)
+            Isaac.Spawn(3, 201, randomSubType, playerWhoUsedItem.Position, Vector(0,0), playerWhoUsedItem)
         end
         
         local sfx = SFXManager()

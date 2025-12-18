@@ -11,8 +11,8 @@ Astro:AddCallback(
                 Astro.Collectible.CORVUS,
                 "까마귀자리",
                 "날개 쳐라",
-                "{{Card86}} 10초마다 그 방에서 {{Collectible117}}Dead Bird 패밀리어를 14마리 소환합니다." ..
-                "#다음 게임에서 첫 스테이지에 {{Card86}}Soul of Eve을 소환합니다.",
+                "{{Collectible117}} 10초마다 그 방에서 Dead Bird 패밀리어를 14마리 소환합니다." ..
+                "#다음 게임에서 첫 스테이지에 {{Card86}}Soul of Eve를 소환합니다.",
                 -- 중첩 시
                 "중첩 시 중첩된 수만큼 소환 쿨타임이 절반으로 감소하며, 다음 게임에서 첫 스테이지에 Soul of Eve를 중첩된 수만큼 소환합니다."
             )
