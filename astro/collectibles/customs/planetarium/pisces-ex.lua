@@ -10,6 +10,8 @@ local COOLDOWN_TIME = 15    -- 30 프레임 = 1초
 
 local TEARS_INCREMENT = 0.5    -- 연사 상한 증가량
 
+local WATER_SPLASH_VARIANT = 3112
+
 ---
 
 Astro.Collectible.PISCES_EX = Isaac.GetItemIdByName("Pisces EX")
@@ -109,6 +111,28 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_INIT,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local sprite = effect:GetSprite()
+        sprite:Play("Explosion", true)
+    end,
+    WATER_SPLASH_VARIANT
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local sprite = effect:GetSprite()
+        if sprite:IsFinished("Explosion") then
+            effect:Remove()
+        end
+    end,
+    WATER_SPLASH_VARIANT
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_PRE_TEAR_COLLISION,
     ---@param tear EntityTear
     ---@param collider Entity
@@ -126,9 +150,9 @@ Astro:AddCallback(
 
                     Astro:ScheduleForUpdate(
                         function()
-                            local splashSpawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BIG_SPLASH, 0, collider.Position, Vector.Zero, nil)
+                            local splashSpawn = Isaac.Spawn(EntityType.ENTITY_EFFECT, WATER_SPLASH_VARIANT, 0, collider.Position, Vector.Zero, nil)
                             local splash = splashSpawn:ToEffect()
-                            splash:FollowParent(collider)
+                            splash:FollowParent(whirlpoolspawn)
 
                             local sfx = SFXManager()
                             sfx:Play(SoundEffect.SOUND_BOSS2_DIVE, 0.75)
@@ -136,7 +160,7 @@ Astro:AddCallback(
                             collider:Die()
                             eData._ASTRO_piscesEx_EffectScaleDecrease = 1
                         end,
-                        12
+                        10
                     )
                 else
                     collider:TakeDamage(tear.BaseDamage, 0, EntityRef(tear), 0)
@@ -158,7 +182,7 @@ Astro:AddCallback(
             effect.SpriteScale = Vector(2/3, 2/3)
         elseif eData._ASTRO_piscesEx_EffectScaleDecrease >= 1 then
             if effect.SpriteScale.X > 0 and effect.SpriteScale.Y > 0 then
-                effect.SpriteScale = effect.SpriteScale - Vector(0.05, 0.05)
+                effect.SpriteScale = effect.SpriteScale - Vector(0.03, 0.03)
             else
                 effect:Remove()
             end

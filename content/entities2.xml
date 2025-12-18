@@ -71,4 +71,6 @@
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
         <preload-snd id="234"/>
     </entity>
+    <entity name="Water Explosion" anm2path="water explosion.anm2" id="1000" variant="3112" collisionMass="0" friction="1">
+    </entity>
 </entities>

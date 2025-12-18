@@ -2,7 +2,7 @@
 	<Info CreatedBy="sawalk" CreatedOn="2025-11-22 04:24:09" Version="4" Fps="60"/>
 	<Content>
 		<Spritesheets>
-			<Spritesheet Path="effects\love_letter.png" Id="0"/>
+			<Spritesheet Path="tears\love_letter.png" Id="0"/>
 			<Spritesheet Path="items\collectibles\love letter.png" Id="1"/>
 		</Spritesheets>
 		<Layers>
