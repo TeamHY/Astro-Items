@@ -67,7 +67,7 @@
     </entity>
     <entity name="Love Letter" anm2path="love_letter.anm2" id="2" variant="3100" subtype="0" collisionMass="8" collisionRadius="7" friction="1" >
     </entity>
-    <entity anm2path="fool_devil_bum.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Fool Devil Bum" numGridCollisionPoints="24" shadowSize="15" subtype="1" variant="3100">
+    <entity anm2path="fool_devil_bum.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="100" collisionRadius="12" friction="1" id="5" name="Fool Devil Bum" numGridCollisionPoints="12" shadowSize="0" subtype="1" variant="3100">
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
         <preload-snd id="234"/>
     </entity>
