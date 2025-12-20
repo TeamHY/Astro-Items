@@ -86,7 +86,8 @@
 	</collectible>
 	<collectible id="18">
 		<info text="x1.25 damage multiplier"/>
-		<info text="Isaac is always affected by Curse of Darkness"/>
+		<info tag="Gives Isaac curse of darkness for the run"/>
+		<info text="Automatically extinguishes all fire places upon entering a room"/>
 	</collectible>
 	<collectible id="19">
 		<info text="Spawns 2 angel room items in addition to boss room rewards, which disappear when one is picked up"/>
@@ -100,14 +101,14 @@
 	</collectible>
 	<collectible id="22">
 		<info text="Drops Missing Poster on pickup"/>
-		<info text="Spawns Blanket in the starting room of the next run"/>
+		<info text="Spawns white fire place in the starting room of the next run"/>
 	</collectible>
 	<collectible id="23">
 		<info text="Burning Basement, Flooded Caves, Dank Depths, and Scarred Womb floors will not appear in the next run"/>
 		<info text="Deals extra damage to enemies that appear on floors that are not generated"/>
 	</collectible>
 	<collectible id="24">
-		<info text="Spawns Satchel, Belly Button, and Polydactyly on pickup. Picking up one makes the other 2 disappear"/>
+		<info text="Spawns Schoolbag, Belly Button, and Polydactyly on pickup. Picking up one makes the other 2 disappear"/>
 		<info text="Spawns 1 Ansuz in the starting room of the next run"/>
 	</collectible>
 	<collectible id="25">
@@ -611,7 +612,7 @@
 	<collectible id="151">
 		<info text="Grants immunity to curses and negative effects of certain items"/>
 		<info text="Identifies blinded items"/>
-		<info text="Automatically extinguishes purple fires upon entering a room"/>
+		<info text="Automatically extinguishes purple fire places upon entering a room"/>
 		<info text="Increases chance for devil or angel rooms to appear"/>
 	</collectible>
 	<collectible id="152">

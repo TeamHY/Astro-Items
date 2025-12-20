@@ -86,7 +86,8 @@
 	</collectible>
 	<collectible id="18">
 		<info text="x1.25 공격력 배율"/>
-		<info text="아이작이 항상 어둠의 저주에 걸립니다"/>
+		<info text="이번 게임 동안 아이작이 어둠의 저주에 걸립니다"/>
+		<info text="방에 입장하면 자동으로 모든 모닥불이 꺼집니다"/>
 	</collectible>
 	<collectible id="19">
 		<info text="보스방 보상에 더해 소지 중인 아이템 1개를 소환하고, 1개를 획득하면 나머지 1개는 사라지는 천사방 아이템 2개를 소환합니다"/>

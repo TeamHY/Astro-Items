@@ -1,5 +1,3 @@
-local isc = require("astro.lib.isaacscript-common")
-
 Astro.Collectible.VIRGO_EX = Isaac.GetItemIdByName("Virgo EX")
 
 ---
@@ -180,6 +178,7 @@ Astro:AddCallback(
 )
 Astro:AddCallback(
     ModCallbacks.MC_POST_PEFFECT_UPDATE,
+    ---@param player EntityPlayer
     function(_, player)
         local data = player:GetData()
         data._ASTRO_lastHeldPillColor = player:GetPill(0) or data._ASTRO_lastHeldPillColor or 0

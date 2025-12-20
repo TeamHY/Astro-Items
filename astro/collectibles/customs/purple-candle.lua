@@ -18,6 +18,18 @@ Astro:AddCallback(
                 "#{{CurseBlindSmall}} 가려진 아이템을 볼 수 있습니다." ..
                 "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다."
             )
+            
+            Astro:AddEIDCollectible(
+                Astro.Collectible.PURPLE_CANDLE,
+                "Purple Candle",
+                "",
+                "!!! {{Collectible260}} Black Candle doesn't appear after pickup" ..
+                "#{{CurseBlind}} Immune to curses" ..
+                "#↑ {{DevilChance}} +15% Devil/Angel Room chance" ..
+                "#{{CurseBlind}} Reveals blind items" ..
+                "#Automatically extinguishes purple fire places on room entry",
+                nil, "en_us"
+            )
         end
 
         Astro:AddRerollCondition(

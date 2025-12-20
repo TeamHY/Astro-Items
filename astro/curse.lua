@@ -1,7 +1,7 @@
 Astro:AddCallback(
     ModCallbacks.MC_POST_CURSE_EVAL,
     function(_, curse)
-        if not Astro then
+        if not Astro.IsFight then
             local hasPrometheus = false
             local hasCurseCleaner = false
 
