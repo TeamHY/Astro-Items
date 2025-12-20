@@ -86,7 +86,7 @@
 	</collectible>
 	<collectible id="18">
 		<info text="x1.25 damage multiplier"/>
-		<info tag="Gives Isaac curse of darkness for the run"/>
+		<info text="Gives Isaac curse of darkness for the rest of the run"/>
 		<info text="Automatically extinguishes all fire places upon entering a room"/>
 	</collectible>
 	<collectible id="19">
@@ -834,7 +834,7 @@
 	</trinket>
 	<trinket id="4">
 		<info text="Prevent damage from curse room doors"/>
-		<info text="Reveals curse rooms on the map"/>
+		<info tag="1" text="Reveals curse rooms on the map"/>
 	</trinket>
 	<trinket id="5">
 		<info text="Defeating Mega Satan, Delirium, Mother, or Dogma spawns Eden's Blessing"/>

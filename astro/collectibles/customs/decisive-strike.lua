@@ -37,7 +37,7 @@ Astro:AddCallback(
                 "#QTE can be pressed with the active item key;" ..
                 "#{{ArrowGrayRight}} Success: Negates damage, {{BleedingOut}}bleeds nearby enemies, grants rapidly decaying {{Damage}}damage and {{Tears}}tears up for the room" ..
                 "#{{Blank}} (Great success grants higher stats)" ..
-                "#{{ArrowGrayRight}} Failure: Permanently stacks {{Damage}}damage multiplier x" .. DAMAGE_PENALTY .. " for the run",
+                "#{{ArrowGrayRight}} Failure: Permanently stacks {{Damage}}damage multiplier x" .. DAMAGE_PENALTY .. " for the rest of the run",
                 -- Stacks
                 "Stacking mitigates penalty damage multiplier up to x" .. DAMAGE_PENALTY_MAX,
                 "en_us"

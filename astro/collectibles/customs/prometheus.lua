@@ -20,7 +20,7 @@ Astro:AddCallback(
                 "Prometheus",
                 "",
                 "↑ {{Damage}} x1.25 Damage multiplier" ..
-                "#{{CurseDarkness}} Curse of Darkness effect for the run" ..
+                "#{{CurseDarkness}} Curse of Darkness effect for the rest of the run" ..
                 "#Automatically extinguishes all fire places on room entry",
                 -- Stacks
                 "Stackable",
