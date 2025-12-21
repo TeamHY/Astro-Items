@@ -163,6 +163,7 @@ require "astro.collectibles.customs.marigold"
 require "astro.collectibles.customs.legacy"
 require "astro.collectibles.customs.p-key"
 require "astro.collectibles.customs.sigil-of-duality"
+require "astro.collectibles.customs.casey"
 
 --#region PLANETARIUM
 

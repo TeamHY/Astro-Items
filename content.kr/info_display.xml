@@ -818,6 +818,9 @@
 		<info text="성공: 피해를 무시하고, 근처의 적을 출혈시키며, 순간적으로 높은 공격력과 공격 속도를 얻습니다"/>
 		<info text="실패: 영구적으로 공격력 배율이 소량 감소합니다"/>
 	</collectible>
+	<collectible id="216">
+		<info text="15번째 눈물마다 더 포가튼의 근접 공격을 발사합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

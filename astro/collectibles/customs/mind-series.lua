@@ -178,13 +178,23 @@ Astro:AddCallback(
                     end
     
                     pickup:Morph(pickup.Type, pickup.Variant, item, true)
-                    Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, nil, nil, 9)
+                    if item == Astro.Collectible.CALM_MIND then
+                        Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, Color(1, 1, 1, 0.75, 0.75, 0, 0.25), nil, 9)
+                    elseif item == Astro.Collectible.SWIFT_MIND then
+                        local color = Color(1,1,1,1,1,1,1)
+                        color:SetTint(0,-0.75,-0.75,3) print(color)
+                        Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, Color(1, -1, -1, 1), nil, 9)
+                    elseif item == Astro.Collectible.BLUE_MIND then
+                        Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, nil, nil, 9)
+                    elseif item ==Astro.Collectible.LUCKY_MIND then
+                        Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, Color(1, 1, 0.75, 0.75, 0.5, 0.5), nil, 9)
+                    end
                     
                     local sfx = SFXManager()
                     if SoundEffect.SOUND_ITEM_RAISE and sfx:IsPlaying(SoundEffect.SOUND_ITEM_RAISE) then
                         sfx:Stop(SoundEffect.SOUND_ITEM_RAISE)
-                        sfx:Play(SoundEffect.SOUND_DIPLOPIA, 0.75)
                     end
+                    sfx:Play(SoundEffect.SOUND_SOUL_PICKUP, 0.75)
                 end
             end
         end

@@ -816,6 +816,9 @@
 		<info text="Success: Negates damage, bleeds nearby enemies, grants rapidly decaying damage and tears up for the room"/>
 		<info text="Failure: Permanently decreases damage multiplier by a small amount"/>
 	</collectible>
+	<collectible id="216">
+		<info text="Every 15 tears, fire a the Forgotten's melee attack"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
