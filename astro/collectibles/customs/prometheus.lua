@@ -8,7 +8,7 @@ Astro:AddCallback(
                 Astro.Collectible.PROMETHEUS,
                 "프로메테우스",
                 "불을 훔친 자",
-                "↑ {{DamageSmall}}공격력 x1.25" ..
+                "↑ {{DamageSmall}}공격력 x1.35" ..
                 "#{{CurseDarknessSmall}} 항상 Curse of Dakrness 저주에 걸립니다." ..
                 "#방 입장 시 모든 모닥불이 자동으로 꺼집니다.",
                 -- 중첩 시
@@ -19,7 +19,7 @@ Astro:AddCallback(
                 Astro.Collectible.PROMETHEUS,
                 "Prometheus",
                 "",
-                "↑ {{Damage}} x1.25 Damage multiplier" ..
+                "↑ {{Damage}} x1.35 Damage multiplier" ..
                 "#{{CurseDarkness}} Curse of Darkness effect for the rest of the run" ..
                 "#Automatically extinguishes all fire places on room entry",
                 -- Stacks
@@ -78,7 +78,7 @@ Astro:AddCallback(
     function(_, player, cacheFlag)
         if player:HasCollectible(Astro.Collectible.PROMETHEUS) then
             if cacheFlag == CacheFlag.CACHE_DAMAGE then
-                player.Damage = player.Damage * 1.25 ^ player:GetCollectibleNum(Astro.Collectible.PROMETHEUS)
+                player.Damage = player.Damage * 1.35 ^ player:GetCollectibleNum(Astro.Collectible.PROMETHEUS)
             end
         end
     end
