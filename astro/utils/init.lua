@@ -561,3 +561,20 @@ function Astro:GetLastPenaltyFrame(player)
 
     return -108000
 end
+
+---@param player EntityPlayer
+---@return Entity[]
+function Astro:FindGuppyItems(player)
+    local guppyItems = {}
+    local collectibles = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
+    
+    for _, collectible in ipairs(collectibles) do
+        local pickup = collectible:ToPickup()
+        local config = Isaac.GetItemConfig():GetCollectible(pickup.SubType)
+        if config and config:HasTags(ItemConfig.TAG_GUPPY) then
+            table.insert(guppyItems, collectible)
+        end
+    end
+    
+    return guppyItems
+end
