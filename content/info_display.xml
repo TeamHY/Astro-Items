@@ -85,7 +85,7 @@
 		<info text="Removes Pyromaniac and Host Hat if held"/>
 	</collectible>
 	<collectible id="18">
-		<info text="x1.25 damage multiplier"/>
+		<info text="x1.35 damage multiplier"/>
 		<info text="Gives Isaac curse of darkness for the rest of the run"/>
 		<info text="Automatically extinguishes all fire places upon entering a room"/>
 	</collectible>
