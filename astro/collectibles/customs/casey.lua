@@ -42,7 +42,8 @@ Astro:AddCallback(
         local player = tear.Parent and tear.Parent:ToPlayer()
         if tear.TearIndex % TEARS_TO_SWING ~= 0 then return end
         if not player:HasCollectible(Astro.Collectible.CASEY) then return end
-
+        
+        -- TODO: 악마눈 특성상 지형지물에서 눈물쏘면 바로 씹힘 / 자체 히트박스 구현 필요
         local evilEye = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.EVIL_EYE, 10, player.Position, Vector.Zero, player):ToEffect()
         local eData = evilEye:GetData()
         evilEye:FollowParent(player)

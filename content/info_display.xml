@@ -821,6 +821,9 @@
 	</collectible>
 	<collectible id="217">
 	</collectible>
+	<collectible id="218">
+		<info text="Grants flight"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

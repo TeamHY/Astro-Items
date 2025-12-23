@@ -165,6 +165,7 @@ require "astro.collectibles.customs.p-key"
 require "astro.collectibles.customs.sigil-of-duality"
 require "astro.collectibles.customs.casey"
 require "astro.collectibles.customs.canned-bread"
+require "astro.collectibles.customs.pure-gold-copter"
 
 --#region PLANETARIUM
 

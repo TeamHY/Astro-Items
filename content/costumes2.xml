@@ -20,10 +20,13 @@
 	<costume id="9" anm2path="299_taurus.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="15" anm2path="309_pisces.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="28" anm2path="costume_ptolemaeus.anm2" type="passive" />
+	<costume id="44" anm2path="252_littlebaggy.anm2" type="passive" />
 	<costume id="48" anm2path="306_sagittarius.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="71" anm2path="costume_heartbloom.anm2" type="passive" hasSkinAlt="false" />
 	<costume id="81" anm2path="costume_godtech.anm2" type="passive" />
 	<costume id="132" anm2path="costume_copernicus.anm2" type="passive" />
 	<costume id="146" anm2path="256_hotbombs.anm2" type="passive" />
 	<costume id="213" anm2path="106x_tropicamide.anm2" type="passive" hasSkinAlt="true" />
+	<costume id="217" anm2path="costume_cannedbread.anm2" type="passive" hasSkinAlt="true" />
+	<costume id="218" anm2path="costume_24kcopter.anm2" type="passive" hasSkinAlt="true" isFlying="true" />
 </costumes>

@@ -823,6 +823,9 @@
 	</collectible>
 	<collectible id="217">
 	</collectible>
+	<collectible id="218">
+		<info text="비행 능력을 얻습니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
