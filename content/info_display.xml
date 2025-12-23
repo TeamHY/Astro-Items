@@ -819,6 +819,8 @@
 	<collectible id="216">
 		<info text="Every 15 tears, fire a the Forgotten's melee attack"/>
 	</collectible>
+	<collectible id="217">
+	</collectible>
 </collectibles>
 
 <trinkets>

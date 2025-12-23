@@ -164,6 +164,7 @@ require "astro.collectibles.customs.legacy"
 require "astro.collectibles.customs.p-key"
 require "astro.collectibles.customs.sigil-of-duality"
 require "astro.collectibles.customs.casey"
+require "astro.collectibles.customs.canned-bread"
 
 --#region PLANETARIUM
 

@@ -821,6 +821,8 @@
 	<collectible id="216">
 		<info text="15번째 눈물마다 더 포가튼의 근접 공격을 발사합니다"/>
 	</collectible>
+	<collectible id="217">
+	</collectible>
 </collectibles>
 
 <trinkets>

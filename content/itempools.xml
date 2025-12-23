@@ -1449,6 +1449,7 @@
 		<Item Name="Strawberry Milk" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="???'s Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Canned Bread" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedBoss">
 
