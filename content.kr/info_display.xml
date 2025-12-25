@@ -826,6 +826,11 @@
 	<collectible id="218">
 		<info text="비행 능력을 얻습니다"/>
 	</collectible>
+	<collectible id="219">
+		<info text="아이작이 적과 접촉하면 적에게 강력한 포옹 공격을 가합니다"/>
+		<info text="적을 처치하면 심장 픽업이 미끄러지듯이 드랍됩니다"/>
+		<info text="소환된 심장은 2초 내에 줍지 않으면 사라집니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

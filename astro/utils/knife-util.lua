@@ -26,6 +26,7 @@ Astro.KnifeUtil.KNIFE_VARIANT_TO_ATTACK_DISTANCE = {
     [11] = 20, -- tech sword
 }
 
+Astro.KnifeUtil.KNIFE_HITBOX_VARIANT = 3113
 Astro.KnifeUtil.ATTACK_RADIUS = 45
 Astro.KnifeUtil.SPIN_RADIUS = 80
 
@@ -127,3 +128,90 @@ function Astro.KnifeUtil:IsSwingingKnife(playerOrKnife)
 
     return false
 end
+
+---@param player EntityPlayer
+---@param angle Number
+---@param damageInfo { Damage: number, Radius: number?, Flags: DamageFlag? }
+---@param spritesheet { Main: string?, Whoosh: string? }
+function Astro.KnifeUtil:SpawnSwingEffect(player, angle, damageInfo, spritesheet)
+    variant = variant or Astro.KnifeUtil.KNIFE_HITBOX_VARIANT
+
+    local hitbox = Isaac.Spawn(EntityType.ENTITY_EFFECT, variant, 0, player.Position, Vector.Zero, player):ToEffect()
+    hitbox.SpriteOffset = Vector(0, -10)
+    hitbox:FollowParent(player)
+
+    local hData = hitbox:GetData()
+    hData._ASTRO_knifeUtilAngle = angle
+
+    local swingDir = Vector.FromAngle(angle) * 9
+    local radius = damageInfo.Radius or Astro.KnifeUtil.ATTACK_RADIUS
+    
+    local entities = Isaac.FindInRadius(hitbox.Position + swingDir, radius, EntityPartition.ENEMY | EntityPartition.PICKUP)
+    if #entities > 0 then
+        local sfx = SFXManager()
+        local flags = damageInfo.Flags or 0
+        
+        for i, ent in ipairs(entities) do
+            local dirVec = ent.Position - player.Position
+            dirVec = dirVec:Normalized()
+            ent.Velocity = dirVec * 6
+
+            local pickup = ent:ToPickup()
+            if pickup then
+                if
+                    REPENTOGON
+                    and pickup.Variant < PickupVariant.PICKUP_TROPHY
+                    and pickup.Variant ~= PickupVariant.PICKUP_COLLECTIBLE
+                    and pickup.Variant ~= PickupVariant.PICKUP_BIGCHEST
+                    and not pickup:IsShopItem()
+                then
+                    player:ForceCollide(pickup, false)
+                end
+            else
+                ent:TakeDamage(damageInfo.Damage, flags, EntityRef(player), 30)
+                sfx:Play(SoundEffect.SOUND_MEATY_DEATHS)
+            end
+        end
+    end
+
+    local sprite = hitbox:GetSprite()
+    local newSheet0 = "gfx/ui/death portraits extra.png"
+    local newSheet1 = nil
+    if spritesheet then
+        if spritesheet.Main then
+            newSheet0 = spritesheet.Main
+        end
+        if spritesheet.Whoosh then
+            newSheet1 = spritesheet.Whoosh
+            sprite:ReplaceSpritesheet(1, newSheet1)
+        end
+    end
+    sprite:ReplaceSpritesheet(0, newSheet0)
+    sprite:LoadGraphics()
+    sprite:Play("Swing", true)
+
+    return hitbox
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        effect.SpriteOffset = Vector(0, -10)
+        
+        local hData = effect:GetData()
+        local angle = hData._ASTRO_knifeUtilAngle % 360
+        if angle < 0 then
+            angle = angle + 360
+        end
+        local snappedAngle = math.floor((angle / 90) + 0.5) * 90
+        
+        local sprite = effect:GetSprite()
+        sprite.Rotation = snappedAngle - 90
+
+        if sprite:IsFinished("Swing") then
+            effect:Remove()
+        end
+    end,
+    Astro.KnifeUtil.KNIFE_HITBOX_VARIANT
+)

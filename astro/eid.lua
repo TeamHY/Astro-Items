@@ -178,7 +178,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            for i = Astro.Collectible.CYGNUS, Astro.Collectible.DECISIVE_STRIKE do
+            for i = Astro.Collectible.CYGNUS, Astro.Collectible.BIRTHRIGHT_MAGGY do
                 local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES -- 736 - 733
                 local desc = Astro.EID.EnglishDescAI[i - modItemOffset]
                 Astro:AddEIDCollectible(i, "", "", desc, nil, "en_us")

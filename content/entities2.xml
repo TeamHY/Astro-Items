@@ -73,6 +73,6 @@
     </entity>
     <entity name="Water Explosion" anm2path="water explosion.anm2" id="1000" variant="3112" collisionMass="0" friction="1">
     </entity>
-    <entity name="Bat Swinging" anm2path="bat_swinging.anm2" id="1000" variant="3113" collisionMass="0" friction="1">
+    <entity name="Knife Hitbox" anm2path="008.001_bone club.anm2" id="1000" variant="3113" collisionMass="0" friction="1">
     </entity>
 </entities>

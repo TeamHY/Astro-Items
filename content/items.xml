@@ -217,6 +217,7 @@
 	<passive gfx="Casey.png" quality="2" devilprice="1" shopprice="5" name="Casey" description="Who's on first" id="216" />
 	<passive tags="noeden nolostbr nocantrip food" gfx="Canned Bread.png" quality="1" hidden="true" shopprice="5" hearts="4" maxhearts="2" name="Canned Bread" description="Wow, they have it!" id="217" />
 	<passive tags="nolostbr" cache="flying" gfx="Pure Gold Copter.png" quality="2" devilprice="1" shopprice="8" name="24K Copter" description="Instead, it's ultra-compact" id="218" />
+	<passive gfx="Birthright - Maggy.png" quality="1" devilprice="1" shopprice="2" name="Maggy's Frame" description="Lethal hug" id="219" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

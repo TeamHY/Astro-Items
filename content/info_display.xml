@@ -824,6 +824,11 @@
 	<collectible id="218">
 		<info text="Grants flight"/>
 	</collectible>
+	<collectible id="219">
+		<info text="Isaac to deal a strong hug attack to enemies on contact"/>
+		<info text="Enemies drop a heart pickup that slides across the floor"/>
+		<info text="Hearts spawned by this effect disappear after 2 seconds if not collected"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

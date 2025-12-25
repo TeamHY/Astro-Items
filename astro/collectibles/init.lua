@@ -166,6 +166,7 @@ require "astro.collectibles.customs.sigil-of-duality"
 require "astro.collectibles.customs.casey"
 require "astro.collectibles.customs.canned-bread"
 require "astro.collectibles.customs.pure-gold-copter"
+require "astro.collectibles.customs.birthright-maggy"
 
 --#region PLANETARIUM
 
