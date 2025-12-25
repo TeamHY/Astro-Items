@@ -37,25 +37,25 @@ Astro:AddCallback(
                 "Stacks increases melee attack damage by 100%p",
                 "en_us"
             )
-
-            Astro:AddRerollCondition(
-                function(selectedCollectible)
-                    for i = 1, Game():GetNumPlayers() do
-                        local player = Isaac.GetPlayer(i - 1)
-
-                        if player:GetPlayerType() == PlayerType.PLAYER_MAGDALENE_B and selectedCollectible == Astro.Collectible.BIRTHRIGHT_MAGGY then
-                            return {
-                                reroll = true,
-                                newitem = CollectibleType.COLLECTIBLE_BIRTHRIGHT,
-                                modifierName = "Maggy's Frame"
-                            }
-                        end
-                    end
-
-                    return false
-                end
-            )
         end
+
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                for i = 1, Game():GetNumPlayers() do
+                    local player = Isaac.GetPlayer(i - 1)
+
+                    if player:GetPlayerType() == PlayerType.PLAYER_MAGDALENE_B and selectedCollectible == Astro.Collectible.BIRTHRIGHT_MAGGY then
+                        return {
+                            reroll = true,
+                            newitem = CollectibleType.COLLECTIBLE_BIRTHRIGHT,
+                            modifierName = "Maggy's Frame"
+                        }
+                    end
+                end
+
+                return false
+            end
+        )
     end
 )
 
