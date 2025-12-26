@@ -4,8 +4,6 @@ local BICORN_USES_MALE = 3
 
 local BICORN_USES_FEMALE = 6
 
-local REPLACE_CHANCE = 0.5
-
 ---
 
 Astro.Collectible.BICORN = Isaac.GetItemIdByName("Bicorn")
@@ -15,7 +13,6 @@ if EID then
         Astro.Collectible.BICORN,
         "바이콘",
         "...",
-        "{{Collectible77}}My Little Unicorn 등장 시 확률적으로 대체됩니다." ..
         "#사용 시 6초간 무적이 되며 빠르게 이동합니다." ..
         "#{{Blank}} 무적 상태에서 적이 죽을 경우 같은 몬스터가 이번 게임 내에 등장하지 않습니다." ..
         "#스테이지당 사용 횟수가 제한됩니다:" ..

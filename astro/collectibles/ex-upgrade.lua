@@ -67,6 +67,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_D6] = { Id = Astro.Collectible.MEGA_D6, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_D8] = { Id = Astro.Collectible.MEGA_D8, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_MIDAS_TOUCH] = { Id = Astro.Collectible.MARIGOLD, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN] = { Id = Astro.Collectible.BICORN, Chance = 0.3 },
 }
 
 ---
