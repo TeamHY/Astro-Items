@@ -829,6 +829,10 @@
 		<info text="Enemies drop a heart pickup that slides across the floor"/>
 		<info text="Hearts spawned by this effect disappear after 2 seconds if not collected"/>
 	</collectible>
+	<collectible id="220">
+		<info text="Gives Isaac curse of the maze for the rest of the run"/>
+		<info text="Immunity to floor curses except the curse of the maze"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

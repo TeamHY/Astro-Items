@@ -831,6 +831,10 @@
 		<info text="적을 처치하면 심장 픽업이 미끄러지듯이 드랍됩니다"/>
 		<info text="소환된 심장은 2초 내에 줍지 않으면 사라집니다"/>
 	</collectible>
+	<collectible id="220">
+		<info text="이번 게임 동안 아이작이 미로의 저주에 걸립니다"/>
+		<info text="미로의 저주를 제외한 모든 저주에 면역이 생깁니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

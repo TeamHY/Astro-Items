@@ -22,11 +22,29 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 시 적이 받는 피해량이 합 연산으로 증가"
             )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.ASTRO_SACRED_HEART,
+                "Astro Sacred Heart",
+                "",
+                "↑ {{Heart}} +1 Health" ..
+                "#↑ {{Damage}} x2.3 Damage multiplier" ..
+                "#↑ {{Damage}} +1 Damage" ..
+                "#↓ {{Tears}} -0.4 Tears" ..
+                "#↓ {{Shotspeed}} -0.25 Shot speed" ..
+                "#{{HealingRed}} Full health" ..
+                "#Homing tears" ..
+                "#{{Damage}} Damage to enemies increases by 2.3x on hit",
+                -- Stacks
+                "Stacks increase extra damage",
+                "en_us"
+            )
+
+            EID.HealthUpData["5.100." .. tostring(Astro.Collectible.ASTRO_SACRED_HEART)] = 1
+            EID.BloodUpData[Astro.Collectible.ASTRO_SACRED_HEART] = 12
         end
     end
 )
-
-
 
 Astro:AddCallback(
     ModCallbacks.MC_ENTITY_TAKE_DMG,

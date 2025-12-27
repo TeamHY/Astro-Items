@@ -109,7 +109,7 @@
 	<passive gfx="SOL EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="SOL EX" description="Mania victory" id="108" />
 	<passive gfx="LUNA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="LUNA EX" description="The radiant blessing of the moon shines upon you" id="109" />
 	<passive gfx="MERCURIUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MERCURIUS EX" description="Open, sesame" id="110" />
-	<passive gfx="VENUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="VENUS EX" description="You are beautiful" id="111" />
+	<passive gfx="VENUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" hearts="4" maxhearts="2" name="VENUS EX" description="You are beautiful" id="111" />
 	<passive tags="damage" gfx="TERRA EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="TERRA EX" description="Return to rock" id="112" />
 	<passive gfx="MARS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="MARS EX" description="Unstoppable dash" id="113" />
 	<passive gfx="JUPITER EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="JUPITER EX" description="You're a gas supergiant!" id="114" />
@@ -150,7 +150,7 @@
 	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="4" name="Apollyon's Frame" description="Companionship of calamity" id="149" />
 	<active gfx="Birthright - Eden B.png" hidden="true" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Tainted Eden's Frame" description="??!" id="150" />
 	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="10" name="Purple Candle" description="Curse immunity + open one's eyes" id="151" />
-	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Godhead" description="Unrepentant God" id="152" />
+	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" hearts="99" maxhearts="2" name="Astro Godhead" description="Unrepentant God" id="152" />
 	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" id="153" />
 	<active tags="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" description="More potentials" id="154" />
 	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="5" name="Schrodinger's Cat" description="Quantum mechanic" id="155" />
@@ -218,6 +218,7 @@
 	<passive tags="noeden nolostbr nocantrip food" gfx="Canned Bread.png" quality="1" hidden="true" shopprice="5" hearts="4" maxhearts="2" name="Canned Bread" description="Wow, they have it!" id="217" />
 	<passive tags="nolostbr" cache="flying" gfx="Pure Gold Copter.png" quality="2" devilprice="1" shopprice="8" name="24K Copter" description="Instead, it's ultra-compact" id="218" />
 	<passive gfx="Birthright - Maggy.png" quality="1" devilprice="1" shopprice="2" name="Maggy's Frame" description="Lethal hug" id="219" />
+	<passive tags="noeden" gfx="Dango.png" quality="1" devilprice="1" shopprice="5" hearts="4" maxhearts="2" name="Dango" description="You feel abandoned" id="220" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
