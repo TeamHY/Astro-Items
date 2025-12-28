@@ -86,7 +86,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         Astro.Data["ShowQ5Hint"] = Astro.Data["ShowQ5Hint"] or 1
-        Astro.Data["TaurusExMode"] = Astro.Data["TaurusExMode"] or 1
+        Astro.Data["TaurusExMode"] = Astro.Data["TaurusExMode"] or 0
         Astro.Data["TaurusExKeyBind"] = Astro.Data["TaurusExKeyBind"] or Keyboard.KEY_V
     end
 )

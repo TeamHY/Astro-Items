@@ -42,8 +42,7 @@
 	<collectible id="9">
 		<info text="Grants a dash attack that can be activated by double-tapping a move button"/>
 		<info text="Isaac is immune to most damage instead of firing tears while charging, and deals contact damage that scales with his tear damage"/>
-		<info text="Freezes all enemies while charging for up to 30 seconds"/>
-		<info text="The freeze effect ends early if Isaac fires a tear"/>
+		<info text="Temporarily petrifies all enemies while charging"/>
 	</collectible>
 	<collectible id="10">
 		<info text="Leaves a trail of creep that deals 66% of Isaac's damage and copies his tear effects"/>

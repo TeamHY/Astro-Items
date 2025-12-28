@@ -10,14 +10,16 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local cooldown = string.format("%.f", TAURUS_COOLDOWN / 60)
+
             Astro:AddEIDCollectible(
                 Astro.Collectible.TAURUS_EX,
                 "초 황소자리",
                 "나 사나이다",
-                "{taurusKeySet} 돌진합니다:" ..
+                "{taurusKeySet} 돌진:" ..
+                "#{{ArrowGrayRight}} 그 방의 적을 " .. cooldown .. "초간 석화시킵니다." ..
                 "#{{ArrowGrayRight}} 접촉한 적에게 공격력 x4 +28의 피해를 입히고 지나간 길에 빛줄기를 소환합니다." ..
-                "#{{ArrowGrayRight}} " .. string.format("%.f", TAURUS_COOLDOWN / 60) .. "초간 이동속도가 +0.28 증가하고 공격불능 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
-                "#{{ArrowGrayRight}} 그 방의 적의 움직임이 30초간 멈추며 공격키를 누르면 효과가 풀립니다." ..
+                "#{{ArrowGrayRight}} " .. cooldown .. "초간 이동속도가 +0.28 증가하고 공격불능 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
                 "#{{TimerSmall}} (쿨타임 3초)",
                 -- 중첩 시
                 "중첩 시 쿨타임 감소"
@@ -27,12 +29,12 @@ Astro:AddCallback(
                 Astro.Collectible.TAURUS_EX,
                 "Taurus EX",
                 "",
-                "{taurusKeySet} makes Isaac dash" .. 
-                "#{{Damage}} During a dash, Isaac is invincible and deals 4x his damage +28 and leaving behind beams of light;" ..
-                "#{{ArrowGrayRight}} Receive for " .. string.format("%.f", TAURUS_COOLDOWN / 60) .. "seconds at {{Speed}} +0.28 Speed and Isaac can't shoot but deals 40 contact damage per second;" ..
-                "#{{ArrowGrayRight}} Pauses all enemies in the room until Isaac shoots. Enemies unpause after 30 seconds" ..
+                "{taurusKeySet} makes Isaac dash:" .. 
+                "#{{Petrify}} Petrifies all enemies in the room for" .. cooldown .. " seconds" ..
+                "#{{Damage}} During a dash, Isaac is invincible and deals 4x his damage +28 and leaving behind beams of light" ..
+                "#{{Collectible77}} For " .. cooldown .. " seconds, {{Speed}} +0.28 Speed and Isaac can't shoot but deals 40 contact damage per second" ..
                 "#{{Timer}} 3 seconds cooldown",
-                -- 중첩 시
+                -- Stacks
                 "Cooldown reduced per stack",
                 "en_us"
             )
@@ -143,6 +145,26 @@ local lastTap = {
     [ButtonAction.ACTION_DOWN] = 0
 }
 
+---@param player EntityPlayer
+---@param cooldown number
+local function taurusExDash(player, cooldown)
+    local noAnim = UseFlag.USE_NOANIM | UseFlag.USE_NOCOSTUME
+    player:UseActiveItem(CollectibleType.COLLECTIBLE_WHITE_PONY, noAnim)
+    player:UseActiveItem(CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN, noAnim)
+    player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+
+    for _, ent in ipairs(Isaac.GetRoomEntities()) do
+        ent:AddFreeze(EntityRef(player), (cooldown / 2), true)    -- 퍼즈 액티브로 하면 적의 투사체가 사라지지 않고 남는 문제가 있음 
+    end
+
+    Astro:ScheduleForUpdate(
+        function()
+            player:SetMinDamageCooldown(30)
+        end,
+        cooldown / 2
+    )
+end
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function()
@@ -174,18 +196,7 @@ Astro:AddCallback(
                                     end
                                     player.Velocity = vel
 
-                                    local noAnim = UseFlag.USE_NOANIM | UseFlag.USE_NOCOSTUME
-                                    player:UseActiveItem(CollectibleType.COLLECTIBLE_WHITE_PONY, noAnim)
-                                    player:UseActiveItem(CollectibleType.COLLECTIBLE_PAUSE, noAnim)
-                                    player:UseActiveItem(CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN, noAnim)
-                                    player:AddCacheFlags(CacheFlag.CACHE_SPEED)
-                                    Astro:ScheduleForUpdate(
-                                        function()
-                                            player:SetMinDamageCooldown(30)
-                                        end,
-                                        taurusCooldown / 2
-                                    )
-
+                                    taurusExDash(player, taurusCooldown)
                                     pData._ASTRO_taurusExCool = 0
                                     pData._ASTRO_taurusExSound = false
                                     lastTap[dir] = now
@@ -198,18 +209,7 @@ Astro:AddCallback(
                 else
                     local pressed = Input.IsButtonTriggered(Astro.Data["TaurusExKeyBind"], player.ControllerIndex) 
                     if pressed and pData._ASTRO_taurusExCool and pData._ASTRO_taurusExCool >= taurusCooldown then
-                        local noAnim = UseFlag.USE_NOANIM | UseFlag.USE_NOCOSTUME
-                        player:UseActiveItem(CollectibleType.COLLECTIBLE_WHITE_PONY, noAnim)
-                        player:UseActiveItem(CollectibleType.COLLECTIBLE_PAUSE, noAnim)
-                        player:UseActiveItem(CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN, noAnim)
-                        player:AddCacheFlags(CacheFlag.CACHE_SPEED)
-                        Astro:ScheduleForUpdate(
-                            function()
-                                player:SetMinDamageCooldown(30)
-                            end,
-                            taurusCooldown / 2
-                        )
-
+                        taurusExDash(player, taurusCooldown)
                         pData._ASTRO_taurusExCool = 0
                         pData._ASTRO_taurusExSound = false
                     end
