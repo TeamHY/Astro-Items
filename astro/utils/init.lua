@@ -3,6 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 require "astro.utils.knife-util"
 require "astro.utils.noise"
 require "astro.utils.player-effect"
+require "astro.utils.vardata-text"
 
 Astro.TearModifier = require "astro.utils.tear-modifier"
 Astro.SpringAnimation = require "astro.utils.spring-animation"

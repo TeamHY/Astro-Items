@@ -189,19 +189,17 @@ Astro:AddCallback(
     function(_)
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
+            local itemId = Astro.Collectible.STARLIT_PAPILLON
         
-            if player:HasCollectible(Astro.Collectible.STARLIT_PAPILLON) then
+            if player:HasCollectible(itemId) then
                 local souls = Astro.Data.StarlitPapillon.Souls
 
-                Isaac.RenderText(
-                    "x" .. souls,
-                    Isaac.WorldToScreen(player.Position).X,
-                    Isaac.WorldToScreen(player.Position).Y - 40,
-                    1,
-                    1,
-                    1,
-                    1
-                )
+                if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_PRIMARY, "x" .. souls, Vector(11, -4))
+                end
+                if player:GetActiveItem(ActiveSlot.SLOT_POCKET) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_POCKET, "x" .. souls, Vector(11, -4))
+                end
 
                 break
             end

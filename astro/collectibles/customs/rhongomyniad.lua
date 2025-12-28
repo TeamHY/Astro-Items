@@ -177,20 +177,19 @@ Astro:AddCallback(
     function(_)
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
-        
-            if player:HasCollectible(Astro.Collectible.RHONGOMYNIAD) then
-                local data = Astro:GetPersistentPlayerData(player)
-                local position = Astro:ToScreen(player.Position)
+            local itemId = Astro.Collectible.RHONGOMYNIAD
 
-                Isaac.RenderText(
-                    "x" .. (data["rhongomyniadStack"] or 0),
-                    position.X - 12,
-                    position.Y - 40,
-                    1,
-                    1,
-                    0,
-                    1
-                )
+            if player:HasCollectible(itemId) then
+                local data = Astro:GetPersistentPlayerData(player)
+
+                if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_PRIMARY, "x" .. (data["rhongomyniadStack"] or 0), Vector(18, 0))
+                end
+                if player:GetActiveItem(ActiveSlot.SLOT_POCKET) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_POCKET, "x" .. (data["rhongomyniadStack"] or 0), Vector(18, 0))
+                end
+
+                break
             end
         end
     end
