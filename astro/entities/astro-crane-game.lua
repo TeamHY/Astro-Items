@@ -75,10 +75,13 @@ Astro:AddCallback(
         EID:addDescriptionModifier("Astro Crane Modifier", AstroCraneModifierCondition, AstroCraneModifierCallback)
 
         -- EID 쪽 버그로 서브타입이 1, 3, 10, 31, 100, 310이면 등록이 안 됩니다.
+        local config = Isaac.GetItemConfig()
         for i = 1, 944 do
-            local getDesc = EID:getDescriptionObj(6, 3100, i)
-            if getDesc.Description == "(no description available)" then
-                addAstroCraneToEID(i)
+            if config:GetCollectible(i) then
+                local getDesc = EID:getDescriptionObj(6, 3100, i)
+                if getDesc.Description == "(no description available)" then
+                    addAstroCraneToEID(i)
+                end
             end
         end
     end
