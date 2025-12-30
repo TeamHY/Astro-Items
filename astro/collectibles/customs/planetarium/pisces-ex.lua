@@ -178,6 +178,10 @@ Astro:AddCallback(
     function(_, effect)
         local eData = effect:GetData()
 
+        if eData._ASTRO_piscesEx_EffectScaleDecrease == nil then
+            return
+        end
+
         if eData._ASTRO_piscesEx_EffectScaleDecrease < 1 then
             effect.SpriteScale = Vector(2/3, 2/3)
         elseif eData._ASTRO_piscesEx_EffectScaleDecrease >= 1 then
