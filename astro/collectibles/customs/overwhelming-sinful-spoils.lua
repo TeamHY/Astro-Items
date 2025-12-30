@@ -155,19 +155,17 @@ Astro:AddCallback(
     function(_)
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
+            local itemId = Astro.Collectible.OVERWHELMING_SINFUL_SPOILS
         
-            if player:HasCollectible(Astro.Collectible.OVERWHELMING_SINFUL_SPOILS) then
+            if player:HasCollectible(itemId) then
                 local souls = Astro.Data.OverwhelmingSinfulSpoils.Souls
 
-                Isaac.RenderText(
-                    "x" .. souls,
-                    Isaac.WorldToScreen(player.Position).X,
-                    Isaac.WorldToScreen(player.Position).Y - 40,
-                    1,
-                    1,
-                    1,
-                    1
-                )
+                if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_PRIMARY, "x" .. souls)
+                end
+                if player:GetActiveItem(ActiveSlot.SLOT_POCKET) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_POCKET, "x" .. souls)
+                end
 
                 break
             end

@@ -10,13 +10,27 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_GODHEAD,
                 "우주신",
                 "회개하지 않은 신", -- 간접적으로 리펜 이전 갓헤드라 설명
-                "↑ {{DamageSmall}}공격력 +1" ..
+                "↑ {{DamageSmall}}공격력 +0.5" ..
                 "#↓ {{TearsSmall}}연사 -0.3" ..
                 "#↓ {{ShotspeedSmall}}탄속 -0.3" ..
                 "#공격이 적에게 유도됩니다." ..
                 "#{{Collectible331}} 눈물에 후광이 생기며 후광에 닿은 적은 프레임당 캐릭터의 공격력 30%의 피해를 받습니다.",
                 -- 중첩 시
                 "중첩 시 후광의 공격력이 합 연산으로 증가"
+            )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.ASTRO_GODHEAD,
+                "Astro Godhead",
+                "",
+                "↑ {{Damage}} +0.5 Damage" ..
+                "#↓ {{Tears}} -0.3 Tears" ..
+                "#↓ {{Shotspeed}} -0.3 Shot speed" ..
+                "#Homing tears" ..
+                "#Tears gain an aura that deals 30% of Isaac's damage per second",
+                -- Stacks
+                "Stacks increase aura damage",
+                "en_us"
             )
         end
     end

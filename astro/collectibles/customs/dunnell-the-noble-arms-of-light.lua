@@ -200,19 +200,17 @@ Astro:AddCallback(
     function(_)
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
-        
-            if player:HasCollectible(Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT) then
+            local itemId = Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT
+
+            if player:HasCollectible(itemId) then
                 local souls = Astro.Data.Dunnell.Souls
 
-                Isaac.RenderText(
-                    "x" .. souls,
-                    Isaac.WorldToScreen(player.Position).X,
-                    Isaac.WorldToScreen(player.Position).Y - 40,
-                    1,
-                    1,
-                    1,
-                    1
-                )
+                if player:GetActiveItem(ActiveSlot.SLOT_PRIMARY) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_PRIMARY, "x" .. souls, Vector(2, 1))
+                end
+                if player:GetActiveItem(ActiveSlot.SLOT_POCKET) == itemId then
+                    Astro.VarDataText:RenderActiceVarDataText(player, ActiveSlot.SLOT_POCKET, "x" .. souls, Vector(2, 1))
+                end
 
                 break
             end

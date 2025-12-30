@@ -17,13 +17,31 @@ Astro:AddCallback(
                 Astro.Collectible.VENUS_EX,
                 "초 금성",
                 "미인이시네요",
-                "!!! 획득 이후 {{Collectible591}}Venus 미등장" ..
-                "#↑ {{Heart}}최대 체력 +1" ..
+             -- "!!! 획득 이후 {{Collectible591}}Venus 미등장#" ..
+                "↑ {{Heart}}최대 체력 +1" ..
                 "#↑ {{HealingRed}}빨간하트 +1" ..
-                "#{{Collectible591}} 캐릭터와 가까이 있는 적을 {{Charm}}매혹시키며 매혹된 적에게 50%의 추가 피해를 줍니다.",
+                "#{{Charm}} 캐릭터와 가까이 있는 적을 매혹시키며;" ..
+                "#{{ArrowGrayRight}} 매혹된 적에게 " .. string.format("%.f", EXTRA_DAMAGE_MULTIPLIER * 100) .. "%의 추가 피해를 줍니다.",
                 -- 중첩 시
                 "중첩 시 추가 피해량이 중첩된 수만큼 합 연산으로 증가"
             )
+
+            Astro:AddEIDCollectible(
+                Astro.Collectible.VENUS_EX,
+                "Venus EX",
+                "",
+             -- "!!! {{Collectible591}} Venus doesn't appear after pickup#" ..
+                "↑ {{Heart}} +1 Health" ..
+                "#{{HealingRed}} Heals 1 heart" ..
+                "#{{Charm}} Charms and nearby enemies;" ..
+                "#{{ArrowGrayRight}} Deals " .. string.format("%.f", EXTRA_DAMAGE_MULTIPLIER * 100) .. "% extra damage to charmed enemies",
+                -- Stacks
+                "Stacks increase extra damage",
+                "en_us"
+            )
+
+            EID.HealthUpData["5.100." .. tostring(Astro.Collectible.VENUS_EX)] = 1
+            EID.BloodUpData[Astro.Collectible.VENUS_EX] = 4
         end
     end
 )

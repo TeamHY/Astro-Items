@@ -62,10 +62,12 @@ Astro:AddCallback(
     function(_, player, collectibleType)
         local level = Game():GetLevel()
 
-        if Astro.IsFight and not Astro:HasPerfectionEffect(player) then
-            level:AddCurse(LevelCurse.CURSE_OF_DARKNESS, false)
-        else
-            level:AddCurse(LevelCurse.CURSE_OF_DARKNESS, false)
+        if not Astro:HasCollectible(Astro.Collectible.DANGO) then
+            if Astro.IsFight and not Astro:HasPerfectionEffect(player) then
+                level:AddCurse(LevelCurse.CURSE_OF_DARKNESS, false)
+            else
+                level:AddCurse(LevelCurse.CURSE_OF_DARKNESS, false)
+            end
         end
     end,
     Astro.Collectible.PROMETHEUS

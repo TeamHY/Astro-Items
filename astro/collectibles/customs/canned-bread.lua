@@ -21,18 +21,22 @@ Astro:AddCallback(
                 nil, "en_us"
             )
 
-            Astro:AddRerollCondition(
-                function(selectedCollectible)
-                    if Astro.IsFight and selectedCollectible == Astro.Collectible.CANNED_BREAD then
-                        return {
-                            reroll = true,
-                            modifierName = "Canned Bread"
-                        }
-                    end
-            
-                    return false
-                end
-            )
+            EID.HealthUpData["5.100." .. tostring(Astro.Collectible.CANNED_BREAD)] = 1
+            EID.BloodUpData[Astro.Collectible.CANNED_BREAD] = 4
         end
+
+        -- 대결 밴
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                if Astro.IsFight and selectedCollectible == Astro.Collectible.CANNED_BREAD then
+                    return {
+                        reroll = true,
+                        modifierName = "Canned Bread"
+                    }
+                end
+        
+                return false
+            end
+        )
     end
 )
