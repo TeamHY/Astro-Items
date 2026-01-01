@@ -22,7 +22,7 @@ Astro:AddCallback(
             EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "TransformChubby")
             EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "TransformChubby")
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CHUBBYS_HEAD,
                 "처비의 머리",
                 "'^'",
@@ -30,7 +30,7 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 가능"
             )
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SLEEPING_PUPPY,
                 "잠자는 강아지",
                 "드르렁...",
@@ -39,7 +39,7 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 가능, 다음 증가량부터 적용"
             )
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CHUBBYS_TAIL,
                 "처비의 꼬리",
                 "살랑살랑",

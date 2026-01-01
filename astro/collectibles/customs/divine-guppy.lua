@@ -15,7 +15,7 @@ local FLY_SUBTYPE = 1002
 local FLY_COLOR = Color(1, 1, 1, 1, 1, 1, 1)
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "신성한 구피",
         "...",
@@ -24,7 +24,7 @@ if EID then
         "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Divine Guppy",
         "",

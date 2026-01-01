@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CHAOS_DICE,
                 "혼돈의 주사위",
                 "혼돈이다, 혼돈이야!",
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 바뀐 아이템의 배열은 랜덤으로 결정됩니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CHAOS_DICE,
                 "Chaos Dice",
                 "",

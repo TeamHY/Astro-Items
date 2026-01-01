@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.PIRATE_MAP = Isaac.GetItemIdByName("Pirate Map")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.PIRATE_MAP,
         "해적 지도",
         "내 어린 시절 우연히",

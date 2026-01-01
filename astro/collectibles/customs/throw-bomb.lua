@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.THROW_BOMB,
                 "투척 폭탄",
                 "폭탄 받아라!",

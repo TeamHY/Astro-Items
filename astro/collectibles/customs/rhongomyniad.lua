@@ -38,7 +38,7 @@ Astro:AddCallback(
                 rhongomyniadEIDString = rhongomyniadEIDString .. "{{Collectible" .. collectible .. "}} "
             end
         
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.RHONGOMYNIAD,
                 "론고미니아드",
                 "...",

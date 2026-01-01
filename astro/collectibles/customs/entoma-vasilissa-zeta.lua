@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ENTOMA_VASILISSA_ZETA,
                 "엔토마 바실리사 제타",
                 "벌레를 사랑하는 메이드",

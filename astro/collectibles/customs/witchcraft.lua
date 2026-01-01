@@ -57,7 +57,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.WITCHCRAFT,
                 "위치크래프트",
                 "마법 의뢰 받습니다",

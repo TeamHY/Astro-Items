@@ -1,7 +1,7 @@
 Astro.Collectible.Oblivion = Isaac.GetItemIdByName("Oblivion")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.Oblivion,
         "망각",
         "무의식 속으로",

@@ -10,7 +10,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.THREE_BODY_PROBLEM = Isaac.GetItemIdByName("3 Body Problem")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.THREE_BODY_PROBLEM, "삼체", "예측불허", "삼체 문제는 예측할 수 없습니다.")
+    Astro.EID:AddCollectible(Astro.Collectible.THREE_BODY_PROBLEM, "삼체", "예측불허", "삼체 문제는 예측할 수 없습니다.")
 end
 
 ---@type CollectibleType[]

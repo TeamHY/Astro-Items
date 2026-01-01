@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DENEB,
                 "데네브",
                 "가장 밝게 빛나는",

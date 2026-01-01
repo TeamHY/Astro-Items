@@ -14,13 +14,27 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DRACOBACK,
                 "기룡 드라코백",
                 "호감패",
                 "{{Collectible638}} {{ColorOrange}}보스방을 제외한{{CR}} 방 입장 시 스테이지 당 최대 ".. MAX_COUNT .. "번 랜덤 적 하나가 지워집니다.",
                 -- 중첩 시
                 "중첩된 수만큼 적을 지우려 시도"
+            )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.DRACOBACK,
+                "Dracoback, the Rideable Dragon",
+                "",
+                "{{Collectible638}} {{ColorOrange}}Excluding boss rooms{{CR}}, erases one random enemy max ".. MAX_COUNT .. " per stage on room entry",
+                -- Stacks
+                "Attempt to eliminate enemies equal to the number stacked",
+                "en_us"
+            )
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_PASSIVE, subType = Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL },
+                "Dracoback",
+                "The rideable dragon"
             )
 
             -- 캐릭터 시너지
@@ -33,12 +47,27 @@ Astro:AddCallback(
                 },
                 nil, "ko_kr", nil
             )
-
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.DRACOBACK),
                 { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
-                "{{DamageSmall}}공격력, ¤¤{{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{ShotspeedSmall}}탄속, {{LuckSmall}}행운이 1.1배 증가합니다.",
+                "{{DamageSmall}}공격력, ¤¤{{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{ShotspeedSmall}}탄속, {{LuckSmall}}행운이 " .. WATER_ENCHANTRESS_MULTIPLIER .. "배 증가합니다.",
                 nil, "ko_kr", nil
+            )
+            
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DRACOBACK),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "max ".. MAX_COUNT .. " per stage",
+                    "max {{ColorIsaac}}".. WATER_ENCHANTRESS_MAX_COUNT .. "{{CR}} per stage"
+                },
+                nil, "en_us", nil
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DRACOBACK),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                "Damage, Tears, Range, Speed, Shot speed, Luck increases by " .. WATER_ENCHANTRESS_MULTIPLIER .. "x",
+                nil, "en_us", nil
             )
         end
     end

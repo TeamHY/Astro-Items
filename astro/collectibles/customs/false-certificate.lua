@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.FALSE_CERTIFICATE,
                 "위조 증명서",
                 "공문서 위조는 중범죄입니다",
@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 아이템 하나 획득 시 원래 있던 장소로 돌아갑니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.FALSE_CERTIFICATE,
                 "False Certificate",
                 "",

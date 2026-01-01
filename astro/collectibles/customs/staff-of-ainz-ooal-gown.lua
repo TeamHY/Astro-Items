@@ -14,7 +14,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN,
                 "스태프 오브 아인즈 울 고운",
                 "가볼까, 우리 길드의 상징이여",

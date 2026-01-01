@@ -5,7 +5,7 @@ Astro:AddCallback(
     function()
         if EID then
             -- 중첩 수 만큼 독립 시행으로 반복하기 때문에 여러번 발동할 수 있음.
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DIVINE_LIGHT,
                 "신의 조명",
                 "앞을 밝히노니",

@@ -6,14 +6,14 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ABSOLUT_GUPPY,
                 "앱솔루트 구피", 
                 "파리 두 배",
                 "파란 아군 파리가 2배로 소환됩니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DELIRIUM_GUPPY,
                 "섬망 구피",
                 "내 진정한 친구마저",

@@ -13,7 +13,7 @@ Astro:AddCallback(
     function(_)
         if EID then
             local chance = string.format("%d", PENALTY_CHANCE * 100)
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SANDEVISTAN,
                 "산데비스탄",
                 "신경 가속",
@@ -33,7 +33,7 @@ Astro:AddCallback(
 
             ----
             
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SANDEVISTAN,
                 "Sandevistan",
                 "",

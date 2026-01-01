@@ -16,7 +16,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ABORTION,
                 "낙태",
                 "태아 눈물",
@@ -28,16 +28,16 @@ Astro:AddCallback(
                 "중첩 시 발사 확률이 중첩된 수만큼 합 연산으로 증가 및 쿨타임 감소"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ABORTION,
                 "Abortion",
                 "",
-                "50% chance to fire tears that turn into fetuses on hit." ..
-                "#{{Timer}} (0.5s cooldown)" ..
+                "50% chance to fire tears that turn into fetuses on hit" ..
+                "#{{Timer}} 0.5 seconds cooldown" ..
                 "#{{Luck}} 100% chance at 50 Luck (+1% per Luck)" ..
-                "#{{Collectible678}} Fetuses home in on enemies and deal 2.25x damage per second.",
+                "#{{Collectible678}} Fetuses home in on enemies and deal 2.25x damage per second",
                 -- Self
-                "Stacks additively increase proc chance and reduce cooldown.",
+                "Stacks additively increase proc chance and reduce cooldown",
                 "en_us"
             )
         end

@@ -15,7 +15,7 @@ Astro:AddCallback(
             local rgonWarning = REPENTOGON and "" or "#{{Blank}} {{ColorGray}}(이 근접 공격으로는 아이템을 주울 수 없음){{CR}}#"
             local rgonWarningENG = REPENTOGON and "" or "#{{Blank}} {{ColorGray}}(This swing can't pick up the item){{CR}}#"
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CASEY,
                 "케이시",
                 "1루수가 누구야",
@@ -25,7 +25,7 @@ Astro:AddCallback(
                 "중첩 시 피해량이 중첩된 수만큼 " .. CASEY_STACK_DAMAGE .. "배씩 곱연산으로 증가"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CASEY,
                 "Casey",
                 "",

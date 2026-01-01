@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SINFUL_SPOILS_STRUGGLE,
                 "죄보합전",
                 "드디어 깨어났다",

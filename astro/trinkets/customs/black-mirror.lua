@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.BLACK_MIRROR,
                 "검은 거울",
                 "모든 벽, 모든 책상, 모든 손바닥에 있는",
@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "#!!! 효과 발동 시 사라집니다."
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.BLACK_MIRROR,
                 "Black Mirror",
                 "",

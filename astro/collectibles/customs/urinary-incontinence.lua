@@ -10,7 +10,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.URINARY_INCONTINENCE,
                 "요실금",
                 "골든 샤워",

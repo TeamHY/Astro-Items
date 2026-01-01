@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.RETROGRADE_ARCANA,
                 "역행 아르카나",
                 "명운 된로꾸거",

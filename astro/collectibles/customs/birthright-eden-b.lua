@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIRTHRIGHT_EDEN_B,
                 "에덴의 액자?",
                 "??!",

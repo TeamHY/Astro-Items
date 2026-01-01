@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BONFIRE,
                 "화톳불",
                 "화염족 아이템 1장을 패에 넣는다",

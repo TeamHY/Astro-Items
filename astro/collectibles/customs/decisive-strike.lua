@@ -16,7 +16,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DECISIVE_STRIKE,
                 "결정적인 일격",
                 "아무것도 무서워할 필요 없어",
@@ -29,7 +29,7 @@ Astro:AddCallback(
                 "중첩 시 패널티 공격력 배율이 최대 x" .. DAMAGE_PENALTY_MAX .. "까지 완화"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DECISIVE_STRIKE,
                 "Decisive Strike",
                 "",

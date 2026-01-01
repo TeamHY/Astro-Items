@@ -17,7 +17,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.MAW_OF_THE_VOID_EX,
                 "초 공허의 구렁텅이",
                 "회개하지 못한 자들의 어둠", -- 간접적으로 리펜 이전 구렁텅이라 설명

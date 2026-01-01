@@ -1,7 +1,7 @@
 Astro.Collectible.SACRED_DICE = Isaac.GetItemIdByName("Sacred Dice")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.SACRED_DICE,
         "성스러운 주사위",
         "위대한 운명으로",

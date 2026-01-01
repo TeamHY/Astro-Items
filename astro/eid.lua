@@ -1,8 +1,16 @@
 local isc = require("astro.lib.isaacscript-common")
 
 Astro.EID = {}
-Astro.EID.Trinket = {}
+Astro.EID.Collectible = {
+    ["ko_kr"] = {},
+    ["en_us"] = {},
+}
+Astro.EID.Trinket = {
+    ["ko_kr"] = {},
+    ["en_us"] = {},
+}
 Astro.EID.Birthright = {}
+Astro.EID.Self = {}
 Astro.EID.Hints = {}
 Astro.EID.HintAdded = false
 
@@ -21,13 +29,51 @@ end
 
 
 ------ 함수 ------
+---@return string
+local function GetLanguage()
+    if EID then
+        return EID:getLanguage()
+    else
+        if Options.Langauge == "kr" or REPKOR then
+            return "ko_kr"
+        else
+            return "en_us"
+        end
+    end
+end
+
+---@param id TrinketType
+---@param name string
+---@param description string
+---@param eidDescription string
+---@param golden string
+---@param language string?
+function Astro.EID:AddTrinket(id, name, description, eidDescription, golden, language)
+    language = language or "ko_kr"
+
+    if EID then
+        EID:setModIndicatorName("Astrobirth")
+        EID:setModIndicatorIcon("ASTRO_EID_INDICATOR")
+        EID:addTrinket(id, eidDescription, name, language)
+
+        if golden then
+            EID:addGoldenTrinketMetadata(id, golden, nil, nil, language)
+        end
+    end
+    
+    Astro.EID.Trinket[language][id] = {
+        name = name,
+        description = description
+    }
+end
+
 ---@param id CollectibleType
 ---@param name string
 ---@param description string
 ---@param eidDescription string
 ---@param copied string?
 ---@param language string?
-function Astro:AddEIDCollectible(id, name, description, eidDescription, copied, language)
+function Astro.EID:AddCollectible(id, name, description, eidDescription, copied, language)
     language = language or "ko_kr"
 
     if EID then
@@ -49,46 +95,17 @@ function Astro:AddEIDCollectible(id, name, description, eidDescription, copied, 
         end
     end
 
-    if language == "ko_kr" then
-        Astro.EID[id] = {
-            name = name,
-            description = description
-        }
-    end
-end
-
----@param id TrinketType
----@param name string
----@param description string
----@param eidDescription string
----@param golden string
----@param language string?
-function Astro:AddEIDTrinket(id, name, description, eidDescription, golden, language)
-    language = language or "ko_kr"
-
-    if EID then
-        EID:setModIndicatorName("Astrobirth")
-        EID:setModIndicatorIcon("ASTRO_EID_INDICATOR")
-        EID:addTrinket(id, eidDescription, name, language)
-
-        if golden then
-            EID:addGoldenTrinketMetadata(id, golden, nil, nil, language)
-        end
-    end
-    
-    if language == "ko_kr" then
-        Astro.EID.Trinket[id] = {
-            name = name,
-            description = description
-        }
-    end
+    Astro.EID.Collectible[language][id] = {
+        name = name,
+        description = description
+    }
 end
 
 ---@param player PlayerType
 ---@param eidDescription string
 ---@param falvorText string
 ---@param language string?
-function Astro:AddEIDBirthright(player, eidDescription, falvorText, language)
+function Astro.EID:AddBirthright(player, eidDescription, falvorText, language)
     language = language or "ko_kr"
 
     if EID then
@@ -101,12 +118,23 @@ function Astro:AddEIDBirthright(player, eidDescription, falvorText, language)
         }
     end
 end
+---@param itemVariant { itemType: ItemType, subType: CollectibleType | TrinketType }
+---@param name string
+---@param description string?
+function Astro.EID:RegisterAlternativeText(itemVariant, name, description)
+    if itemVariant.itemType ~= ItemType.ITEM_TRINKET then
+        Astro.EID.Collectible["en_us"][itemVariant.subType].alternativeName = name
+        Astro.EID.Collectible["en_us"][itemVariant.subType].alternativeDesc = description
+    else
+        Astro.EID.Trinket["en_us"][itemVariant.subType].alternativeName = name
+        Astro.EID.Trinket["en_us"][itemVariant.subType].alternativeDesc = description
+    end
+end
 
 ---@param id CollectibleType
 ---@param description table
-function Astro:AddCraftHint(id, description)
+function Astro.EID:AddCraftHint(id, description)
     if EID then
-        local language = EID:getLanguage()
         Astro.EID.Hints[id] = description
     end
 end
@@ -129,7 +157,6 @@ end
 ------ 콜백 ------
 Astro:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,
-
     ---@param player EntityPlayer
     function(_, player)
         if not EID then return end
@@ -151,23 +178,41 @@ Astro:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param pickingUpItem { itemType: ItemType, subType: CollectibleType | TrinketType }
     function(_, player, pickingUpItem)
-        if Options.Language == "kr" or REPKOR then
-            if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
-                if pickingUpItem.subType == CollectibleType.COLLECTIBLE_BIRTHRIGHT then
-                    local birthright = Astro.EID.Birthright[player:GetPlayerType()]
-                    if birthright then
-                        Game():GetHUD():ShowItemText("생득권", birthright.description or "???")
-                    end
-                else
-                    local item = Astro.EID[pickingUpItem.subType]
-                    if item and not REPENTOGON then
-                        Game():GetHUD():ShowItemText(item.name or '', item.description or '')
-                    end
+        local hud = Game():GetHUD()
+        local lang = GetLanguage()
+        local ic = Isaac.GetItemConfig()
+
+        if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
+            if pickingUpItem.subType == CollectibleType.COLLECTIBLE_BIRTHRIGHT then
+                local pType = player:GetPlayerType()
+                local birthright = Astro.EID.Birthright[lang][pType]
+
+                if birthright then
+                    hud:ShowItemText("생득권", birthright.description or "???")
                 end
             else
-                local trinket = Astro.EID.Trinket[pickingUpItem.subType]
-                if trinket and not REPENTOGON then
-                    Game():GetHUD():ShowItemText(trinket.name or '', trinket.description or '')
+                if not REPENTOGON then
+                    local item = Astro.EID.Collectible[lang][pickingUpItem.subType]
+                    local collectibleConf = ic:GetCollectible(pickingUpItem.subType)
+                    if item then
+                        if item.name ~= "" and item.description ~= "" then
+                            hud:ShowItemText(item.name, item.description)
+                        else
+                            hud:ShowItemText(item.alternativeName or collectibleConf.Name, item.alternativeDesc or collectibleConf.Description)
+                        end
+                    end
+                end
+            end
+        else
+            if not REPENTOGON then
+                local trinket = Astro.EID.Trinket[lang][pickingUpItem.subType]
+                local trinketConf = ic:GetTrinket(pickingUpItem.subType)
+                if trinket then
+                    if trinket.name ~= "" and trinket.description ~= "" then
+                        hud:ShowItemText(trinket.name, trinket.description)
+                    else
+                        hud:ShowItemText(trinket.alternativeName or trinketConf.name, trinket.alternativeDesc or trinketConf.Description)
+                    end
                 end
             end
         end
@@ -179,9 +224,9 @@ Astro:AddCallback(
     function()
         if EID then
             for i = Astro.Collectible.CYGNUS, Astro.Collectible.BIRTHRIGHT_MAGGY do
-                local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES -- 736 - 733
+                local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES
                 local desc = Astro.EID.EnglishDescAI[i - modItemOffset]
-                Astro:AddEIDCollectible(i, "", "", desc, nil, "en_us")
+                Astro.EID:AddCollectible(i, "", "", desc, nil, "en_us")
             end
             ----
             local player_icons = Sprite()
@@ -222,11 +267,10 @@ if REPENTOGON then
         CallbackPriority.LATE,
         function()
             if not (Options.Language == "kr" or REPKOR) then goto continue end
-
             local conf = Isaac.GetItemConfig()
 
-            if Astro.EID then
-                for key, entry in pairs(Astro.EID) do
+            if Astro.EID.Collectible then
+                for key, entry in pairs(Astro.EID.Collectible["ko_kr"]) do
                     local id = tonumber(key)
                     if id and id ~= -1 then
                         local cfg = conf:GetCollectible(id)
@@ -237,7 +281,7 @@ if REPENTOGON then
             end
 
             if Astro.EID.Trinket then
-                for key, entry in pairs(Astro.EID.Trinket) do
+                for key, entry in pairs(Astro.EID.Trinket["ko_kr"]) do
                     local id = tonumber(key)
                     if id and id ~= -1 then
                         local cfg = conf:GetTrinket(id)

@@ -30,7 +30,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.TAANA_DEFENSE_HELPER,
                 "TAANA - 방어 도우미",
                 "행운을 지켜 주는 기계 인형",
@@ -38,7 +38,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 스테이지 당 한번 사라지기 전에 주울 수 있습니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SEERI_COMBAT_HELPER,
                 "SEERI - 전투 도우미",
                 "친구를 만들어주는 기계 인형",
@@ -46,7 +46,7 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 99 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.KAAEN_AUTO_RELOADER,
                 "KAAEN - 재장전 도우미",
                 "재충전해주는 기계 인형",

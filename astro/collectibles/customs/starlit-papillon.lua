@@ -28,7 +28,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.STARLIT_PAPILLON,
                 "스타리트 파피용",
                 "용사 파티의 길라잡이",

@@ -13,7 +13,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SATURNUS_EX,
                 "초 토성",
                 "눈물 방어막",

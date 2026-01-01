@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.GRADUATION_CERTIFICATE,
                 "졸업증명서",
                 "안녕은 영원한 헤어짐은 아니겠지요",

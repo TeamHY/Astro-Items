@@ -1,7 +1,7 @@
 Astro.Collectible.CAINS_SECRET_BAG = Isaac.GetItemIdByName("Cain's Secret Bag")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.CAINS_SECRET_BAG,
         "카인의 비밀 주머니",
         "비밀 한가득",

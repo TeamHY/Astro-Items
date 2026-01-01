@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ARIES_EX,
                 "초 양자리",
                 "실전 압축",
@@ -19,7 +19,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} {{Collectible192}} 공격이 적에게 유도되며 {{RangeSmall}}사거리가 3 증가합니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ARIES_EX,
                 "Aries EX",
                 "",

@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DEATHS_EYES,
                 "사신의 눈",
                 "신은 죽었다",

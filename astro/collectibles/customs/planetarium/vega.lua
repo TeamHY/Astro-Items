@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.VEGA = Isaac.GetItemIdByName("Vega")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.VEGA,
         "베가",
         "세 개의 별",

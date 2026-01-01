@@ -12,7 +12,7 @@ Astro:AddCallback(
         if EID then
             local cooldown = string.format("%.f", TAURUS_COOLDOWN / 60)
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.TAURUS_EX,
                 "초 황소자리",
                 "나 사나이다",
@@ -25,7 +25,7 @@ Astro:AddCallback(
                 "중첩 시 돌진 상태에서 피격 시 발동 효과를 발동"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.TAURUS_EX,
                 "Taurus EX",
                 "",

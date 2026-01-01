@@ -5,7 +5,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SCHRODINGERS_CAT,
                 "슈뢰딩거의 고양이",
                 "살아있으면서 죽어있는",
@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "추가되는 Guppy 세트가 중첩된 수만큼 +1"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.GUPPY_PART,
                 "구피의 조각",
                 "How much can one cat take?",    -- https://youtu.be/trUCcvtN1lA

@@ -18,7 +18,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ZOLTRAAK,
                 "졸트라크",
                 "사람을 죽이는 마법",

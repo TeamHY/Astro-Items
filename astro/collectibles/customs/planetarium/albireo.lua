@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ALBIREO,
                 "알비레오",
                 "하나가 될 수 없는 쌍성",

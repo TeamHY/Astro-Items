@@ -11,15 +11,28 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
-            Astro.Collectible.OVERWHELMING_SINFUL_SPOILS,
+            local durationString = string.format("%.f", DURATION / 30)
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.OVERWHELMING_SINFUL_SPOILS,
                 "폭주하는 죄보",
                 "엑셀 일소시?",
                 "적 처치 시 영혼을 최대 2개까지 흡수합니다." ..
                 "#사용 시 영혼을 소모해 여러 유령을 소환하며;" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}/" ..
-                                    "{{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}의 유령 소환 쿨타임을 4초간 무시합니다."
+                                    "{{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}의 유령 소환 쿨타임을 " .. durationString .. "초간 무시합니다."
             )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.OVERWHELMING_SINFUL_SPOILS,
+                "Overwhelming Sinful Spoils",
+                "",
+                "Absorbs up to 2 souls on enemy kill" ..
+                "#Consumes souls to summon multiple ghosts;" ..
+                "#{{ArrowGrayRight}} Ignores " .. durationString .. " seconds cooldown for {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}}/" ..
+                                    "{{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}",
+                nil, "en_us"
+            )
+
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.OVERWHELMING_SINFUL_SPOILS),
                 { Astro.Players.DIABELLSTAR, Astro.Players.DIABELLSTAR_B },
@@ -28,6 +41,20 @@ Astro:AddCallback(
                     "영혼을 최대 {{ColorIsaac}}5{{CR}}개까지"
                 },
                 nil, "ko_kr", nil
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.OVERWHELMING_SINFUL_SPOILS),
+                { Astro.Players.DIABELLSTAR, Astro.Players.DIABELLSTAR_B },
+                {
+                    "up to 2 souls",
+                    "up to {{ColorIsaac}}5{{CR}} souls"
+                },
+                nil, "en_us", nil
+            )
+
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_ACTIVE, subType = Astro.Collectible.OVERWHELMING_SINFUL_SPOILS },
+                "Overwhelming S.S."
             )
         end
     end

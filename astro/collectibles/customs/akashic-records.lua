@@ -27,7 +27,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.AKASHIC_RECORDS,
                 "아카식 레코드",
                 "초차원적 정보의 집합체",

@@ -1,7 +1,7 @@
 Astro.Collectible.ANGRY_ONION = Isaac.GetItemIdByName("Angry Onion")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.ANGRY_ONION,
         "화난 양파",
         "공격 속도 증가!",

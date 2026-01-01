@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-			Astro:AddEIDCollectible(
+			Astro.EID:AddCollectible(
 				Astro.Collectible.COPERNICUS,
 				"코페르니쿠스",
 				"지동설",

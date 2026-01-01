@@ -16,7 +16,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BOOK_OF_SUN,
                 "태양의 서",
                 "충전식 화염 공격",
@@ -27,7 +27,7 @@ Astro:AddCallback(
                 "#다음 게임에서 Burning Basement 스테이지가 등장하지 않습니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BOOK_OF_ECLIPSE,
                 "개기일식의 서",
                 "불타오르네",

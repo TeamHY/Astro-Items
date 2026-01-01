@@ -11,7 +11,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BLOOD_TRAIL,
                 "블러드 트레일",
                 "믿으라구!",

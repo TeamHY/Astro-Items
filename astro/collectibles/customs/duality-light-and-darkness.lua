@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DUALITY_LIGHT_AND_DARKNESS,
                 "표리일체",
                 "반짝이는 수수께끼",

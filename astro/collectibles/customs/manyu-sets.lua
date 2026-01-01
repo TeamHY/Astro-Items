@@ -62,7 +62,7 @@ Astro:AddCallback(
 
             ----
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.REINCARNATION,
                 "리인카네이션",
                 "회귀의 생명",
@@ -72,7 +72,7 @@ Astro:AddCallback(
 
             ----
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.MATRYOSHKA,
                 "마트료시카",
                 "무한한 탄생",
@@ -96,7 +96,7 @@ Astro:AddCallback(
                 AstroFight_SAMSARA = "#Astrobirth의 NextBan 시스템이 무효화됩니다."
             end
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SAMSARA,
                 "삼사라",
                 "윤회하는 시간",

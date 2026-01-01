@@ -4,7 +4,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.LIFE_SUSTAINING_TREATMENT = Isaac.GetItemIdByName("Life-Sustaining Treatment")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.LIFE_SUSTAINING_TREATMENT,
         "연명치료",
         "이토록 시린 아픔만이",

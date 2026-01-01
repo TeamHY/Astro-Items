@@ -4,14 +4,14 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.STOMACH_MEDICINE,
                 "위장약",
                 "상상으로 만든 복통",
                 "{{Collectible35}} 알약 사용 시 그 방의 적에게 40의 방어 무시 피해를 줍니다."
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.STOMACH_MEDICINE,
                 "Stomach Medicine",
                 "",

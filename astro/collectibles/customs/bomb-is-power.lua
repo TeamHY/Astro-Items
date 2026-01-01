@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.BOMB_IS_POWER = Isaac.GetItemIdByName("Bomb Is Power")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BOMB_IS_POWER,
         "폭탄 = 힘",
         "펑펑펑 = 공격력",

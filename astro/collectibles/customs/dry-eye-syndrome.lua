@@ -14,7 +14,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DRY_EYE_SYNDROME,
                 "안구 건조증",
                 "장거리 최강 눈물",

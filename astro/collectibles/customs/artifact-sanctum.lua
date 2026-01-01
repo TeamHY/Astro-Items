@@ -8,7 +8,7 @@ Astro.Collectible.ARTIFACT_SANCTUM = Isaac.GetItemIdByName("Artifact Sanctum")
 -- -아티팩트 신지로 획득한 서큐버스는 제거되지 않음
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.ARTIFACT_SANCTUM,
         "아티팩트의 신지",
         "숨겨진 유물이 드러나다",

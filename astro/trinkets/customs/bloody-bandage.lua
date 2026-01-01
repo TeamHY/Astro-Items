@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.BLOODY_BANDAGE,
                 "피투성이 붕대",
                 "이제 괜찮아...",
@@ -13,7 +13,7 @@ Astro:AddCallback(
                 "{{CursedRoom}} 맵에 저주방의 위치를 보여줍니다."
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.BLOODY_BANDAGE,
                 "Bloody Bandage",
                 "",

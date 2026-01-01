@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.AQUARIUS_EX,
                 "초 물병자리",
                 "눈물 분수",
@@ -22,7 +22,7 @@ Astro:AddCallback(
                 "#!!! 페널티 피격 시 " .. string.format("%.f", PENALTY_TIME / 30) .. "초 동안 무효과"
             )
             
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.AQUARIUS_EX,
                 "Aquarius EX",
                 "",

@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.STRAWBERRY_MILK,
                 "딸기 우유",
                 "공격 속도 증가 + 추가 눈물",

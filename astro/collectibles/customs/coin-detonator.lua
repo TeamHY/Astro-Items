@@ -15,7 +15,7 @@ local COOLDOWN_TIME = 75
 Astro.Collectible.COIN_DETONATOR = Isaac.GetItemIdByName("Coin Detonator")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.COIN_DETONATOR,
         "동전 기폭제",
         "원격으로 동전 폭파",

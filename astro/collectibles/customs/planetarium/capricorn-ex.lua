@@ -11,7 +11,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CAPRICORN_EX,
                 "초 염소자리",
                 "실속있는 제물",
@@ -27,7 +27,7 @@ Astro:AddCallback(
                 "공격력 및 연사만 곱연산으로 중첩 가능"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CAPRICORN_EX,
                 "Capricorn EX",
                 "",

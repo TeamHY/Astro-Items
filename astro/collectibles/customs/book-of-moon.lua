@@ -2,7 +2,7 @@ Astro.Collectible.BOOK_OF_MOON = Isaac.GetItemIdByName("Book of Moon")
 Astro.Collectible.BOOK_OF_LUNAR_ECLIPSE = Isaac.GetItemIdByName("Book of Lunar Eclipse")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BOOK_OF_MOON,
         "달의 서",
         "충전식 달빛",
@@ -13,7 +13,7 @@ if EID then
         "#{{Collectible589}} {{ColorGray}}(달빛과 접촉 시 그 스테이지에서 {{HalfSoulHeart}}소울하트 +0.5, {{TearsSmall}}연사(+상한) +0.5){{CR}}"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BOOK_OF_LUNAR_ECLIPSE,
         "개기월식의 서",
         "붉게 뜬 달빛에 모습을 감추고서",

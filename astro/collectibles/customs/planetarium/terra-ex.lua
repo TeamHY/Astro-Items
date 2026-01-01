@@ -11,7 +11,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.TERRA_EX = Isaac.GetItemIdByName("TERRA EX")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.TERRA_EX,
         "초 지구",
         "이 땅으로 돌아가",

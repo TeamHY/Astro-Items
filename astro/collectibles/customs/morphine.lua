@@ -1,7 +1,7 @@
 Astro.Collectible.MORPHINE = Isaac.GetItemIdByName("Morphine")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.MORPHINE,
         "모르핀",
         "헤롱헤롱",

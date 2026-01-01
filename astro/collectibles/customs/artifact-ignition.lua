@@ -11,7 +11,7 @@ local MAX_SUCCUBUS_COUNT = 10
 ---
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "아티팩트 무브먼트",
         "...",
@@ -19,7 +19,7 @@ if EID then
         "#최대 10개까지 획득할 수 있습니다."
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Artifact Ignition", "",
         "Every 120 seconds, grants a {{Collectible417}}Succubus." ..

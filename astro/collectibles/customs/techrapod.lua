@@ -14,7 +14,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.TECHRAPOD,
                 "테크라포드",
                 "삼각 레이저",

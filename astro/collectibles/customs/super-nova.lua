@@ -23,7 +23,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SUPER_NOVA,
                 "초신성",
                 "광활한 별들의 폭발",

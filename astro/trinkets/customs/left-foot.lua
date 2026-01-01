@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.LEFT_FOOT,
                 "왼발",
                 "어둠의 보상을 거두어들이다",
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 70 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.LEFT_FOOT,
                 "The Left Foot",
                 "",

@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.HOT_POTATO,
                 "뜨거운 감자",
                 "화젯거리",
@@ -23,7 +23,7 @@ Astro:AddCallback(
                 "중첩한 수만큼 폭발을 일으킴"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.HOT_POTATO,
                 "Hot Potato",
                 "",

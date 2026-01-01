@@ -10,7 +10,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BANDAGE_GIRL,
                 "밴디지 걸",
                 "여자친구",

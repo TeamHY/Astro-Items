@@ -19,9 +19,9 @@ if EID then
         ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
         ["en_us"] = "#{{DiceRoom}} Can be transformed {{ColorYellow}}using it in the Dice Room{{CR}}",
     }
-    Astro:AddCraftHint(CollectibleType.COLLECTIBLE_D6, CRAFT_HINT)]]
+    Astro.EID:AddCraftHint(CollectibleType.COLLECTIBLE_D6, CRAFT_HINT)]]
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "병든 구피",
         "...",
@@ -29,7 +29,7 @@ if EID then
         "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Blighted Guppy", "",
         "50% chance to spawn an additional blue fly." ..

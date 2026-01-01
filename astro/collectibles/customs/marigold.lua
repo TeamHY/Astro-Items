@@ -13,7 +13,7 @@ local LEFT_CTRL_HOLD_DURATION = 30
 local dropActionPressTime = 0
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "마리골드",
         "...",
@@ -22,7 +22,7 @@ if EID then
         "#중첩이 가능합니다."
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Marigold", "",
         "Spawns 3 golden trinkets when clearing boss rooms. Can stack." ..

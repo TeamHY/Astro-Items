@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIRTHRIGHT_APOLLYON_B,
                 "아폴리온의 액자",
                 "재앙의 동료",

@@ -1,7 +1,7 @@
 Astro.Collectible.TERRASPARK_BOOTS = Isaac.GetItemIdByName("Terraspark Boots")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.TERRASPARK_BOOTS,
         "테라스파크 부츠",
         "영웅의 부츠",

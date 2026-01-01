@@ -11,7 +11,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.BOOK_OF_DESPAIR = Isaac.GetItemIdByName("Book of Despair")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BOOK_OF_DESPAIR,
         "절망의 서",
         "일시적 공격 속도 증가",

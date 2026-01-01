@@ -4,7 +4,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.PLUTO_EX = Isaac.GetItemIdByName("PLUTO EX")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.PLUTO_EX,
         "초 명왕성",
         "모두 크기 감소",

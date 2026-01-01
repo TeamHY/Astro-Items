@@ -8,7 +8,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDBirthright(
+            Astro.EID:AddBirthright(
                 Astro.Players.LEAH,
                 "게임이 끝나기 전까지 죽지 않는 꼬마 아이작 패밀리어 " .. SPAWN_AMOUNT .. "마리를 소환합니다." ..
                 "#{{Collectible658}} 꼬마 아이작은 캐릭터와 함께 이동하며 적이 있는 방향으로 공격력 1.35의 눈물을 발사합니다.",

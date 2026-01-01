@@ -13,7 +13,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.JUPITER_EX,
                 "초 목성",
                 "방독면도 소용없다",
@@ -28,7 +28,7 @@ Astro:AddCallback(
                 "중첩 시 피격 효과가 중첩된 수만큼 발동"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.JUPITER_EX,
                 "Jupiter EX",
                 "",

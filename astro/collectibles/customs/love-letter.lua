@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.LOVE_LETTER,
                 "고백 편지",
                 "전해지지 않은 러브레터",
@@ -17,7 +17,7 @@ Astro:AddCallback(
             )
             EID:addCarBatteryCondition(Astro.Collectible.LOVE_LETTER, "50%의 확률로 체력이 감소하지 않음", nil, nil, "ko_kr")
             ----
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.LOVE_LETTER,
                 "Love Letter",
                 "",

@@ -16,7 +16,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIRTHRIGHT_CAIN,
                 "카인의 액자",
                 "더 재밌는 도박",

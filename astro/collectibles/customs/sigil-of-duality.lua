@@ -5,7 +5,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SIGIL_OF_DUALITY,
                 "이중성의 인장",
                 "...",

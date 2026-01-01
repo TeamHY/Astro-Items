@@ -11,7 +11,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.GALACTIC_MEDAL_OF_VALOR,
                 "은하 용맹 훈장",
                 "용기를 치하하며",

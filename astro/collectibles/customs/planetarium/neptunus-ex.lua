@@ -10,7 +10,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.NEPTUNUS_EX = Isaac.GetItemIdByName("NEPTUNUS EX")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.NEPTUNUS_EX,
         "초 해왕성",
         "개방",

@@ -6,7 +6,7 @@ Astro:AddCallback(
         if EID then
             EID:assignTransformation("collectible", Astro.Collectible.LIBRA_EX, "Chubby")
             
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.LIBRA_EX,
                 "초 천칭자리",
                 "공평하게",
@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "중첩 시 적에게 주는 피해량이 중첩된 수만큼 합연산으로 증가"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.LIBRA_EX,
                 "Libra EX",
                 "",

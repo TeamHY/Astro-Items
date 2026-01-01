@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.HEART_BLOOM = Isaac.GetItemIdByName("Heart Bloom")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.HEART_BLOOM,
         "하트 꽃",
         "식물 대 아이작",

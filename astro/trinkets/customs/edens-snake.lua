@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.EDENS_SNAKE,
                 "에덴의 뱀",
                 "선악과",
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#!!! 효과 발동 시 사라집니다."
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.EDENS_SNAKE,
                 "Eden's Snake",
                 "선악과",

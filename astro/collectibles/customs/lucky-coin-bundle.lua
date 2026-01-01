@@ -1,7 +1,7 @@
 Astro.Collectible.LUCKY_COIN_BUNDLE = Isaac.GetItemIdByName("Lucky Coin Bundle")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.LUCKY_COIN_BUNDLE,
         "행운 동전 번들",
         "운칠기삼",

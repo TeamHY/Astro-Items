@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ASTRO_GODHEAD,
                 "우주신",
                 "회개하지 않은 신", -- 간접적으로 리펜 이전 갓헤드라 설명
@@ -19,7 +19,7 @@ Astro:AddCallback(
                 "중첩 시 후광의 공격력이 합 연산으로 증가"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ASTRO_GODHEAD,
                 "Astro Godhead",
                 "",

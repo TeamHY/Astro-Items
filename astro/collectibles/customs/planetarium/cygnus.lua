@@ -11,7 +11,7 @@ Astro:AddCallback(
     function()
         if EID then
             -- 15초 -> 7.5초 -> 5초
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CYGNUS,
                 "백조자리",
                 "천상의 지원 사격",

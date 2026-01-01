@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CANNED_BREAD,
                 "빵 통조림",
                 "여기 있네!",
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#↑ {{HealingRed}}빨간하트 +1"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CANNED_BREAD,
                 "Canned Bread",
                 "",

@@ -15,7 +15,7 @@ Astro:AddCallback(
             local rgonWarning = REPENTOGON and "" or "#{{Blank}} {{ColorGray}}(이 근접 공격으로는 아이템을 주울 수 없음){{CR}}#"
             local rgonWarningENG = REPENTOGON and "" or "#{{Blank}} {{ColorGray}}(This swing can't pick up the item){{CR}}#"
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIRTHRIGHT_MAGGY,
                 "매기의 액자",
                 "치명적인 포옹",
@@ -26,7 +26,7 @@ Astro:AddCallback(
                 "중첩 시 근접 공격 피해량 +100%p"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIRTHRIGHT_MAGGY,
                 "Maggy's Frame",
                 "",

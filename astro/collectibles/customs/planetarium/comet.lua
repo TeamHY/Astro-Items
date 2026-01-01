@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.COMET = Isaac.GetItemIdByName("Comet")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.COMET,
         "혜성",
         "어두운 곳에서의 손님",

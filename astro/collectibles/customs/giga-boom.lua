@@ -7,7 +7,7 @@ local SPAWN_COUNT = 10
 Astro.Collectible.GIGA_BOOM = Isaac.GetItemIdByName("Giga Boom")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.GIGA_BOOM,
         "기가 붐",
         "엄청난 폭탄 10개",

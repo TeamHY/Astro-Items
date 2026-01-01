@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.UNHOLY_MANTLE,
                 "불경스런 망토",
                 "타락한 방패",

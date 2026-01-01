@@ -1,7 +1,7 @@
 Astro.Collectible.FORBIDDEN_DICE = Isaac.GetItemIdByName("Forbidden Dice")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.FORBIDDEN_DICE,
         "금지된 주사위",
         "싫은 건 굴릴래!",

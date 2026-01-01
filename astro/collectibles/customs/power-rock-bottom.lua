@@ -1,7 +1,7 @@
 Astro.Collectible.POWER_ROCK_BOTTOM = Isaac.GetItemIdByName("Power Rock Bottom")
 
 if EID then
-    Astro:AddEIDCollectible(Astro.Collectible.POWER_ROCK_BOTTOM, "강력한 밑바닥", "더 강해질 일만 남았어", "{{DamageSmall}} 공격력을 항상 가장 높았던 값으로 고정합니다.")
+    Astro.EID:AddCollectible(Astro.Collectible.POWER_ROCK_BOTTOM, "강력한 밑바닥", "더 강해질 일만 남았어", "{{DamageSmall}} 공격력을 항상 가장 높았던 값으로 고정합니다.")
 end
 
 Astro:AddCallback(

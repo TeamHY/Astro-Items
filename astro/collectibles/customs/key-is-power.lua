@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.KEY_IS_POWER = Isaac.GetItemIdByName("Key Is Power")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.KEY_IS_POWER,
         "열쇠 = 힘",
         "찰랑찰랑 = 공격력",

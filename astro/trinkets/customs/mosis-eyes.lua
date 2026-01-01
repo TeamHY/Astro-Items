@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.MOSIS_EYES,
                 "목시의 눈",
                 "잠들지 못하는 그리움이 닿을 때면",
@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "#{{CurseBlindSmall}} 가려진 아이템을 볼 수 있습니다."
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.MOSIS_EYES,
                 "Moxie's Eyes",
                 "",

@@ -11,14 +11,14 @@ local EFFECT_OFFSET = Vector(0, -30)
 local SCALES_OF_OBEDIENCE_VARIANT = Isaac.GetEntityVariantByName("Scales of Obedience")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "복종의 천칭",
         "↑ {{ColorCyan}}모든 세트 적용{{CR}}" ..
         "#공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Scales of Obedience",
         "",

@@ -5,7 +5,7 @@ local subScale = 0.5
 local subDamageMultiplier = 0.5
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.PTOLEMAEUS,
         "프톨레마이오스",
         "천동설",

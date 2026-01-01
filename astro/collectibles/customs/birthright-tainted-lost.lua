@@ -13,7 +13,7 @@ Astro:AddCallback(
             local rgon = REPENTOGON and "↑ 목숨 +1#" or ""
             local rgonEng = REPENTOGON and "↑ +1 Life#" or ""
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
                 "더 로스트의 액자?",
                 "더 나은 운명?",
@@ -24,7 +24,7 @@ Astro:AddCallback(
                 "중첩할 때마다 바뀔 확률이 +20%p씩 증가"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
                 "Tainted Lost's Frame",
                 "",

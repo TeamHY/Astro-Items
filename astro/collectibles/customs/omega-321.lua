@@ -1,7 +1,7 @@
 Astro.Collectible.OMEGA_321 = Isaac.GetItemIdByName("Omega 321")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.OMEGA_321,
         "오메가 321",
         "달에 간 시계",

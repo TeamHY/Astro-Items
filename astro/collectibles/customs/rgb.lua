@@ -18,7 +18,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.RGB,
                 "삼원색",
                 "불 좀 꺼줄래?",

@@ -4,14 +4,14 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PURE_GOLD_COPTER,
                 "순금 헬리콥터",
                 "대신 초소형입니다",
                 "비행 능력을 얻습니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PURE_GOLD_COPTER,
                 "24K Copter",
                 "",

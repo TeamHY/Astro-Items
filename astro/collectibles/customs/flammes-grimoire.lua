@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.FLAMMES_GRIMOIRE = Isaac.GetItemIdByName("Flamme's Grimoire")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.FLAMMES_GRIMOIRE,
         "플람메의 마도서",
         "마법은, 사람의 마음을 이어주는 증거야",

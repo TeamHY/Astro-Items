@@ -21,7 +21,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BIG_CHEST,
                 "큰 상자",
                 "안락한 곳이야",

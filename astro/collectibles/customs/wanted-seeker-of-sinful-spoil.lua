@@ -4,12 +4,26 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL,
                 "죄보사냥의 악마",
                 "\"죄보\"를 둘러싼 이야기를 쫓는 당신에게",
                 "!!! 일회용" ..
                 "#{{Player" .. Astro.Players.DIABELLSTAR .. "}} 사용 시 캐릭터를 Diabellstar로 변경합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL,
+                "WANTED: Seeker of Sinful Spoil",
+                "",
+                "!!! Single use" ..
+                "#{{Player" .. Astro.Players.DIABELLSTAR .. "}} Changes character to Diabellstar",
+                nil, "en_us"
+            )
+
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_ACTIVE, subType = Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL },
+                "WANTED: Seeker of S.S."
             )
         end
     end

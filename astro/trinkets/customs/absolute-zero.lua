@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.ABSOLUTE_ZERO,
                 "절대 영도", "-273.15도",
                 "{{Freezing}} 공격 시 10%의 확률로 적이 얼어붙는 눈물이 나갑니다." ..
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 45 이상일 때 100% 확률 (행운 1당 +2%p)"
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.ABSOLUTE_ZERO,
                 "Absolute Zero",
                 "",

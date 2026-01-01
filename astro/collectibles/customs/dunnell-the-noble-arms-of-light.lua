@@ -29,7 +29,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
                 "빛의 성검 단넬",
                 "용사 파티를 수호하는 성검",
@@ -38,17 +38,31 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..
                 "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소합니다."
             )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
+                "Dunnell, the Noble Arms of Light",
+                "",
+                "Deals 10% of damage given to enemies in the room while held" ..
+                "#Absorbs up to " .. MAXIMUM .. " souls on enemy kill;" ..
+                "#{{ArrowGrayRight}} +1% extra damage per soul on hit" ..
+                "#{{ArrowGrayRight}} -" .. SOUL_DECREASE .. " souls on room clear",
+                nil, "en_us"
+            )
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_ACTIVE, subType = Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT },
+                "Dunnell",
+                "The noble arms of light"
+            )
 
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT),
                 { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
                 {
-                    "영혼은 최대 " .. MAXIMUM .. "개까지",
-                    "영혼은 최대 {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}}개까지"
+                    "최대 " .. MAXIMUM .. "개까지 영혼을",
+                    "최대 {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}}개까지 영혼을"
                 },
                 nil, "ko_kr", nil
             )
-
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT),
                 { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
@@ -57,6 +71,25 @@ Astro:AddCallback(
                     "영혼이 {{ColorIsaac}}" .. SOUL_DECREASE_FOR_ADVENTURER .."{{CR}}개 감소"
                 },
                 nil, "ko_kr", nil
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "up to " .. MAXIMUM .. " souls",
+                    "up to {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}} souls"
+                },
+                nil, "en_us", nil
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "-" .. SOUL_DECREASE .. " souls",
+                    "-{{ColorIsaac}}" .. SOUL_DECREASE_FOR_ADVENTURER .. "{{CR}} souls"
+                },
+                nil, "en_us", nil
             )
         end
     end

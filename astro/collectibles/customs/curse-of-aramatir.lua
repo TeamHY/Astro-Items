@@ -16,7 +16,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CURSE_OF_ARAMATIR,
                 "금주 아라마티아",
                 "리타마라",

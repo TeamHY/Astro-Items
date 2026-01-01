@@ -14,9 +14,9 @@ if EID then
         ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
         ["en_us"] = "#{{DiceRoom}} Can be transformed {{ColorYellow}}using it in the Dice Room{{CR}}"
     }
-    Astro:AddCraftHint(CollectibleType.COLLECTIBLE_D6, CRAFT_HINT)
+    Astro.EID:AddCraftHint(CollectibleType.COLLECTIBLE_D6, CRAFT_HINT)
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "대왕 주사위",
         "굴려 굴려 굴려",
@@ -29,7 +29,7 @@ if EID then
         "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다."
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Mega D6",
         "",

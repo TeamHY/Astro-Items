@@ -1,27 +1,52 @@
 Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE = Isaac.GetItemIdByName("Sinful Spoils of Subversion - Snake Eye")
 
-Astro:AddCallback(
-    Astro.Callbacks.MOD_INIT,
-    function()
-        if EID then
-            Astro:AddEIDCollectible(
-                Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
-                "반역의 죄보 - 스네이크아이",
-                "요동치는 에너지를 내뿜는 구체",
-                "적 명중 시 20%의 확률로{{Collectible634}}Purgatory 유령을 소환합니다 (내부 쿨타임 1초)" ..
-                "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
-                -- 중첩 시
-                "중첩 시 유령의 소환 확률이 중첩된 수만큼 합 연산으로 증가하며 소환 쿨타임이 줄어듭니다."
-            )
-        end
-    end
-)
+---
 
 local spawnChance = 0.2
 
 local luckMultiply = 1 / 100
 
 local cooldownTime = 30 -- 30 프레임 = 1초
+
+---
+
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            local chance = string.format("%.f", spawnChance * 100)
+            local cooldown = string.format("%.f", cooldownTime / 30)
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
+                "반역의 죄보 - 스네이크아이",
+                "요동치는 에너지를 내뿜는 구체",
+                "적 명중 시 " .. chance .. "%의 확률로{{Collectible634}}Purgatory 유령을 소환합니다" ..
+                "#{{TimerSmall}} (쿨타임 " .. cooldown .. "초)" ..
+                "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
+                -- 중첩 시
+                "중첩 시 유령의 소환 확률이 중첩된 수만큼 합 연산으로 증가하며 소환 쿨타임이 줄어듭니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
+                "Sinful Spoils of Subversion - Snake Eye",
+                "",
+                "{{Collectible634}} " .. chance .. "% chance to summon Purgatory ghost on hit" ..
+                "#{{Timer}} " .. cooldown .. " second cooldown" ..
+                "#{{Luck}} 100% chance at 90 Luck (+1%p per Luck)",
+                -- Stacks
+                "Stacks increase spawn chance and decrease spawn cooldown",
+                "en_us"
+            )
+
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_PASSIVE, subType = Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE },
+                "S.S. of Subversion"
+            )
+        end
+    end
+)
 
 ---@param player EntityPlayer
 ---@return number
@@ -47,8 +72,14 @@ Astro:AddCallback(
 
         if player ~= nil then
             local data = player:GetData()
-
-            if player:HasCollectible(Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE) and entity:IsVulnerableEnemy() and (data["ssosSnakeEyeCooldown"] == nil or data["ssosSnakeEyeCooldown"] < Game():GetFrameCount() or (data["ossDurationTime"] ~= nil and data["ossDurationTime"] > Game():GetFrameCount())) then
+            if
+                player:HasCollectible(Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE)
+                and entity:IsVulnerableEnemy()
+                and (data["ssosSnakeEyeCooldown"] == nil
+                or data["ssosSnakeEyeCooldown"] < Game():GetFrameCount()
+                or (data["ossDurationTime"] ~= nil
+                and data["ossDurationTime"] > Game():GetFrameCount()))
+            then
                 if source.Type == EntityType.ENTITY_TEAR or damageFlags & DamageFlag.DAMAGE_LASER == DamageFlag.DAMAGE_LASER or source.Type == EntityType.ENTITY_KNIFE then
                     local rng = player:GetCollectibleRNG(Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE)
                     local baseChance = spawnChance * ComputeMultiplier(player)

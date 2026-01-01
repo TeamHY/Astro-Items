@@ -1,7 +1,7 @@
 Astro.Collectible.IBN_5100 = Isaac.GetItemIdByName("IBN 5100")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.IBN_5100,
         "IBN 5100",
         "최초의 휴대용 컴퓨터",

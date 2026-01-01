@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO = Isaac.GetItemIdByName("We Need To Go Astro!")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO,
         "더 깊은 한울로!",
         "다락문 너머의 별들",

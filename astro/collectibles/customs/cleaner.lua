@@ -25,7 +25,7 @@ Astro:AddCallback(
                 Astro.CleanerEIDString = Astro.CleanerEIDString .. "{{Collectible" .. collectible .. "}} "
             end
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CLEANER,
                 "클리너",
                 "말끔하게",

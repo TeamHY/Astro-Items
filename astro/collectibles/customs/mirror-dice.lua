@@ -1,7 +1,7 @@
 Astro.Collectible.MIRROR_DICE = Isaac.GetItemIdByName("Mirror Dice")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.MIRROR_DICE,
         "거울 주사위",
         "운명을 비춰라",

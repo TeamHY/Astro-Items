@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.ELECTRONIC_PENNY,
                 "전자 동전",
                 "에너지 부자",
@@ -14,7 +14,7 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 95 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.ELECTRONIC_PENNY,
                 "Electronic Penny",
                 "",

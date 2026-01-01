@@ -13,7 +13,7 @@ local MULTIPLIER = 1
 Astro.Collectible.BUNNY_HOP = Isaac.GetItemIdByName("Bunny Hop")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BUNNY_HOP,
         "토끼뜀",
         "버그가 아니라 스킬",

@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PROMETHEUS,
                 "프로메테우스",
                 "불을 훔친 자",
@@ -15,7 +15,7 @@ Astro:AddCallback(
                 "중첩 가능"
             )
             
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PROMETHEUS,
                 "Prometheus",
                 "",

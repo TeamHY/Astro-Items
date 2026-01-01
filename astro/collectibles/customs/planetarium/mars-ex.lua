@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.MARS_EX,
                 "초 화성",
                 "난폭한 돌진",

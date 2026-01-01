@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PILLARS_OF_CREATION,
                 "창조의 기둥",
                 "가슴 시리도록 아름다워",

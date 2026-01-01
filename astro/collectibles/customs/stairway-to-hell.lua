@@ -9,7 +9,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.STAIRWAY_TO_HELL,
                 "지옥의 계단",
                 "기다린 것을 얻을 수 있기를",
@@ -17,7 +17,7 @@ Astro:AddCallback(
                 "#!!! 사다리는 방을 벗어나면 사라집니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.STAIRWAY_TO_HELL,
                 "Stairway to Hell",
                 "",

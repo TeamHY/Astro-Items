@@ -1,7 +1,7 @@
 Astro.Collectible.PLATINUM_BULLET = Isaac.GetItemIdByName("Platinum Bullet")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.PLATINUM_BULLET,
         "백금 탄환",
         "백만 번 이상 사용됨",

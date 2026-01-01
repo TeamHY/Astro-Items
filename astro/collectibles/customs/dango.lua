@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DANGO,
                 "경단",
                 "버림받은 기분",
@@ -14,7 +14,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} Maze 저주를 제외한 모든 저주에 면역이 됩니다."
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.DANGO,
                 "Dango",
                 "",

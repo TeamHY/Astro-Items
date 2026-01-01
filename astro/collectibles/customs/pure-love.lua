@@ -9,7 +9,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PURE_LOVE,
                 "순애",
                 "야곱의 사랑",

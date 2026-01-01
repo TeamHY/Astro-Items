@@ -4,7 +4,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.SOL_EX = Isaac.GetItemIdByName("SOL EX")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.SOL_EX,
         "초 태양",
         "광나는 승리",

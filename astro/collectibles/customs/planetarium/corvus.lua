@@ -7,7 +7,7 @@ Astro:AddCallback(
     function()
         if EID then
             -- 20초 -> 10초 -> 6.66초
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CORVUS,
                 "까마귀자리",
                 "날개 쳐라",

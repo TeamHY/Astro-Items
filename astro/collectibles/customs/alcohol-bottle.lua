@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ALCOHOL_BOTTLE,
                 "술병",
                 "그의 낙",
@@ -17,7 +17,7 @@ Astro:AddCallback(
                 "연사 배율 중첩 가능#중첩 시 방 재시작 확률 증가"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ALCOHOL_BOTTLE,
                 "Alcohol Bottle",
                 "",

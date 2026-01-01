@@ -33,7 +33,7 @@ Astro:AddCallback(
             end
 
         
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.VERY_EZ_MODE,
                 "엄청 쉬움 모드",
                 "참 못한다 내가 할테니까 비켜",

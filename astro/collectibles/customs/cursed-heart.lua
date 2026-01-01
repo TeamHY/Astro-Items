@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.CURSED_HEART = Isaac.GetItemIdByName("Cursed Heart")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.CURSED_HEART,
         "저주받은 심장",
         "유도 공격? + 공격력 증가",

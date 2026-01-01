@@ -1,7 +1,7 @@
 Astro.Collectible.RESTOCK_DICE = Isaac.GetItemIdByName("Restock Dice")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.RESTOCK_DICE,
         "재활용 주사위",
         "운명을 다시 써라",

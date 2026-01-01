@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(    
+            Astro.EID:AddCollectible(    
                 Astro.Collectible.GEMINI_EX,    
                 "초 쌍둥이자리",    
                 "사이좋게 지내렴",
@@ -13,7 +13,7 @@ Astro:AddCallback(
                 "#{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} 최초 획득 시 Black Mirror(패시브 획득 시 한 번 더 획득)를 드랍합니다."
             )
 
-            Astro:AddEIDCollectible(    
+            Astro.EID:AddCollectible(    
                 Astro.Collectible.GEMINI_EX,    
                 "Gemini EX",
                 "",    

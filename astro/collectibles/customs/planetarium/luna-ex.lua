@@ -4,7 +4,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.LUNA_EX = Isaac.GetItemIdByName("LUNA EX")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.LUNA_EX,
         "초 달",
         "찬란한 축복을 그대에게",

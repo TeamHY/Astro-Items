@@ -36,7 +36,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BLACK_CUBE,
                 "블랙 큐브",
                 "강력한 잠재능력 추가",
@@ -46,7 +46,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BLACK_MAX_MONSTER .. "%p"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.RED_CUBE,
                 "레드 큐브",
                 "잠재능력 추가",
@@ -56,7 +56,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. RED_MAX_MONSTER .. "%p"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BONUS_POTENTIAL_CUBE,
                 "에디셔널 큐브",
                 "더 많은 잠재능력",

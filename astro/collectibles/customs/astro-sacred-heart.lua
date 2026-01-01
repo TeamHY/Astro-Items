@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ASTRO_SACRED_HEART,
                 "광휘로운 심장",
                 "유도 공격 + 공격력 증가 + 추가 피해",
@@ -23,7 +23,7 @@ Astro:AddCallback(
                 "중첩 시 적이 받는 피해량이 합 연산으로 증가"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ASTRO_SACRED_HEART,
                 "Astro Sacred Heart",
                 "",

@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM,
                 "베들레헴의 한별",
                 "빛을 경배하라",

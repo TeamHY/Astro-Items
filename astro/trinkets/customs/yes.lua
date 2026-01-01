@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.YES,
                 "좋아!",
                 "필요해!",
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#리롤된 패시브 아이템은 콘솔창에서 확인할 수 있습니다."
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.YES,
                 "Yes!",
                 "",

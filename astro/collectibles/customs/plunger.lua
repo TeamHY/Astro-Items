@@ -11,7 +11,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PLUNGER,
                 "뚫어뻥",
                 "미야옹!",
@@ -22,7 +22,7 @@ Astro:AddCallback(
             EID:addCarBatteryCondition(Astro.Collectible.PLUNGER, nil, PLUNGER_DIP, nil, "ko_kr")
             EID:addCarBatteryCondition(Astro.Collectible.PLUNGER, nil, 40, nil, "ko_kr")
             ----
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PLUNGER,
                 "Plunger",
                 "",

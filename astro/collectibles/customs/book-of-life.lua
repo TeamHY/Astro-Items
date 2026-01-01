@@ -10,7 +10,7 @@ Astro:AddCallback(
             local astrobirthtext = Astro.IsFight and "#이번 게임의 금지 아이템 중 1개를 소환합니다." or "#사용 시 이번 게임에서 등장한 아이템 중 소지중이지 않은 아이템 1개를 소환합니다."
             local astrobirthtexteng = Astro.IsFight and "#Spawns one banned item from this run" or "#Spawns one non-held item from appeared items this run"
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BOOK_OF_LIFE,
                 "생자의 서",
                 "금단의 주술",
@@ -19,7 +19,7 @@ Astro:AddCallback(
             )
             EID:addCarBatteryCondition(Astro.Collectible.BOOK_OF_LIFE, "1개 더 생성", nil, nil, "ko_kr")
             ----
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BOOK_OF_LIFE,
                 "Book of Life",
                 "",

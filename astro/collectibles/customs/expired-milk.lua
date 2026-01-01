@@ -3,7 +3,7 @@ local HiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.EXPIRED_MILK = Isaac.GetItemIdByName("Expired Milk")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.EXPIRED_MILK,
         "상한 우유",
         "피부에 양보하세요",

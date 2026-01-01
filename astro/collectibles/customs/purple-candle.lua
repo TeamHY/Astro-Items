@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PURPLE_CANDLE,
                 "보라 양초",
                 "저주 면역 + 개안",
@@ -19,7 +19,7 @@ Astro:AddCallback(
                 "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다."
             )
             
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PURPLE_CANDLE,
                 "Purple Candle",
                 "",

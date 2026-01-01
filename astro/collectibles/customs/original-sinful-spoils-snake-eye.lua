@@ -1,10 +1,20 @@
 Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE = Isaac.GetItemIdByName("Original Sinful Spoils - Snake Eye")
 
+---
+
+local spawnChance = 0.2
+
+local luckMultiply = 1 / 100
+
+local cooldownTime = 45 -- 30 프레임 = 1초
+
+---
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
                 "원죄보 - 스네이크아이",
                 "반역의 눈",
@@ -14,15 +24,26 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 시 유령의 소환 확률이 중첩된 수만큼 합 연산으로 증가하며 소환 쿨타임이 줄어듭니다."
             )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
+                "Original Sinful Spoils - Snake Eye",
+                "",
+                "20% chance to summon multiple ghosts on hit" ..
+                "#{{Timer}} 1.5 seconds cooldown" ..
+                "#{{Luck}} 100% chance at 90 Luck (+1%p per Luck)",
+                -- Stacks
+                "Stacks increase spawn chance and decrease spawn cooldown",
+                "en_us"
+            )
+
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_PASSIVE, subType = Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE },
+                "Original Sinful Spoils"
+            )
         end
     end
 )
-
-local spawnChance = 0.2
-
-local luckMultiply = 1 / 100
-
-local cooldownTime = 45 -- 30 프레임 = 1초
 
 ---@param player EntityPlayer
 ---@return number

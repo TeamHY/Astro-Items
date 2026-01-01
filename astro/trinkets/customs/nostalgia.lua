@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
 		if EID then
-			Astro:AddEIDTrinket(
+			Astro.EID:AddTrinket(
 				Astro.Trinket.NOSTALGIA,
 				"노스텔지아",
 				"그 때 그 시절로",
@@ -15,7 +15,7 @@ Astro:AddCallback(
 				"#!!! 효과 발동 시 사라집니다."
 			)
 
-			Astro:AddEIDTrinket(
+			Astro.EID:AddTrinket(
 				Astro.Trinket.NOSTALGIA,
 				"Nostalgia",
 				"",

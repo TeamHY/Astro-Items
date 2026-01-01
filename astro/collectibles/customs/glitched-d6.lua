@@ -1,7 +1,7 @@
 Astro.Collectible.GLITCHED_D6 = Isaac.GetItemIdByName("Glitched D6")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.GLITCHED_D6,
         "글리치 주사위",
         "운운명명을을 굴굴려려라라라라...",

@@ -17,7 +17,7 @@ Astro:AddCallback(
             local freezeChance = string.format("%.f", FREEZE_CHANCE * 100)
             local freezeDuration = string.format("%.f", FREEZE_DURATION / 30)
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.LEO_EX,
                 "초 사자자리",
                 "왕의 위엄",
@@ -32,7 +32,7 @@ Astro:AddCallback(
                 "중첩할수록 부숴야되는 바위의 개수가 최소 " .. math.ceil(ROCK_COUNT / 2) .. "개까지 1개씩 감소"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.LEO_EX,
                 "Leo EX",
                 "",

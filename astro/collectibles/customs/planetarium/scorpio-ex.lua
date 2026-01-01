@@ -11,7 +11,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SCORPIO_EX,
                 "초 전갈자리",
                 "순도 100% 독",
@@ -22,7 +22,7 @@ Astro:AddCallback(
                 "중첩 시 중첩된 수만큼 소환 시도, 소환 쿨타임 감소"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SCORPIO_EX,
                 "Scorpio EX",
                 "",

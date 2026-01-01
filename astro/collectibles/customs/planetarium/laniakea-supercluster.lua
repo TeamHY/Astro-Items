@@ -1,7 +1,7 @@
 Astro.Collectible.LANIAKEA_SUPERCLUSTER = Isaac.GetItemIdByName("Laniakea Supercluster")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.LANIAKEA_SUPERCLUSTER,
         "라니아케아 초은하단",
         "헤아릴 수 없는 천국",

@@ -11,7 +11,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
 		if EID then
-			Astro:AddEIDCollectible(
+			Astro.EID:AddCollectible(
 				Astro.Collectible.GODTECH,
 				"신기술",
 				"첨단 천벌",

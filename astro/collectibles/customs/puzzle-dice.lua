@@ -1,7 +1,7 @@
 Astro.Collectible.PUZZLE_DICE = Isaac.GetItemIdByName("Puzzle Dice")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.PUZZLE_DICE,
         "퍼즐 주사위",
         "운명을 맞춰라",

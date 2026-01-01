@@ -9,7 +9,7 @@ local BICORN_USES_FEMALE = 6
 Astro.Collectible.BICORN = Isaac.GetItemIdByName("Bicorn")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BICORN,
         "바이콘",
         "...",

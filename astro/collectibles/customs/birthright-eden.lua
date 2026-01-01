@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.BIRTHRIGHT_EDEN = Isaac.GetItemIdByName("Eden's Frame")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BIRTHRIGHT_EDEN,
         "에덴의 액자",
         "???",

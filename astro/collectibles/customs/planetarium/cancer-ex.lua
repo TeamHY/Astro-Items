@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CANCER_EX,
                 "초 게자리",
                 "순수함에 보호받다",
@@ -24,7 +24,7 @@ Astro:AddCallback(
                 "중첩 시 발동 쿨타임 감소"
             )
             
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CANCER_EX,
                 "Cancer EX",
                 "",

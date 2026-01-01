@@ -11,7 +11,7 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 Astro.Collectible.MERCURIUS_EX = Isaac.GetItemIdByName("MERCURIUS EX")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.MERCURIUS_EX,
         "초 수성",
         "열려라 참깨",

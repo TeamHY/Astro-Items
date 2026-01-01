@@ -13,7 +13,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.VENUS_EX,
                 "초 금성",
                 "미인이시네요",
@@ -26,7 +26,7 @@ Astro:AddCallback(
                 "중첩 시 추가 피해량이 중첩된 수만큼 합 연산으로 증가"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.VENUS_EX,
                 "Venus EX",
                 "",

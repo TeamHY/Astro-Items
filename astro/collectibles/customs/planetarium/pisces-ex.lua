@@ -20,7 +20,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PISCES_EX,
                 "초 물고기자리",
                 "힘찬 연어들처럼",
@@ -34,7 +34,7 @@ Astro:AddCallback(
                 "중첩 시 발사 확률이 중첩된 수만큼 합 연산으로 증가 및 쿨타임 감소"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.PISCES_EX,
                 "Pisces EX",
                 "",

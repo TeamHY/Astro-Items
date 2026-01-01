@@ -1,7 +1,7 @@
 Astro.Collectible.HAPPY_ONION = Isaac.GetItemIdByName("Happy Onion")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.HAPPY_ONION,
         "행복한 양파",
         "칭찬받은 양파",

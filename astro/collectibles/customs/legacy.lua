@@ -14,7 +14,7 @@ if EID then
     local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
     local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "유산",
         "다시 나에게로",
@@ -25,7 +25,7 @@ if EID then
         "{{ColorGray}} (Bookworm 효과 미구현)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Legacy",
         "",

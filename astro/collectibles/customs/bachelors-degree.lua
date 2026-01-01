@@ -1,7 +1,7 @@
 Astro.Collectible.BACHELORS_DEGREE = Isaac.GetItemIdByName("Bachelor's Degree")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BACHELORS_DEGREE,
         "학사학위",
         "더 좋은? 알약들",

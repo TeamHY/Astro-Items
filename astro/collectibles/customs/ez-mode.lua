@@ -23,7 +23,7 @@ local LIMIT_LUCK_DECREMENT = -10
 Astro.Collectible.EZ_MODE = Isaac.GetItemIdByName("EZ Mode")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.EZ_MODE,
         "쉬움 모드",
         "이-지",

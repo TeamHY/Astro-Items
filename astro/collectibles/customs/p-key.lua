@@ -11,9 +11,9 @@ if EID then
         ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
         ["en_us"] = "#{{DiceRoom}} Can be transformed {{ColorYellow}}using it in the Dice Room{{CR}}"
     }
-    Astro:AddCraftHint(CollectibleType.COLLECTIBLE_R_KEY, CRAFT_HINT)
+    Astro.EID:AddCraftHint(CollectibleType.COLLECTIBLE_R_KEY, CRAFT_HINT)
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "P키", "...",
         "!!! 개발중입니다" ..
@@ -22,7 +22,7 @@ if EID then
         "#에덴 소울처럼 최초 획득 시 기본 쿨 제거시켜놓고 테스트"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "P Key", "",
         "!!! WIP ITEM" ..

@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.PLANETARIUM_CROWN,
                 "천체 왕관",
                 "별들의 특별한 손님",
@@ -14,7 +14,7 @@ Astro:AddCallback(
                 "#!!! 효과 발동 시 사라집니다."
             )
             
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.PLANETARIUM_CROWN,
                 "Planetarium Crown",
                 "",

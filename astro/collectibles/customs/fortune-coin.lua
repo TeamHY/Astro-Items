@@ -9,7 +9,7 @@ local LUCK_MULTIPLY = 1 / 100
 Astro.Collectible.FORTUNE_COIN = Isaac.GetItemIdByName("Fortune Coin")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.FORTUNE_COIN, 
         "포츈 코인",
         "올인",

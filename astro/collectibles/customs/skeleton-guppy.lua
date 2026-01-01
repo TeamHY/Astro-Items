@@ -17,7 +17,7 @@ local FLY_SUBTYPE = 1004
 local FLY_COLOR = Color(1, 1, 1, 1, 0.4, 0.4, 0.2)
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "스켈레톤 구피", "...",
         "파리가 소환될 때 50% 확률로 뼈 파리를 추가로 소환합니다." ..
@@ -25,7 +25,7 @@ if EID then
         "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Skeleton Guppy", "",
         "50% chance to spawn an additional bone-themed fly." ..

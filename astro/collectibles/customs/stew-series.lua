@@ -17,7 +17,7 @@ Astro.Collectible.GREEN_STEW = Isaac.GetItemIdByName("Green Stew")
 Astro.Collectible.BROWN_STEW = Isaac.GetItemIdByName("Brown Stew")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BLUE_STEW,
         "푸른 스튜",
         "일시적 공격 속도 증가",
@@ -27,7 +27,7 @@ if EID then
         "#{{ArrowGrayRight}} 연사 감소 도중 적 처치시 연사 +0.12 회복"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.GREEN_STEW,
         "초록 스튜",
         "일시적 행운 증가",
@@ -37,7 +37,7 @@ if EID then
         "#{{ArrowGrayRight}} 행운 감소 도중 적 처치시 행운 +0.12 회복"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.BROWN_STEW,
         "갈색 스튜",
         "일시적 이동 속도 증가",

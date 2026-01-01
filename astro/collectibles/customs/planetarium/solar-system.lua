@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.SOLAR_SYSTEM = Isaac.GetItemIdByName("Solar System")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.SOLAR_SYSTEM,
         "태양계",
         "고향별",

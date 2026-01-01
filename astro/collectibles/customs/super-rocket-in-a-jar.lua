@@ -6,7 +6,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SUPER_ROCKET_IN_A_JAR,
                 "슈퍼 로켓 든 병",
                 "폭탄 5개 + 엄청난 로켓 발사!",

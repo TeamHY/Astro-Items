@@ -11,7 +11,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.VIRGO_EX,
                 "초 처녀자리",
                 "하늘을 우러러 한 점 부끄럼 없이",
@@ -23,7 +23,7 @@ Astro:AddCallback(
                 "중첩 시 공격력, 블랙하트 소환 개수, 무적 시간이 합연산으로 증가"
             )
             
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.VIRGO_EX,
                 "Virgo EX",
                 "",

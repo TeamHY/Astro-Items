@@ -14,7 +14,7 @@ Astro:AddCallback(
         }
 
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.MARKER_POCKET, 
                 "표식 주머니", 
                 "...", 

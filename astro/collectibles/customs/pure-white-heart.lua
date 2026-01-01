@@ -1,7 +1,7 @@
 Astro.Collectible.PURE_WHITE_HEART = Isaac.GetItemIdByName("Pure White Heart")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.PURE_WHITE_HEART,
         "순백의 심장",
         "시작부터 마음 속에 있으니",

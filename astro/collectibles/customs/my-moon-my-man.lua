@@ -5,7 +5,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.MY_MOON_MY_MAN,
                 "나의 달 나의 그대",
                 "이대로 네 집에 계속 머물고 싶어",

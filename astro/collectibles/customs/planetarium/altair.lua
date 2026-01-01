@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.ALTAIR = Isaac.GetItemIdByName("Altair")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.ALTAIR,
         "알타일",
         "여름의 밤하늘에서",

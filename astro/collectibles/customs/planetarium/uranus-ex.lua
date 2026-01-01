@@ -17,7 +17,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.URANUS_EX,
                 "초 천왕성",
                 "꽁꽁꽁",

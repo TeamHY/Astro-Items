@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.DOCTRINE,
                 "교리",
                 "주의 이름은 찬미 받으소서",
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#{{CurseCursedSmall}} 저주에 걸리지 않습니다."
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.DOCTRINE,
                 "Doctrine",
                 "",

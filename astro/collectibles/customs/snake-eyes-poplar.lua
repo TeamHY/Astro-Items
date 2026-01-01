@@ -12,7 +12,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SNAKE_EYES_POPLAR,
                 "스네이크아이즈 포프루스",
                 "원죄보에서 태어난 존재",

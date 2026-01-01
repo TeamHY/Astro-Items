@@ -11,7 +11,7 @@ local LUCK_CHANCE = 0.01
 ---
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "마유시의 회중시계",
         "...",
@@ -21,7 +21,7 @@ if EID then
         "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
     )
 
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         ITEM_ID,
         "Mayushii's Pocket Watch",
         "",

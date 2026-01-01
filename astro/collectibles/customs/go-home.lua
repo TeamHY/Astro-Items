@@ -3,7 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.GO_HOME = Isaac.GetItemIdByName("Go Home!")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.GO_HOME,
         "집으로!",
         "> stage 13",

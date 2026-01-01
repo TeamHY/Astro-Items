@@ -15,7 +15,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.FOCUS_BAND,
                 "기합의 머리띠",
                 "마지막 수단",
@@ -24,7 +24,7 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 9 이상일 때 " .. SURVIVAL_MAX .. "% 확률 (행운 1당 +" .. SURVIVAL_LUCK .. "%p)"
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.FOCUS_BAND,
                 "Focus Band",
                 "",

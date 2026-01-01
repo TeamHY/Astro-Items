@@ -7,7 +7,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.RITE_OF_ARAMESIR,
                 "아라메시아의 의",
                 "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다",

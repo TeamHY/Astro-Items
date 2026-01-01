@@ -3,7 +3,7 @@
 Astro.Collectible.SPINUP_DICE = Isaac.GetItemIdByName("Spinup Dice")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.SPINUP_DICE,
         "스핀업 주사위",
         "+1",

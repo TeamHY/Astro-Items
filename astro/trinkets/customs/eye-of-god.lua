@@ -4,7 +4,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.EYE_OF_GOD,
                 "신의 눈",
                 "거룩한 시선",
@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 45 이상일 때 100% 확률 (행운 1당 +2%p)"
             )
 
-            Astro:AddEIDTrinket(
+            Astro.EID:AddTrinket(
                 Astro.Trinket.EYE_OF_GOD,
                 "Eye of God",
                 "",

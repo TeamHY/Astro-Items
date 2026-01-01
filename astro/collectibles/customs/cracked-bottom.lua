@@ -20,7 +20,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CRACKED_BOTTOM,
                 "깨진 밑바닥",
                 "이보다 밑은 없겠지",
@@ -33,7 +33,7 @@ Astro:AddCallback(
                 nil, "ko_kr", nil
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CRACKED_BOTTOM,
                 "Cracked Bottom",
                 "",

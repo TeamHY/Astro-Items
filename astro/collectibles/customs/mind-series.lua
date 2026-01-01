@@ -27,7 +27,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            Astro:AddEIDCollectible(Astro.Collectible.AMPLIFYING_MIND,
+            Astro.EID:AddCollectible(Astro.Collectible.AMPLIFYING_MIND,
                 "증폭하는 마음",
                 "의지",
                 "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 50% 확률로 아래 아이템 중 하나로 바꿉니다." ..
@@ -39,7 +39,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.QUANTUM_MIND .. "}} Quantum Mind"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.CALM_MIND,
                 "침착한 정신",
                 "압도적인 힘",
@@ -50,7 +50,7 @@ Astro:AddCallback(
                 "중첩 가능, 다음 증가량부터 적용"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SWIFT_MIND,
                 "신속한 정신",
                 "토끼처럼 가볍게",
@@ -61,7 +61,7 @@ Astro:AddCallback(
                 "중첩 가능, 다음 증가량부터 적용"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.BLUE_MIND,
                 "우울한 정신",
                 "누가 양파를 써나?",
@@ -72,7 +72,7 @@ Astro:AddCallback(
                 "중첩 가능, 다음 증가량부터 적용"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.LUCKY_MIND,
                 "행운의 정신",
                 "행운을 빌어요",
@@ -84,7 +84,7 @@ Astro:AddCallback(
                 "중첩 가능, 다음 증가량부터 적용"
             )
 
-            Astro:AddEIDCollectible(
+            Astro.EID:AddCollectible(
                 Astro.Collectible.QUANTUM_MIND,
                 "퀀텀 마인드",
                 "집합체",

@@ -1,7 +1,7 @@
 Astro.Collectible.DADS_BOX = Isaac.GetItemIdByName("Dad's Box")
 
 if EID then
-    Astro:AddEIDCollectible(
+    Astro.EID:AddCollectible(
         Astro.Collectible.DADS_BOX,
         "아빠의 상자",
         "뭐가 들었지...",
