@@ -48,4 +48,7 @@
     <sound name="SkillCheckVeryGood">
         <sample weight="1" path="feedback/skill-check-great.wav" />
     </sound>
+    <sound name="BloodGuppySwirl">
+        <sample weight="1" path="feedback/blood-guppy-swirl.wav" />
+    </sound>
 </sounds>

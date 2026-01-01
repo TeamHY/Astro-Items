@@ -86,6 +86,7 @@ Astro:AddCallback(
                 Vector.Zero,
                 player
             ):ToFamiliar()
+            newFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
 
             data["blightedGuppyCooldown"] = frameCount + COOLDOWN_TIME
         end

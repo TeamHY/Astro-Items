@@ -87,6 +87,7 @@ Astro:AddCallback(
                 player
             ):ToFamiliar()
             newFly:GetSprite().Color = FLY_COLOR
+            newFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
 
             data["skeletonGuppyCooldown"] = frameCount + COOLDOWN_TIME
         end

@@ -41,6 +41,7 @@ Astro:AddCallback(
                     player.InitSeed
                 )
                 s.CollisionDamage = amount * 2
+                s:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
             end
 
             -- if damageFlags == 0 then

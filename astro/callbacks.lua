@@ -189,3 +189,33 @@ Astro:AddCallbackCustom(
         Isaac.RunCallbackWithParam(Astro.Callbacks.POST_PICKUP_COLLECT, pickup.Variant, player, pickup)
     end
 )
+
+local isStarted = false
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    function(_, isContinued)
+        isStarted = true
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_GAME_EXIT,
+    ---@param shouldSave boolean
+    function(_, shouldSave)
+        isStarted = false
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_FAMILIAR_INIT,
+    ---@param familiar EntityFamiliar
+    function(_, familiar)
+        if familiar.SubType == 0 then
+            if isStarted then
+                Isaac.RunCallback(Astro.Callbacks.SPAWNED_BLUE_FLY, familiar)
+            end
+        end
+    end,
+    FamiliarVariant.BLUE_FLY
+)

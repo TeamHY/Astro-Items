@@ -12,12 +12,13 @@ local COOLDOWN_TIME = 15
 ---
 
 local FLY_SUBTYPE = 1001
-local FLY_COLOR = Color(1, 1, 1, 1, 1, 0, 0)
+local FLY_COLOR = Color(1, 1, 1, 1)
+FLY_COLOR:SetColorize(0.8, 0.6, 0.6, 10)
 
 if EID then
     Astro.EID:AddCollectible(    -- `혈사 구피`는 틀린 명칭입니다. 컨셉이 유황이면 영어명을 `Brimstone Guppy`, 한국어명을 `유황 구피` 또는 `유황불 구피`로 바꿔주세요.
-        ITEM_ID,                                               -- 컨셉이 혈액이면 한국어명을 `핏빛 구피`/`핏덩이 구피`/`피투성이 구피`로 바꿔주세요
-        "혈사 구피",
+        ITEM_ID,                                                -- 컨셉이 혈액이면 한국어명을 `핏빛 구피`/`핏덩이 구피`/`피투성이 구피` 중 하나로 바꿔주세요
+        "핏빛 구피",
         "...",
         "파란 파리가 소환될 때 50% 확률로 혈사 파리를 추가로 소환합니다." ..
         "#{{ArrowGrayRight}} 혈사 파리는 적에게 접촉시 해당 위치에 {{Collectible118}}Brimstone 혈사포가 소환됩니다." ..
@@ -83,6 +84,7 @@ Astro:AddCallback(
                 player
             ):ToFamiliar()
             newFly:GetSprite().Color = FLY_COLOR
+            newFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
 
             data["bloodGuppyCooldown"] = frameCount + COOLDOWN_TIME
         end
@@ -132,9 +134,41 @@ Astro:AddCallback(
                 player
             )
             effect.CollisionDamage = player.Damage
+            effect:GetData()._ASTRO_bloodGuppySfx = true
+            effect:GetData()._ASTRO_bloodGuppyState1 = true
+            
+            local effect2 = Isaac.Spawn(
+                EntityType.ENTITY_EFFECT,
+                EffectVariant.HUSH_LASER_UP,
+                0,
+                effect.Position + Vector(0, 3),
+                Vector.Zero,
+                player
+            )
+            effect2.Color = Color(0.75, 0, 0, 1)
+            effect2:SetColor(Color(0, 0, 0, 0), 1, 1, false, false)
+            Astro:ScheduleForUpdate(function() effect2:Die() end, 50)
 
             familiar:GetData().hasBrimstoneEffect = true
         end
     end,
     FamiliarVariant.BLUE_FLY
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local eData = effect:GetData()
+        if eData._ASTRO_bloodGuppySfx then
+            local sfx = SFXManager()
+            sfx:Play(Astro.SoundEffect.BLOOD_GUPPY_SWIRL, 0.75)
+            eData._ASTRO_bloodGuppySfx = nil
+        end
+
+        if eData._ASTRO_bloodGuppyState1 then
+            effect.State = 1
+        end
+    end,
+    EffectVariant.BRIMSTONE_SWIRL
 )

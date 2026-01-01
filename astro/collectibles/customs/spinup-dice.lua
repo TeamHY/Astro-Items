@@ -297,14 +297,12 @@ end
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function(_)
+        if not Astro:HasCollectible(Astro.Collectible.SPINUP_DICE) then return end
+
         local spinAmount = GetAvailableSkipAmount()
-    
         if spinAmount == 0 then return nil end
         
-    
         local curseName = Game():GetLevel():GetCurseName()
-        
-    
         if curseName ~= nil and curseName == "Curse of the Blind!" then return nil end
         
         local player = Isaac.GetPlayer( 0 )
