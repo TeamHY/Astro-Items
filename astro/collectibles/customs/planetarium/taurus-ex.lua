@@ -20,9 +20,9 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 그 방의 적을 " .. cooldown .. "초간 석화시킵니다." ..
                 "#{{ArrowGrayRight}} 접촉한 적에게 공격력 x4 +28의 피해를 입히고 지나간 길에 빛줄기를 소환합니다." ..
                 "#{{ArrowGrayRight}} " .. cooldown .. "초간 이동속도가 +0.28 증가하고 공격불능 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
-                "#{{TimerSmall}} (쿨타임 3초)",
+                "#{{TimerSmall}} (쿨타임 " .. cooldown .. "초)",
                 -- 중첩 시
-                "중첩 시 쿨타임 감소"
+                "중첩 시 돌진 상태에서 피격 시 발동 효과를 발동"
             )
 
             Astro:AddEIDCollectible(
@@ -33,9 +33,9 @@ Astro:AddCallback(
                 "#{{Petrify}} Petrifies all enemies in the room for" .. cooldown .. " seconds" ..
                 "#{{Damage}} During a dash, Isaac is invincible and deals 4x his damage +28 and leaving behind beams of light" ..
                 "#{{Collectible77}} For " .. cooldown .. " seconds, {{Speed}} +0.28 Speed and Isaac can't shoot but deals 40 contact damage per second" ..
-                "#{{Timer}} 3 seconds cooldown",
+                "#{{Timer}} " .. cooldown .. "seconds cooldown",
                 -- Stacks
-                "Cooldown reduced per stack",
+                "Stacks make dash triggers any on-hit item effects",
                 "en_us"
             )
         end
@@ -93,8 +93,7 @@ Astro:AddCallback(
     function(_, player)
         if not player:HasCollectible(Astro.Collectible.TAURUS_EX) then return end
         
-        local taurusNum = player:GetCollectibleNum(Astro.Collectible.TAURUS_EX)
-        local taurusCooldown = math.ceil(TAURUS_COOLDOWN / taurusNum)
+        local taurusCooldown = TAURUS_COOLDOWN
         local pData = player:GetData()
 
         local currentCool = pData._ASTRO_taurusExCool or 0
@@ -152,6 +151,13 @@ local function taurusExDash(player, cooldown)
     player:UseActiveItem(CollectibleType.COLLECTIBLE_WHITE_PONY, noAnim)
     player:UseActiveItem(CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN, noAnim)
     player:AddCacheFlags(CacheFlag.CACHE_SPEED)
+    
+    local sfx = SFXManager()
+    local taurusNum = player:GetCollectibleNum(Astro.Collectible.TAURUS_EX)
+    if taurusNum > 1 then
+        player:UseActiveItem(CollectibleType.COLLECTIBLE_DULL_RAZOR, noAnim)
+        sfx:Stop(SoundEffect.SOUND_ISAAC_HURT_GRUNT)
+    end
 
     for _, ent in ipairs(Isaac.GetRoomEntities()) do
         ent:AddFreeze(EntityRef(player), (cooldown / 2), true)    -- 퍼즈 액티브로 하면 적의 투사체가 사라지지 않고 남는 문제가 있음 
@@ -177,8 +183,7 @@ Astro:AddCallback(
 
             if player:HasCollectible(Astro.Collectible.TAURUS_EX) then
                 local now = Isaac.GetFrameCount()
-                local taurusNum = player:GetCollectibleNum(Astro.Collectible.TAURUS_EX)
-                local taurusCooldown = math.ceil(TAURUS_COOLDOWN / taurusNum)
+                local taurusCooldown = TAURUS_COOLDOWN
 
                 if Astro.Data["TaurusExMode"] == 1 then
                     for dir = ButtonAction.ACTION_LEFT, ButtonAction.ACTION_DOWN do
@@ -208,6 +213,7 @@ Astro:AddCallback(
                     end
                 else
                     local pressed = Input.IsButtonTriggered(Astro.Data["TaurusExKeyBind"], player.ControllerIndex) 
+
                     if pressed and pData._ASTRO_taurusExCool and pData._ASTRO_taurusExCool >= taurusCooldown then
                         taurusExDash(player, taurusCooldown)
                         pData._ASTRO_taurusExCool = 0
