@@ -85,8 +85,11 @@ Astro:AddCallback(
                 Vector.Zero,
                 player
             ):ToFamiliar()
-            newFly:GetSprite().Color = FLY_COLOR
             newFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+
+            local flySprite = newFly:GetSprite()
+            flySprite:ReplaceSpritesheet(0, "gfx/familiar/golden_fly.png")
+            flySprite:LoadGraphics()
 
             data["goldenGuppyCooldown"] = frameCount + COOLDOWN_TIME
         end
@@ -98,7 +101,9 @@ Astro:AddCallback(
     ---@param familiar EntityFamiliar
     function(_, familiar)
         if familiar.SubType == FLY_SUBTYPE then
-            familiar:GetSprite().Color = FLY_COLOR
+            local flySprite = familiar:GetSprite()
+            flySprite:ReplaceSpritesheet(0, "gfx/familiar/golden_fly.png")
+            flySprite:LoadGraphics()
         end
     end,
     FamiliarVariant.BLUE_FLY
