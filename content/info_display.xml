@@ -800,6 +800,31 @@
 		<info text="Does not charm bosses and only deals minor damage to them"/>
 		<info text="Can be thrown once per floor. Cannot be recharged through normal methods"/>
 	</collectible>
+	<collectible id="201">
+		<info text="When blue flies are spawned, chance to spawn a bone fly"/>
+		<info text="Chance increases with luck"/>
+		<info text="Bone flies spawn 4 bone fragments on contact with an enemy"/>
+	</collectible>
+	<collectible id="202">
+		<info text="When blue flies are spawned, chance to double the number spawned"/>
+		<info text="Chance increases with luck"/>
+	</collectible>
+	<collectible id="203">
+		<info text="When blue flies are spawned, chance to spawn a golden fly"/>
+		<info text="Chance increases with luck"/>
+		<info text="Golden flies petrify and turn enemies to gold for 3 seconds on contact with an enemy"/>
+		<info text="Gilded enemies drop coins when killed"/>
+	</collectible>
+	<collectible id="204">
+		<info text="When blue flies are spawned, chance to spawn a brimstone fly"/>
+		<info text="Chance increases with luck"/>
+		<info text="Brimstone flies spawn a brimstone swirl on contact with an enemy"/>
+	</collectible>
+	<collectible id="205">
+		<info text="When blue flies are spawned, chance to spawn a holy fly"/>
+		<info text="Chance increases with luck"/>
+		<info text="Holy flies summon light beams on contact with an enemy"/>
+	</collectible>
 	<collectible id="207">
 		<info text="NEED REPENTOGON"/>
 	</collectible>

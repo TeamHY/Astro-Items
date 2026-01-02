@@ -1,8 +1,7 @@
----
-
 Astro.Collectible.SKELETON_GUPPY = Isaac.GetItemIdByName("Skeleton Guppy")
-
 local ITEM_ID = Astro.Collectible.SKELETON_GUPPY
+
+---
 
 local BASE_FLY_CHANCE = 0.5
 local LUCK_FLY_CHANCE = 0.01
@@ -11,30 +10,34 @@ local COOLDOWN_TIME = 15
 
 local BONE_DAMAGE_MULTIPLIER = 1
 
+local FLY_SUBTYPE = 1004
+
 ---
 
-local FLY_SUBTYPE = 1004
-local FLY_COLOR = Color(1, 1, 1, 1, 0.4, 0.4, 0.2)
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "스켈레톤 구피",
+                "너 대신 말라 죽은",
+                "파리가 소환될 때 50% 확률로 뼈 파리를 추가로 소환합니다." ..
+                "#뼈 파리는 적에게 접촉 시 4갈래로 갈라지는 뼈 눈물을 발사합니다." ..
+                "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
+            )
 
-if EID then
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "스켈레톤 구피", "...",
-        "파리가 소환될 때 50% 확률로 뼈 파리를 추가로 소환합니다." ..
-        "#{{ArrowGrayRight}} 뼈 파리는 적에게 접촉시 4방향으로 무언가에 부딪힐 때 1~3갈래로 갈라지는 뼈 눈물을 발사합니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
-    )
-
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "Skeleton Guppy", "",
-        "50% chance to spawn an additional bone-themed fly." ..
-        "#Bone flies deal bone splash damage when hitting monsters." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        nil,
-        "en_us"
-    )
-end
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Skeleton Guppy", "",
+                "50% chance to spawn an additional bone fly" ..
+                "#Bone flies deal bone splash damage to enemies on contact" ..
+                "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 -- TODO: 나중에 새로운 콜백 작성할 것
 Astro:AddCallback(

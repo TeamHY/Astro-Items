@@ -802,6 +802,31 @@
 		<info text="보스는 아군으로 만들 수 없으며, 약간의 피해를 줍니다"/>
 		<info text="층마다 한 번만 던질 수 있습니다. 일반적인 방법으로 충전할 수 없습니다"/>
 	</collectible>
+	<collectible id="201">
+		<info text="파란 파리들이 소환될 때 확률적으로 뼈다귀 파리 한 마리를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="뼈다귀 파리는 적과 접촉 시 4방향으로 뼈 파편을 발사합니다"/>
+	</collectible>
+	<collectible id="202">
+		<info text="확률적으로 파란 파리들이 소환될 때 두 배로 소환됩니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+	</collectible>
+	<collectible id="203">
+		<info text="파란 파리들이 소환될 때 확률적으로 황금 파리 한 마리를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="황금 파리는 접촉한 적을 석화시켜 3초 동안 금으로 바꿉니다"/>
+		<info text="금으로 변한 적은 처치 시 동전을 드롭합니다"/>
+	</collectible>
+	<collectible id="204">
+		<info text="파란 파리들이 소환될 때 확률적으로 유황 파리 한 마리를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="유황 파리는 적과 접촉 시 혈사포 소용돌이를 소환합니다"/>
+	</collectible>
+	<collectible id="205">
+		<info text="파란 파리들이 소환될 때 확률적으로 신성한 파리 한 마리를 소환합니다"/>
+		<info text="확률은 행운에 비례해 증가합니다"/>
+		<info text="신성한 파리는 적과 접촉 시 빛줄기를 소환합니다"/>
+	</collectible>
 	<collectible id="207">
 		<info text="NEED REPENTOGON"/>
 	</collectible>

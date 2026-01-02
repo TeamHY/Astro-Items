@@ -1,40 +1,41 @@
----
-
 Astro.Collectible.DIVINE_GUPPY = Isaac.GetItemIdByName("Divine Guppy")
-
 local ITEM_ID = Astro.Collectible.DIVINE_GUPPY
+
+---
 
 local BASE_FLY_CHANCE = 0.5
 local LUCK_FLY_CHANCE = 0.01
 
 local COOLDOWN_TIME = 15
 
+local FLY_SUBTYPE = 1002
+
 ---
 
-local FLY_SUBTYPE = 1002
-local FLY_COLOR = Color(1, 1, 1, 1, 1, 1, 1)
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "신성한 구피",
+                "너 대신 축복받은",
+                "파란 파리가 소환될 때 50% 확률로 신성한 파리를 추가로 소환합니다." ..
+                "#신성한 파리는 적에게 접촉 시 그 자리에 빛줄기를 내립니다." ..
+                "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
+            )
 
-if EID then
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "신성한 구피",
-        "...",
-        "파란 파리가 소환될 때 50% 확률로 신성한 파리를 추가로 소환합니다." ..
-        "#{{ArrowGrayRight}} 신성한 파리는 적에게 접촉시 그 자리에 빛줄기를 내립니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
-    )
-
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "Divine Guppy",
-        "",
-        "50% chance to spawn an additional holy-themed fly." ..
-        "#Holy flies cause light rays to fall when dealing damage to monsters." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        nil,
-        "en_us"
-    )
-end
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Divine Guppy", "",
+                "50% chance to spawn a holy fly when spawned blue fly" ..
+                "#Holy flies spawn a beam of light to enemies on contact" ..
+                "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddUpgradeAction(
     function(player)
@@ -82,8 +83,11 @@ Astro:AddCallback(
                 Vector.Zero,
                 player
             ):ToFamiliar()
-            newFly:GetSprite().Color = FLY_COLOR
             newFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+
+            local flySprite = newFly:GetSprite()
+            flySprite:ReplaceSpritesheet(0, "gfx/familiar/holy_fly.png")
+            flySprite:LoadGraphics()
 
             data["divineGuppyCooldown"] = frameCount + COOLDOWN_TIME
         end
@@ -95,7 +99,9 @@ Astro:AddCallback(
     ---@param familiar EntityFamiliar
     function(_, familiar)
         if familiar.SubType == FLY_SUBTYPE then
-            familiar:GetSprite().Color = FLY_COLOR
+            local flySprite = familiar:GetSprite()
+            flySprite:ReplaceSpritesheet(0, "gfx/familiar/holy_fly.png")
+            flySprite:LoadGraphics()
         end
     end,
     FamiliarVariant.BLUE_FLY

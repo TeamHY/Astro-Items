@@ -1,41 +1,45 @@
----
-
-Astro.Collectible.BLOOD_GUPPY = Isaac.GetItemIdByName("Blood Guppy")
-
+Astro.Collectible.BLOOD_GUPPY = Isaac.GetItemIdByName("Brimstone Guppy")
 local ITEM_ID = Astro.Collectible.BLOOD_GUPPY
+
+---
 
 local BASE_FLY_CHANCE = 0.5
 local LUCK_FLY_CHANCE = 0.01
 
 local COOLDOWN_TIME = 15
 
----
-
 local FLY_SUBTYPE = 1001
 local FLY_COLOR = Color(1, 1, 1, 1)
 FLY_COLOR:SetColorize(0.8, 0.6, 0.6, 10)
 
-if EID then
-    Astro.EID:AddCollectible(    -- `혈사 구피`는 틀린 명칭입니다. 컨셉이 유황이면 영어명을 `Brimstone Guppy`, 한국어명을 `유황 구피` 또는 `유황불 구피`로 바꿔주세요.
-        ITEM_ID,                                                -- 컨셉이 혈액이면 한국어명을 `핏빛 구피`/`핏덩이 구피`/`피투성이 구피` 중 하나로 바꿔주세요
-        "핏빛 구피",
-        "...",
-        "파란 파리가 소환될 때 50% 확률로 혈사 파리를 추가로 소환합니다." ..
-        "#{{ArrowGrayRight}} 혈사 파리는 적에게 접촉시 해당 위치에 {{Collectible118}}Brimstone 혈사포가 소환됩니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
-    )
+---
 
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "Blood Guppy",
-        "",
-        "50% chance to spawn an additional blood fly." ..
-        "#Blood flies spawn {{Collectible118}}Brimstone laser at monster location when dealing damage." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
-        nil,
-        "en_us"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "유황불 구피",
+                "너 대신 희생한",
+                "파란 아군 파리가 소환될 때 50% 확률로 유황 파리를 소환합니다." ..
+                "#유황 파리는 적에게 접촉 시 공격력 x2의 접촉 피해를 주고 유황 소용돌이를 소환합니다." ..
+                "#소용돌이는 다단히트로 최대 22번의 피해를 줍니다." ..
+                "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
+            )
+
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Brimstone Guppy", "",
+                "50% chance to spawn a brimstone fly when spawned blue fly" ..
+                "#Brimstone fly deal 2x Isaac's damage and spawn a Brimstone swirl" ..
+                "#{{Damage}} It deals 22x Isaac's damage over 4.33 seconds" ..
+                "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddUpgradeAction(
     function(player)

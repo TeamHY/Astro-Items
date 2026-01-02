@@ -27,7 +27,7 @@ if EID then
         "",
         "50% chance to trigger {{Collectible422}}Glowing Hourglass when taking penalty damage. Does not activate in cleared rooms or {{BossRoom}}boss rooms." ..
         "#Stacking increases the final chance by additive calculation." ..
-        "#{{Luck}} 100% chance at 50 luck (+1%p per luck)",
+        "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
         nil,
         "en_us"
     )

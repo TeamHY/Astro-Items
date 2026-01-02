@@ -199,11 +199,11 @@
 	<passive gfx="Mayushii's Pocket Watch.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Mayushii's Pocket Watch" description="..." id="198" />
 	<passive gfx="Scales of Obedience.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Scales of Obedience" description="..." id="199" />
 	<passive gfx="Artifact Ignition.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Artifact Ignition" description="..." id="200" />
-	<passive tags="guppy" gfx="Skeleton Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Skeleton Guppy" description="..." id="201" />
-	<passive tags="guppy" gfx="Blighted Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Blighted Guppy" description="..." id="202" />
-	<passive tags="guppy" gfx="Golden Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Golden Guppy" description="..." id="203" />
-	<passive tags="guppy" gfx="Blood Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Blood Guppy" description="..." id="204" />
-	<passive tags="guppy" gfx="Divine Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Divine Guppy" description="..." id="205" />
+	<passive tags="guppy" gfx="Skeleton Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Skeleton Guppy" description="Dried up in your place" id="201" />
+	<passive tags="guppy" gfx="Blighted Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Blighted Guppy" description="Died in your place" id="202" />
+	<passive tags="guppy" gfx="Golden Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Golden Guppy" description="Shining in your place" id="203" />
+	<passive tags="guppy" gfx="Blood Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Brimstone Guppy" description="Sacrificed in your place" id="204" />
+	<passive tags="guppy" gfx="Divine Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Divine Guppy" description="Blessed in your place" id="205" />
 	<active gfx="Mega D4.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D4" description="..." id="206" />
 	<active gfx="Mega D6.png" quality="5" devilprice="2" shopprice="15" maxcharges="6" name="Mega D6" description="Reroll reroll reroll" id="207" />
 	<active cache="damage firedelay speed range shotspeed luck" gfx="Mega D8.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D8" description="..." id="208" />
