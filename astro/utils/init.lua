@@ -534,6 +534,11 @@ end
 ---@param player EntityPlayer
 ---@param trinketType TrinketType
 function Astro:SmeltTrinket(player, trinketType)
+    if REPENTOGON then
+        player:AddSmeltedTrinket(trinketType)
+        return
+    end
+
     isc:smeltTrinket(player, trinketType)
 end
 

@@ -46,7 +46,7 @@ end
 ---@param name string
 ---@param description string
 ---@param eidDescription string
----@param golden string
+---@param golden string?
 ---@param language string?
 function Astro.EID:AddTrinket(id, name, description, eidDescription, golden, language)
     language = language or "ko_kr"
