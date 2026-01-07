@@ -33,7 +33,7 @@
 	<passive gfx="Fallen Orb.png" quality="4" devilprice="2" shopprice="20" name="Fallen Orb" description="Destined for grievous" id="32" />
 	<passive gfx="Trinity.png" quality="2" devilprice="1" name="Trinity" description="In the name of the Father, Son, and Spirit" id="33" />
 	<passive gfx="Blood Of Hatred.png" quality="2" devilprice="1" shopprice="5" tags="devil" blackhearts="2" name="Blood Of Hatred" description="Revenge distilled in every drop of blood" id="34" />
-	<passive gfx="Divine Light.png" quality="3" devilprice="2" name="Divine Light" description="Light the way" id="35" />
+	<passive gfx="Divine Light.png" quality="3" hidden="true" devilprice="2" name="Divine Light" description="Light the way" id="35" />
 	<passive gfx="Omega 321.png" quality="2" devilprice="1" name="Omega 321" description="The Moonwatch" id="36" />
 	<passive cache="damage" gfx="Reincarnation.png" quality="3" devilprice="1" shopprice="20" tags="noeden" name="Reincarnation" description="Returning Life" id="37" />
 	<passive gfx="Acute Sinusitis.png" quality="3" devilprice="1" name="Acute Sinusitis" description="Tasty boogers" id="38" />
