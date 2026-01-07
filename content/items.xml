@@ -194,7 +194,7 @@
 	<passive cache="luck" gfx="Lucky Coin Bundle.png" quality="2" devilprice="1" shopprice="4" name="Lucky Coin Bundle" description="Luck is 70%, skill is 30%" id="193" />
 	<passive gfx="Retrograde Arcana.png" quality="3" devilprice="2" shopprice="15" name="Retrograde Arcana" description="ynitsed desreveR" id="194" />
 	<passive gfx="Techrapod.png" quality="3" devilprice="2" shopprice="15" name="Techrapod" description="Triangular laser" id="195" />
-	<passive gfx="Throw Bomb.png" quality="2" devilprice="1" shopprice="15" bombs="5" name="Throw Bomb" description="Fire in the hole!" id="196" />
+	<passive gfx="Throw Bomb.png" quality="2" devilprice="1" shopprice="5" bombs="5" name="Throw Bomb" description="Fire in the hole!" id="196" />
 	<active gfx="Love Letter.png" quality="2" devilprice="2" maxcharges="1" chargetype="special" shopprice="15" name="Love Letter" description="Return to sender" id="197" />
 	<passive gfx="Mayushii's Pocket Watch.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Mayushii's Pocket Watch" description="..." id="198" />
 	<passive gfx="Scales of Obedience.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Scales of Obedience" description="..." id="199" />
