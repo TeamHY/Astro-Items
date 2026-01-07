@@ -58,7 +58,9 @@ Astro:AddCallback(
 
                     for _ = 1, player:GetCollectibleNum(Astro.Collectible.SCORPIO_EX) do
                         if rng:RandomFloat() < POISON_FLY_CHANCE + player.Luck / 20 then
-                            Isaac.Spawn(EntityType.ENTITY_FAMILIAR, FamiliarVariant.BLUE_FLY, 2, player.Position, Vector(0, 0), player)
+                            local fly = Isaac.Spawn(EntityType.ENTITY_FAMILIAR, FamiliarVariant.BLUE_FLY, 2, player.Position, Vector(0, 0), player)
+                            fly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+                            
                             data["scorpioExCooldown"] = Game():GetFrameCount() + POISON_FLY_COOL / player:GetCollectibleNum(Astro.Collectible.SCORPIO_EX)
                         end
                     end

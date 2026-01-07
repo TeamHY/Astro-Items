@@ -161,6 +161,9 @@ Astro:AddCallback(
         if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_ARIES) then
             hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_ARIES)
         end
+
+        local ic = Isaac.GetItemConfig()
+        player:RemoveCostume(ic:GetCollectible(CollectibleType.COLLECTIBLE_ARIES))
     end,
     Astro.Collectible.ARIES_EX
 )

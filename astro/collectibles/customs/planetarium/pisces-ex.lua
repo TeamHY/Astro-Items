@@ -1,3 +1,5 @@
+Astro.Collectible.PISCES_EX = Isaac.GetItemIdByName("Pisces EX")
+
 ---
 
 local SPAWN_CHANCE = 0.05    -- 기본 소환 확률
@@ -14,7 +16,7 @@ local WATER_SPLASH_VARIANT = 3112
 
 ---
 
-Astro.Collectible.PISCES_EX = Isaac.GetItemIdByName("Pisces EX")
+local PISCES_EX_VARIANT = 3114
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -193,4 +195,31 @@ Astro:AddCallback(
         end
     end,
     EffectVariant.WHIRLPOOL
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, PISCES_EX_VARIANT, 0, player.Position, Vector.Zero, nil):ToEffect()
+        effect.Parent = player
+        effect:FollowParent(player)
+        effect:AddEntityFlags(EntityFlag.FLAG_PERSISTENT)
+    end,
+    Astro.Collectible.PISCES_EX
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local parent = effect.Parent
+        if parent ~= nil and parent:ToPlayer() and parent:ToPlayer():HasCollectible(Astro.Collectible.PISCES_EX) then
+            effect.Velocity = parent.Velocity
+        else
+            effect:Remove()
+        end
+    end,
+    PISCES_EX_VARIANT
 )

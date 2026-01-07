@@ -75,4 +75,6 @@
     </entity>
     <entity name="Knife Hitbox" anm2path="008.001_bone club.anm2" id="1000" variant="3113" collisionMass="0" friction="1">
     </entity>
+    <entity name="Pisces EX" anm2path="pisces_ex.anm2" id="1000" variant="3114" collisionMass="0" friction="1">
+    </entity>
 </entities>
