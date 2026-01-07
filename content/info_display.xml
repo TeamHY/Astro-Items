@@ -857,6 +857,8 @@
 		<info text="Gives Isaac curse of the maze for the rest of the run"/>
 		<info text="Immunity to floor curses except the curse of the maze"/>
 	</collectible>
+	<collectible id="221">
+	</collectible>
 </collectibles>
 
 <trinkets>
