@@ -13,6 +13,15 @@ Astro:AddCallback(
                 "↑ {{Bomb}}폭탄 +10" ..
                 "#{{Collectible583}} 폭탄 대신 기가 로켓이 나가며 기가 로켓은 공격방향으로 날아가 폭발합니다."
             )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SUPER_ROCKET_IN_A_JAR,
+                "Super Rocekt in a jar",
+                "",
+                "↑ {{Bomb}} +10 Bombs" ..
+                "#{{Collectible583}} Placing a bomb while shooting fires a Giga Rocket in that direction instead",
+                nil, "en_us"
+            )
         end
     end
 )

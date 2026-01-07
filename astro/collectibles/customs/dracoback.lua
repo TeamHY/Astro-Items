@@ -129,7 +129,7 @@ Astro:AddCallback(
                     local index = rng:RandomInt(#entities) + 1
                     local entity = entities[index]
 
-                    Isaac.Spawn(
+                    local earser = Isaac.Spawn(
                         EntityType.ENTITY_TEAR,
                         TearVariant.ERASER,
                         0,
@@ -137,6 +137,7 @@ Astro:AddCallback(
                         Vector.Zero,
                         player
                     )
+                    earser.Visible = false
 
                     table.remove(entities, index)
                 end

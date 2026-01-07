@@ -8,8 +8,8 @@ Astro:AddCallback(
                 Astro.Trinket.EDENS_SNAKE,
                 "에덴의 뱀",
                 "선악과",
-                "#{{Collectible381}} 소지중인 상태에서 {{MegaSatanSmall}}Mega Satan, {{DeliriumSmall}}Delirium, {{MotherSmall}}Mother, {{Collectible633}}Dogma 처치시 Eden's Blessing을 1개 획득합니다." ..
-                "#!!! 피격 시 흡수됩니다." ..
+                "#소지중인 상태에서 {{MegaSatanSmall}}Mega Satan, {{DeliriumSmall}}Delirium, {{MotherSmall}}Mother 처치시 혹은 {{BeastSmall}}Beast 방 입장시 Eden's Blessing을 1개 획득합니다." ..
+                "#!!! 피격 시 흡수합니다." ..
                 "#!!! 효과 발동 시 사라집니다."
             )
 
@@ -17,8 +17,8 @@ Astro:AddCallback(
                 Astro.Trinket.EDENS_SNAKE,
                 "Eden's Snake",
                 "선악과",
-                "Defeating {{MegaSatan}}Mega Satan, {{Delirium}}Delirium, {{Mother}}Mother, and {{Collectible633}}Dogma grants an Eden's Blessing" ..
-                "#!!! Absorbed when hit." ..
+                "Defeating {{MegaSatan}} Mega Satan, {{Delirium}} Delirium, {{Mother}} Mother, or entering the {{Beast}} Beast room, grants an {{Collectible381}} Eden's Blessing" ..
+                "#!!! Taking damage, it consumes it" ..
                 "#!!! Disappeared after triggering",
                 nil, "en_us"
             )

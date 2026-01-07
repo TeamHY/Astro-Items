@@ -204,11 +204,11 @@
 	<passive tags="guppy" gfx="Golden Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Golden Guppy" description="Shining in your place" id="203" />
 	<passive tags="guppy" gfx="Blood Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Brimstone Guppy" description="Sacrificed in your place" id="204" />
 	<passive tags="guppy" gfx="Divine Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Divine Guppy" description="Blessed in your place" id="205" />
-	<active gfx="Mega D4.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D4" description="..." id="206" />
+	<active gfx="Mega D4.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D4" description="Better Destiny" id="206" />
 	<active gfx="Mega D6.png" quality="5" devilprice="2" shopprice="15" maxcharges="6" name="Mega D6" description="Reroll reroll reroll" id="207" />
-	<active cache="damage firedelay speed range shotspeed luck" gfx="Mega D8.png" quality="5" devilprice="2" shopprice="25" hidden="true" maxcharges="12" name="Mega D8" description="..." id="208" />
-	<passive gfx="Marigold.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Marigold" description="..." id="209" />
-	<passive gfx="Legacy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Legacy" description="..." id="210" />
+	<active cache="damage firedelay speed range shotspeed luck" gfx="Mega D8.png" quality="5" devilprice="2" shopprice="25" hidden="true" maxcharges="12" name="Mega D8" description="Big things come in small stats" id="208" />
+	<passive gfx="Marigold.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Marigold" description="Happiness will surely come" id="209" />
+	<passive gfx="Legacy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Legacy" description="Come back" id="210" />
 	<active gfx="P Key.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="3" initcharge="0" name="P Key" description="..." id="211" />
 	<active gfx="Bicorn.png" quality="2" devilprice="1" maxcharges="3" shopprice="15" name="Bicorn" description="..." id="212" />
 	<passive tags="tearsup" cache="firedelay" gfx="Alcohol Bottle.png" quality="2" devilprice="1" shopprice="15" name="Alcohol Bottle" description="His delight" id="213" />

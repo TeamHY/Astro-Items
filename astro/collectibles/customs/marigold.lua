@@ -1,8 +1,7 @@
----
-
 Astro.Collectible.MARIGOLD = Isaac.GetItemIdByName("Marigold")
-
 local ITEM_ID = Astro.Collectible.MARIGOLD
+
+---
 
 local SPAWN_COUNT = 3
 
@@ -10,27 +9,28 @@ local LEFT_CTRL_HOLD_DURATION = 30
 
 ---
 
-local dropActionPressTime = 0
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "마리골드",
+                "반드시 오고야 말 행복",
+                "{{BossRoom}} 보스방 클리어 시 {{ColorGold}}황금{{CR}} 장신구 " .. SPAWN_COUNT .. "개를 소환합니다." ..
+                "#{{ButtonRT}} (Ctrl)키를 누르고 있으면 소지중인 장신구를 흡수하며, 그 방의 장신구가 {{ColorGold}}황금{{CR}} 장신구로 바꿉니다."
+            )
 
-if EID then
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "마리골드",
-        "...",
-        "{{BossRoom}} 보스방 클리어 시 {{ColorGold}}황금 장신구{{CR}} 3개를 소환합니다." ..
-        "#{{ButtonRT}} (Ctrl)키를 누르고 있으면 소지중인 장신구를 흡수하며, 그 방의 장신구가 {{ColorGold}}황금 장신구{{CR}}로 바꿉니다." ..
-        "#중첩이 가능합니다."
-    )
-
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "Marigold", "",
-        "Spawns 3 golden trinkets when clearing boss rooms. Can stack." ..
-        "#Holding Drop key makes all trinkets in the room golden and absorbs held trinkets.",
-        nil,
-        "en_us"
-    )
-end
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Marigold", "",
+                "Spawns " .. SPAWN_COUNT .. " {{ColorGold}}golden{{CR}} trinkets when clearing {{BossRoom}} Boss Room" ..
+                "#{{Trinket}} Holding the drop button ({{ButtonRT}}) makes all trinkets in the room golden and absorbs held trinkets",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddUpgradeAction(
     function(player)
@@ -62,8 +62,7 @@ Astro:AddUpgradeAction(
 )
 
 local function ApplyGoldenEffect()
-    -- Game():GetRoom():GetBackdrop():GetFloorANM2():SetRenderFlags(AnimRenderFlags.GOLDEN)
-    -- TODO: 미구현
+    -- Game():GetRoom():TurnGold()
 end
 
 local function HasMidasTouch()
@@ -159,6 +158,8 @@ Astro:AddCallback(
     end
 )
 
+local dropActionPressTime = 0
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function(_)
@@ -182,6 +183,15 @@ Astro:AddCallback(
                                 EntityType.ENTITY_PICKUP,
                                 PickupVariant.PICKUP_TRINKET,
                                 pickup.SubType | TrinketType.TRINKET_GOLDEN_FLAG
+                            )
+
+                            Astro:ScheduleForUpdate(
+                                function()
+                                    local sfx = SFXManager()
+                                    sfx:Play(SoundEffect.SOUND_ULTRA_GREED_COIN_DESTROY, 0.5)
+                                    Game():SpawnParticles(pickup.Position, EffectVariant.GOLD_PARTICLE, 50, 10)
+                                end,
+                                4
                             )
                         end
                     end

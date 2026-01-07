@@ -33,7 +33,7 @@ return {
     [764] = "Rerolls {{Quality0}}/{{Quality1}} items into other items#{{Blank}} {{ColorGray}}(Rerolled items viewable in console){{CR}}",
     [765] = "!!! {{Collectible333}} The Mind, {{Collectible334}} The Body, {{Collectible335}} The Soul don't appear after pickup#Removes {{Collectible333}}/{{Collectible334}}/{{Collectible335}} on {{BossRoom}} boss clear#Removes one held item on stage entry;#{{ArrowGrayRight}} Spawns removed item and one of {{Collectible333}}/{{Collectible334}}/{{Collectible335}}#Choose one; the rest disappear",
     [766] = "!!! +2 on first pickup#↑ {{BlackHeart}} +1 Black Heart#12.5% chance to bleed enemies on room entry#{{Luck}} 100% chance at 30 Luck (+2.5%p per Luck)",
-    [767] = "10% chance to summon light beam on hit#{{Luck}} 100% chance at 18 Luck (+5%p per Luck)",
+ -- [767] = "설명 분리됨",
     [768] = "{{Slow}} Slows all enemies for a duration on room entry#!!! Duration: ({{Collectible" .. Astro.Collectible.OMEGA_321 .. "}} count * 8) seconds",
     [769] = "{{Damage}} +50% Damage per held revival item#Spawns one random revival item in the next game",
     [770] = "10% chance for sticky tears#{{Luck}} 100% chance at 45 Luck (+2%p per Luck)",
@@ -162,7 +162,7 @@ return {
     [893] = "Rerolls room items to any transformation items",
     [894] = "!!! +2 {{Collectible207}} Ball of Bandages on first pickup#Spawns Ball of Bandages on stage entry#!!! Amount: ({{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}} count + {{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}} count)",
     [895] = "Teleports to room with held items#Choosing an item from this floor teleports Isaac back to the room he came from",
-    [896] = "↑ {{Bomb}} +5 Bombs#{{Collectible583}} Throws giga rocket instead of bombs that flies and explodes",
+ -- [896] = "설명 분리됨",
     [897] = "{{Crafting17}} Spawns 10 giga bomb pickups",
     [898] = "Spawns sticky nickel that disappears after 10 seconds on hit#Turns summoned sticky nickels into giga bombs that explode on use",
     [899] = "!!! Usable only in Super Secret Room#Removes one held item on use;#{{ArrowGrayRight}} Spawns removed item and one of {{Collectible1}}/{{Collectible2}}/{{Collectible3}}#Choose one; the rest disappear#{{SuperSecretRoom}} Reveals Super Secret Room on stage 1 map",
@@ -194,6 +194,6 @@ return {
     [925] = "{{Crafting11}} Lucky penny pickups spawn as 1+1",
     [926] = "!!! Replaces all upright {{Card}} cards with reversed",
     [927] = "Creates equilateral triangle laser around character in uncleared rooms#Laser pierces and deals x1 damage per frame",
-    [928] = "↑ {{Bomb}} +5 Bombs#Throws bombs instead of placing."
+ -- [928] = "설명 분리됨"
  -- [929] = "설명 분리됨"
 }

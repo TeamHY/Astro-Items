@@ -10,24 +10,27 @@ local EFFECT_OFFSET = Vector(0, -30)
 
 local SCALES_OF_OBEDIENCE_VARIANT = Isaac.GetEntityVariantByName("Scales of Obedience")
 
-if EID then
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "복종의 천칭",
-        "↑ {{ColorCyan}}모든 세트 적용{{CR}}" ..
-        "#공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)"
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "복종의 천칭",
+                "↑ {{ColorCyan}}모든 세트 적용{{CR}}" ..
+                "#공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)"
+            )
 
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "Scales of Obedience",
-        "",
-        "Activates all set effects." ..
-        "#Erases monsters if your damage exceeds their hit points. Does not work on boss monsters.",
-        nil,
-        "en_us"
-    )
-end
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Scales of Obedience", "",
+                "Applies all transformation effects" ..
+                "#Erases monsters if Isaac's damage exceeds their health (Does not work on boss monsters)",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddUpgradeAction(
     function(player)
@@ -85,7 +88,7 @@ Astro:AddCallback(
             end
 
             if npc.HitPoints <= maxDamage then
-                Isaac.Spawn(
+                local eraser = Isaac.Spawn(
                     EntityType.ENTITY_TEAR,
                     TearVariant.ERASER,
                     0,
@@ -93,6 +96,7 @@ Astro:AddCallback(
                     Vector.Zero,
                     nil
                 )
+                earser.Visible = false
             end
 
             ::continue::
@@ -116,7 +120,7 @@ Astro:AddCallback(
             end
 
             if maxDamage ~= 0 and npc.HitPoints <= maxDamage then
-                Isaac.Spawn(
+                local eraser =  Isaac.Spawn(
                     EntityType.ENTITY_TEAR,
                     TearVariant.ERASER,
                     0,
@@ -124,6 +128,7 @@ Astro:AddCallback(
                     Vector.Zero,
                     nil
                 )
+                earser.Visible = false
             end
         end
     end

@@ -4,7 +4,6 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            -- 중첩 수 만큼 독립 시행으로 반복하기 때문에 여러번 발동할 수 있음.
             Astro.EID:AddCollectible(
                 Astro.Collectible.DIVINE_LIGHT,
                 "신의 조명",
@@ -13,6 +12,17 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 18 이상일 때 100% 확률 (행운 1당 +5%p)",
                 -- 중첩 시
                 "중첩된 수만큼 빛줄기 소환 시도"
+            )
+            
+            Astro.EID:AddCollectible(
+                Astro.Collectible.DIVINE_LIGHT,
+                "Divine Light",
+                "",
+                "10% chance to summon light beams on hit" ..
+                "#{{Luck}} 100% chance at 18 Luck (+5%p per Luck)",
+                -- Stacks
+                "Stacks summon additional light beams",
+                "en_us"
             )
         end
     end

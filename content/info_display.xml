@@ -878,8 +878,8 @@
 		<info tag="1" text="Reveals curse rooms on the map"/>
 	</trinket>
 	<trinket id="5">
-		<info text="Defeating Mega Satan, Delirium, Mother, or Dogma spawns Eden's Blessing"/>
-		<info text="This trinket disappeared after triggering"/>
+		<info text="Defeating Mega Satan, Delirium, Mother, or Dogma grants an Eden's Blessing"/>
+		<info text="Taking damage absorbs the trinket"/>
 	</trinket>
 	<trinket id="6">
 		<info text="Chance to spawn a lil' battery each time you pick up a coin"/>

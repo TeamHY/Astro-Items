@@ -12,6 +12,15 @@ Astro:AddCallback(
                 "#폭탄을 설치하지 않고 투척합니다."
             )
 
+            Astro.EID:AddCollectible(
+                Astro.Collectible.THROW_BOMB,
+                "Throw Bomb",
+                "",
+                "↑ {{Bomb}} +5 Bombs" ..
+                "#Throws bombs instead of placing",
+                nil, "en_us"
+            )
+
             --[[
             EID:addCondition(
                 "5.100.52",   -- Dr. Fetus
@@ -25,6 +34,13 @@ Astro:AddCallback(
                 { "5.100." .. tostring(Astro.Collectible.THROW_BOMB) },
                 "{{ColorYellow}}로켓을 손에 들고 발사함{{CR}}",
                 nil, "ko_kr", nil
+            )
+
+            EID:addCondition(
+                "5.100.583",    -- Rocket in a Jar
+                { "5.100." .. tostring(Astro.Collectible.THROW_BOMB) },
+                "{{ColorYellow}}Launched while holding a rocket{{CR}}",
+                nil, "en_us", nil
             )
         end
     end
