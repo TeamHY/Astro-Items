@@ -180,7 +180,7 @@ return {
     [911] = "Darkens room and creates moonlight in center on use;#{{ArrowGrayRight}} Spawns {{Card74}} XVIII - The Moon? once per game#Creates moonlight in center on first entry to {{TreasureRoom}} treasure room, {{Shop}} shop, {{BossRoom}} boss room#{{Collectible589}} {{ColorGray}}(Moonlight contact: +0.5 {{HalfSoulHeart}} Soul Heart, +0.5 Fire rate (cap) for stage){{CR}}",
  -- [912] = "설명 분리됨",
  -- [913] = "설명 분리됨",
-    [914] = "Randomly instantly kills enemies with x3 damage tears that burst in 10 directions#{{Luck}} 100% chance at 14.5 Luck",
+ -- [914] = "설명 분리됨",
     [915] = "!!! {{Collectible362}} Lil Chest doesn't appear after pickup#25% chance to spawn {{Heart}} Heart, {{Coin}} Coin, {{Key}} Key on room clear#Spawns random trinket every 5 rooms cleared",
     [916] = "!!! {{Collectible4}} Cricket's Head doesn't appear while held#↑ {{Damage}} +0.5 Damage#↑ {{Damage}} x1.5 Damage multiplier",
     [917] = "{{Tears}} +0.5 Fire rate while held#{{Timer}} +2 Fire rate in the room on use",

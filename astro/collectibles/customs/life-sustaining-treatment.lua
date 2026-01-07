@@ -1,17 +1,30 @@
-local isc = require("astro.lib.isaacscript-common")
-local hiddenItemManager = require("astro.lib.hidden_item_manager")
-
 Astro.Collectible.LIFE_SUSTAINING_TREATMENT = Isaac.GetItemIdByName("Life-Sustaining Treatment")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.LIFE_SUSTAINING_TREATMENT,
-        "연명치료",
-        "이토록 시린 아픔만이",
-        "확률적으로 공격력 x3의 적을 즉사시키며 눈물이 10방향으로 퍼지는 공격이 나갑니다." ..
-        "#{{LuckSmall}} 행운 14.5 이상일 때 100% 확률"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LIFE_SUSTAINING_TREATMENT,
+                "연명치료",
+                "이토록 시린 아픔만이",
+                "확률적으로 공격력 x3의 적을 즉사시키며 눈물이 10방향으로 퍼지는 공격이 나갑니다." ..
+                "#{{LuckSmall}} 행운 14.5 이상일 때 100% 확률"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LIFE_SUSTAINING_TREATMENT,
+                "Life-Sustaining Treatment",
+                "",
+                "Chance to shoot a needle" ..
+                "#{{Luck}} 100% chance at 14.5 luck" ..
+                "#Needles kill normal enemies instantly, bursting them into 10 tears" ..
+                "#{{Damage}} Needles deal 3x Isaac's damage against bosses",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 local function CheckNeedleChance(player)
     local rng = player:GetCollectibleRNG(Astro.Collectible.LIFE_SUSTAINING_TREATMENT)

@@ -743,9 +743,9 @@
 		<info text="Single use"/>
 	</collectible>
 	<collectible id="182">
-		<info text="Fires needle shots dealing x3 Isaac's damage with low chance"/>
+		<info text="Chance to fire needle shots that deal 3x Isaac's damage"/>
 		<info text="Chance increases with luck"/>
-		<info text="Needle shots instantly kill normal monsters and fire a 10-way needle ring"/>
+		<info text="Needle shots that strike a regular monster will kill it instantly and launch 10 needle shots in a ring"/>
 	</collectible>
 	<collectible id="183">
 		<info text="Familiar that drops one of hearts, coins, or keys with chance upon clearing a room, and a random trinket every 5 rooms"/>
