@@ -206,7 +206,7 @@
 	<passive tags="guppy" gfx="Divine Guppy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Divine Guppy" description="Blessed in your place" id="205" />
 	<active gfx="Mega D4.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D4" description="..." id="206" />
 	<active gfx="Mega D6.png" quality="5" devilprice="2" shopprice="15" maxcharges="6" name="Mega D6" description="Reroll reroll reroll" id="207" />
-	<active cache="damage firedelay speed range shotspeed luck" gfx="Mega D8.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="6" name="Mega D8" description="..." id="208" />
+	<active cache="damage firedelay speed range shotspeed luck" gfx="Mega D8.png" quality="5" devilprice="2" shopprice="25" hidden="true" maxcharges="12" name="Mega D8" description="..." id="208" />
 	<passive gfx="Marigold.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Marigold" description="..." id="209" />
 	<passive gfx="Legacy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Legacy" description="..." id="210" />
 	<active gfx="P Key.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="3" initcharge="0" name="P Key" description="..." id="211" />

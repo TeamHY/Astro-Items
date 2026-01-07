@@ -6,27 +6,27 @@ local ITEM_ID = Astro.Collectible.MEGA_D8
 
 local SPEED_MIN = 1.0
 
-local SPEED_MAX = 3.0
+local SPEED_MAX = 2.0
 
 local TEARS_MIN = 1.0
 
-local TEARS_MAX = 3.0
+local TEARS_MAX = 2.0
 
 local DAMAGE_MIN = 1.0
 
-local DAMAGE_MAX = 3.0
+local DAMAGE_MAX = 2.0
 
 local RANGE_MIN = 1.0
 
-local RANGE_MAX = 3.0
+local RANGE_MAX = 2.0
 
 local SHOTSPEED_MIN = 1.0
 
-local SHOTSPEED_MAX = 3.0
+local SHOTSPEED_MAX = 2.0
 
 local LUCK_MIN = 1.0
 
-local LUCK_MAX = 3.0
+local LUCK_MAX = 2.0
 
 ---
 
@@ -42,7 +42,7 @@ if EID then
         "대왕 8면체 주사위",
         "능력치 증폭기",  --임시 플레이버
         "사용 시 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{ShotspeedSmall}}탄속, {{LuckSmall}}행운 중 하나를 선택하며;" ..
-        "#{{ArrowGrayRight}} 선택한 능력치의 배율을 x1.0 ~ x3.0로 바꿉니다." ..
+        "#{{ArrowGrayRight}} 선택한 능력치의 배율을 x1.0 ~ x2.0로 바꿉니다." ..
         "#!!! 같은 능력치에 재사용 시 기존 능력치 초기화"
     )
 
