@@ -168,7 +168,7 @@ require "astro.collectibles.customs.canned-bread"
 require "astro.collectibles.customs.pure-gold-copter"
 require "astro.collectibles.customs.birthright-maggy"
 require "astro.collectibles.customs.dango"
-require "astro.collectibles.customs.berry-flavored-medicine"
+require "astro.collectibles.customs.strawberry-medicine"
 
 --#region PLANETARIUM
 
