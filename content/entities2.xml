@@ -77,4 +77,6 @@
     </entity>
     <entity name="Pisces EX" anm2path="pisces_ex.anm2" id="1000" variant="3114" collisionMass="0" friction="1">
     </entity>
+    <entity name="Albireo Poof" anm2path="effect_albireo.anm2" id="1000" variant="3115" collisionMass="0" friction="1">
+    </entity>
 </entities>

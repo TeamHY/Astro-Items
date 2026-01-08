@@ -1,12 +1,11 @@
+local isc = require("astro.lib.isaacscript-common")
+Astro.Collectible.ALBIREO = Isaac.GetItemIdByName("Albireo")
+
 ---
 
 local ALL_STAT_MULTIPLIER = 1.1
 
 ---
-
-local isc = require("astro.lib.isaacscript-common")
-
-Astro.Collectible.ALBIREO = Isaac.GetItemIdByName("Albireo")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -40,6 +39,8 @@ Astro:AddCallback(
     end
 )
 
+local ALIBREO_POOF_VARIANT = 3115
+
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
     ---@param collectibleID CollectibleType
@@ -55,7 +56,7 @@ Astro:AddCallback(
 
             if Astro.PLANETARIUM_UPGRADE_LIST[id] then
                 pickup:Morph(pickup.Type, pickup.Variant, Astro.PLANETARIUM_UPGRADE_LIST[id].Id, true)
-                Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, -1, pickup.Position, pickup.Velocity, playerWhoUsedItem)
+                Game():SpawnParticles(pickup.Position + Vector(0, 0.1), ALIBREO_POOF_VARIANT, 1, 0)
             end
         end
 
@@ -74,6 +75,21 @@ Astro:AddCallback(
         }
     end,
     Astro.Collectible.ALBIREO
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local sprite = effect:GetSprite()
+        sprite.Scale = Vector(1.5, 1.5)
+        effect.SpriteOffset = Vector(0, -8)
+
+        if sprite:IsFinished() then
+            effect:Remove()
+        end
+    end,
+    ALIBREO_POOF_VARIANT
 )
 
 Astro:AddCallbackCustom(
