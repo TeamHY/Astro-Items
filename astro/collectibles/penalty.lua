@@ -23,6 +23,7 @@ local PENALTY_REMOVE_ITEMS = {
         CollectibleType.COLLECTIBLE_MIND,
         CollectibleType.COLLECTIBLE_GOAT_HEAD,
         CollectibleType.COLLECTIBLE_EUCHARIST,
+        CollectibleType.COLLECTIBLE_SOL,
         Astro.Collectible.UNHOLY_MANTLE,
         Astro.Collectible.OMEGA_321,
     },
