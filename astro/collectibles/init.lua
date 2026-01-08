@@ -169,6 +169,7 @@ require "astro.collectibles.customs.pure-gold-copter"
 require "astro.collectibles.customs.birthright-maggy"
 require "astro.collectibles.customs.dango"
 require "astro.collectibles.customs.strawberry-medicine"
+require "astro.collectibles.customs.chronos"
 
 --#region PLANETARIUM
 

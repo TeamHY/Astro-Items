@@ -21,10 +21,14 @@ Astro.EID.QualityIcon:LoadGraphics()
 Astro.EID.ModIndicator = Sprite()
 Astro.EID.ModIndicator:Load("gfx/ui/eid/astro_indicator.anm2", true)
 
+Astro.EID.FamiliarIcon = Sprite()
+Astro.EID.FamiliarIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
+
 if EID then
     EID:addIcon("Quality5", "Quality5", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
     EID:addIcon("Quality6", "Quality6", 0, 10, 10, 0, 0, Astro.EID.QualityIcon)
     EID:addIcon("ASTRO_EID_INDICATOR", "Idle", 0, 16, 16, 1, -3, Astro.EID.ModIndicator)
+    EID:addIcon("FamiliarIcon", "familiar", 0, 12, 12, 5, 5, Astro.EID.FamiliarIcon)
 end
 
 
@@ -223,7 +227,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            for i = Astro.Collectible.CYGNUS, Astro.Collectible.BERRY_FLAVORED_MEDICINE do
+            for i = Astro.Collectible.CYGNUS, Astro.Collectible.CHRONOS do
                 local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES
                 local desc = Astro.EID.EnglishDescAI[i - modItemOffset]
                 Astro.EID:AddCollectible(i, "", "", desc, nil, "en_us")

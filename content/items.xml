@@ -220,6 +220,7 @@
 	<passive gfx="Birthright - Maggy.png" quality="1" devilprice="1" shopprice="2" name="Maggy's Frame" description="Lethal hug" id="219" />
 	<passive tags="noeden" gfx="Dango.png" quality="1" devilprice="1" shopprice="5" hearts="4" maxhearts="2" name="Dango" description="You feel abandoned" id="220" />
 	<passive cache="damage" gfx="placeholder.png" hidden="true" quality="2" devilprice="1" shopprice="5" name="Strawberry Medicine" description="Where did my radiant self fly off to" id="221" />
+	<active gfx="Chronos.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" hidden="true" name="Chronos" description="He who devoured his own child" id="222" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

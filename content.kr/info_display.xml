@@ -861,6 +861,9 @@
 	</collectible>
 	<collectible id="221">
 	</collectible>
+	<collectible id="222">
+		<info text="방 안의 모든 패밀리어 아이템마다 각자 정해진 아이템으로 리롤합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

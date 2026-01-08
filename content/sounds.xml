@@ -51,4 +51,7 @@
     <sound name="BloodGuppySwirl">
         <sample weight="1" path="feedback/blood-guppy-swirl.wav" />
     </sound>
+    <sound name="ChronosUse">
+        <sample weight="1" path="feedback/chronos-use.wav" />
+    </sound>
 </sounds>

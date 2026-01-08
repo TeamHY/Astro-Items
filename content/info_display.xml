@@ -859,6 +859,9 @@
 	</collectible>
 	<collectible id="221">
 	</collectible>
+	<collectible id="222">
+		<info text="Rerolls every familiiar items in the room with its own assigned item"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
