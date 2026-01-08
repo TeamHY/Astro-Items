@@ -74,6 +74,7 @@ Astro:AddCallback(
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
         local success = false
+        local game = Game()
         local sfx = SFXManager()
         if SoundEffect.SOUND_ITEM_RAISE and sfx:IsPlaying(SoundEffect.SOUND_ITEM_RAISE) then
             sfx:Stop(SoundEffect.SOUND_ITEM_RAISE)
@@ -87,7 +88,7 @@ Astro:AddCallback(
                 for targetItemId, newItemId in pairs(returnItems) do
                     if item.SubType == targetItemId then
                         item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItemId, true)
-                        Game():MakeShockwave(item.Position, 0.066, 0.02, 20)
+                        game:MakeShockwave(item.Position, 0.1, 0.02, 20)
                         success = true
                     end
                 end
@@ -95,7 +96,14 @@ Astro:AddCallback(
         end
 
         if success then
+            local backdropType = game:GetRoom():GetBackdropType()
+            game:ShowHallucination(40, backdropType)
+
+            if sfx:IsPlaying(SoundEffect.SOUND_DEATH_CARD) then
+                sfx:Stop(SoundEffect.SOUND_DEATH_CARD)
+            end
             sfx:Play(Astro.SoundEffect.CHRONOS)
+            
             return {
                 Discharge = true,
                 Remove = false,
