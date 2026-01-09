@@ -28,7 +28,7 @@ return {
     [759] = "!!! Removes all held {{Planetarium}} Planetarium items on pickup;#{{ArrowGrayRight}} Spawns that many {{Planetarium}} Planetarium items",
     [760] = "Tears gain orbiting tears that deal x0.5 damage",
     [761] = "↑ {{Tears}} +0.7 Fire rate",
-    [762] = "{{Card41}} Absorbs room items and +2 random stats per item#{{Card41}} Absorbs room pickups and spawns blue flies/spiders per count#{{Collectible35}} Deals 40 damage to all enemies in the room",
+ -- [762] = "설명 분리됨",
     [763] = "!!! Teleports to Home stage on pickup",
     [764] = "Rerolls {{Quality0}}/{{Quality1}} items into other items#{{Blank}} {{ColorGray}}(Rerolled items viewable in console){{CR}}",
     [765] = "!!! {{Collectible333}} The Mind, {{Collectible334}} The Body, {{Collectible335}} The Soul don't appear after pickup#Removes {{Collectible333}}/{{Collectible334}}/{{Collectible335}} on {{BossRoom}} boss clear#Removes one held item on stage entry;#{{ArrowGrayRight}} Spawns removed item and one of {{Collectible333}}/{{Collectible334}}/{{Collectible335}}#Choose one; the rest disappear",

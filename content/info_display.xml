@@ -129,6 +129,7 @@
 		<info text="Absorbs all pedestal items in the room and grants random stat ups for each absorbed"/>
 		<info text="Turns all pickups in the room into blue flies and spiders"/>
 		<info text="Deals 40 damage to all enemies in the room"/>
+		<info text="Drops a Black Rune on pickup"/>
 	</collectible>
 	<collectible id="31">
 		<info text="Astro-rules only"/>
