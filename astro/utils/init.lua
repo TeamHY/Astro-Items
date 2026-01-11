@@ -584,3 +584,16 @@ function Astro:FindGuppyItems(player)
     
     return guppyItems
 end
+
+---@param player EntityPlayer
+---@param item CollectibleType
+---@return ActiveSlot[]
+function Astro:GetPlayerActiveItemSlot(player, item)
+    for slot = ActiveSlot.SLOT_PRIMARY, ActiveSlot.SLOT_POCKET do
+        if player:GetActiveItem(slot) == item then
+            return slot
+        end
+    end
+
+    return nil
+end
