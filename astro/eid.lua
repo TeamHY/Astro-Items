@@ -56,6 +56,7 @@ function Astro.EID:AddTrinket(id, name, description, eidDescription, golden, lan
     language = language or "ko_kr"
 
     if EID then
+				EID._currentMod = "AstroItems" -- 반드시 RegisterMod의 이름과 동일해야 함
         EID:setModIndicatorName("Astrobirth")
         EID:setModIndicatorIcon("ASTRO_EID_INDICATOR")
         EID:addTrinket(id, eidDescription, name, language)
@@ -63,6 +64,7 @@ function Astro.EID:AddTrinket(id, name, description, eidDescription, golden, lan
         if golden then
             EID:addGoldenTrinketMetadata(id, golden, nil, nil, language)
         end
+				EID._currentMod = "AstroItems_reserved" -- 다른 모드가 출신 모드 덮어씌우는거 방지
     end
     
     Astro.EID.Trinket[language][id] = {
