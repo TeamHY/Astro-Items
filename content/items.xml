@@ -209,8 +209,8 @@
 	<active cache="damage firedelay speed range shotspeed luck" gfx="Mega D8.png" quality="5" devilprice="2" shopprice="25" hidden="true" maxcharges="12" name="Mega D8" description="Big things come in small stats" id="208" />
 	<passive gfx="Marigold.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Marigold" description="Happiness will surely come" id="209" />
 	<passive gfx="Legacy.png" quality="5" devilprice="2" shopprice="15" hidden="true" name="Legacy" description="Come back" id="210" />
-	<active gfx="P Key.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="3" initcharge="0" name="P Key" description="..." id="211" />
-	<active gfx="Bicorn.png" quality="2" devilprice="1" maxcharges="3" shopprice="15" name="Bicorn" description="..." id="212" />
+	<active gfx="P Key.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="3" initcharge="0" name="P Key" description="Stop!" id="211" />
+	<active gfx="Bicorn.png" quality="2" devilprice="1" maxcharges="3" shopprice="15" name="Bicorn" description="A horse a maiden cannot ride" id="212" />
 	<passive tags="tearsup" cache="firedelay" gfx="Alcohol Bottle.png" quality="2" devilprice="1" shopprice="15" name="Alcohol Bottle" description="His delight" id="213" />
 	<active gfx="Plunger.png" quality="0" devilprice="1" maxcharges="3" shopprice="15" name="Plunger" description="Meow!" id="214" />
 	<passive cache="damage" gfx="Decisive Strike.png" quality="3" devilprice="1" shopprice="4" name="Decisive Strike" description="There is nothing to be scared of" id="215" />

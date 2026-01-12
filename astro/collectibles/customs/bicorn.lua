@@ -1,3 +1,5 @@
+Astro.Collectible.BICORN = Isaac.GetItemIdByName("Bicorn")
+
 ---
 
 local BICORN_USES_MALE = 3
@@ -5,21 +7,6 @@ local BICORN_USES_MALE = 3
 local BICORN_USES_FEMALE = 6
 
 ---
-
-Astro.Collectible.BICORN = Isaac.GetItemIdByName("Bicorn")
-
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.BICORN,
-        "바이콘",
-        "...",
-        "#사용 시 6초간 무적이 되며 빠르게 이동합니다." ..
-        "#{{Blank}} 무적 상태에서 적이 죽을 경우 같은 몬스터가 이번 게임 내에 등장하지 않습니다." ..
-        "#스테이지당 사용 횟수가 제한됩니다:" ..
-        "#{{Blank}} - 남성 캐릭터: " .. BICORN_USES_MALE .. "번" ..
-        "#{{Blank}} - 여성 캐릭터: " .. BICORN_USES_FEMALE .. "번"
-    )
-end
 
 local femaleCharacters = {}
 
@@ -42,6 +29,30 @@ Astro:AddCallback(
             Astro.Players.STELLAR,
             Astro.Players.STELLAR_B,
         }
+
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BICORN,
+                "바이콘",
+                "처녀는 탈 수 없는 말",
+                "{{Timer}} 사용 시 6초간:" ..
+                "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도 +0.28" ..
+                "#{{ArrowGrayRight}} 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
+                "#{{Collectible638}} 무적 상태에 죽인 몬스터는 해당 게임에서 제외되어 다시 등장하지 않습니다." ..
+                "#!!! 스테이지 당 남성 캐릭터는 " .. BICORN_USES_MALE .. "번, 여성 캐릭터는 " .. BICORN_USES_FEMALE .. "번 사용할 수 있습니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BICORN,
+                "Bicorn", "...",
+                "{{Timer}} Receive for 6 seconds:" ..
+                "#↑ {{Speed}} +0.28 Speed" ..
+                "#Isaac can't shoot but deals 40 contact damage per second" ..
+                "#Grants invincibility, and enemies killed during this state will not spawn again for the rest of the run" ..
+                "#!!! Can only be used " .. BICORN_USES_MALE .. " times per floor by male characters and " .. BICORN_USES_FEMALE .. " times by female characters",
+                nil, "en_us"
+            )
+        end
     end
 )
 
