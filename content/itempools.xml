@@ -757,7 +757,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas' Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Lost's Frame" Weight="0.9" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -942,7 +942,7 @@
 
 		<Item Name="Absolut Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas' Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Lost's Frame" Weight="0.9" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Original Sinful Spoils - Snake Eye" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1002,7 +1002,7 @@
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas' Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1131,7 +1131,7 @@
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas' Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1267,7 +1267,7 @@
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas' Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1328,7 +1328,7 @@
 
 		<Item Name="Lucky Rock Bottom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Judas's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Judas' Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="The Lost's Frame" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Duality - Light and Darkness" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>

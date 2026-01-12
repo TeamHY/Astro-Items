@@ -1,6 +1,6 @@
 local isc = require("astro.lib.isaacscript-common")
 
-Astro.Collectible.BIRTHRIGHT_JUDAS = Isaac.GetItemIdByName("Judas's Frame")
+Astro.Collectible.BIRTHRIGHT_JUDAS = Isaac.GetItemIdByName("Judas' Frame")
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -48,6 +48,8 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
+        if activeSlot < 0 then return end
+        
         if playerWhoUsedItem:HasCollectible(Astro.Collectible.BIRTHRIGHT_JUDAS) then
             local data = Astro:GetPersistentPlayerData(playerWhoUsedItem)
             local maxCharges = Isaac.GetItemConfig():GetCollectible(collectibleID).MaxCharges
