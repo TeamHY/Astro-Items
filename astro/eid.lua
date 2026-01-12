@@ -35,14 +35,10 @@ end
 ------ 함수 ------
 ---@return string
 local function GetLanguage()
-    if EID then
-        return EID:getLanguage()
+    if Options.Langauge == "kr" or REPKOR then
+        return "ko_kr"
     else
-        if Options.Langauge == "kr" or REPKOR then
-            return "ko_kr"
-        else
-            return "en_us"
-        end
+        return "en_us"
     end
 end
 
@@ -274,7 +270,7 @@ if REPENTOGON then
         Astro.Callbacks.MOD_INIT,
         CallbackPriority.LATE,
         function()
-            if not (Options.Language == "kr" or REPKOR) then goto continue end
+            if GetLanguage() ~= "ko_kr" then goto continue end
             local conf = Isaac.GetItemConfig()
 
             if Astro.EID.Collectible then
