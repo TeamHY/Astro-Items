@@ -215,11 +215,11 @@
 	<active gfx="Plunger.png" quality="0" devilprice="1" maxcharges="3" shopprice="15" name="Plunger" description="Meow!" id="214" />
 	<passive cache="damage" gfx="Decisive Strike.png" quality="3" devilprice="1" shopprice="4" name="Decisive Strike" description="There is nothing to be scared of" id="215" />
 	<passive gfx="Casey.png" quality="2" devilprice="1" shopprice="5" name="Casey" description="Who's on first" id="216" />
-	<passive tags="noeden nolostbr nocantrip food" gfx="Canned Bread.png" quality="1" hidden="true" shopprice="5" hearts="4" maxhearts="2" name="Canned Bread" description="Wow, they have it!" id="217" />
+	<passive tags="noeden nolostbr nocantrip food" gfx="Canned Bread.png" quality="1" shopprice="5" hearts="4" maxhearts="2" name="Canned Bread" description="Wow, they have it!" id="217" />
 	<passive tags="nolostbr" cache="flying" gfx="Pure Gold Copter.png" quality="2" devilprice="1" shopprice="8" name="24K Copter" description="Instead, it's ultra-compact" id="218" />
 	<passive gfx="Birthright - Maggy.png" quality="1" devilprice="1" shopprice="2" name="Maggy's Frame" description="Lethal hug" id="219" />
 	<passive tags="noeden" gfx="Dango.png" quality="1" devilprice="1" shopprice="5" hearts="4" maxhearts="2" name="Dango" description="You feel abandoned" id="220" />
-	<passive cache="damage" gfx="placeholder.png" hidden="true" quality="3" devilprice="1" shopprice="15" name="Strawberry Medicine" description="Where did my radiant self fly off to" id="221" />
+	<passive cache="damage" gfx="Strawberry Medicine.png" quality="3" devilprice="1" shopprice="15" name="Strawberry Medicine" description="Where did my radiant self fly off to" id="221" />
 	<active gfx="Chronos.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" hidden="true" name="Chronos" description="He who devoured his own child" id="222" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
