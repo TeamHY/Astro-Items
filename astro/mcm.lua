@@ -1,4 +1,4 @@
-Astro.Data["ShowQ5Hint"] = 1
+Astro.Data["ShowQ5Hint"] = 0
 Astro.Data["TaurusExMode"] = 0
 Astro.Data["TaurusExKeyBind"] = Keyboard.KEY_V
 
