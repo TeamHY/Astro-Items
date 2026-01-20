@@ -9,7 +9,8 @@ Astro:AddCallback(
                 "퀘이사",
                 "초강력 블랙홀",
                 "{{Collectible512}} 방마다 처음으로 죽은 적의 위치에 블랙홀을 소환합니다." ..
-                "#방 클리어 시 10초동안 무적이 됩니다.",
+                "#방 클리어 시 10초동안 무적이 됩니다." ..
+                "#{{ColorRed}}패널티 피격 시 제거됩니다. 해당 패널티는 무효화됩니다.",
                 -- 중첩 시
                 "중첩 시 방을 입장하면 10초동안 무적"
             )
@@ -73,6 +74,17 @@ Astro:AddCallback(
 
                 -- break
             end
+        end
+    end
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.PLAYER_TAKE_PENALTY,
+    ---@param player EntityPlayer
+    function(_, player)
+        if player:HasCollectible(Astro.Collectible.QUASAR) then
+            player:RemoveCollectible(Astro.Collectible.QUASAR)
+            return false
         end
     end
 )
