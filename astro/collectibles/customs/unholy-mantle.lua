@@ -1,6 +1,3 @@
-local isc = require("astro.lib.isaacscript-common")
-local hiddenItemManager = require("astro.lib.hidden_item_manager")
-
 Astro.Collectible.UNHOLY_MANTLE = Isaac.GetItemIdByName("Unholy Mantle")
 
 Astro:AddCallback(
@@ -32,26 +29,20 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_HOLY_MANTLE) then
-            hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_HOLY_MANTLE)
-        end
-    end,
-    Astro.Collectible.UNHOLY_MANTLE
-)
-
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_HOLY_MANTLE) then
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_HOLY_MANTLE)
-        end
-    end,
-    Astro.Collectible.UNHOLY_MANTLE
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        Astro:ScheduleForUpdate(
+            function()
+                for i = 1, Game():GetNumPlayers() do
+                    local player = Isaac.GetPlayer(i - 1)
+                
+                    if player:HasCollectible(Astro.Collectible.UNHOLY_MANTLE) then
+                        Isaac.GetPlayer(0):UseCard(Card.CARD_HOLY, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
+                    end
+                end
+            end,
+            1
+        )
+    end
 )
