@@ -9,7 +9,10 @@ Astro.EID.Trinket = {
     ["ko_kr"] = {},
     ["en_us"] = {},
 }
-Astro.EID.Birthright = {}
+Astro.EID.Birthright = {
+    ["ko_kr"] = {},
+    ["en_us"] = {},
+}
 Astro.EID.Self = {}
 Astro.EID.Hints = {}
 Astro.EID.HintAdded = false
@@ -117,7 +120,7 @@ function Astro.EID:AddBirthright(player, eidDescription, falvorText, language)
     end
 
     if language == "ko_kr" then
-        Astro.EID.Birthright[player] = {
+        Astro.EID.Birthright[language][player] = {
             description = falvorText
         }
     end
