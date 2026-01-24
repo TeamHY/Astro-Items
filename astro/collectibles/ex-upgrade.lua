@@ -70,7 +70,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN] = { Id = Astro.Collectible.BICORN, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_EUTHANASIA] = { Id = Astro.Collectible.LIFE_SUSTAINING_TREATMENT, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_HOURGLASS] = { Id = Astro.Collectible.CHRONOS, Chance = 0.1 },
-    [Astro.Collectible.AMAZING_CHAOS_SCROLL] = { Id = Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, Chance = 0.2 },
+    [Astro.Collectible.AMAZING_CHAOS_SCROLL] = { Id = Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, Chance = 0.5 },
 }
 
 ---
