@@ -1,12 +1,9 @@
 ---
 local REINCARNATION_ITEMS = {
     CollectibleType.COLLECTIBLE_1UP,
-    CollectibleType.COLLECTIBLE_LAZARUS_RAGS,
-    CollectibleType.COLLECTIBLE_ANKH,
-    Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL
 }
 
-local REINCARNATION_DAMAGE_MULTIPLIER = 0.5
+local REINCARNATION_DAMAGE_MULTIPLIER = 0.1
 
 -- 마트료시카 공격력 증가량
 local MATRYOSHKA_DAMAGE = 0.05
