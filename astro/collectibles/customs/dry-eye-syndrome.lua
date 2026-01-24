@@ -4,7 +4,7 @@
 local MAX_MULTIPLIER = 0.5
 
 -- 최대치에 도달하기 위해 걸리는 프레임
-local FRAME_COUNT = 10 * 30
+local FRAME_COUNT = 5 * 30
 
 ---
 
