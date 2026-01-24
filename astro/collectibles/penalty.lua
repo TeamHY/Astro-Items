@@ -27,6 +27,8 @@ local PENALTY_REMOVE_ITEMS = {
         Astro.Collectible.BIRTHRIGHT_ISAAC,
         Astro.Collectible.UNHOLY_MANTLE,
         Astro.Collectible.OMEGA_321,
+        Astro.Collectible.BIRTHRIGHT_THE_LOST,
+        Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
     },
     trinket = {
         TrinketType.TRINKET_JAW_BREAKER,
