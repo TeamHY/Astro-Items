@@ -1,4 +1,8 @@
-local isc = require("astro.lib.isaacscript-common")
+---
+
+local MAXIMUM_ITEM_LIMIT = 3
+
+---
 
 Astro.Collectible.BIRTHRIGHT_STEVEN = Isaac.GetItemIdByName("Steven's Frame")
 
@@ -10,28 +14,13 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_STEVEN,
                 "스티븐의 액자",
                 "그는 살아 있다",
-                "{{BossRoom}} 보스방 보상 아이템이 {{Collectible100}}Little Steven으로 고정됩니다." ..
-                "#!!! 소지중인 Little Steven이 4개 이상일 경우 이 아이템은 제거됩니다.",
+                "!!! 최초 획득 시 {{Trinket57}}???'s Soul 1개 소환" ..
+                "#{{BossRoom}} 보스방 클리어 시 {{Collectible100}}Little Steven을 획득합니다." ..
+                "#!!! 소지중인 Little Steven이 3개 이상일 경우 이 아이템은 제거됩니다.",
                 -- 중첩 시
-                "중첩된 수만큼 Little Steven 추가 소환"
+                "중첩된 수만큼 Little Steven 추가 획득"
             )
         end
-
-        Astro:AddRerollCondition(
-            function(selectedCollectible)
-                local room = Game():GetRoom()
-                
-                if Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_STEVEN) and room:GetType() == RoomType.ROOM_BOSS and selectedCollectible ~= CollectibleType.COLLECTIBLE_LITTLE_STEVEN then
-                    return {
-                        reroll = true,
-                        newItem = CollectibleType.COLLECTIBLE_LITTLE_STEVEN,
-                        modifierName = "Birthright - Steven"
-                    }
-                end
-        
-                return false
-            end
-        )
     end
 )
 
@@ -48,24 +37,30 @@ Astro:AddCallback(
                 local player = Isaac.GetPlayer(i - 1)
                 local num = player:GetCollectibleNum(Astro.Collectible.BIRTHRIGHT_STEVEN)
 
-                if num >= 2 then
-                    for _ = 1, num - 1 do
-                        Astro:SpawnCollectible(CollectibleType.COLLECTIBLE_LITTLE_STEVEN, player.Position)
+                for _ = 1, num do
+                    if player:GetCollectibleNum(CollectibleType.COLLECTIBLE_LITTLE_STEVEN) >= MAXIMUM_ITEM_LIMIT then
+                        break
                     end
+
+                    player:AddCollectible(CollectibleType.COLLECTIBLE_LITTLE_STEVEN)
+                end
+
+                if player:GetCollectibleNum(CollectibleType.COLLECTIBLE_LITTLE_STEVEN) >= MAXIMUM_ITEM_LIMIT then
+                    Astro:RemoveAllCollectible(player, Astro.Collectible.BIRTHRIGHT_STEVEN)
                 end
             end
         end
     end
 )
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        if player:GetCollectibleNum(CollectibleType.COLLECTIBLE_LITTLE_STEVEN) >= 4 then
-            Astro:RemoveAllCollectible(player, Astro.Collectible.BIRTHRIGHT_STEVEN)
+        if Astro:IsFirstAdded(Astro.Collectible.BIRTHRIGHT_STEVEN) then
+            Astro:SpawnTrinket(TrinketType.TRINKET_SOUL, player.Position)
         end
     end,
-    CollectibleType.COLLECTIBLE_LITTLE_STEVEN
+    Astro.Collectible.BIRTHRIGHT_STEVEN
 )
