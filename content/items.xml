@@ -74,7 +74,7 @@
 	<passive tags="guppy" gfx="Delirium Guppy.png" quality="2" hidden="true" devilprice="1" shopprice="15" name="Delirium Guppy" description="And even my true friend" id="73" />
 	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="7" name="Judas' Frame" description="May your energy bring power" id="74" />
 	<passive gfx="Birthright - The Lost.png" quality="4" devilprice="2" shopprice="22" name="The Lost's Frame" description="Better destiny" id="75" />
-	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="20" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" id="76" />
+	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" hidden="true" shopprice="20" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" id="76" />
 	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" description="No." id="77" />
 	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" id="78" />
 	<active tags="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" id="79" />
