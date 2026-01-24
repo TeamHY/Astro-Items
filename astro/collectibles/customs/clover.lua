@@ -11,7 +11,7 @@ Astro:AddCallback(
                 "↑ {{LuckSmall}}행운 +1" ..
                 "#{{LuckSmall}} 행운 1당 {{DamageSmall}}공격력 +1%p",
                 -- 중첩 시
-                "증가량이 중첩된 수만큼 합 연산으로 증가"
+                "증가량이 중첩된 수만큼 합연산으로 증가"
             )
         end
     end

@@ -23,7 +23,7 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} {{LuckSmall}}행운 1당 1%의 추가 피해를 줍니다." ..
                 "#다음 게임에서{{Collectible48}}Cupid's Arrow를 들고 시작합니다.",
                 -- 중첩 시
-                "중첩 시 추가 피해량이 중첩된 수만큼 합 연산으로 증가"
+                "중첩 시 추가 피해량이 중첩된 수만큼 합연산으로 증가"
             )
 
             Astro.EID:AddCollectible(

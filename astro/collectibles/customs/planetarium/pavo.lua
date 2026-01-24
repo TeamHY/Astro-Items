@@ -11,7 +11,7 @@ Astro:AddCallback(
                 "{{MegaSatanSmall}} Mega Satan(1페이즈)의 체력이 10% 감소됩니다." ..
                 "#Mega Satan(1페이즈)을 제외한 모든 적들의 체력이 20% 감소됩니다.",
                 -- 중첩 시
-                "중첩 시 체력 감소 효과가 중첩된 수만큼 곱 연산으로 적용 (Mega Satan(1페이즈) 제외)"
+                "중첩 시 체력 감소 효과가 중첩된 수만큼 곱연산으로 적용 (Mega Satan(1페이즈) 제외)"
             )
         end
     end

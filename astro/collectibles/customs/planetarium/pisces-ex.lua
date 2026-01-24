@@ -33,7 +33,7 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 15 이상일 때 20% 확률 (행운 1당 +1%p)" ..
                 "#{{TimerSmall}} (쿨타임 0.5초)",
                 -- 중첩 시
-                "중첩 시 발사 확률이 중첩된 수만큼 합 연산으로 증가 및 쿨타임 감소"
+                "중첩 시 발사 확률이 중첩된 수만큼 합연산으로 증가 및 쿨타임 감소"
             )
 
             Astro.EID:AddCollectible(

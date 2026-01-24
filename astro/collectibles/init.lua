@@ -170,6 +170,7 @@ require "astro.collectibles.customs.birthright-maggy"
 require "astro.collectibles.customs.dango"
 require "astro.collectibles.customs.strawberry-medicine"
 require "astro.collectibles.customs.chronos"
+require "astro.collectibles.customs.rainbow-mushroom"
 
 --#region PLANETARIUM
 

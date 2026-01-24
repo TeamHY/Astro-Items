@@ -598,7 +598,7 @@
 		<info text="Disappears upon taking damage except self-damage"/>
 	</collectible>
 	<collectible id="148">
-		<info text="Boss room rewards are fixed to Little Steven"/>
+		<info text="After defeating the floor's boss, it grants a Little Steven"/>
 		<info text="Disappears if holding 4 or more Little Stevens"/>
 	</collectible>
 	<collectible id="149">
@@ -631,12 +631,10 @@
 		<info text="Normal monster damage +1%~+25%"/>
 	</collectible>
 	<collectible id="155">
-		<info text="Counts as 1 item for Guppy transformation with 50% chance upon starting a floor"/>
-		<info text="Effect resets upon starting a new floor"/>
+		<info text="Grants as Guppy Part with 50% chance upon starting a floor"/>
 	</collectible>
 	<collectible id="156">
-		<info text="Obtained with Schrodinger's Cat effect."/>
-		<info text="Disappears upon starting a new floor"/>
+		<info text="Obtained with Schrodinger's Cat effect"/>
 	</collectible>
 	<collectible id="157">
 		<info text="Prevents stats from falling below Isaac's base stats in this run"/>
@@ -862,6 +860,9 @@
 	</collectible>
 	<collectible id="222">
 		<info text="Rerolls every familiiar items in the room with its own assigned item"/>
+	</collectible>
+	<collectible id="223">
+		<info text="x1.5 damage multiplier"/>
 	</collectible>
 </collectibles>
 

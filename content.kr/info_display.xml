@@ -600,7 +600,8 @@
 		<info text="자해를 제외한 피격을 당하면 이 아이템은 사라집니다"/>
 	</collectible>
 	<collectible id="148">
-		<info text="보스방 보상이 리틀 스티븐으로 고정됩니다"/>
+		<info text="???의 영혼 하나를 드롭합니다"/>
+		<info text="보스를 처치하면 리틀 스티븐 한 마리를 얻습니다"/>
 		<info text="리틀 스티븐을 4개 이상 소지 중이면 이 아이템은 사라집니다"/>
 	</collectible>
 	<collectible id="149">
@@ -633,12 +634,10 @@
 		<info text="일반 몬스터 공격력 +1%p~+25%p"/>
 	</collectible>
 	<collectible id="155">
-		<info text="이 아이템은 층을 시작할 때 50% 확률로 구피 변신에 필요한 아이템 1개로 취급됩니다"/>
-		<info text="새 층을 시작할 때마다 효과가 초기화됩니다"/>
+		<info text="새 층을 시작할 때마다 50% 확률로 구피의 조각 1개를 얻습니다"/>
 	</collectible>
 	<collectible id="156">
-		<info text="슈뢰딩거의 고양이 효과로 획득합니다."/>
-		<info text="새 층을 시작할 때마다 이 아이템은 모두 사라집니다"/>
+		<info text="슈뢰딩거의 고양이 효과로 획득합니다"/>
 	</collectible>
 	<collectible id="157">
 		<info text="이번 게임에서 능력치가 아이작의 기본 능력치보다 하락하는 것을 방지합니다"/>
@@ -864,6 +863,9 @@
 	</collectible>
 	<collectible id="222">
 		<info text="방 안의 모든 패밀리어 아이템마다 각자 정해진 아이템으로 리롤합니다"/>
+	</collectible>
+	<collectible id="223">
+		<info text="x1.5 공격력 배율"/>
 	</collectible>
 </collectibles>
 

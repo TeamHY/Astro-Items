@@ -23,7 +23,7 @@ Astro:AddCallback(
                 "#{{Charm}} 캐릭터와 가까이 있는 적을 매혹시키며;" ..
                 "#{{ArrowGrayRight}} 매혹된 적에게 " .. string.format("%.f", EXTRA_DAMAGE_MULTIPLIER * 100) .. "%의 추가 피해를 줍니다.",
                 -- 중첩 시
-                "중첩 시 추가 피해량이 중첩된 수만큼 합 연산으로 증가"
+                "중첩 시 추가 피해량이 중첩된 수만큼 합연산으로 증가"
             )
 
             Astro.EID:AddCollectible(
