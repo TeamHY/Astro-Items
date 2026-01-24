@@ -11,12 +11,12 @@ Astro:AddCallback(
                 "놀라운 긍정의 혼돈의 주문서",
                 "정상화",
                 "↑ {{Heart}}최대 체력, {{BlackHeart}}블랙하트, {{SoulHeart}}소울하트 중 하나 +1" ..
-                "#↑ {{DamageSmall}}공격력 배율 x1.0~1.35" ..
-                "#↑ {{TearsSmall}}공격 딜레이 ÷1.0~1.35" ..
-                "#↑ {{RangeSmall}}사거리 배율 x1.0~1.35" ..
-                "#↑ {{SpeedSmall}}이동속도 배율 x1.0~1.35" ..
-                "#↑ {{ShotspeedSmall}}탄속 배율 x1.0~1.35" ..
-                "#↑ {{LuckSmall}}행운 배율 x1.0~1.35" ..
+                "#↑ {{DamageSmall}}공격력 배율 x1.0~1.5" ..
+                "#↑ {{TearsSmall}}공격 딜레이 ÷1.0~1.5" ..
+                "#↑ {{RangeSmall}}사거리 배율 x1.0~1.5" ..
+                "#↑ {{SpeedSmall}}이동속도 배율 x1.0~1.5" ..
+                "#↑ {{ShotspeedSmall}}탄속 배율 x1.0~1.5" ..
+                "#↑ {{LuckSmall}}행운 배율 x1.0~1.5" ..
                 "#!!! 해당 아이템의 체력은 즉시 들어오지 않으며, 획득 후 체력이 없을 경우 사망합니다."
             )
 
@@ -25,12 +25,12 @@ Astro:AddCallback(
                 "Incredible Chaos Scroll of Goodness",
                 "",
                 "↑ One of {{Heart}} Heart container, {{BlackHeart}} Black Heart, {{SoulHeart}} Soul Heart +1" ..
-                "#↑ {{Damage}} x1.0~1.35 Damage multiplier" ..
-                "#↑ {{Tears}} /1.0~1.35 Tear delay" ..
-                "#↑ {{Range}} x1.0~1.35 Range multiplier" ..
-                "#↑ {{Speed}} x1.0~1.35 Speed multiplier" ..
-                "#↑ {{Shotspeed}} x1.0~1.35 Shot speed multiplier" ..
-                "#↑ {{Luck}} x1.0~1.35 Luck multiplier" ..
+                "#↑ {{Damage}} x1.0~1.5 Damage multiplier" ..
+                "#↑ {{Tears}} /1.0~1.5 Tear delay" ..
+                "#↑ {{Range}} x1.0~1.5 Range multiplier" ..
+                "#↑ {{Speed}} x1.0~1.5 Speed multiplier" ..
+                "#↑ {{Shotspeed}} x1.0~1.5 Shot speed multiplier" ..
+                "#↑ {{Luck}} x1.0~1.5 Luck multiplier" ..
                 "#!!!  Health from this item doesn't apply immediately; die if no health after pickup",
                 nil, "en_us"
             )
@@ -158,7 +158,7 @@ end
 ---@param rng RNG
 ---@param itemNum integer
 local function GetStatMultiplier(rng, itemNum)
-    local baseMultiplier = isc:getRandomFloat(1.0, 1.35, rng)
+    local baseMultiplier = isc:getRandomFloat(1.0, 1.5, rng)
     local totalMultiplier = 1
 
     for _ = 1, itemNum, 1 do
