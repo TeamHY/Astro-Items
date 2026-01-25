@@ -1,3 +1,9 @@
+---
+
+local TEARS_INCREMENT = 0.1
+
+---
+
 Astro.Collectible.MONEY_IS_SADNESS = Isaac.GetItemIdByName("Money = Sorrow")
 
 Astro:AddCallback(
@@ -9,7 +15,7 @@ Astro:AddCallback(
                 "돈 = 슬픔",
                 "행복은 돈으로 살 수 없다",
                 "{{Coin}} 동전 1개당 {{TearsSmall}} 연사 속도 +0.1",
-                nil,
+                "중첩 가능",
                 "ko_kr"
             )
 
@@ -18,7 +24,7 @@ Astro:AddCallback(
                 "Money = Sorrow",
                 "Money can't buy happiness",
                 "{{Tears}} +0.1 Fire rate for every {{Coin}} coin Isaac has",
-                nil,
+                "Stackable",
                 "en_us"
             )
         end
@@ -55,7 +61,7 @@ Astro:AddCallback(
         local num = player:GetCollectibleNum(Astro.Collectible.MONEY_IS_SADNESS)
 
         if num > 0 then
-            local increaseAmt = .1 * num
+            local increaseAmt = TEARS_INCREMENT * num
             local tearsToAdd = increaseAmt * player:GetNumCoins()
             player.MaxFireDelay = TearsToDelay(DelayToTears(player.MaxFireDelay) + tearsToAdd)
         end
