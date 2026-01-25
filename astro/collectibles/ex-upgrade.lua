@@ -71,8 +71,8 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_EUTHANASIA] = { Id = Astro.Collectible.LIFE_SUSTAINING_TREATMENT, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_HOURGLASS] = { Id = Astro.Collectible.CHRONOS, Chance = 0.1 },
     [Astro.Collectible.AMAZING_CHAOS_SCROLL] = { Id = Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, Chance = 0.5 },
-    [CollectibleType.COLLECTIBLE_MAGIC_MUSHROOM] = { Id = Astro.Collectible.RAINBOW_MUSHROOM, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_HIVE_MIND] = { Id = Astro.Collectible.OVERMIND, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_MAGIC_MUSHROOM] = { Id = Astro.Collectible.RAINBOW_MUSHROOM, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_HIVE_MIND] = { Id = Astro.Collectible.OVERMIND, Chance = 0.7 },
 }
 
 ---

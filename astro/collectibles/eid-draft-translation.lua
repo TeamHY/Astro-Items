@@ -182,7 +182,7 @@ return {
  -- [913] = "설명 분리됨",
  -- [914] = "설명 분리됨",
     [915] = "!!! {{Collectible362}} Lil Chest doesn't appear after pickup#25% chance to spawn {{Heart}} Heart, {{Coin}} Coin, {{Key}} Key on room clear#Spawns random trinket every 5 rooms cleared",
-    [916] = "!!! {{Collectible4}} Cricket's Head doesn't appear while held#↑ {{Damage}} +0.5 Damage#↑ {{Damage}} x1.5 Damage multiplier",
+ -- [916] = "설명 분리됨",
     [917] = "{{Tears}} +0.5 Fire rate while held#{{Timer}} +2 Fire rate in the room on use",
     [918] = "!!! {{Collectible451}} Tarot Cloth doesn't appear after pickup#Drops one card#{{Collectible451}} Enhances Tarot cards;#{{ArrowGrayRight}} Some enhancements don't apply or weaken with {{Collectible286}} Blank Card#Certain card temporary effects become permanent",
     [919] = "{{Collectible689}} Cycles room items with 4 random items every 0.2 seconds; choose one of 5",

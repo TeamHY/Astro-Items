@@ -44,7 +44,6 @@ Astro:AddCallback(
             )
         end
 
-        --[[
         Astro:AddRerollCondition(
             function(selectedCollectible)
                 if Astro:HasCollectible(Astro.Collectible.RAINBOW_MUSHROOM) then
@@ -56,7 +55,7 @@ Astro:AddCallback(
         
                 return false
             end
-        )]]
+        )
     end
 )
 

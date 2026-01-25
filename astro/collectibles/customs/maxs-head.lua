@@ -22,6 +22,17 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 시 공격력 배율이 중첩된 수만큼 곱연산으로 적용"
             )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.MAXS_HEAD,
+                "Max's Head", "",
+                "!!! {{Collectible4}} Cricket's Head doesn't appear while held" ..
+                "#↑ {{Damage}} +0.5 Damage" ..
+                "#↑ {{Damage}} x1.5 Damage multiplier",
+                -- Stacks
+                "Stackable",
+                "en_us"
+            )
         end
 
         -- 맥스의 머리 소지 시 크리켓 머리 리롤 로직 추가
