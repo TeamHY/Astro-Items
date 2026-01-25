@@ -867,6 +867,11 @@
 	<collectible id="223">
 		<info text="x1.5 공격력 배율"/>
 	</collectible>
+	<collectible id="224">
+		<info text="파란 파리와 거미의 공격력이 두 배로 증가하며 공격 버튼으로 이동 방향을 조종할 수 있습니다"/>
+		<info text="파리 및 거미 패밀리어의 공격력이 증가합니다"/>
+		<info text="방에 입장하면 이동 속도, 공격 속도, 공격력, 사거리, 투사체 속도, 행운이 방 안의 파란 파리와 거미의 수만큼 증가합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

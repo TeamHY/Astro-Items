@@ -171,6 +171,7 @@ require "astro.collectibles.customs.dango"
 require "astro.collectibles.customs.strawberry-medicine"
 require "astro.collectibles.customs.chronos"
 require "astro.collectibles.customs.rainbow-mushroom"
+require "astro.collectibles.customs.overmind"
 
 --#region PLANETARIUM
 

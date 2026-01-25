@@ -16,6 +16,7 @@ Astro.Callbacks = {
     REMOVED_PERFECTION = "ASTRO_REMOVED_PERFECTION",
     PLAYER_DEAL_DMG = "ASTRO_PLAYER_DEAL_DMG",
     SPAWNED_BLUE_FLY = "ASTRO_SPAWNED_BLUE_FLY",
+    SPAWNED_BLUE_SPIDER = "ASTRO_SPAWNED_BLUE_SPIDER",
 }
 
 local isFirst = true
@@ -218,4 +219,17 @@ Astro:AddCallback(
         end
     end,
     FamiliarVariant.BLUE_FLY
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_FAMILIAR_INIT,
+    ---@param familiar EntityFamiliar
+    function(_, familiar)
+        if familiar.SubType == 0 then
+            if isStarted then
+                Isaac.RunCallback(Astro.Callbacks.SPAWNED_BLUE_SPIDER, familiar)
+            end
+        end
+    end,
+    FamiliarVariant.BLUE_SPIDER
 )

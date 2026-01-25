@@ -864,6 +864,11 @@
 	<collectible id="223">
 		<info text="x1.5 damage multiplier"/>
 	</collectible>
+	<collectible id="224">
+		<info text="Blue flies and spiders deal double damage, and their movement direction can be controlled with the attack buttons"/>
+		<info text="Fly and spider familiars do increased damage"/>
+		<info text="Increases speed, tears, damage, range, shot speed, and luck by the number of blue flies and spiders in the room when entering a room"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
