@@ -34,4 +34,6 @@
 	<costume id="213" anm2path="106x_tropicamide.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="217" anm2path="costume_cannedbread.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="218" anm2path="costume_24kcopter.anm2" type="passive" hasSkinAlt="true" isFlying="true" />
+	<costume id="223" anm2path="costume_rainbowmushroom.anm2" type="passive" skinColor="0" overwriteColor="true" forceBodyColor="true" forceHeadColor="true" />
+	<costume id="224" anm2path="248_hive mind.anm2" type="passive" />
 </costumes>

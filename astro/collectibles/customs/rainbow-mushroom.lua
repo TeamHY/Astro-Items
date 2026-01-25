@@ -39,7 +39,7 @@ Astro:AddCallback(
                 "#↑ {{Damage}} x" .. DAMAGE_MULTIPLIER .. " Damage multiplier" ..
                 "#↑ {{Range}} +" .. RANGE_INCREMENT .. " Range" ..
                 "#{{HealingRed}} Full health" ..
-                "!!! Stackable",
+                "#!!! Stackable",
                 nil, "en_us"
             )
         end
