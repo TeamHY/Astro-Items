@@ -35,10 +35,9 @@ local function FindTrapdoor()
     
     for i = 0, width * height - 1 do
         local gridEntity = room:GetGridEntity(i)
-        local trapDoor = gridEntity and gridEntity:ToTrapDoor()
 
-        if trapDoor then
-            return trapDoor
+        if gridEntity and gridEntity:GetType() == GridEntityType.GRID_TRAPDOOR then
+            return gridEntity
         end
     end
 
