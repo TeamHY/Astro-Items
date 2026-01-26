@@ -33,7 +33,7 @@ Astro:AddCallback(
             function(selectedCollectible)
                 if not Astro.IsFight then
                     return {
-                        reroll = true,
+                        reroll = selectedCollectible == Astro.Collectible.MONEY_IS_SADNESS,
                         modifierName = "Money = Sorrow"
                     }
                 end
