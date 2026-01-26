@@ -74,7 +74,7 @@
 	<passive tags="guppy" gfx="Delirium Guppy.png" quality="2" hidden="true" devilprice="1" shopprice="15" name="Delirium Guppy" description="And even my true friend" id="73" />
 	<passive cache="damage" gfx="Birthright - Judas.png" quality="2" devilprice="1" shopprice="7" name="Judas' Frame" description="May your energy bring power" id="74" />
 	<passive gfx="Birthright - The Lost.png" quality="4" devilprice="2" shopprice="22" name="The Lost's Frame" description="Better destiny" id="75" />
-	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" hidden="true" shopprice="20" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" id="76" />
+	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="20" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" id="76" />
 	<passive gfx="Magic Conch Shell.png" quality="4" devilprice="2" shopprice="30" name="Magic Conch Shell" description="No." id="77" />
 	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" id="78" />
 	<active cache="luck" gfx="Rite of Aramesir.png" quality="4" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" id="79" />
@@ -128,7 +128,7 @@
 	<passive cache="luck" gfx="Green Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Green Stew" description="Temporary luck up" id="127" />
 	<passive cache="speed" gfx="Brown Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Brown Stew" description="Temporary speed up" id="128" />
 	<passive cache="all" gfx="Dracoback, the Rideable Dragon.png" quality="2" devilprice="1" shopprice="12" name="Dracoback, the Rideable Dragon" description="Bad hand" id="129" />
-	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="4" devilprice="2" shopprice="30" name="Amazing Chaos Scroll of Goodness" tags="summonable tearsup" description="Normalization" id="130" />
+	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="4" devilprice="2" shopprice="30" hidden="true" name="Amazing Chaos Scroll of Goodness" tags="summonable tearsup" description="Normalization" id="130" />
 	<active cache="all" gfx="Albireo.png" quality="3" devilprice="2" maxcharges="6" shopprice="12" name="Albireo" description="Hitotsu ni narenai rensei" id="131" />
 	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="summonable" description="Heliocentrism" id="132" />
 	<passive cache="damage luck firedelay" gfx="RGB.png" quality="3" devilprice="2" shopprice="25" name="RGB" description="Could you turn off the lights?" id="133" />
