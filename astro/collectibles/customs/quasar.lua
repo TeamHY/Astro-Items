@@ -9,10 +9,21 @@ Astro:AddCallback(
                 "퀘이사",
                 "초강력 블랙홀",
                 "{{Collectible512}} 방마다 처음으로 죽은 적의 위치에 블랙홀을 소환합니다." ..
-                "#방 클리어 시 10초동안 무적이 됩니다." ..
-                "#{{ColorRed}}패널티 피격 시 제거됩니다. 해당 패널티는 무효화됩니다.",
+                "#방 클리어 시 캐릭터가 10초간 무적 상태가 됩니다." ..
+                "#!!! 패널티 피격 시 해당 피격을 무효화하는 대신 이 아이템은 제거됩니다.",
                 -- 중첩 시
                 "중첩 시 방을 입장하면 10초동안 무적"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.QUASAR,
+                "Quasar", "",
+                "{{Collectible512}} Spawns black hole at first killed enemy in the room" ..
+                "#Invincibility for 10 seconds on room clear" ..
+                "#!!! Taking damage will remove this item instead of negating the damage",
+                -- Stacks
+                "Entering a room has invincibility for 10 seconds",
+                "en_us"
             )
         end
     end

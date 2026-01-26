@@ -43,7 +43,7 @@ return {
     [774] = "Deals 30% extra damage to bosses on hit",
     [775] = "Reveals random room locations on the map#!!! Number revealed: ({{Collectible" .. Astro.Collectible.PIRATE_MAP .. "}} count * 2)#{{ArrowGrayRight}} +1 room per 2 Luck",
     [776] = "Deals 10% of damage dealt to enemies in the room (bosses excluded)#Damages invincible enemies except Death's Head",
-    [777] = "{{Collectible512}} Spawns black hole at first killed enemy in the room#Invincible for 10 seconds on room clear",
+ -- [777] = "설명 분리됨",
  -- [778] = "설명 분리됨",
     [779] = "!!! {{Collectible675}} Cracked Orb, {{Collectible691}} Sacred Orb, {{Collectible" .. Astro.Collectible.FALLEN_ORB .. "}} Fallen Orb don't appear after pickup#Removes one held item and one of {{Collectible675}}/{{Collectible691}}/{{Collectible" .. Astro.Collectible.FALLEN_ORB .. "}} on stage entry;#{{ArrowGrayRight}} Spawns removed item and one of {{Collectible675}}/{{Collectible691}}/{{Collectible" .. Astro.Collectible.FALLEN_ORB .. "}}#Choose one; the rest disappear",
  -- [780] = "설명 분리됨",
