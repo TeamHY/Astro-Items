@@ -233,7 +233,7 @@ Astro:AddCallback(
             for i = Astro.Collectible.CYGNUS, Astro.Collectible.CHRONOS do
                 local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES
                 local desc = Astro.EID.EnglishDescAI[i - modItemOffset]
-                Astro.EID:AddCollectible(i, "", "", desc, nil, "en_us")
+                Astro.EID:AddCollectible(i, nil, "", desc, nil, "en_us")
             end
             ----
             local player_icons = Sprite()
