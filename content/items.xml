@@ -86,8 +86,8 @@
 	<active gfx="The Holy Blood and the Holy Grail.png" quality="3" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" description="The bloodstained saint, Magdalena's chalice" id="85" />
 	<passive tags="book" gfx="Akashic Records.png" quality="3" devilprice="2" shopprice="20" name="Akashic Records" description="A compendium of memories" id="86" />
 	<passive cache="speed" gfx="Terraspark Boots.png" quality="2" devilprice="1" shopprice="10" name="Terraspark Boots" description="Boots of the hero" id="87" />
-	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="4" devilprice="2" shopprice="15" maxcharges="1" name="Dunnell, the Noble Arms of Light" description="Adventurer party's guardian sword" id="88" />
-	<active gfx="Starlit Papillon.png" quality="3" devilprice="2" shopprice="15" maxcharges="1" name="Starlit Papillon" description="Adventurer party's guide" id="89" />
+	<active cache="damage" gfx="Dunnell, the Noble Arms of Light.png" quality="2" devilprice="1" shopprice="5" maxcharges="1" name="Dunnell, the Noble Arms of Light" description="Adventurer party's guardian sword" id="88" />
+	<active gfx="Starlit Papillon.png" quality="2" devilprice="1" shopprice="5" maxcharges="1" name="Starlit Papillon" description="Adventurer party's guide" id="89" />
 	<passive gfx="Sinful Spoils Struggle.png" quality="2" devilprice="1" shopprice="13" name="Sinful Spoils Struggle" description="Awakened" id="90" />
 	<passive gfx="Blood Trail.png" quality="3" devilprice="1" shopprice="20" name="Blood Trail" description="Well played" id="91" />
 	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="300" chargetype="timed" shopprice="15" name="Sandevistan" description="Neural acceleration" id="92" />
