@@ -1183,7 +1183,7 @@
 
 		<Item Name="KAAEN - Auto Reloader" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="SEERI the Combat Helper" Weight="0.7" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="TAANA - Defense Helper" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="TAANA - Defense Helper" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Abortion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dracoback, the Rideable Dragon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
