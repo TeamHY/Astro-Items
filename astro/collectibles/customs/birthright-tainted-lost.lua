@@ -18,7 +18,7 @@ Astro:AddCallback(
                 "더 로스트의 액자?",
                 "더 나은 운명?",
                 rgon ..
-                "{{Quality0}}~{{Quality2}}등급 아이템 등장 시 " .. string.format("%.f", REROLL_CHANCE_BASE * 10) .."%의 확률로 다른 아이템으로 바꿉니다." ..
+                "{{Quality0}}~{{Quality2}}등급 아이템 등장 시 " .. string.format("%.f", REROLL_CHANCE_BASE * 100) .."%의 확률로 다른 아이템으로 바꿉니다." ..
                 "#{{Blank}} {{ColorGray}}(바뀐 아이템은 콘솔에서 확인 가능){{CR}}",
                 -- 중첩 시
                 "중첩할 때마다 바뀔 확률이 +20%p씩 증가"
@@ -29,7 +29,7 @@ Astro:AddCallback(
                 "Tainted Lost's Frame",
                 "",
                 rgonEng ..
-                string.format("%.f", REROLL_CHANCE_BASE * 10) .. "% chance to rerolls {{Quality0}}/{{Quality1}}/{{Quality2}} items into other items." ..
+                string.format("%.f", REROLL_CHANCE_BASE * 100) .. "% chance to rerolls {{Quality0}}/{{Quality1}}/{{Quality2}} items into other items." ..
                 "#{{Blank}} {{ColorGray}}(Rerolled items viewable in console){{CR}}",
                 -- 중첩 시
                 "Each time it stacks, the chance increases by 20%p",
