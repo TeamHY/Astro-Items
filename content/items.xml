@@ -153,7 +153,7 @@
 	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" hearts="99" maxhearts="2" name="Astro Godhead" description="Unrepentant God" id="152" />
 	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" id="153" />
 	<active cache="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" description="More potentials" id="154" />
-	<passive gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="5" name="Schrodinger's Cat" description="Quantum mechanic" id="155" />
+	<passive gfx="Schrodinger's Cat.png" quality="3" devilprice="1" shopprice="10" name="Schrodinger's Cat" description="Quantum mechanic" id="155" />
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" hidden="true" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" description="How much can one cat take?" id="156" />
 	<passive cache="speed firedelay damage range shotspeed luck" gfx="Cracked Bottom.png" quality="2" devilprice="1" shopprice="12" name="Cracked Bottom" description="It can't get any lower than this" id="157" />
 	<active gfx="Birth Certificate.png" quality="3" devilprice="2" maxcharges="0" shopprice="25" name="Birth Certificate" description="1995.11.15" id="158" />
