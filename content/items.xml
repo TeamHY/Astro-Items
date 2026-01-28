@@ -14,7 +14,7 @@
 	<passive gfx="Pavo.png" quality="2" devilprice="1" shopprice="15" name="Pavo" description="Graceful poise" id="13" />
 	<passive gfx="Comet.png" quality="4" devilprice="2" shopprice="30" tags="noeden" name="Comet" description="A guest in the night" id="14" />
 	<passive tags="tearsup" cache="tearflag firedelay" gfx="Pisces.png" quality="4" devilprice="2" shopprice="20" name="Pisces EX" description="Salmon run" id="15" />
-	<familiar gfx="Gemini.png" quality="5" devilprice="2" shopprice="30" tags="noeden" name="Gemini EX" description="Play nice" id="16" />
+	<familiar gfx="Gemini.png" quality="4" devilprice="2" shopprice="30" tags="noeden" name="Gemini EX" description="Play nice" id="16" />
 	<passive gfx="Greed.png" quality="0" devilprice="2" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Greed" description="$" id="17" />
 	<passive cache="damage" gfx="Prometheus.png" quality="3" devilprice="2" name="Prometheus" description="The god who stole fire" id="18" />
 	<passive gfx="Pure White Heart.png" quality="3" devilprice="2" shopprice="20" name="Pure White Heart" description="It's in your heart from the beginning" id="19" />
