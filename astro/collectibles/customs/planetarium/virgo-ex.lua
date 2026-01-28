@@ -18,7 +18,7 @@ Astro:AddCallback(
                 "{{Collectible654}} 능력치 감소 알약 사용 시 {{DamageSmall}}최종 공격력이 +" .. DAMAGE_UP_INCREMENT .. " 증가하며;" ..
                 "#{{ArrowGrayRight}} 비 능력치 관련 부정 알약 사용 시 블랙하트를 1개 드랍합니다." ..
                 "#패널티 피격 시 피해를 무시하고 10초 동안 무적이 됩니다." ..
-                "#{{TimerSmall}} (쿨타임 120초)",
+                "#{{TimerSmall}} (쿨타임 " .. string.format("%.f", INVINCIBLE_COOLDOWN / 30) .. "초)",
                 -- 중첩 시
                 "중첩 시 공격력, 블랙하트 소환 개수, 무적 시간이 합연산으로 증가"
             )
@@ -30,7 +30,7 @@ Astro:AddCallback(
                 "↑ {{Damage}} Eating a stat down pill grants +" .. DAMAGE_UP_INCREMENT .. " damage" ..
                 "#{{BlackHeart}} Eating other bad pills spawns a Black Heart" ..
                 "#Ignores penalty damage and becomes invincible for 10 seconds" ..
-                "#{{Timer}} 10 seconds cooldown",
+                "#{{Timer}} " .. string.format("%.f", INVINCIBLE_COOLDOWN / 30) .. " seconds cooldown",
                 nil, "en_us"
             )
 

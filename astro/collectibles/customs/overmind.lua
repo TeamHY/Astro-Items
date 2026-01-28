@@ -90,7 +90,10 @@ Astro:AddCallback(
                 adjustSpeed, adjustSpeed2 = 1.8, 2
             end
 
-            familiar.Velocity = (familiar.Velocity / adjustSpeed) + (player:GetShootingInput() * CONTROL_SENSITIVITY * (adjustSpeed * adjustSpeed2))
+            local nearEnemies = Isaac.FindInRadius(familiar.Position, 40, EntityPartition.ENEMY)
+            if #nearEnemies < 1 then
+                familiar.Velocity = (familiar.Velocity / adjustSpeed) + (player:GetShootingInput() * CONTROL_SENSITIVITY * (adjustSpeed * adjustSpeed2))
+            end
         end
     end
 )
