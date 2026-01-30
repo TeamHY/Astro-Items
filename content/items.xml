@@ -222,7 +222,7 @@
 	<passive cache="damage" gfx="Strawberry Medicine.png" quality="3" devilprice="1" shopprice="15" name="Strawberry Medicine" description="Where did my radiant self fly off to" id="221" />
 	<active gfx="Chronos.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" hidden="true" name="Chronos" description="He who devoured his own child" id="222" />
 	<passive cache="damage range speed" tags="mushroom" gfx="Rainbow Mushroom.png" quality="5" devilprice="2" shopprice="25" hearts="100" maxhearts="2" hidden="true" name="Rainbow Mushroom" description="Need I say more? All Stats up!" id="223" />
-	<passive cache="damage firedelay speed range shotspeed luck" tags="fly" gfx="Overmind.png" quality="4" devilprice="2" shopprice="25" hidden="true" name="Overmind" description="You have been created to serve me" id="224" />
+	<passive cache="damage firedelay speed range shotspeed luck" tags="fly" gfx="Overmind.png" quality="5" devilprice="2" shopprice="25" hidden="true" name="Overmind" description="You have been created to serve me" id="224" />
 	<passive cache="firedelay" gfx="Money = Sorrow.png" quality="4" devilprice="2" shopprice="15" name="Money = Sorrow" description="Money can't buy happiness" id="225" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
