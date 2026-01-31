@@ -23,7 +23,7 @@ Astro:AddCallback(
                 "너는 나를 섬기기 위해 창조되었다",
                 "방 입장 시 방 안의 파란 아군 거미/파리의 개수만큼 능력치 증가:" ..
                 "#{{ArrowGrayRight}} {{DamageSmall}} 공격력 +" .. DAMAGE_INCREMENT ..
-                "#{{ArrowGrayRight}} {{TearsSmall}} 연사 +" .. TEARS_INCREMENT ..
+                "#{{ArrowGrayRight}} {{TearsSmall}} 연사(+상한) +" .. TEARS_INCREMENT ..
                 "#{{ArrowGrayRight}} {{RangeSmall}} 사거리 +" .. RANGE_INCREMENT ..
                 "#{{ArrowGrayRight}} {{SpeedSmall}} 이동속도 +" .. SPEED_INCREMENT ..
                 "#{{ArrowGrayRight}} {{ShotspeedSmall}} 탄속 +" .. SHOTSPEED_INCREMENT ..
@@ -92,7 +92,15 @@ Astro:AddCallback(
 
             local nearEnemies = Isaac.FindInRadius(familiar.Position, 40, EntityPartition.ENEMY)
             if #nearEnemies < 1 then
-                familiar.Velocity = (familiar.Velocity / adjustSpeed) + (player:GetShootingInput() * CONTROL_SENSITIVITY * (adjustSpeed * adjustSpeed2))
+                local mousePos = Input.GetMousePosition(true)
+                local distanceBtwMouseFam = mousePos - familiar.Position
+                local nomralized = distanceBtwMouseFam:Normalized()
+                
+                if Input.IsMouseBtnPressed(Mouse.MOUSE_BUTTON_1) then
+                    familiar.Velocity = (familiar.Velocity / adjustSpeed) + (nomralized * CONTROL_SENSITIVITY * (adjustSpeed * adjustSpeed2))
+                else
+                    familiar.Velocity = (familiar.Velocity / adjustSpeed) + (player:GetShootingJoystick() * CONTROL_SENSITIVITY * (adjustSpeed * adjustSpeed2))
+                end
             end
         end
     end
@@ -129,6 +137,7 @@ Astro:AddCallback(
 
 ------ 스탯 ------
 local statIncrease = 0
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
@@ -139,7 +148,12 @@ Astro:AddCallback(
                 local flies = #Isaac.FindByType(EntityType.ENTITY_FAMILIAR, FamiliarVariant.BLUE_FLY)
                 local spiders = #Isaac.FindByType(EntityType.ENTITY_FAMILIAR, FamiliarVariant.BLUE_SPIDER)
 
-                statIncrease = flies + spiders
+                if statIncrease < (flies + spiders) then
+                    statIncrease = flies + spiders
+                else
+                    statIncrease = statIncrease
+                end
+
                 player:AddCacheFlags(CacheFlag.CACHE_DAMAGE | CacheFlag.CACHE_FIREDELAY | CacheFlag.CACHE_SHOTSPEED | CacheFlag.CACHE_RANGE | CacheFlag.CACHE_SPEED | CacheFlag.CACHE_LUCK)
                 player:EvaluateItems()
             else
