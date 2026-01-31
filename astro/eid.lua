@@ -230,7 +230,7 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            for i = Astro.Collectible.CYGNUS, Astro.Collectible.CHRONOS do
+            for i = Astro.Collectible.CYGNUS, Astro.Collectible.DAVIDS_STONE do
                 local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES
                 local desc = Astro.EID.EnglishDescAI[i - modItemOffset]
                 Astro.EID:AddCollectible(i, nil, "", desc, nil, "en_us")

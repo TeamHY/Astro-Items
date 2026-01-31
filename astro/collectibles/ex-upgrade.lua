@@ -73,6 +73,7 @@ Astro.UPGRADE_LIST = {
     [Astro.Collectible.AMAZING_CHAOS_SCROLL] = { Id = Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_MAGIC_MUSHROOM] = { Id = Astro.Collectible.RAINBOW_MUSHROOM, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_HIVE_MIND] = { Id = Astro.Collectible.OVERMIND, Chance = 0.7 },
+    [CollectibleType.COLLECTIBLE_SMALL_ROCK] = { Id = Astro.Collectible.DAVIDS_STONE, Chance = 0.5 },
 }
 
 ---

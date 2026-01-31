@@ -13,17 +13,17 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.MONEY_IS_SADNESS,
                 "돈 = 슬픔",
-                "행복은 돈으로 살 수 없다",
-                "{{Coin}} 동전 1개당 {{TearsSmall}} 연사 속도 +0.1",
-                "중첩 가능",
-                "ko_kr"
+                "돈으로는 행복을 살 수 없어",
+                "{{TearsSmall}} 동전 1개당 연사 +0.1",
+                -- 중첩 시
+                "중첩 가능"
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.MONEY_IS_SADNESS,
-                "Money = Sorrow",
-                "Money can't buy happiness",
-                "{{Tears}} +0.1 Fire rate for every {{Coin}} coin Isaac has",
+                "Money = Sorrow", "",
+                "↑ {{Tears}} +0.1 Fire rate for every {{Coin}} coin Isaac has",
+                -- Stacks
                 "Stackable",
                 "en_us"
             )

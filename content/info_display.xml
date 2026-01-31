@@ -869,6 +869,11 @@
 		<info text="Fly and spider familiars do increased damage"/>
 		<info text="Increases speed, tears, damage, range, shot speed, and luck by the number of blue flies and spiders in the room when entering a room"/>
 	</collectible>
+	<collectible id="225">
+		<info text="Grants a small tears up for each coin held"/>
+	</collectible>
+	<collectible id="226">
+	</collectible>
 </collectibles>
 
 <trinkets>

@@ -173,6 +173,7 @@ require "astro.collectibles.customs.chronos"
 require "astro.collectibles.customs.rainbow-mushroom"
 require "astro.collectibles.customs.overmind"
 require "astro.collectibles.customs.money-is-sorrow"
+require "astro.collectibles.customs.davids-stone"
 
 --#region PLANETARIUM
 

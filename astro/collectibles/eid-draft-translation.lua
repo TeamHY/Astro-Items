@@ -163,7 +163,7 @@ return {
     [894] = "!!! +2 {{Collectible207}} Ball of Bandages on first pickup#Spawns Ball of Bandages on stage entry#!!! Amount: ({{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}} count + {{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}} count)",
     [895] = "Teleports to room with held items#Choosing an item from this floor teleports Isaac back to the room he came from",
  -- [896] = "설명 분리됨",
-    [897] = "{{Crafting17}} Spawns 10 giga bomb pickups",
+ -- [897] = "설명 분리됨",
     [898] = "Spawns sticky nickel that disappears after 10 seconds on hit#Turns summoned sticky nickels into giga bombs that explode on use",
     [899] = "!!! Usable only in Super Secret Room#Removes one held item on use;#{{ArrowGrayRight}} Spawns removed item and one of {{Collectible1}}/{{Collectible2}}/{{Collectible3}}#Choose one; the rest disappear#{{SuperSecretRoom}} Reveals Super Secret Room on stage 1 map",
     [900] = "!!! {{Collectible399}} Maw Of The Void doesn't appear after pickup#↑ {{Damage}} +1 Damage#{{Chargeable}} Charges after 2.5 seconds hold; releases black ring around character#{{Collectible399}} Ring multi-hits for up to x30 damage",
