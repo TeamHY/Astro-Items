@@ -18,7 +18,6 @@ local SOUL_DECREASE_FOR_ADVENTURER = 10
 ---
 
 local isc = require("astro.lib.isaacscript-common")
-local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.STARLIT_PAPILLON = Isaac.GetItemIdByName("Starlit Papillon")
 
@@ -37,15 +36,53 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..
                 "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소합니다."
             )
-
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.STARLIT_PAPILLON),
                 { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
                 {
-                    "최대 " .. MAXIMUM .. "개까지 저장할 수 있습니다.#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소",
-                    "최대 {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}}개까지 저장할 수 있습니다.#{{ArrowGrayRight}} 방 클리어 시 영혼이 {{ColorIsaac}}" .. SOUL_DECREASE_FOR_ADVENTURER .. "{{CR}}개 감소"
+                    "최대 " .. MAXIMUM .. "개까지",
+                    "최대 {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}}개까지"
                 },
                 nil, "ko_kr", nil
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.STARLIT_PAPILLON),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "영혼이 " .. SOUL_DECREASE .. "개 감소",
+                    "영혼이 {{ColorIsaac}}" .. SOUL_DECREASE_FOR_ADVENTURER .. "{{CR}}개 감소"
+                },
+                nil, "ko_kr", nil
+            )
+
+            ----
+            
+            Astro.EID:AddCollectible(
+                Astro.Collectible.STARLIT_PAPILLON,
+                "Starlit Papillon", "",
+                "{{Collectible492}} Applies YO LISTEN! while held" ..
+                "#Absorbs up to " .. MAXIMUM .. " souls on enemy kill;" ..
+                "#{{ArrowGrayRight}} +1% extra damage per soul on hit" ..
+                "#{{ArrowGrayRight}} -" .. SOUL_DECREASE .. " souls on room clear",
+                nil, "en_us"
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.STARLIT_PAPILLON),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "up to " .. MAXIMUM .. " souls",
+                    "up to {{ColorIsaac}}" .. MAXIMUM_FOR_ADVENTURER .. "{{CR}} souls"
+                },
+                nil, "en_us", nil
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.STARLIT_PAPILLON),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                {
+                    "-" .. SOUL_DECREASE .. " souls on room clear",
+                    "{{ColorIsaac}}-" .. SOUL_DECREASE_FOR_ADVENTURER .. "{{CR}} souls on room clear"
+                },
+                nil, "en_us", nil
             )
         end
     end
@@ -207,26 +244,16 @@ Astro:AddCallback(
     end
 )
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PLAYER_UPDATE,
     ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if not hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_YO_LISTEN) then
-            hiddenItemManager:Add(player, CollectibleType.COLLECTIBLE_YO_LISTEN)
-        end
-    end,
-    Astro.Collectible.STARLIT_PAPILLON
-)
+    function(_, player)
+        if player:HasCollectible(Astro.Collectible.STARLIT_PAPILLON) then
+            local temporacyEffect = player:GetEffects()
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if hiddenItemManager:Has(player, CollectibleType.COLLECTIBLE_YO_LISTEN) and not player:HasCollectible(Astro.Collectible.STARLIT_PAPILLON) then
-            hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_YO_LISTEN)
+            if not temporacyEffect:HasCollectibleEffect(CollectibleType.COLLECTIBLE_YO_LISTEN) then
+                temporacyEffect:AddCollectibleEffect(CollectibleType.COLLECTIBLE_YO_LISTEN, false, 1)
+            end
         end
-    end,
-    Astro.Collectible.STARLIT_PAPILLON
+    end
 )

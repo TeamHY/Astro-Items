@@ -87,7 +87,7 @@ return {
     [818] = "Book items' temporary effects become permanent. {{ColorGray}}(AstroItems added books not applied){{CR}}",
     [819] = "{{Speed}} +2 Speed in cleared rooms#{{Speed}} -0.3 Speed in uncleared rooms",
  -- [820] = "설명 분리됨",
-    [821] = "{{Collectible492}} Applies YO LISTEN! while held#Absorbs up to 50 souls on enemy kill;#{{ArrowGrayRight}} +1% extra damage per soul on hit#{{ArrowGrayRight}} -5 souls on room clear",
+ -- [821] = "설명 분리됨",
     [822] = "Applies {{Collectible634}} Hungry Soul, {{Collectible727}} Purgatory, {{Collectible684}} Ghost Bombs#Doubles summoned ghost speed",
     [823] = "!!! +2 {{Collectible73}} Cube of Meat on first pickup#Spawns Cube of Meat on stage entry#!!! Amount: ({{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}} count + {{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}} count)",
  -- [824] = "설명 분리됨",
