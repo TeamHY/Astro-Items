@@ -677,6 +677,7 @@
 	<collectible id="168">
 		<info text="Grants an additional charged attack that creates a black ring around Isaac when released"/>
 		<info text="The ring deals rapid damage to enemies in contact with it"/>
+		<info text="Enemies killed by the black ring have a chance to drop a black heart"/>
 	</collectible>
 	<collectible id="169">
 		<info text="Doubles coins, bombs, keys, and red hearts"/>

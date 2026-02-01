@@ -680,6 +680,7 @@
 	<collectible id="168">
 		<info text="아이작 주변에 검은 고리를 생성하는 추가 충전형 공격을 얻습니다"/>
 		<info text="고리는 접촉한 적에게 빠른 지속 피해를 줍니다"/>
+		<info text="검은 고리로 적을 처치하면 확률적으로 검은 심장을 드롭합니다"/>
 	</collectible>
 	<collectible id="169">
 		<info text="동전, 폭탄, 열쇠, 빨간 심장이 두 배로 등장합니다"/>

@@ -166,7 +166,7 @@ return {
  -- [897] = "설명 분리됨",
     [898] = "Spawns sticky nickel that disappears after 10 seconds on hit#Turns summoned sticky nickels into giga bombs that explode on use",
     [899] = "!!! Usable only in Super Secret Room#Removes one held item on use;#{{ArrowGrayRight}} Spawns removed item and one of {{Collectible1}}/{{Collectible2}}/{{Collectible3}}#Choose one; the rest disappear#{{SuperSecretRoom}} Reveals Super Secret Room on stage 1 map",
-    [900] = "!!! {{Collectible399}} Maw Of The Void doesn't appear after pickup#↑ {{Damage}} +1 Damage#{{Chargeable}} Charges after 2.5 seconds hold; releases black ring around character#{{Collectible399}} Ring multi-hits for up to x30 damage",
+ -- [900] = "설명 분리됨",
     [901] = "{{Collectible203}} {{Heart}} Red Hearts, {{Coin}} Coins, {{Bomb}} Bombs, {{Key}} Keys spawn as 1+1",
     [902] = "{{Collectible651}} Aura in uncleared rooms:#{{ArrowGrayRight}} x1.2 Damage multiplier#{{ArrowGrayRight}} x2.5 Fire rate multiplier#Randomly blocks damage and homing tears",
     [903] = "Creates ladder to next stage#{{Collectible602}} Creates ladder to special shop on decorative tile (grass, rocks, etc.)",
