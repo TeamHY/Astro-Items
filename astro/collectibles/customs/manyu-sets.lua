@@ -3,7 +3,17 @@ local REINCARNATION_ITEMS = {
     CollectibleType.COLLECTIBLE_1UP,
 }
 
-local REINCARNATION_DAMAGE_MULTIPLIER = 0.1
+local REINCARNATION_DAMAGE_MULTIPLIER = 1.1
+
+local REINCARNATION_TEARS_MULTIPLIER = 1.1
+
+local REINCARNATION_RANGE_MULTIPLIER = 1.1
+
+local REINCARNATION_SPEED_MULTIPLIER = 1.1
+
+local REINCARNATION_SHOTSPEED_MULTIPLIER = 1.1
+
+local REINCARNATION_LUCK_MULTIPLIER = 1.1
 
 -- 마트료시카 공격력 증가량
 local MATRYOSHKA_DAMAGE = 0.05
@@ -124,46 +134,98 @@ Astro:AddCallback(
     end
 )
 
+local function GetCurrentStageCheck()
+    local level = Game():GetLevel()
+    return tostring(level:GetStage()) .. "." .. tostring(level:GetStageType())
+end
+
+---@param player EntityPlayer
+local function ApplyReincarnationEffect(player)
+    if not REPENTOGON then
+        return
+    end
+
+    local stageCheck = GetCurrentStageCheck()
+    local data = Astro:GetPersistentPlayerData(player)
+
+    data.reincarnationHistory = data.reincarnationHistory or {}
+    data.reincarnationHistory[stageCheck] = data.reincarnationHistory[stageCheck] or false
+    
+    if not data.reincarnationHistory[stageCheck] then
+        player:AddCollectibleEffect(Astro.Collectible.REINCARNATION, false, 0, false)
+    else
+        player:GetEffects():RemoveCollectibleEffect(Astro.Collectible.REINCARNATION, -1)
+    end
+end
+
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
         if collectibleType == Astro.Collectible.REINCARNATION then
             Astro.Data.RunReincarnation = true
-        elseif Astro:Contain(REINCARNATION_ITEMS, collectibleType) then
-            player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
-            player:EvaluateItems()
+            ApplyReincarnationEffect(player)
         end
     end
 )
 
-Astro:AddCallbackCustom(
-    isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_REMOVED,
-    ---@param player EntityPlayer
-    ---@param collectibleType CollectibleType
-    function(_, player, collectibleType)
-        if Astro:Contain(REINCARNATION_ITEMS, collectibleType) then
-            player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
-            player:EvaluateItems()
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_LEVEL,
+    function(_)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            if player:HasCollectible(Astro.Collectible.REINCARNATION) then
+                ApplyReincarnationEffect(player)
+            end
         end
     end
 )
+
+if REPENTOGON then
+    Astro:AddCallback(
+        ModCallbacks.MC_PRE_TRIGGER_PLAYER_DEATH,
+        ---@param player EntityPlayer
+        function(_, player)
+            if player:GetEffects():HasCollectibleEffect(Astro.Collectible.REINCARNATION) then
+                local stageCheck = GetCurrentStageCheck()
+                local data = Astro:GetPersistentPlayerData(player)
+
+                data.reincarnationHistory = data.reincarnationHistory or {}
+                data.reincarnationHistory[stageCheck] = data.reincarnationHistory[stageCheck] or false
+
+                if not data.reincarnationHistory[stageCheck] then
+                    data.reincarnationHistory[stageCheck] = true
+                    data.reincarnationUsedCount = (data.reincarnationUsedCount or 0) + player:GetCollectibleNum(Astro.Collectible.REINCARNATION)
+
+                    player:AddCacheFlags(CacheFlag.CACHE_ALL, true)
+                    player:GetEffects():RemoveCollectibleEffect(Astro.Collectible.REINCARNATION)
+                    player:SetMinDamageCooldown(120)
+                    return false
+                end
+            end
+        end
+    )
+end
 
 Astro:AddCallback(
     ModCallbacks.MC_EVALUATE_CACHE,
     ---@param player EntityPlayer
     ---@param cacheFlag CacheFlag
     function(_, player, cacheFlag)
-        if player:HasCollectible(Astro.Collectible.REINCARNATION) then
+        local data = Astro:GetPersistentPlayerData(player)
+
+        if data.reincarnationUsedCount then
             if cacheFlag == CacheFlag.CACHE_DAMAGE then
-                local count = 0
-
-                for _, item in ipairs(REINCARNATION_ITEMS) do
-                    count = count + player:GetCollectibleNum(item)
-                end
-
-                player.Damage = player.Damage * (1 + REINCARNATION_DAMAGE_MULTIPLIER * count * player:GetCollectibleNum(Astro.Collectible.REINCARNATION))
+                player.Damage = player.Damage * (REINCARNATION_DAMAGE_MULTIPLIER ^ data.reincarnationUsedCount)
+            elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
+                player.MaxFireDelay = player.MaxFireDelay / (REINCARNATION_TEARS_MULTIPLIER ^ data.reincarnationUsedCount)
+            elseif cacheFlag == CacheFlag.CACHE_RANGE then
+                player.TearRange = player.TearRange * (REINCARNATION_RANGE_MULTIPLIER ^ data.reincarnationUsedCount)
+            elseif cacheFlag == CacheFlag.CACHE_SPEED then
+                player.MoveSpeed = player.MoveSpeed * (REINCARNATION_SPEED_MULTIPLIER ^ data.reincarnationUsedCount)
+            elseif cacheFlag == CacheFlag.CACHE_SHOTSPEED then
+                player.ShotSpeed = player.ShotSpeed * (REINCARNATION_SHOTSPEED_MULTIPLIER ^ data.reincarnationUsedCount)
+            elseif cacheFlag == CacheFlag.CACHE_LUCK then
+                player.Luck = player.Luck * (REINCARNATION_LUCK_MULTIPLIER ^ data.reincarnationUsedCount)
             end
         end
     end

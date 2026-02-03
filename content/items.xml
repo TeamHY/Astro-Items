@@ -35,7 +35,7 @@
 	<passive gfx="Blood Of Hatred.png" quality="2" devilprice="1" shopprice="5" tags="devil" blackhearts="2" name="Blood Of Hatred" description="Revenge distilled in every drop of blood" id="34" />
 	<passive gfx="Divine Light.png" quality="3" hidden="true" devilprice="2" name="Divine Light" description="Light the way" id="35" />
 	<passive gfx="Omega 321.png" quality="2" devilprice="1" name="Omega 321" description="The Moonwatch" id="36" />
-	<passive cache="damage" gfx="Reincarnation.png" quality="3" devilprice="1" shopprice="20" tags="noeden" name="Reincarnation" description="Returning Life" id="37" />
+	<passive cache="damage" gfx="Reincarnation.png" quality="3" devilprice="1" shopprice="20" tags="noeden" customtags="reviveeffect" persistent="true" name="Reincarnation" description="Returning Life" id="37" />
 	<passive gfx="Acute Sinusitis.png" quality="3" devilprice="1" name="Acute Sinusitis" description="Tasty boogers" id="38" />
 	<active gfx="Laniakea Supercluster.png" quality="4" devilprice="2" initcharge="0" maxcharges="6" name="Laniakea Supercluster" description="Immense heaven" id="39" />
 	<passive gfx="Cleaner.png" quality="0" devilprice="1" tags="noeden" name="Cleaner" description="Clean up" id="40" />
