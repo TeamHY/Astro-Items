@@ -56,8 +56,6 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            -- NOTE: 불교 용어인듯하여 음역했습니다
-            --       ㄴ 던파 영문위키에 Cycle of Life Set로 번역돼있어 이로 수정했습니다
             local manyuIcon = Sprite()
             manyuIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
             EID:addIcon("TransformManyu", "Transformation2", 0, 16, 16, 0, -1, manyuIcon)
@@ -68,15 +66,21 @@ Astro:AddCallback(
             EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "TransformManyu")
 
             ----
+            
+            local rgonReviveText =
+                REPENTOGON
+                and "스테이지 당 한번 사망 시 그 방에서 즉시 체력 0.5로 부활합니다." ..
+                    "#부활 시마다 모든 능력치가 " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. "배 증가합니다.#"
+                or ""
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.REINCARNATION,
                 "리인카네이션",
                 "회귀의 생명",
-                "스테이지 당 한번 사망 시 그 방에서 즉시 체력 0.5로 부활합니다." ..
-                "#부활할 때마다 모든 스탯이 +10% 증가합니다." ..
+                rgonReviveText ..
                 "#다음 게임에서 랜덤 부활류 아이템 중 하나를 소환합니다.",
-                "중첩 시 스탯 증가량이 증가"
+                -- 중첩 시
+                "중첩 시 능력치 상승량이 증가"
             )
 
             ----
