@@ -10,7 +10,13 @@ local PRICE = 1
 
 local isc = require("astro.lib.isaacscript-common")
 
-local PLANETARIUM_BEGGAR_VARIANT = 3102
+Astro.Entity.PLANETARIUM_BEGGAR = {
+    Type = EntityType.ENTITY_SLOT,
+    Variant = 3102,
+    SubType = 0,
+}
+
+local PLANETARIUM_BEGGAR_VARIANT = Astro.Entity.PLANETARIUM_BEGGAR.Variant
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -72,7 +78,12 @@ Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_SLOT_INIT,
     ---@param slot Entity
     function(_, slot)
+        if Astro.IsFight and Astro:HasCollectible(CollectibleType.COLLECTIBLE_DARK_BUM) then
+            return
+        end
+
         if slot.Variant == 4 or slot.Variant == 5 or slot.Variant == 7 or slot.Variant == 9 or slot.Variant == 13 or slot.Variant == 18 then
+
             local room = Game():GetRoom()
 
             if room:GetType() == RoomType.ROOM_PLANETARIUM and slot.Variant ~= PLANETARIUM_BEGGAR_VARIANT then
@@ -88,7 +99,7 @@ Astro:AddCallbackCustom(
     ---@param slot Entity
     function(_, slot)
         slot.SpriteOffset = Vector(0, 5)
-        
+
         --[[ 스폰 효과 쓸거면 쓰고 안쓸거면 말고
         local save = Astro.SaveManager.GetRunSave()
         local slotIndex = Astro.SaveManager.Utility.GetSaveIndex(slot)

@@ -17,6 +17,7 @@ Astro.Callbacks = {
     PLAYER_DEAL_DMG = "ASTRO_PLAYER_DEAL_DMG",
     SPAWNED_BLUE_FLY = "ASTRO_SPAWNED_BLUE_FLY",
     SPAWNED_BLUE_SPIDER = "ASTRO_SPAWNED_BLUE_SPIDER",
+    POST_SLOT_INIT = "ASTRO_POST_SLOT_INIT",
 }
 
 local isFirst = true
@@ -233,3 +234,21 @@ Astro:AddCallback(
     end,
     FamiliarVariant.BLUE_SPIDER
 )
+
+if REPENTOGON then
+    Astro:AddCallback(
+        ModCallbacks.MC_POST_SLOT_INIT,
+        ---@param slot EntitySlot
+        function(_, slot)
+            Isaac.RunCallbackWithParam(Astro.Callbacks.POST_SLOT_INIT, slot.Variant, slot)
+        end
+    )
+else
+    Astro:AddCallbackCustom(
+        isc.ModCallbackCustom.POST_SLOT_INIT,
+        ---@param slot Entity
+        function(_, slot)
+            Isaac.RunCallbackWithParam(Astro.Callbacks.POST_SLOT_INIT, slot.Variant, slot)
+        end
+    )
+end

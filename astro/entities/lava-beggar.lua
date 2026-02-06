@@ -15,7 +15,13 @@ local isc = require("astro.lib.isaacscript-common")
 
 local INIT_CHECK_SUBTYPE = 1000
 
-local LAVA_BEGGAR_VARIANT = 3101
+Astro.Entity.LAVA_BEGGAR = {
+    Type = EntityType.ENTITY_SLOT,
+    Variant = 3101,
+    SubType = 0,
+}
+
+local LAVA_BEGGAR_VARIANT = Astro.Entity.LAVA_BEGGAR.Variant
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
@@ -76,7 +82,11 @@ Astro:AddCallback(
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_SLOT_INIT,
     ---@param slot Entity
-    function(_, slot)        
+    function(_, slot)
+        if Astro.IsFight and Astro:HasCollectible(CollectibleType.COLLECTIBLE_DARK_BUM) then
+            return
+        end
+
         if slot.SubType == 0 and Game():GetRoom():GetType() ~= RoomType.ROOM_PLANETARIUM then
             local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_EVE)
 
