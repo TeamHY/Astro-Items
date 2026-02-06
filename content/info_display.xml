@@ -154,7 +154,8 @@
 		<info text="Slows all enemies for 8 seconds upon entering a room"/>
 	</collectible>
 	<collectible id="37">
-		<info text="Grants damage ups for each revival item held"/>
+		<info text="Grants 1 extra life that revives Isaac with 1/2 heart"/>
+		<info text="Each time Isaac revives, his speed, tear damage, range, shot speed, and luck multiplier increase by 1.1 times"/>
 		<info text="Spawns 1 random revival item in the starting room of the next run"/>
 	</collectible>
 	<collectible id="38">
