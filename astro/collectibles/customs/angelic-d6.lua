@@ -1,13 +1,27 @@
 Astro.Collectible.ANGELIC_D6 = Isaac.GetItemIdByName("Angelic D6")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.ANGELIC_D6,
-        "천사빛 주사위",
-        "...",
-        "사용 시 그 방의 아이템을 순정 {{AngelRoom}}천사방 아이템으로 바꿉니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ANGELIC_D6,
+                "천사빛 주사위",
+                "축복을 굴려라",
+                "{{AngelRoom}} 사용 시 그 방의 아이템을 천사방 아이템으로 바꿉니다." ..
+                "모드로 추가된 아이템은 포함하지 않습니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ANGELIC_D6,
+                "Angelic D6", "",
+                "{{AngelRoom}} Rerolls pedestal items in the room into Angel items" ..
+                "Items added via mods are not included",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 local ANGELIC_ITEMS = {
     7,   -- Blood of the Martyr

@@ -3,11 +3,13 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Trinket.FOCUS_BAND = Isaac.GetTrinketIdByName("Focus Band")
 
 ------
+
 local SURVIVAL_SOURCE = 100    -- 100 -> 1/100 (1%), 10 -> 1/10 (10%)
 local SURVIVAL_LUCK = 1      -- 행운 1당 증가할 확률 (예: 2 -> 2%p)
 local SURVIVAL_MAX = 10      -- 최대 발동 확률
 
-local SURVIVAL_COOL = 180    -- 기본 무적 시간 (60프레임)
+local SURVIVAL_COOL = 180    -- 기본 무적 시간 (60당 1초)
+
 ------
 
 
@@ -29,7 +31,7 @@ Astro:AddCallback(
                 "Focus Band",
                 "",
 		        "!!! Consumed upon pickup" ..
-                "#When taking damage and your health is low, there is a 1% chance to ignore the damage and become invulnerable for 3 seconds." ..
+                "#When taking damage and Isaac's health is low, there is a 1% chance to ignore the damage and become invincible for 3 seconds" ..
                 "#{{Luck}} " .. SURVIVAL_MAX .. "% chance at 9 luck (" .. SURVIVAL_LUCK .. "%p per luck)",
                 nil,
                 "en_us"

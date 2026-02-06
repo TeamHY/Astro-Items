@@ -875,6 +875,13 @@
 	</collectible>
 	<collectible id="226">
 	</collectible>
+	<collectible id="227">
+		<info text="Rerolls all pedestal items in the room with a different item from angel room's item pool"/>
+	</collectible>
+	<collectible id="228">
+		<info text="50% chance to be revived when taking lethal damage"/>
+		<info text="Predicts whether items that can revive Isaac will actually revive him"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
