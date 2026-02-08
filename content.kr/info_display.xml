@@ -787,6 +787,7 @@
 		<info text="적이 있는 방에서 두유 효과를 얻어 공격 속도가 증가하고 공격력, 눈물 크기 및 넉백이 큰 폭으로 감소합니다"/>
 	</collectible>
 	<collectible id="193">
+		<info text="1+1 행운의 동전 하나를 드롭합니다"/>
 		<info text="행운의 동전이 두 배로 등장합니다"/>
 	</collectible>
 	<collectible id="194">

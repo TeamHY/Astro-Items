@@ -784,6 +784,7 @@
 		<info text="Grants Soy Milk effect in rooms with enemies, increasing tears and greatly decreasing damage, tear size, and knockback"/>
 	</collectible>
 	<collectible id="193">
+		<info text="Drops double lucky pennies on pickup"/>
 		<info text="Doubles lucky pennies"/>
 	</collectible>
 	<collectible id="194">

@@ -1,20 +1,43 @@
 Astro.Collectible.LUCKY_COIN_BUNDLE = Isaac.GetItemIdByName("Lucky Coin Bundle")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.LUCKY_COIN_BUNDLE,
-        "행운 동전 번들",
-        "운칠기삼",
-        "{{Crafting11}} 행운 동전 픽업이 1+1로 나옵니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LUCKY_COIN_BUNDLE,
+                "행운의 동전 번들",
+                "운칠기삼",
+                "{{Crafting11}} 행운 동전 픽업이 1+1로 나옵니다." ..
+                "#{{Crafting11}} 1+1 행운 동전 1개를 드랍합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LUCKY_COIN_BUNDLE,
+                "Lucky Penny Bundle", "",
+                "{{Crafting11}} All Lucky penny drops become Double Lucky pennies" ..
+                "#{{Crafting11}} Spawns Double Lucky pennies",
+                nil, "en_us"
+            )
+
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_PASSIVE, subType = Astro.Collectible.LUCKY_COIN_BUNDLE },
+                "Lucky Penny Bundle"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_PICKUP_INIT,
     ---@param pickup EntityPickup
     function(_, pickup)
         if Astro:HasCollectible(Astro.Collectible.LUCKY_COIN_BUNDLE) and pickup.SubType == 5 then
-            pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, 3100, true, true, false)
+            if HY_LUCKY_PENNY then
+                pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, 3101, true, true, false)
+            else
+                pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, 3100, true, true, false)
+            end
             
             local sprite = pickup:GetSprite()
             sprite:Play("Appear", true)
@@ -31,7 +54,7 @@ Astro:AddCallback(
     function(_, pickup, collider, low)
         local player = collider:ToPlayer()
 
-        if player and pickup.SubType == 3100 then
+        if player and pickup.SubType == 3101 or pickup.SubType == 3100 then
             if pickup.Wait > 0 then
                 return true
             end
@@ -47,12 +70,18 @@ Astro:AddCallback(
 
             player:AddCoins(2)
 
-            local data =  Astro.SaveManager.GetRunSave(player)
+            local data = Astro.SaveManager.GetRunSave(player)
             data["doubleLuckyPennyLuck"] = data["doubleLuckyPennyLuck"] or 0
             data["doubleLuckyPennyLuck"] = data["doubleLuckyPennyLuck"] + 2
 
             player:AddCacheFlags(CacheFlag.CACHE_LUCK)
             player:EvaluateItems()
+
+            if Options.Language == "kr" then
+                Game():GetHUD():ShowItemText("행운의 동전 x2", "행운 증가 x2", false, false)
+            else
+                Game():GetHUD():ShowItemText("Lucky Penny x2", "Luck up x2", false, false)
+            end
         end
     end,
     PickupVariant.PICKUP_COIN
@@ -62,7 +91,7 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_PICKUP_UPDATE,
     ---@param pickup EntityPickup
     function(_, pickup)
-        if pickup.SubType == 3100 then
+        if pickup.SubType == 3101 or pickup.SubType == 3100 then
             local sprite = pickup:GetSprite()
 
             if sprite:IsEventTriggered("DropSound") then
@@ -90,4 +119,20 @@ Astro:AddCallback(
         end
     end,
     CacheFlag.CACHE_LUCK
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        if Astro:IsFirstAdded(Astro.Collectible.LUCKY_COIN_BUNDLE) then
+            if HY_LUCKY_PENNY then
+                Astro:Spawn(5, 20, 3101, player.Position)
+            else
+                Astro:Spawn(5, 20, 3100, player.Position)
+            end
+        end
+    end,
+    Astro.Collectible.LUCKY_COIN_BUNDLE
 )

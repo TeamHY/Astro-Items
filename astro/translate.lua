@@ -58,7 +58,7 @@ Astro:AddCallback(
         local player = Isaac.GetPlayer(0)    -- 0번 컨트롤러의 화면에서 표시되어야 하므로
         local pType = player:GetPlayerType()
         if not playerNames[pType] then return end
-        if not REPKOR then return end
+        if Options.Language ~= "kr" or not REPKOR then return end
 
         local room = Game():GetRoom()
         local rType = room:GetType()

@@ -191,7 +191,7 @@ return {
     [922] = "{{Planetarium}} Creates pillar to Planetarium in stage first room#{{ArrowGrayRight}} Costs 30 {{Coin}} coins to enter#!!! Pillar disappears on room exit",
     [923] = "{{TreasureRoom}} Spawns 1 IBN 5100 machine in treasure room#{{Collectible422}} Consumes 10 {{Coin}} coins to rewind time to previous room state on contact",
     [924] = "{{Collectible330}} In uncleared rooms:#{{ArrowGrayRight}} x0.2 Damage multiplier#{{ArrowGrayRight}} x5.5 Fire rate multiplier#{{ArrowGrayRight}} -0.3 Tear size#{{Chargeable}} Charge attacks fire automatically without charge#!!! Doesn't activate in boss rooms",
-    [925] = "{{Crafting11}} Lucky penny pickups spawn as 1+1",
+ -- [925] = "설명 분리됨",
     [926] = "!!! Replaces all upright {{Card}} cards with reversed",
     [927] = "Creates equilateral triangle laser around character in uncleared rooms#Laser pierces and deals x1 damage per frame",
  -- [928] = "설명 분리됨"

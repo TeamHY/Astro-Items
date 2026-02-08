@@ -59,6 +59,10 @@
         <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
         <preload-snd id="234"/>
     </entity>
+    <entity anm2path="double_lucky_penny_green.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="12" friction="1" id="5" name="Double Lucky Penny (Green)" numGridCollisionPoints="24" shadowSize="14" stageHP="0" subtype="3101" variant="20">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
+        <preload-snd id="234"/>
+    </entity>
     <entity name="Scales of Obedience" anm2path="scales_of_obedience.anm2" id="1000" variant="3109" collisionMass="1" friction="1">
     </entity>
     <entity name="Legacy Angel" anm2path="legacy_angel.anm2" id="1000" variant="3110" subtype="0" collisionMass="1" friction="1">
