@@ -1,6 +1,7 @@
-Astro.Data["ShowQ5Hint"] = 0
-Astro.Data["TaurusExMode"] = 0
-Astro.Data["TaurusExKeyBind"] = Keyboard.KEY_V
+local defaultSetting = {
+    ["ShowQ5Hint"] = 0,
+    ["TaurusExMode"] = 0,
+    ["TaurusExKeyBind"] = Keyboard.KEY_V,
 
 ----
 
@@ -88,5 +89,8 @@ Astro:AddCallback(
         Astro.Data["ShowQ5Hint"] = Astro.Data["ShowQ5Hint"] or 1
         Astro.Data["TaurusExMode"] = Astro.Data["TaurusExMode"] or 0
         Astro.Data["TaurusExKeyBind"] = Astro.Data["TaurusExKeyBind"] or Keyboard.KEY_V
+        Astro.Data["TaurusExMode"] = Astro.Data["TaurusExMode"] or defaultSetting["TaurusExMode"]
+        Astro.Data["TaurusExKeyBind"] = Astro.Data["TaurusExKeyBind"] or defaultSetting["TaurusExKeyBind"]
+        Astro.Data["AltLuckyPennyColor"] = Astro.Data["AltLuckyPennyColor"] or defaultSetting["AltLuckyPennyColor"]
     end
 )

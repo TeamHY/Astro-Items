@@ -33,7 +33,7 @@ Astro:AddCallback(
     ---@param pickup EntityPickup
     function(_, pickup)
         if Astro:HasCollectible(Astro.Collectible.LUCKY_COIN_BUNDLE) and pickup.SubType == 5 then
-            if HY_LUCKY_PENNY then
+            if Astro.Data["AltLuckyPennyColor"] == 1 then
                 pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, 3101, true, true, false)
             else
                 pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COIN, 3100, true, true, false)
@@ -68,12 +68,12 @@ Astro:AddCallback(
             sprite:Play("Collect", true)
             SFXManager():Play(SoundEffect.SOUND_LUCKYPICKUP, 1)
 
-            player:AddCoins(2)
-
             local data = Astro.SaveManager.GetRunSave(player)
             data["doubleLuckyPennyLuck"] = data["doubleLuckyPennyLuck"] or 0
             data["doubleLuckyPennyLuck"] = data["doubleLuckyPennyLuck"] + 2
 
+            player:AddCoins(2)
+            player:AnimateHappy()
             player:AddCacheFlags(CacheFlag.CACHE_LUCK)
             player:EvaluateItems()
 
@@ -127,7 +127,7 @@ Astro:AddCallback(
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
         if Astro:IsFirstAdded(Astro.Collectible.LUCKY_COIN_BUNDLE) then
-            if HY_LUCKY_PENNY then
+            if Astro.Data["AltLuckyPennyColor"] == 1 then
                 Astro:Spawn(5, 20, 3101, player.Position)
             else
                 Astro:Spawn(5, 20, 3100, player.Position)
