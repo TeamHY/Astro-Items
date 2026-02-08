@@ -231,6 +231,7 @@
 	<passive cache="tearflag" gfx="Mineral Shard.png" quality="3" shopprice="15" name="Mineral Shard" hidden="true" description="Star's Present" id="230" />
 	<passive cache="tearflag tearcolor" gfx="Serpent's Kiss EX.png" quality="3" shopprice="15" name="Serpent's Kiss EX" hidden="true" description="Don't think about getting away" id="231" />
 	<active gfx="Chubby's Paw.png" quality="3" maxcharges="6" shopprice="15" name="Chubby's Paw" description="Don't touch it!" id="232" />
+	<passive gfx="Quill Pen.png" quality="3" shopprice="15" name="Quill Pen" hidden="true" description="Hand of heaven" id="233" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

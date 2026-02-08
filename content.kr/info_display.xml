@@ -902,6 +902,9 @@
 	<collectible id="232">
 		<info text="체력 1칸을 제거하여 뼈다귀 심장 2개를 얻습니다"/>
 	</collectible>
+	<collectible id="233">
+		<info text="15번째 공격마다 도그마의 깃털 다발을 발사합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

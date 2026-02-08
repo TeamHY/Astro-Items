@@ -899,6 +899,9 @@
 	<collectible id="232">
 		<info text="Permanently removes 1 HP to grant 2 bone hearts"/>
 	</collectible>
+	<collectible id="233">
+		<info text="Every 15 shots, fire a burst of Dogma's feathers"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

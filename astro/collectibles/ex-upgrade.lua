@@ -78,6 +78,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_ROSARY] = { Id = Astro.Collectible.LUXURY_ROSARY, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_LUMP_OF_COAL] = { Id = Astro.Collectible.MINERAL_SHARD, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_SERPENTS_KISS] = { Id = Astro.Collectible.SERPENTS_KISS_EX, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_LEAD_PENCIL] = { Id = Astro.Collectible.QUILL_PEN, Chance = 0.5 },
 }
 
 ---
