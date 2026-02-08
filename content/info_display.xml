@@ -891,6 +891,11 @@
 		<info text="Makes shots increase in damage and size the farther they travel"/>
 		<info text="Makes tears increase in damage and size the further they are from the Isaac"/>
 	</collectible>
+	<collectible id="231">
+		<info text="Chance to fire poison tears"/>
+		<info text="Making contact with an enemy also applies poison"/>
+		<info text="Enemies poisoned have a chance to drop a black heart when killed"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

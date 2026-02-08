@@ -37,4 +37,6 @@
 	<costume id="223" anm2path="costume_rainbowmushroom.anm2" type="passive" skinColor="0" overwriteColor="true" forceBodyColor="true" forceHeadColor="true" />
 	<costume id="224" anm2path="248_hive mind.anm2" type="passive" />
 	<costume id="225" anm2path="costume_moneyissorrow.anm2" type="passive" priority="22"/>
+	<costume id="229" anm2path="072_rosary.anm2" type="passive" />
+	<costume id="231" anm2path="393_serpentskiss.anm2" type="passive" />
 </costumes>

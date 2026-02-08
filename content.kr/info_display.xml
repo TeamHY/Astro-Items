@@ -894,6 +894,11 @@
 		<info text="공격이 이동한 거리에 비례해 피해량과 크기가 증가합니다"/>
 		<info text="눈물과 아이작과의 거리에 비례해 피해량과 크기가 증가합니다"/>
 	</collectible>
+	<collectible id="231">
+		<info text="확률적으로 독 눈물을 발사합니다"/>
+		<info text="적과 접촉하면 중독 효과를 줍니다"/>
+		<info text="중독된 적이 처치되면 확률적으로 검은 심장을 드롭합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

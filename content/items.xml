@@ -2,7 +2,7 @@
 	<passive gfx="Cygnus.png" quality="4" devilprice="2" name="Cygnus" description="Heavenly support" id="1" />
 	<passive tags="dead tech battery syringe mom guppy fly bob mushroom baby angel devil poop book spider" gfx="Libra.png" devilprice="2" quality="3" shopprice="30" name="Libra EX" description="Fairness" id="2" />
 	<passive gfx="Cancer.png" quality="3" devilprice="1" shopprice="20" soulhearts="6" name="Cancer EX" description="Protected by purity" id="3" />
-	<passive cache="tearflag" gfx="Scorpio.png" devilprice="2" quality="3" shopprice="20" name="Scorpio EX" description="100% pure poison" id="4" />
+	<passive cache="tearflag tearcolor" gfx="Scorpio.png" devilprice="2" quality="3" shopprice="20" name="Scorpio EX" description="100% pure poison" id="4" />
 	<passive cache="damage firedelay" gfx="Capricorn.png" quality="3" devilprice="2" shopprice="15" name="Capricorn EX" description="Substantial offering" id="5" />
 	<passive cache="damage" gfx="Virgo.png" quality="5" devilprice="1" shopprice="25" tags="noeden" name="Virgo EX" description="Let me have no shame before heaven" id="6" />
 	<passive gfx="Leo.png" quality="3" devilprice="1" shopprice="15" tags="noeden" name="Leo EX" description="The majesty of the king" id="7" />
@@ -229,6 +229,7 @@
 	<passive tags="quest guppy" gfx="Guppy's Name Tag.png" quality="2" shopprice="10" name="Guppy's Name Tag" hidden="true" description="I fear nothing with you" id="228" />
 	<passive tags="tearsup angel" cache="firedelay" gfx="Luxury Rosary.png" quality="3" shopprice="15" soulhearts="6" name="Luxury Rosary" hidden="true" description="Living in the light" id="229" />
 	<passive cache="tearflag" gfx="Mineral Shard.png" quality="3" shopprice="15" name="Mineral Shard" hidden="true" description="Star's Present" id="230" />
+	<passive cache="tearflag tearcolor" gfx="Serpent's Kiss EX.png" quality="3" shopprice="15" name="Serpent's Kiss EX" hidden="true" description="Predator" id="231" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
