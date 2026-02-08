@@ -2,6 +2,8 @@ local defaultSetting = {
     ["ShowQ5Hint"] = 0,
     ["TaurusExMode"] = 0,
     ["TaurusExKeyBind"] = Keyboard.KEY_V,
+    ["AltLuckyPennyColor"] = 1,
+}
 
 ----
 
@@ -81,14 +83,34 @@ if ModConfigMenu then
         end,
         Info = "(Functions when the Taurus EX Mode option is set to Single tap) Configure the key to trigger the Taurus EX dash."
     });
+    ModConfigMenu.AddSetting("Astrobirth", nil,
+    {
+        Type = ModConfigMenu.OptionType.NUMBER,
+        Attribute = "AltLuckyPennyColor",
+        Minimum = 0,
+        Maximum = 1,
+        ModifyBy = 1,
+        CurrentSetting = function()
+            return Astro.Data["AltLuckyPennyColor"]
+        end,
+        Display = function()
+            if Astro.Data["AltLuckyPennyColor"] == 1 then
+                return "Alternative Double Lucky Penny Color: On"
+            else
+                return "Alternative Double Lucky Penny Color: Off"
+            end
+        end,
+        OnChange = function(newOption)
+            Astro.Data["AltLuckyPennyColor"] = newOption;
+        end,
+        Info = "Change the color of the Double Lucky Penny."
+    });
 end
 
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
-        Astro.Data["ShowQ5Hint"] = Astro.Data["ShowQ5Hint"] or 1
-        Astro.Data["TaurusExMode"] = Astro.Data["TaurusExMode"] or 0
-        Astro.Data["TaurusExKeyBind"] = Astro.Data["TaurusExKeyBind"] or Keyboard.KEY_V
+        Astro.Data["ShowQ5Hint"] = Astro.Data["ShowQ5Hint"] or defaultSetting["ShowQ5Hint"]
         Astro.Data["TaurusExMode"] = Astro.Data["TaurusExMode"] or defaultSetting["TaurusExMode"]
         Astro.Data["TaurusExKeyBind"] = Astro.Data["TaurusExKeyBind"] or defaultSetting["TaurusExKeyBind"]
         Astro.Data["AltLuckyPennyColor"] = Astro.Data["AltLuckyPennyColor"] or defaultSetting["AltLuckyPennyColor"]
