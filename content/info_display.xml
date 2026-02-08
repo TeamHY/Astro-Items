@@ -887,6 +887,10 @@
 	<collectible id="229">
 		<info text="Chance to reroll low quality items into other items toward the Seraphim transformation"/>
 	</collectible>
+	<collectible id="230">
+		<info text="Makes shots increase in damage and size the farther they travel"/>
+		<info text="Makes tears increase in damage and size the further they are from the Isaac"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

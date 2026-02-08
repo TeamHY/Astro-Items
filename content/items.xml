@@ -228,7 +228,7 @@
 	<active tags="angel" gfx="Angelic D6.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" name="Angelic D6" description="Reroll your blessing" id="227" />
 	<passive tags="quest guppy" gfx="Guppy's Name Tag.png" quality="2" shopprice="10" name="Guppy's Name Tag" hidden="true" description="I fear nothing with you" id="228" />
 	<passive tags="tearsup angel" cache="firedelay" gfx="Luxury Rosary.png" quality="3" shopprice="15" soulhearts="6" name="Luxury Rosary" hidden="true" description="Living in the light" id="229" />
-	<passive cache="damage" gfx="Mineral Shard.png" quality="3" shopprice="15" name="Mineral Shard" hidden="true" description="Star's Present" id="229" />
+	<passive cache="tearflag" gfx="Mineral Shard.png" quality="3" shopprice="15" name="Mineral Shard" hidden="true" description="Star's Present" id="230" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

@@ -105,9 +105,9 @@ Astro:AddCallback(
         local player = Astro:GetPlayerFromEntity(tear)
         
         if player and player:HasCollectible(Astro.Collectible.SAGITTARIUS_EX) then
-            if tear.TearVariant == tear.BLUE then
+            if tear.Variant == TearVariant.BLUE then
                 tear:ChangeVariant(TearVariant.CUPID_BLUE)
-            elseif tear.TearVariant == TearVariant.BLOOD then
+            elseif tear.Variant == TearVariant.BLOOD then
                 tear:ChangeVariant(TearVariant.CUPID_BLOOD)
             end
         end

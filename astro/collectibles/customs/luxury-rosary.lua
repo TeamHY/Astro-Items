@@ -20,7 +20,9 @@ Astro:AddCallback(
                 "그 빛 가운데 거한다면",
                 "↑ {{SoulHeart}}소울하트 +3" ..
                 "#↑ {{TearsSmall}}연사(+상한) +1" ..
-                "#{{Quality0}}/{{Quality1}}등급 아이템 등장 시 " .. string.format("%.f", REROLL_CHANCE_BASE * 100) .. "%의 확률로 Seraphim 세트 아이템으로 바꿉니다."
+                "#{{Quality0}}/{{Quality1}}등급 아이템 등장 시 " .. string.format("%.f", REROLL_CHANCE_BASE * 100) .. "%의 확률로 Seraphim 세트 아이템으로 바꿉니다.",
+                -- 중첩 시
+                "아이템 변경 확률은 중첩 불가"
             )
 
             Astro.EID:AddCollectible(
@@ -29,7 +31,9 @@ Astro:AddCallback(
                 "↑ {{SoulHeart}} +3 Soul Hearts" ..
                 "#↑ {{Tears}} +1 Fire Rate" ..
                 "#" .. string.format("%.f", REROLL_CHANCE_BASE * 100) .. "% chance to reroll {{Quality0}}/{{Quality1}} items into Seraphim transformation items",
-                nil, "en_us"
+                -- Stacks
+                "Reroll chances do not stack",
+                "en_us"
             )
         end
 

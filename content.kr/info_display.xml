@@ -890,6 +890,10 @@
 	<collectible id="229">
 		<info text="낮은 등급의 받침대형 아이템을 확률적으로 세라핌 변신에 필요한 아이템으로 리롤합니다"/>
 	</collectible>
+	<collectible id="230">
+		<info text="공격이 이동한 거리에 비례해 피해량과 크기가 증가합니다"/>
+		<info text="눈물과 아이작과의 거리에 비례해 피해량과 크기가 증가합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
