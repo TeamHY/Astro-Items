@@ -899,6 +899,9 @@
 		<info text="적과 접촉하면 중독 효과를 줍니다"/>
 		<info text="중독된 적이 처치되면 확률적으로 검은 심장을 드롭합니다"/>
 	</collectible>
+	<collectible id="232">
+		<info text="체력 1칸을 제거하여 뼈다귀 심장 2개를 얻습니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

@@ -1476,6 +1476,7 @@
 		<Item Name="Chubby's Head" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sleeping Puppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Chubby's Tail" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Chubby's Paw" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Absolut Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Delirium Guppy" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>

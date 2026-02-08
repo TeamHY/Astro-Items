@@ -896,6 +896,9 @@
 		<info text="Making contact with an enemy also applies poison"/>
 		<info text="Enemies poisoned have a chance to drop a black heart when killed"/>
 	</collectible>
+	<collectible id="232">
+		<info text="Permanently removes 1 HP to grant 2 bone hearts"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

@@ -17,7 +17,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.SERPENTS_KISS_EX,
                 "초 독뱀의 키스",
-                "포식자",
+                "벗어날 생각은 마라",
                 string.format("%.f", FIRE_CHANCE * 100) .. "%의 확률로 적을 중독시키는 공격이 나갑니다." ..
                 "#적에게 접촉시 " .. string.format("%.f", CONTACT_DEAL) .. "의 피해를 주고 적을 중독시킵니다." ..
                 "#{{BlackHeart}} 중독된 적이 죽을때 " .. string.format("%.f", DROP_CHANCE * 100) .. "% 확률로 블랙하트가 드랍됩니다.",

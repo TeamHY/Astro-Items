@@ -3,6 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.CHUBBYS_HEAD = Isaac.GetItemIdByName("Chubby's Head")
 Astro.Collectible.SLEEPING_PUPPY = Isaac.GetItemIdByName("Sleeping Puppy")
 Astro.Collectible.CHUBBYS_TAIL = Isaac.GetItemIdByName("Chubby's Tail")
+Astro.Collectible.CHUBBYS_PAW = Isaac.GetItemIdByName("Chubby's Paw")
 
 local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
@@ -18,6 +19,7 @@ Astro:AddCallback(
             EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_HEAD, "TransformChubby")
             EID:assignTransformation("collectible", Astro.Collectible.SLEEPING_PUPPY, "TransformChubby")
             EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_TAIL, "TransformChubby")
+            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_PAW, "TransformChubby")
             EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "TransformChubby")
             EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "TransformChubby")
             EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "TransformChubby")
@@ -47,6 +49,12 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 시 추가 등장 확률이 합연산으로 증가"
             )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.CHUBBYS_TAIL,
+                "처비의 발",
+                "건드리지 마!",
+                "{{BoneHeart}} 사용 시 최대 체력 1칸을 뼈하트 2칸으로 바꿉니다."
+            )
         end
     end
 )
@@ -56,6 +64,7 @@ local CHUBBY_SET_LIST = {
     Astro.Collectible.CHUBBYS_HEAD,
     Astro.Collectible.SLEEPING_PUPPY,
     Astro.Collectible.CHUBBYS_TAIL,
+    Astro.Collectible.CHUBBYS_PAW,
     -- Astro.Collectible.LIBRA_EX, -- 순서 문제로 별도 처리
     CollectibleType.COLLECTIBLE_DOG_TOOTH,
     CollectibleType.COLLECTIBLE_LITTLE_CHUBBY,
@@ -289,4 +298,33 @@ Astro:AddCallbackCustom(
             end
         end
     end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_USE_ITEM,
+    ---@param collectibleID CollectibleType
+    ---@param rngObj RNG
+    ---@param player EntityPlayer
+    ---@param useFlags UseFlag
+    ---@param activeSlot ActiveSlot
+    ---@param varData integer
+    function(_, collectibleID, rngObj, player, useFlags, activeSlot, varData)
+        if player:GetMaxHearts() < 1 then
+            return {
+                Discharge = false,
+                Remove = false,
+                ShowAnim = false,
+            }
+        end
+
+        player:AddMaxHearts(-2)
+        player:AddBoneHearts(2)
+
+        return {
+            Discharge = true,
+            Remove = false,
+            ShowAnim = true,
+        }
+    end,
+    Astro.Collectible.CHUBBYS_PAW
 )
