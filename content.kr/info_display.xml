@@ -887,6 +887,9 @@
 		<info text="사망 시 50% 확률로 부활합니다"/>
 		<info text="확률적으로 아이작을 부활시켜 주는 아이템들의 부활 가능 여부를 예측합니다"/>
 	</collectible>
+	<collectible id="229">
+		<info text="낮은 등급의 받침대형 아이템을 확률적으로 세라핌 변신에 필요한 아이템으로 리롤합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

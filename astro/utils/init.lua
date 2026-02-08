@@ -598,3 +598,9 @@ function Astro:GetPlayerActiveItemSlot(player, item)
 
     return nil
 end
+
+-- isc: getLastCollectibleType()
+---@return number
+function Astro:GetMaxCollectibleID()
+    return Isaac.GetItemConfig():GetCollectibles().Size -1
+end

@@ -884,6 +884,9 @@
 		<info text="50% chance to be revived when taking lethal damage"/>
 		<info text="Predicts whether items that can revive Isaac will actually revive him"/>
 	</collectible>
+	<collectible id="229">
+		<info text="Chance to reroll low quality items into other items toward the Seraphim transformation"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

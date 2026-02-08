@@ -176,6 +176,7 @@ require "astro.collectibles.customs.money-is-sorrow"
 require "astro.collectibles.customs.davids-stone"
 require "astro.collectibles.customs.angelic-d6"
 require "astro.collectibles.customs.guppys-name-tag"
+require "astro.collectibles.customs.luxury-rosary"
 
 --#region PLANETARIUM
 
