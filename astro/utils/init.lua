@@ -283,6 +283,14 @@ Astro:AddCallback(
     end
 )
 
+Astro:AddCallback(
+    ModCallbacks.MC_USE_ITEM,
+    function()
+        Astro.Data.CollectibleCount = {}
+    end,
+    CollectibleType.COLLECTIBLE_GENESIS
+)
+
 ---아이템 최초 획득 시를 체크한다.
 ---TODO: 추후에 여러번 획득해도 동작하도록 변경할 예정이기 때문에 카운트를 저장한다.
 ---@param collectibleType CollectibleType

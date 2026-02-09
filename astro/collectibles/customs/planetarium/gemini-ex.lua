@@ -65,8 +65,27 @@ Astro:AddCallback(
             Astro:SpawnTrinket(Astro.Trinket.BLACK_MIRROR, player.Position)
         end
         
-        SpawnGeminiBaby(player)
+        -- SpawnGeminiBaby(player)                   --     ↓ 못고쳐서 주석처리 어쩔수없는저의개똥코딩을이해해주십시오
         Astro.Data["geminiExCooldown"] = 60    -- 특정 상황에서 초쌍이 1개여도 2마리 생성될 때 있음
+    end,
+    Astro.Collectible.GEMINI_EX
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_REMOVED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        local pData = Astro:GetPersistentPlayerData(player)
+        local geminies = Isaac.FindByType(EntityType.ENTITY_GEMINI, 10, 3)
+
+        if #geminies > 0 then
+            for _, gemini in pairs(geminies) do
+                if pData["spawnedByGeminiEx"][tostring(gemini.InitSeed)] then
+                    gemini:Die()
+                end
+            end
+        end
     end,
     Astro.Collectible.GEMINI_EX
 )
@@ -100,6 +119,7 @@ Astro:AddCallback(
     function()
         for i = 1, game:GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
+            local pData = Astro:GetPersistentPlayerData(player)
 
             if player:HasCollectible(Astro.Collectible.GEMINI_EX) then
                 local collectibleNum = player:GetCollectibleNum(Astro.Collectible.GEMINI_EX)
@@ -107,7 +127,9 @@ Astro:AddCallback(
 
                 if #geminies > 0 then
                     for j, gemini in pairs(geminies) do
-                        gemini.Position = player.Position
+                        if pData["spawnedByGeminiEx"][tostring(gemini.InitSeed)] then
+                            gemini.Position = player.Position
+                        end
                     end
                 else
                     for k = 1, collectibleNum do

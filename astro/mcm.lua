@@ -1,5 +1,5 @@
 local defaultSetting = {
-    ["ShowQ5Hint"] = 0,
+    ["ShowQ5Hint"] = 1,
     ["TaurusExMode"] = 0,
     ["TaurusExKeyBind"] = Keyboard.KEY_V,
     ["AltLuckyPennyColor"] = 1,
@@ -20,15 +20,15 @@ if ModConfigMenu then
         end,
         Display = function()
             if Astro.Data["ShowQ5Hint"] == 1 then
-                return "Show Q5 Hint: On"
+                return "Show Craft Hint: On"
             else
-                return "Show Q5 Hint: Off"
+                return "Show Craft Hint: Off"
             end
         end,
         OnChange = function(newOption)
             Astro.Data["ShowQ5Hint"] = newOption;
         end,
-        Info = "The crafting recipe for a Q5 item is displayed in the EID."
+        Info = "The crafting recipe for hidden items is displayed in the EID."
     });
     ModConfigMenu.AddSetting("Astrobirth", nil,
     {
