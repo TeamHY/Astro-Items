@@ -4,6 +4,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_LEAD_PENCIL].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible444}}{{ColorYellow}}연필{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible444}} {{ColorYellow}}Lead Pencil{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.QUILL_PEN, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.QUILL_PEN,
                 "깃펜",
@@ -74,10 +81,9 @@ Astro:AddCallback(
         if fData._ASTRO_quillPenTimeout and fData._ASTRO_quillPenPlayer ~= nil then
             local player = fData._ASTRO_quillPenPlayer
             local penNum = player:GetCollectibleNum(Astro.Collectible.QUILL_PEN)
-
-            fData._ASTRO_quillPenTimeout = fData._ASTRO_quillPenTimeout - 1
             projectile.CollisionDamage = player.Damage * (penNum - 0.425)
 
+            fData._ASTRO_quillPenTimeout = fData._ASTRO_quillPenTimeout - 1
             if fData._ASTRO_quillPenTimeout < 0 then
                 projectile:Remove()
             end

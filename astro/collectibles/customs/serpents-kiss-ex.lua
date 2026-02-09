@@ -14,6 +14,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_SERPENTS_KISS].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible393}}{{ColorYellow}}독뱀의 키스{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible393}} {{ColorYellow}}Serpent's Kiss{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.SERPENTS_KISS_EX, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.SERPENTS_KISS_EX,
                 "초 독뱀의 키스",

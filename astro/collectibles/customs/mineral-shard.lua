@@ -4,6 +4,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_LUMP_OF_COAL].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible132}}{{ColorYellow}}석탄 한 덩이{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible132}} {{ColorYellow}}A Lump of Coal{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.MINERAL_SHARD, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.MINERAL_SHARD,
                 "미네랄 조각",

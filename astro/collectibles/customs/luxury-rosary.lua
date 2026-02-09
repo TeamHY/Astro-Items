@@ -14,6 +14,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_ROSARY].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible72}}{{ColorYellow}}묵주{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible72}} {{ColorYellow}}Rosary{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.LUXURY_ROSARY, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.LUXURY_ROSARY,
                 "명품 묵주",
