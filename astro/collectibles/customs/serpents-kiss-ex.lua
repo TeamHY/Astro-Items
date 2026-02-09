@@ -32,7 +32,8 @@ Astro:AddCallback(
                 "#{{Poison}} Poison enemies on contact" ..
                 "#{{BlackHeart}} Poisoned enemies have a " .. string.format("%.f", DROP_CHANCE * 100) .. "% chance to drop a Black Heart on death",
                 -- Stacks
-                "Stacks increase poison tear shoot chance and contact damage"
+                "Stacks increase poison tear shoot chance and contact damage",
+                "en_us"
             )
         end
     end
