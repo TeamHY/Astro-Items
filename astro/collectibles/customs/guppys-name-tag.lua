@@ -12,13 +12,20 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            local chance = string.format("%.f", SURVIVAL_CHANCE * 100)
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_GUPPYS_COLLAR].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible212}}{{ColorYellow}}구피의 목걸이{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible212}} {{ColorYellow}}Guppy's Collar{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.GUPPYS_NAME_TAG, CRAFT_HINT)
+
+            local surviveChance = string.format("%.f", SURVIVAL_CHANCE * 100)
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.GUPPYS_NAME_TAG,
                 "구피의 이름표",
                 "이 세상에 두려운 건 없어 너와 함께면",
-                "사망 시 " .. chance .. "%의 확률로 그 방에서 즉시 부활합니다." ..
+                "사망 시 " .. surviveChance .. "%의 확률로 그 방에서 즉시 부활합니다." ..
                 "#확률형 부활류 아이템들의 부활 가능 여부가 체력 HUD에 표시됩니다.",
                 -- 중첩 시
                 "중첩 시 무적 시간이 합연산으로 증가"
@@ -27,7 +34,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.GUPPYS_NAME_TAG,
                 "Guppy's Name Tag", "",
-                chance .. "% chance to revive in the same room on death" ..
+                surviveChance .. "% chance to revive in the same room on death" ..
                 "#The revive status of chance-based revive items is displayed on the health HUD",
                 -- Stacks
                 "Stacks incraese invincibility duration",

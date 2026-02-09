@@ -6,6 +6,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[Astro.Collectible.AMAZING_CHAOS_SCROLL].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible" .. Astro.Collectible.AMAZING_CHAOS_SCROLL .. "}}{{ColorYellow}}놀라운 혼돈의 주문서{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible" .. Astro.Collectible.AMAZING_CHAOS_SCROLL .. "}} {{ColorYellow}}Incredible Chaos Scroll{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS,
                 "놀라운 긍정의 혼돈의 주문서",

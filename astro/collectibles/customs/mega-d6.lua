@@ -6,44 +6,50 @@ local ITEM_ID = Astro.Collectible.MEGA_D6
 
 ---
 
-if EID then
-    local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
-    local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
+            local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
 
-    local CRAFT_HINT = {
-        ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
-        ["en_us"] = "#{{DiceRoom}} Can be transformed {{ColorYellow}}using it in the Dice Room{{CR}}"
-    }
-    Astro.EID:AddCraftHint(CollectibleType.COLLECTIBLE_D6, CRAFT_HINT)
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_D6].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible105}}{{ColorYellow}}주사위{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible105}} {{ColorYellow}}The D6{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.MEGA_D6, CRAFT_HINT)
 
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "대왕 주사위",
-        "굴려 굴려 굴려",
-        rgonWarning ..
-        "사용 시 그 방의 아이템에 {{ColorOrange}}아래 효과 중 하나를 골라{{CR}} 발동합니다:" ..
-        "#{{ArrowGrayRight}} 다른 아이템으로 바꿉니다." ..
-        "#{{ArrowGrayRight}} 같은 유형(패시브/액티브)의 다른 아이템으로 바꿉니다." ..
-        "#{{ArrowGrayRight}} 같은 등급의 다른 아이템으로 바꿉니다." ..
-        "#{{ArrowGrayRight}} {{Player31}}Tainted Lost에게 등장하지 않는 아이템으로 바꿉니다." ..
-        "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다."
-    )
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "대왕 주사위",
+                "굴려 굴려 굴려",
+                rgonWarning ..
+                "사용 시 그 방의 아이템에 {{ColorOrange}}아래 효과 중 하나를 골라{{CR}} 발동합니다:" ..
+                "#{{ArrowGrayRight}} 다른 아이템으로 바꿉니다." ..
+                "#{{ArrowGrayRight}} 같은 유형(패시브/액티브)의 다른 아이템으로 바꿉니다." ..
+                "#{{ArrowGrayRight}} 같은 등급의 다른 아이템으로 바꿉니다." ..
+                "#{{ArrowGrayRight}} {{Player31}}Tainted Lost에게 등장하지 않는 아이템으로 바꿉니다." ..
+                "#{{ArrowGrayRight}} 랜덤 배열의 다른 아이템으로 바꾸며, 그 방의 픽업을 다른 픽업으로 바꿉니다."
+            )
 
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "Mega D6",
-        "",
-        rgonWarningENG ..
-        "When used, {{ColorOrange}}applies one of the following effects{{CR}} to all items in the room:" ..
-        "#{{ArrowGrayRight}} Changes them to different items." ..
-        "#{{ArrowGrayRight}} Preserves passive/active type and changes to different items." ..
-        "#{{ArrowGrayRight}} Preserves quality and changes to different items." ..
-        "#{{ArrowGrayRight}} Changes to useless items for {{Player31}}Tainted Lost." ..
-        "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups.",
-        nil,
-        "en_us"
-    )
-end
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Mega D6",
+                "",
+                rgonWarningENG ..
+                "When used, {{ColorOrange}}applies one of the following effects{{CR}} to all items in the room:" ..
+                "#{{ArrowGrayRight}} Changes them to different items." ..
+                "#{{ArrowGrayRight}} Preserves passive/active type and changes to different items." ..
+                "#{{ArrowGrayRight}} Preserves quality and changes to different items." ..
+                "#{{ArrowGrayRight}} Changes to useless items for {{Player31}}Tainted Lost." ..
+                "#{{ArrowGrayRight}} Randomly changes all items regardless of pools. Also affects other pickups.",
+                nil,
+                "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,

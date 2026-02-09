@@ -12,6 +12,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_HOURGLASS].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible66}}{{ColorYellow}}모래시계{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible66}} {{ColorYellow}}The Hourglass{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.CHRONOS, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.CHRONOS,
                 "사투르누스",

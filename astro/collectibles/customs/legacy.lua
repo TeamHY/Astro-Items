@@ -17,6 +17,13 @@ Astro:AddCallback(
             local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
             local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
 
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_BIRTHRIGHT].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible619}}{{ColorYellow}}생득권{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible619}} {{ColorYellow}}Birthright{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.LEGACY, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "유산",
@@ -32,9 +39,9 @@ Astro:AddCallback(
                 ITEM_ID,
                 "Legacy", "",
                 rgonWarningENG ..
-                "Press 7 to transform all items in the room into random set items. Can only be used once per floor." ..
-                "All transformation effects are enhanced." ..
-                "{{ColorGray}} Bookworm effect not implemented",
+                "Press '7' key to transform all items in the room into random tranformation items. Can only be used once per floor" ..
+                "All transformation effects are enhanced" ..
+                "{{ColorGray}} (Bookworm effect not implemented)",
                 nil, "en_us"
             )
         end

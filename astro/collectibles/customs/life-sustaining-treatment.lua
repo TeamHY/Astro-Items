@@ -4,6 +4,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_EUTHANASIA].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible496}}{{ColorYellow}}안락사{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible496}} {{ColorYellow}}Euthanasia{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.LIFE_SUSTAINING_TREATMENT, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.LIFE_SUSTAINING_TREATMENT,
                 "연명치료",

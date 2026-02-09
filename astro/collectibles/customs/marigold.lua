@@ -13,6 +13,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_MIDAS_TOUCH].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible202}}{{ColorYellow}}미다스의 손길{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible202}} {{ColorYellow}}Midas' Touch{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.MARIGOLD, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "마리골드",

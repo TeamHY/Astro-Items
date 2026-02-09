@@ -598,3 +598,19 @@ function Astro:GetPlayerActiveItemSlot(player, item)
 
     return nil
 end
+
+---@param roomDesc RoomDescriptor
+---@return integer
+function Astro:GetDimension(roomDesc)
+    -- 0: 메인 차원
+    -- 1: 세컨 차원, 폭우의 거울 차원 혹은 광산의 폐광에 사용됨
+    -- 2: 사망 증명서 차원
+
+    for i = 0, 2 do
+        if GetPtrHash(roomDesc) == GetPtrHash(Game():GetLevel():GetRoomByIdx(roomDesc.SafeGridIndex, i)) then
+            return i
+        end
+    end
+
+    return -1
+end

@@ -17,8 +17,12 @@ Astro:AddCallbackCustom(
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
         if Astro:IsFirstAdded(Astro.Collectible.ABSOLUT_CONJOINED) then
-            player:AddCollectible(Astro.Collectible.ABSOLUT_CONJOINED)
-            player:AddCollectible(Astro.Collectible.ABSOLUT_CONJOINED)
+            if REPENTOGON then
+                player:IncrementPlayerFormCounter(PlayerForm.PLAYERFORM_GUPPY, 5)
+            else
+                player:AddCollectible(Astro.Collectible.ABSOLUT_CONJOINED)
+                player:AddCollectible(Astro.Collectible.ABSOLUT_CONJOINED)
+            end
         end
     end,
     Astro.Collectible.ABSOLUT_CONJOINED
