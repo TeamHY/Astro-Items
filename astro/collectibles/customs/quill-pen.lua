@@ -91,3 +91,16 @@ Astro:AddCallback(
     end,
     ProjectileVariant.PROJECTILE_WING
 )
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        local newColor = player.Color
+        
+        newColor:SetColorize(1, 1, 1, 1)
+        player.Color = newColor
+    end,
+    Astro.Collectible.QUILL_PEN
+)
