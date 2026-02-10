@@ -62,7 +62,8 @@ Astro:AddCallback(
         end
 
         if amount >= currentHP then
-            if player:HasCollectible(Astro.Collectible.GUPPYS_NAME_TAG) then
+            if player:HasCollectible(Astro.Collectible.GUPPYS_NAME_TAG) then    
+                local collectibleNum = player:GetCollectibleNum(Astro.Collectible.GUPPYS_NAME_TAG)
                 local rng = player:GetCollectibleRNG(Astro.Collectible.GUPPYS_NAME_TAG)
                 local chance = rng:RandomFloat()
 
@@ -73,7 +74,7 @@ Astro:AddCallback(
                         hitSfx = SoundEffect.SOUND_FIREDEATH_HISS
                     end
 
-                    Astro:FakeDeath(player, SURVIVAL_COOL, hitSfx)
+                    Astro:FakeDeath(player, SURVIVAL_COOL * collectibleNum, hitSfx, Astro.Collectible.GUPPYS_NAME_TAG)
 
                     return false
                 end
