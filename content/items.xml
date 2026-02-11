@@ -91,7 +91,7 @@
 	<passive gfx="Sinful Spoils Struggle.png" quality="2" devilprice="1" shopprice="13" name="Sinful Spoils Struggle" description="Awakened" id="90" />
 	<passive gfx="Blood Trail.png" quality="3" devilprice="1" shopprice="20" name="Blood Trail" description="Well played" id="91" />
 	<active gfx="Sandevistan.png" quality="1" devilprice="2" maxcharges="300" chargetype="timed" shopprice="15" name="Sandevistan" description="Neural acceleration" id="92" />
-	<passive gfx="My Moon My Man.png" quality="4" devilprice="2" shopprice="30" name="My Moon My Man" description="I really want to stay at your house" id="93" />
+	<passive gfx="My Moon My Man.png" quality="3" devilprice="2" shopprice="15" name="My Moon My Man" description="I really want to stay at your house" id="93" />
 	<passive gfx="3 Body Problem.png" quality="2" devilprice="2" shopprice="20" name="3 Body Problem" description="Unpredictable" id="94" />
 	<passive tags="baby" gfx="Absolut Conjoined.png" quality="2" devilprice="1" shopprice="15" name="Absolut Conjoined" description="Siamese twins" id="95" />
 	<active gfx="Spinup Dice.png" quality="4" devilprice="2" maxcharges="12" shopprice="35" name="Spinup Dice" description="+1" id="96" />
