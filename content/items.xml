@@ -138,7 +138,7 @@
 	<familiar tags="baby" gfx="TAANA - Defense Helper.png" quality="3" devilprice="1" shopprice="15" name="TAANA - Defense Helper" description="A mechanical doll that protects luck" id="137" />
 	<familiar tags="baby" gfx="SEERI the Combat Helper.png" quality="3" devilprice="2" shopprice="16" name="SEERI the Combat Helper" description="A mechanical doll that creates friends" id="138" />
 	<familiar tags="baby" gfx="KAAEN - Auto Reloader.png" quality="1" devilprice="1" shopprice="8" name="KAAEN - Auto Reloader" description="A mechanical doll that recharges" id="139" />
-	<active gfx="Qubit Dice.png" quality="3" devilprice="1" maxcharges="10" shopprice="12" name="Qubit Dice" description="-3 ~ +3" id="140" />
+	<active gfx="Qubit Dice.png" quality="3" devilprice="1" maxcharges="8" shopprice="12" name="Qubit Dice" description="-3 ~ +3" id="140" />
 	<passive cache="firedelay tearcolor" gfx="Strawberry Milk.png" quality="2" devilprice="1" shopprice="15" name="Strawberry Milk" description="Tears Up + extra tears" id="141" />
 	<passive gfx="Entoma Vasilissa Zeta.png" quality="4" devilprice="2" shopprice="20" name="Entoma Vasilissa Zeta" description="Insect Loving Maid" id="142" />
 	<passive gfx="Birthright - Eve.png" quality="3" devilprice="1" shopprice="15" name="Eve's Frame" description="Forever cursed" id="143" />
