@@ -181,8 +181,8 @@ Astro:AddCallback(
                     if item == Astro.Collectible.CALM_MIND then
                         Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, Color(1, 1, 1, 0.75, 0.75, 0, 0.25), nil, 9)
                     elseif item == Astro.Collectible.SWIFT_MIND then
-                        local color = Color(1,1,1,1,1,1,1)
-                        color:SetTint(0,-0.75,-0.75,3) print(color)
+                        local color = Color(1, 1, 1, 1, 1, 1, 1)
+                        color:SetTint(0, -0.75, -0.75, 3)
                         Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, Color(1, -1, -1, 1), nil, 9)
                     elseif item == Astro.Collectible.BLUE_MIND then
                         Game():SpawnParticles(pickup.Position + Vector(0, -11), EffectVariant.HALO, 1, 0, nil, nil, 9)

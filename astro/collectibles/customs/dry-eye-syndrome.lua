@@ -35,13 +35,13 @@ Astro:AddCallback(
             if player:HasCollectible(Astro.Collectible.DRY_EYE_SYNDROME) then
                 local data = Astro:GetPersistentPlayerData(player)
     
-                if Input.GetActionValue(ButtonAction.ACTION_SHOOTLEFT, 0) > 0 then
+                if Input.GetActionValue(ButtonAction.ACTION_SHOOTLEFT, player.ControllerIndex) > 0 then
                     data["dryEyeSyndromeIsActive"] = true
-                elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTRIGHT, 0) > 0 then
+                elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTRIGHT, player.ControllerIndex) > 0 then
                     data["dryEyeSyndromeIsActive"] = true
-                elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTUP, 0) > 0 then
+                elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTUP, player.ControllerIndex) > 0 then
                     data["dryEyeSyndromeIsActive"] = true
-                elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTDOWN, 0) > 0 then
+                elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTDOWN, player.ControllerIndex) > 0 then
                     data["dryEyeSyndromeIsActive"] = true
                 else
                     data["dryEyeSyndromeIsActive"] = false
@@ -91,6 +91,7 @@ Astro:AddPriorityCallback(
             local data = Astro:GetPersistentPlayerData(player)
 
             if data["dryEyeSyndromeIsActive"] then
+                local multiplier = data["dryEyeSyndromeMultiplier"] or 0
                 player.Damage = player.Damage * (data["dryEyeSyndromeMultiplier"] + 1)
             end
         end
