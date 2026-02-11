@@ -29,7 +29,8 @@ local controlCooldown = 0
 ---@param player EntityPlayer
 ---@param damageCooldown number
 ---@param customSound SoundEffect?
-function Astro:FakeDeath(player, damageCooldown, customSound)
+---@param animate CollectibleType
+function Astro:FakeDeath(player, damageCooldown, customSound, animate)
     local animationDur = customDur or 37
     local sfx = SFXManager()
     local customSound = customSound or SoundEffect.SOUND_DEATH_BURST_SMALL
@@ -47,11 +48,13 @@ function Astro:FakeDeath(player, damageCooldown, customSound)
     Astro:ScheduleForUpdate(function() player:PlayExtraAnimation(IsGwisin(player) and "LostDeath" or "Death") end, 4)
     Astro:ScheduleForUpdate(function() sfx:Play(SoundEffect.SOUND_ISAACDIES) end, 10)
 
-    player:SetMinDamageCooldown(damageCooldown * player:GetCollectibleNum(Astro.Collectible.GUPPYS_NAME_TAG) + (animationDur * 2))
+    player:SetMinDamageCooldown(damageCooldown + (animationDur * 2))
     player.ControlsCooldown = animationDur * 2
     controlCooldown = animationDur * 2
 
-    Astro:ScheduleForUpdate(function() player:AnimateCollectible(Astro.Collectible.GUPPYS_NAME_TAG) end, animationDur)
+    if animate then
+        Astro:ScheduleForUpdate(function() player:AnimateCollectible(animate) end, animationDur)
+    end
 end
 
 Astro:AddCallback(
