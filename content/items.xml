@@ -185,7 +185,7 @@
 	<passive cache="damage" gfx="Max's Head.png" quality="5" devilprice="2" shopprice="25" name="Max's Head" description="DMG up" id="184" />
 	<active tags="book" cache="firedelay" gfx="Book of Despair.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Book of Despair" description="Temporary tears up" id="185" />
 	<passive gfx="Witchcraft.png" quality="3" devilprice="2" shopprice="15" name="Witchcraft" description="We take magic commissions" id="186" />
-	<active gfx="Glitched D6.png" quality="5" devilprice="2" shopprice="30" maxcharges="8" name="Glitched D6" description="t's broken9Reroll your dest" id="187" />
+	<active gfx="Glitched D6.png" quality="5" devilprice="2" shopprice="30" maxcharges="10" name="Glitched D6" description="t's broken9Reroll your dest" id="187" />
 	<active gfx="Zoltraak.png" hidden="true" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Zoltraak" description="Killing magic" id="188" />
 	<passive tags="book" gfx="Flammes Grimoire.png" quality="2" devilprice="1" shopprice="5" name="Flamme's Grimoire" description="Magic is the bond linking human hearts" id="189" />
 	<passive gfx="Pillars of Creation.png" quality="4" devilprice="2" shopprice="10" name="Pillars of Creation" description="So heartbreakingly beautiful" id="190" />
