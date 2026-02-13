@@ -66,7 +66,7 @@ Astro:AddCallback(
             EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "TransformManyu")
 
             ----
-            
+
             local rgonReviveText =
                 REPENTOGON
                 and "스테이지 당 한번 사망 시 그 방에서 즉시 체력 0.5로 부활합니다." ..
@@ -147,18 +147,14 @@ end
 
 ---@param player EntityPlayer
 local function ApplyReincarnationEffect(player)
-    if not REPENTOGON then
-        return
-    end
-
     local stageCheck = GetCurrentStageCheck()
     local data = Astro:GetPersistentPlayerData(player)
 
     data.reincarnationHistory = data.reincarnationHistory or {}
     data.reincarnationHistory[stageCheck] = data.reincarnationHistory[stageCheck] or false
-    
+
     if not data.reincarnationHistory[stageCheck] then
-        player:AddCollectibleEffect(Astro.Collectible.REINCARNATION, false, 0, false)
+        player:GetEffects():AddCollectibleEffect(Astro.Collectible.REINCARNATION)
     else
         player:GetEffects():RemoveCollectibleEffect(Astro.Collectible.REINCARNATION, -1)
     end
@@ -209,6 +205,44 @@ if REPENTOGON then
                 end
             end
         end
+    )
+else
+    Astro:AddCallback(
+        ModCallbacks.MC_ENTITY_TAKE_DMG,
+        ---@param entity Entity
+        ---@param amount number
+        ---@param damageFlags number
+        ---@param source EntityRef
+        ---@param countdownFrames number
+        function(_, entity, amount, damageFlags, source, countdownFrames)
+            local player = entity:ToPlayer()
+            local currentHP = player:GetHearts() + player:GetSoulHearts() + player:GetEternalHearts() + player:GetBoneHearts()
+
+            if player:GetEffects():HasNullEffect(NullItemID.ID_LOST_CURSE) then
+                currentHP = 0
+            end
+
+            if amount >= currentHP then
+                if player:GetEffects():HasCollectibleEffect(Astro.Collectible.REINCARNATION) then
+                    local stageCheck = GetCurrentStageCheck()
+                    local data = Astro:GetPersistentPlayerData(player)
+
+                    data.reincarnationHistory = data.reincarnationHistory or {}
+                    data.reincarnationHistory[stageCheck] = data.reincarnationHistory[stageCheck] or false
+
+                    if not data.reincarnationHistory[stageCheck] then
+                        data.reincarnationHistory[stageCheck] = true
+                        data.reincarnationUsedCount = (data.reincarnationUsedCount or 0) + player:GetCollectibleNum(Astro.Collectible.REINCARNATION)
+
+                        player:AddCacheFlags(CacheFlag.CACHE_ALL, true)
+                        player:GetEffects():RemoveCollectibleEffect(Astro.Collectible.REINCARNATION)
+                        Astro:FakeDeath(player, 120, nil, Astro.Collectible.REINCARNATION)
+                        return false
+                    end
+                end
+            end
+        end,
+        EntityType.ENTITY_PLAYER
     )
 end
 
@@ -271,7 +305,7 @@ Astro:AddCallback(
         else
             for i = 1, Game():GetNumPlayers() do
                 local player = Isaac.GetPlayer(i - 1)
-    
+
                 if player:HasCollectible(Astro.Collectible.MATRYOSHKA) then
                     player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
                     player:AddCacheFlags(CacheFlag.CACHE_FIREDELAY)
@@ -313,7 +347,7 @@ Astro:AddCallback(
                                 Astro.Data.Matryoshka.Luck = Astro.Data.Matryoshka.Luck + MATRYOSHKA_LUCK * matryoshkaNum
                             end
 
-                            if pickup.Variant == PickupVariant.PICKUP_CHEST then 
+                            if pickup.Variant == PickupVariant.PICKUP_CHEST then
                                 local spawnChance = Astro:HasCollectible(Astro.Collectible.CHUBBYS_TAIL) and MATRYOSHKA_WITH_CHUBBYS_TAIL_CHANCE or MATRYOSHKA_CHANCE
 
                                 if rng:RandomFloat() < spawnChance then
