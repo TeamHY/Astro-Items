@@ -227,7 +227,7 @@
 	<passive cache="damage firedelay speed" gfx="David's Stone.png" quality="4" devilprice="1" shopprice="15" hidden="true" name="David's Stone" description="He killed him without even using a sword" id="226" />
 	<active tags="angel" gfx="Angelic D6.png" quality="4" devilprice="2" maxcharges="6" shopprice="15" name="Angelic D6" description="Reroll your blessing" id="227" />
 	<passive tags="quest guppy" gfx="Guppy's Name Tag.png" quality="2" shopprice="10" name="Guppy's Name Tag" hidden="true" description="I fear nothing with you" id="228" />
-	<passive cache="damage firedelay range speed shotspeed luck" gfx="Experimental Serum.png" quality="4" devilprice="2" shopprice="15" maxhearts="2" name="Experimental Serum" description="..." id="229" />
+	<passive cache="damage firedelay range speed shotspeed luck" gfx="Experimental Serum.png" tags="syringe" quality="4" devilprice="2" shopprice="15" maxhearts="2" name="Experimental Serum" description="..." id="229" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
