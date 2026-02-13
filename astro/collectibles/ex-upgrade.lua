@@ -65,17 +65,17 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_BIRTHRIGHT] = { Id = Astro.Collectible.LEGACY, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_D4] = { Id = Astro.Collectible.MEGA_D4, Chance = 0.0 },
     [CollectibleType.COLLECTIBLE_D6] = { Id = Astro.Collectible.MEGA_D6, Chance = 0.1 },
-    [CollectibleType.COLLECTIBLE_D8] = { Id = Astro.Collectible.MEGA_D8, Chance = 0.1 },
+    [CollectibleType.COLLECTIBLE_D8] = { Id = Astro.Collectible.MEGA_D8, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_MIDAS_TOUCH] = { Id = Astro.Collectible.MARIGOLD, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN] = { Id = Astro.Collectible.BICORN, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_EUTHANASIA] = { Id = Astro.Collectible.LIFE_SUSTAINING_TREATMENT, Chance = 0.1 },
+    [CollectibleType.COLLECTIBLE_EUTHANASIA] = { Id = Astro.Collectible.LIFE_SUSTAINING_TREATMENT, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_HOURGLASS] = { Id = Astro.Collectible.CHRONOS, Chance = 0.1 },
-    [Astro.Collectible.AMAZING_CHAOS_SCROLL] = { Id = Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, Chance = 0.5 },
+    [Astro.Collectible.AMAZING_CHAOS_SCROLL] = { Id = Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, Chance = 0.4 },
     [CollectibleType.COLLECTIBLE_MAGIC_MUSHROOM] = { Id = Astro.Collectible.RAINBOW_MUSHROOM, Chance = 0.5 },
-    [CollectibleType.COLLECTIBLE_HIVE_MIND] = { Id = Astro.Collectible.OVERMIND, Chance = 0.7 },
+    [CollectibleType.COLLECTIBLE_HIVE_MIND] = { Id = Astro.Collectible.OVERMIND, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_SMALL_ROCK] = { Id = Astro.Collectible.DAVIDS_STONE, Chance = 0.5 },
-    [CollectibleType.COLLECTIBLE_GUPPYS_COLLAR] = { Id = Astro.Collectible.GUPPYS_NAME_TAG, Chance = 0.5 },
-    [CollectibleType.COLLECTIBLE_EXPERIMENTAL_TREATMENT] = { Id = Astro.Collectible.EXPERIMENTAL_SERUM, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_GUPPYS_COLLAR] = { Id = Astro.Collectible.GUPPYS_NAME_TAG, Chance = 0.7 },
+    [CollectibleType.COLLECTIBLE_EXPERIMENTAL_TREATMENT] = { Id = Astro.Collectible.EXPERIMENTAL_SERUM, Chance = 0.7 },
 }
 
 ---
