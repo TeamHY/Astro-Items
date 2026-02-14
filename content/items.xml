@@ -98,7 +98,7 @@
 	<active gfx="Bonfire.png" quality="3" devilprice="2" maxcharges="1" shopprice="18" name="Bonfire" description="Add 1 Pyro item from your Deck" id="97" />
 	<passive gfx="Bunny Hop.png" quality="2" devilprice="1" shopprice="8" name="Bunny Hop" description="It's a skill" id="98" />
 	<active gfx="Mirror Dice.png" quality="3" devilprice="1" maxcharges="6" shopprice="15" name="Mirror Dice" description="Reflect your destiny" id="99" />
-	<active cache="damage" gfx="Black Cube.png" quality="3" devilprice="2" maxcharges="0" shopprice="15" name="Black Cube" description="Powerful potential ablity" id="100" />
+	<active cache="damage" gfx="Black Cube.png" quality="4" devilprice="2" maxcharges="0" shopprice="15" hidden="true" name="Black Cube" description="Powerful potential ablity" id="100" />
 	<active cache="damage" gfx="Red Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Red Cube" description="Potential ablity" id="101" />
 	<active gfx="WANTED Seeker of Sinful Spoil.png" quality="3" devilprice="2" maxcharges="1" shopprice="15" name="WANTED: Seeker of Sinful Spoil" description="For those of you following the story of the &quot;Sinful Spouils.&quot;" id="102" />
 	<passive gfx="Calm Mind.png" quality="4" devilprice="2" shopprice="15" name="Calm Mind" description="Overpowered" id="103" />
