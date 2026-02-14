@@ -72,7 +72,7 @@ Astro:AddCallback(
                 "리인카네이션",
                 "회귀의 생명",
                 "스테이지 당 한번 사망 시 그 방에서 즉시 체력 0.5로 부활합니다." ..
-                "#부활 시마다 모든 능력치가 " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. "배 증가합니다."
+                "#부활 시마다 모든 능력치가 " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. "배 증가합니다." ..
                 "#다음 게임에서 랜덤 부활류 아이템 중 하나를 소환합니다.",
                 -- 중첩 시
                 "중첩 시 능력치 상승량이 증가"
@@ -82,7 +82,7 @@ Astro:AddCallback(
                 Astro.Collectible.REINCARNATION,
                 "Reincarnation", "",
                 "Grants an extra life that revives Isaac in the same room with half a heart once per floor" ..
-                "#Upon each resurrection, all stats increase by " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. " times"
+                "#Upon each resurrection, all stats increase by " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. " times" ..
                 "#Grants a random revive item at the start of the next run",
                 -- Stacks
                 "Stacks increase stat boosts",
