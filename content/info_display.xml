@@ -884,6 +884,8 @@
 		<info text="50% chance to be revived when taking lethal damage"/>
 		<info text="Predicts whether items that can revive Isaac will actually revive him"/>
 	</collectible>
+	<collectible id="229">
+	</collectible>
 </collectibles>
 
 <trinkets>

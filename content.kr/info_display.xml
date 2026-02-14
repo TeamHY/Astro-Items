@@ -887,6 +887,8 @@
 		<info text="사망 시 50% 확률로 부활합니다"/>
 		<info text="확률적으로 아이작을 부활시켜 주는 아이템들의 부활 가능 여부를 예측합니다"/>
 	</collectible>
+	<collectible id="229">
+	</collectible>
 </collectibles>
 
 <trinkets>

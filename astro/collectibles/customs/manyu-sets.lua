@@ -67,20 +67,26 @@ Astro:AddCallback(
 
             ----
 
-            local rgonReviveText =
-                REPENTOGON
-                and "스테이지 당 한번 사망 시 그 방에서 즉시 체력 0.5로 부활합니다." ..
-                    "#부활 시마다 모든 능력치가 " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. "배 증가합니다.#"
-                or ""
-
             Astro.EID:AddCollectible(
                 Astro.Collectible.REINCARNATION,
                 "리인카네이션",
                 "회귀의 생명",
-                rgonReviveText ..
+                "스테이지 당 한번 사망 시 그 방에서 즉시 체력 0.5로 부활합니다." ..
+                "#부활 시마다 모든 능력치가 " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. "배 증가합니다."
                 "#다음 게임에서 랜덤 부활류 아이템 중 하나를 소환합니다.",
                 -- 중첩 시
                 "중첩 시 능력치 상승량이 증가"
+            )
+            
+            Astro.EID:AddCollectible(
+                Astro.Collectible.REINCARNATION,
+                "Reincarnation", "",
+                "Grants an extra life that revives Isaac in the same room with half a heart once per floor" ..
+                "#Upon each resurrection, all stats increase by " .. string.format("%.1f", REINCARNATION_DAMAGE_MULTIPLIER) .. " times"
+                "#Grants a random revive item at the start of the next run",
+                -- Stacks
+                "Stacks increase stat boosts",
+                "en_us"
             )
 
             ----
@@ -94,12 +100,32 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 중첩이 가능하며 다음 증가량부터 적용됩니다." ..
                 "#!!! 상자에서 받침대 아이템이 등장할 경우 무효과"
             )
-
             EID:addCondition(
                 "5.100." .. tostring(Astro.Collectible.MATRYOSHKA),
                 { "5.100." .. tostring(Astro.Collectible.CHUBBYS_TAIL) },
                 "작은 상자 소환 확률이 20%로 감소",
                 nil, "ko_kr", nil
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.MATRYOSHKA,
+                "Matryoshka", "",
+                "{{Chest}} 40% chance to spawn a small chest when opening a chest" ..
+                "#↑ When opening a chest, one of the following increases by +0.05:" ..
+                "{{Speed}} Speed" ..
+                "{{Tears}} Fire rate" ..
+                "#{{Damage}} Damage" ..
+                "{{Luck}} Luck" ..
+                "#!!! If a pedestal item appears in the chest, it has no effect",
+                -- Stacks
+                "Stackbale",
+                "en_us"
+            )
+            EID:addCondition(
+                "5.100." .. tostring(Astro.Collectible.MATRYOSHKA),
+                { "5.100." .. tostring(Astro.Collectible.CHUBBYS_TAIL) },
+                "Chest spawn chance reduced to 20%",
+                nil, "en_us", nil
             )
 
             ----
@@ -117,6 +143,14 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 3초가 끝나면 붙잡은 탄환을 다시 되돌려 발사합니다." .. AstroFight_SAMSARA,
                 -- 중첩 시
                 "중첩 시 중첩된 수만큼 발동"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SAMSARA,
+                "Samsara", "",
+                "{{Collectible522}} Once per room, killing an enemy stops all enemy projectiles that come close to Isaac for 3 seconds and throws them away from him afterwards",
+                -- Stacks
+                "Stackable"
             )
         end
     end

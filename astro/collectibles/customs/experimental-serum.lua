@@ -37,15 +37,15 @@ Astro:AddCallback(
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.EXPERIMENTAL_SERUM,
-                "Experimental Serum",
-                "...",
+                "Experimental Serum", "",
                 "↑ {{Heart}} +1 Health" ..
-                "#↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
-                "#↑ {{Tears}} +" .. TEARS_INCREMENT .. " Tears" ..
-                "#↑ {{Range}} +" .. RANGE_INCREMENT .. " Range" ..
-                "#↑ {{Shotspeed}} +" .. SHOTSPEED_INCREMENT .. " Shot Speed" ..
                 "#↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
+                "#↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
+                "#↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
+                "#↑ {{Range}} +" .. RANGE_INCREMENT .. " Range" ..
+                "#↑ {{Shotspeed}} +" .. SHOTSPEED_INCREMENT .. " Shot speed" ..
                 "#↑ {{Luck}} +" .. LUCK_INCREMENT .. " Luck",
+                -- Stacks
                 "Stackable",
                 "en_us"
             )
