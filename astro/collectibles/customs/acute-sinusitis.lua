@@ -27,7 +27,7 @@ Astro:AddCallback(
                 "맛있는 코딱지",
                 "20%의 확률로 공격에 접착 속성이 생깁니다." ..
                 "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 접착 눈물이 나갑니다." ..
-                "#접착 눈물이 적에게 붙을 시 10초동안 초당 캐릭터의 공격력 x1.0의 피해를 줍니다."
+                "#접착 눈물이 적에게 붙을 시 10초동안 초당 캐릭터의 공격력 x1.0의 피해를 줍니다." ..
                 "#{{LuckSmall}} 행운 45 이상일 때 100% 확률 (행운 1당 +2%p)",
                 -- 중첩 시
                 "중첩 시 접착 눈물 발사 확률이 합연산으로 증가"
@@ -36,8 +36,8 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.ACUTE_SINUSITIS,
                 "Acute Sinusitis", "",
-                "20% chance to grant the sticky property to attacks (Not affected by luck)"
-                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "% chance shoot a for sticky booger (+2%p per Luck)"
+                "20% chance to grant the sticky property to attacks (Not affected by luck)" ..
+                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "% chance shoot a for sticky booger (+2%p per Luck)" ..
                 "#{{Damage}} Boogers deal Isaac's damage once a second and stick for 10 seconds",
                 -- Stacks
                 "Stacks increase the chance of shooting a booger",
