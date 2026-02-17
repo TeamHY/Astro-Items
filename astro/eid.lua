@@ -16,6 +16,7 @@ Astro.EID.Birthright = {
 Astro.EID.Self = {}
 Astro.EID.Hints = {}
 Astro.EID.HintAdded = false
+Astro.EID.LuckFormulas = {}
 
 Astro.EID.QualityIcon = Sprite()
 Astro.EID.QualityIcon:Load("gfx/ui/eid/quality.anm2")
@@ -160,6 +161,39 @@ local function GetCraftHint(descObj)
     end
 end
 
+local function LuckChanceCallbackModified(descObj)
+	for i = 1,#EID.coopAllPlayers do
+		local player = EID.coopAllPlayers[i]
+        
+		if Astro.EID.LuckFormulas[descObj.fullItemString] then
+            local multiplier = math.max(1, player:GetCollectibleNum(descObj.ObjSubType))
+
+            if descObj.ObjVariant == 350 then
+                local multiplier = player:GetTrinketMultiplier(descObj.ObjSubType)
+            end
+
+			local result = math.max(math.min(Astro.EID.LuckFormulas[descObj.fullItemString](player.Luck, multiplier), 100), 0)
+			local luckLine = EID:getDescriptionEntry("LuckModifier")
+
+			luckLine = EID:ReplaceVariableStr(luckLine, 1, string.format("%.3g", result))
+			luckLine = EID:ReplaceVariableStr(luckLine, 2, "{{BlinkGreen}}" .. string.format("%.3g", player.Luck) .. "{{CR}}")
+			
+			local playerType = player:GetPlayerType()
+
+			if #EID.coopAllPlayers == 1 then
+                EID:appendToDescription(descObj, "#{{Luck}} ")
+			else
+                EID:appendToDescription(descObj, "#" .. EID:GetPlayerIcon(playerType, "P" .. i .. ":") .. " ")
+            end
+
+			EID:appendToDescription(descObj, "{{NoLB}}" .. luckLine)
+		end
+	end
+
+	return descObj
+end
+
+EID:addDescriptionModifier("LuckChanceCallbackAstro", LuckChanceCallbackModified)
 
 ------ 콜백 ------
 Astro:AddCallback(
@@ -230,11 +264,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            for i = Astro.Collectible.CYGNUS, Astro.Collectible.DAVIDS_STONE do
+            for i = Astro.Collectible.CYGNUS, Astro.Collectible.EXPERIMENTAL_SERUM do
                 local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES
                 local desc = Astro.EID.EnglishDescAI[i - modItemOffset]
+
                 Astro.EID:AddCollectible(i, nil, "", desc, nil, "en_us")
             end
+
             ----
             local player_icons = Sprite()
             player_icons:Load("gfx/ui/eid/astro_character_icons.anm2", true)
@@ -271,34 +307,56 @@ Astro:AddCallback(
 if REPENTOGON then
 	Astro:AddPriorityCallback(
         Astro.Callbacks.MOD_INIT,
-        CallbackPriority.LATE,
+        999999999999,
         function()
-            if GetLanguage() ~= "ko_kr" then goto continue end
+            if AccurateBlurbs then
+                for i = Astro.Collectible.CYGNUS, Astro.Collectible.EXPERIMENTAL_SERUM do
+                    local modItemOffset = Astro.Collectible.CYGNUS - CollectibleType.NUM_COLLECTIBLES
+                    local desc = Astro.EID.AccurateItemDesc[i - modItemOffset]
+
+                    if desc ~= nil then
+                        Astro.EID.Collectible["en_us"][i].accurateDesc = desc
+                    end
+                end
+            end
+
             local conf = Isaac.GetItemConfig()
 
             if Astro.EID.Collectible then
-                for key, entry in pairs(Astro.EID.Collectible["ko_kr"]) do
+                for key, entry in pairs(Astro.EID.Collectible[GetLanguage()]) do
                     local id = tonumber(key)
+
                     if id and id ~= -1 then
                         local cfg = conf:GetCollectible(id)
-                        cfg.Name = entry.name
-                        cfg.Description = entry.description
+
+                        cfg.Name = entry.alternativeName or entry.name or cfg.Name
+
+                        if entry.description ~= "" then
+                            cfg.Description = entry.description
+                        else
+                            cfg.Description = entry.accurateDesc or entry.alternativeDesc or cfg.Description
+                        end
                     end
                 end
             end
 
             if Astro.EID.Trinket then
-                for key, entry in pairs(Astro.EID.Trinket["ko_kr"]) do
+                for key, entry in pairs(Astro.EID.Trinket[GetLanguage()]) do
                     local id = tonumber(key)
+
                     if id and id ~= -1 then
                         local cfg = conf:GetTrinket(id)
-                        cfg.Name = entry.name
-                        cfg.Description = entry.description
+
+                        cfg.Name = entry.alternativeName or entry.name or cfg.Name
+
+                        if entry.description ~= "" then
+                            cfg.Description = entry.description
+                        else
+                            cfg.Description = entry.accurateDesc or entry.alternativeDesc or cfg.Description
+                        end
                     end
                 end
             end
-
-            ::continue::
         end
     )
 end

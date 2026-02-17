@@ -40,8 +40,7 @@ Astro:AddCallback(
             )
             Astro.EID:AddCollectible(
                 Astro.Collectible.DUNNELL_THE_NOBLE_ARMS_OF_LIGHT,
-                "Dunnell, the Noble Arms of Light",
-                "",
+                "Dunnell", "",
                 "Deals 10% of damage given to enemies in the room while held" ..
                 "#Absorbs up to " .. MAXIMUM .. " souls on enemy kill;" ..
                 "#{{ArrowGrayRight}} +1% extra damage per soul on hit" ..

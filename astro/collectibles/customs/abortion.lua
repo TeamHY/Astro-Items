@@ -20,26 +20,28 @@ Astro:AddCallback(
                 Astro.Collectible.ABORTION,
                 "낙태",
                 "태아 눈물",
-                "공격 시 50%의 확률로 적 명중 시 태아로 변하는 눈물을 발사합니다." ..
+                "공격 시 " .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 적 명중 시 태아로 변하는 눈물을 발사합니다." ..
                 "#{{TimerSmall}} (쿨타임 0.5초)" ..
-                "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)" ..
-                "#{{Collectible678}} 태아는 적에게 유도되며 초당 공격력 x2.25의 피해를 줍니다.",
+                "#{{Collectible678}} 태아는 적에게 유도되며 초당 공격력 x2.25의 피해를 줍니다." ..
+                "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
                 -- 중첩 시
-                "중첩 시 발사 확률이 중첩된 수만큼 합연산으로 증가 및 쿨타임 감소"
+                "중첩 시 확정적으로 발사 및 쿨타임 감소"
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.ABORTION,
-                "Abortion",
-                "",
-                "50% chance to fire tears that turn into fetuses on hit" ..
+                "Abortion", "",
+                string.format("%.f", SPAWN_CHANCE * 100) .. "% chance to fire tears that turn into fetuses on hit (+1%p per Luck)" ..
                 "#{{Timer}} 0.5 seconds cooldown" ..
-                "#{{Luck}} 100% chance at 50 Luck (+1% per Luck)" ..
                 "#{{Collectible678}} Fetuses home in on enemies and deal 2.25x damage per second",
-                -- Self
-                "Stacks additively increase proc chance and reduce cooldown",
+                -- Stacks
+                "Stacks increase to a 100% chance and reduce cooldown",
                 "en_us"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.ABORTION)] = function(luck, num)
+                return (SPAWN_CHANCE * 100 + luck) * num
+            end
         end
     end
 )

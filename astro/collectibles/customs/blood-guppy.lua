@@ -31,12 +31,15 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Brimstone Guppy", "",
-                "50% chance to spawn a brimstone fly when spawned blue fly" ..
+                "50% chance to spawn a brimstone fly when spawned blue fly (+1%p per Luck)" ..
                 "#Brimstone fly deal 2x Isaac's damage and spawn a Brimstone swirl" ..
-                "#{{Damage}} It deals 22x Isaac's damage over 4.33 seconds" ..
-                "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
+                "#{{Damage}} It deals 22x Isaac's damage over 4.33 seconds",
                 nil, "en_us"
             )
+            
+            Astro.EID.LuckFormulas["5.100." .. tostring(ITEM_ID)] = function(luck, num)
+                return ((BASE_FLY_CHANCE + luck * LUCK_FLY_CHANCE) * 100)
+            end
         end
     end
 )

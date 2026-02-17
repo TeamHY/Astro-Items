@@ -29,6 +29,13 @@ Astro:AddCallback(
                 "#{{Damage}} Needles deal 3x Isaac's damage against bosses",
                 nil, "en_us"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.LIFE_SUSTAINING_TREATMENT)] = function(luck, num)
+                local denominator = 30 - math.floor(luck * 2)
+                local chance = denominator <= 0 and 1 or (1 / denominator)
+
+                return chance * 100
+            end
         end
     end
 )

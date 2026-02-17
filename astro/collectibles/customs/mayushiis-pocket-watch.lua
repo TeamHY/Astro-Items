@@ -10,28 +10,37 @@ local LUCK_CHANCE = 0.01
 
 ---
 
-if EID then
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "마유시의 회중시계",
-        "...",
-        "페널티 피격 시 50% 확률로 {{Collectible422}}Glowing Hourglass가 발동됩니다." ..
-        "#{{Blank}} {{ColorGray}}(클리어한 방과 {{BossRoom}}보스방에서는 미발동){{CR}}" ..
-        "#중첩 시 최종 확률이 합연산으로 증가합니다." ..
-        "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)"
-    )
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "마유시의 회중시계",
+                "...",
+                "{{Collectible422}} 페널티 피격 시 " .. string.format("%.f", BASE_CHANCE * 100) .. "% 확률로 Glowing Hourglass가 발동됩니다." ..
+                "#클리어한 방과 {{BossRoom}}보스방에서는 발동하지 않습니다." ..
+                "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
+                -- 중첩 시
+                "#중첩 시 최종 확률이 합연산으로 증가"
+            )
 
-    Astro.EID:AddCollectible(
-        ITEM_ID,
-        "Mayushii's Pocket Watch",
-        "",
-        "50% chance to trigger {{Collectible422}}Glowing Hourglass when taking penalty damage. Does not activate in cleared rooms or {{BossRoom}}boss rooms." ..
-        "#Stacking increases the final chance by additive calculation." ..
-        "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
-        nil,
-        "en_us"
-    )
-end
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Mayushii's Pocket Watch", "",
+                string.format("%.f", BASE_CHANCE * 100) .. "% chance to activate {{Collectible422}} Glowing Hourglass when taking damage (+1%p per Luck)" ..
+                "#Does not activate in cleared rooms or {{BossRoom}} boss room",
+                -- Stacks
+                "#Stacks increase chance",
+                "en_us"
+            )
+            
+            Astro.EID.LuckFormulas["5.100." .. tostring(ITEM_ID)] = function(luck, num)
+                return (BASE_CHANCE + luck * LUCK_CHANCE) * 100 * num
+            end
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_CARD,

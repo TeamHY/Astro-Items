@@ -14,24 +14,26 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local chance = string.format("%.f", spawnChance * 100)
+            local cooldown = string.format("%.1f", cooldownTime / 30)
+            
             Astro.EID:AddCollectible(
                 Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
                 "원죄보 - 스네이크아이",
                 "반역의 눈",
-                "적 명중 시 20%의 확률로 여러 유령을 소환합니다." ..
-                "#{{TimerSmall}} (쿨타임 1.5초)" ..
-                "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
+                "적 명중 시 " .. chance .. "%의 확률로 여러 유령을 소환합니다." ..
+                "#{{TimerSmall}} (쿨타임 " .. cooldown .. "초)" ..
+                "#{{LuckSmall}} 행운 80 이상일 때 100% 확률 (행운 1당 +1%p)",
                 -- 중첩 시
-                "중첩 시 유령의 소환 확률이 중첩된 수만큼 합연산으로 증가하며 소환 쿨타임이 줄어듭니다."
+                "중첩 시 유령의 소환 확률이 중첩된 수만큼 합연산으로 증가 및 소환 쿨타임 감소"
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE,
                 "Original Sinful Spoils - Snake Eye",
                 "",
-                "20% chance to summon multiple ghosts on hit" ..
-                "#{{Timer}} 1.5 seconds cooldown" ..
-                "#{{Luck}} 100% chance at 90 Luck (+1%p per Luck)",
+                chance .. "% chance to summon multiple ghosts on hit (+1%p per Luck)" ..
+                "#{{Timer}} " .. cooldown .. " seconds cooldown",
                 -- Stacks
                 "Stacks increase spawn chance and decrease spawn cooldown",
                 "en_us"
@@ -41,6 +43,10 @@ Astro:AddCallback(
                 { itemType = ItemType.ITEM_PASSIVE, subType = Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE },
                 "Original Sinful Spoils"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE)] = function(luck, num)
+                return (spawnChance * num + luck * luckMultiply) * 100
+            end
         end
     end
 )

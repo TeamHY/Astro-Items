@@ -33,6 +33,10 @@ Astro:AddCallback(
                 "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
                 nil, "en_us"
             )
+            
+            Astro.EID.LuckFormulas["5.100." .. tostring(ITEM_ID)] = function(luck, num)
+                return ((BASE_FLY_CHANCE + luck * LUCK_FLY_CHANCE) * 100)
+            end
         end
     end
 )

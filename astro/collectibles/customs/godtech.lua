@@ -21,8 +21,24 @@ Astro:AddCallback(
 				"#레이저 고리는 적에게 프레임당 캐릭터의 공격력 x1.0의 피해를 줍니다." ..
 				"#{{LuckSmall}} 행운 10 이상일 때 100% 확률 (행운 1당 +5%p)",
 				-- 중첩 시
-				"중첩 시 레이저 고리 생성 확률이 중첩된 수만큼 합연산으로 증가하며 레이저 고리가 한층 더 추가됩니다."
+				"중첩 시 레이저 고리 생성 확률이 중첩된 수만큼 합연산으로 증가 및 레이저 고리가 한층 더 추가"
 			)
+
+			Astro.EID:AddCollectible(
+				Astro.Collectible.GODTECH,
+				"Godtech", "",
+				"↓ {{Tears}} x0.8 Fire rate multiplier" ..
+				"#50% chance for tears to gain orbiting laser ring (+5%p per Luck)" ..
+				"#!!! Laser spawn cooldown: ({{Collectible" .. Astro.Collectible.GODTECH .. "}} count * 0.1) seconds" ..
+				"#Laser ring deals x1.0 Isaac's damage per frame to enemies",
+				-- Stacks
+				"Stackable",
+				"en_us"
+			)
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.GODTECH)] = function(luck, num)
+                return (spawnChance * num + luck * luckMultiply) * 100
+            end
 		end
 	end
 )

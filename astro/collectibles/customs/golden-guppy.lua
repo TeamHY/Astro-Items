@@ -24,18 +24,21 @@ Astro:AddCallback(
                 "파란 아군 파리가 소환될 때 50% 확률로 황금 파리를 소환합니다." ..
                 "#황금 파리는 적에게 접촉시 3초간 접촉한 적을 멈추게 만들며;" ..
                 "#{{ArrowGrayRight}} {{Coin}} 멈춘 적 처치시 동전을 1~3개 드랍합니다." ..
-                "#{{LuckSmall}} 행운이 50 이상일 때 100% 확률 행운 1당 +1%p"
+                "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 행운 1당 +1%p"
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Golden Guppy", "",
-                "50% chance to spawn a golden fly when spawned blue fly" ..
+                "50% chance to spawn a golden fly when spawned blue fly (+1%p per Luck)" ..
                 "#Golden flies petrify them and turn them gold for 3 seconds" ..
-                "#{{Coin}} Killing a golden enemy spawns coins" ..
-                "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
+                "#{{Coin}} Killing a golden enemy spawns coins",
                 nil, "en_us"
             )
+            
+            Astro.EID.LuckFormulas["5.100." .. tostring(ITEM_ID)] = function(luck, num)
+                return ((BASE_FLY_CHANCE + luck * LUCK_FLY_CHANCE) * 100)
+            end
         end
     end
 )

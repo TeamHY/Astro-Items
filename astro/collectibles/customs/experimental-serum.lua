@@ -49,6 +49,8 @@ Astro:AddCallback(
                 "Stackable",
                 "en_us"
             )
+            
+            EID.HealthUpData["5.100." .. tostring(Astro.Collectible.EXPERIMENTAL_SERUM)] = 1
         end
     end
 )

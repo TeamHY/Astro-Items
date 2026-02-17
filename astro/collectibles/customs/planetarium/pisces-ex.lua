@@ -6,7 +6,7 @@ local SPAWN_CHANCE = 0.05    -- 기본 소환 확률
 
 local MAX_CHANCE = 0.2    -- 최대 소환 확률
 
-local LUCK_MULTIPLY = 1 / 100    -- 행운 1당 몇 %p으로 할진
+local LUCK_MULTIPLY = 1 / 100    -- 행운 1당 +n%p
 
 local COOLDOWN_TIME = 15    -- 30 프레임 = 1초
 
@@ -22,16 +22,20 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local tearsInc = string.format("%.1f", TEARS_INCREMENT)
+            local chance = string.format("%.f", SPAWN_CHANCE * 100)
+            local cooldown = string.format("%.1f", COOLDOWN_TIME / 30)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.PISCES_EX,
                 "초 물고기자리",
                 "힘찬 연어들처럼",
-                "↑ {{TearsSmall}}연사(+상한) +0.5" ..
+                "↑ {{TearsSmall}}연사(+상한) +" .. tearsInc ..
                 "#공격이 파동 곡선을 그리면서 2발로 나가며 적을 밀쳐냅니다." ..
-                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 적을 즉사시키는 눈물이 나가며;" ..
+                "#" .. chance .. "%의 확률로 적을 즉사시키는 눈물이 나가며;" ..
                 "#{{ArrowGrayRight}} 보스에겐 공격력 x2의 피해를 줍니다." ..
-                "#{{LuckSmall}} 행운 15 이상일 때 20% 확률 (행운 1당 +1%p)" ..
-                "#{{TimerSmall}} (쿨타임 0.5초)",
+                "#{{TimerSmall}} (쿨타임 " .. cooldown .. "초)" ..
+                "#{{LuckSmall}} 행운 15 이상일 때 20% 확률 (행운 1당 +1%p)",
                 -- 중첩 시
                 "중첩 시 발사 확률이 중첩된 수만큼 합연산으로 증가 및 쿨타임 감소"
             )
@@ -40,16 +44,20 @@ Astro:AddCallback(
                 Astro.Collectible.PISCES_EX,
                 "Pisces EX",
                 "",
-                "↑ {{Tears}} +0.5 Fire rate" ..
+                "↑ {{Tears}} +" .. tearsInc .. " Fire rate" ..
                 "#Increases tear knockback" ..
                 "#Isaac shoots 2 tears at once and his tears move in waves" ..
-                "#" .. string.format("%.f", SPAWN_CHANCE * 100) .. "% chance to fire a tear that instantly kill enemies;" ..
+                "#" .. chance .. "% chance (+1%p per Luck) to fire a tear that instantly kill enemies;" ..
                 "#{{ArrowGrayRight}} Deal 2x Isaac's damage against bosses" ..
-                "#{{LuckSmall}} 20% chance at 15 luck (+1%p per Luck)",
+                "#{{TimerSmall}} " .. cooldown .. " seconds cooldown",
                 -- Stacks
-                "On stacking, the firing chance increases per stack",
+                "Stacks increase firing chance and decrease firing cooldown",
                 "en_us"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.PISCES_EX)] = function(luck, num)
+                return math.min(MAX_CHANCE + (num / 20), (SPAWN_CHANCE + luck * LUCK_MULTIPLY) * num) * 100
+            end
         end
     end
 )
@@ -77,7 +85,8 @@ Astro:AddCallback(
             if cacheFlag == CacheFlag.CACHE_TEARFLAG then
                 player.TearFlags = player.TearFlags | TearFlags.TEAR_WIGGLE | TearFlags.TEAR_KNOCKBACK
             elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
-                player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, TEARS_INCREMENT)
+                local collectibleNum = player:GetCollectibleNum(Astro.Collectible.PISCES_EX)
+                player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, TEARS_INCREMENT * collectibleNum)
             end
         end
     end

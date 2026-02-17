@@ -35,10 +35,13 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Blighted Guppy", "",
-                "50% chance to spawn an additional blue fly when spawned blue fly" ..
-                "#{{Luck}} 100% chance at 50 Luck (+1%p per Luck)",
+                "50% chance to spawn an additional blue fly when spawned blue fly (+1%p per Luck)",
                 nil, "en_us"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(ITEM_ID)] = function(luck, num)
+                return ((BASE_FLY_CHANCE + luck * LUCK_FLY_CHANCE) * 100)
+            end
         end
     end
 )

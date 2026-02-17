@@ -1,5 +1,13 @@
 Astro.Collectible.DIVINE_LIGHT = Isaac.GetItemIdByName("Divine Light")
 
+---
+
+local SPAWN_CHANCE = 0.1
+
+local LUCK_MULTIPLY = 1 / 20
+
+---
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
@@ -8,7 +16,7 @@ Astro:AddCallback(
                 Astro.Collectible.DIVINE_LIGHT,
                 "신의 조명",
                 "앞을 밝히노니",
-                "적 명중 시 10%의 확률로 빛줄기를 소환합니다." ..
+                "적 명중 시 " .. string.format("%.f", SPAWN_CHANCE * 100) .. "%의 확률로 빛줄기를 소환합니다." ..
                 "#{{LuckSmall}} 행운 18 이상일 때 100% 확률 (행운 1당 +5%p)",
                 -- 중첩 시
                 "중첩된 수만큼 빛줄기 소환 시도"
@@ -18,12 +26,15 @@ Astro:AddCallback(
                 Astro.Collectible.DIVINE_LIGHT,
                 "Divine Light",
                 "",
-                "10% chance to summon light beams on hit" ..
-                "#{{Luck}} 100% chance at 18 Luck (+5%p per Luck)",
+                string.format("%.f", SPAWN_CHANCE * 100) .. "% chance to summon light beams on hit (+5%p per Luck)",
                 -- Stacks
                 "Stacks summon additional light beams",
                 "en_us"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.DIVINE_LIGHT)] = function(luck, num)
+                return (SPAWN_CHANCE + luck * LUCK_MULTIPLY) * 100
+            end
         end
     end
 )
@@ -43,7 +54,7 @@ Astro:AddCallback(
                 local rng = player:GetCollectibleRNG(Astro.Collectible.DIVINE_LIGHT)
 
                 for _ = 1, player:GetCollectibleNum(Astro.Collectible.DIVINE_LIGHT) do
-                    if rng:RandomFloat() < 0.1 + player.Luck / 20 then
+                    if rng:RandomFloat() < SPAWN_CHANCE + player.Luck * LUCK_MULTIPLY then
                         Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.CRACK_THE_SKY, 0, entity.Position, Vector.Zero, player)
                     end
                 end

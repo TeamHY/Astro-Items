@@ -1,5 +1,7 @@
 -- 사왈이 제작
 Astro.EID.EnglishDescAI = require "astro.collectibles.eid-draft-translation"
+Astro.EID.AccurateItemDesc = require "astro.collectibles.eid-accurate-blurbs"
+Astro.EID.AccurateTrinketDesc = require "astro.trinkets.eid-accurate-blurbs"
 
 ------ VS ------
 local minibossNames = {

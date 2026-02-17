@@ -49,6 +49,9 @@ Astro:AddCallback(
                 "#!!! Stackable",
                 nil, "en_us"
             )
+            
+            EID.HealthUpData["5.100." .. tostring(Astro.Collectible.RAINBOW_MUSHROOM)] = 1
+            EID.BloodUpData[Astro.Collectible.RAINBOW_MUSHROOM] = 12
         end
 
         Astro:AddRerollCondition(

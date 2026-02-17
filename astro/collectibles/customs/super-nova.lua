@@ -23,16 +23,32 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local chance = string.format("%.f", SPAWN_CHANCE * 100)
+            local cooldown = string.format("%.f", COOLDOWN_TIME / 30)
+            
             Astro.EID:AddCollectible(
                 Astro.Collectible.SUPER_NOVA,
                 "초신성",
                 "광활한 별들의 폭발",
-                "적 명중 시 10%의 확률로 십자 모양 광선을 소환합니다." ..
-                "#{{TimerSmall}} (쿨타임 15초)" ..
+                "적 명중 시 " .. chance .. "%의 확률로 십자 모양 광선을 소환합니다." ..
+                "#{{TimerSmall}} (쿨타임 " .. cooldown .. "초)" ..
                 "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +3%p)",
                 -- 중첩 시
-                "중첩 시 소환 확률이 중첩된 수만큼 합연산으로 증가하며 쿨타임이 줄어듭니다."
+                "중첩 시 소환 확률이 중첩된 수만큼 합연산으로 증가 및 쿨타임 감소"
             )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SUPER_NOVA,
+                "Super Nova", "",
+                chance .. "% chance to summon cross-shaped beam on hit (+3%p per Luck)" ..
+                "#{{Timer}} " .. cooldown .. " seconds cooldown",
+                -- Stacks
+                "Stacks increase summon chance and decrease summon cooldown"
+            )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.SUPER_NOVA)] = function(luck, num)
+                return (SPAWN_CHANCE * num + luck * LUCK_MULTIPLY) * 100
+            end
         end
     end
 )

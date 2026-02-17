@@ -2,6 +2,14 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.BLOOD_OF_HATRED = Isaac.GetItemIdByName("Blood Of Hatred")
 
+---
+
+local BLEEDING_CHANCE = 0.125
+
+local LUCK_MULTIPLY = 1 / 40
+
+---
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
@@ -12,11 +20,27 @@ Astro:AddCallback(
                 "피 한 방울에 서린 복수심",
                 "!!! 최초 획득 시 2개 획득" ..
                 "#↑ {{BlackHeart}}블랙하트 +1" ..
-                "#{{BleedingOut}} 방 입장 시 12.5% 확률로 적을 출혈시킵니다." ..
+                "#{{BleedingOut}} 방 입장 시 " .. string.format("%.1f", BLEEDING_CHANCE * 100) .. "% 확률로 적을 출혈시킵니다." ..
                 "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +2.5%p)",
                 -- 중첩 시
                 "중첩 시 출혈 확률이 중첩된 수만큼 합연산으로 증가"
             )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BLOOD_OF_HATRED,
+                "Blood Of Hatred",
+                "Random bleeding",
+                "!!! +2 on first pickup" ..
+                "#↑ {{BlackHeart}} +1 Black Heart" ..
+                "#12.5% chance to bleed enemies on room entry (+2.5%p per Luck)",
+                -- Stacks
+                "Stacks increase chance",
+                "en_us"
+            )
+            
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.BLOOD_OF_HATRED)] = function(luck, num)
+                return (BLEEDING_CHANCE * num + luck * LUCK_MULTIPLY) * 100
+            end
         end
     end
 )
@@ -34,7 +58,7 @@ Astro:AddCallback(
                     if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE then
                         local rng = player:GetCollectibleRNG(Astro.Collectible.BLOOD_OF_HATRED)
 
-                        if rng:RandomFloat() < (0.125 * player:GetCollectibleNum(Astro.Collectible.BLOOD_OF_HATRED)) + player.Luck / 40 then
+                        if rng:RandomFloat() < (BLEEDING_CHANCE * player:GetCollectibleNum(Astro.Collectible.BLOOD_OF_HATRED)) + player.Luck * LUCK_MULTIPLY then
                             entity:GetData().BloodOfHatred = {
                                 DurationTime = entity.FrameCount + 150 -- 5초
                             }

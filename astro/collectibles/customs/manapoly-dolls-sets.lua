@@ -2,7 +2,7 @@
 
 local TAANA_SPEED = 10 -- 에이플 날아가는 속도
 
-local SEERI_CHANCE = 1
+local SEERI_CHANCE = 0.01
 
 local SEERI_CHANCE_LUCK_MULTIPLY = 0.01 -- 행운 1당 1% 소환 확률 증가
 
@@ -34,8 +34,13 @@ Astro:AddCallback(
                 Astro.Collectible.TAANA_DEFENSE_HELPER,
                 "TAANA - 방어 도우미",
                 "행운을 지켜 주는 기계 인형",
-                "{{Trinket145}} 페널티 피격으로 인해 Perfection이 떨어질 때;" ..
-                "#{{ArrowGrayRight}} 스테이지 당 한번 사라지기 전에 주울 수 있습니다."
+                "{{Trinket145}} 페널티 피격으로 인해 Perfection이 떨어질 때 스테이지 당 한번 사라지기 전에 주울 수 있습니다."
+            )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.TAANA_DEFENSE_HELPER,
+                "TAANA - Defense Helper", "",
+                "{{Trinket145}} When Perfection drops on due to taking damage, it can be picked up once per stage before disappearing",
+                nil, "en_us"
             )
 
             Astro.EID:AddCollectible(
@@ -45,12 +50,27 @@ Astro:AddCallback(
                 "{{Collectible100}} 공격 시 1%의 확률로 그 방에서 최대 5번 Little Steven을 소환합니다." ..
                 "#{{LuckSmall}} 행운 99 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SEERI_COMBAT_HELPER,
+                "SEERI the Combat Helper", "",
+                "{{Collectible100}} 1% chance to spawn Little Steven max 5 times in the room on attack (+1%p per Luck)",
+                nil, "en_us"
+            )
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.SEERI_COMBAT_HELPER)] = function(luck, num)
+                return (SEERI_CHANCE + luck * SEERI_CHANCE_LUCK_MULTIPLY) * 100
+            end
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.KAAEN_AUTO_RELOADER,
                 "KAAEN - 재장전 도우미",
                 "재충전해주는 기계 인형",
                 "방 클리어 시 20%의 확률로 {{Crafting19}}리틀 배터리를 소환합니다."
+            )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.KAAEN_AUTO_RELOADER,
+                "KAAEN - Auto Reloader", "",
+                "20% chance to spawn {{Crafting19}} little battery on room clear",
+                nil, "en_us"
             )
         end
     end

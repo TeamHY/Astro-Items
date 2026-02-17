@@ -3,7 +3,10 @@ Astro.Collectible.SCORPIO_EX = Isaac.GetItemIdByName("Scorpio EX")
 ---
 
 local POISON_FLY_CHANCE = 0.3
+
 local POISON_FLY_COOL = 5 -- n프레임 당 하나
+
+local LUCK_MULTIPLY = 1 / 20
 
 ---
 
@@ -27,12 +30,15 @@ Astro:AddCallback(
                 "Scorpio EX",
                 "",
                 "{{Poison}} Poison tears" ..
-                "#" .. string.format("%.f", POISON_FLY_CHANCE * 100) .. "% chance to spawn a poison fly on hit" ..
-                "#{{LuckSmall}} 100% chance at 14 Luck (+5%p per Luck)",
+                "#" .. string.format("%.f", POISON_FLY_CHANCE * 100) .. "% chance to spawn a poison fly on hit (+5%p per Luck)",
                 -- Stacks
                 "On stacking, attempts additional spawns per stack and reduces cooldown",
                 "en_us"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.SCORPIO_EX)] = function(luck, num)
+                return (POISON_FLY_CHANCE + luck * LUCK_MULTIPLY) * 100
+            end
         end
     end
 )
@@ -57,7 +63,7 @@ Astro:AddCallback(
                     local rng = player:GetCollectibleRNG(Astro.Collectible.SCORPIO_EX)
 
                     for _ = 1, player:GetCollectibleNum(Astro.Collectible.SCORPIO_EX) do
-                        if rng:RandomFloat() < POISON_FLY_CHANCE + player.Luck / 20 then
+                        if rng:RandomFloat() < POISON_FLY_CHANCE + player.Luck * LUCK_MULTIPLY then
                             local fly = Isaac.Spawn(EntityType.ENTITY_FAMILIAR, FamiliarVariant.BLUE_FLY, 2, player.Position, Vector(0, 0), player)
                             fly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
                             

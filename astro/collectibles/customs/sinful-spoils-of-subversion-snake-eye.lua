@@ -23,18 +23,17 @@ Astro:AddCallback(
                 "요동치는 에너지를 내뿜는 구체",
                 "적 명중 시 " .. chance .. "%의 확률로{{Collectible634}}Purgatory 유령을 소환합니다" ..
                 "#{{TimerSmall}} (쿨타임 " .. cooldown .. "초)" ..
-                "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)",
+                "#{{LuckSmall}} 행운 80 이상일 때 100% 확률 (행운 1당 +1%p)",
                 -- 중첩 시
-                "중첩 시 유령의 소환 확률이 중첩된 수만큼 합연산으로 증가하며 소환 쿨타임이 줄어듭니다."
+                "중첩 시 유령의 소환 확률이 중첩된 수만큼 합연산으로 증가 및 소환 쿨타임 감소"
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
                 "Sinful Spoils of Subversion - Snake Eye",
                 "",
-                "{{Collectible634}} " .. chance .. "% chance to summon Purgatory ghost on hit" ..
-                "#{{Timer}} " .. cooldown .. " second cooldown" ..
-                "#{{Luck}} 100% chance at 90 Luck (+1%p per Luck)",
+                "{{Collectible634}} " .. chance .. "% chance to summon Purgatory ghost on hit (+1%p per Luck)" ..
+                "#{{Timer}} " .. cooldown .. " second cooldown",
                 -- Stacks
                 "Stacks increase spawn chance and decrease spawn cooldown",
                 "en_us"
@@ -44,6 +43,10 @@ Astro:AddCallback(
                 { itemType = ItemType.ITEM_PASSIVE, subType = Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE },
                 "S.S. of Subversion"
             )
+
+            Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE)] = function(luck, num)
+                return (spawnChance * num + luck * luckMultiply) * 100
+            end
         end
     end
 )
