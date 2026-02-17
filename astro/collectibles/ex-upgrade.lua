@@ -76,6 +76,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_SMALL_ROCK] = { Id = Astro.Collectible.DAVIDS_STONE, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_GUPPYS_COLLAR] = { Id = Astro.Collectible.GUPPYS_NAME_TAG, Chance = 0.7 },
     [CollectibleType.COLLECTIBLE_EXPERIMENTAL_TREATMENT] = { Id = Astro.Collectible.EXPERIMENTAL_SERUM, Chance = 0.7 },
+    [Astro.Collectible.RED_CUBE] = { Id = Astro.Collectible.BLACK_CUBE, Chance = 0.5 },
 }
 
 ---

@@ -20,6 +20,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_EXPERIMENTAL_TREATMENT].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible240}}{{ColorYellow}}임상시험{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible240}} {{ColorYellow}}Experimental Treatment{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.EXPERIMENTAL_SERUM, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.EXPERIMENTAL_SERUM,
                 "실험용 혈청",

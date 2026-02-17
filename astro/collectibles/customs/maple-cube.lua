@@ -36,6 +36,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[Astro.Collectible.RED_CUBE].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible" .. Astro.Collectible.RED_CUBE .. "}}{{ColorYellow}}레드 큐브{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible" .. Astro.Collectible.RED_CUBE .. "}} {{ColorYellow}}Red Cube{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.BLACK_CUBE, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.BLACK_CUBE,
                 "블랙 큐브",
@@ -44,6 +51,15 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BLACK_MAX_STAT .. "%p" ..
                 "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BLACK_MAX_BOSS .. "%p" ..
                 "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BLACK_MAX_MONSTER .. "%p"
+            )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BLACK_CUBE,
+                "Black Cube", "",
+                "Consumes " .. BLACK_COST_COINS .. " {{Coin}} coins for 2 options:" ..
+                "#↑ +1%p~+" .. BLACK_MAX_STAT .. "%p {{Damage}} Damage" ..
+                "#{{BossRoom}} +1%p~+" .. BLACK_MAX_BOSS .. "%p boss damage" ..
+                "#{{Damage}} +1%p~+" .. BLACK_MAX_MONSTER .. "%p monster damage",
+                nil, "en_us"
             )
 
             Astro.EID:AddCollectible(
@@ -55,16 +71,35 @@ Astro:AddCallback(
                 "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. RED_MAX_BOSS .. "%p" ..
                 "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. RED_MAX_MONSTER .. "%p"
             )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.RED_CUBE,
+                "Red Cube", "",
+                "Consumes " .. RED_COST_COINS .. " {{Coin}} coins for one option:" ..
+                "#↑ +1%p~+" .. RED_MAX_STAT .. "%p {{Damage}} Damage" ..
+                "#{{BossRoom}} +1%p~+" .. RED_MAX_BOSS .. "%p boss damage" ..
+                "#{{Damage}} +1%p~+" .. RED_MAX_MONSTER .. "%p monster damage",
+                nil, "en_us"
+            )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.BONUS_POTENTIAL_CUBE,
                 "에디셔널 큐브",
                 "더 많은 잠재능력",
-                "사용 시 {{Coin}}동전 " .. BONUS_POTENTIAL_COST_COINS .. "개를 소모하고, 아래 옵션 중 하나를 얻습니다." ..
+                "사용 시 {{Coin}}동전 " .. BONUS_POTENTIAL_COST_COINS .. "개를 소모하고 아래 옵션 중 하나를 얻습니다." ..
                 "#{{ArrowGrayRight}} 공력력 +1%p~+" .. BONUS_POTENTIAL_MAX_STAT .. "%p" ..
                 "#{{ArrowGrayRight}} 보스 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_BOSS .. "%p" ..
                 "#{{ArrowGrayRight}} 일반 몬스터 공격력 +1%p~+" .. BONUS_POTENTIAL_MAX_MONSTER .. "%p" ..
                 "#!!! {{Collectible" .. Astro.Collectible.BLACK_CUBE .. "}}Black Cube 및 {{Collectible" .. Astro.Collectible.RED_CUBE .. "}}Red Cube와 별개로 적용"
+            )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BONUS_POTENTIAL_CUBE,
+                "Bonus Potential Cube", "",
+                "Consumes " .. BONUS_POTENTIAL_COST_COINS .. " {{Coin}} coins for one option:" ..
+                "#↑ +1%p~+" .. BONUS_POTENTIAL_MAX_STAT .. "%p {{Damage}} Damage" ..
+                "#{{BossRoom}} +1%p~+" .. BONUS_POTENTIAL_MAX_BOSS .. "%p boss damage" ..
+                "#{{Damage}} +1%p~+" .. BONUS_POTENTIAL_MAX_MONSTER .. "%p monster damage" ..
+                "#!!! Applies separately from {{Collectible" .. Astro.Collectible.BLACK_CUBE .. "}} Black Cube and {{Collectible" .. Astro.Collectible.RED_CUBE .. "}} Red Cube",
+                nil, "en_us"
             )
         end
     end
