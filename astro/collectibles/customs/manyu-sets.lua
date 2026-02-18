@@ -287,7 +287,7 @@ Astro:AddCallback(
     function(_, player, cacheFlag)
         local data = Astro:GetPersistentPlayerData(player)
 
-        if data.reincarnationUsedCount then
+        if data and data.reincarnationUsedCount then
             if cacheFlag == CacheFlag.CACHE_DAMAGE then
                 player.Damage = player.Damage * (REINCARNATION_DAMAGE_MULTIPLIER ^ data.reincarnationUsedCount)
             elseif cacheFlag == CacheFlag.CACHE_FIREDELAY then
