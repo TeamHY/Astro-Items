@@ -167,7 +167,7 @@
 		<info text="Single use"/>
 	</collectible>
 	<collectible id="40">
-		<info text="Removes all held tear replacement items"/>
+		<info text="Removes and drops all held tear replacement items"/>
 	</collectible>
 	<collectible id="41">
 		<info text="Damage increases with luck"/>

@@ -22,6 +22,15 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 시 상한량이 (중첩된 수 * 50%p)까지 증가"
             )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.DRY_EYE_SYNDROME,
+                "Dry Eye Syndrome", "",
+                "{{Damage}} Holding fire key increases damage up to +50%",
+                -- Stacks
+                "Stacks increase damage bonus",
+                "en_us"
+            )
         end
     end
 )
@@ -32,7 +41,7 @@ Astro:AddCallback(
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
         
-            if player:HasCollectible(Astro.Collectible.DRY_EYE_SYNDROME) then
+            if player:HasCollectible(Astro.Collectible.DRY_EYE_SYNDROME) and player.ControlsCooldown <= 0 and player.ControlsEnabled then
                 local data = Astro:GetPersistentPlayerData(player)
     
                 if Input.GetActionValue(ButtonAction.ACTION_SHOOTLEFT, player.ControllerIndex) > 0 then
@@ -42,6 +51,8 @@ Astro:AddCallback(
                 elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTUP, player.ControllerIndex) > 0 then
                     data["dryEyeSyndromeIsActive"] = true
                 elseif Input.GetActionValue(ButtonAction.ACTION_SHOOTDOWN, player.ControllerIndex) > 0 then
+                    data["dryEyeSyndromeIsActive"] = true
+                elseif Input.IsMouseBtnPressed(Mouse.MOUSE_BUTTON_1) then
                     data["dryEyeSyndromeIsActive"] = true
                 else
                     data["dryEyeSyndromeIsActive"] = false

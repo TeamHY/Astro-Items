@@ -29,8 +29,16 @@ Astro:AddCallback(
                 Astro.Collectible.CLEANER,
                 "클리너",
                 "말끔하게",
-                "#!!! 획득 시 아래 아이템 제거하고 소환:" ..
+                "#!!! 획득 시 아래 아이템 중 소지중인 아이템들을 제거한 후 드랍합니다:" ..
                 "#{{Blank}} " .. Astro.CleanerEIDString
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.CLEANER,
+                "Cleaner", "",
+                "#!!! Removes and drops on pickup" ..
+                "#{{Blank}} " .. Astro.CleanerEIDString,
+                nil, "en_us"
             )
         end
     end

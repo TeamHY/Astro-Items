@@ -8,7 +8,8 @@ Astro:AddCallback(
                 Astro.Collectible.QUASAR,
                 "퀘이사",
                 "초강력 블랙홀",
-                "{{Collectible512}} 방마다 처음으로 죽은 적의 위치에 블랙홀을 소환합니다." ..
+                "방마다 처음으로 죽은 적의 위치에 적들을 모두 빨아들여 붙잡아놓는 블랙홀을 소환합니다." ..
+                "#{{Collectible512}} 블랙홀은 6초동안 지속되며 주변 장애물들을 모두 파괴합니다." ..
                 "#방 클리어 시 캐릭터가 10초간 무적 상태가 됩니다." ..
                 "#!!! 패널티 피격 시 해당 피격을 무효화하는 대신 이 아이템은 제거됩니다.",
                 -- 중첩 시
@@ -18,11 +19,14 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.QUASAR,
                 "Quasar", "",
-                "{{Collectible512}} Spawns black hole at first killed enemy in the room" ..
+                "{{Collectible512}} Spawns black hole at first killed enemy in the room:" ..
+                "#{{IND}} Deals 6 damage per second" ..
+                "#{{IND}} Destroys nearby rocks" ..
+                "#{{IND}} Lasts 6 seconds" ..
                 "#Invincibility for 10 seconds on room clear" ..
                 "#!!! Taking damage will remove this item instead of negating the damage",
                 -- Stacks
-                "Entering a room has invincibility for 10 seconds",
+                "On stacking, entering a room has invincibility for 10 seconds",
                 "en_us"
             )
         end
@@ -55,8 +59,11 @@ Astro:AddCallback(
             local player = Isaac.GetPlayer(i - 1)
 
             if player:HasCollectible(Astro.Collectible.QUASAR) and remaining > 0 and entityNPC.Type ~= EntityType.ENTITY_FIREPLACE then
-                Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BLACK_HOLE, 0, entityNPC.Position, Vector.Zero,
-                    player)
+                local blackhole = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BLACK_HOLE, 0, entityNPC.Position, Vector.Zero, player)
+                local sprite = blackhole:GetSprite()
+                
+                sprite:ReplaceSpritesheet(1, "gfx/items/collectibles/Quasar.png")
+                sprite:LoadGraphics()
 
                 remaining = remaining - 1
 

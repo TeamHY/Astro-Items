@@ -167,7 +167,7 @@
 		<info text="일회용"/>
 	</collectible>
 	<collectible id="40">
-		<info text="소지 중인 공격 교체형 아이템들을 제거합니다"/>
+		<info text="소지 중인 공격 교체형 아이템들을 제거하고 드롭합니다"/>
 	</collectible>
 	<collectible id="41">
 		<info text="행운에 비례해 공격력이 증가합니다"/>

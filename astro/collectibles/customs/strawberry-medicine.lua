@@ -14,7 +14,7 @@ Astro:AddCallback(
                 Astro.Collectible.STRAWBERRY_MEDICINE,
                 "딸기향 해열제",
                 "찬란하게 빛나던 내 모습은 어디로 날아갔을까",
-                "↑ {{DamageSmall}}공격력 x" .. string.format("%.1f", DAMAGE_MULTI),
+                "↑ {{DamageSmall}}공격력 배율 x" .. string.format("%.1f", DAMAGE_MULTI),
                 -- 중첩 시
                 "곱연산으로 중첩 가능"
             )
