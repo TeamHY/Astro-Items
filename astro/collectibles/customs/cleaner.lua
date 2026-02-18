@@ -29,7 +29,7 @@ Astro:AddCallback(
                 Astro.Collectible.CLEANER,
                 "클리너",
                 "말끔하게",
-                "#!!! 획득 시 아래 아이템 제거:" ..
+                "#!!! 획득 시 아래 아이템 제거하고 소환:" ..
                 "#{{Blank}} " .. Astro.CleanerEIDString
             )
         end
@@ -42,7 +42,11 @@ Astro:AddCallbackCustom(
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
         for _, collectible in ipairs(Astro.CleanerList) do
-            Astro:RemoveAllCollectible(player, collectible)
+            local count = Astro:RemoveAllCollectible(player, collectible)
+
+            for _ = 1, count do
+                Astro:SpawnCollectible(collectible, player.Position)
+            end
         end
 
         Astro:RemoveAllCollectible(player, Astro.Collectible.CLEANER)
