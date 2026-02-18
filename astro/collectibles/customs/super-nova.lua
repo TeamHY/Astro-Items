@@ -43,7 +43,8 @@ Astro:AddCallback(
                 chance .. "% chance to summon cross-shaped beam on hit (+3%p per Luck)" ..
                 "#{{Timer}} " .. cooldown .. " seconds cooldown",
                 -- Stacks
-                "Stacks increase summon chance and decrease summon cooldown"
+                "Stacks increase summon chance and decrease summon cooldown",
+                "en_us"
             )
 
             Astro.EID.LuckFormulas["5.100." .. tostring(Astro.Collectible.SUPER_NOVA)] = function(luck, num)
