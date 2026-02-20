@@ -50,6 +50,7 @@ require "astro.curse"
 require "astro.large-sprite"
 require "astro.birthright"
 require "astro.translate"
+require "astro.transformations.init"
 
 local font = Font()
 font:Load(modPath .. "resources/font/eid_korean_soyanon.fnt")
@@ -79,7 +80,7 @@ Astro:AddCallback(
 		if #warnings > 0 then
 			local centerX = Isaac.GetScreenWidth() / 2
 			local centerY = Isaac.GetScreenHeight() / 2
-			
+
 			background:Render(Vector(centerX, centerY), Vector(0, 0), Vector(0, 0))
 
 			for i, warning in ipairs(warnings) do

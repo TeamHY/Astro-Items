@@ -6,6 +6,8 @@ Astro.Collectible.BLOOD_OF_HATRED = Isaac.GetItemIdByName("Blood Of Hatred")
 
 local BLEEDING_CHANCE = 0.125
 
+local BLEEDING_DURATION = 150
+
 local LUCK_MULTIPLY = 1 / 40
 
 ---
@@ -53,16 +55,21 @@ Astro:AddCallback(
 
             if player:HasCollectible(Astro.Collectible.BLOOD_OF_HATRED) then
                 local entities = Isaac.GetRoomEntities()
+                local rng = player:GetCollectibleRNG(Astro.Collectible.BLOOD_OF_HATRED)
 
                 for _, entity in ipairs(entities) do
                     if entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE then
-                        local rng = player:GetCollectibleRNG(Astro.Collectible.BLOOD_OF_HATRED)
-
                         if rng:RandomFloat() < (BLEEDING_CHANCE * player:GetCollectibleNum(Astro.Collectible.BLOOD_OF_HATRED)) + player.Luck * LUCK_MULTIPLY then
-                            entity:GetData().BloodOfHatred = {
-                                DurationTime = entity.FrameCount + 150 -- 5초
-                            }
-    
+                            local entityData = entity:GetData()
+
+                            if not entityData.BloodOfHatred then
+                                entityData.BloodOfHatred = {
+                                    DurationTime = entity.FrameCount + BLEEDING_DURATION
+                                }
+                            else
+                                entityData.BloodOfHatred.DurationTime = math.max(entity.FrameCount + BLEEDING_DURATION, entityData.BloodOfHatred.DurationTime)
+                            end
+
                             entity:AddEntityFlags(EntityFlag.FLAG_BLEED_OUT)
                         end
                     end
