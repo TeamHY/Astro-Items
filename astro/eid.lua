@@ -195,6 +195,7 @@ end
 
 EID:addDescriptionModifier("LuckChanceCallbackAstro", LuckChanceCallbackModified)
 
+
 ------ 콜백 ------
 Astro:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,

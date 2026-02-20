@@ -9,10 +9,10 @@ Astro:AddCallback(
                 "망각",
                 "무의식 속으로",
                 "{{Card41}} Black Rune 하나를 드랍합니다." ..
-                "#!!! 사용 시:" ..
+                "#사용 시:" ..
                 "#{{ArrowGrayRight}} 그 방의 아이템을 흡수하고 흡수한 만큼 랜덤 능력치가 2개씩 증가합니다." ..
                 "#{{ArrowGrayRight}} 그 방의 픽업을 흡수하고 흡수한 개수만큼 파란 아군 거미 및 파리를 소환합니다." ..
-                "#{{ArrowGrayRight}} {{Collectible35}}그 방의 적에게 40의 피해를 줍니다."
+                "#{{ArrowGrayRight}} 그 방의 적에게 40의 피해를 줍니다."
             )
 
             Astro.EID:AddCollectible(

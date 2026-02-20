@@ -10,7 +10,7 @@ Astro:AddCallback(
                 Astro.Collectible.LOVE_LETTER,
                 "고백 편지",
                 "전해지지 않은 러브레터",
-                "사용 시 {{Heart}}/{{BoneHeart}}1칸 또는 {{SoulHeart}}2칸을 {{BrokenHeart}}소지 불가능 체력 1칸으로 바꿔 공격방향으로 편지를 발사합니다." ..
+                "사용 시 {{Heart}}/{{BoneHeart}}1칸 또는 {{SoulHeart}}2칸을 {{BrokenHeart}}부서진하트 1칸으로 바꿔 공격방향으로 편지를 발사합니다." ..
                 "#편지에 맞은 적은 해당 게임에서 영원히 아군이 됩니다." ..
                 "#{{ArrowGrayRight}} 아군 적은 그 방에서만 유지됩니다." ..
                 "#스테이지 당 한번 사용할수 있으며 배터리나 방 클리어로 충전되지 않습니다."
@@ -19,16 +19,15 @@ Astro:AddCallback(
             ----
             Astro.EID:AddCollectible(
                 Astro.Collectible.LOVE_LETTER,
-                "Love Letter",
-                "",
-                "Converts {{Heart}}/{{BoneHeart}} 1 or {{SoulHeart}} 2 to 1 {{BrokenHeart}} Broken Heart and fires letter in attack direction." ..
-                "#Hit enemies become permanent allies this run." ..
-                "#{{ArrowGrayRight}} Ally enemies last in the room." ..
-                "#Can only be used once per floor.",
-                nil,
-                "en_us"
+                "Love Letter", "",
+                "Fires letter in attack direction" ..
+                "#{{BrokenHeart}} Turns 1 heart container or 1 Bone Heart or 2 Soul Hearts into a Broken Heart" ..
+                "#Hit enemies become permanent allies this run" ..
+                "#{{ArrowGrayRight}} Ally enemies last in the room" ..
+                "#Can only be used once per floors",
+                nil, "en_us"
             )
-            EID:addCarBatteryCondition(Astro.Collectible.LOVE_LETTER, "50% chance of not losing health", nil, nil, "en_us")
+            EID:addCarBatteryCondition(Astro.Collectible.LOVE_LETTER, "50% chance of not converting health", nil, nil, "en_us")
         end
     end
 )

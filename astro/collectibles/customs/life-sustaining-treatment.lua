@@ -24,7 +24,6 @@ Astro:AddCallback(
                 "Life-Sustaining Treatment",
                 "",
                 "Chance to shoot a needle" ..
-                "#{{Luck}} 100% chance at 14.5 luck" ..
                 "#Needles kill normal enemies instantly, bursting them into 10 tears" ..
                 "#{{Damage}} Needles deal 3x Isaac's damage against bosses",
                 nil, "en_us"

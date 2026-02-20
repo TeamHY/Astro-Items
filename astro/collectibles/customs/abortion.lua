@@ -33,7 +33,7 @@ Astro:AddCallback(
                 "Abortion", "",
                 string.format("%.f", SPAWN_CHANCE * 100) .. "% chance to fire tears that turn into fetuses on hit (+1%p per Luck)" ..
                 "#{{Timer}} 0.5 seconds cooldown" ..
-                "#{{Collectible678}} Fetuses home in on enemies and deal 2.25x damage per second",
+                "#{{Collectible678}} Fetuses home in on enemies and deal 2.25x Isaac's damage per second",
                 -- Stacks
                 "Stacks increase to a 100% chance and reduce cooldown",
                 "en_us"

@@ -18,10 +18,27 @@ Astro:AddCallback(
                 Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN,
                 "스태프 오브 아인즈 울 고운",
                 "가볼까, 우리 길드의 상징이여",
-                "{{Collectible512}} 사용 시 방 중앙에 블랙홀을 생성하고 10초 동안 무적이 됩니다." ..
-                "#{{Collectible647}} 적에게 일정량의 피해를 줄 때마다 액티브 충전량을 한칸 충전합니다." ..
+                "{{Timer}} 10초 동안:" ..
+                "#{{IND}} 캐릭터가 무적 상태가 됩니다." ..
+                "#사용 시 방 중앙에 블랙홀을 생성합니다." ..
+                "#{{Collectible512}} 블랙홀은 6초동안 지속되며 주변 장애물들을 모두 파괴합니다." ..
+                "#{{Battery}} 적에게 일정량의 피해를 줄 때마다 액티브 충전량을 한칸 충전합니다." ..
                 "#!!! 한 칸 충전에 필요한 피해량:" ..
                 "#{{Blank}} (스테이지 * 20) + 40"
+            )
+            
+            Astro.EID:AddCollectible(
+                Astro.Collectible.STAFF_OF_AINZ_OOAL_GOWN,
+                "Staff of Ainz Ooal Gown", "",
+                "{{Timer}} Receive for 10 seconds:" ..
+                "#{{IND}} Invincibility" ..
+                "#Spawns black hole in room center:" ..
+                "#{{IND}} Deals 6 damage per second" ..
+                "#{{IND}} Destroys nearby rocks" ..
+                "#{{IND}} Lasts 6 seconds" ..
+                "#{{Battery}} Dealing damage to enemies slowly fills up the charge bar" ..
+                "#Damage needed per charge increases each floor",
+                nil, "en_us"
             )
         end
     end
@@ -124,7 +141,11 @@ Astro:AddCallback(
         playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS, false)
 
         local room = Game():GetRoom()
-        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BLACK_HOLE, 0, room:GetCenterPos(), Vector.Zero, nil)
+        local blackhole = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.BLACK_HOLE, 0, room:GetCenterPos(), Vector.Zero, nil)
+        local sprite = blackhole:GetSprite()
+        
+        sprite:ReplaceSpritesheet(1, "gfx/items/collectibles/Staff of Ainz Ooal Gown.png")
+        sprite:LoadGraphics()
 
         SFXManager():Play(USE_SOUND, USE_SOUND_VOLUME)
 

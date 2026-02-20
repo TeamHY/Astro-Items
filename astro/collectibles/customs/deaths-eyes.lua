@@ -10,10 +10,18 @@ Astro:AddCallback(
                 Astro.Collectible.DEATHS_EYES,
                 "사신의 눈",
                 "신은 죽었다",
-                "!!! 획득 이후 {{Collectible331}}Godhead 미등장" ..
-                "#{{Collectible331}} 25%의 확률로 눈물에 후광이 생기며 후광에 닿은 적은 프레임당 2의 피해를 입습니다.",
+                "{{Collectible331}} 25%의 확률로 눈물에 후광이 생기며 후광에 닿은 적은 프레임당 2의 피해를 입습니다.",
                 -- 중첩 시
                 "후광이 생길 확률이 중첩된 수만큼 합연산으로 증가"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.DEATHS_EYES,
+                "Death's Eyes", "",
+                "{{Collectible331}} 25% chance for tears to gain aura that deals 60 damage per second",
+                -- Stacks
+                "Stacks increase chance",
+                "en_us"
             )
         end
     end

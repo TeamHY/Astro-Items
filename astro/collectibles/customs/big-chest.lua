@@ -25,9 +25,16 @@ Astro:AddCallback(
                 Astro.Collectible.BIG_CHEST,
                 "큰 상자",
                 "안락한 곳이야",
-                "!!! 획득 이후 {{Collectible362}}Lil Chest 미등장" ..
-                "#방 클리어 시 25% 확률로 {{Heart}}하트, {{Coin}}동전, {{Key}}열쇠 중 하나를 소환합니다." ..
+                "방 클리어 시 25% 확률로 {{Heart}}하트, {{Coin}}동전, {{Key}}열쇠 중 하나를 드랍합니다." ..
                 "#5개의 방을 클리어할 때마다 랜덤 장신구를 소환합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BIG_CHEST,
+                "Big Chest", "",
+                "25% chance to spawn {{Heart}} Heart, {{Coin}} Coin, or {{Key}} Key every room" ..
+                "#Spawns 1 random trinket every 5 rooms",
+                nil, "en_us"
             )
         end
 
@@ -46,8 +53,6 @@ Astro:AddCallback(
         )
     end
 )
-
-
 
 Astro:AddCallback(
     ModCallbacks.MC_FAMILIAR_INIT,

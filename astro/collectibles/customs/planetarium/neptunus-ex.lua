@@ -9,19 +9,38 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.NEPTUNUS_EX = Isaac.GetItemIdByName("NEPTUNUS EX")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.NEPTUNUS_EX,
-        "초 해왕성",
-        "개방",
-        "!!! 획득 이후 {{Collectible597}}Neptunus 미등장" ..
-        "#{{TearsSmall}} 방 클리어 시 연사(고정) +0.05" ..
-        "#{{Blank}} (중첩 가능)" ..
-        "#{{ArrowGrayRight}} 스테이지 입장 시 초기화됩니다." ..
-        "#{{Chargeable}} 공격하지 않으면 눈물을 충전합니다." ..
-        "#{{Collectible597}} 공격 시 충전한 눈물을 한번에 발사합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.NEPTUNUS_EX,
+                "초 해왕성",
+                "개방",
+                "{{TearsSmall}} 방 클리어 시 연사(고정) +0.05" ..
+                "#{{ArrowGrayRight}} 스테이지 진입 시 초기화됩니다." ..
+                "#{{Collectible597}} Neptunus 효과 발동:" ..
+                "#{{IND}}{{Chargeable}} 공격하지 않으면 눈물을 충전합니다." ..
+                "#{{IND}} 공격 시 충전한 눈물을 한번에 발사합니다.",
+                -- 중첩 시
+                "중첩 가능"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.NEPTUNUS_EX,
+                "Neptunus EX", "",
+                "↑ {{Tears}} +0.05 Fire rate on room clear" ..
+                "#{{ArrowGrayRight}} Reset when entering a new floor" ..
+                "#{{Collectible597}} Neptunus effect applied:" ..
+                "#{{IND}}{{Tears}} Not shooting builds up a tear bonus over 3 seconds" ..
+                "#{{IND}} The tear bonus decreases as Isaac shoots",
+                -- Stacks
+                "Stacks increase extra fire rate",
+                "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,

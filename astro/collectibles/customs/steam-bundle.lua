@@ -8,9 +8,18 @@ Astro:AddCallback(
                 Astro.Collectible.STEAM_BUNDLE,
                 "스팀 번들",
                 "사장님이 미쳤어요",
-                "{{Collectible203}} {{Heart}}빨간하트, {{Coin}}동전, {{Bomb}}폭탄, {{Key}}열쇠 픽업이 1+1로 나옵니다.",
+                "{{Heart}}빨간하트, {{Coin}}동전, {{Bomb}}폭탄, {{Key}}열쇠 픽업이 1+1로 나옵니다.",
                 -- 중첩 시
                 "중첩 시 새 스테이지마다 {{GoldenKey}}황금 열쇠와 {{GoldenBomb}}황금 폭탄 소환"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.STEAM_BUNDLE,
+                "Steam Bundle", "",
+                "Pickups spawned are doubled if possible",
+                -- Stacks
+                "Stacks spawns a {{GoldenKey}} golden key and {{GoldenBomb}} golden bomb on each new floor",
+                "en_us"
             )
         end
     end

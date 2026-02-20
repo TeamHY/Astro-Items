@@ -29,12 +29,12 @@ Astro:AddCallback(
                 "초월체",
                 "너는 나를 섬기기 위해 창조되었다",
                 "방 입장 시 방 안의 파란 아군 거미/파리의 개수만큼 능력치 증가:" ..
-                "#{{ArrowGrayRight}} {{DamageSmall}} 공격력 +" .. DAMAGE_INCREMENT ..
-                "#{{ArrowGrayRight}} {{TearsSmall}} 연사(+상한) +" .. TEARS_INCREMENT ..
-                "#{{ArrowGrayRight}} {{RangeSmall}} 사거리 +" .. RANGE_INCREMENT ..
-                "#{{ArrowGrayRight}} {{SpeedSmall}} 이동속도 +" .. SPEED_INCREMENT ..
-                "#{{ArrowGrayRight}} {{ShotspeedSmall}} 탄속 +" .. SHOTSPEED_INCREMENT ..
-                "#{{ArrowGrayRight}} {{LuckSmall}} 행운 +" .. LUCK_INCREMENT ..
+                "#{{IND}}↑ {{TearsSmall}} 연사(+상한) +" .. TEARS_INCREMENT ..
+                "#{{IND}}↑ {{DamageSmall}} 공격력 +" .. DAMAGE_INCREMENT ..
+                "#{{IND}}↑ {{SpeedSmall}} 이동속도 +" .. SPEED_INCREMENT ..
+                "#{{IND}}↑ {{RangeSmall}} 사거리 +" .. RANGE_INCREMENT ..
+                "#{{IND}}↑ {{ShotspeedSmall}} 탄속 +" .. SHOTSPEED_INCREMENT ..
+                "#{{IND}}↑ {{LuckSmall}} 행운 +" .. LUCK_INCREMENT ..
                 "#{{Collectible248}} 파란 아군 거미/파리와 파리/거미 타입의 패밀리어의 공격력이 2배 증가합니다." ..
                 "#파란 아군 거미/파리의 이동 방향을 조종할 수 있습니다.",
                 -- 중첩 시
@@ -47,12 +47,12 @@ Astro:AddCallback(
                 "#{{Collectible248}} Blue spiders and flies deal double damage, and Spider and fly familiars become stronger" ..
                 "#Blue spiders and flies movement direction can be controlled with the attack buttons" ..
                 "#↑ Increases stats by the number of blue flies and spiders in the room when entering a room:" ..
-                "#{{ArrowGrayRight}} {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
-                "#{{ArrowGrayRight}} {{Tears}} +" .. TEARS_INCREMENT .. " Tears" ..
-                "#{{ArrowGrayRight}} {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
-                "#{{ArrowGrayRight}} {{Range}} +" .. RANGE_INCREMENT .. " Range" ..
-                "#{{ArrowGrayRight}} {{Shotspeed}} +" .. SHOTSPEED_INCREMENT .. " Shot speed" ..
-                "#{{ArrowGrayRight}} {{Luck}} +" .. LUCK_INCREMENT .. " Luck",
+                "#{{IND}}↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
+                "#{{IND}}↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
+                "#{{IND}}↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
+                "#{{IND}}↑ {{Range}} +" .. RANGE_INCREMENT .. " Range" ..
+                "#{{IND}}↑ {{Shotspeed}} +" .. SHOTSPEED_INCREMENT .. " Shot speed" ..
+                "#{{IND}}↑ {{Luck}} +" .. LUCK_INCREMENT .. " Luck",
                 -- Stacks
                 "Stacks increase the stat boost amount",
                 "en_us"

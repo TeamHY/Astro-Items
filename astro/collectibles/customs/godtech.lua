@@ -15,7 +15,7 @@ Astro:AddCallback(
 				Astro.Collectible.GODTECH,
 				"신기술",
 				"첨단 천벌",
-				"↓ {{TearsSmall}}연사 x0.8" ..
+				"↓ {{TearsSmall}}연사 배율 x0.8" ..
 				"#눈물에 50%의 확률로 눈물 주변을 감싸는 레이저 고리가 생깁니다." ..
 				"#!!! 레이저 생성 쿨타임: ({{Collectible" .. Astro.Collectible.GODTECH .. "}}개수 * 0.1)초" ..
 				"#레이저 고리는 적에게 프레임당 캐릭터의 공격력 x1.0의 피해를 줍니다." ..
@@ -29,10 +29,10 @@ Astro:AddCallback(
 				"Godtech", "",
 				"↓ {{Tears}} x0.8 Fire rate multiplier" ..
 				"#50% chance for tears to gain orbiting laser ring (+5%p per Luck)" ..
-				"#!!! Laser spawn cooldown: ({{Collectible" .. Astro.Collectible.GODTECH .. "}} count * 0.1) seconds" ..
-				"#Laser ring deals x1.0 Isaac's damage per frame to enemies",
+				"#{{Timer}} Laser spawn cooldown: ({{Collectible" .. Astro.Collectible.GODTECH .. "}} count * 0.1) seconds" ..
+				"#Laser ring deals Isaac's damage per frame to enemies",
 				-- Stacks
-				"Stackable",
+				"Stacks increase chance and stack rings",
 				"en_us"
 			)
 

@@ -2,24 +2,42 @@ local isc = require("astro.lib.isaacscript-common")
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.SOL_EX = Isaac.GetItemIdByName("SOL EX")
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SOL_EX,
+                "초 태양",
+                "광나는 승리",
+                "{{BossRoom}} 맵에 보스방의 위치가 표시됩니다." ..
+                "#!!! {{ColorOrange}}표시된 방의 보스 처치{{CR}}시 다음 효과 발동:" ..
+                "#{{ArrowGrayRight}} {{Card20}}맵에 스테이지 구조, 특수방, 일반비밀방 위치 표시" ..
+                "#{{ArrowGrayRight}} {{Heart}}체력을 모두 회복" ..
+                "#{{ArrowGrayRight}} 그 스테이지에서 {{DamageSmall}}+3/{{LuckSmall}}+1" ..
+                "#{{ArrowGrayRight}} {{CurseCursedSmall}}스테이지의 저주 제거" ..
+                "#{{ArrowGrayRight}} {{Collectible633}}Dogma 획득" ..
+                "#{{ArrowGrayRight}} 랜덤 장신구 소환" ..
+                "#{{ArrowGrayRight}} {{Battery}}액티브 아이템의 충전량을 모두 채워줍니다."
+            )
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.SOL_EX,
-        "초 태양",
-        "광나는 승리",
-        "!!! 획득 이후 {{Collectible588}}Sol 미등장" ..
-        "#{{BossRoom}} 맵에 보스방의 위치가 표시됩니다." ..
-        "#{{Collectible588}} {{ColorOrange}}표시된 방의 보스 처치{{CR}}시 다음 효과 발동:" ..
-        "#{{ArrowGrayRight}} {{Card20}}맵에 스테이지 구조, 특수방, 일반비밀방 위치 표시" ..
-        "#{{ArrowGrayRight}} {{Heart}}체력을 모두 회복" ..
-        "#{{ArrowGrayRight}} 그 스테이지에서 {{DamageSmall}}+3/{{LuckSmall}}+1" ..
-        "#{{ArrowGrayRight}} {{CurseCursedSmall}}스테이지의 저주 제거" ..
-        "#{{ArrowGrayRight}} {{Collectible633}}Dogma 획득" ..
-        "#{{ArrowGrayRight}} 랜덤 장신구 소환" ..
-        "#{{ArrowGrayRight}} {{Battery}}액티브 아이템의 충전량을 모두 채워줍니다."
-    )
-end
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SOL_EX,
+                "Sol EX", "",
+                "{{BossRoom}} Reveals the location of the Boss Room" ..
+                "#{{Timer}} When the floor boss is defeated, receive for the floor:" ..
+                "#↑ {{Damage}} +3 Damage" ..
+                "#↑ {{Luck}} +1 Luck" ..
+                "#{{Card20}} The Sun effect" ..
+                "#{{Battery}} Fully recharges the active item" ..
+                "#{{CurseBlind}} Removes any curses" ..
+                "#{{Collectible633}} Grants a Dogma" ..
+                "#Spawns 1 random trinket",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,

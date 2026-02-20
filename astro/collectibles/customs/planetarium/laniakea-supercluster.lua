@@ -1,13 +1,27 @@
 Astro.Collectible.LANIAKEA_SUPERCLUSTER = Isaac.GetItemIdByName("Laniakea Supercluster")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.LANIAKEA_SUPERCLUSTER,
-        "라니아케아 초은하단",
-        "헤아릴 수 없는 천국",
-        "!!! 일회용" ..
-        "#사용 시 {{Planetarium}}천체관으로 이동하며 {{Trinket152}}Telescope Lens와 Glitched Machine을 소환합니다.")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LANIAKEA_SUPERCLUSTER,
+                "라니아케아 초은하단",
+                "헤아릴 수 없는 천국",
+                "!!! 일회용 !!!" ..
+                "#사용 시 {{Planetarium}}천체관으로 이동하며 {{Trinket152}}Telescope Lens와 Glitched Machine을 소환합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LANIAKEA_SUPERCLUSTER,
+                "Laniakea Supercluster", "",
+                "!!! SINGLE USE !!!" ..
+                "#Teleports to {{Planetarium}} Planetarium and spawns {{Trinket152}} Telescope Lens and Glitched Machine",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 local flag = false
 

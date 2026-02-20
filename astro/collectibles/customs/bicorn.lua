@@ -10,6 +10,19 @@ local BICORN_USES_FEMALE = 6
 
 local femaleCharacters = {}
 
+---@param player EntityPlayer
+local function IsFemaleCharacter(player)
+    local playerType = player:GetPlayerType()
+    
+    for _, femaleType in ipairs(femaleCharacters) do
+        if playerType == femaleType then
+            return true
+        end
+    end
+    
+    return false
+end
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
@@ -35,39 +48,38 @@ Astro:AddCallback(
                 Astro.Collectible.BICORN,
                 "바이콘",
                 "처녀는 탈 수 없는 말",
-                "{{Timer}} 사용 시 6초간:" ..
-                "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도 +0.28" ..
-                "#{{ArrowGrayRight}} 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
-                "#{{Collectible638}} 무적 상태에 죽인 몬스터는 해당 게임에서 제외되어 다시 등장하지 않습니다." ..
+                "{{Timer}} 6초 동안:" ..
+                "#{{IND}}↑ {{SpeedSmall}}이동속도 +0.28" ..
+                "#{{IND}} 무적 상태가 되며 접촉한 적에게 0.5초당 20의 피해를 줍니다." ..
+                "#{{IND}} 무적 상태에 죽인 몬스터는 해당 게임에서 제외되어 다시 등장하지 않습니다." ..
                 "#!!! 스테이지 당 남성 캐릭터는 " .. BICORN_USES_MALE .. "번, 여성 캐릭터는 " .. BICORN_USES_FEMALE .. "번 사용할 수 있습니다."
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.BICORN),
+                femaleCharacters,
+                "6번 사용 가능",
+                nil, "ko_kr", nil
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.BICORN,
                 "Bicorn", "...",
                 "{{Timer}} Receive for 6 seconds:" ..
-                "#↑ {{Speed}} +0.28 Speed" ..
-                "#Isaac can't shoot but deals 40 contact damage per second" ..
-                "#Grants invincibility, and enemies killed during this state will not spawn again for the rest of the run" ..
+                "#{{IND}}↑ {{Speed}} +0.28 Speed" ..
+                "#{{IND}} Isaac can't shoot but deals 40 contact damage per second" ..
+                "#{{IND}} Grants invincibility, and enemies killed during this state will not spawn again for the rest of the run" ..
                 "#!!! Can only be used " .. BICORN_USES_MALE .. " times per floor by male characters and " .. BICORN_USES_FEMALE .. " times by female characters",
                 nil, "en_us"
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.BICORN),
+                femaleCharacters,
+                "Can be used 6 times",
+                nil, "en_us", nil
             )
         end
     end
 )
-
----@param player EntityPlayer
-local function IsFemaleCharacter(player)
-    local playerType = player:GetPlayerType()
-    
-    for _, femaleType in ipairs(femaleCharacters) do
-        if playerType == femaleType then
-            return true
-        end
-    end
-    
-    return false
-end
 
 Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,

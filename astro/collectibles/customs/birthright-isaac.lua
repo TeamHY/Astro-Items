@@ -8,9 +8,18 @@ Astro:AddCallback(
                 Astro.Collectible.BIRTHRIGHT_ISAAC,
                 "아이작의 액자",
                 "추가 선택지",
-                "{{Card81}} 그 방의 아이템이 랜덤 아이템과 1초마다 전환되며 두 아이템 중 하나를 선택할 수 있습니다.",
+                "{{Player21}} 모든 받침대 아이템이 2개의 선택지를 지닙니다.",
                 -- 중첩 시
                 "선택 가능한 아이템 수가 중첩된 수만큼 증가"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BIRTHRIGHT_ISAAC,
+                "Isaac's Frame", "",
+                "{{Player21}} Item pedestals cycle between 2 options",
+                -- Stacks
+                "Stacks increase the number of items that can be picked up",
+                "en_us"
             )
         end
     end

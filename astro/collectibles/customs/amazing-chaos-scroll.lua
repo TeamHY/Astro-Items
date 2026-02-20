@@ -10,13 +10,13 @@ Astro:AddCallback(
                 Astro.Collectible.AMAZING_CHAOS_SCROLL,
                 "놀라운 혼돈의 주문서",
                 "플마단",
-                "↑ {{Heart}}최대 체력, {{BlackHeart}}블랙하트, {{SoulHeart}}소울하트 중 하나 +1" ..
+                "{{ArrowUpDown}} {{TearsSmall}}공격 딜레이 ÷0.85~1.35" ..
                 "#{{ArrowUpDown}} {{DamageSmall}}공격력 배율 x0.85~1.35" ..
-                "#{{ArrowUpDown}} {{TearsSmall}}공격 딜레이 ÷0.85~1.35" ..
-                "#{{ArrowUpDown}} {{RangeSmall}}사거리 배율 x0.85~1.35" ..
                 "#{{ArrowUpDown}} {{SpeedSmall}}이동속도 배율 x0.85~1.35" ..
+                "#{{ArrowUpDown}} {{RangeSmall}}사거리 배율 x0.85~1.35" ..
                 "#{{ArrowUpDown}} {{ShotspeedSmall}}탄속 배율 x0.85~1.35" ..
                 "#{{ArrowUpDown}} {{LuckSmall}}행운 배율 x0.85~1.35" ..
+                "#↑ {{Heart}}최대 체력, {{BlackHeart}}블랙하트, {{SoulHeart}}소울하트 중 하나 +1" ..
                 "#!!! 해당 아이템의 체력은 즉시 들어오지 않으며, 획득 후 체력이 없을 경우 사망합니다."
             )
 
@@ -24,13 +24,13 @@ Astro:AddCallback(
                 Astro.Collectible.AMAZING_CHAOS_SCROLL,
                 "Incredible Chaos Scroll",
                 "",
-                "↑ One of {{Heart}} Heart container, {{BlackHeart}} Black Heart, {{SoulHeart}} Soul Heart +1" ..
+                "{{ArrowUpDown}} {{Tears}} /0.85~1.35 Tear delay" ..
                 "#{{ArrowUpDown}} {{Damage}} x0.85~1.35 Damage multiplier" ..
-                "#{{ArrowUpDown}} {{Tears}} /0.85~1.35 Tear delay" ..
                 "#{{ArrowUpDown}} {{Range}} x0.85~1.35 Range multiplier" ..
                 "#{{ArrowUpDown}} {{Speed}} x0.85~1.35 Speed multiplier" ..
                 "#{{ArrowUpDown}} {{Shotspeed}} x0.85~1.35 Shot speed multiplier" ..
                 "#{{ArrowUpDown}} {{Luck}} x0.85~1.35 Luck multiplier" ..
+                "#↑ One of {{Heart}} Heart container, {{BlackHeart}} Black Heart, {{SoulHeart}} Soul Heart +1" ..
                 "#!!! Health from this item doesn't apply immediately; die if no health after pickup",
                 nil, "en_us"
             )

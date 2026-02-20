@@ -31,14 +31,33 @@ Astro:AddCallback(
                 "중첩 가능"
             )
             Astro.EID:AddCollectible(
+                Astro.Collectible.CHUBBYS_HEAD,
+                "Chubby's Head", "",
+                "↑ {{Damage}} +3.5 Damage",
+                -- Stacks
+                "Stackable",
+                "en_us"
+            )
+
+            Astro.EID:AddCollectible(
                 Astro.Collectible.SLEEPING_PUPPY,
                 "잠자는 강아지",
                 "드르렁...",
                 "↑ {{DamageSmall}} 공격력 +0.35" ..
-                "#9개의 방을 클리어할 때마다 {{DamageSmall}}공격력, {{TearsSmall}}연사, {{RangeSmall}}사거리, {{SpeedSmall}}이동속도, {{LuckSmall}}행운 중 하나 +0.35",
+                "#9개의 방을 클리어할 때마다 {{TearsSmall}}연사(+상한), {{DamageSmall}}공격력, {{SpeedSmall}}이동속도, {{RangeSmall}}사거리, {{LuckSmall}}행운 중 하나 +0.35",
                 -- 중첩 시
                 "중첩 가능, 다음 증가량부터 적용"
             )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SLEEPING_PUPPY,
+                "Sleeping Puppy", "",
+                "↑ {{Damage}} +0.35 Damage" ..
+                "#+0.35 to one of {{Tears}} Fire rate, {{Damage}} Damage, {{Speed}} Speed, {{Range}} Range, {{Luck}} Luck +0.35 every 9 rooms",
+                -- Stacks
+                "Stackable",
+                "en_us"
+            )
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.CHUBBYS_TAIL,
                 "처비의 꼬리",
@@ -46,6 +65,14 @@ Astro:AddCallback(
                 "{{Chest}} 일반상자 등장 시 33%의 확률로 한개 더 등장합니다.",
                 -- 중첩 시
                 "중첩 시 추가 등장 확률이 합연산으로 증가"
+            )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.CHUBBYS_TAIL,
+                "Chubby's Tail", "",
+                "{{Chest}} 33% chance of an additional chest when a chest spawns",
+                -- Stacks
+                "Stacks increase chance",
+                "en_us"
             )
         end
     end

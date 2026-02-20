@@ -11,11 +11,23 @@ Astro:AddCallback(
                 "이브의 액자",
                 "영원한 저주",
                 "{{Collectible122}} Whore of Babylon 효과 발동:" ..
-                "#{{ArrowGrayRight}} {{DamageSmall}}공격력 +1.5" ..
-                "#{{ArrowGrayRight}} {{SpeedSmall}}이동속도 +0.3" ..
+                "#{{IND}}↑ {{DamageSmall}}공격력 +1.5" ..
+                "#{{IND}}↑ {{SpeedSmall}}이동속도 +0.3" ..
                 "#{{Collectible117}} 적을 따라다니며 접촉한 적에게 초당 4.3의 피해를 주는 Dead Bird 패밀리어를 얻습니다.",
                 -- 중첩 시
                 "중첩된 수만큼 발동"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BIRTHRIGHT_EVE,
+                "Eve's Frame", "",
+                "{{Collectible122}} Whore of Babylon effect applied:" ..
+                "#{{IND}}↑ {{Damage}} +1.5 Damage" ..
+                "#{{IND}}↑ {{Speed}} +0.3 Speed" ..
+                "#{{Collectible117}} Grants a Dead Bird familiar that deals 4.3 contact damage per second",
+                -- Stacks
+                "Stackable",
+                "en_us"
             )
         end
     end

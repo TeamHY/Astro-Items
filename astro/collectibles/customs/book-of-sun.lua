@@ -27,18 +27,6 @@ Astro:AddCallback(
             )
 
             Astro.EID:AddCollectible(
-                Astro.Collectible.BOOK_OF_SUN,
-                "Book of Sun", "",
-                "!!! No Burning Basement in next run" ..
-                "#{{Burning}} Burns room enemies on use;" ..
-                "#{{ArrowGrayRight}} Spawns {{Card20}} XIX - The Sun once per game" ..
-                "#10% chance to spawn red fire at enemy death while held (+1%p per Luck)",
-                nil, "en_us"
-            )
-
-            ----
-
-            Astro.EID:AddCollectible(
                 Astro.Collectible.BOOK_OF_ECLIPSE,
                 "개기일식의 서",
                 "불타오르네",
@@ -49,12 +37,26 @@ Astro:AddCallback(
                 "#{{LuckSmall}} 행운 90 이상일 때 100% 확률 (행운 1당 +1%p)"
             )
 
+            ----
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BOOK_OF_SUN,
+                "Book of Sun", "",
+                "!!! No Burning Basement in next run" ..
+                "#Upon use:" ..
+                "#{{Burning}} Burns room enemies" ..
+                "#{{Card20}} Spawns the Sun once per run" ..
+                "#10% chance to spawn red fire at enemy death while held (+1%p per Luck)",
+                nil, "en_us"
+            )
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.BOOK_OF_ECLIPSE,
                 "Book of Eclipse", "",
                 "!!! No Burning Basement in next run" ..
-                "#{{Burning}} Burns room enemies on use;" ..
-                "#{{ArrowGrayRight}} Spawns {{Card75}} XIX - The Sun? once per game" ..
+                "#Upon use:" ..
+                "#{{Burning}} Burns room enemies" ..
+                "#{{Card75}} Spawns the Sun? once per run" ..
                 "#10% chance to spawn blue fire at enemy death while held (+1%p per Luck)",
                 nil, "en_us"
             )

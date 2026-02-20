@@ -10,15 +10,14 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_SACRED_HEART,
                 "광휘로운 심장",
                 "유도 공격 + 공격력 증가 + 추가 피해",
-                "↑ {{Heart}}최대 체력 +1" ..
-                "#{{HealingRed}} 체력을 모두 회복합니다." ..
-                "#↑ {{DamageSmall}}공격력 +1" ..
+                "↓ {{TearsSmall}}연사 -0.4" ..
                 "#↑ {{DamageSmall}}공격력 배율 x2.3" ..
-                "#↓ {{TearsSmall}}연사 -0.4" ..
+                "#↑ {{DamageSmall}}공격력 +1" ..
                 "#↓ {{ShotspeedSmall}}탄속 -0.25" ..
+                "#↑ {{Heart}}최대 체력 +1" ..
+                "#{{HealingRed}} 체력을 모두 회복합니다." ..
                 "#공격에 유도 효과가 생깁니다." ..
-                "#폭탄에 유도 효과가 생깁니다." ..
-                "#적이 피해를 입을 때 피해량이 2.3배로 증가합니다.",
+                "#적이 받는 피해량이 2.3배로 증가합니다.",
                 -- 중첩 시
                 "중첩 시 적이 받는 피해량이 합연산으로 증가"
             )
@@ -27,11 +26,11 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_SACRED_HEART,
                 "Astro Sacred Heart",
                 "",
-                "↑ {{Heart}} +1 Health" ..
+                "↓ {{Tears}} -0.4 Tears" ..
                 "#↑ {{Damage}} x2.3 Damage multiplier" ..
                 "#↑ {{Damage}} +1 Damage" ..
-                "#↓ {{Tears}} -0.4 Tears" ..
                 "#↓ {{Shotspeed}} -0.25 Shot speed" ..
+                "#↑ {{Heart}} +1 Health" ..
                 "#{{HealingRed}} Full health" ..
                 "#Homing tears" ..
                 "#{{Damage}} Damage to enemies increases by 2.3x on hit",

@@ -1,8 +1,25 @@
 Astro.Collectible.RAPID_ROCK_BOTTOM = Isaac.GetItemIdByName("Rapid Rock Bottom")
 
-if EID then
-    Astro.EID:AddCollectible(Astro.Collectible.RAPID_ROCK_BOTTOM, "재빠른 밑바닥", "빨라질 일만 남았어", "{{TearsSmall}} 연사를 항상 가장 높았던 값으로 고정합니다.")
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.RAPID_ROCK_BOTTOM,
+                "재빠른 밑바닥",
+                "빨라질 일만 남았어",
+                "{{TearsSmall}} 연사를 항상 가장 높았던 값으로 고정합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.RAPID_ROCK_BOTTOM,
+                "Rapid Rock Bottom", "",
+                "↑ Prevents {{Tears}} tears from being lowered for the rest of the run",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,

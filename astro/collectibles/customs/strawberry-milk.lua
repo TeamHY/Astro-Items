@@ -16,8 +16,16 @@ Astro:AddCallback(
                 Astro.Collectible.STRAWBERRY_MILK,
                 "딸기 우유",
                 "공격 속도 증가 + 추가 눈물",
-                "↑ {{TearsSmall}}연사 +0.25" ..
-                "#공격 시 대각선 4방향으로 공격력 x0.5의 유도 눈물을 발사합니다."
+                "↑ {{TearsSmall}}연사(+상한) +" .. TEARS_INCREMENT ..
+                "#" .. string.format("%.f", DELAY_TIME / 30) .. "초마다 대각선 4방향으로 공격력 x0.5의 유도 눈물을 발사합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.STRAWBERRY_MILK,
+                "Strawberry Milk", "",
+                "↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
+                "#Fires homing tears dealing x0.5 Isaac's damage in 4 diagonal directions every " .. string.format("%.f", DELAY_TIME / 30) .. " seconds",
+                nil, "en_us"
             )
         end
     end

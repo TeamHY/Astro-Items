@@ -10,15 +10,35 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.BOOK_OF_DESPAIR = Isaac.GetItemIdByName("Book of Despair")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.BOOK_OF_DESPAIR,
-        "절망의 서",
-        "일시적 공격 속도 증가",
-        "{{TearsSmall}} 소지중일 때 연사 +0.5" ..
-        "#{{Timer}} 사용 시 그 방에서 {{TearsSmall}}연사 +2"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            local heldTears = string.format("%.1f", PASSIVE_TEARS_INCREMENT)
+            local uesTears = string.format("%.f", USE_TEARS_INCREMENT)
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BOOK_OF_DESPAIR,
+                "절망의 서",
+                "일시적 공격 속도 증가",
+                "소지중일 때:" ..
+                "#{{IND}}↑ {{TearsSmall}}연사(+상한) +" .. heldTears ..
+                "#{{Timer}} 그 방에서:" ..
+                "#{{IND}}↑ {{TearsSmall}}연사 +" .. uesTears
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BOOK_OF_DESPAIR,
+                "Book of Despair", "",
+                "While held:" ..
+                "#{{IND}}↑ {{Tears}} +" .. heldTears .. " Fire rate" ..
+                "#{{Timer}} Receive for the room:" ..
+                "#{{IND}}↑ {{Tears}} +" .. uesTears .. " Fire rate",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

@@ -2,17 +2,32 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.CURSED_HEART = Isaac.GetItemIdByName("Cursed Heart")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.CURSED_HEART,
-        "저주받은 심장",
-        "유도 공격? + 공격력 증가",
-        "#!!! 획득 이후 {{Collectible182}}Sacred Heart 미등장" ..
-        "#↑ {{DamageSmall}}공격력 배율 x1.25" ..
-        "#{{Blank}} (중첩 가능)" ..
-        "#공격이 50%의 확률로 적에게 유도됩니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.CURSED_HEART,
+                "저주받은 심장",
+                "유도 공격? + 공격력 증가",
+                "↑ {{DamageSmall}}공격력 배율 x1.25" ..
+                "#50% 확률로 공격에 유도 효과가 생깁니다.",
+                -- 중첩 시
+                "중첩 가등"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.CURSED_HEART,
+                "Cursed Heart", "",
+                "↑ {{Damage}} x1.25 Damage multiplier" ..
+                "#50% chance to homing tear",
+                -- Stacks
+                "Stackable",
+                "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,

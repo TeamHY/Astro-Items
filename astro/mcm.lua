@@ -1,5 +1,5 @@
 local defaultSetting = {
-    ["ShowQ5Hint"] = 1,
+    ["ShowQ5Hint"] = 0,
     ["TaurusExMode"] = 0,
     ["TaurusExKeyBind"] = Keyboard.KEY_V,
     ["AltLuckyPennyColor"] = 1,

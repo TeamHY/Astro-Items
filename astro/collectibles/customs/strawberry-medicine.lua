@@ -24,7 +24,7 @@ Astro:AddCallback(
                 "Strawberry Medicine", "",
                 "↑ {{Damage}} x" .. string.format("%.1f", DAMAGE_MULTI) .. " Damage multiplier",
                 -- Stacks
-                "Can Stacks",
+                "Stackable",
                 "en_us"
             )
         end

@@ -16,10 +16,20 @@ Astro:AddCallback(
                 Astro.Collectible.BLACK_LIST,
                 "블랙 리스트",
                 "* [검열됨]",
-                "!!! 획득 이후 {{Collectible530}}Death's List 미등장" ..
-                "#{{DeathMark}} 해골마크가 뜬 적을 순차적으로 처치 시 픽업이 드랍되거나 랜덤 능력치가 하나 증가합니다." ..
+                "{{Collectible530}} Death's List 효과 발동:" ..
+                "#{{IND}}{{DeathMark}} 해골마크가 뜬 적을 순차적으로 처치 시 픽업이 드랍되거나 랜덤 능력치가 하나 증가합니다." ..
                 "#방 입장 시 그 방의 적에게 {{BrimstoneCurse}}유황 표식이 걸리며;" ..
                 "#{{ArrowGrayRight}} 유황 표식에 걸린 적은 1분간 혈사류 공격에 공격력 x2 +3의 피해를 받습니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BLACK_LIST,
+                "Black List", "",
+                "{{Collectible530}} Death's List effect applied:" ..
+                "#{{IND}} Killing enemies in the order dictated by the mark {{DeathMark}} above them grants a random pickup or stat increase" ..
+                "#Applies {{BrimstoneCurse}} brimstone mark to room enemies;" ..
+                "#{{ArrowGrayRight}} Marked enemies take x2 +3 damage from brimstone for 1 minute",
+                nil, "en_us"
             )
         end
 

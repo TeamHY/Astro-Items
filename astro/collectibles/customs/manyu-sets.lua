@@ -112,10 +112,10 @@ Astro:AddCallback(
                 "Matryoshka", "",
                 "{{Chest}} 40% chance to spawn a small chest when opening a chest" ..
                 "#↑ When opening a chest, one of the following increases by +0.05:" ..
-                "{{Speed}} Speed" ..
-                "{{Tears}} Fire rate" ..
+                "#{{Speed}} Speed" ..
+                "#{{Tears}} Fire rate" ..
                 "#{{Damage}} Damage" ..
-                "{{Luck}} Luck" ..
+                "#{{Luck}} Luck" ..
                 "#!!! If a pedestal item appears in the chest, it has no effect",
                 -- Stacks
                 "Stackbale",

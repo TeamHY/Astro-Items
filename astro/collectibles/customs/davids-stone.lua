@@ -25,8 +25,8 @@ Astro:AddCallback(
                 Astro.Collectible.DAVIDS_STONE,
                 "다윗의 물맷돌",
                 "칼도 없이 돌덩이 하나로",
-                "↑ {{DamageSmall}}공격력 +" .. DAMAGE_INCREMENT ..
-                "#↑ {{TearsSmall}}연사(+상한) +" .. TEARS_INCREMENT ..
+                "↑ {{TearsSmall}}연사(+상한) +" .. TEARS_INCREMENT ..
+                "#↑ {{DamageSmall}}공격력 +" .. DAMAGE_INCREMENT ..
                 "#↑ {{SpeedSmall}}이동속도 +" .. SPEED_INCREMENT,
                 -- 중첩 시
                 "중첩 가능"
@@ -35,9 +35,9 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.DAVIDS_STONE,
                 "David's Stone", "",
-                "↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
-                "#↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
-                "#↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage",
+                "↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
+                "#↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
+                "#↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed",
                 -- Stacks
                 "Stackable",
                 "en_us"

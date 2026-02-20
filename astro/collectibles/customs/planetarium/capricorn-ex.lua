@@ -15,9 +15,9 @@ Astro:AddCallback(
                 Astro.Collectible.CAPRICORN_EX,
                 "초 염소자리",
                 "실속있는 제물",
-                "↑ {{DamageSmall}}최종 공격력 +1.5" ..
-                "#↑ {{TearsSmall}}연사 배율 x1.2" ..
-                "#↑ {{DevilChanceSmall}}악마방 확률 +10%" ..
+                "↑ {{TearsSmall}}연사 배율 x1.2" ..
+                "#↑ {{DamageSmall}}최종 공격력 +1.5" ..
+                "#↑ {{DevilChanceSmall}}악마/천사방 확률 +10%" ..
                 "#↑ {{PlanetariumChanceSmall}}천체방 확률 +9%" ..
                 "#↑ {{PlanetariumChanceSmall}}첫 천체방 확률 +15%" ..
                 "#{{Trinket174}} 악마방에서 Krampus 보스가 등장하지 않으며;" ..
@@ -31,16 +31,16 @@ Astro:AddCallback(
                 Astro.Collectible.CAPRICORN_EX,
                 "Capricorn EX",
                 "",
-                "↑ {{Damage}} +1.5 Damage" ..
-                "#↑ {{Tears}} x1.2 Tears multiplier" ..
-                "#{{DevilChance}} +10% Devil Room chance" ..
+                "↑ {{Tears}} x1.2 Fire rate multiplier" ..
+                "#↑ {{Damage}} +1.5 Damage" ..
+                "#{{DevilChance}} +10% Devil/Angel Room chance" ..
                 "#{{PlanetariumChance}} +9% Planetarium chance" ..
-                "##Additional +15% chance if a Planetarium hasn't been entered yet" ..
+                "#Additional +15% chance if a Planetarium hasn't been entered yet" ..
                 "#{{Trinket174}} Prevents Krampus from appearing in Devil Rooms;" ..
                 "#{{ArrowGrayRight}} Devil Rooms are special variants with more deals, Black Hearts and enemies" ..
                 "#{{Trinket152}} Planetariums can spawn in the Womb and Corpse",
                 -- Stacks
-                "Only damage and tears can be stacked through multiplication.",
+                "Only damage and tears can be stacked through multiplication",
                 "en_us"
             )
         end

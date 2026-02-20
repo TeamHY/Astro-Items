@@ -31,7 +31,8 @@ Astro:AddCallback(
                 Astro.Collectible.STARLIT_PAPILLON,
                 "스타리트 파피용",
                 "용사 파티의 길라잡이",
-                "{{Collectible492}} 소지중일 때 YO LISTEN! 효과가 적용됩니다." ..
+                "소지중일 때:" ..
+                "#{{IND}}{{Collectible492}} 방 안에 {{SecretRoom}}{{SuperSecretRoom}}비밀방, 색돌, {{LadderRoom}}사다리방이 있는 위치로 날아가는 YO LISTEN 패밀리어를 얻습니다." ..
                 "#적 처치 시 최대 " .. MAXIMUM .. "개까지 영혼을 흡수해 저장하며;" ..
                 "#{{ArrowGrayRight}} 적 명중 시 영혼 1개당 1%p의 추가 피해를 줍니다." ..
                 "#{{ArrowGrayRight}} 방 클리어 시 영혼이 " .. SOUL_DECREASE .. "개 감소합니다."
@@ -60,10 +61,11 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.STARLIT_PAPILLON,
                 "Starlit Papillon", "",
-                "{{Collectible492}} Applies YO LISTEN! while held" ..
-                "#Absorbs up to " .. MAXIMUM .. " souls on enemy kill;" ..
-                "#{{ArrowGrayRight}} +1% extra damage per soul on hit" ..
-                "#{{ArrowGrayRight}} -" .. SOUL_DECREASE .. " souls on room clear",
+                "While Held:" ..
+                "#{{IND}}{{Collectible492}} Grants a YO LISTEN! familiar that highlights the location of {{SecretRoom}} secret rooms, tinted rocks and {{LadderRoom}} crawlspaces" ..
+                "#Absorbs up to " .. MAXIMUM .. " souls on enemy kill" ..
+                "#+1% extra damage per soul on hit" ..
+                "#-" .. SOUL_DECREASE .. " souls on room clear",
                 nil, "en_us"
             )
             EID:addPlayerCondition(

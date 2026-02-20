@@ -1,29 +1,26 @@
----
-local SOUND_VOLUME = 0.7
-
-local BOSS_EXTRA_DAMAGE = 0.25
----
-
 local isc = require("astro.lib.isaacscript-common")
 local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.THREE_BODY_PROBLEM = Isaac.GetItemIdByName("3 Body Problem")
 
-if EID then
-    Astro.EID:AddCollectible(Astro.Collectible.THREE_BODY_PROBLEM, "삼체", "예측불허", "삼체 문제는 예측할 수 없습니다.")
-end
+---
+
+local SOUND_VOLUME = 0.7    -- 효과음 음량
+
+local BOSS_EXTRA_DAMAGE = 0.25    -- 보스 데미지 감소
+
+---
 
 ---@type CollectibleType[]
-local activeItmes = {}
+local activeItems = {}
 
 ---@type CollectibleType[]
 local banItems = {}
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    function(_, isContinued)
-        -- Astro.Collectible 초기화 순서 문제로 인해 여기서 초기화합니다.
-        activeItmes = {
+    Astro.Callbacks.MOD_INIT,
+    function()
+        activeItems = {
             CollectibleType.COLLECTIBLE_BOOK_OF_BELIAL,
             CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS,
             CollectibleType.COLLECTIBLE_ERASER,
@@ -36,14 +33,53 @@ Astro:AddCallback(
         banItems = {
             CollectibleType.COLLECTIBLE_SPOON_BENDER,
         }
+
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.THREE_BODY_PROBLEM,
+                "삼체",
+                "예측불허",
+                "↑ {{ShotspeedSmall}}탄속 +0.6" ..
+                "#{{Collectible329}} 공격이 공격키로 조종 가능한 원격 눈물 공격 3개로 변경됩니다." ..
+                "#때때로 아래 효과 중 하나 발동:" ..
+                "#{{IND}}↑ {{DamageSmall}}공격력 +2" ..
+                "#{{IND}} 캐릭터가 10초간 무적 상태가 됩니다." ..
+                "#{{IND}} 그 방의 닫혀있는 문을 모두 엽니다." ..
+                "#{{IND}}{{Collectible638}} 공격방향으로 지우개를 발사합니다." ..
+                "#{{IND}}{{Chained}} 가장 가까운 적을 5초간 움직이지 못하게 만듭니다." ..
+                "#{{IND}} 3초간 캐릭터에게 날아오는 적의 탄환을 붙잡습니다." ..
+                "#{{IND}}{{Collectible557}} 30% 확률로 랜덤 픽업을 1개 드랍합니다." ..
+                "#보스가 받는 피해량이 감소합니다.",
+                -- 중첩 시
+                "중첩 시 보스 피해량 패널티 완화"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.THREE_BODY_PROBLEM,
+                "3 Body Problem", "",
+                "↑ {{Shotspeed}} +0.6 Shot speed" ..
+                "#{{Collectible329}} Replaces Isaac's tears with 3 giant controllable tear" ..
+                "#Sometimes one of the following item effects activates:" ..
+                "#{{IND}}{{Collectible34}} Book of Belial" ..
+                "#{{IND}}{{Collectible58}} Book of Shadows" ..
+                "#{{IND}}{{Collectible175}} Dad's Key" ..
+                "#{{IND}}{{Collectible522}} Telekinesis" ..
+                "#{{IND}}{{Collectible557}} Fortune Cookie" ..
+                "#{{IND}}{{Collectible638}} Eraser" ..
+                "#{{IND}}{{Collectible722}} Anima Sola" ..
+                "#Reduces the damage the boss takes",
+                -- Stacks
+                "Stacks reduce the boss damage penalty",
+                "en_us"
+            )
+        end
     end
 )
 
 ---@param player EntityPlayer
 local function RunEffect(player)
     local rng = player:GetCollectibleRNG(Astro.Collectible.THREE_BODY_PROBLEM)
-    
-    local item = activeItmes[rng:RandomInt(#activeItmes) + 1]
+    local item = activeItems[rng:RandomInt(#activeItems) + 1]
 
     player:AnimateCollectible(Astro.Collectible.THREE_BODY_PROBLEM, "HideItem")
     player:UseActiveItem(item, false)

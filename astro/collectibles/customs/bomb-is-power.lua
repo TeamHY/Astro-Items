@@ -2,16 +2,35 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.BOMB_IS_POWER = Isaac.GetItemIdByName("Bomb Is Power")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.BOMB_IS_POWER,
-        "폭탄 = 힘",
-        "펑펑펑 = 공격력",
-        "{{DamageSmall}} 폭탄 1개당 공격력 +0.16",
-        -- 중첩 시
-        "중첩 가능"
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BOMB_IS_POWER,
+                "폭탄 = 힘",
+                "펑펑펑 = 공격력",
+                "{{DamageSmall}} 폭탄 1개당 공격력 +0.16",
+                -- 중첩 시
+                "중첩 가능"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.BOMB_IS_POWER,
+                "Bomb = Power", "",
+                "↑ {{Damage}} +0.16 Damage for every {{Bomb}} bomb Isaac has",
+                -- Stacks
+                "Stackable",
+                "en_us"
+            )
+
+            Astro.EID:RegisterAlternativeText(
+                { itemType = ItemType.ITEM_PASSIVE, subType = Astro.Collectible.BOMB_IS_POWER },
+                "Bomb = Power"
+            )
+        end
+    end
+)
 
 local BOMB_IS_POWER_INCREMENT = 0.16
 

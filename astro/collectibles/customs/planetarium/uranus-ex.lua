@@ -21,10 +21,20 @@ Astro:AddCallback(
                 Astro.Collectible.URANUS_EX,
                 "초 천왕성",
                 "꽁꽁꽁",
-                "!!! 획득 이후 {{Collectible596}}Uranus 미등장" ..
-                "#{{Freezing}} 적 처치시 적이 얼어붙으며;" ..
-                "#{{ArrowGrayRight}} {{Collectible596}}얼어붙은 적은 접촉 시 직선으로 날아가 10방향으로 고드름 눈물을 발사합니다." ..
+                "{{Collectible596}} Uranus 효과 발동:" ..
+                "#{{IND}}{{Freezing}} 적 처치시 적이 얼어붙습니다." ..
+                "#{{IND}}{{Freezing}} 얼어붙은 적은 접촉 시 직선으로 날아가 10방향으로 고드름 눈물을 발사합니다." ..
                 "#{{Slow}} 캐릭터에게 오라가 생기며 오라 안에 들어온 적을 둔화시킵니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.URANUS_EX,
+                "Uranus EX", "",
+                "{{Collectible596}} Uranus effect applied:" ..
+                "#{{IND}}{{Freezing}} Isaac shoots petrifying tears that freeze enemies on death" ..
+                "#{{IND}} Touching a frozen enemy makes it slide away and explode into 10 ice shards" ..
+                "#{{Slow}} Aura slows enemies inside",
+                nil, "en_us"
             )
         end
     end

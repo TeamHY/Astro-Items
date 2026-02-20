@@ -15,13 +15,12 @@ Astro:AddCallback(
                 "야곱의 사랑",
                 "!!! 일급비밀방에서만 사용 가능" ..
                 "#사용 시:" ..
-                "#{{ArrowGrayRight}} {{LuckSmall}}행운 -1"..
-                "#{{ArrowGrayRight}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}}등급의 아이템을 하나 소환합니다." ..
-                "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
+                "#{{IND}}↓ {{LuckSmall}}행운 -1"..
+                "#{{IND}} 소지중인 아이템 1개와 {{Quality3}}/{{Quality4}}등급의 아이템을 하나 소환합니다." ..
+                "#{{IND}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
                 "#{{SuperSecretRoom}} 1스테이지 맵에 일급비밀방 위치가 표시됩니다."..
                 "#스테이지 진입 시 충전량이 모두 채워집니다."
-            )
-
+        )
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.PURE_LOVE),
                 { PlayerType.PLAYER_JACOB, PlayerType.PLAYER_JACOB_B, PlayerType.PLAYER_JACOB2_B, Astro.Players.LEAH, Astro.Players.LEAH_B },
@@ -31,12 +30,41 @@ Astro:AddCallback(
                 },
                 nil, "ko_kr", nil
             )
-            
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.PURE_LOVE),
                 { PlayerType.PLAYER_JACOB, PlayerType.PLAYER_JACOB_B, PlayerType.PLAYER_JACOB2_B, Astro.Players.LEAH, Astro.Players.LEAH_B },
                 "행운 감소 페널티 미적용",
                 nil, "ko_kr", nil
+            )
+
+            ----
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.PURE_LOVE,
+                "Pure Love", "",
+                "!!! Usable only in Super Secret Room" ..
+                "#Upon Use:" ..
+                "#{{IND}}↓ {{Luck}} -1 Luck"..
+                "#{{IND}} Spawns 1 held item and one quality {{Quality3}}/{{Quality4}} item" ..
+                "#{{IND}} Choose one; the rest disappear" ..
+                "#{{SuperSecretRoom}} Reveals Super Secret Room on stage 1 map"..
+                "#Fully charges when entering a new floor",
+                nil, "en_us"
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.PURE_LOVE),
+                { PlayerType.PLAYER_JACOB, PlayerType.PLAYER_JACOB_B, PlayerType.PLAYER_JACOB2_B, Astro.Players.LEAH, Astro.Players.LEAH_B },
+                {
+                    "#{{ArrowGrayRight}} 1 held item and one quality {{Quality3}}/{{Quality4}} item",
+                    "#{{ArrowGrayRight}} {{ColorIsaac}}2{{CR}} quality {{Quality3}}/{{Quality4}} item"
+                },
+                nil, "en_us", nil
+            )
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.PURE_LOVE),
+                { PlayerType.PLAYER_JACOB, PlayerType.PLAYER_JACOB_B, PlayerType.PLAYER_JACOB2_B, Astro.Players.LEAH, Astro.Players.LEAH_B },
+                "Luck penalty nullification",
+                nil, "en_us", nil
             )
         end
     end

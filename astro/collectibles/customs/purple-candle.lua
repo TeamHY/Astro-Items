@@ -11,21 +11,22 @@ Astro:AddCallback(
                 Astro.Collectible.PURPLE_CANDLE,
                 "보라 양초",
                 "저주 면역 + 개안",
-                "!!! 획득 이후 {{Collectible260}}Black Candle 미등장" ..
-                "#↑ {{DevilChanceSmall}}악마방 확률 +15%" ..
-                "#{{CurseCursedSmall}} 스테이지에 입장할 때 저주에 걸리지 않습니다." ..
-                "#{{CurseCursedSmall}} 획득 시 Labyrinth/챌린지/특수 시드를 제외한 모든 저주를 제거합니다." ..
+                "{{Collectible260}} Black Candle 효과 발동:" ..
+                "#{{IND}}↑ {{BlackHeart}}블랙하트 +1" ..
+                "#{{IND}}↑ {{DevilChanceSmall}}악마/천사방 확률 +15%" ..
+                "#{{IND}}{{CurseCursedSmall}} 스테이지에 입장할 때 저주에 걸리지 않습니다." ..
+                "#{{IND}}{{CurseCursedSmall}} 획득 시 Labyrinth/챌린지/특수 시드를 제외한 모든 저주를 제거합니다." ..
                 "#{{CurseBlindSmall}} 가려진 아이템을 볼 수 있습니다." ..
                 "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다."
             )
             
             Astro.EID:AddCollectible(
                 Astro.Collectible.PURPLE_CANDLE,
-                "Purple Candle",
-                "",
-                "!!! {{Collectible260}} Black Candle doesn't appear after pickup" ..
-                "#{{CurseBlind}} Immune to curses" ..
-                "#↑ {{DevilChance}} +15% Devil/Angel Room chance" ..
+                "Purple Candle", "",
+                "{{Collectible260}} Black Candle effect applied:" ..
+                "#{{IND}}{{CurseBlind}} Immune to curses" ..
+                "#{{IND}}↑ {{BlackHeart}} +1 Black Heart" ..
+                "#{{IND}}↑ {{DevilChance}} +15% Devil/Angel Room chance" ..
                 "#{{CurseBlind}} Reveals blind items" ..
                 "#Automatically extinguishes purple fire places on room entry",
                 nil, "en_us"
@@ -46,9 +47,6 @@ Astro:AddCallback(
         )
     end
 )
-
-
-
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

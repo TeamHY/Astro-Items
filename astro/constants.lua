@@ -42,6 +42,7 @@ Astro.SoundEffect = {
     SKILL_CHECK_GREAT = Isaac.GetSoundIdByName("SkillCheckVeryGood"),
     BLOOD_GUPPY_SWIRL = Isaac.GetSoundIdByName("BloodGuppySwirl"),
     CHRONOS = Isaac.GetSoundIdByName("ChronosUse"),
+    ALBIREO = Isaac.GetSoundIdByName("AlbireoUse"),
 }
 
 Astro.PickupPrice = {

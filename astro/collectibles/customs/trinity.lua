@@ -10,11 +10,20 @@ Astro:AddCallback(
                 Astro.Collectible.TRINITY,
                 "삼위일체",
                 "성부와 성자와 성령의 이름으로",
-                "!!! 획득 이후 {{Collectible333}}The Mind, {{Collectible334}}The Body, {{Collectible335}}The Soul 미등장" ..
-                "#{{BossRoom}} 보스방 클리어 시 {{Collectible333}}/{{Collectible334}}/{{Collectible335}}을 제거합니다." ..
-                "#스테이지를 넘어갈 때마다 소지중인 아이템 중 하나를 제거하며;" ..
+                "{{BossRoom}} 보스방 클리어 시 {{Collectible333}}/{{Collectible334}}/{{Collectible335}}을 제거합니다." ..
+                "#!!! 스테이지를 넘어갈 때마다 소지중인 아이템 중 하나를 제거하며;" ..
                 "#{{ArrowGrayRight}} 제거된 아이템과 {{Collectible333}}/{{Collectible334}}/{{Collectible335}} 중 하나를 소환합니다." ..
                 "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.TRINITY,
+                "Trinity", "",
+                "!!! Removes {{Collectible333}}/{{Collectible334}}/{{Collectible335}} on {{BossRoom}} boss clear" ..
+                "#!!! Removes one held item when enterning a new floor:" ..
+                "#Spawns removed item and one of {{Collectible333}}/{{Collectible334}}/{{Collectible335}}" ..
+                "#Choose one; the rest disappear",
+                nil, "en_us"
             )
         end
     end

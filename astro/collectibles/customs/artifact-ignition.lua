@@ -22,8 +22,8 @@ if EID then
     Astro.EID:AddCollectible(
         ITEM_ID,
         "Artifact Ignition", "",
-        "Every 120 seconds, grants a {{Collectible417}}Succubus." ..
-        "#Maximum of 10 Succubus can be granted.",
+        "Every 120 seconds, grants a {{Collectible417}}Succubus" ..
+        "#Maximum of 10 Succubus can be granted",
         nil,
         "en_us"
     )

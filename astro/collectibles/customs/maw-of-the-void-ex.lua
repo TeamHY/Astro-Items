@@ -21,10 +21,11 @@ Astro:AddCallback(
                 Astro.Collectible.MAW_OF_THE_VOID_EX,
                 "초 공허의 구렁텅이",
                 "회개하지 못한 자들의 어둠", -- 간접적으로 리펜 이전 구렁텅이라 설명
-                "!!! 획득 이후 {{Collectible399}}Maw Of The Void 미등장" ..
-                "#↑ {{DamageSmall}}공격력 +" .. string.format("%.f", DAMAGE_INCREMENT) ..
-                "#{{Chargeable}} 공격키를 2.5초 이상 누르면 충전되며 공격키를 떼면 캐릭터 주위에 검은 고리가 둘러져 접촉한 적에게 최대 공격력 x30의 피해를 주며;" ..
-                "#{{ArrowGrayRight}} 고리로 적 처치 시 " .. string.format("%.f", BLACK_HEART_SPAWN_CHANCE * 100) .. "% 확률로 {{BlackHeart}}블랙하트를 드랍합니다.",
+                "↑ {{DamageSmall}}최종 공격력 +" .. string.format("%.f", DAMAGE_INCREMENT) ..
+                "#{{Collectible399}} Maw Of The Void 효과 발동:" ..
+                "#{{IND}}{{Chargeable}} 공격키를 2.5초 이상 누르면 충전되며 공격키를 떼면 캐릭터 주위에 검은 고리가 둘러집니다." ..
+                "#{{IND}} 고리는 다단히트로 접촉한 적에게 최대 공격력 x30의 피해를 줍니다." ..
+                "#고리로 적 처치 시 " .. string.format("%.f", BLACK_HEART_SPAWN_CHANCE * 100) .. "% 확률로 {{BlackHeart}}블랙하트를 드랍합니다.",
                 -- 중첩 시
                 "무효과"
             )
@@ -32,10 +33,10 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.MAW_OF_THE_VOID_EX,
                 "Maw Of The Void EX", "",
-                "!!! {{Collectible399}} Maw Of The Void doesn't appear after pickup" ..
-                "#↑ {{Damage}} +" .. string.format("%.f", DAMAGE_INCREMENT) .. " Damage" ..
-                "#{{Chargeable}} Shooting tears for 2.35 seconds and releasing the fire button creates a black brimstone ring around Isaac" ..
-                "#{{ArrowGrayRight}} It deals 30x Isaac's damage over 2 seconds" ..
+                "↑ {{Damage}} +" .. string.format("%.f", DAMAGE_INCREMENT) .. " Damage" ..
+                "#{{Collectible399}} Maw Of The Void effect applied:" ..
+                "#{{IND}}{{Chargeable}} Shooting tears for 2.35 seconds and releasing the fire button creates a black brimstone ring around Isaac" ..
+                "#{{IND}} It deals 30x Isaac's damage over 2 seconds" ..
                 "#{{BlackHeart}} Enemies killed by the black ring have a " .. string.format("%.f", BLACK_HEART_SPAWN_CHANCE * 100) .. "% chance to drop a Black Heart",
                 -- Stacks
                 "No effect",

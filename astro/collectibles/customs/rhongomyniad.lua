@@ -42,7 +42,7 @@ Astro:AddCallback(
                 Astro.Collectible.RHONGOMYNIAD,
                 "론고미니아드",
                 "...",
-                "!!! 일회용" ..
+                "!!! 일회용 !!!" ..
                 "#!!! 비밀방과 일급비밀방에서 사용 불가" ..
                 "#방 클리어 시 " .. string.format("%.f", BASE_CHANCE * 100) .. "%의 확률로 스택이 증가합니다." ..
                 "#{{LuckSmall}} 행운 40 이상일 때 100% 확률 (행운 1당 +2%p)" ..
@@ -62,17 +62,18 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.RHONGOMYNIAD,
                 "Rhongomyniad", "",
-                "!!! Single use" ..
+                "!!! SINGLE USE !!!" ..
                 "#!!! Can't use in secret rooms or super secret rooms" ..
                 "#" .. string.format("%.f", BASE_CHANCE * 100) .. "% chance to stack on room clear (+2%p per Luck)" ..
                 "#On use, spawns items from:#{{Blank}} " .. rhongomyniadEIDString .. "#{{Blank}} equal to stacks" ..
-                "#{{ArrowGrayRight}} Spawned items disappear on room exit{{CR}}; choose one, rest disappear"
+                "#{{ArrowGrayRight}} Spawned items disappear on room exit{{CR}}; choose one, rest disappear",
+                nil, "en_us"
             )
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.RHONGOMYNIAD),
                 { PlayerType.PLAYER_SAMSON },
                 {
-                    "!!! Single use#!!!",
+                    "!!! SINGLE USE !!!#!!!",
                     "!!!"
                 },
                 nil, "en_us", nil

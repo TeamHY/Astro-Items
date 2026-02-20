@@ -8,7 +8,7 @@ Astro:AddCallback(
                 Astro.Collectible.GEMINI_EX,    
                 "초 쌍둥이자리",    
                 "사이좋게 지내렴",
-                "적을 따라다니며 접촉한 적에게 초당 65 + 공격력 x1.0의 피해를 줍니다." .. 
+                "적을 따라다니며 접촉 시 초당 65 + 공격력 x1.0의 피해를 줍니다." .. 
                 "#{{Collectible357}} 방 입장 시 소지중인 패밀리어를 복사합니다." ..
                 "#{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} 최초 획득 시 Black Mirror(패시브 획득 시 한 번 더 획득)를 드랍합니다."
             )
@@ -19,7 +19,7 @@ Astro:AddCallback(
                 "",    
                 "Familiar that chases and damages enemies" ..
                 "#{{ArrowGrayRight}} Deals (65 + Isaac's damage) contact damage per second" .. 
-                "#{{Collectible357}} Duplicates all your familiars for the room" ..
+                "#{{Collectible357}} Duplicates all familiars for the room" ..
                 "#{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} Spawns 1 Black Mirror(Gain passive item twice) on first pickup",
                 nil, "en_us"
             )

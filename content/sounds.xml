@@ -54,4 +54,7 @@
     <sound name="ChronosUse">
         <sample weight="1" path="feedback/chronos-use.wav" />
     </sound>
+    <sound name="AlbireoUse">
+        <sample weight="1" path="feedback/albireo-use.wav" />
+    </sound>
 </sounds>

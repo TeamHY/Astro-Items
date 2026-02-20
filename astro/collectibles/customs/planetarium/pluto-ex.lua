@@ -3,17 +3,33 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.PLUTO_EX = Isaac.GetItemIdByName("PLUTO EX")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.PLUTO_EX,
-        "초 명왕성",
-        "모두 크기 감소",
-        "!!! 획득 이후 {{Collectible598}}Pluto 미등장" ..
-        "#↑ {{TearsSmall}}연사 +0.7" ..
-        "#{{Collectible598}} 캐릭터와 크기가 대폭 작아집니다." ..
-        "#{{Shrink}} 방 입장 시 5초간 그 방의 적이 작아지며 작아진 적은 밟아 죽일 수 있습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.PLUTO_EX,
+                "초 명왕성",
+                "모두 크기 감소",
+                "{{Collectible598}} Pluto 효과 발동:" ..
+                "#{{IND}}↑ {{TearsSmall}}연사 +0.7" ..
+                "#{{IND}} 캐릭터와 크기가 대폭 작아집니다." ..
+                "#{{Shrink}} 방 입장 시 5초간 그 방의 적이 작아지며 작아진 적은 밟아 죽일 수 있습니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.PLUTO_EX,
+                "Pluto EX", "",
+                "{{Collectible598}} Pluto effect applied:" ..
+                "#{{IND}}↑ {{Tears}} +0.7 Tears" ..
+                "#{{IND}} Significantly shrinks Isaac, allowing him to squeeze between objects" ..
+                "#{{IND}] Projectiles can pass over him" ..
+                "#{{Shrink}} Shrinks room enemies for 5 seconds on entry; shrunken can be stomped",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,

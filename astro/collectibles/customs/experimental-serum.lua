@@ -30,14 +30,14 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.EXPERIMENTAL_SERUM,
                 "실험용 혈청",
-                "...",
-                "↑ {{Heart}}최대 체력 +1" ..
+                "모든 능력치 증가!",
+                "↑ {{TearsSmall}}연사 +" .. TEARS_INCREMENT ..
                 "#↑ {{DamageSmall}}공격력 +" .. DAMAGE_INCREMENT ..
-                "#↑ {{TearsSmall}}연사 +" .. TEARS_INCREMENT ..
+                "#↑ {{SpeedSmall}}이동속도 +" .. SPEED_INCREMENT ..
                 "#↑ {{RangeSmall}}사거리 +" .. RANGE_INCREMENT ..
                 "#↑ {{ShotspeedSmall}}탄속 +" .. SHOTSPEED_INCREMENT ..
-                "#↑ {{SpeedSmall}}이동속도 +" .. SPEED_INCREMENT ..
-                "#↑ {{LuckSmall}}행운 +" .. LUCK_INCREMENT,
+                "#↑ {{LuckSmall}}행운 +" .. LUCK_INCREMENT ..
+                "#↑ {{Heart}}최대 체력 +1",
                 -- 중첩 시
                 "중첩 가능"
             )
@@ -45,13 +45,13 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.EXPERIMENTAL_SERUM,
                 "Experimental Serum", "",
-                "↑ {{Heart}} +1 Health" ..
-                "#↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
-                "#↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
+                "↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
                 "#↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
+                "#↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
                 "#↑ {{Range}} +" .. RANGE_INCREMENT .. " Range" ..
                 "#↑ {{Shotspeed}} +" .. SHOTSPEED_INCREMENT .. " Shot speed" ..
-                "#↑ {{Luck}} +" .. LUCK_INCREMENT .. " Luck",
+                "#↑ {{Luck}} +" .. LUCK_INCREMENT .. " Luck" ..
+                "#↑ {{Heart}} +1 Health",
                 -- Stacks
                 "Stackable",
                 "en_us"

@@ -10,20 +10,38 @@ local hiddenItemManager = require("astro.lib.hidden_item_manager")
 
 Astro.Collectible.TERRA_EX = Isaac.GetItemIdByName("TERRA EX")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.TERRA_EX,
-        "초 지구",
-        "이 땅으로 돌아가",
-        "!!! 획득 이후 {{Collectible592}}Terra 미등장" ..
-        "#↑ {{DamageSmall}}공격력 +1" ..
-        "#{{Collectible592}} 공격이 확률적으로 장애물을 부수며;" ..
-        "#{{ArrowGrayRight}} 눈물을 발사할 때마다 눈물 공격력이 x0.5~x2.0로 증감하고;" ..
-        "#{{ArrowGrayRight}} 공격이 적을 더욱 밀쳐냅니다." ..
-        "#{{DamageSmall}} 방 입장 시 공격력 x" .. MIN_DAMAGE_MULTIPLIER .. " ~ x" .. MAX_DAMAGE_MULTIPLIER ..
-        "#{{Card32}} 방 클리어 시 그 방의 장애물을 제거합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function() 
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.TERRA_EX,
+                "초 지구",
+                "이 땅으로 돌아가",
+                "{{Timer}} 방 입장 시:" ..
+                "#{{IND}}{{ArrowUpDown}} {{DamageSmall}}공격력 배율 x" .. MIN_DAMAGE_MULTIPLIER .. " ~ x" .. MAX_DAMAGE_MULTIPLIER ..
+                "#{{Collectible592}} Terra 효과 발동:" ..
+                "#{{IND}}↑ {{DamageSmall}}공격력 +1" ..
+                "#{{IND}} 공격이 확률적으로 장애물을 부숩니다." ..
+                "#{{IND}} 눈물을 발사할 때마다 눈물 공격력이 x0.5~x2.0로 증감하며 공격이 적을 더욱 밀쳐냅니다." ..
+                "#{{Card32}} 방 클리어 시 그 방의 장애물을 제거합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.TERRA_EX,
+                "Terra EX", "",
+                "{{Timer}} When entering a new room:" ..
+                "#{{IND}}{{ArrowUpDown}} {{Damage}} x" .. MIN_DAMAGE_MULTIPLIER .. " ~ x" .. MAX_DAMAGE_MULTIPLIER .. " Damage multiplier" ..
+                "#{{Collectible592}} Terra effect applied:" ..
+                "#{{IND}}↑ {{Damage}} +1 Damage" ..
+                "#{{IND}} Replaces Isaac's tears with rocks" ..
+                "#{{IND}} Rocks deal variable damage, can destroy obstacles and have increased knockback" ..
+                "#{{Card32}} Destroy all rocks in the room on room clear",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,

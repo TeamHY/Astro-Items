@@ -16,9 +16,9 @@ Astro:AddCallback(
                 Astro.Collectible.MAXS_HEAD,
                 "맥스의 머리",
                 "공격력 증가",
-                "!!! 소지중일 때 {{Collectible4}}Cricket's Head 미등장" ..
-                "#↑ {{DamageSmall}}공격력 +0.5" ..
-                "#↑ {{DamageSmall}}공격력 배율 x1.5",
+                --"!!! 소지중일 때 {{Collectible4}}Cricket's Head 미등장" ..
+                "↑ {{DamageSmall}}공격력 배율 x" .. string.format("%.1f", DAMAGE_MULTIPLIER) ..
+                "#↑ {{DamageSmall}}공격력 +" .. string.format("%.1f", DAMAGE_INCREMENT),
                 -- 중첩 시
                 "중첩 시 공격력 배율이 중첩된 수만큼 곱연산으로 적용"
             )
@@ -26,9 +26,9 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.MAXS_HEAD,
                 "Max's Head", "",
-                "!!! {{Collectible4}} Cricket's Head doesn't appear while held" ..
-                "#↑ {{Damage}} +0.5 Damage" ..
-                "#↑ {{Damage}} x1.5 Damage multiplier",
+                --"!!! {{Collectible4}} Cricket's Head doesn't appear while held" ..
+                "↑ {{Damage}} x" .. string.format("%.1f", DAMAGE_MULTIPLIER) .. " Damage multiplier" ..
+                "#↑ {{Damage}} +" .. string.format("%.1f", DAMAGE_INCREMENT) .. " Damage",
                 -- Stacks
                 "Stackable",
                 "en_us"

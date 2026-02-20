@@ -21,15 +21,14 @@ Astro:AddCallback(
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.ARIES_EX,
-                "Aries EX",
-                "",
+                "Aries EX", "",
                 "↑ {{Speed}} +0.25 Speed" ..
-                "#{{Collectible300}} Moving above 0.85 Speed makes Isaac immune to contact damage and deals 25 damage to enemies" ..
+                "#{{Collectible300}} Moving above 0.85 speed makes Isaac immune to contact damage and deals 25 damage to enemies" ..
                 "#On entering {{BossRoom}} boss room, one of the following effects:" ..
-                "#{{ArrowGrayRight}} {{Tears}} +2 Tears" ..
+                "#{{ArrowGrayRight}} {{Tears}} +2 Fire rate" ..
                 "#{{ArrowGrayRight}} {{Damage}} +2 Damage" ..
                 "#{{ArrowGrayRight}} {{Speed}} +2 Speed#{{Blank}} (Skips if already 2.0)" ..
-                "#{{ArrowGrayRight}} {{Collectible192}} Homing tears and {{Range}} +3 Range",
+                "#{{ArrowGrayRight}} {{Collectible192}} {{Range}} +3 Range and homing tears",
                 nil, "en_us"
             )
         end

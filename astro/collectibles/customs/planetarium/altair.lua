@@ -2,15 +2,28 @@ local isc = require("astro.lib.isaacscript-common")
 
 Astro.Collectible.ALTAIR = Isaac.GetItemIdByName("Altair")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.ALTAIR,
-        "알타일",
-        "여름의 밤하늘에서",
-        "{{Trinket23}} 획득 시 Missing Poster를 소환합니다." ..
-        "#다음 게임의 첫 스테이지에 하얀 모닥불을 소환합니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ALTAIR,
+                "알타일",
+                "여름의 밤하늘에서",
+                "{{Trinket23}} Missing Poster를 드랍합니다." ..
+                "#다음 게임의 첫 스테이지에 하얀 모닥불을 소환합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ALTAIR,
+                "Altair", "",
+                "{{Trinket23}} Spawns Missing Poster" ..
+                "#Spawns a white fireplace in the next run",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,

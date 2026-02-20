@@ -4,18 +4,18 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            local rgon = REPENTOGON and "#↑ 소지중일 때 목숨 +1#{{ArrowGrayRight}} 사망 시 그 방에서 즉시 체력 0.5로 부활하며 이 아이템은 사라집니다." or ""
-            local rgonEng = REPENTOGON and "#↑ +1 Life while held#{{ArrowGrayRight}} Revives with 0.5 health in the room on death; item disappears" or ""
-
-            local astrobirthtext = Astro.IsFight and "#이번 게임의 금지 아이템 중 1개를 소환합니다." or "#사용 시 이번 게임에서 등장한 아이템 중 소지중이지 않은 아이템 1개를 소환합니다."
+            local astrobirthtext = Astro.IsFight and "#사용 시 이번 게임의 금지 아이템 중 1개를 소환합니다." or "#사용 시 이번 게임에서 등장한 아이템 중 소지중이지 않은 아이템 1개를 소환합니다."
             local astrobirthtexteng = Astro.IsFight and "#Spawns one banned item from this run" or "#Spawns one non-held item from appeared items this run"
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.BOOK_OF_LIFE,
                 "생자의 서",
                 "금단의 주술",
-                "!!! 일회용" ..
-                rgon .. astrobirthtext
+                "!!! 일회용 !!!" ..
+                "#소지중일 때:" ..
+                "#{{IND}}↑ 추가 목숨 +1" ..
+                "#사망 시 그 방에서 즉시 체력 0.5로 부활하며 이 아이템은 사라집니다." ..
+                astrobirthtext
             )
             EID:addCarBatteryCondition(Astro.Collectible.BOOK_OF_LIFE, "1개 더 생성", nil, nil, "ko_kr")
             ----
@@ -23,8 +23,13 @@ Astro:AddCallback(
                 Astro.Collectible.BOOK_OF_LIFE,
                 "Book of Life",
                 "",
-                "!!! Single use" ..
-                rgonEng .. astrobirthtext,
+                "!!! SINGLE USE !!!" ..
+                "#While held:" ..
+                "#{{IND}}↑ +1 Life" ..
+                "#Upon death:" ..
+                "#{{IND}} Respawns Isaac in the same room with half a heart" ..
+                "#{{IND}} This item disappears" ..
+                astrobirthtexteng,
                 nil, "en_us"
             )
             EID:addCarBatteryCondition(Astro.Collectible.BOOK_OF_LIFE, "One more spawn", nil, nil, "en_us")
@@ -116,5 +121,32 @@ if REPENTOGON then
                 return false
             end
         end
+    )
+else
+    Astro:AddCallback(
+        ModCallbacks.MC_ENTITY_TAKE_DMG,
+        ---@param entity Entity
+        ---@param amount number
+        ---@param damageFlags number
+        ---@param source EntityRef
+        ---@param countdownFrames number
+        function(_, entity, amount, damageFlags, source, countdownFrames)
+            local player = entity:ToPlayer()
+            local currentHP = player:GetHearts() + player:GetSoulHearts() + player:GetEternalHearts() + player:GetBoneHearts()
+
+            if player:GetEffects():HasNullEffect(NullItemID.ID_LOST_CURSE) then
+                currentHP = 0
+            end
+
+            if amount >= currentHP then
+                if player:HasCollectible(Astro.Collectible.BOOK_OF_LIFE) then
+                    player:RemoveCollectible(Astro.Collectible.BOOK_OF_LIFE)
+                    Astro:FakeDeath(player, 120, nil, Astro.Collectible.BOOK_OF_LIFE)
+
+                    return false
+                end
+            end
+        end,
+        EntityType.ENTITY_PLAYER
     )
 end

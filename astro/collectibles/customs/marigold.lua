@@ -31,7 +31,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Marigold", "",
-                "Spawns " .. SPAWN_COUNT .. " {{ColorGold}}golden{{CR}} trinkets when clearing {{BossRoom}} Boss Room" ..
+                "Spawns " .. SPAWN_COUNT .. " {{ColorGold}}golden{{CR}} trinkets when clearing {{BossRoom}} boss room" ..
                 "#{{Trinket}} Holding the drop button ({{ButtonRT}}) makes all trinkets in the room golden and absorbs held trinkets",
                 nil, "en_us"
             )

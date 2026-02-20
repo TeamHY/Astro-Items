@@ -2,14 +2,26 @@
 
 Astro.Collectible.SPINUP_DICE = Isaac.GetItemIdByName("Spinup Dice")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.SPINUP_DICE,
-        "스핀업 주사위",
-        "+1",
-        "사용 시 그 방의 아이템을 코드 뒷번호의 아이템으로 바꿉니다.#!!! 일부 아이템은 등장하지 않습니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SPINUP_DICE,
+                "스핀업 주사위",
+                "+1",
+                "사용 시 그 방의 아이템을 코드 뒷번호의 아이템으로 바꿉니다.#!!! 일부 아이템은 등장하지 않습니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.SPINUP_DICE,
+                "Spinup Dice", "",
+                "Rerolls all items in the room by increasing their internal ID by one",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 local function GetSpinupResult(collectibleID)
 	if collectibleID <= 0 or collectibleID > 4294960000 then return 0 end

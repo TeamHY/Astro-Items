@@ -11,7 +11,9 @@ Astro:AddCallback(
                 Astro.Collectible.RITE_OF_ARAMESIR,
                 "아라메시아의 의",
                 "당신은 오랜 맹약의 의식에 의해 이 세계에 내려왔습니다",
-                "{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} 사용 시 Black Mirror(패시브 획득 시 한 번 더 획득)를 드랍하며, {{LuckSmall}}행운이 2 감소합니다." ..
+                "사용 시:" ..
+                "#{{IND}}↓ {{LuckSmall}}행운 -2" ..
+                "#{{IND}} {{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}}Black Mirror(패시브 획득 시 한 번 더 획득)를 1개 드랍합니다." ..
                 "#스테이지 진입 시 충전량이 모두 채워집니다."
             )
 
@@ -20,6 +22,25 @@ Astro:AddCallback(
                 { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
                 "행운 감소 페널티 무효화",
                 nil, "ko_kr", nil
+            )
+
+            ----
+            
+            Astro.EID:AddCollectible(
+                Astro.Collectible.RITE_OF_ARAMESIR,
+                "Rite of Aramesir", "",
+                "Upon use:" ..
+                "#{{IND}}↓ {{Luck}} -2 Luck" ..
+                "#{{IND}} Spawns 1{{Trinket" .. Astro.Trinket.BLACK_MIRROR .. "}} Black Mirror (Gain passive item twice)" ..
+                "#Fully charges when entering a new floor",
+                nil, "en_us"
+            )
+
+            EID:addPlayerCondition(
+                "5.100." .. tostring(Astro.Collectible.RITE_OF_ARAMESIR),
+                { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
+                "Luck penalty nullification",
+                nil, "en_us", nil
             )
         end
     end

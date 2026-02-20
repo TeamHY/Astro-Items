@@ -10,12 +10,26 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM,
                 "베들레헴의 한별",
                 "빛을 경배하라",
-                "{{Collectible651}} 클리어하지 않은 방에 입장 시 오라가 생기며 오라 안에 있을 시:" ..
-                "#{{ArrowGrayRight}} {{DamageSmall}}공격력 배율 x1.2" ..
-                "#{{ArrowGrayRight}} {{TearsSmall}}연사 배율 x2.5" ..
-                "#{{ArrowGrayRight}} 피해를 확률적으로 무시하고 공격에 유도 효과가 생깁니다.",
+                "클리어하지 않은 방에 입장 시 오라가 생깁니다." ..
+                "#캐릭터가 오라 안에 있을 시:" ..
+                "#{{IND}}↑ {{TearsSmall}}연사 배율 x2.5" ..
+                "#{{IND}}↑ {{DamageSmall}}공격력 배율 x1.2" ..
+                "#{{IND}} 공격에 유도 효과가 생깁니다.",
                 -- 중첩 시
-                "중첩 시 {{Collectible242}} 적 탄환에 맞았을 때 50% 확률로 피해를 무시하며, {{Collectible192}} 방 입장 시 공격이 적에게 유도되고 사거리가 3 증가합니다."
+                "중첩 시 적 탄환에 맞았을 때 50% 확률로 피해를 무시하며, 방 입장 시 사거리가 3 증가하고 공격이 적에게 유도됩니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM,
+                "Astro Star of Bethlehem", "",
+                "Slowly travels from the uncleared rooms to the {{BossRoom}} Boss Room" ..
+                "#Standing in its aura grants:" ..
+                "#{{IND}}↑ {{Tears}} x2.5 Tears multiplier" ..
+                "#{{IND}}↑ {{Damage}} x1.2 Damage multiplier" ..
+                "#{{IND}} Homing Tears",
+                -- Stacks
+                "Stacks has a 50% chance to block enemy shots, and upon entering a room, their range increases by 3 and homing tears",
+                "en_us"
             )
         end
     end

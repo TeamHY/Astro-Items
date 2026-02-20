@@ -27,12 +27,12 @@ Astro:AddCallback(
                 Astro.Collectible.RAINBOW_MUSHROOM,
                 "무지개 버섯",
                 "말이 필요해? 모든 능력치 증가!",
-                "↑ {{Heart}}최대 체력 +1" ..
-                "#{{HealingRed}} 체력을 모두 회복합니다." ..
+                "↑ {{DamageSmall}}공격력 배율 x" .. DAMAGE_MULTIPLIER ..
                 "#↑ {{DamageSmall}}공격력 +" .. DAMAGE_INCREMENT ..
-                "#↑ {{DamageSmall}}공격력 배율 x" .. DAMAGE_MULTIPLIER ..
+                "#↑ {{SpeedSmall}}이동속도 +" .. SPEED_INCREMENT ..
                 "#↑ {{RangeSmall}}사거리 +" .. RANGE_INCREMENT ..
-                "#↑ {{SpeedSmall}}이동속도 +" .. SPEED_INCREMENT,
+                "#↑ {{Heart}}최대 체력 +1" ..
+                "#{{HealingRed}} 체력을 모두 회복합니다.",
                 -- 중첩 시
                 "중첩 시 합연산으로 계산"
             )
@@ -40,11 +40,11 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.RAINBOW_MUSHROOM,
                 "Rainbow Mushroom", "",
-                "↑ {{Heart}} +1 Health" ..
-                "#↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
+                "↑ {{Damage}} x" .. DAMAGE_MULTIPLIER .. " Damage multiplier" ..
                 "#↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
-                "#↑ {{Damage}} x" .. DAMAGE_MULTIPLIER .. " Damage multiplier" ..
+                "#↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
                 "#↑ {{Range}} +" .. RANGE_INCREMENT .. " Range" ..
+                "#↑ {{Heart}} +1 Health" ..
                 "#{{HealingRed}} Full health" ..
                 "#!!! Stackable",
                 nil, "en_us"
