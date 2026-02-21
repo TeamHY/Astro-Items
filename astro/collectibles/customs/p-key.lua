@@ -20,19 +20,18 @@ Astro:AddCallback(
                 ITEM_ID,
                 "P키",
                 "멈춰!",
-                "!!! 개발중입니다" ..
-                "#패널티 피격 시 해당 피격을 무력화 이후 퍼즈 키 클릭" ..
-                "#패널티 피격 시마다 쿨타임이 충전되며, 쿨타임이 완충되었을 경우 해당 아이템 자동 제거" ..
-                "#에덴 소울처럼 최초 획득 시 기본 쿨 제거시켜놓고 테스트"
+                "#패널티 피격 시 해당 피격을 무력화하고 10초간 무적 상태가 됩니다." ..
+                "#패널티 피격 시마다 쿨타임이 충전되며, 쿨타임이 완충되었을 경우 해당 아이템이 제거됩니다." ..
+                "#!!! 일반적인 방식으로 쿨타임이 증가하지 않습니다."
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
-                "P Key", "",
-                "!!! WIP ITEM" ..
-                "#When taking penalty damage, nullifies the damage and forces pause key input" ..
-                "#Each penalty hit charges cooldown, removes item when cooldown is full" ..
-                "#Initially starts with no cooldown like Eden's Soul",
+                "P Key",
+                "Hold it!",
+                "#On penalty damage, negates the hit and grants 10 seconds of invincibility" ..
+                "#Each penalty hit charges the cooldown; removes itself when fully charged" ..
+                "#!!! Cooldown does not increase by normal means",
                 nil, "en_us"
             )
         end
