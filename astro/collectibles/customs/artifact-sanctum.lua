@@ -15,7 +15,7 @@ if EID then
         "스테이지 진입 시 소지중인 아이템 중 하나를 제거하며;" ..
         "#{{ArrowGrayRight}} 제거된 아이템과 {{Collectible417}}Succubus를 소환합니다." ..
         "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
-        "#!!! 소지중인 {{Collectible417}}Succubus 아이템이 4개 이상일 경우 이 아이템은 제거됩니다."
+        "#!!! 소지중인 {{Collectible417}}Succubus 아이템이 3개 이상일 경우 이 아이템은 제거됩니다."
     )
 end
 
@@ -48,7 +48,7 @@ Astro:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        if player:GetCollectibleNum(CollectibleType.COLLECTIBLE_SUCCUBUS, true) >= 4 then
+        if player:GetCollectibleNum(CollectibleType.COLLECTIBLE_SUCCUBUS, true) >= 3 then
             player:RemoveCollectible(Astro.Collectible.ARTIFACT_SANCTUM)
         end
     end,
