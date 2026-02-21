@@ -30,6 +30,7 @@ local PENALTY_REMOVE_ITEMS = {
         Astro.Collectible.BIRTHRIGHT_THE_LOST,
         Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
         Astro.Collectible.GUPPY_PART,
+        Astro.Collectible.PUZZLE_DICE,
     },
     trinket = {
         TrinketType.TRINKET_JAW_BREAKER,
