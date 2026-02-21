@@ -18,7 +18,7 @@ Astro:AddCallback(
                 ITEM_ID,
                 "마유시의 회중시계",
                 "...",
-                "{{Collectible422}} 페널티 피격 시 " .. string.format("%.f", BASE_CHANCE * 100) .. "% 확률로 Glowing Hourglass가 발동됩니다." ..
+                "{{Collectible422}} 패널티 피격 시 " .. string.format("%.f", BASE_CHANCE * 100) .. "% 확률로 Glowing Hourglass가 발동됩니다." ..
                 "#클리어한 방과 {{BossRoom}}보스방에서는 발동하지 않습니다." ..
                 "#{{LuckSmall}} 행운 50 이상일 때 100% 확률 (행운 1당 +1%p)",
                 -- 중첩 시

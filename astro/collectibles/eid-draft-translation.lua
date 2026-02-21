@@ -59,7 +59,7 @@ return {
     [790] = "{{Pill1}} Only Gulp! and stat pills appear; others don't",
     [791] = "Reveals 5x5 central stage rooms#Turns hidden enemies friendly",
  -- [792] = "설명 분리됨",
-    [793] = "Removes one held item on stage entry;#{{ArrowGrayRight}} Spawns removed item and {{Collectible417}} Succubus#Choose one; the rest disappear#!!! Removed if 4+ {{Collectible417}} Succubus held",
+ -- [793] = "설명 분리됨",
     [794] = "50% chance to reroll {{Quality0}}/{{Quality1}} items into one of below#!!! Doubles effects of below while held:#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind {{ColorGray}}(Damage up){{CR}}#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind {{ColorGray}}(Fire rate up){{CR}}#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.SWIFT_MIND .. "}} Swift Mind {{ColorGray}}(Speed up){{CR}}#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.LUCKY_MIND .. "}} Lucky Mind {{ColorGray}}(Luck up){{CR}}#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.QUANTUM_MIND .. "}} Quantum Mind",
     [795] = "↑ {{SoulHeart}} +1 Soul Heart#↓ {{Luck}} -1 Luck#!!! After Womb/Corpse, penalty hits reduce all stats in the room:#{{ArrowGrayRight}} {{Damage}} -0.05 Damage (max 1)#{{Blank}} {{Tears}} -0.005 Fire rate (max 1)#{{Blank}} {{Range}} -0.05 Range (max 1)#{{Blank}} {{Speed}} -0.025 Speed (max 1)#{{Blank}} {{Shotspeed}} -0.05 Shot speed (max 1)#{{Blank}} {{Luck}} -3 Luck (max 10)",
     [796] = "!!! Disappears after effect#{{TreasureRoom}} Treasure rooms spawn 3 items; choose one, rest disappear",

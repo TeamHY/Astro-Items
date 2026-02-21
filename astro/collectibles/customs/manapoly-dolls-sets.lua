@@ -34,7 +34,7 @@ Astro:AddCallback(
                 Astro.Collectible.TAANA_DEFENSE_HELPER,
                 "TAANA - 방어 도우미",
                 "행운을 지켜 주는 기계 인형",
-                "{{Trinket145}} 페널티 피격으로 인해 Perfection이 떨어질 때 스테이지 당 한번 사라지기 전에 주울 수 있습니다."
+                "{{Trinket145}} 퍄널티 피격으로 인해 Perfection이 떨어질 때 스테이지 당 한번 사라지기 전에 주울 수 있습니다."
             )
             Astro.EID:AddCollectible(
                 Astro.Collectible.TAANA_DEFENSE_HELPER,

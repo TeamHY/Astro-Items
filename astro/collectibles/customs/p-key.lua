@@ -20,18 +20,19 @@ Astro:AddCallback(
                 ITEM_ID,
                 "P키",
                 "멈춰!",
-                "#패널티 피격 시 해당 피격을 무력화하고 10초간 무적 상태가 됩니다." ..
-                "#패널티 피격 시마다 쿨타임이 충전되며, 쿨타임이 완충되었을 경우 해당 아이템이 제거됩니다." ..
-                "#!!! 일반적인 방식으로 쿨타임이 증가하지 않습니다."
+                "!!! 방을 클리어해도 이 아이템은 충전되지 않습니다." ..
+                "#소지중일 때 패널티 피격 시 피해를 무시하고 캐릭터가 10초간 무적 상태가 됩니다." ..
+                "#{{Battery}} 피격 시마다 충전량이 증가합니다." ..
+                "#!!! 충전량이 모두 채워지면 이 아이템은 제거됩니다."
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
-                "P Key",
-                "Hold it!",
-                "#On penalty damage, negates the hit and grants 10 seconds of invincibility" ..
-                "#Each penalty hit charges the cooldown; removes itself when fully charged" ..
-                "#!!! Cooldown does not increase by normal means",
+                "P Key", "",
+                "!!! Clearing rooms no longer charges this item" ..
+                "#Negates the hit taken while held and gains a shield for 10 seconds" ..
+                "#{{Battery}} Taking damage charges this item" ..
+                "#!!! Removes itself upon being fully charged",
                 nil, "en_us"
             )
         end

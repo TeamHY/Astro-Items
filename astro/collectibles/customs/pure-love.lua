@@ -33,7 +33,7 @@ Astro:AddCallback(
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.PURE_LOVE),
                 { PlayerType.PLAYER_JACOB, PlayerType.PLAYER_JACOB_B, PlayerType.PLAYER_JACOB2_B, Astro.Players.LEAH, Astro.Players.LEAH_B },
-                "행운 감소 페널티 미적용",
+                "행운 감소 패널티 미적용",
                 nil, "ko_kr", nil
             )
 

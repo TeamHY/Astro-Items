@@ -7,17 +7,32 @@ Astro.Collectible.ARTIFACT_SANCTUM = Isaac.GetItemIdByName("Artifact Sanctum")
 -- -릴리스의 기본 아이템인 피격 시 악마 보딜에서 나오는 서큐버스의 경우 취급하지 않습니다 (카운트 체크를 패밀리어가 아닌, 패시브 아이템으로 하란 소리)
 -- -아티팩트 신지로 획득한 서큐버스는 제거되지 않음
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.ARTIFACT_SANCTUM,
-        "아티팩트의 신지",
-        "숨겨진 유물이 드러나다",
-        "스테이지 진입 시 소지중인 아이템 중 하나를 제거하며;" ..
-        "#{{ArrowGrayRight}} 제거된 아이템과 {{Collectible417}}Succubus를 소환합니다." ..
-        "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
-        "#!!! 소지중인 {{Collectible417}}Succubus 아이템이 3개 이상일 경우 이 아이템은 제거됩니다."
-    )
-end
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ARTIFACT_SANCTUM,
+                "아티팩트의 신지",
+                "숨겨진 유물이 드러나다",
+                "스테이지 진입 시 소지중인 아이템 중 하나를 제거하며;" ..
+                "#{{ArrowGrayRight}} 제거된 아이템과 {{Collectible417}}Succubus를 소환합니다." ..
+                "#{{ArrowGrayRight}} 소환된 아이템 중 하나를 선택하면 나머지는 사라집니다." ..
+                "#!!! 소지중인 {{Collectible417}}Succubus 아이템이 3개 이상일 경우 이 아이템은 제거됩니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ARTIFACT_SANCTUM,
+                "Artifact Sanctum", "",
+                "!!! Removes one held item when enterning a new floor:" ..
+                "#Spawns removed item and {{Collectible417}} Succubus" ..
+                "#Choose one; the rest disappear" ..
+                "#!!! Removed if 3+ {{Collectible417}} Succubus held",
+                nil, "en_us"
+            )
+        end
+    end
+)
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,

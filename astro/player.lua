@@ -255,7 +255,7 @@ Astro:AddCallback(
                     "라헬",
                     "야곱의 두 번째 아내이자 레아의 동생입니다."
                     .. "#{{Collectible" .. Astro.Collectible.PURE_LOVE .. "}} 고유 능력 : 순애"
-                    .. "#{{Blank}} 순애의 행운 감소 페널티가 적용되지 않습니다.",
+                    .. "#{{Blank}} 순애의 행운 감소 패널티가 적용되지 않습니다.",
                     "ko_kr"
                 )
 
@@ -286,7 +286,7 @@ Astro:AddCallback(
                     "성전의 수견사는 {{ColorMaroon}}유희왕 오피셜 카드게임{{CR}}의 용사 이야기에서 등장하였습니다."
                     .. "#물의 힘을 다루는 마법사 소녀입니다."
                     .. "#{{Collectible" .. Astro.Collectible.RITE_OF_ARAMESIR .. "}} 고유 능력 : 아라메시아의 의"
-                    .. "#{{Blank}} 사용 시 행운 감소 페널티가 적용되지 않습니다.",
+                    .. "#{{Blank}} 사용 시 행운 감소 패널티가 적용되지 않습니다.",
                     "ko_kr"
                 )
 

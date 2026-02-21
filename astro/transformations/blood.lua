@@ -14,7 +14,13 @@ local EXTRA_DAMAGE_SOUND_ID = SoundEffect.SOUND_MEATY_DEATHS
 
 local EXTRA_DAMAGE_SOUND_VOLUME = 1
 
+local JEJACK_WANRYO = false    -- 아이템 리스트 완성 후에 true로 바꾸세요
+
 ---
+
+if not JEJACK_WANRYO then
+    return
+end
 
 local isc = require("astro.lib.isaacscript-common")
 
@@ -30,10 +36,10 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            -- local bloodIcon = Sprite()
-            -- bloodIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
-            -- EID:addIcon("TransformBlood", "Transformation3", 0, 16, 16, 0, -1, bloodIcon)
-            EID:createTransformation("TransformBlood", "Blood")
+            local bloodIcon = Sprite()
+            bloodIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
+            EID:addIcon("TransformBlood", "Transformation3", 0, 16, 16, 0, -1, bloodIcon)
+            EID:createTransformation("TransformBlood", "Bloodbath")
 
             for _, collectibleType in ipairs(Astro.TransformationBlood.collectibles) do
                 EID:assignTransformation("collectible", collectibleType, "TransformBlood")
@@ -56,9 +62,9 @@ Astro:AddCallbackCustom(
             if data.transformationBloodCount == 3 then
                 local Flavor
                 if Options.Language == "kr" or REPKOR then
-                    Flavor = "블러드"
+                    Flavor = "유혈사태!"
                 else
-                    Flavor = "Blood"
+                    Flavor = "Bloodbath!"
                 end
 
                 SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)

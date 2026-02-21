@@ -20,7 +20,7 @@ Astro:AddCallback(
             EID:addPlayerCondition(
                 "5.100." .. tostring(Astro.Collectible.RITE_OF_ARAMESIR),
                 { Astro.Players.WATER_ENCHANTRESS, Astro.Players.WATER_ENCHANTRESS_B },
-                "행운 감소 페널티 무효화",
+                "행운 감소 패널티 무효화",
                 nil, "ko_kr", nil
             )
 

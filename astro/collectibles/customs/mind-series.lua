@@ -45,7 +45,7 @@ Astro:AddCallback(
                 "압도적인 힘",
                 "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
                 -- 중첩 시
                 "중첩 가능, 다음 증가량부터 적용"
             )
@@ -56,7 +56,7 @@ Astro:AddCallback(
                 "토끼처럼 가볍게",
                 "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
                 -- 중첩 시
                 "중첩 가능, 다음 증가량부터 적용"
             )
@@ -67,7 +67,7 @@ Astro:AddCallback(
                 "누가 양파를 써나?",
                 "{{Timer}} 1초마다 {{TearsSmall}}연사 +0.0019" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
                 -- 중첩 시
                 "중첩 가능, 다음 증가량부터 적용"
             )
@@ -79,7 +79,7 @@ Astro:AddCallback(
                 "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.0087" ..
                 "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
-                "#{{ArrowGrayRight}} 페널티 피격 시 1분간 증가하지 않습니다.",
+                "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
                 -- 중첩 시
                 "중첩 가능, 다음 증가량부터 적용"
             )

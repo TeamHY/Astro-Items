@@ -11,7 +11,7 @@ Astro:AddCallback(
                 "↓ {{LuckSmall}}행운 -2" ..
                 "#{{Trinket145}} Perfection과 같은 판정을 가집니다.",
                 -- 황금
-                "행운 감소 페널티 무효화"
+                "행운 감소 패널티 무효화"
             )
 
             EID:addCondition(

@@ -19,7 +19,7 @@ Astro:AddCallback(
                 "{{Collectible308}} 캐릭터가 지나간 자리에 파란 장판이 생깁니다." ..
                 "#{{ArrowGrayRight}} 파란 장판에 닿은 적은 공격력 x0.66의 피해를 받습니다." ..
                 "#적 명중 시 그 적에게서 눈물이 뿜어져 나옵니다." ..
-                "#!!! 페널티 피격 시 " .. string.format("%.f", PENALTY_TIME / 30) .. "초 동안 무효과"
+                "#!!! 패널티 피격 시 " .. string.format("%.f", PENALTY_TIME / 30) .. "초 동안 무효과"
             )
             
             Astro.EID:AddCollectible(
