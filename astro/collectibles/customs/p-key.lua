@@ -10,11 +10,11 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-         -- local CRAFT_HINT = {
-         --     ["ko_kr"] = "#{{DiceRoom}} {{ColorYellow}}주사위방{{CR}}에서 사용하여 변환",
-         --     ["en_us"] = "#{{DiceRoom}} Can be transformed {{ColorYellow}}using it in the Dice Room{{CR}}"
-         -- }
-         -- Astro.EID:AddCraftHint(CollectibleType.COLLECTIBLE_R_KEY, CRAFT_HINT)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{Collectible636}}R Key 소지 중 키보드 P키를 입력하여 변환",
+                ["en_us"] = "#{{Collectible636}}While holding R Key, press the P key to transform"
+            }
+            Astro.EID:AddCraftHint(CollectibleType.COLLECTIBLE_R_KEY, CRAFT_HINT)
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
