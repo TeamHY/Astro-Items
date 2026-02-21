@@ -6,6 +6,14 @@ local BLEEDING_CHANCE = 0.2 -- 현재 행운에 영향을 받지 않습니다.
 
 local BLEEDING_DURATION = 150
 
+local ENEMY_BLEEDING_COOLDOWN_TIME = 30 -- 몬스터 당 쿨타임
+
+local EXTRA_DAMAGE_MULTIPLIER = 1 -- 추가 대미지 배율
+
+local EXTRA_DAMAGE_SOUND_ID = SoundEffect.SOUND_MEATY_DEATHS
+
+local EXTRA_DAMAGE_SOUND_VOLUME = 1
+
 ---
 
 local isc = require("astro.lib.isaacscript-common")
@@ -14,7 +22,7 @@ Astro.TransformationBlood = {}
 
 Astro.TransformationBlood.collectibles = {
     CollectibleType.COLLECTIBLE_SAD_ONION,
-    CollectibleType.COLLECTIBLE_INNER_EYE,
+    CollectibleType.COLLECTIBLE_1UP,
     CollectibleType.COLLECTIBLE_SPOON_BENDER,
 }
 
@@ -61,16 +69,39 @@ Astro:AddCallbackCustom(
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_FIRE_TEAR,
-    ---@param tear EntityTear
-    function(_, tear)
-        local player = Astro:GetPlayerFromEntity(tear)
+    Astro.Callbacks.PLAYER_DEAL_DMG,
+    ---@param entity Entity
+    ---@param amount number
+    ---@param damageFlags number
+    ---@param player EntityPlayer
+    ---@param countdownFrames number
+    function(_, entity, amount, damageFlags, player, countdownFrames)
+        local playerData = Astro.SaveManager.GetRunSave(player, true)
 
-        if player ~= nil then
-            local data = Astro.SaveManager.GetRunSave(player, true)
+        if playerData.transformationBloodCount and playerData.transformationBloodCount >= 3 then
+            local entityData = entity:GetData()
 
-            if data.transformationBloodCount and data.transformationBloodCount >= 3 then
-                tear.TearFlags = tear.TearFlags | TearFlags.TEAR_BACKSTAB
+            if not entityData.TransformationBlood then
+                entityData.TransformationBlood = {
+                    Cooldown = -1,
+                }
+            end
+
+            if entityData.TransformationBlood.Cooldown < Game():GetFrameCount() then
+                if not entityData.BloodOfHatred then
+                    entityData.BloodOfHatred = {
+                        DurationTime = entity.FrameCount + BLEEDING_DURATION
+                    }
+                else
+                    entityData.BloodOfHatred.DurationTime = math.max(entity.FrameCount + BLEEDING_DURATION, entityData.BloodOfHatred.DurationTime)
+                end
+
+                entity:AddEntityFlags(EntityFlag.FLAG_BLEED_OUT)
+                entity:TakeDamage(amount * EXTRA_DAMAGE_MULTIPLIER, 0, EntityRef(player), 0)
+
+                entityData.TransformationBlood.Cooldown = Game():GetFrameCount() + ENEMY_BLEEDING_COOLDOWN_TIME
+
+                SFXManager():Play(EXTRA_DAMAGE_SOUND_ID, EXTRA_DAMAGE_SOUND_VOLUME)
             end
         end
     end
