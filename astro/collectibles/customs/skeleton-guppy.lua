@@ -93,6 +93,17 @@ Astro:AddCallback(
                 player
             ):ToFamiliar()
             newFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+            newFly.Velocity = fly.Velocity
+            newFly.Target = fly.Target
+            newFly.TargetPosition = fly.TargetPosition
+
+            Astro:ScheduleForUpdate(
+                function()
+                    newFly.Target = fly.Target
+                    newFly.TargetPosition = fly.TargetPosition
+                end,
+                13
+            )
 
             local flySprite = newFly:GetSprite()
             flySprite:ReplaceSpritesheet(0, "gfx/familiar/locusts/bone.png")

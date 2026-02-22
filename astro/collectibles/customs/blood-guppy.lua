@@ -92,6 +92,17 @@ Astro:AddCallback(
             ):ToFamiliar()
             newFly:GetSprite().Color = FLY_COLOR
             newFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+            newFly.Velocity = fly.Velocity
+            newFly.Target = fly.Target
+            newFly.TargetPosition = fly.TargetPosition
+
+            Astro:ScheduleForUpdate(
+                function()
+                    newFly.Target = fly.Target
+                    newFly.TargetPosition = fly.TargetPosition
+                end,
+                13
+            )
 
             data["bloodGuppyCooldown"] = frameCount + COOLDOWN_TIME
         end
