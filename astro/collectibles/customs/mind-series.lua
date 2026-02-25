@@ -109,7 +109,7 @@ Astro:AddCallback(
                 if Astro:HasCollectible(Astro.Collectible.AMPLIFYING_MIND) then
                     local itemConfigItem = Isaac.GetItemConfig():GetCollectible(selectedCollectible)
 
-                    if itemConfigItem.Quality <= 1 then
+                    if itemConfigItem.Quality >= 2 then
                         return false
                     end
 
