@@ -84,7 +84,6 @@
 		<Item Name="Glitched D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -203,7 +202,6 @@
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -334,7 +332,6 @@
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
@@ -406,7 +403,6 @@
 		<Item Name="False Certificate" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Life-Sustaining Treatment" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
@@ -538,7 +534,6 @@
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -621,7 +616,6 @@
 		<Item Name="Birth Certificate" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Dry Eye Syndrome" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
@@ -854,7 +848,6 @@
 		<Item Name="IBN 5100" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Flamme's Grimoire" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Life-Sustaining Treatment" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -869,6 +862,7 @@
 		<Item Name="Maggy's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Dango" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Medicine" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Angelic D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedTreasure">
 		<Item Name="Cygnus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
