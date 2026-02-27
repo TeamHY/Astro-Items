@@ -15,7 +15,9 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_TECHNOLOGY,
             CollectibleType.COLLECTIBLE_TECHNOLOGY_2,
             CollectibleType.COLLECTIBLE_SPIRIT_SWORD,
-            CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE
+            CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE,
+            CollectibleType.COLLECTIBLE_TRISAGION,
+            CollectibleType.COLLECTIBLE_PARASITE,
         }
         
         if EID then
