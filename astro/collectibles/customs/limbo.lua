@@ -1,4 +1,4 @@
-Astro.Collectible.INFERNO = Isaac.GetItemIdByName("Inferno")
+Astro.Collectible.LIMBO = Isaac.GetItemIdByName("Limbo")
 
 ---
 
@@ -13,9 +13,9 @@ Astro:AddCallback(
     function(_)
         if EID then
             Astro.EID:AddCollectible(
-                Astro.Collectible.INFERNO,
-                "인페르노",
-                "모든 행로는 무덤에서 끝나리",
+                Astro.Collectible.LIMBO,
+                "변옥",
+                "그 고난의 연기가 세세토록 올라가리로다",
                 "방 안에 랜덤 위치에 푸른 균열이 생성됩니다." ..
                 "#균열에 닿을 시 " .. SPAWN_AMOUNT .. "마리의 유령이 나와 적에게 돌진해 공격력 x2의 피해를 줍니다."
             )
@@ -29,7 +29,7 @@ Astro:AddCallback(
         local level = Game():GetLevel()
         local room = level:GetCurrentRoom()
 
-        if not room:IsClear() and Astro:HasCollectible(Astro.Collectible.INFERNO) then
+        if not room:IsClear() and Astro:HasCollectible(Astro.Collectible.LIMBO) then
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PURGATORY, 0, room:GetRandomPosition(30), Vector.Zero, nil)
         end
     end
@@ -39,7 +39,7 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_EFFECT_INIT,
     ---@param effect EntityEffect
     function(_, effect)
-        if Astro:HasCollectible(Astro.Collectible.INFERNO) then
+        if Astro:HasCollectible(Astro.Collectible.LIMBO) then
             local newColor = effect.Color
             newColor:SetColorize(1, 1, 1, 2)
             effect.Color = newColor
@@ -54,7 +54,7 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_EFFECT_UPDATE,
     ---@param effect EntityEffect
     function(_, effect)
-        if effect.SubType == 0 and Astro:HasCollectible(Astro.Collectible.INFERNO) then
+        if effect.SubType == 0 and Astro:HasCollectible(Astro.Collectible.LIMBO) then
             local sprite = effect:GetSprite()
 
             if sprite:IsEventTriggered("Shoot") then
@@ -71,4 +71,4 @@ Astro:AddCallback(
         end
     end,
     EffectVariant.PURGATORY
-)]]
+)
