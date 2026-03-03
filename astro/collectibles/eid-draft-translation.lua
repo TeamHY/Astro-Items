@@ -140,7 +140,7 @@ return {
  -- [871] = "설명 분리됨",
     [872] = "Rerolls room items to ID 1~3 ahead or behind#!!! Some items don't appear",
  -- [873] = "설명 분리됨",
-    [874] = "Spawns Chigger dealing x2 damage on hit",
+ -- [874] = "설명 분리됨",
  -- [875] = "설명 분리됨",
     [876] = "↑ {{SoulHeart}} +2 Soul Hearts#Increases {{SoulHeart}} Soul Heart gains#!!! Amount: Base * ({{Collectible" .. Astro.Collectible.BIRTHRIGHT_BLUE_BABY .. "}} count + 1)",
     [877] = "25% chance not to consume coin on {{Slotmachine}} slot machine use#Changes {{ArcadeRoom}} shell games to {{CraneGame}} crane games#Changes {{Slotmachine}} slot machines to {{Slotmachine}} glitched machines",

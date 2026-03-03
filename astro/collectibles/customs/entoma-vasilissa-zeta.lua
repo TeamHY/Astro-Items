@@ -10,7 +10,16 @@ Astro:AddCallback(
                 Astro.Collectible.ENTOMA_VASILISSA_ZETA,
                 "엔토마 바실리사 제타",
                 "벌레를 사랑하는 메이드",
-                "적 명중 시 공격력 x2의 진드기를 소환합니다."
+                "적 명중 시 진드기를 소환합니다." ..
+                "#진드기는 3초 동안 적을 추적해 초당 공격력 x4의 접촉 피해를 줍니다."
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.ENTOMA_VASILISSA_ZETA,
+                "Entoma Vasilissa Zeta", "",
+                "Spawns Chigger on hit" ..
+                "#Chiggers chase enemies for 3 seconds, dealing contact damage equal to 4x Isaac's damage per second",
+                nil, "en_us"
             )
         end
     end
@@ -80,7 +89,7 @@ Astro:AddCallback(
             end
         end
         if familiar.FrameCount > 80 then familiar:Kill() end
-        if familiar.Target ~= nil and familiar.FrameCount % 2 == 1 or familiar.FrameCount == 1 then
+        if familiar.Target ~= nil and familiar.FrameCount % 2 == 1 or familiar.Target ~= nil and familiar.FrameCount == 1 then
             familiar.Velocity = familiar.Velocity + ((familiar.Target.Position - familiar.Position):Resized(2.65+math.abs(math.cos(familiar.FrameCount / 2) * 0.5)))
             familiar.Velocity = familiar.Velocity * 0.8
         end

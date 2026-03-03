@@ -889,6 +889,10 @@
 	</collectible>
 	<collectible id="229">
 	</collectible>
+	<collectible id="230">
+		<info text="챔피언 적의 등장 확률이 15% 증가합니다"/>
+		<info text="챔피언 적이 받는 피해량이 증가합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

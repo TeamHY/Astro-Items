@@ -886,6 +886,10 @@
 	</collectible>
 	<collectible id="229">
 	</collectible>
+	<collectible id="230">
+		<info text="Increases champion monster spawns by 15%"/>
+		<info text="Increases damage taken by the champion monster"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
