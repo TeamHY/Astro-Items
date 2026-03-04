@@ -60,7 +60,7 @@
 	<passive gfx="Pink Ward.png" quality="2" devilprice="1" shopprice="18" name="Pink Ward" description="See-through enemies" id="59" />
 	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" description="..." id="60" />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" description="Revealing hidden artifacts" id="61" />
-	<passive cache="damage" gfx="Amplifying Mind.png" hidden="true" quality="5" devilprice="2" shopprice="25" name="Amplifying Mind" description="Determination" id="62" />
+	<passive cache="damage" gfx="Amplifying Mind.png" quality="5" devilprice="2" shopprice="25" name="Amplifying Mind" description="Determination" id="62" />
 	<passive cache="all" gfx="EZ Mode.png" quality="0" devilprice="2" hidden="true" shopprice="15" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="EZ Mode" description="EASY" id="63" />
 	<passive gfx="Birthright - Eden.png" quality="2" devilprice="2" shopprice="15" name="Eden's Frame" description="???" id="64" />
 	<passive gfx="Birthright - Isaac.png" quality="4" devilprice="2" shopprice="30" name="Isaac's Frame" description="More options" id="65" />

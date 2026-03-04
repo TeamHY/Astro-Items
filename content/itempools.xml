@@ -86,6 +86,7 @@
 		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
     <Pool Name="greedSecret">
@@ -1239,6 +1240,8 @@
 		<Item Name="Decisive Strike" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Casey" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="24K Copter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Amplifying Mind" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
