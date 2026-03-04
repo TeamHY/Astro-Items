@@ -4,7 +4,7 @@ local AMPLIFYING_MIND_CHANGE_CHANCE = 0.5
 
 local DELAY_FRAME = 30
 
-local DAMAGE_INCREMENT = 0.007
+local DAMAGE_INCREMENT = 0.0084
 
 local SPEED_INCREMENT = 0.001425
 
@@ -43,7 +43,7 @@ Astro:AddCallback(
                 Astro.Collectible.CALM_MIND,
                 "침착한 정신",
                 "압도적인 힘",
-                "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.007" ..
+                "{{Timer}} 1초마다 {{DamageSmall}}공격력 +0.0084" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
                 -- 중첩 시
