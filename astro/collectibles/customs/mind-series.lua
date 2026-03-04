@@ -10,7 +10,7 @@ local SPEED_INCREMENT = 0.001425
 
 local TEARS_INCREMENT = 0.002375
 
-local LUCK_INCREMENT = 0.0087
+local LUCK_INCREMENT = 0.00957
 
 local PENALTY_TIME = 60 * 30
 
@@ -76,7 +76,7 @@ Astro:AddCallback(
                 Astro.Collectible.LUCKY_MIND,
                 "행운의 정신",
                 "행운을 빌어요",
-                "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.0087" ..
+                "{{Timer}} 1초마다 {{LuckSmall}}행운 +0.00957" ..
                 "#{{Blank}} (중첩 가능, 다음 증가량부터 적용)" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
