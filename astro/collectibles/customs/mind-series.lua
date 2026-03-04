@@ -6,7 +6,7 @@ local DELAY_FRAME = 30
 
 local DAMAGE_INCREMENT = 0.007
 
-local SPEED_INCREMENT = 0.00095
+local SPEED_INCREMENT = 0.001425
 
 local TEARS_INCREMENT = 0.0019
 
@@ -54,7 +54,7 @@ Astro:AddCallback(
                 Astro.Collectible.SWIFT_MIND,
                 "신속한 정신",
                 "토끼처럼 가볍게",
-                "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.00095" ..
+                "{{Timer}} 1초마다 {{SpeedSmall}}이동속도 +0.001425" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
                 -- 중첩 시
