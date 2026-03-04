@@ -8,18 +8,8 @@ Astro:AddCallback(
                 Astro.Collectible.GRADUATION_CERTIFICATE,
                 "졸업증명서",
                 "안녕은 영원한 헤어짐은 아니겠지요",
-                "사용 시 소지중인 아이템이 있는 방으로 이동합니다." ..
-                "#{{ArrowGrayRight}} 아이템 하나 획득 시 원래 있던 장소로 돌아갑니다."
+                "사용 시 그 방의 아이템을 소지중인 아이템으로 바꿉니다."
             )
-        end
-    end
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    function(_, isContinued)
-        if not isContinued then
-            Astro.Data.GraduationCertificateUsed = false
         end
     end
 )
@@ -33,9 +23,17 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
-        playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
+        local inventory = Astro:getPlayerInventory(playerWhoUsedItem, false)
+        local entities = Isaac.GetRoomEntities()
 
-        Astro.Data.GraduationCertificateUsed = true
+        for _, entity in ipairs(entities) do
+            if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE and entity.SubType ~= 0 then
+                local item = Astro:GetRandomCollectibles(inventory, rngObj, 1, Astro.Collectible.GRADUATION_CERTIFICATE)[1]
+
+                entity:ToPickup():Morph(entity.Type, entity.Variant, item, true)
+                Game():SpawnParticles(entity.Position, EffectVariant.POOF01, 1, 0)
+            end
+        end
 
         return {
             Discharge = true,
@@ -44,27 +42,4 @@ Astro:AddCallback(
         }
     end,
     Astro.Collectible.GRADUATION_CERTIFICATE
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_PICKUP_INIT,
-    ---@param pickup EntityPickup
-    function(_, pickup)
-        if Astro.Data.GraduationCertificateUsed and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE then
-            if not Astro:HasCollectible(pickup.SubType) then
-                pickup:Remove()
-            end
-        end
-    end
-)
-
-Astro:AddCallback(
-    Astro.Callbacks.POST_ITEM_PICKUP,
-    ---@param player EntityPlayer
-    ---@param pickingUpItem { itemType: ItemType, subType: CollectibleType | TrinketType }
-    function(_, player, pickingUpItem)
-        if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
-            Astro.Data.GraduationCertificateUsed = false
-        end
-    end
 )

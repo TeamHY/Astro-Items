@@ -11,16 +11,14 @@ Astro:AddCallback(
                 Astro.Collectible.FALSE_CERTIFICATE,
                 "위조 증명서",
                 "공문서 위조는 중범죄입니다",
-                "{{UltraSecretRoom}} 사용 시 특급비밀방 배열 아이템이 있는 방으로 이동합니다." ..
-                "#{{ArrowGrayRight}} 아이템 하나 획득 시 원래 있던 장소로 돌아갑니다."
+                "{{UltraSecretRoom}} 사용 시 그 방의 아이템을 특급비밀방 배열 아이템으로 바꿉니다."
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.FALSE_CERTIFICATE,
                 "False Certificate",
                 "",
-                "{{UltraSecretRoom}} Teleports Isaac to a floor that contains every item of ultra secret room pool in the game" ..
-                "#Choosing an item from this floor teleports Isaac back to the room he came from",
+                "{{UltraSecretRoom}} Using in this room changes its items into ultra secret room pool items",
                 nil, "en_us"
             )
         end
@@ -52,7 +50,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_IV_BAG, --135
             CollectibleType.COLLECTIBLE_REMOTE_DETONATOR, --137
             CollectibleType.COLLECTIBLE_BLOODY_LUST, --157
-            CollectibleType.COLLECTIBLE_SPIRIT_NIGHT, -- 159
+            CollectibleType.COLLECTIBLE_SPIRIT_OF_THE_NIGHT, -- 159
             CollectibleType.COLLECTIBLE_D20, --166
             CollectibleType.COLLECTIBLE_HARLEQUIN_BABY, --167
             CollectibleType.COLLECTIBLE_STEM_CELLS, --176
@@ -71,7 +69,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_BODY, --334
             --CollectibleType.COLLECTIBLE_DEAD_EYE, --373
             CollectibleType.COLLECTIBLE_MARKED, --394
-            CollectibleType.COLLECTIBLE_MAW_OF_VOID, --399
+            CollectibleType.COLLECTIBLE_MAW_OF_THE_VOID, --399
             CollectibleType.COLLECTIBLE_LUSTY_BLOOD, --411
             CollectibleType.COLLECTIBLE_CAMBION_CONCEPTION, --412
             CollectibleType.COLLECTIBLE_KIDNEY_BEAN, --421
@@ -184,15 +182,6 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    function(_, isContinued)
-        if not isContinued then
-            Astro.Data.FalseCertificateUsed = false
-        end
-    end
-)
-
-Astro:AddCallback(
     ModCallbacks.MC_USE_ITEM,
     ---@param collectibleID CollectibleType
     ---@param rngObj RNG
@@ -201,9 +190,16 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
-        playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
+        local entities = Isaac.GetRoomEntities()
 
-        Astro.Data.FalseCertificateUsed = true
+        for _, entity in ipairs(entities) do
+            if entity.Type == EntityType.ENTITY_PICKUP and entity.Variant == PickupVariant.PICKUP_COLLECTIBLE and entity.SubType ~= 0 then
+                local item = Astro:GetRandomCollectibles(FALSE_CERTIFICATE_ITEMS, rngObj, 1, Astro.Collectible.FALSE_CERTIFICATE)[1]
+
+                entity:ToPickup():Morph(entity.Type, entity.Variant, item, true)
+                Game():SpawnParticles(entity.Position, EffectVariant.POOF01, 1, 0)
+            end
+        end
 
         return {
             Discharge = true,
@@ -212,27 +208,4 @@ Astro:AddCallback(
         }
     end,
     Astro.Collectible.FALSE_CERTIFICATE
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_PICKUP_INIT,
-    ---@param pickup EntityPickup
-    function(_, pickup)
-        if Astro.Data.FalseCertificateUsed and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE then             
-            if not Astro:Contain(FALSE_CERTIFICATE_ITEMS, pickup.SubType) then
-                pickup:Remove()
-            end
-        end
-    end
-)
-
-Astro:AddCallback(
-    Astro.Callbacks.POST_ITEM_PICKUP,
-    ---@param player EntityPlayer
-    ---@param pickingUpItem { itemType: ItemType, subType: CollectibleType | TrinketType }
-    function(_, player, pickingUpItem)
-        if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
-            Astro.Data.FalseCertificateUsed = false
-        end
-    end
 )
