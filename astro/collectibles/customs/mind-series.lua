@@ -8,7 +8,7 @@ local DAMAGE_INCREMENT = 0.007
 
 local SPEED_INCREMENT = 0.001425
 
-local TEARS_INCREMENT = 0.0019
+local TEARS_INCREMENT = 0.002375
 
 local LUCK_INCREMENT = 0.0087
 
@@ -65,7 +65,7 @@ Astro:AddCallback(
                 Astro.Collectible.BLUE_MIND,
                 "우울한 정신",
                 "누가 양파를 써나?",
-                "{{Timer}} 1초마다 {{TearsSmall}}연사 +0.0019" ..
+                "{{Timer}} 1초마다 {{TearsSmall}}연사 +0.002375" ..
                 "#{{ArrowGrayRight}} 시작방에서는 증가하지 않습니다." ..
                 "#{{ArrowGrayRight}} 패널티 피격 시 1분간 증가하지 않습니다.",
                 -- 중첩 시
