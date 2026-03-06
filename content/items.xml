@@ -228,7 +228,7 @@
 	<active tags="angel" gfx="Angelic D6.png" quality="4" devilprice="2" maxcharges="12" shopprice="15" name="Angelic D6" description="Reroll your blessing" id="227" />
 	<passive tags="quest guppy" gfx="Guppy's Name Tag.png" quality="2" shopprice="10" name="Guppy's Name Tag" hidden="true" description="I fear nothing with you" id="228" />
 	<passive cache="damage firedelay range speed shotspeed luck" gfx="Experimental Serum.png" tags="syringe" quality="3" devilprice="2" shopprice="15" maxhearts="2" name="Experimental Serum" description="All Stats up!" id="229" />
-	<passive cache="damage" gfx="placeholder.png" quality="4" devilprice="2" shopprice="15" name="Tyrant’s Belt" hidden="true" description="I have this urge to kill" id="230" />
+	<passive cache="damage" gfx="Tyrant's Belt.png" quality="4" devilprice="2" shopprice="15" name="Tyrant’s Belt" hidden="true" description="I have this urge to kill" id="230" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
