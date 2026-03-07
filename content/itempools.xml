@@ -86,7 +86,7 @@
 		<Item Name="Pillars of Creation" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Techrapod" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amplifying Mind" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 	</Pool>
     <Pool Name="greedSecret">
@@ -175,7 +175,7 @@
 		<Item Name="Happy Onion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amplifying Mind" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -305,7 +305,7 @@
 		<Item Name="Happy Onion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amplifying Mind" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -376,7 +376,7 @@
 		<Item Name="Happy Onion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Rhongomyniad" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Artifact Sanctum" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amplifying Mind" Weight="0.6" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.4" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Heart Bloom" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Sinful Spoils of Subversion - Snake Eye" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 
@@ -738,7 +738,7 @@
 		<Item Name="Artifact Sanctum" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Bachelor's Degree" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Pink Ward" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Amplifying Mind" Weight="0.75" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Eden's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Isaac's Frame" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1241,7 +1241,7 @@
 		<Item Name="Casey" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="24K Copter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
-		<Item Name="Amplifying Mind" Weight="0.5" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Amplifying Mind" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
