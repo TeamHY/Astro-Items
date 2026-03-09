@@ -30,7 +30,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(Astro.Collectible.AMPLIFYING_MIND,
                 "증폭하는 마음",
                 "의지",
-                "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 50% 확률로 아래 아이템 중 하나로 바꿉니다." ..
+                "{{Quality0}}/{{Quality1}}등급 아이템 등장 시 20% 확률로 아래 아이템 중 하나로 바꿉니다." ..
                 "#!!! 소지중일 때 아래 아이템들의 효과 두 배:" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.CALM_MIND .. "}} Calm Mind {{ColorGray}}(공격력 증가){{CR}}" ..
                 "#{{ArrowGrayRight}} {{Collectible" .. Astro.Collectible.BLUE_MIND .. "}} Blue Mind {{ColorGray}}(연사 증가){{CR}}" ..
