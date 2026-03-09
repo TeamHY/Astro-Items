@@ -230,6 +230,13 @@
 	<passive cache="damage firedelay range speed shotspeed luck" gfx="Experimental Serum.png" tags="syringe" quality="3" devilprice="2" shopprice="15" maxhearts="2" name="Experimental Serum" description="All Stats up!" id="229" />
 	<passive cache="damage" gfx="Tyrant's Belt.png" quality="4" devilprice="2" shopprice="15" name="Tyrant’s Belt" hidden="true" description="I have this urge to kill" id="230" />
 	<passive cache="tearflag" gfx="Eye of Michael.png" quality="3" devilprice="2" shopprice="15" name="Eye of Michael" description="..." id="231" />
+
+
+
+
+
+
+	
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
 	<trinket id="2" gfx="The Left Foot.png" name="The Left Foot" description="The left-foot path reaps dark rewards" />
