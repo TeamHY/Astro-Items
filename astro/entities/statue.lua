@@ -93,11 +93,21 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function()
+        local level = Game():GetLevel()
         local room = Game():GetRoom()
-        local roomType = room:GetType()
+        local roomDesc = level:GetCurrentRoomDesc()
+        local roomType = roomDesc.Data.Type
+        local roomSubType = roomDesc.Data.Subtype
+        local centerPos = room:GetCenterPos()
 
         if roomType == RoomType.ROOM_MINIBOSS then
             
+        elseif roomType == RoomType.ROOM_CHEST then
+            Astro:SpawnEntity(Astro.Entity.GREED_STATUE, centerPos)
+        elseif roomType == RoomType.ROOM_TREASURE then
+            Astro:SpawnEntity(Astro.Entity.TREASURE_STATUE, centerPos)
+        elseif roomType == RoomType.ROOM_PLANETARIUM then
+            Astro:SpawnEntity(Astro.Entity.PLANETARIUM_STATUE, centerPos)
         end
     end
 )
