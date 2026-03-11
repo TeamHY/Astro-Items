@@ -14,6 +14,7 @@ require "astro.entities.lava-beggar"
 require "astro.entities.planetarium-beggar"
 require "astro.entities.glitched-machine"
 require "astro.entities.ibn-5100"
+require "astro.entities.statue"
 
 Astro:AddCallback(
 	ModCallbacks.MC_POST_EFFECT_UPDATE,

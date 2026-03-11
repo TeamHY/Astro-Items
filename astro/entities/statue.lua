@@ -1,0 +1,103 @@
+local StatueType = Isaac.GetEntityTypeByName("Sloth Statue")
+local StatueVariant = Isaac.GetEntityVariantByName("Sloth Statue")
+
+Astro.Entity.SLOTH_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 0,
+}
+
+Astro.Entity.LUST_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 1,
+}
+
+Astro.Entity.GLUTTONY_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 2,
+}
+
+Astro.Entity.PRIDE_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 3,
+}
+
+Astro.Entity.WRATH_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 4,
+}
+
+Astro.Entity.ENVY_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 5,
+}
+
+Astro.Entity.GREED_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 6,
+}
+
+Astro.Entity.GREEDIER_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 7,
+}
+
+Astro.Entity.TREASURE_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 8,
+}
+
+Astro.Entity.PLANETARIUM_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 9,
+}
+
+Astro.Entity.DUALITY_STATUE = {
+    Type = StatueType,
+    Variant = StatueVariant,
+    SubType = 10,
+}
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NPC_INIT,
+    ---@param npc EntityNPC
+    function(_, npc)
+        if npc.Variant == StatueVariant and npc.Type == StatueType then
+            npc:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+            npc.EntityCollisionClass = EntityCollisionClass.ENTCOLL_ALL
+            npc:GetData()["Astro_InitPosition"] = npc.Position
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_NPC_UPDATE,
+    ---@param npc EntityNPC
+    function(_, npc)
+        if npc.Variant == StatueVariant and npc.Type == StatueType then
+            npc.Position = npc:GetData()["Astro_InitPosition"]
+            npc.FlipX = false
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function()
+        local room = Game():GetRoom()
+        local roomType = room:GetType()
+
+        if roomType == RoomType.ROOM_MINIBOSS then
+            
+        end
+    end
+)
