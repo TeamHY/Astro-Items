@@ -86,13 +86,14 @@ Astro:AddCallback(
                 CollectibleType.COLLECTIBLE_LODESTONE,
                 CollectibleType.COLLECTIBLE_EVIL_CHARM,
                 CollectibleType.COLLECTIBLE_GLASS_EYE,
-                Astro.Collectible.CLOVER,
                 CollectibleType.COLLECTIBLE_DADS_LOST_COIN,
+                Astro.Collectible.CLOVER,
                 Astro.Collectible.FORTUNE_COIN,
                 Astro.Collectible.PIRATE_MAP,
                 Astro.Collectible.DIVINE_LIGHT,
                 Astro.Collectible.BLOOD_OF_HATRED,
-                Astro.Collectible.ACUTE_SINUSITIS
+                Astro.Collectible.ACUTE_SINUSITIS,
+                Astro.Collectible.AMAZING_CHAOS_SCROLL,
             }
 
             -- 아케이드방
