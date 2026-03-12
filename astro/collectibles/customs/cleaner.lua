@@ -18,6 +18,8 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE,
             CollectibleType.COLLECTIBLE_TRISAGION,
             CollectibleType.COLLECTIBLE_PARASITE,
+            CollectibleType.COLLECTIBLE_COMPOUND_FRACTURE,
+            CollectibleType.COLLECTIBLE_CRICKETS_BODY,
         }
         
         if EID then
