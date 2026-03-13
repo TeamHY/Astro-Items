@@ -68,12 +68,24 @@ Astro.Entity.DUALITY_STATUE = {
 }
 
 Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if ModConfigMenu then
+            table.insert(ModConfigMenu.IgnoreActiveEnemies, StatueType)
+
+            ModConfigMenu.IgnoreActiveEnemies[StatueType] = {
+                [-1] = true
+            }
+        end
+    end
+)
+
+Astro:AddCallback(
     ModCallbacks.MC_POST_NPC_INIT,
     ---@param npc EntityNPC
     function(_, npc)
         if npc.Variant == StatueVariant and npc.Type == StatueType then
             npc:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
-            npc:AddEntityFlags(EntityFlag.FLAG_NO_TARGET)
             npc.EntityCollisionClass = EntityCollisionClass.ENTCOLL_ALL
             npc:GetData()["Astro_InitPosition"] = npc.Position
         end
