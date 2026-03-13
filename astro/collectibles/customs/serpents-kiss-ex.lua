@@ -8,7 +8,7 @@ local CONTACT_DEAL = 12    -- 접촉 피해량
 
 local DROP_CHANCE = 0.2    -- 블랙하트 확률
 
-local DROP_COOLDOWN = 120    -- 블랙하트 소환 쿨타임 (60프레임 기준)
+local DROP_COOLDOWN = 180    -- 블랙하트 소환 쿨타임 (60프레임 기준)
 
 ---
 
