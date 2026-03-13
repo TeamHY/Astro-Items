@@ -179,6 +179,10 @@ require "astro.collectibles.customs.angelic-d6"
 require "astro.collectibles.customs.guppys-name-tag"
 require "astro.collectibles.customs.tyrants-belt"
 require "astro.collectibles.customs.eye-of-michael"
+require "astro.collectibles.customs.luxury-rosary"
+require "astro.collectibles.customs.mineral-shard"
+require "astro.collectibles.customs.serpents-kiss-ex"
+require "astro.collectibles.customs.quill-pen"
 
 --#region PLANETARIUM
 

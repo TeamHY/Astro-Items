@@ -1,0 +1,106 @@
+Astro.Collectible.LUXURY_ROSARY = Isaac.GetItemIdByName("Luxury Rosary")
+
+---
+
+local REROLL_CHANCE_BASE = 0.05
+
+local TEARS_INCREMENT = 1
+
+local HAS_ANGEL_TAG = {}
+
+---
+
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function()
+        if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_ROSARY].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible72}}{{ColorYellow}}묵주{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible72}} {{ColorYellow}}Rosary{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.LUXURY_ROSARY, CRAFT_HINT)
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LUXURY_ROSARY,
+                "명품 묵주",
+                "그 빛 가운데 거한다면",
+                "↑ {{SoulHeart}}소울하트 +3" ..
+                "#↑ {{TearsSmall}}연사(+상한) +1" ..
+                "#{{Quality0}}/{{Quality1}}등급 아이템 등장 시 " .. string.format("%.f", REROLL_CHANCE_BASE * 100) .. "%의 확률로 Seraphim 세트 아이템으로 바꿉니다.",
+                -- 중첩 시
+                "아이템 변경 확률은 중첩 불가"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LUXURY_ROSARY,
+                "Luxury Rosary", "",
+                "↑ {{SoulHeart}} +3 Soul Hearts" ..
+                "#↑ {{Tears}} +1 Fire Rate" ..
+                "#" .. string.format("%.f", REROLL_CHANCE_BASE * 100) .. "% chance to reroll {{Quality0}}/{{Quality1}} items into Seraphim transformation items",
+                -- Stacks
+                "Reroll chances do not stack",
+                "en_us"
+            )
+        end
+
+        local itemConfig = Isaac.GetItemConfig()
+        local maxItemId = Astro:GetMaxCollectibleID()
+
+        for i = 1, maxItemId do
+            local itemConfigItem = itemConfig:GetCollectible(i)
+            
+            if itemConfigItem and not itemConfigItem.Hidden and itemConfigItem:HasTags(ItemConfig.TAG_ANGEL) then
+                if Astro.IsFight then
+                    if
+                        i ~= CollectibleType.COLLECTIBLE_SACRED_HEART
+                        and i ~= CollectibleType.COLLECTIBLE_HOLY_MANTLE
+                        and i ~= CollectibleType.COLLECTIBLE_GODHEAD
+                        and i ~= CollectibleType.COLLECTIBLE_SACRED_ORB
+                    then
+                        table.insert(HAS_ANGEL_TAG, i)
+                    end
+                else
+                    table.insert(HAS_ANGEL_TAG, i)
+                end
+            end
+        end
+
+        Astro:AddRerollCondition(
+            function(selectedCollectible)
+                
+                for i = 1, Game():GetNumPlayers() do
+                    local player = Isaac.GetPlayer(i - 1)
+
+                    if Astro:HasCollectible(Astro.Collectible.LUXURY_ROSARY) then
+                        local rng = player:GetCollectibleRNG(Astro.Collectible.LUXURY_ROSARY)
+
+                        if rng:RandomFloat() <= REROLL_CHANCE_BASE then
+                            local itemConfigSelect = itemConfig:GetCollectible(selectedCollectible)
+                            local selectItem = rng:RandomInt(#HAS_ANGEL_TAG)
+
+                            return {
+                                newItem = HAS_ANGEL_TAG[selectItem],
+                                reroll = itemConfigSelect.Quality <= 1,
+                                modifierName = "Luxury Rosary"
+                            }
+                        end
+                    end
+                end
+        
+                return false
+            end
+        )
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_EVALUATE_CACHE,
+    ---@param player EntityPlayer
+    ---@param cacheFlags CacheFlag
+    function(_, player, cacheFlags)
+        if player:HasCollectible(Astro.Collectible.LUXURY_ROSARY) and cacheFlags == CacheFlag.CACHE_FIREDELAY then
+            player.MaxFireDelay = Astro:AddTears(player.MaxFireDelay, TEARS_INCREMENT * player:GetCollectibleNum(Astro.Collectible.LUXURY_ROSARY))
+        end
+    end
+)

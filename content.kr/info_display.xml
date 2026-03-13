@@ -893,6 +893,24 @@
 		<info text="챔피언 적의 등장 확률이 15% 증가합니다"/>
 		<info text="챔피언 적이 받는 피해량이 증가합니다"/>
 	</collectible>
+	<collectible id="232">
+		<info text="낮은 등급의 받침대형 아이템을 확률적으로 세라핌 변신에 필요한 아이템으로 리롤합니다"/>
+	</collectible>
+	<collectible id="233">
+		<info text="공격이 이동한 거리에 비례해 피해량과 크기가 증가합니다"/>
+		<info text="눈물과 아이작과의 거리에 비례해 피해량과 크기가 증가합니다"/>
+	</collectible>
+	<collectible id="234">
+		<info text="확률적으로 독 눈물을 발사합니다"/>
+		<info text="적과 접촉하면 중독 효과를 줍니다"/>
+		<info text="중독된 적이 처치되면 확률적으로 검은 심장을 드롭합니다"/>
+	</collectible>
+	<collectible id="235">
+		<info text="체력 1칸을 제거하여 뼈다귀 심장 2개를 얻습니다"/>
+	</collectible>
+	<collectible id="236">
+		<info text="15번째 공격마다 도그마의 깃털 다발을 발사합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
