@@ -1,5 +1,15 @@
 Astro.Collectible.QUILL_PEN = Isaac.GetItemIdByName("Quill Pen")
 
+---
+
+local FEATEHR_INDEX = 15    -- n번 마다 깃털 다발 발사
+
+local FEATEHR_AMOUNT = 15    -- 깃털 다발의 양
+
+local DAMAGE_MULTI = 3    -- 깃털 다발은 캐릭터의 공격력 n배 +5의 피해량을 가짐
+
+---
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
@@ -15,7 +25,7 @@ Astro:AddCallback(
                 Astro.Collectible.QUILL_PEN,
                 "깃펜",
                 "하늘의 손길",
-                "눈물을 15번 발사할 때마다 공격력 x2의 깃털 다발이 나갑니다.",
+                "눈물을 " .. FEATEHR_INDEX .. "번 발사할 때마다 공격력 x" .. DAMAGE_MULTI .. " +5의 깃털 다발이 나갑니다.",
                 -- 중첩 시
                 "중첩 시 깃털 다발의 피해량 증가"
             )
@@ -23,7 +33,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.QUILL_PEN,
                 "Quill Pen", "",
-                "Isaac shoots a cluster of feathers that deal 2x his damage every 15 tear",
+                "Isaac shoots a cluster of feathers that deal " .. DAMAGE_MULTI .. "x his damage + 5 every " .. FEATEHR_INDEX .. " tear",
                 -- Stacks
                 "Stacks increase feather's damage",
                 "en_us"
@@ -36,14 +46,14 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_FIRE_TEAR,
     ---@param tear EntityTear
     function(_, tear)
-        if tear.TearIndex % 15 ~= 0 then return end
+        if tear.TearIndex % FEATEHR_INDEX ~= 0 then return end
         local player = Astro:GetPlayerFromEntity(tear)
 
         if player ~= nil and player:HasCollectible(Astro.Collectible.QUILL_PEN) then
             local vel = tear.Velocity
             local rng = player:GetCollectibleRNG(Astro.Collectible.QUILL_PEN)
 
-            for _ = 1, 15 do
+            for _ = 1, FEATEHR_AMOUNT do
                 local feather = Isaac.Spawn(
                     EntityType.ENTITY_PROJECTILE,
                     13,
@@ -81,7 +91,7 @@ Astro:AddCallback(
         if fData._ASTRO_quillPenTimeout and fData._ASTRO_quillPenPlayer ~= nil then
             local player = fData._ASTRO_quillPenPlayer
             local penNum = player:GetCollectibleNum(Astro.Collectible.QUILL_PEN)
-            projectile.CollisionDamage = player.Damage * (penNum - 0.425)
+            projectile.CollisionDamage = player.Damage * DAMAGE_MULTI
 
             fData._ASTRO_quillPenTimeout = fData._ASTRO_quillPenTimeout - 1
             if fData._ASTRO_quillPenTimeout < 0 then
