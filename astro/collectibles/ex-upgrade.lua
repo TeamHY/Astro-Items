@@ -79,6 +79,10 @@ Astro.UPGRADE_LIST = {
     [Astro.Collectible.RED_CUBE] = { Id = Astro.Collectible.BLACK_CUBE, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_SINUS_INFECTION] = { Id = Astro.Collectible.ACUTE_SINUSITIS, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_CHAMPION_BELT] = { Id = Astro.Collectible.TYRANTS_BELT, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_ROSARY] = { Id = Astro.Collectible.LUXURY_ROSARY, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_LUMP_OF_COAL] = { Id = Astro.Collectible.MINERAL_SHARD, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_LEAD_PENCIL] = { Id = Astro.Collectible.QUILL_PEN, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_SERPENTS_KISS] = { Id = Astro.Collectible.SERPENTS_KISS_EX, Chance = 0.5 },
 }
 
 ---

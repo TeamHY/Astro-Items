@@ -3,6 +3,7 @@ local isc = require("astro.lib.isaacscript-common")
 Astro.Collectible.CHUBBYS_HEAD = Isaac.GetItemIdByName("Chubby's Head")
 Astro.Collectible.SLEEPING_PUPPY = Isaac.GetItemIdByName("Sleeping Puppy")
 Astro.Collectible.CHUBBYS_TAIL = Isaac.GetItemIdByName("Chubby's Tail")
+Astro.Collectible.CHUBBYS_PAW = Isaac.GetItemIdByName("Chubby's Paw")
 
 local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
@@ -73,6 +74,19 @@ Astro:AddCallback(
                 -- Stacks
                 "Stacks increase chance",
                 "en_us"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.CHUBBYS_PAW,
+                "처비의 발",
+                "건드리지 마!",
+                "{{BoneHeart}} 사용 시 최대 체력 1칸을 뼈하트 2칸으로 바꿉니다."
+            )
+            Astro.EID:AddCollectible(
+                Astro.Collectible.CHUBBYS_PAW,
+                "Chubby's Paw", "",
+                "{{BoneHeart}} Converts 1 heart container into 3 Bone Hearts",
+                nil, "en_us"
             )
         end
     end
@@ -316,4 +330,33 @@ Astro:AddCallbackCustom(
             end
         end
     end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_USE_ITEM,
+    ---@param collectibleID CollectibleType
+    ---@param rngObj RNG
+    ---@param player EntityPlayer
+    ---@param useFlags UseFlag
+    ---@param activeSlot ActiveSlot
+    ---@param varData integer
+    function(_, collectibleID, rngObj, player, useFlags, activeSlot, varData)
+        if player:GetMaxHearts() < 1 then
+            return {
+                Discharge = false,
+                Remove = false,
+                ShowAnim = false,
+            }
+        end
+
+        player:AddMaxHearts(-2)
+        player:AddBoneHearts(2)
+
+        return {
+            Discharge = true,
+            Remove = false,
+            ShowAnim = true,
+        }
+    end,
+    Astro.Collectible.CHUBBYS_PAW
 )
