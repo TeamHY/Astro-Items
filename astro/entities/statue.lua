@@ -73,6 +73,7 @@ Astro:AddCallback(
     function(_, npc)
         if npc.Variant == StatueVariant and npc.Type == StatueType then
             npc:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+            npc:AddEntityFlags(EntityFlag.FLAG_NO_TARGET)
             npc.EntityCollisionClass = EntityCollisionClass.ENTCOLL_ALL
             npc:GetData()["Astro_InitPosition"] = npc.Position
         end
