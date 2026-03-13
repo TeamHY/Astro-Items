@@ -8,6 +8,8 @@ local CONTACT_DEAL = 12    -- 접촉 피해량
 
 local DROP_CHANCE = 0.2    -- 블랙하트 확률
 
+local DROP_COOLDOWN = 120    -- 블랙하트 소환 쿨타임 (60프레임 기준)
+
 ---
 
 Astro:AddCallback(
@@ -75,6 +77,8 @@ Astro:AddCallback(
 
             pData._ASTRO_serpentExFrameCooldown = 0
         end
+
+        Astro.Data.SerpentExBlack = 0
     end
 )
 
@@ -86,6 +90,10 @@ Astro:AddCallback(
         
         if pData._ASTRO_serpentExFrameCooldown then
             pData._ASTRO_serpentExFrameCooldown = math.max(0, pData._ASTRO_serpentExFrameCooldown - 1)
+        end
+
+        if Astro.Data.SerpentExBlack then
+            Astro.Data.SerpentExBlack = math.max(0, Astro.Data.SerpentExBlack - 1)
         end
     end
 )
@@ -108,21 +116,21 @@ Astro:AddCallback(
 
         collider:TakeDamage(CONTACT_DEAL * collectibleNum, DamageFlag.DAMAGE_POISON_BURN, EntityRef(player), 0)
         collider:AddPoison(EntityRef(player), 300, player.Damage, true)
-        cData._ASTRO_stringrayPoison = true
     end
 )
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_NPC_DEATH,
-    ---@param entityNPC EntityNPC
-    function(_, entityNPC)
-        local cData = entityNPC:GetData()
+    ---@param npc EntityNPC
+    function(_, npc)
+        for i = 1, Game():GetNumPlayers() do
+            if Astro:HasCollectible(Astro.Collectible.SERPENTS_KISS_EX) and npc:GetEntityFlags(EntityFlag.FLAG_POISON) then
+                local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.SERPENTS_KISS_EX)
 
-        if Astro:HasCollectible(Astro.Collectible.SERPENTS_KISS_EX) and cData._ASTRO_stringrayPoison then
-            local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.SERPENTS_KISS_EX)
-
-            if rng:RandomFloat() < DROP_CHANCE then
-                Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, 6, entityNPC.Position, Vector(0, 0), entityNPC)
+                if rng:RandomFloat() < DROP_CHANCE and Astro.Data.SerpentExBlack <= 0 then
+                    Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, 6, npc.Position, Vector(0, 0), npc)
+                    Astro.Data.SerpentExBlack = DROP_COOLDOWN
+                end
             end
         end
     end

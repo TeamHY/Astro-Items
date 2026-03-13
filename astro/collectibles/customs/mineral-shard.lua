@@ -55,7 +55,7 @@ Astro:AddCallback(
         local player = Astro:GetPlayerFromEntity(tear)
         
         if player and player:HasCollectible(Astro.Collectible.MINERAL_SHARD) then
-            if not player:HasCollelctible(CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE) and tear.Variant == TearVariant.BLUE or tear.Variant == TearVariant.BLOOD then
+            if not player:HasCollectible(CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE) and tear.Variant == TearVariant.BLUE or tear.Variant == TearVariant.BLOOD then
                 tear:ChangeVariant(TearVariant.DIAMOND)
             end
 

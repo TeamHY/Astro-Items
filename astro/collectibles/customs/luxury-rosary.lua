@@ -54,9 +54,9 @@ Astro:AddCallback(
                 if Astro.IsFight then
                     if
                         i ~= CollectibleType.COLLECTIBLE_SACRED_HEART
-                        or i ~= CollectibleType.COLLECTIBLE_HOLY_MANTLE
-                        or i ~= CollectibleType.COLLECTIBLE_GODHEAD
-                        or i ~= CollectibleType.COLLECTIBLE_SACRED_ORB
+                        and i ~= CollectibleType.COLLECTIBLE_HOLY_MANTLE
+                        and i ~= CollectibleType.COLLECTIBLE_GODHEAD
+                        and i ~= CollectibleType.COLLECTIBLE_SACRED_ORB
                     then
                         table.insert(HAS_ANGEL_TAG, i)
                     end

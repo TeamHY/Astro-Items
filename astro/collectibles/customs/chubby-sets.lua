@@ -309,6 +309,36 @@ Astro:AddCallback(
     end
 )
 
+Astro:AddCallback(
+    ModCallbacks.MC_USE_ITEM,
+    ---@param collectibleID CollectibleType
+    ---@param rngObj RNG
+    ---@param player EntityPlayer
+    ---@param useFlags UseFlag
+    ---@param activeSlot ActiveSlot
+    ---@param varData integer
+    function(_, collectibleID, rngObj, player, useFlags, activeSlot, varData)
+        if player:GetMaxHearts() < 1 then
+            return {
+                Discharge = false,
+                Remove = false,
+                ShowAnim = false,
+            }
+        end
+
+        player:AddHearts(-2)
+        player:AddMaxHearts(-2)
+        player:AddBoneHearts(2)
+
+        return {
+            Discharge = true,
+            Remove = false,
+            ShowAnim = true,
+        }
+    end,
+    Astro.Collectible.CHUBBYS_PAW
+)
+
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
     ---@param player EntityPlayer
@@ -330,33 +360,4 @@ Astro:AddCallbackCustom(
             end
         end
     end
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_USE_ITEM,
-    ---@param collectibleID CollectibleType
-    ---@param rngObj RNG
-    ---@param player EntityPlayer
-    ---@param useFlags UseFlag
-    ---@param activeSlot ActiveSlot
-    ---@param varData integer
-    function(_, collectibleID, rngObj, player, useFlags, activeSlot, varData)
-        if player:GetMaxHearts() < 1 then
-            return {
-                Discharge = false,
-                Remove = false,
-                ShowAnim = false,
-            }
-        end
-
-        player:AddMaxHearts(-2)
-        player:AddBoneHearts(2)
-
-        return {
-            Discharge = true,
-            Remove = false,
-            ShowAnim = true,
-        }
-    end,
-    Astro.Collectible.CHUBBYS_PAW
 )
