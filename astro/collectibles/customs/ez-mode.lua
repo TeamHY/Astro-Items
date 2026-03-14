@@ -109,7 +109,7 @@ Astro:AddCallback(
             end
         end
 
-        if cacheFlag == CacheFlag.CACHE_LUCK then
+        if player:HasCollectible(Astro.Collectible.EZ_MODE) and cacheFlag == CacheFlag.CACHE_LUCK then
             player.Luck = player.Luck - 1
         end
     end

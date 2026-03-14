@@ -12,6 +12,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_HOLY_LIGHT].Chance * 100)
+            local CRAFT_HINT = {
+                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible208}}{{ColorYellow}}신성한 빛{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible208}} {{ColorYellow}}Holy Light{{CR}} appears"
+            }
+            Astro.EID:AddCraftHint(Astro.Collectible.DIVINE_LIGHT, CRAFT_HINT)
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.DIVINE_LIGHT,
                 "신의 조명",
@@ -55,7 +62,9 @@ Astro:AddCallback(
 
                 for _ = 1, player:GetCollectibleNum(Astro.Collectible.DIVINE_LIGHT) do
                     if rng:RandomFloat() < SPAWN_CHANCE + player.Luck * LUCK_MULTIPLY then
-                        Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.CRACK_THE_SKY, 0, entity.Position, Vector.Zero, player)
+                        local light = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.CRACK_THE_SKY, 1, entity.Position, Vector.Zero, player)
+                        light.Parent = player
+                        light.CollisionDamage = player.Damage * 3
                     end
                 end
             end
