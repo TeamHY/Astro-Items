@@ -33,13 +33,6 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_D8].Chance * 100)
-            local CRAFT_HINT = {
-                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible406}}{{ColorYellow}}8면체 주사위{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
-                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible406}} {{ColorYellow}}D8{{CR}} appears"
-            }
-            Astro.EID:AddCraftHint(Astro.Collectible.MEGA_D8, CRAFT_HINT)
-
             local maxString = Astro.IsFight and "2" or "3"
 
             Astro.EID:AddCollectible(

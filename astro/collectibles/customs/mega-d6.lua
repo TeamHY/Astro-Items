@@ -12,14 +12,7 @@ Astro:AddCallback(
         if EID then
             local rgonWarning = REPENTOGON and "" or "#!!! {{ColorError}}REPENTOGON이 없으면 작동하지 않습니다.#"
             local rgonWarningENG = REPENTOGON and "" or "#!!! {{ColorError}}Does not work without REPENTOGON.#"
-
-            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_D6].Chance * 100)
-            local CRAFT_HINT = {
-                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible105}}{{ColorYellow}}주사위{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
-                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible105}} {{ColorYellow}}The D6{{CR}} appears"
-            }
-            Astro.EID:AddCraftHint(Astro.Collectible.MEGA_D6, CRAFT_HINT)
-
+            
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "대왕 주사위",

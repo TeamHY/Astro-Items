@@ -133,6 +133,18 @@ local function TryUpgrade(selectedCollectible, seed)
     return nil
 end
 
+local function MakeUpgradeDesc(table, id)
+    local upgradeChance = string.format("%.f", table[id].Chance * 100)
+    local eidObj = EID:getDescriptionObj(5, 100, id)
+    local itemIconAndName = "{{Collectible" .. id .."}} {{ColorYellow}}" .. eidObj.Name .. "{{CR}}"
+    local craftHint = {
+        ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} " .. itemIconAndName .. " 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
+        ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when " .. itemIconAndName .. " appears"
+    }
+
+    return craftHint
+end
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
@@ -167,5 +179,25 @@ Astro:AddCallback(
                 return false
             end
         )
+
+        if EID then
+            for targetItem, newItem in pairs(Astro.PLANETARIUM_UPGRADE_LIST) do
+                if newItem.Chance == 0 then break end
+
+                Astro.EID:AddCraftHint(newItem.Id, MakeUpgradeDesc(Astro.PLANETARIUM_UPGRADE_LIST, targetItem))
+            end
+
+            for targetItem, newItem in pairs(Astro.PLANET_UPGRADE_LIST) do
+                if newItem.Chance == 0 then break end
+                
+                Astro.EID:AddCraftHint(newItem.Id, MakeUpgradeDesc(Astro.PLANET_UPGRADE_LIST, targetItem))
+            end
+
+            for targetItem, newItem in pairs(Astro.UPGRADE_LIST) do
+                if newItem.Chance == 0 then break end
+                
+                Astro.EID:AddCraftHint(newItem.Id, MakeUpgradeDesc(Astro.UPGRADE_LIST, targetItem))
+            end
+        end
     end
 )

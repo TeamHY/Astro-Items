@@ -12,13 +12,6 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            local upgradeChance = string.format("%.f", Astro.UPGRADE_LIST[CollectibleType.COLLECTIBLE_GUPPYS_COLLAR].Chance * 100)
-            local CRAFT_HINT = {
-                ["ko_kr"] = "#{{ASTRO_EID_INDICATOR}} {{Collectible212}}{{ColorYellow}}구피의 목걸이{{CR}} 등장 시 " .. upgradeChance .. "% 확률로 이 아이템으로 업그레이드됨",
-                ["en_us"] = "#{{ASTRO_EID_INDICATOR}} " .. upgradeChance .. "% chance to upgrade to this item when {{Collectible212}} {{ColorYellow}}Guppy's Collar{{CR}} appears"
-            }
-            Astro.EID:AddCraftHint(Astro.Collectible.GUPPYS_NAME_TAG, CRAFT_HINT)
-
             local surviveChance = string.format("%.f", SURVIVAL_CHANCE * 100)
 
             Astro.EID:AddCollectible(
