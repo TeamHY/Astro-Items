@@ -124,12 +124,20 @@ Astro:AddCallback(
     ---@param npc EntityNPC
     function(_, npc)
         for i = 1, Game():GetNumPlayers() do
-            if Astro:HasCollectible(Astro.Collectible.SERPENTS_KISS_EX) and npc:GetEntityFlags(EntityFlag.FLAG_POISON) then
-                local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.SERPENTS_KISS_EX)
+            local player = Isaac.GetPlayer(i - 1)
 
-                if rng:RandomFloat() < DROP_CHANCE and Astro.Data.SerpentExBlack <= 0 then
-                    Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, 6, npc.Position, Vector(0, 0), npc)
-                    Astro.Data.SerpentExBlack = DROP_COOLDOWN
+            if player:HasCollectible(Astro.Collectible.SERPENTS_KISS_EX) and npc:GetEntityFlags() & EntityFlag.FLAG_POISON == EntityFlag.FLAG_POISON then
+                local rng = player:GetCollectibleRNG(Astro.Collectible.SERPENTS_KISS_EX)
+
+                if rng:RandomFloat() < DROP_CHANCE then
+                    if Astro.IsFight then
+                        if Astro.Data.SerpentExBlack <= 0 then
+                            Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, 6, npc.Position, Vector(0, 0), npc)
+                            Astro.Data.SerpentExBlack = DROP_COOLDOWN
+                        end
+                    else
+                        Isaac.Spawn(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_HEART, 6, npc.Position, Vector(0, 0), npc)
+                    end
                 end
             end
         end
