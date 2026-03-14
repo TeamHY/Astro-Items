@@ -31,6 +31,24 @@ Astro:AddCallback(
     end
 )
 
+-- https://github.com/TeamHY/Astrobirth/issues/910
+local function CheckKillSwitch()
+    local room = Game():GetRoom()
+    local width = room:GetGridWidth()
+    local height = room:GetGridHeight()
+    
+    for i = 0, width * height - 1 do
+        local gridEntity = room:GetGridEntity(i)
+        local plate = gridEntity and gridEntity:ToPressurePlate()
+        
+        if plate and plate:GetVariant() == 9 then
+            return true
+        end
+    end
+
+    return false
+end
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function()
@@ -50,7 +68,7 @@ Astro:AddCallback(
                 local rng = player:GetCollectibleRNG(Astro.Collectible.ALCOHOL_BOTTLE)
                 local float = rng:RandomFloat()
                 
-                if float < chance then
+                if float < chance and not CheckKillSwitch() then
                     currentRoom:RespawnEnemies()
 
                     local writableRoomDesc = level:GetRoomByIdx(level:GetCurrentRoomIndex())
