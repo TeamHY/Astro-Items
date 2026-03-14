@@ -890,6 +890,24 @@
 		<info text="Increases champion monster spawns by 15%"/>
 		<info text="Increases damage taken by the champion monster"/>
 	</collectible>
+	<collectible id="232">
+		<info text="Chance to reroll low quality items into other items toward the Seraphim transformation"/>
+	</collectible>
+	<collectible id="233">
+		<info text="Makes shots increase in damage and size the farther they travel"/>
+		<info text="Makes tears increase in damage and size the further they are from the Isaac"/>
+	</collectible>
+	<collectible id="234">
+		<info text="Chance to fire poison tears"/>
+		<info text="Making contact with an enemy also applies poison"/>
+		<info text="Enemies poisoned have a chance to drop a black heart when killed"/>
+	</collectible>
+	<collectible id="235">
+		<info text="Permanently removes 1 HP to grant 2 bone hearts"/>
+	</collectible>
+	<collectible id="236">
+		<info text="Every 15 shots, fire a burst of Dogma's feathers"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

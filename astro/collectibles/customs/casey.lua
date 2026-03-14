@@ -19,7 +19,7 @@ Astro:AddCallback(
                 Astro.Collectible.CASEY,
                 "케이시",
                 "1루수가 누구야",
-                "눈물을 " .. TEARS_TO_SWING .. "번 발사할 때마다 공격력 x" .. CASEY_DAMAGE .. "의 근접 공격을 발사합니다." ..
+                "눈물을 " .. TEARS_TO_SWING .. "번 발사할 때마다 공격력 x" .. CASEY_DAMAGE .. "의 근접 공격이 나갑니다." ..
                 rgonWarning,
                 -- 중첩 시
                 "중첩 시 피해량이 중첩된 수만큼 " .. CASEY_STACK_DAMAGE .. "배씩 곱연산으로 증가"

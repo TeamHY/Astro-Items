@@ -622,3 +622,9 @@ function Astro:GetDimension(roomDesc)
 
     return -1
 end
+
+-- isc: getLastCollectibleType()
+---@return number
+function Astro:GetMaxCollectibleID()
+    return Isaac.GetItemConfig():GetCollectibles().Size -1
+end
