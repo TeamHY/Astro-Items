@@ -15,6 +15,8 @@ local LUCK_MULTIPLY = 3 / 100 -- 행운 1당 +3%p
 
 local COOLDOWN_TIME = 450 -- 30 프레임 = 1초 (쿨타임)
 
+local LASER_SPEED = 1 -- 1이 기본 속도, 정수로 입력해야합니다. e.g. 2, 3, 4...
+
 ---
 
 Astro.Collectible.SUPER_NOVA = Isaac.GetItemIdByName("Super Nova")
@@ -141,6 +143,24 @@ Astro:AddCallback(
         end
     end,
     LaserVariant.LIGHT_BEAM
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_UPDATE,
+    function()
+        if LASER_SPEED <= 1 then
+            return
+        end
+
+        for _, laser in ipairs(Isaac.FindByType(EntityType.ENTITY_LASER, LaserVariant.LIGHT_BEAM)) do
+            local data = laser:GetData()
+            if data.AstroSuperNovaLaser then
+                for _ = 1, LASER_SPEED do
+                    laser:Update()
+                end
+            end
+        end
+    end
 )
 
 Astro:AddCallback(
