@@ -83,26 +83,26 @@
     </entity>
     <entity name="Albireo Poof" anm2path="effect_albireo.anm2" id="1000" variant="3115" collisionMass="0" friction="1">
     </entity>
-    <entity name="Sloth Statue" anm2path="statues_sloth.anm2" id="70" variant="3100" subtype="0" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Sloth Statue" anm2path="statues_sloth.anm2" id="1000" variant="3116" subtype="0" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Lust Statue" anm2path="statues_lust.anm2" id="70" variant="3100" subtype="1" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Lust Statue" anm2path="statues_lust.anm2" id="1000" variant="3116" subtype="1" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Gluttony Statue" anm2path="statues_gluttony.anm2" id="70" variant="3100" subtype="2" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Gluttony Statue" anm2path="statues_gluttony.anm2" id="1000" variant="3116" subtype="2" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Pride Statue" anm2path="statues_pride.anm2" id="70" variant="3100" subtype="3" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Pride Statue" anm2path="statues_pride.anm2" id="1000" variant="3116" subtype="3" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Wrath Statue" anm2path="statues_wrath.anm2" id="70" variant="3100" subtype="4" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Wrath Statue" anm2path="statues_wrath.anm2" id="1000" variant="3116" subtype="4" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Envy Statue" anm2path="statues_envy.anm2" id="70" variant="3100" subtype="5" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Envy Statue" anm2path="statues_envy.anm2" id="1000" variant="3116" subtype="5" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Greed Statue" anm2path="statues_greed.anm2" id="70" variant="3100" subtype="6" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Greed Statue" anm2path="statues_greed.anm2" id="1000" variant="3116" subtype="6" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Greedier Statue" anm2path="statues_greedier.anm2" id="70" variant="3100" subtype="7" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Greedier Statue" anm2path="statues_greedier.anm2" id="1000" variant="3116" subtype="7" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Treasure Statue" anm2path="statues_treasure.anm2" id="70" variant="3100" subtype="8" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Treasure Statue" anm2path="statues_treasure.anm2" id="1000" variant="3116" subtype="8" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Planetarium Statue" anm2path="statues_planetarium.anm2" id="70" variant="3100" subtype="9" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Planetarium Statue" anm2path="statues_planetarium.anm2" id="1000" variant="3116" subtype="9" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
-    <entity name="Duality Statue" anm2path="statues_duality.anm2" id="70" variant="3100" subtype="10" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
+    <entity name="Duality Statue" anm2path="statues_duality.anm2" id="1000" variant="3116" subtype="10" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
 </entities>
