@@ -36,6 +36,25 @@ Astro:AddCallback(
         playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
 
         Astro.Data.GraduationCertificateUsed = true
+        Astro.Data.GraduationCertificateItems = {}
+
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            local inventory = Astro:getPlayerInventory(player, false)
+
+            for _, itemID in ipairs(inventory) do
+                if itemID == Astro.Collectible.GRADUATION_CERTIFICATE then
+                    goto continue
+                end
+
+                if Astro:Contain(Astro.Data.GraduationCertificateItems, itemID) then
+                    goto continue
+                end
+
+                table.insert(Astro.Data.GraduationCertificateItems, itemID)
+                ::continue::
+            end
+        end
 
         return {
             Discharge = true,
@@ -47,13 +66,36 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_PICKUP_INIT,
-    ---@param pickup EntityPickup
-    function(_, pickup)
-        if Astro.Data.GraduationCertificateUsed and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE then
-            if not Astro:HasCollectible(pickup.SubType) then
-                pickup:Remove()
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        if not Astro.Data.GraduationCertificateUsed then
+            return
+        end
+
+        local entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
+
+        table.sort(
+        entities,
+            function(a, b)
+                if a.Position.Y == b.Position.Y then
+                    return a.Position.X < b.Position.X
+                end
+                return a.Position.Y < b.Position.Y
             end
+        )
+
+        for _, entity in ipairs(entities) do
+            local pickup = entity:ToPickup() ---@cast pickup -nil
+
+            if #Astro.Data.GraduationCertificateItems == 0 then
+                pickup:Remove()
+                goto continue
+            end
+
+            local itemID = Astro.Data.GraduationCertificateItems[1]
+            pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, itemID, true)
+            table.remove(Astro.Data.GraduationCertificateItems, 1)
+            ::continue::
         end
     end
 )

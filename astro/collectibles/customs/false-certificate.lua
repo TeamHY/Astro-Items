@@ -52,7 +52,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_IV_BAG, --135
             CollectibleType.COLLECTIBLE_REMOTE_DETONATOR, --137
             CollectibleType.COLLECTIBLE_BLOODY_LUST, --157
-            CollectibleType.COLLECTIBLE_SPIRIT_NIGHT, -- 159
+            CollectibleType.COLLECTIBLE_SPIRIT_OF_THE_NIGHT, -- 159
             CollectibleType.COLLECTIBLE_D20, --166
             CollectibleType.COLLECTIBLE_HARLEQUIN_BABY, --167
             CollectibleType.COLLECTIBLE_STEM_CELLS, --176
@@ -71,7 +71,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_BODY, --334
             --CollectibleType.COLLECTIBLE_DEAD_EYE, --373
             CollectibleType.COLLECTIBLE_MARKED, --394
-            CollectibleType.COLLECTIBLE_MAW_OF_VOID, --399
+            CollectibleType.COLLECTIBLE_MAW_OF_THE_VOID, --399
             CollectibleType.COLLECTIBLE_LUSTY_BLOOD, --411
             CollectibleType.COLLECTIBLE_CAMBION_CONCEPTION, --412
             CollectibleType.COLLECTIBLE_KIDNEY_BEAN, --421
@@ -204,6 +204,11 @@ Astro:AddCallback(
         playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
 
         Astro.Data.FalseCertificateUsed = true
+        Astro.Data.FalseCertificateItems = {}
+
+        for i = 1, #FALSE_CERTIFICATE_ITEMS do
+            table.insert(Astro.Data.FalseCertificateItems, FALSE_CERTIFICATE_ITEMS[i])
+        end
 
         return {
             Discharge = true,
@@ -215,13 +220,36 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_PICKUP_INIT,
-    ---@param pickup EntityPickup
-    function(_, pickup)
-        if Astro.Data.FalseCertificateUsed and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE then             
-            if not Astro:Contain(FALSE_CERTIFICATE_ITEMS, pickup.SubType) then
-                pickup:Remove()
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function(_)
+        if not Astro.Data.FalseCertificateUsed then
+            return
+        end
+
+        local entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
+
+        table.sort(
+        entities,
+            function(a, b)
+                if a.Position.Y == b.Position.Y then
+                    return a.Position.X < b.Position.X
+                end
+                return a.Position.Y < b.Position.Y
             end
+        )
+
+        for _, entity in ipairs(entities) do
+            local pickup = entity:ToPickup() ---@cast pickup -nil
+
+            if #Astro.Data.FalseCertificateItems == 0 then
+                pickup:Remove()
+                goto continue
+            end
+
+            local itemID = Astro.Data.FalseCertificateItems[1]
+            pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, itemID, true)
+            table.remove(Astro.Data.FalseCertificateItems, 1)
+            ::continue::
         end
     end
 )
