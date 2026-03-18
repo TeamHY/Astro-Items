@@ -12,6 +12,7 @@ Astro = isc:upgradeMod(mod, { isc.ISCFeature.PLAYER_INVENTORY, isc.ISCFeature.RO
 Astro.HiddenItemManager = hiddenItemManager
 Astro.SaveManager = saveManager
 Astro.DDSMyMod = mod
+Astro.Inspect = require("astro.lib.inspect")
 
 local function GetCurrentModPath()
 	if debug then
