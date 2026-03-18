@@ -161,7 +161,7 @@ return {
  -- [892] = "설명 분리됨",
     [893] = "Rerolls room items to any transformation items",
     [894] = "!!! +2 {{Collectible207}} Ball of Bandages on first pickup#Spawns Ball of Bandages on stage entry#!!! Amount: ({{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}} count + {{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}} count)",
-    [895] = "Teleports to room with held items#Choosing an item from this floor teleports Isaac back to the room he came from",
+ -- [895] = "설명 분리됨",
  -- [896] = "설명 분리됨",
  -- [897] = "설명 분리됨",
     [898] = "Spawns sticky nickel that disappears after 10 seconds on hit#Turns summoned sticky nickels into giga bombs that explode on use",

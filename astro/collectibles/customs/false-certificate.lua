@@ -1,3 +1,5 @@
+local isc = require("astro.lib.isaacscript-common")
+
 Astro.Collectible.FALSE_CERTIFICATE = Isaac.GetItemIdByName("False Certificate")
 
 local FALSE_CERTIFICATE_ITEMS = {}
@@ -17,8 +19,7 @@ Astro:AddCallback(
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.FALSE_CERTIFICATE,
-                "False Certificate",
-                "",
+                "False Certificate", "",
                 "{{UltraSecretRoom}} Teleports Isaac to a floor that contains every item of ultra secret room pool in the game" ..
                 "#Choosing an item from this floor teleports Isaac back to the room he came from",
                 nil, "en_us"
@@ -167,11 +168,9 @@ Astro:AddCallback(
             Astro.Collectible.DEATHS_EYES,
             Astro.Collectible.DUALITY_LIGHT_AND_DARKNESS,
             Astro.Collectible.ENTOMA_VASILISSA_ZETA,
-            Astro.Collectible.FORBIDDEN_DICE,
             Astro.Collectible.LEGACY,
             Astro.Collectible.MEGA_D6,
             Astro.Collectible.PURE_LOVE,
-            Astro.Collectible.RESTOCK_DICE,
             Astro.Collectible.STAIRWAY_TO_HELL,
         }
 
@@ -179,6 +178,8 @@ Astro:AddCallback(
             for i = 1, #FIGHT_BAN do
                 table.insert(FALSE_CERTIFICATE_ITEMS, FIGHT_BAN[i])
             end
+
+            table.sort(FALSE_CERTIFICATE_ITEMS)
         end
     end
 )
@@ -188,6 +189,8 @@ Astro:AddCallback(
     function(_, isContinued)
         if not isContinued then
             Astro.Data.FalseCertificateUsed = false
+            Astro.Data.FalseCertificateItems = {}
+            Astro.Data.FalseCertificateFloor = nil
         end
     end
 )
@@ -201,22 +204,36 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
-        playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
+        if collectibleID == Astro.Collectible.FALSE_CERTIFICATE then
+            playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
 
-        Astro.Data.FalseCertificateUsed = true
-        Astro.Data.FalseCertificateItems = {}
+            Astro.Data.FalseCertificateUsed = true
+            Astro.Data.FalseCertificateItems = Astro.Data.FalseCertificateItems or {}
 
-        for i = 1, #FALSE_CERTIFICATE_ITEMS do
-            table.insert(Astro.Data.FalseCertificateItems, FALSE_CERTIFICATE_ITEMS[i])
+            local level = Game():GetLevel()
+            local currentFloor = level:GetAbsoluteStage()
+            
+            if not Astro.Data.FalseCertificateFloor or Astro.Data.FalseCertificateFloor ~= currentFloor then
+                Astro.Data.FalseCertificateItems = {}
+
+                for i = 1, #FALSE_CERTIFICATE_ITEMS do
+                    table.insert(Astro.Data.FalseCertificateItems, FALSE_CERTIFICATE_ITEMS[i])
+                end
+            end
+
+            Astro.Data.FalseCertificateFloor = currentFloor
+            
+            return {
+                Discharge = true,
+                Remove = true,
+                ShowAnim = true,
+            }
+        elseif collectibleID == CollectibleType.COLLECTIBLE_FORGET_ME_NOW or collectibleID == CollectibleType.COLLECTIBLE_R_KEY then
+            Astro.Data.FalseCertificateUsed = false
+            Astro.Data.FalseCertificateItems = {}
+            Astro.Data.FalseCertificateFloor = nil
         end
-
-        return {
-            Discharge = true,
-            Remove = true,
-            ShowAnim = true,
-        }
-    end,
-    Astro.Collectible.FALSE_CERTIFICATE
+    end
 )
 
 Astro:AddCallback(
@@ -229,7 +246,7 @@ Astro:AddCallback(
         local entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
 
         table.sort(
-        entities,
+            entities,
             function(a, b)
                 if a.Position.Y == b.Position.Y then
                     return a.Position.X < b.Position.X
@@ -238,28 +255,38 @@ Astro:AddCallback(
             end
         )
 
-        for _, entity in ipairs(entities) do
-            local pickup = entity:ToPickup() ---@cast pickup -nil
+        local level = Game():GetLevel()
+        local room = level:GetCurrentRoom()
+        
+        if room:IsFirstVisit() then
+            for _, entity in ipairs(entities) do
+                local pickup = entity:ToPickup() ---@cast pickup -nil
 
-            if #Astro.Data.FalseCertificateItems == 0 then
-                pickup:Remove()
-                goto continue
+                if #Astro.Data.FalseCertificateItems == 0 then
+                    pickup:Remove()
+                    goto continue
+                end
+
+                local itemID = Astro.Data.FalseCertificateItems[1]
+                pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, itemID, true)
+                table.remove(Astro.Data.FalseCertificateItems, 1)
+                
+                ::continue::
             end
-
-            local itemID = Astro.Data.FalseCertificateItems[1]
-            pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, itemID, true)
-            table.remove(Astro.Data.FalseCertificateItems, 1)
-            ::continue::
         end
     end
 )
 
-Astro:AddCallback(
-    Astro.Callbacks.POST_ITEM_PICKUP,
+Astro:AddCallbackCustom(
+    isc.ModCallbackCustom.PRE_ITEM_PICKUP,
     ---@param player EntityPlayer
     ---@param pickingUpItem { itemType: ItemType, subType: CollectibleType | TrinketType }
     function(_, player, pickingUpItem)
-        if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
+        local level = Game():GetLevel()
+        local roomDesc = level:GetCurrentRoomDesc()
+        local currentDimension = Astro:GetDimension(roomDesc)
+
+        if currentDimension == 2 and pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
             Astro.Data.FalseCertificateUsed = false
         end
     end
