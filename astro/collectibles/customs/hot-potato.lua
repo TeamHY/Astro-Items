@@ -18,7 +18,6 @@ Astro:AddCallback(
                 "화젯거리",
                 "↑ {{Bomb}}폭탄 +2" ..
                 "#{{Collectible40}} 클리어하지 않은 방에서 " .. string.format("%.f", EXPLOSION_INTERVAL / 30) .. "초마다 캐릭터의 위치에 공격력 " .. EXPLOSION_DAMAGE .. "의 폭발을 일으킵니다." ..
-                "#{{Blank}} {{ColorGray}}(2챕터에서 발동하지 않음){{CR}}" ..
                 "#{{Blank}} {{ColorGray}}(자해 없음){{CR}}",
                 -- 중첩 시
                 "중첩한 수만큼 폭발을 일으킴"
@@ -30,7 +29,6 @@ Astro:AddCallback(
                 "",
                 "↑ {{Bomb}} +2 Bombs" ..
                 "#{{Collectible40}} Explodes at character position, dealing " .. EXPLOSION_DAMAGE .. " damage every " .. string.format("%.f", EXPLOSION_INTERVAL / 30) .. " seconds in an uncleared room" ..
-                "#{{Blank}} {{ColorGray}}(Doesn't trigger in chapter 2){{CR}}" ..
                 "#{{Blank}} {{ColorGray}}(Immune to explosion damage){{CR}}",
                 -- Stacks
                 "Causes an explosion equal to the number of stacks",
@@ -48,12 +46,6 @@ Astro:AddCallback(
             return
         end
 
-        local stage = Game():GetLevel():GetAbsoluteStage()
-
-        if (stage == LevelStage.STAGE2_1 or stage == LevelStage.STAGE2_2) and not Game():IsGreedMode() then
-            return
-        end
-
         local data = Astro:GetPersistentPlayerData(player)
         local room = Game():GetRoom()
 
@@ -61,6 +53,7 @@ Astro:AddCallback(
 
         if data.hotPotatoCounter >= EXPLOSION_INTERVAL and not room:IsClear() then
             local num = player:GetCollectibleNum(Astro.Collectible.HOT_POTATO)
+            player:SetMinDamageCooldown(5)
             Game():BombExplosionEffects(player.Position, EXPLOSION_DAMAGE * num, player:GetBombFlags(), nil, player)
 
             data.hotPotatoCounter = 0
