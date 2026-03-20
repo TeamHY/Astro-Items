@@ -9,9 +9,9 @@ Astro:AddCallback(
                 Astro.Collectible.SCHRODINGERS_CAT,
                 "슈뢰딩거의 고양이",
                 "살아있으면서 죽어있는",
-                "{{Guppy}} 스테이지 진입 시 50%의 확률로 Guppy 세트 +1" ..
+                "{{Guppy}} 스테이지 진입 시 50%의 확률로 Guppy 세트 +1",
                 -- 중첩 시
-                "추가되는 Guppy 세트가 중첩된 수만큼 +1"
+                "중첩 시 추가되는 Guppy 세트 개수 증가"
             )
 
             Astro.EID:AddCollectible(
