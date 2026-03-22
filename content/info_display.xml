@@ -908,6 +908,16 @@
 	<collectible id="236">
 		<info text="Every 15 shots, fire a burst of Dogma's feathers"/>
 	</collectible>
+	<collectible id="237">
+		<info text="Chance for enemies to take damage at 4x the amount"/>
+	</collectible>
+	<collectible id="238">
+		<info text="Chance for enemies to take damage at 3.2x the amount"/>
+	</collectible>
+	<collectible id="239">
+		<info text="Choose between damage mode and tears mode"/>
+		<info text="Stats increase based on the selected mode while holding the item"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

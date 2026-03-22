@@ -911,6 +911,16 @@
 	<collectible id="236">
 		<info text="15번째 공격마다 도그마의 깃털 다발을 발사합니다"/>
 	</collectible>
+	<collectible id="237">
+		<info text="적들이 피해를 받을 때 확률적으로 4배의 피해량으로 받습니다"/>
+	</collectible>
+	<collectible id="238">
+		<info text="적들이 피해를 받을 때 확률적으로 3.2배의 피해량으로 받습니다"/>
+	</collectible>
+	<collectible id="239">
+		<info text="공격력 모드와 공격 속도 모드를 고를 수 있습니다"/>
+		<info text="소지 중일 때 선택한 모드에 따라 능력치가 증가합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

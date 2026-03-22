@@ -235,6 +235,9 @@
 	<passive cache="tearflag tearcolor" gfx="Serpent's Kiss EX.png" quality="4" shopprice="15" name="Serpent's Kiss EX" hidden="true" description="Don't think about getting away" id="234" />
 	<active gfx="Chubby's Paw.png" quality="3" maxcharges="6" shopprice="15" name="Chubby's Paw" description="Don't touch it!" id="235" />
 	<passive gfx="Quill Pen.png" quality="3" shopprice="15" name="Quill Pen" hidden="true" description="Hand of heaven" id="236" />
+	<passive gfx="Golden Apple.png" quality="5" devilprice="2" shopprice="20" name="Golden Apple" hidden="true" description="Who is the most beautiful goddess?" id="237" />
+	<passive gfx="Gold Tooth.png" quality="5" devilprice="2" shopprice="15" name="Gold Tooth" hidden="true" description="I’ll chew you up" id="238" />
+	<active cache="firedelay damage" gfx="Forbidden Fruit.png" quality="3" maxcharges="0" devilprice="1" shopprice="15" name="Forbidden Fruit" description="Adam's apple" id="239" />
 	
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

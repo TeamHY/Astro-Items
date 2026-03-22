@@ -183,6 +183,9 @@ require "astro.collectibles.customs.luxury-rosary"
 require "astro.collectibles.customs.mineral-shard"
 require "astro.collectibles.customs.serpents-kiss-ex"
 require "astro.collectibles.customs.quill-pen"
+require "astro.collectibles.customs.golden-apple"
+require "astro.collectibles.customs.gold-tooth"
+require "astro.collectibles.customs.forbidden-fruit"
 
 --#region PLANETARIUM
 
