@@ -2,6 +2,7 @@
 ---@field anm2Path string
 ---@field choiceCount integer
 ---@field itemId CollectibleType
+---@field offset? Vector
 ---@field onChoiceSelected fun(player: EntityPlayer, choice: integer) 선택지가 선택될 때 호출되는 콜백
 
 ---@class MegaUIInstance
@@ -22,6 +23,10 @@ Astro.MegaUI = {}
 function Astro.MegaUI:CreateInstance(config)
     local instance = setmetatable({}, MegaUIInstance)
 
+    if config.offset == nil then
+        config.offset = Vector.Zero
+    end
+
     instance.config = config
     instance.iconSpacing = 32
 
@@ -41,7 +46,7 @@ function Astro.MegaUI:CreateInstance(config)
             if not instance:IsClosing() then
                 instance:CloseUI()
                 instance:ApplyChoice(player)
-                return {Discharge = true, Remove = false, ShowAnim = true} 
+                return {Discharge = true, Remove = false, ShowAnim = true}
             end
 
             return {Discharge = false, Remove = false, ShowAnim = false}
@@ -266,7 +271,7 @@ function MegaUIInstance:Render()
         return
     end
 
-    local uiCenterPosition = Astro:ToScreen(player.Position + Vector(0, -120))
+    local uiCenterPosition = Astro:ToScreen(player.Position + Vector(0, -120) + self.config.offset)
 
     local alpha, scale, bgAlpha
     if self.state.isClosing then

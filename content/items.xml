@@ -25,7 +25,7 @@
 	<passive gfx="Vega.png" quality="4" devilprice="2" shopprice="30" name="Vega" description="The three stars" id="24" />
 	<passive tags="devil" cache="damage tearflag tearcolor" gfx="Cursed Heart.png" quality="3" devilprice="2" name="Cursed Heart" description="Homing shots? + DMG up" id="25" />
 	<passive gfx="Super Magneto.png" quality="4" devilprice="2" shopprice="21" name="Super Magneto" description="Pull" id="26" />
-	<passive gfx="Solar System.png" quality="2" devilprice="1" name="Solar System" description="Homeworld" id="27" />
+	<active gfx="Solar System.png" quality="2" devilprice="1" maxcharges="6" shopprice="15" name="Solar System" description="Homeworld" id="27" />
 	<passive gfx="Ptolemaeus.png" quality="4" devilprice="2" shopprice="40" name="Ptolemaeus" description="Geocentricism" id="28" />
 	<passive cache="firedelay" gfx="Angry Onion.png" quality="2" devilprice="1" name="Angry Onion" description="Tears up!" id="29" />
 	<active gfx="Deep Of Abyss.png" quality="2" devilprice="1" maxcharges="6" shopprice="8" name="Oblivion" description="Into the unconscious" id="30" />
@@ -238,7 +238,7 @@
 	<passive tags="tearsup" cache="firedelay" gfx="Golden Apple.png" quality="5" devilprice="2" shopprice="20" name="Golden Apple" hidden="true" description="Who is the most beautiful goddess?" id="237" />
 	<passive gfx="Gold Tooth.png" quality="5" devilprice="2" shopprice="15" name="Gold Tooth" hidden="true" description="I’ll chew you up" id="238" />
 	<active cache="firedelay damage" gfx="Forbidden Fruit.png" quality="3" maxcharges="0" devilprice="1" shopprice="15" name="Forbidden Fruit" description="Adam's apple" id="239" />
-	
+
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
 	<trinket id="2" gfx="The Left Foot.png" name="The Left Foot" description="The left-foot path reaps dark rewards" />
