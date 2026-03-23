@@ -3,6 +3,7 @@
 ---@field choiceCount integer
 ---@field itemId CollectibleType
 ---@field offset? Vector
+---@field onCheckCondition? fun(player: EntityPlayer): boolean UI를 열 수 있는지 확인하는 콜백. 반환값이 false면 UI가 열리지 않습니다.
 ---@field onChoiceSelected fun(player: EntityPlayer, choice: integer) 선택지가 선택될 때 호출되는 콜백
 
 ---@class MegaUIInstance
@@ -39,6 +40,10 @@ function Astro.MegaUI:CreateInstance(config)
         ---@param activeSlot ActiveSlot
         ---@param varData integer
         function(_, collectible, rng, player, useFlags, activeSlot, varData)
+            if config.onCheckCondition and not config.onCheckCondition(player) then
+                return {Discharge = false, Remove = false, ShowAnim = false}
+            end
+
             if instance:TryOpen(player) then
                 return {Discharge = false, Remove = false, ShowAnim = false}
             end
