@@ -20,6 +20,8 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_PARASITE,
             CollectibleType.COLLECTIBLE_COMPOUND_FRACTURE,
             CollectibleType.COLLECTIBLE_CRICKETS_BODY,
+            CollectibleType.COLLECTIBLE_TWISTED_PAIR,
+            CollectibleType.COLLECTIBLE_INCUBUS,
         }
         
         if EID then
