@@ -151,7 +151,7 @@
 	<active gfx="Birthright - Eden B.png" hidden="true" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Tainted Eden's Frame" description="??!" id="150" />
 	<passive gfx="Purple Candle.png" quality="2" devilprice="1" shopprice="10" blackhearts="2" name="Purple Candle" description="Curse immunity + open one's eyes" id="151" />
 	<passive gfx="Astro Godhead.png" hidden="true" quality="4" devilprice="2" shopprice="50" hearts="99" maxhearts="2" name="Astro Godhead" description="Unrepentant God" id="152" />
-	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="4" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" id="153" />
+	<passive gfx="Astro Sacred Heart.png" hidden="true" quality="5" devilprice="2" shopprice="50" name="Astro Sacred Heart" description="Homing shots + DMG up + extra damage" id="153" />
 	<active cache="damage" gfx="Bonus Potential Cube.png" quality="2" devilprice="1" maxcharges="0" shopprice="10" name="Bonus Potential Cube" description="More potentials" id="154" />
 	<passive gfx="Schrodinger's Cat.png" quality="3" devilprice="1" shopprice="10" name="Schrodinger's Cat" description="Quantum mechanic" id="155" />
 	<passive tags="guppy uniquefamiliar offensive lazarusshared noeden nocantrip quest" hidden="false" gfx="Schrodinger's Cat.png" quality="2" devilprice="1" shopprice="15" name="Guppy Part" description="How much can one cat take?" id="156" />
