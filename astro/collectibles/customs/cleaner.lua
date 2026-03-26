@@ -22,6 +22,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_CRICKETS_BODY,
             CollectibleType.COLLECTIBLE_TWISTED_PAIR,
             CollectibleType.COLLECTIBLE_INCUBUS,
+            CollectibleType.COLLECTIBLE_C_SECTION,
         }
         
         if EID then
