@@ -12,7 +12,7 @@
 	<passive gfx="Casiopea.png" quality="2" devilprice="1" shopprice="10" tags="noeden" name="Casiopea" description="Vanity and conceit" id="11" />
 	<passive gfx="Corvus.png" quality="3" devilprice="1" shopprice="20" tags="noeden" name="Corvus" description="Flutter your wings" id="12" />
 	<passive gfx="Pavo.png" quality="2" devilprice="1" shopprice="15" name="Pavo" description="Graceful poise" id="13" />
-	<passive gfx="Comet.png" quality="5" devilprice="2" shopprice="30" tags="noeden" name="Comet" description="A guest in the night" id="14" />
+	<passive gfx="Comet.png" quality="5" devilprice="2" shopprice="30" tags="noeden" name="Comet" hidden="true" description="A guest in the night" id="14" />
 	<passive tags="tearsup" cache="tearflag firedelay" gfx="Pisces.png" quality="4" devilprice="2" shopprice="20" name="Pisces EX" description="Salmon run" id="15" />
 	<familiar gfx="Gemini.png" quality="4" devilprice="2" shopprice="30" tags="noeden" name="Gemini EX" description="Play nice" id="16" />
 	<passive gfx="Greed.png" quality="0" devilprice="2" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Greed" description="$" id="17" />
