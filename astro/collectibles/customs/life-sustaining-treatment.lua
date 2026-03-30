@@ -9,7 +9,9 @@ Astro:AddCallback(
                 "연명치료",
                 "이토록 시린 아픔만이",
                 "확률적으로 공격력 x3의 적을 즉사시키며 눈물이 10방향으로 퍼지는 공격이 나갑니다." ..
-                "#{{LuckSmall}} 행운 14.5 이상일 때 100% 확률"
+                "#{{LuckSmall}} 행운 14.5 이상일 때 100% 확률" ..
+                "#!!! 원본 아이템의 {{LuckSmall}} 행운 15 이상일 때 25% 확률과 독립 시행으로 적용됩니다.",
+                ""
             )
 
             Astro.EID:AddCollectible(
@@ -18,7 +20,9 @@ Astro:AddCallback(
                 "",
                 "Chance to shoot a needle" ..
                 "#Needles kill normal enemies instantly, bursting them into 10 tears" ..
-                "#{{Damage}} Needles deal 3x Isaac's damage against bosses",
+                "#{{Damage}} Needles deal 3x Isaac's damage against bosses" ..
+                "#{{LuckSmall}} 14.5+ Luck: 100% chance" ..
+                "#!!! This is independent of the original item's 25% chance at 15+ Luck.",
                 nil, "en_us"
             )
 
@@ -56,64 +60,72 @@ Astro:AddCallback(
     end
 )
 
-if REPENTOGON then
-    Astro:AddCallback(
-        ModCallbacks.MC_POST_FIRE_TECH_LASER,
-        ---@param laser EntityLaser
-        function(_, laser)
-            local player = Astro:GetPlayerFromEntity(laser)
-            
-            if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
-                if CheckNeedleChance(player) then
-                    laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    laser.CollisionDamage = laser.CollisionDamage * 3
-                end
-            end
-        end
-    )
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PEFFECT_UPDATE,
+    ---@param player EntityPlayer
+    function(_, player)
+        Astro.HiddenItemManager:CheckStack(player, CollectibleType.COLLECTIBLE_EUTHANASIA, player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) and 1 or 0, "ASTRO_LIFE_SUSTAINING_TREATMENT")
+    end
+) 
 
-    Astro:AddCallback(
-        ModCallbacks.MC_POST_FIRE_TECH_X_LASER,
-        ---@param laser EntityLaser
-        function(_, laser)
-            local player = Astro:GetPlayerFromEntity(laser)
+-- if REPENTOGON then
+--     Astro:AddCallback(
+--         ModCallbacks.MC_POST_FIRE_TECH_LASER,
+--         ---@param laser EntityLaser
+--         function(_, laser)
+--             local player = Astro:GetPlayerFromEntity(laser)
             
-            if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
-                if CheckNeedleChance(player) then
-                    laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    laser.CollisionDamage = laser.CollisionDamage * 3
-                end
-            end
-        end
-    )
+--             if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
+--                 if CheckNeedleChance(player) then
+--                     laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
+--                     laser.CollisionDamage = laser.CollisionDamage * 3
+--                 end
+--             end
+--         end
+--     )
 
-    Astro:AddCallback(
-        ModCallbacks.MC_POST_FIRE_BRIMSTONE_BALL,
-        ---@param laser EntityLaser
-        function(_, laser)
-            local player = Astro:GetPlayerFromEntity(laser)
+--     Astro:AddCallback(
+--         ModCallbacks.MC_POST_FIRE_TECH_X_LASER,
+--         ---@param laser EntityLaser
+--         function(_, laser)
+--             local player = Astro:GetPlayerFromEntity(laser)
             
-            if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
-                if CheckNeedleChance(player) then
-                    laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    laser.CollisionDamage = laser.CollisionDamage * 3
-                end
-            end
-        end
-    )
+--             if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
+--                 if CheckNeedleChance(player) then
+--                     laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
+--                     laser.CollisionDamage = laser.CollisionDamage * 3
+--                 end
+--             end
+--         end
+--     )
 
-    Astro:AddCallback(
-        ModCallbacks.MC_POST_FIRE_SWORD,
-        ---@param knife EntityKnife
-        function(_, knife)
-            local player = Astro:GetPlayerFromEntity(knife)
+--     Astro:AddCallback(
+--         ModCallbacks.MC_POST_FIRE_BRIMSTONE_BALL,
+--         ---@param laser EntityLaser
+--         function(_, laser)
+--             local player = Astro:GetPlayerFromEntity(laser)
             
-            if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
-                if CheckNeedleChance(player) then
-                    knife:AddTearFlags(TearFlags.TEAR_NEEDLE)
-                    knife.CollisionDamage = knife.CollisionDamage * 3
-                end
-            end
-        end
-    )
-end
+--             if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
+--                 if CheckNeedleChance(player) then
+--                     laser:AddTearFlags(TearFlags.TEAR_NEEDLE)
+--                     laser.CollisionDamage = laser.CollisionDamage * 3
+--                 end
+--             end
+--         end
+--     )
+
+--     Astro:AddCallback(
+--         ModCallbacks.MC_POST_FIRE_SWORD,
+--         ---@param knife EntityKnife
+--         function(_, knife)
+--             local player = Astro:GetPlayerFromEntity(knife)
+            
+--             if player ~= nil and player:HasCollectible(Astro.Collectible.LIFE_SUSTAINING_TREATMENT) then
+--                 if CheckNeedleChance(player) then
+--                     knife:AddTearFlags(TearFlags.TEAR_NEEDLE)
+--                     knife.CollisionDamage = knife.CollisionDamage * 3
+--                 end
+--             end
+--         end
+--     )
+-- end
