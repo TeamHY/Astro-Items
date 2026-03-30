@@ -205,7 +205,7 @@ Astro:AddCallback(
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
         if collectibleID == Astro.Collectible.FALSE_CERTIFICATE then
-            playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
+            playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE)
 
             Astro.Data.FalseCertificateUsed = true
             Astro.Data.FalseCertificateItems = Astro.Data.FalseCertificateItems or {}

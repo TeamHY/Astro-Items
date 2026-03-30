@@ -12,7 +12,7 @@ Astro:AddCallback(
                 "안녕은 영원한 헤어짐은 아니겠지요",
                 "사용 시 소지중인 아이템이 있는 방으로 이동합니다." ..
                 "#{{ArrowGrayRight}} 아이템 하나 획득 시 원래 있던 장소로 돌아갑니다." ..
-                "!!! 아이템의 종류는 그 스테이지에서 처음 사용한 시점에 결정됨"
+                "#!!! 아이템의 종류는 그 스테이지에서 처음 사용한 시점에 결정됨"
             )
 
             Astro.EID:AddCollectible(
@@ -20,7 +20,7 @@ Astro:AddCallback(
                 "Graduation Certificate", "",
                 "Teleports Isaac to a floor that contains items he holds in the run" ..
                 "#Choosing an item from this floor teleports Isaac back to the room he came from" ..
-                "!!! Items are assigned at the time they are first used in that floor",
+                "#!!! Items are assigned at the time they are first used in that floor",
                 nil, "en_us"
             )
         end
@@ -48,7 +48,7 @@ Astro:AddCallback(
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
         if collectibleID == Astro.Collectible.GRADUATION_CERTIFICATE then
-            playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE, UseFlag.USE_NOANIM, 0)
+            playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_DEATH_CERTIFICATE)
 
             Astro.Data.GraduationCertificateUsed = true
             Astro.Data.GraduationCertificateItems = Astro.Data.GraduationCertificateItems or {}

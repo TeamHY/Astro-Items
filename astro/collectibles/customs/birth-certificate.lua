@@ -51,9 +51,12 @@ Astro:AddCallback(
     ---@param pickup EntityPickup
     function(_, pickup)
         if Astro.Data.BirthCertificateUsed and pickup.Variant == PickupVariant.PICKUP_COLLECTIBLE then 
+            local level = Game():GetLevel()
+            local roomDesc = level:GetCurrentRoomDesc()
+            local currentDimension = Astro:GetDimension(roomDesc)
             local itemConfig = Isaac.GetItemConfig()
             
-            if itemConfig:GetCollectible(pickup.SubType).Quality > 2 then
+            if currentDimension == 2 and itemConfig:GetCollectible(pickup.SubType).Quality > 2 then
                 pickup:Remove()
             end
         end
@@ -65,7 +68,11 @@ Astro:AddCallback(
     ---@param player EntityPlayer
     ---@param pickingUpItem { itemType: ItemType, subType: CollectibleType | TrinketType }
     function(_, player, pickingUpItem)
-        if pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
+        local level = Game():GetLevel()
+        local roomDesc = level:GetCurrentRoomDesc()
+        local currentDimension = Astro:GetDimension(roomDesc)
+
+        if currentDimension == 2 and pickingUpItem.itemType ~= ItemType.ITEM_TRINKET then
             Astro.Data.BirthCertificateUsed = false
         end
     end
