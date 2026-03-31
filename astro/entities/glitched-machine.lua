@@ -1,6 +1,6 @@
 ---
 
-local CHANGE_CHANCE = 0.7
+local CHANGE_CHANCE = 1
 
 local PRICE = 10
 
