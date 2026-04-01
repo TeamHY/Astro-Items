@@ -2,6 +2,8 @@
 
 local CHANGE_CHANCE = 1
 
+local NO_FIGHT_CHANCE = 0.3
+
 local PRICE = 10
 
 ---
@@ -65,8 +67,9 @@ Astro:AddCallbackCustom(
     ---@param slot Entity
     function(_, slot)
         local rng = Isaac.GetPlayer():GetCollectibleRNG(Astro.Collectible.BIRTHRIGHT_EVE)
+        local chance = Astro.IsFight and CHANGE_CHANCE or NO_FIGHT_CHANCE
 
-        if (slot.SubType ~= INIT_CHECK_SUBTYPE and rng:RandomFloat() < CHANGE_CHANCE) or Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_CAIN) then
+        if (slot.SubType ~= INIT_CHECK_SUBTYPE and rng:RandomFloat() < chance) or Astro:HasCollectible(Astro.Collectible.BIRTHRIGHT_CAIN) then
             slot:Remove()
             Isaac.Spawn(EntityType.ENTITY_SLOT, Astro.Entity.GlitchedMachine.Variant, 0, slot.Position, Vector(0, 0), nil)
         elseif slot.SubType ~= INIT_CHECK_SUBTYPE then
@@ -81,6 +84,7 @@ Astro:AddCallbackCustom(
     ---@param slot Entity
     function(_, slot)
         local sprite = slot:GetSprite()
+        local entData = slot:GetData()
 
         if sprite:IsFinished("Initiate") then
             sprite:Play("Glitching")
@@ -89,7 +93,7 @@ Astro:AddCallbackCustom(
         elseif sprite:IsFinished("Death") then
             sprite:Play("Broken")
             slot.GridCollisionClass = GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER
-            slot:Kill()
+            slot:TakeDamage(1, DamageFlag.DAMAGE_EXPLOSION, EntityRef(slot), 0)
         end
 
         if sprite:IsEventTriggered("Explosion") then
@@ -103,9 +107,15 @@ Astro:AddCallbackCustom(
             SFXManager():Play(SoundEffect.	SOUND_BOSS1_EXPLOSIONS, 1)
         end
 
+        if sprite:IsPlaying("Broken") then
+            if not entData.EID_Hide then
+                entData.EID_Hide = true
+            end
+        end
+
         if slot.GridCollisionClass == GridCollisionClass.COLLISION_WALL_EXCEPT_PLAYER then
             sprite:Play("Broken")
-            slot:Kill()
+            slot:TakeDamage(1, DamageFlag.DAMAGE_EXPLOSION, EntityRef(slot), 0)
         end
     end,
     Astro.Entity.GlitchedMachine.Variant

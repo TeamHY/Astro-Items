@@ -30,7 +30,8 @@ Astro:AddCallback(
                 "#Drastically reduces knockback" ..
                 "#!!! Doesn't activate in boss rooms",
                 -- Stacks
-                "Grants {{Collectible69}} Chocolate Milk"
+                "Grants {{Collectible69}} Chocolate Milk",
+                "en_us"
             )
         end
     end

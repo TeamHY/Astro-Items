@@ -20,8 +20,8 @@ Astro:AddCallback(
                 Astro.Collectible.SERPENTS_KISS_EX,
                 "초 독뱀의 키스",
                 "벗어날 생각은 마라",
-                string.format("%.f", FIRE_CHANCE * 100) .. "%의 확률로 적을 중독시키는 공격이 나갑니다." ..
-                "#적에게 접촉시 " .. string.format("%.f", CONTACT_DEAL) .. "의 피해를 주고 적을 중독시킵니다." ..
+                "{{Poison}} " .. string.format("%.f", FIRE_CHANCE * 100) .. "%의 확률로 적을 중독시키는 공격이 나갑니다." ..
+                "#{{Poison}} 적에게 접촉시 " .. string.format("%.f", CONTACT_DEAL) .. "의 피해를 주고 적을 중독시킵니다." ..
                 "#{{BlackHeart}} 중독된 적이 죽을때 " .. string.format("%.f", DROP_CHANCE * 100) .. "% 확률로 블랙하트가 드랍됩니다.",
                 -- 중첩 시
                 "중첩 시 독 눈물 발사 확률 및 접촉 피해량 증가"
@@ -30,7 +30,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.SERPENTS_KISS_EX,
                 "Serpent's Kiss EX", "",
-                string.format("%.f", FIRE_CHANCE * 100) .. "% chance to shoot poison tears" ..
+                "{{Poison}} " .. string.format("%.f", FIRE_CHANCE * 100) .. "% chance to shoot poison tears" ..
                 "#{{Poison}} Poison enemies on contact" ..
                 "#{{BlackHeart}} Poisoned enemies have a " .. string.format("%.f", DROP_CHANCE * 100) .. "% chance to drop a Black Heart on death",
                 -- Stacks
