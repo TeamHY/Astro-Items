@@ -3,6 +3,7 @@ local defaultSetting = {
     ["TaurusExMode"] = 0,
     ["TaurusExKeyBind"] = Keyboard.KEY_V,
     ["AltLuckyPennyColor"] = 1,
+    ["SpinupPreview"] = 1,
 }
 
 ----
@@ -105,6 +106,28 @@ if ModConfigMenu then
         end,
         Info = "Change the color of the Double Lucky Penny."
     });
+    ModConfigMenu.AddSetting("Astrobirth", nil,
+    {
+        Type = ModConfigMenu.OptionType.NUMBER,
+        Attribute = "SpinupPreview",
+        Minimum = 0,
+        Maximum = 1,
+        ModifyBy = 1,
+        CurrentSetting = function()
+            return Astro.Data["SpinupPreview"]
+        end,
+        Display = function()
+            if Astro.Data["SpinupPreview"] == 1 then
+                return "Spinup Dice Preview: On"
+            else
+                return "Spinup Dice Preview: Off"
+            end
+        end,
+        OnChange = function(newOption)
+            Astro.Data["SpinupPreview"] = newOption;
+        end,
+        Info = "While Isaac is holding the Spinup Dice, it displays next to the collectibles which collectible they will be rerolled into."
+    });
 end
 
 Astro:AddCallback(
@@ -114,5 +137,6 @@ Astro:AddCallback(
         Astro.Data["TaurusExMode"] = Astro.Data["TaurusExMode"] or defaultSetting["TaurusExMode"]
         Astro.Data["TaurusExKeyBind"] = Astro.Data["TaurusExKeyBind"] or defaultSetting["TaurusExKeyBind"]
         Astro.Data["AltLuckyPennyColor"] = Astro.Data["AltLuckyPennyColor"] or defaultSetting["AltLuckyPennyColor"]
+        Astro.Data["SpinupPreview"] = Astro.Data["SpinupPreview"] or defaultSetting["SpinupPreview"]
     end
 )
