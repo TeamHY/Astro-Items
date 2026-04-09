@@ -237,6 +237,7 @@ Astro:AddCallback(
             end
         end
         playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_SPINDOWN_DICE, UseFlag.USE_NOANIM)
+        SFXManager():Play(910)
 
         entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
         for _, entity in ipairs(entities) do

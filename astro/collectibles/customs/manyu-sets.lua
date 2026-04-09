@@ -150,7 +150,8 @@ Astro:AddCallback(
                 "Samsara", "",
                 "{{Collectible522}} Once per room, killing an enemy stops all enemy projectiles that come close to Isaac for 3 seconds and throws them away from him afterwards",
                 -- Stacks
-                "Stackable"
+                "Stackable",
+                "en_us"
             )
         end
     end
