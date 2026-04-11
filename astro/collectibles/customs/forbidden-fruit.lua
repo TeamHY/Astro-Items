@@ -18,8 +18,8 @@ Astro:AddCallback(
                 Astro.Collectible.FORBIDDEN_FRUIT,
                 "선악과",
                 "금지된 열매",
-                "#소지중일 때 모드에 따라 능력치가 증가합니다." ..
-                "사용 시 모드를 전환합니다." ..
+                "소지중일 때 모드에 따라 능력치가 증가합니다." ..
+                "#사용 시 모드를 전환합니다." ..
                 "#{{Damage}} 공격력 모드:" ..
                 "#{{IND}}↓ {{TearsSmall}}연사 배율 x" .. DAMAGE_MODE_TEARS ..
                 "#{{IND}}↑ {{DamageSmall}}공격력 배율 x" .. DAMAGE_MODE_DAMAGE ..
