@@ -145,7 +145,7 @@
 	<passive gfx="Birthright - Blue Baby.png" quality="2" devilprice="1" shopprice="7" soulhearts="2" name="???'s Frame" description="Stronger spirit" id="144" />
 	<passive gfx="Birthright - Cain.png" quality="2" devilprice="1" shopprice="5" name="Cain's Frame" description="Better gambles" id="145" />
 	<passive gfx="Hot Potato.png" quality="1" devilprice="1" shopprice="5" bombs="2" name="Hot Potato" description="Hot topic" id="146" />
-	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" shopprice="20" name="Unholy Mantle" description="Unholy shield" id="147" />
+	<passive gfx="Unholy Mantle.png" quality="4" devilprice="2" tags="quest noeden" shopprice="20" name="Unholy Mantle" description="Unholy shield" id="147" />
 	<passive gfx="Birthright - Steven.png" quality="2" devilprice="1" shopprice="10" name="Steven's Frame" description="He lives" id="148" />
 	<passive gfx="Birthright - Apollyon B.png" quality="2" devilprice="1" shopprice="4" name="Apollyon's Frame" description="Companionship of calamity" id="149" />
 	<active gfx="Birthright - Eden B.png" hidden="true" quality="2" devilprice="1" maxcharges="0" shopprice="15" name="Tainted Eden's Frame" description="??!" id="150" />
