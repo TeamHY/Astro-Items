@@ -77,12 +77,12 @@
 	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="20" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" id="76" />
 	<passive gfx="Magic Conch Shell.png" quality="4" hidden="true" devilprice="2" shopprice="30" name="Magic Conch Shell" description="No." id="77" />
 	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" id="78" />
-	<active cache="luck" gfx="Rite of Aramesir.png" quality="5" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" id="79" />
+	<active cache="luck" gfx="Rite of Aramesir.png" chargetype="special" quality="5" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" id="79" />
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" description="When excel is normal summoned" id="80" />
 	<passive cache="firedelay" gfx="Godtech.png" quality="5" tags="summonable tech" name="Godtech" description="Cutting-edge divine punishment" id="81" />
 	<passive gfx="Very EZ Mode.png" quality="0" devilprice="2" shopprice="40" hidden="true" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" soulhearts="2" name="Very EZ Mode" description="You are playing it wrong. Give me the controller" id="82" />
-	<active gfx="Curse of Aramatir.png" quality="3" devilprice="2" maxcharges="0" shopprice="16" name="Curse of Aramatir" description="Reset marathon" id="83" />
-	<active gfx="Cain's Secret Bag.png" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" description="Gives secrets" id="84" />
+	<active gfx="Curse of Aramatir.png" chargetype="special" quality="3" devilprice="2" maxcharges="0" shopprice="16" name="Curse of Aramatir" description="Reset marathon" id="83" />
+	<active gfx="Cain's Secret Bag.png" chargetype="special" quality="4" devilprice="2" maxcharges="50" shopprice="25" name="Cain's Secret Bag" description="Gives secrets" id="84" />
 	<active gfx="The Holy Blood and the Holy Grail.png" quality="3" devilprice="1" initcharge="0" maxcharges="12" shopprice="30" name="The Holy Blood and the Holy Grail" description="The bloodstained saint, Magdalena's chalice" id="85" />
 	<passive tags="book" gfx="Akashic Records.png" hidden="true" quality="3" devilprice="2" shopprice="20" name="Akashic Records" description="A compendium of memories" id="86" />
 	<passive cache="speed" gfx="Terraspark Boots.png" quality="2" devilprice="1" shopprice="10" name="Terraspark Boots" description="Boots of the hero" id="87" />
@@ -117,7 +117,7 @@
 	<passive gfx="URANUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="URANUS EX" description="Icee" id="116" />
 	<passive cache="firedelay" gfx="NEPTUNUS EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="NEPTUNUS EX" description="It is open" id="117" />
 	<passive cache="tearflag" gfx="PLUTO EX.png" hidden="true" quality="4" devilprice="2" shopprice="30" name="PLUTO EX" description="All size down" id="118" />
-	<active cache="luck" gfx="Pure Love.png" hidden="true" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" description="Jacob's Love" id="119" />
+	<active cache="luck" gfx="Pure Love.png" chargetype="special" hidden="true" quality="4" devilprice="2" maxcharges="50" shopprice="15" name="Pure Love" description="Jacob's Love" id="119" />
 	<active gfx="Restock Dice.png" quality="3" devilprice="2" maxcharges="10" shopprice="15" name="Restock Dice" description="Restock your destiny" id="120" />
 	<active gfx="Sacred Dice.png" quality="4" devilprice="2" maxcharges="6" shopprice="18" name="Sacred Dice" description="To greatness destiny" id="121" />
 	<active gfx="Forbidden Dice.png" quality="4" devilprice="1" maxcharges="8" shopprice="18" name="Forbidden Dice" description="No way!" id="122" />
