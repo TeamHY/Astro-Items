@@ -23,6 +23,14 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_TWISTED_PAIR,
             CollectibleType.COLLECTIBLE_INCUBUS,
             CollectibleType.COLLECTIBLE_C_SECTION,
+            CollectibleType.COLLECTIBLE_PROPTOSIS,
+            CollectibleType.COLLECTIBLE_LODESTONE,
+            CollectibleType.COLLECTIBLE_MONSTROS_LUNG,
+            CollectibleType.COLLECTIBLE_CHOCOLATE_MILK,
+            CollectibleType.COLLECTIBLE_SOY_MILK,
+            CollectibleType.COLLECTIBLE_FIRE_MIND,
+            CollectibleType.COLLECTIBLE_HAEMOLACRIA,
+            CollectibleType.COLLECTIBLE_FLAT_STONE,
         }
         
         if EID then
