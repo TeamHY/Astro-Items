@@ -186,6 +186,7 @@ require "astro.collectibles.customs.quill-pen"
 require "astro.collectibles.customs.golden-apple"
 require "astro.collectibles.customs.gold-tooth"
 require "astro.collectibles.customs.forbidden-fruit"
+require "astro.collectibles.customs.snowgrave"
 
 --#region PLANETARIUM
 

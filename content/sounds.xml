@@ -57,4 +57,10 @@
     <sound name="AlbireoUse">
         <sample weight="1" path="feedback/albireo-use.wav" />
     </sound>
+    <sound name="Snowgrave">
+        <sample weight="1" path="Snowgrave.wav" />
+    </sound>
+    <sound name="SnowgraveBell">
+        <sample weight="1" path="feedback/snowgrave-bell.wav" />
+    </sound>
 </sounds>

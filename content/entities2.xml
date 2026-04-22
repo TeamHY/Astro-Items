@@ -105,4 +105,10 @@
     </entity>
     <entity name="Duality Statue" anm2path="statues_duality.anm2" id="1000" variant="3116" subtype="10" collisionDamage="0" collisionMass="100" collisionRadius="12" numGridCollisionPoints="12" friction="0" shutdoors="false">
     </entity>
+    <entity name="Snowgrave Snowflake Spanwer" anm2path="snowgrave.anm2" id="1000" variant="3117" subtype="0" collisionMass="0" friction="1">
+    </entity>
+    <entity name="Snowgrave Snowfall" anm2path="snowgrave.anm2" id="1000" variant="3118" subtype="0" collisionMass="0" friction="1">
+    </entity>
+    <entity name="Snowgrave Stars" anm2path="snowgrave.anm2" id="1000" variant="3119" subtype="0" collisionMass="0" friction="1">
+    </entity>
 </entities>

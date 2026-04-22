@@ -864,6 +864,7 @@
 		<Item Name="Dango" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Strawberry Medicine" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Angelic D6" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="SnowGrave" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedTreasure">
 		<Item Name="Cygnus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1242,6 +1243,7 @@
 		<Item Name="24K Copter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Amplifying Mind" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="SnowGrave" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
