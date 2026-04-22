@@ -918,6 +918,9 @@
 		<info text="Choose between damage mode and tears mode"/>
 		<info text="Stats increase based on the selected mode while holding the item"/>
 	</collectible>
+	<collectible id="240">
+		<info text="This item is consumed to spawn a massive snowstorm that deals huge freeze damage and destroys all breakable objects in the room"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

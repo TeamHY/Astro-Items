@@ -112,16 +112,16 @@ local function killEnemies()
                 spawnDust(entity.Position - Vector(0, 10))
                 Game():BombExplosionEffects(entity.Position, 0, nil, iceEnemyColor, Isaac.GetPlayer())
             end
-        elseif entity.Type == EntityType.ENTITY_FIREPLACE then
-            entity:Kill()
+        elseif entity.Type == EntityType.ENTITY_FIREPLACE or entity.Type == EntityType.ENTITY_SHOPKEEPER then
+            entity:Die()
         else
-            if not entity:IsBoss() and entity:IsVulnerableEnemy() then
+            if not entity:IsBoss() and entity:IsActiveEnemy(false) and entity.Type ~= EntityType.ENTITY_FROZEN_ENEMY then
                 entity:AddEntityFlags(EntityFlag.FLAG_ICE)
                 entity:TakeDamage(9999999, 0, EntityRef(Isaac.GetPlayer(0)), 0)
             
                 if Astro.Data.snowgraveUsed then
                     spawnDust(entity.Position - Vector(0, 10))
-                    Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-3, -1)), nil)
+                    Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
                 end
             elseif entity:IsBoss() then
                 entity:AddFreeze(EntityRef(Isaac.GetPlayer(0)), 600, true)
@@ -130,7 +130,7 @@ local function killEnemies()
 
                 if Astro.Data.snowgraveUsed then
                     spawnDust(entity.Position - Vector(0, 10), 1.5)
-                    Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-3, -1)), nil)
+                    Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
                 end
             end
         end
@@ -152,7 +152,6 @@ local function destroyAllRocks(force)
         local gridEntity = room:GetGridEntity(i)
         local rock = gridEntity and gridEntity:ToRock()
         local poop = gridEntity and gridEntity:ToPoop()
-        local tnt = gridEntity and gridEntity:ToTNT()
         local door = gridEntity and gridEntity:ToDoor()
 
         if rock then
@@ -164,15 +163,13 @@ local function destroyAllRocks(force)
                 end
             end
 
-            if rock.State ~= 2 then
+            success = rock:Destroy(false)
+            
+            if success then
                 game:SpawnParticles(rock.Position, EffectVariant.ROCK_PARTICLE, 12, 5, iceColor, nil, 1) 
             end
-
-            rock:Destroy(false)
         elseif poop then
             poop:Destroy(false)
-        elseif tnt then
-            tnt:Destroy(false)
         elseif door then
             local roomType = door.TargetRoomType
 
@@ -210,6 +207,14 @@ Astro:AddCallback(
             killEnemies()
             destroyAllRocks()
             Game():MakeShockwave(player.Position, 0.035, 0.025, 10)
+
+            local sfx = SFXManager()
+            
+            if SoundEffect.SOUND_ITEM_RAISE and sfx:IsPlaying(SoundEffect.SOUND_ITEM_RAISE) then
+                sfx:Stop(SoundEffect.SOUND_ITEM_RAISE)
+            end
+
+            sfx:Play(Astro.SoundEffect.SNOWGRAVE_USE, 0.75)
         end
 
         Astro.Data.snowgraveUsed = true
@@ -319,6 +324,7 @@ Astro:AddCallback(
         local game = Game()
         local screenWidth = Isaac.GetScreenWidth()
         local screenHeight = Isaac.GetScreenHeight()
+        local sfx = SFXManager()
         
         ----
 
@@ -329,11 +335,14 @@ Astro:AddCallback(
 
             readySprite:Render(Astro:ToScreen(Isaac.GetPlayer(readyEnable).Position), Vector.Zero, Vector.Zero)
 
+            if readySprite:IsEventTriggered("spawnstars") then
+                sfx:Play(Astro.SoundEffect.SNOWGRAVE_BELL)
+            end
+
             if readySprite:WasEventTriggered("spawnstars") and not readySprite:IsFinished() then
                 if bellRepeatCycle == 0 then
                     if not game:IsPaused() then
-                        Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(0, -50), Vector(math.random(-150, 150) / 100, math.random(-3, -1)), nil)
-                        SFXManager():Play(Astro.SoundEffect.SNOWGRAVE_BELL, 0.5, 1, false, 0.5 + math.random(0, 40) / 100)
+                        Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(0, -50), Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
                     end
 
                     updateEnemiesFreeze()
@@ -344,7 +353,7 @@ Astro:AddCallback(
             end
 
             if readySprite:IsEventTriggered("blueshade") then
-                SFXManager():Play(Astro.SoundEffect.SNOWGRAVE)
+                sfx:Play(Astro.SoundEffect.SNOWGRAVE)
 
                 blueshadeSprite:Play("Background", true)
                 blueshadeEnable = true

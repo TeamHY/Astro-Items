@@ -44,6 +44,7 @@ Astro.SoundEffect = {
     CHRONOS = Isaac.GetSoundIdByName("ChronosUse"),
     ALBIREO = Isaac.GetSoundIdByName("AlbireoUse"),
     SNOWGRAVE = Isaac.GetSoundIdByName("Snowgrave"),
+    SNOWGRAVE_USE = Isaac.GetSoundIdByName("SnowgraveUse"),
     SNOWGRAVE_BELL = Isaac.GetSoundIdByName("SnowgraveBell"),
 }
 

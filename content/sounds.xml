@@ -60,7 +60,13 @@
     <sound name="Snowgrave">
         <sample weight="1" path="Snowgrave.wav" />
     </sound>
+    <sound name="SnowgraveUse">
+        <sample weight="1" path="feedback/snowgrave-use.wav" />
+    </sound>
     <sound name="SnowgraveBell">
         <sample weight="1" path="feedback/snowgrave-bell.wav" />
+        <sample weight="1" path="feedback/snowgrave-bell2.wav" />
+        <sample weight="1" path="feedback/snowgrave-bell3.wav" />
+        <sample weight="1" path="feedback/snowgrave-bell4.wav" />
     </sound>
 </sounds>
