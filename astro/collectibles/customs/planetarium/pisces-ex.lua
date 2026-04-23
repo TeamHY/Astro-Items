@@ -214,9 +214,23 @@ Astro:AddCallback(
         local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, PISCES_EX_VARIANT, 0, player.Position, Vector.Zero, nil):ToEffect()
         effect.Parent = player
         effect:FollowParent(player)
-        effect:AddEntityFlags(EntityFlag.FLAG_PERSISTENT)
     end,
     Astro.Collectible.PISCES_EX
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function()
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            if player:HasCollectible(Astro.Collectible.PISCES_EX) then
+                local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, PISCES_EX_VARIANT, 0, player.Position, Vector.Zero, nil):ToEffect()
+                effect.Parent = player
+                effect:FollowParent(player)
+            end
+        end
+    end
 )
 
 Astro:AddCallback(
@@ -224,10 +238,19 @@ Astro:AddCallback(
     ---@param effect EntityEffect
     function(_, effect)
         local parent = effect.Parent
-        if parent ~= nil and parent:ToPlayer() and parent:ToPlayer():HasCollectible(Astro.Collectible.PISCES_EX) then
-            effect.Velocity = parent.Velocity
-        else
-            effect:Remove()
+
+        if parent ~= nil and parent:ToPlayer() then
+            local player = parent:ToPlayer()
+
+            if player:HasCollectible(Astro.Collectible.PISCES_EX) then
+                local sprite = effect:GetSprite()
+
+                effect.Visible = player.Visible
+                effect.Color = player:GetColor()
+                sprite.Color = player:GetSprite().Color
+            else
+                effect:Remove()
+            end
         end
     end,
     PISCES_EX_VARIANT

@@ -23,12 +23,11 @@
 	<costume id="10" anm2path="costume_aquarius_ex.anm2" type="passive" />
 	<costume id="15" anm2path="309_pisces.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="16" anm2path="costume_gemini_ex.anm2" type="passive" hasSkinAlt="true" />
-	<costume id="28" anm2path="costume_ptolemaeus.anm2" type="passive" />
 	<costume id="44" anm2path="252_littlebaggy.anm2" type="passive" />
 	<costume id="48" anm2path="costume_sagittarius_ex.anm2" type="passive" />
 	<costume id="71" anm2path="costume_heartbloom.anm2" type="passive" hasSkinAlt="false" />
 	<costume id="81" anm2path="costume_godtech.anm2" type="passive" hasOverlay="true" />
-	<costume id="132" anm2path="costume_copernicus.anm2" type="passive" hasOverlay="true" />
+	<costume id="132" anm2path="costume_copernicus.anm2" type="passive" />
 	<costume id="146" anm2path="256_hotbombs.anm2" type="passive" />
 	<costume id="209" anm2path="costume_marigold.anm2" type="passive" hasOverlay="true" />
 	<costume id="213" anm2path="106x_tropicamide.anm2" type="passive" hasSkinAlt="true" />

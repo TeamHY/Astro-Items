@@ -90,3 +90,58 @@ Astro:AddCallback(
         end
     end
 )
+
+
+------ 코스튬 ------
+local COSTUME_VARIANT = 3120
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, COSTUME_VARIANT, 0, player.Position, Vector.Zero, nil):ToEffect()
+        effect.Parent = player
+        effect:FollowParent(player)
+    end,
+    Astro.Collectible.PTOLEMAEUS
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function()
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            if player:HasCollectible(Astro.Collectible.PTOLEMAEUS) then
+                local effect = Isaac.Spawn(EntityType.ENTITY_EFFECT, COSTUME_VARIANT, 0, player.Position, Vector.Zero, nil):ToEffect()
+                effect.Parent = player
+                effect:FollowParent(player)
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local parent = effect.Parent
+
+        if parent ~= nil and parent:ToPlayer() then
+            local player = parent:ToPlayer()
+
+            if player:HasCollectible(Astro.Collectible.PTOLEMAEUS) then
+                local sprite = effect:GetSprite()
+
+                effect.DepthOffset = 1
+                effect.Visible = player.Visible
+                effect.Color = player:GetColor()
+                sprite.Color = player:GetSprite().Color
+            else
+                effect:Remove()
+            end
+        end
+    end,
+    COSTUME_VARIANT
+)

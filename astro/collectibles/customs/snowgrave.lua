@@ -5,7 +5,6 @@ Astro.Collectible.SNOWGRAVE = Isaac.GetItemIdByName("SnowGrave")
 local SNOWFLAKE_VARIANT = 3117
 local SNOWFALL_VARIANT = 3118
 local SNOWSTAR_VARIANT = 3119
-
 local SNOWFLAKE_AMOUNT = 100
 
 local DESTROY_PILLAR = false    -- 기둥도 부수는지 여부
@@ -41,6 +40,7 @@ Astro:AddCallback(
     function(_, isContinued)
         if not isContinued then
             Astro.Data.snowgraveUsed = false
+            Astro.Data.snowgraveIcePhysics = false
         end
     end
 )
@@ -68,14 +68,20 @@ readySprite.PlaybackSpeed = 0.5
 readySprite:Load("gfx/characters/costume_snowgrave.anm2")
 readySprite:Play("Idle", true)
 
+local iceColor = Color(0.8, 0.8, 0.8, 1)
+iceColor:SetColorize(1, 1, 1, 0.5)
+iceColor:SetOffset(0.3, 0.5, 0.8)
+
 local function updateEnemiesFreeze()
     for _, entity in ipairs(Isaac.GetRoomEntities()) do
         if
             entity:ToProjectile()
             or entity:IsBoss()
-            or entity:IsVulnerableEnemy() and entity.Type ~= EntityType.ENTITY_FIREPLACE
-            or not entity:IsVulnerableEnemy() and entity:ToNPC() 
+            or entity:ToBomb()
+            or entity:IsActiveEnemy(false) and entity.Type ~= EntityType.ENTITY_FIREPLACE
+            or entity:ToNPC() and entity:IsInvincible()
         then
+            entity:AddEntityFlags(EntityFlag.FLAG_FREEZE)
             entity:AddFreeze(EntityRef(Isaac.GetPlayer(readyEnable)), 600, true)
         end
     end
@@ -84,18 +90,16 @@ end
 ---@param position Vector
 ---@param customScale Vector?
 local function spawnDust(position, customScale)
-    for i = 1, 2 do
-        customScale = customScale or 1
+    customScale = customScale or 1
 
-        local iceDustColor = Color(0.8, 0.8, 0.8, 1)
-        iceDustColor:SetColorize(1, 1, 1, 0.5)
-        iceDustColor:SetOffset(0.3, 0.5, 0.8)
+    local iceDustColor = Color(1, 1, 1, 1)
+    iceDustColor:SetColorize(1, 1, 1, 0.5)
+    iceDustColor:SetOffset(0.7, 0.7, 0.9)
 
-        local dust = Isaac.Spawn(1000, EffectVariant.DUST_CLOUD, 0, position, Vector.Zero, nil):ToEffect()
-        dust.Color = iceDustColor
-        dust.SpriteScale = Vector(0.5, 0.5) * customScale
-        dust:SetTimeout(30)
-    end
+    local dust = Isaac.Spawn(1000, EffectVariant.DUST_CLOUD, 0, position, Vector.Zero, nil):ToEffect()
+    dust.Color = iceDustColor
+    dust.SpriteScale = Vector(0.5, 0.5) * customScale
+    dust:SetTimeout(30)
 end
 
 local function killEnemies()
@@ -112,13 +116,16 @@ local function killEnemies()
                 spawnDust(entity.Position - Vector(0, 10))
                 Game():BombExplosionEffects(entity.Position, 0, nil, iceEnemyColor, Isaac.GetPlayer())
             end
-        elseif entity.Type == EntityType.ENTITY_FIREPLACE or entity.Type == EntityType.ENTITY_SHOPKEEPER then
+        elseif entity.Type == EntityType.ENTITY_FIREPLACE and entity:ToNPC().State ~= 3 or entity.Type == EntityType.ENTITY_SHOPKEEPER or entity:IsInvincible() then
+            spawnDust(entity.Position - Vector(0, 15))
+            Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
             entity:Die()
+            entity:SetColor(iceEnemyColor, 90, 1, true, false)
         else
             if not entity:IsBoss() and entity:IsActiveEnemy(false) and entity.Type ~= EntityType.ENTITY_FROZEN_ENEMY then
                 entity:AddEntityFlags(EntityFlag.FLAG_ICE)
                 entity:TakeDamage(9999999, 0, EntityRef(Isaac.GetPlayer(0)), 0)
-            
+
                 if Astro.Data.snowgraveUsed then
                     spawnDust(entity.Position - Vector(0, 10))
                     Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
@@ -143,10 +150,6 @@ local function destroyAllRocks(force)
     local room = game:GetRoom()
     local width = room:GetGridWidth()
     local height = room:GetGridHeight()
-
-    local iceColor = Color(0.8, 0.8, 0.8, 1)
-    iceColor:SetColorize(1, 1, 1, 0.5)
-    iceColor:SetOffset(0.3, 0.5, 0.8)
 
     for i = 0, width * height - 1 do
         local gridEntity = room:GetGridEntity(i)
@@ -176,6 +179,9 @@ local function destroyAllRocks(force)
             if roomType == RoomType.ROOM_SECRET or roomType == RoomType.ROOM_SUPERSECRET then
                 door:TryBlowOpen(true, Isaac.GetPlayer(0))
             end
+
+            room:TrySpawnBlueWombDoor(true, true)
+            room:TrySpawnBossRushDoor(true)
         end
     end
 end
@@ -189,12 +195,16 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, player, useFlags, activeSlot, varData)
-        local room = Game():GetRoom()
+        local game = Game()
+        local room = game:GetRoom()
 
         if not Astro.Data.snowgraveUsed and not room:IsMirrorWorld() then
-            player:SetMinDamageCooldown(420)
+            player:SetMinDamageCooldown(480)
             player.ControlsEnabled = false
             player.Visible = false
+
+            room:SetFloorColor(Color.Default)
+            room:SetWallColor(Color.Default)
 
             readySprite:Play("Idle", true)
             readySprite.Scale = player.SpriteScale
@@ -203,18 +213,28 @@ Astro:AddCallback(
             MusicManager():Fadeout(0.02)
             updateEnemiesFreeze()
         else
-            player:SetMinDamageCooldown(5)
+            player:SetMinDamageCooldown(10)
+            room:SetFloorColor(iceColor)
+            room:SetWallColor(iceColor)
+            game:MakeShockwave(player.Position, 0.035, 0.025, 10)
             killEnemies()
             destroyAllRocks()
-            Game():MakeShockwave(player.Position, 0.035, 0.025, 10)
 
             local sfx = SFXManager()
-            
+
             if SoundEffect.SOUND_ITEM_RAISE and sfx:IsPlaying(SoundEffect.SOUND_ITEM_RAISE) then
                 sfx:Stop(SoundEffect.SOUND_ITEM_RAISE)
             end
 
             sfx:Play(Astro.SoundEffect.SNOWGRAVE_USE, 0.75)
+        end
+
+
+        local seeds = game:GetSeeds()
+
+        if room:IsClear() and not seeds:HasSeedEffect(SeedEffect.SEED_ICE_PHYSICS) and seeds:CanAddSeedEffect(SeedEffect.SEED_ICE_PHYSICS) then
+            Astro.Data.snowgraveIcePhysics = true
+            seeds:AddSeedEffect(SeedEffect.SEED_ICE_PHYSICS)
         end
 
         Astro.Data.snowgraveUsed = true
@@ -227,6 +247,20 @@ Astro:AddCallback(
     end,
     Astro.Collectible.SNOWGRAVE
 )
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function()
+        if Astro.Data.snowgraveIcePhysics then
+            local game = Game()
+            local seeds = game:GetSeeds()
+
+            seeds:RemoveSeedEffect(SeedEffect.SEED_ICE_PHYSICS)
+            Astro.Data.snowgraveIcePhysics = false
+        end
+    end
+)
+
 
 ------ 별 & 눈 입자 ------
 Astro:AddCallback(
@@ -294,23 +328,12 @@ Astro:AddCallback(
     function()
         if flakeSpawnTimer > 0 then
             local siner = ((SNOWFLAKE_AMOUNT + 1) - flakeSpawnTimer)
+            local snowflake = Isaac.Spawn(1000, SNOWFLAKE_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(0, 600), Vector.Zero, nil)
+            local data = snowflake2:GetData()
+            data._ASTRO_SNOWGRAVE = siner
+            data._ASTRO_SNOWFLAKE_SIN = math.sin(data._ASTRO_SNOWGRAVE / 6)
 
-            local snowflake1 = Isaac.Spawn(1000, SNOWFLAKE_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(-35, 560), Vector.Zero, nil)
-            local snowflake2 = Isaac.Spawn(1000, SNOWFLAKE_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(0, 600), Vector.Zero, nil)
-            local snowflake3 = Isaac.Spawn(1000, SNOWFLAKE_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(35, 520), Vector.Zero, nil)
-
-            local data1, data2, data3 = snowflake1:GetData(), snowflake2:GetData(), snowflake3:GetData()
-            data1._ASTRO_SNOWGRAVE = siner
-            data1._ASTRO_SNOWFLAKE_SIN = math.sin(data1._ASTRO_SNOWGRAVE / 6)
-            data2._ASTRO_SNOWGRAVE = siner
-            data2._ASTRO_SNOWFLAKE_SIN = math.sin(data2._ASTRO_SNOWGRAVE / 6)
-            data3._ASTRO_SNOWGRAVE = siner
-            data3._ASTRO_SNOWFLAKE_SIN = math.sin(data3._ASTRO_SNOWGRAVE / 6)
-
-            table.insert(snowflakes, snowflake1)
             table.insert(snowflakes, snowflake2)
-            table.insert(snowflakes, snowflake3)
-
             flakeSpawnTimer = flakeSpawnTimer - 1
         end
     end
@@ -331,6 +354,7 @@ Astro:AddCallback(
         if readyEnable > -1 then
             if not game:IsPaused() then
                 readySprite:Update()
+                updateEnemiesFreeze()
             end
 
             readySprite:Render(Astro:ToScreen(Isaac.GetPlayer(readyEnable).Position), Vector.Zero, Vector.Zero)
@@ -345,7 +369,6 @@ Astro:AddCallback(
                         Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(0, -50), Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
                     end
 
-                    updateEnemiesFreeze()
                     bellRepeatCycle = 7
                 else
                     bellRepeatCycle = bellRepeatCycle - 1
@@ -396,11 +419,21 @@ Astro:AddCallback(
 
             if blueshadeSprite:IsEventTriggered("spawnflakes") then
                 flakeSpawnTimer = SNOWFLAKE_AMOUNT
-                updateEnemiesFreeze()
+            end
+            
+            if blueshadeSprite:WasEventTriggered("speedup") then
+                local frame = (blueshadeSprite:GetFrame() - 59) / 360
+                local roomColor = Color(1, 1, 1, 1)
+                
+                roomColor:SetTint(1 - frame/5, 1 - frame/5, 1 - frame/5, 1)
+                roomColor:SetColorize(frame, frame, frame, frame/2)
+                roomColor:SetOffset(frame/3.33, frame/2, frame/1.43)
+                
+                room:SetFloorColor(roomColor)
+                room:SetWallColor(roomColor)
             end
 
             if blueshadeSprite:IsEventTriggered("killEnemies") then
-                updateEnemiesFreeze()
                 killEnemies()
                 destroyAllRocks()
             end
@@ -444,7 +477,6 @@ Astro:AddCallback(
                     end
 
                     if blueshadeSprite:IsEventTriggered("speedup") then
-                        updateEnemiesFreeze()
                         effect:GetSprite().PlaybackSpeed = 1 + (blueshadeSprite:GetFrame() - 50) / 4
                     end
 
