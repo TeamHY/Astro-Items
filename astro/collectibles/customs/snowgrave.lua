@@ -329,11 +329,11 @@ Astro:AddCallback(
         if flakeSpawnTimer > 0 then
             local siner = ((SNOWFLAKE_AMOUNT + 1) - flakeSpawnTimer)
             local snowflake = Isaac.Spawn(1000, SNOWFLAKE_VARIANT, 0, Isaac.GetPlayer(readyEnable).Position + Vector(0, 600), Vector.Zero, nil)
-            local data = snowflake2:GetData()
+            local data = snowflake:GetData()
             data._ASTRO_SNOWGRAVE = siner
             data._ASTRO_SNOWFLAKE_SIN = math.sin(data._ASTRO_SNOWGRAVE / 6)
 
-            table.insert(snowflakes, snowflake2)
+            table.insert(snowflakes, snowflake)
             flakeSpawnTimer = flakeSpawnTimer - 1
         end
     end
