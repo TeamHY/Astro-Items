@@ -199,7 +199,7 @@ Astro:AddCallback(
         local room = game:GetRoom()
 
         if not Astro.Data.snowgraveUsed and not room:IsMirrorWorld() then
-            player:SetMinDamageCooldown(480)
+            player:SetMinDamageCooldown(500)
             player.ControlsEnabled = false
             player.Visible = false
 
@@ -336,6 +336,13 @@ Astro:AddCallback(
             table.insert(snowflakes, snowflake)
             flakeSpawnTimer = flakeSpawnTimer - 1
         end
+
+        if blueshadeEnable then
+            if blueshadeSprite:IsEventTriggered("killEnemies") then
+                killEnemies()
+                destroyAllRocks()
+            end
+        end
     end
 )
 
@@ -431,11 +438,6 @@ Astro:AddCallback(
                 
                 room:SetFloorColor(roomColor)
                 room:SetWallColor(roomColor)
-            end
-
-            if blueshadeSprite:IsEventTriggered("killEnemies") then
-                killEnemies()
-                destroyAllRocks()
             end
 
             if blueshadeSprite:IsFinished() then
