@@ -216,18 +216,19 @@ Astro:AddCallback(
             updateEnemiesFreeze()
         else
             player:SetMinDamageCooldown(10)
-            room:SetFloorColor(iceColor)
-            room:SetWallColor(iceColor)
             game:MakeShockwave(player.Position, 0.035, 0.025, 10)
             killEnemies()
             destroyAllRocks()
 
-            local sfx = SFXManager()
+            local roomColor = iceColor
+            roomColor:SetColorize(1, 1, 1, 1)
+            room:SetFloorColor(roomColor)
+            room:SetWallColor(roomColor)
 
+            local sfx = SFXManager()
             if SoundEffect.SOUND_ITEM_RAISE and sfx:IsPlaying(SoundEffect.SOUND_ITEM_RAISE) then
                 sfx:Stop(SoundEffect.SOUND_ITEM_RAISE)
             end
-
             sfx:Play(Astro.SoundEffect.SNOWGRAVE_USE, 0.75)
         end
 
@@ -441,7 +442,7 @@ Astro:AddCallback(
                 local roomColor = Color(1, 1, 1, 1)
                 
                 roomColor:SetTint(1 - frame/5, 1 - frame/5, 1 - frame/5, 1)
-                roomColor:SetColorize(frame, frame, frame, frame/2)
+                roomColor:SetColorize(frame, frame, frame, frame)
                 roomColor:SetOffset(frame/3.33, frame/2, frame/1.43)
                 
                 room:SetFloorColor(roomColor)
