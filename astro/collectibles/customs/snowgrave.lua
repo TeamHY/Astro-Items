@@ -19,15 +19,17 @@ Astro:AddCallback(
                 Astro.Collectible.SNOWGRAVE,
                 "눈무덤",
                 "치명적",
-                "#{{Freezing}} 사용 시 방 전체 적에게 9,999,999의 빙결 피해를 줍니다." ..
-                "#{{Petrify}} 보스에게는 3초 동안 석화 효과 + 1,800의 피해를 줍니다."
+                "#{{Freezing}} 사용 시 그 방의 장애물을 파괴하고 적에게 9,999,999의 빙결 피해를 줍니다." ..
+                "#{{Petrify}} 보스에게는 3초 동안 석화 효과 + 1,800의 피해를 줍니다." ..
+                "#{{BossRoom}} 보스방에서 사용 시 D2(6스테이지)의 경우 보스러시가, W2(8스테이지)의 경우 Blue Womb으로 향하는 문이 열립니다."
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.SNOWGRAVE,
                 "SnowGrave", "",
                 "#{{Freezing}} Deals 9,999,999 freeze damage to all enemies in the room" ..
-                "#{{Petrify}} Deals 1,800 damage to the boss and petrifies for 3 seconds",
+                "#{{Petrify}} Deals 1,800 damage to the boss and petrifies for 3 seconds" ..
+                "#Can open secret rooms and break rocks",
                 nil, "en_us"
             )
         end
@@ -336,7 +338,13 @@ Astro:AddCallback(
             table.insert(snowflakes, snowflake)
             flakeSpawnTimer = flakeSpawnTimer - 1
         end
+    end
+)
 
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PLAYER_UPDATE,
+    ---@param player EntityPlayer
+    function(_, player)
         if blueshadeEnable then
             if blueshadeSprite:IsEventTriggered("killEnemies") then
                 killEnemies()
