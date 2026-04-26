@@ -146,7 +146,7 @@ Astro:AddCallback(
             Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE,
             Astro.Collectible.SNAKE_EYES_POPLAR,
             Astro.Collectible.STRAWBERRY_MILK,
-            Astro.Collectible.UNHOLY_MANTLE,
+            --Astro.Collectible.UNHOLY_MANTLE,
             Astro.Collectible.TECHRAPOD,
             Astro.Collectible.THROW_BOMB,
             Astro.Collectible.THE_HOLY_BLOOD_AND_THE_HOLY_GRAIL,
@@ -172,6 +172,7 @@ Astro:AddCallback(
             Astro.Collectible.MEGA_D6,
             Astro.Collectible.PURE_LOVE,
             Astro.Collectible.STAIRWAY_TO_HELL,
+            Astro.Collectible.UNHOLY_MANTLE,
         }
 
         if not Astro.IsFight then
