@@ -50,7 +50,9 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_LEVEL,
     function()
-        Astro.Data.snowgraveUsed = false
+        if not Astro.IsFight then
+            Astro.Data.snowgraveUsed = false
+        end
     end
 )
 
