@@ -302,6 +302,12 @@ Astro:AddCallback(
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN] = EID.InlineIcons["AinzOoalGown"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN_B] = EID.InlineIcons["PandorasActor"]
         end
+
+        ----
+        
+        if SimpleEID then
+            SimpleEID:RegisterCustomDesc("Astrobirth", Astro.EID.simpleEid, { collectible = Astro.Collectible.CYGNUS, trinket = Astro.Trinket.EYE_OF_GOD })
+        end
     end
 )
 

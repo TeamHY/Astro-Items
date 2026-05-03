@@ -2,6 +2,7 @@
 Astro.EID.EnglishDescAI = require "astro.collectibles.eid-draft-translation"
 Astro.EID.AccurateItemDesc = require "astro.collectibles.eid-accurate-blurbs"
 Astro.EID.AccurateTrinketDesc = require "astro.trinkets.eid-accurate-blurbs"
+Astro.EID.simpleEid = require "astro.collectibles.simple-eid"
 
 ------ VS ------
 local minibossNames = {
