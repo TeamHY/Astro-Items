@@ -27,7 +27,7 @@
 	<passive gfx="Super Magneto.png" quality="4" devilprice="2" shopprice="21" name="Super Magneto" description="Pull" id="26" />
 	<active gfx="Solar System.png" quality="2" devilprice="1" maxcharges="6" shopprice="15" name="Solar System" description="Homeworld" id="27" />
 	<passive gfx="Ptolemaeus.png" quality="4" devilprice="2" shopprice="40" name="Ptolemaeus" description="Geocentricism" id="28" />
-	<passive cache="firedelay" gfx="Angry Onion.png" quality="2" devilprice="1" name="Angry Onion" description="Tears up!" id="29" />
+	<passive cache="firedelay" gfx="Angry Onion.png" quality="2" shopprice="10" devilprice="1" name="Angry Onion" description="Tears up!" id="29" />
 	<active gfx="Deep Of Abyss.png" quality="2" devilprice="1" maxcharges="6" shopprice="8" name="Oblivion" description="Into the unconscious" id="30" />
 	<passive gfx="collectibles_668_dadsnote.png" quality="0" devilprice="2" hidden="true" tags="uniquefamiliar offensive lazarusshared noeden nocantrip quest" name="Go Home!" description="> stage 13" id="31" />
 	<passive gfx="Fallen Orb.png" quality="4" devilprice="2" shopprice="20" name="Fallen Orb" description="Destined for grievous" id="32" />
