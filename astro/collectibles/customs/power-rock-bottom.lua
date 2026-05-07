@@ -21,11 +21,6 @@ Astro:AddCallback(
     end
 )
 
-
-if EID then
-    Astro.EID:AddCollectible(Astro.Collectible.POWER_ROCK_BOTTOM, " 밑바닥", "", "")
-end
-
 Astro:AddCallback(
     ModCallbacks.MC_POST_GAME_STARTED,
     ---@param isContinued boolean

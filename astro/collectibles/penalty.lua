@@ -1,3 +1,5 @@
+local isc = require("astro.lib.isaacscript-common")
+
 local PENALTY_DEATHS_HEAD_COUNT = 2 -- 빠가지 소환 개수
 
 local PENALTY_DEATHS_HEAD_CHANCE = 1 -- 빠가지 소환 확률
@@ -125,6 +127,10 @@ local function CheckBossRoom()
     return false
 end
 
+local deletedItems = {}
+local notiFont = Font()
+notiFont:Load(Astro.ModPath .. "resources/font/eid_korean_galmoori9.fnt")
+
 Astro:AddCallback(
     Astro.Callbacks.POST_PLAYER_TAKE_PENALTY,
     ---@param player EntityPlayer
@@ -146,14 +152,20 @@ Astro:AddCallback(
             end
         end
 
+        local yOffset = 0
+
         for _, item in ipairs(PENALTY_REMOVE_ITEMS.collectible) do
             if player:HasCollectible(item) then
+                yOffset = yOffset + 1
+                table.insert(deletedItems, { var = 100, id = item, time = Game():GetFrameCount() + yOffset })
                 Astro:RemoveAllCollectible(player, item)
             end
         end
 
         for _, item in ipairs(PENALTY_REMOVE_ITEMS.trinket) do
             if player:HasTrinket(item) then
+                yOffset = yOffset + 1
+                table.insert(deletedItems, { var = 350, id = item, time = Game():GetFrameCount() + yOffset })
                 Astro:RemoveAllTrinket(player, item)
             end
         end
@@ -167,6 +179,103 @@ Astro:AddCallback(
 
             if not (Astro.IsFight and Astro:IsLatterStage()) then
                 player:AddBrokenHearts(PENALTY_BROKEN_HEARTS)
+            end
+        end
+    end
+)
+
+
+------ 제거 알림 ------
+local pixelSprite = Sprite()
+pixelSprite:Load("gfx/ui/pixel.anm2", true)
+pixelSprite:SetFrame("Idle", 0)
+
+local function drawRect(x, y, w, h, a)
+    pixelSprite.Scale = Vector(w, h)
+    pixelSprite.Color = Color(0, 0, 0, a)
+    pixelSprite:Render(Vector(x, y))
+end
+
+---@param item table
+---@param yOffset integer
+---@return boolean
+local function renderDeletedItem(item, yOffset)    -- by reshaken team
+    local itemName = EID:getObjectName(5, item.var, item.id)
+    local startingFrame = item.time
+    local currentFrame = Game():GetFrameCount()
+    local duration = currentFrame - startingFrame
+
+    if duration >= 150 then
+        return true
+    end
+
+    local baseXPos = Isaac.GetScreenWidth()
+    local baseYPos = 70
+    local baseScale = 1
+    local alpha = 1
+
+    if duration <= 10 then
+        local percent = duration / 10
+        local movementPercent = isc:easeOutSine(percent)
+
+        local XOffset = isc:lerp(20, 0, movementPercent)
+        baseXPos = baseXPos + XOffset
+
+        alpha = isc:lerp(0, 1, percent)
+    end
+
+    if 150 - duration <= 40 then
+        local percent = (150 - duration) / 40
+
+        alpha = isc:lerp(0, 1, percent)
+    end
+
+    local scaleMulti = Isaac.GetScreenPointScale()
+    if scaleMulti == 1 then
+        baseScale = 1
+    elseif scaleMulti == 2 then
+        baseScale = 0.5
+    elseif scaleMulti == 3 then
+        baseScale = 2/3
+    else
+        baseScale = 0.75
+    end
+
+    baseYPos = baseYPos + yOffset * baseScale
+    pos = Vector(baseXPos, baseYPos) + Game().ScreenShakeOffset
+
+    local output = itemName .. " 제거됨"
+    local stringWidth = notiFont:GetStringWidthUTF8(output)
+    local stringHeight = notiFont:GetBaselineHeight()
+    
+    drawRect(
+        pos.X - 480 + (400 - (stringWidth + 3) * baseScale),
+        pos.Y - (1.5 * baseScale),
+        (stringWidth + 6) * baseScale,
+        (stringHeight + 6) * baseScale,
+        alpha * 0.75
+    )
+
+    notiFont:DrawStringScaledUTF8(
+        output,
+        pos.X - 480, pos.Y,
+        baseScale, baseScale,
+        KColor(1, 0.5, 0.5, alpha),
+        400,
+        false
+    )
+
+    return false
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_RENDER,
+    function()
+        if #deletedItems > 0 then
+            for idx, item in pairs(deletedItems) do
+                if renderDeletedItem(item, idx * 15) then
+                    table.remove(deletedItems, idx)
+                end
             end
         end
     end
