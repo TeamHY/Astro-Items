@@ -45,7 +45,7 @@ Astro:AddCallback(
     ---@param collider Entity
     ---@param low boolean
     function(_, player, collider, low)
-        if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == Astro.Entity.GlitchedMachine.Variant then
+        if collider.Type == EntityType.ENTITY_SLOT and collider.Variant == Astro.Entity.GlitchedMachine.Variant and collider.SubType == Astro.Entity.GlitchedMachine.SubType then
             if player:GetNumCoins() < PRICE then
                 return nil
             end
@@ -83,6 +83,10 @@ Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_SLOT_UPDATE,
     ---@param slot Entity
     function(_, slot)
+        if slot.SubType ~= Astro.Entity.GlitchedMachine.SubType then
+            return
+        end
+
         local sprite = slot:GetSprite()
         local entData = slot:GetData()
 

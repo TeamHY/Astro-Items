@@ -27,14 +27,14 @@ Astro:AddCallback(
             EID:addEntity(
                 Astro.Entity.SemiGlitchedMachine.Type, Astro.Entity.SemiGlitchedMachine.Variant, Astro.Entity.SemiGlitchedMachine.SubType,
                 "세미 글리치 머신",
-                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} 동전 " .. PRICE .. "원을 소모하여 파괴되며, 소울 오브 아이작을 " .. RUNE_COUNT .. "회 발동합니다.",
+                "{{Collectible689}} 동전 " .. PRICE .. "원을 소모하여 {{Card81}}Soul of Isaac을 " .. RUNE_COUNT .. "회 발동합니다.",
                 "ko_kr"
             )
 
             EID:addEntity(
                 Astro.Entity.SemiGlitchedMachine.Type, Astro.Entity.SemiGlitchedMachine.Variant, Astro.Entity.SemiGlitchedMachine.SubType,
                 "Semi Glitched Machine",
-                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} Insert " .. PRICE .. " coin to destroy and activate Soul of Isaac " .. RUNE_COUNT .. " time(s).",
+                "{{Collectible689}} Insert " .. PRICE .. " coins to activate {{Card81}}Soul of Isaac " .. RUNE_COUNT .. " time(s).",
                 "en_us"
             )
         end
