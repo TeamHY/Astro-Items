@@ -4,7 +4,7 @@ local CHANGE_CHANCE = 1
 
 local NO_FIGHT_CHANCE = 0.3
 
-local PRICE = 10
+local PRICE = 3
 
 local RUNE_COUNT = 1
 
