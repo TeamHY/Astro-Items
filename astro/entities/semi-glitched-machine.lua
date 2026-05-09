@@ -2,7 +2,7 @@
 
 local CHANGE_CHANCE = 1
 
-local NO_FIGHT_CHANCE = 0.3
+local NO_FIGHT_CHANCE = 0.2
 
 local PRICE = 3
 
@@ -27,14 +27,14 @@ Astro:AddCallback(
             EID:addEntity(
                 Astro.Entity.SemiGlitchedMachine.Type, Astro.Entity.SemiGlitchedMachine.Variant, Astro.Entity.SemiGlitchedMachine.SubType,
                 "세미 글리치 머신",
-                "{{Collectible689}} 동전 " .. PRICE .. "원을 소모하여 {{Card81}}Soul of Isaac을 " .. RUNE_COUNT .. "회 발동합니다.",
+                "{{Card81}} 동전 " .. PRICE .. "원을 소모하여 1초마다 그 방의 아이템을 " .. RUNE_COUNT .. "개의 랜덤 아이템과 전환시킵니다.",
                 "ko_kr"
             )
 
             EID:addEntity(
                 Astro.Entity.SemiGlitchedMachine.Type, Astro.Entity.SemiGlitchedMachine.Variant, Astro.Entity.SemiGlitchedMachine.SubType,
                 "Semi Glitched Machine",
-                "{{Collectible689}} Insert " .. PRICE .. " coins to activate {{Card81}}Soul of Isaac " .. RUNE_COUNT .. " time(s).",
+                "{{Card81}} Insert " .. PRICE .. " coins to swap the room's item with " .. RUNE_COUNT .. " random items every 1 second",
                 "en_us"
             )
         end
@@ -60,6 +60,7 @@ Astro:AddCallback(
 
             player:AddCoins(-PRICE)
             sprite:Play("Initiate", true)
+            SFXManager():Play(SoundEffect.SOUND_COIN_SLOT)
         end
     end
 )

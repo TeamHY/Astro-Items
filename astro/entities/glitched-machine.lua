@@ -2,7 +2,7 @@
 
 local CHANGE_CHANCE = 1
 
-local NO_FIGHT_CHANCE = 0.3
+local NO_FIGHT_CHANCE = 0.1
 
 local PRICE = 10
 
@@ -25,14 +25,14 @@ Astro:AddCallback(
             EID:addEntity(
                 Astro.Entity.GlitchedMachine.Type, Astro.Entity.GlitchedMachine.Variant, Astro.Entity.GlitchedMachine.SubType,
                 "글리치 머신",
-                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} 동전 " .. PRICE .. "원을 소모하여  0.2초마다 그 방의 아이템을 4개의 랜덤 아이템과 전환시킵니다.",
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} 동전 " .. PRICE .. "원을 소모하여 0.2초마다 그 방의 아이템을 4개의 랜덤 아이템과 전환시킵니다.",
                 "ko_kr"
             )
 
             EID:addEntity(
                 Astro.Entity.GlitchedMachine.Type, Astro.Entity.GlitchedMachine.Variant, Astro.Entity.GlitchedMachine.SubType,
                 "Glitched Machine",
-                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} Insert " .. PRICE .. " coin to swap the room's item with 4 random items every 0.2 seconds.",
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_GLITCHED_CROWN .. "}} Insert " .. PRICE .. " coins to swap the room's item with 4 random items every 0.2 seconds",
                 "en_us"
             )
         end
@@ -58,6 +58,7 @@ Astro:AddCallback(
 
             player:AddCoins(-PRICE)
             sprite:Play("Initiate", true)
+            SFXManager():Play(SoundEffect.SOUND_COIN_SLOT)
         end
     end
 )
