@@ -18,7 +18,7 @@ Astro:AddCallback(
                 Astro.Collectible.MINERAL_SHARD,
                 "Mineral Shard", "",
                 "{{Collectible132}} Attacks deal +0.6 damage per tile the further they travel" ..
-                "{{Damage}} Tears deal +1.2 damage per tile based on the distance from Isaac",
+                "{{Damage}} Tears deal +15.5 damage per seconds",
                 -- Stacks
                 "Stackable",
                 "en_us"
