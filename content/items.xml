@@ -239,6 +239,8 @@
 	<passive gfx="Gold Tooth.png" quality="5" devilprice="2" shopprice="15" name="Gold Tooth" hidden="true" description="I’ll chew you up" id="238" />
 	<active cache="firedelay damage" gfx="Forbidden Fruit.png" quality="3" maxcharges="0" devilprice="1" shopprice="15" name="Forbidden Fruit" description="Adam's apple" id="239" />
 	<active gfx="SnowGrave.png" quality="5" maxcharges="4" devilprice="1" shopprice="6" name="SnowGrave" description="Fatal" id="240" />
+	<passive cache="damage speed" gfx="777.png" quality="3" devilprice="1" shopprice="15" hidden="true" name="777" description="Divinity" id="241" />
+	<passive cache="damage firedelay" gfx="Liberation.png" quality="3" devilprice="1" shopprice="15" hidden="true" name="Liberation" description="Free at last" id="242" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />
