@@ -39,7 +39,7 @@ end
 ------ 함수 ------
 ---@return string
 local function GetLanguage()
-    if Options.Langauge == "kr" or REPKOR then
+    if Options.Langauge == "kr" then
         return "ko_kr"
     else
         return "en_us"

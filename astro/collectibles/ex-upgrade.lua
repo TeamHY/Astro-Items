@@ -84,6 +84,8 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_LEAD_PENCIL] = { Id = Astro.Collectible.QUILL_PEN, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_SERPENTS_KISS] = { Id = Astro.Collectible.SERPENTS_KISS_EX, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_HOLY_LIGHT] = { Id = Astro.Collectible.DIVINE_LIGHT, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_APPLE] = { Id = Astro.Collectible.GOLDEN_APPLE, Chance = 0.2 },
+    [CollectibleType.COLLECTIBLE_TOUGH_LOVE] = { Id = Astro.Collectible.GOLD_TOOTH, Chance = 0.2 },
 }
 
 ---

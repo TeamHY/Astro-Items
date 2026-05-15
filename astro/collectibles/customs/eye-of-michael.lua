@@ -7,21 +7,20 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.EYE_OF_MICHAEL,
                 "미카엘의 눈",
-                "...",
-                "공격이 적을 관통하며;" ..
-                "#{{ArrowGrayRight}} 관통한 눈물 공격은 후광이 생기고 후광에 닿은 적은 초당 60의 피해를 받습니다.",
+                "거룩한 눈물!",
+                "눈물이 적을 관통하며;" ..
+                "#{{ArrowGrayRight}} 관통한 눈물은 후광이 생기며 후광에 닿은 적은 초당 60의 피해를 받습니다.",
                 -- 중첩 시
-                "공격이 유도됩니다."
+                "공격이 적에게 유도됩니다."
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.EYE_OF_MICHAEL,
-                "Eye of Michael",
-                "...",
-                "Tears pierce;" ..
-                "#{{ArrowGrayRight}} Piercing tears gain {{Collectible331}} Godhead aura, dealing 60 damage per second to enemies in it.",
+                "Eye of Michael", "",
+                "Piercing tears" ..
+                "#{{ArrowGrayRight}} Hitting an enemy makes the tear gain an aura that deals 60 damage per second",
                 -- Stacks
-                "Tears become homing.",
+                "Homing tears",
                 "en_us"
             )
         end
