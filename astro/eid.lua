@@ -39,7 +39,7 @@ end
 ------ 함수 ------
 ---@return string
 local function GetLanguage()
-    if Options.Langauge == "kr" then
+    if Options.Language == "kr" then
         return "ko_kr"
     else
         return "en_us"
@@ -236,6 +236,7 @@ Astro:AddCallbackCustom(
                 if not REPENTOGON then
                     local item = Astro.EID.Collectible[lang][pickingUpItem.subType]
                     local collectibleConf = ic:GetCollectible(pickingUpItem.subType)
+
                     if item then
                         if item.name ~= "" and item.description ~= "" then
                             hud:ShowItemText(item.name, item.description)
