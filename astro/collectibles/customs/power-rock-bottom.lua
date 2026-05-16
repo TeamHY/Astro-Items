@@ -5,15 +5,15 @@ Astro:AddCallback(
     function()
         if EID then
             Astro.EID:AddCollectible(
-                Astro.Collectible.RAPID_ROCK_BOTTOM,
+                Astro.Collectible.POWER_ROCK_BOTTOM,
                 "강력한 밑바닥",
                 "더 강해질 일만 남았어",
                 "{{DamageSmall}} 공격력을 항상 가장 높았던 값으로 고정합니다."
             )
 
             Astro.EID:AddCollectible(
-                Astro.Collectible.RAPID_ROCK_BOTTOM,
-                "Rapid Rock Bottom", "",
+                Astro.Collectible.POWER_ROCK_BOTTOM,
+                "Power Rock Bottom", "",
                 "↑ Prevents {{Damage}} damage from being lowered for the rest of the run",
                 nil, "en_us"
             )
