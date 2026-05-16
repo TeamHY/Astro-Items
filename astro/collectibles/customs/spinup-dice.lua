@@ -201,6 +201,10 @@ Astro:AddCallback(
                 if item then
                     nextid = getSpinupResult(item.SubType)
 
+                    if Isaac.GetItemConfig():GetCollectible(nextid) == nil then
+                        nextid = 1
+                    end
+
                     item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, nextid, true)
                     item.Touched = false
                     Game():SpawnParticles(item.Position, EffectVariant.POOF01, 1, 0)
