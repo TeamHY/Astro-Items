@@ -108,6 +108,8 @@ Astro:AddCallback(
                 local item = ANGELIC_ITEMS[rngObj:RandomInt(#ANGELIC_ITEMS) + 1]
 
                 entity:ToPickup():Morph(entity.Type, entity.Variant, item, true)
+                entity:ToPickup().Touched = false
+                
                 Game():SpawnParticles(entity.Position, EffectVariant.POOF01, 1, 0)
                 SFXManager():Play(SoundEffect.SOUND_SUPERHOLY)
             end

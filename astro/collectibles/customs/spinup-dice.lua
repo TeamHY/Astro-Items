@@ -28,23 +28,6 @@ Astro:AddCallback(
 ------ EID ------
 ---@param collectibleID CollectibleType
 ---@return CollectibleType
-local function getSpindownResult(collectibleID)
-	if collectibleID <= 0 or collectibleID > 4294960000 then return 0 end
-
-	local newID = collectibleID
-	local attempts = 0
-    local itemCfg = Isaac.GetItemConfig()
-
-	repeat
-		newID = newID - 1
-		attempts = attempts + 1
-	until itemCfg:GetCollectible(newID) and not itemCfg:GetCollectible(newID).Hidden or newID == CollectibleType.COLLECTIBLE_NULL or attempts > 20
-	
-    return newID
-end
-
----@param collectibleID CollectibleType
----@return CollectibleType
 local function getSpinupResult(collectibleID)
 	if collectibleID <= 0 or collectibleID > 4294960000 then return 0 end
 
@@ -55,10 +38,6 @@ local function getSpinupResult(collectibleID)
 	repeat
 		newID = newID + 1
 		attempts = attempts + 1
-
-        if newID == CollectibleType.COLLECTIBLE_DADS_NOTE then
-            newID = newID + 1
-        end
 	until itemCfg:GetCollectible(newID) and not itemCfg:GetCollectible(newID).Hidden or attempts > 20
     
 	return newID
@@ -212,55 +191,25 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
-        local pData = Astro:GetPersistentPlayerData(playerWhoUsedItem)
-        pData.spinupItems = {}
-
         local entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
+
         for _, entity in ipairs(entities) do
             if entity.SubType ~= 0 and entity.SubType ~= CollectibleType.COLLECTIBLE_DADS_NOTE and entity.SubType < 4294960000 then
                 local item = entity:ToPickup()
                 local nextid
 
                 if item then
-                    nextid = getSpinupResult(getSpinupResult(item.SubType))
-
-                    if getSpindownResult(nextid) == CollectibleType.COLLECTIBLE_DADS_NOTE then
-                        table.insert(pData.spinupItems, { index = item.Index, id = item.SubType, reason = "아빠의 쪽지" })
-                    elseif item.SubType == getSpindownResult(Astro:GetMaxCollectibleID()) then
-                        table.insert(pData.spinupItems, { index = item.Index, id = item.SubType, reason = "마지막 이전 아이템" })
-                    elseif item.SubType == Astro:GetMaxCollectibleID() then
-                        table.insert(pData.spinupItems, { index = item.Index, id = item.SubType, reason = "마지막 아이템" })
-                    end
+                    nextid = getSpinupResult(item.SubType)
 
                     item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, nextid, true)
+                    item.Touched = false
+                    Game():SpawnParticles(item.Position, EffectVariant.POOF01, 1, 0)
                 end
             end
         end
-        playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_SPINDOWN_DICE, UseFlag.USE_NOANIM)
+
         SFXManager():Play(910)
 
-        entities = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
-        for _, entity in ipairs(entities) do
-            local item = entity:ToPickup()
-            local adjustID
-            
-            for _, originItem in ipairs(pData.spinupItems) do
-                if item.Index == originItem.index then
-                    if entity.SubType == CollectibleType.COLLECTIBLE_DADS_NOTE and originItem.reason == "아빠의 쪽지" then
-                        adjustID = getSpinupResult(originItem.id)
-                        item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, adjustID, true)
-                    elseif originItem.id == getSpindownResult(Astro:GetMaxCollectibleID()) and originItem.reason == "마지막 이전 아이템" then
-                        adjustID = Astro:GetMaxCollectibleID()
-                        item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, adjustID, true)
-                    elseif originItem.id == Astro:GetMaxCollectibleID() and originItem.reason == "마지막 아이템" then
-                        adjustID = CollectibleType.COLLECTIBLE_SAD_ONION
-                        item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, adjustID, true)
-                    end
-                end
-            end
-        end
-
-        pData.spinupItems = {}
         return {
             Discharge = true,
             Remove = false,

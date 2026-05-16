@@ -98,36 +98,24 @@ Astro:AddCallback(
     ---@param activeSlot ActiveSlot
     ---@param varData integer
     function(_, collectibleID, rngObj, playerWhoUsedItem, useFlags, activeSlot, varData)
-        local pData = Astro:GetPersistentPlayerData(playerWhoUsedItem)
-        pData.puzzleDiceOnionAdjustment = {}
-
         local items = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
+
         for _, entity in ipairs(items) do
             if entity.SubType ~= 0 and entity.SubType < 4294960000 then
                 local item = entity:ToPickup()
+                local nextid
 
-                if item and entity.SubType == CollectibleType.COLLECTIBLE_SAD_ONION then
-                    table.insert(pData.puzzleDiceOnionAdjustment, { index = item.Index, id = item.SubType, reason = "눈물나는 양파" })
+                if item then
+                    nextid = filteredCollectibles[rngObj:RandomInt(#filteredCollectibles) + 1]
+
+                    Game():SpawnParticles(item.Position, EffectVariant.POOF01, 1, 0)
+                    item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, nextid, true)
+                    item.Touched = false
                 end
             end
         end
-        playerWhoUsedItem:UseActiveItem(CollectibleType.COLLECTIBLE_SPINDOWN_DICE, UseFlag.USE_NOANIM)
+        
         SFXManager():Play(910)
-
-        local items = Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)
-        for _, entity in ipairs(items) do
-            for _, originItem in ipairs(pData.puzzleDiceOnionAdjustment) do
-                if entity.SubType == 0 and entity.Index == originItem.index and originItem.reason == "눈물나는 양파" then
-                    entity:ToPickup():Morph(entity.Type, entity.Variant, CollectibleType.COLLECTIBLE_SAD_ONION, true)
-                end
-            end
-
-            if entity.SubType ~= 0 and entity.SubType < 4294960000 then
-                local item = filteredCollectibles[rngObj:RandomInt(#filteredCollectibles) + 1]
-
-                entity:ToPickup():Morph(entity.Type, entity.Variant, item, true)
-            end
-        end
 
         return {
             Discharge = true,

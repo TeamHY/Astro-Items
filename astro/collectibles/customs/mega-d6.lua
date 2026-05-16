@@ -107,6 +107,7 @@ local megaUI =
                             GetCollectibleFlag.BAN_PASSIVES
                         )
                         pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem)
+                        pickup.Touched = false
                     else
                         local newItem =
                             itemPool:GetCollectible(
@@ -117,6 +118,7 @@ local megaUI =
                             GetCollectibleFlag.BAN_ACTIVES
                         )
                         pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem)
+                        pickup.Touched = false
                     end
                     ::continue::
                 end
@@ -165,12 +167,14 @@ local megaUI =
 
                         if attempts < maxAttempts then
                             pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem)
+                            pickup.Touched = false
                         else
                             pickup:Morph(
                                 EntityType.ENTITY_PICKUP,
                                 PickupVariant.PICKUP_COLLECTIBLE,
                                 CollectibleType.COLLECTIBLE_BREAKFAST
                             )
+                            pickup.Touched = false
                         end
                     end
                     ::continue::
@@ -201,6 +205,7 @@ local megaUI =
                         PickupVariant.PICKUP_COLLECTIBLE,
                         itemPool:GetCollectibleFromList(validItems, seed, CollectibleType.COLLECTIBLE_BREAKFAST)
                     )
+                    pickup.Touched = false
                 end
             else
                 player:UseCard(Card.CARD_SOUL_EDEN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER)
