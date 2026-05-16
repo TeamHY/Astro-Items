@@ -48,7 +48,7 @@ Astro:AddCallback(
     function(_, familiar)
         if familiar.Variant == FamiliarVariant.BLUE_FLY and familiar.SubType == 0 then
             if isStarted and Astro:HasCollectible(Astro.Collectible.ABSOLUT_GUPPY) then
-                Isaac.Spawn(
+                local blueFly = Isaac.Spawn(
                     EntityType.ENTITY_FAMILIAR,
                     FamiliarVariant.BLUE_FLY,
                     ABSOLUT_GUPPY_SUBTYPE,
@@ -56,6 +56,8 @@ Astro:AddCallback(
                     Vector.Zero,
                     familiar.SpawnerEntity
                 )
+
+                blueFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
             end
         end
     end
@@ -74,6 +76,8 @@ Astro:AddCallback(
                 Vector.Zero,
                 npc
             )
+                
+            blueFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
         end
     end
 )
