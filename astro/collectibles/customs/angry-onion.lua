@@ -14,7 +14,7 @@ Astro:AddCallback(
                 Astro.Collectible.ANGRY_ONION,
                 "화난 양파",
                 "공격 속도 증가!",
-                "↑ {{TearsSmall}} 연사(+상한) +0.7",
+                "↑ {{TearsSmall}}연사(+상한) +0.7",
                 -- 중첩 시
                 "중첩 가능"
             )
