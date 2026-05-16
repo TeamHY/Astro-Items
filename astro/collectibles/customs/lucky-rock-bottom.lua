@@ -5,14 +5,14 @@ Astro:AddCallback(
     function()
         if EID then
             Astro.EID:AddCollectible(
-                Astro.Collectible.RAPID_ROCK_BOTTOM,
+                Astro.Collectible.LUCKY_ROCK_BOTTOM,
                 "운 좋은 밑바닥",
                 "운 좋을 일만 남았어",
                 "{{LuckSmall}} 행운을 항상 가장 높았던 값으로 고정합니다."
             )
 
             Astro.EID:AddCollectible(
-                Astro.Collectible.RAPID_ROCK_BOTTOM,
+                Astro.Collectible.LUCKY_ROCK_BOTTOM,
                 "Lucky Rock Bottom", "",
                 "↑ Prevents {{Luck}} luck from being lowered for the rest of the run",
                 nil, "en_us"
