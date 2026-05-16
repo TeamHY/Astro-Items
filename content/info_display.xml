@@ -544,7 +544,7 @@
 		<info text="Spawns ghost tears orbiting enemies on hit, which fly toward the enemy after enough hits"/>
 	</collectible>
 	<collectible id="133">
-		<info text="Changes the room's color to red, green, or blue upon entering, granting Isaac extra stats based on color"/>
+		<info text="Changes Isaac's color to red, green, or blue upon entering a room, granting him extra stats based on color"/>
 		<info text="Red - x1.4 damage multiplier"/>
 		<info text="Green - x1.5 luck multiplier"/>
 		<info text="Blue - x1.2 tears multiplier"/>
@@ -920,6 +920,12 @@
 	</collectible>
 	<collectible id="240">
 		<info text="This item is consumed to spawn a massive snowstorm that deals huge freeze damage and destroys all breakable objects in the room"/>
+	</collectible>
+	<collectible id="241">
+		<info text="Spawns 4 eternal hearts on pickup"/>
+	</collectible>
+	<collectible id="242">
+		<info text="Spawns 4 eternal hearts on pickup"/>
 	</collectible>
 </collectibles>
 

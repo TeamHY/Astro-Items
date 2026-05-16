@@ -29,6 +29,18 @@ Astro:AddCallback(
                 -- 중첩 시
                 "중첩 시 해당 배율이 중첩된 수만큼 곱연산으로 적용"
             )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.RGB,
+                "RGB", "",
+                "Isaac's color changes in each room, and the effects vary depoending on the color:" ..
+                "#{{ArrowGrayRight}} {{ColorRed}}(Red){{CR}} x1.4 Damage multiplier" ..
+                "#{{ArrowGrayRight}} {{ColorGreen}}(Green){{CR}} x1.5 Luck multiplier" ..
+                "#{{ArrowGrayRight}} {{ColorBlue}}(Blue){{CR}} x1.2 Fire rate multiplier",
+                -- Stacks
+                "Stackable",
+                "en_us"
+            )
         end
     end
 )

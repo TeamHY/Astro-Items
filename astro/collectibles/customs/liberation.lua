@@ -17,21 +17,20 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.LIBERATION,
                 "해방",
-                "...",
-                "↑ {{DamageSmall}}공격력 +" .. DAMAGE_INCREMENT ..
-                "#↑ {{TearsSmall}}연사(+상한) +" .. TEARS_INCREMENT ..
-                "#{{EternalHeart}} 이터널 하트 " .. ETERNAL_HEART_COUNT .. "개 드롭",
+                "마침내 자유가 되리",
+                "↑ {{TearsSmall}}연사(+상한) +" .. TEARS_INCREMENT ..
+                "#↑ {{DamageSmall}}공격력 +" .. DAMAGE_INCREMENT ..
+                "#{{EternalHeart}} 이터널하트를 " .. ETERNAL_HEART_COUNT .. "개 드랍합니다.",
                 -- 중첩 시
                 "중첩 가능"
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.LIBERATION,
-                "Liberation",
-                "...",
-                "↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
-                "#↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
-                "#{{EternalHeart}} Drops " .. ETERNAL_HEART_COUNT .. " Eternal Hearts",
+                "Liberation", "",
+                "↑ {{Tears}} +" .. TEARS_INCREMENT .. " Fire rate" ..
+                "#↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
+                "#{{EternalHeart}} Spawns " .. ETERNAL_HEART_COUNT .. " Eternal Hearts",
                 -- Stacks
                 "Stackable",
                 "en_us"

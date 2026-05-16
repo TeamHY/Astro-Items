@@ -17,21 +17,20 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.SEVEN_SEVEN_SEVEN,
                 "777",
-                "...",
+                "신성함",
                 "↑ {{DamageSmall}}공격력 +" .. DAMAGE_INCREMENT ..
                 "#↑ {{SpeedSmall}}이동속도 +" .. SPEED_INCREMENT ..
-                "#{{EternalHeart}} 이터널 하트 " .. ETERNAL_HEART_COUNT .. "개 드롭",
+                "#{{EternalHeart}} 이터널하트를 " .. ETERNAL_HEART_COUNT .. "개 드랍합니다.",
                 -- 중첩 시
                 "중첩 가능"
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.SEVEN_SEVEN_SEVEN,
-                "777",
-                "...",
+                "777", "",
                 "↑ {{Damage}} +" .. DAMAGE_INCREMENT .. " Damage" ..
                 "#↑ {{Speed}} +" .. SPEED_INCREMENT .. " Speed" ..
-                "#{{EternalHeart}} Drops " .. ETERNAL_HEART_COUNT .. " Eternal Hearts",
+                "#{{EternalHeart}} Spawns " .. ETERNAL_HEART_COUNT .. " Eternal Hearts",
                 -- Stacks
                 "Stackable",
                 "en_us"

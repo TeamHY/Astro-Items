@@ -131,7 +131,7 @@ return {
  -- [862] = "설명 분리됨",
  -- [863] = "설명 분리됨",
     [864] = "↑ {{Tears}} +0.77 Fire rate#Spawns orbiting ghost projectiles on hit;#{{ArrowGrayRight}} Ghosts attack enemy after certain hits per enemy",
-    [865] = "Changes room color with effects:#{{ArrowGrayRight}} {{ColorRed}}(Red){{CR}} x1.4 Damage multiplier#{{ArrowGrayRight}} {{ColorGreen}}(Green){{CR}} x1.5 Luck multiplier#{{ArrowGrayRight}} {{ColorBlue}}(Blue){{CR}} x1.2 Fire rate multiplier",
+ -- [865] = "설명 분리됨",
  -- [866] = "설명 분리됨",
     [867] = "Spawns one random ghost every 5 seconds",
  -- [868] = "설명 분리됨",

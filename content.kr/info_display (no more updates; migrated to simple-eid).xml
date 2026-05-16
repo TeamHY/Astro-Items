@@ -924,6 +924,12 @@
 	<collectible id="240">
 		<info text="사용 시 방대한 눈보라를 일으켜 강력한 빙결 피해를 주고 방 안의 부술 수 있는 모든 것을 파괴합니다"/>
 	</collectible>
+	<collectible id="241">
+		<info text="획득 시 영원한 심장을 4개 소환합니다"/>
+	</collectible>
+	<collectible id="241">
+		<info text="획득 시 영원한 심장을 4개 소환합니다"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
