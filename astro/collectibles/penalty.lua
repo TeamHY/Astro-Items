@@ -280,3 +280,10 @@ Astro:AddCallback(
         end
     end
 )
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    function()
+        deletedItems = {}
+    end
+)
