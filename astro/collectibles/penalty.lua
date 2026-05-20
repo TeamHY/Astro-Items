@@ -34,6 +34,8 @@ local PENALTY_REMOVE_ITEMS = {
         Astro.Collectible.GUPPY_PART,
         Astro.Collectible.PUZZLE_DICE,
         Astro.Collectible.POWER_ROCK_BOTTOM,
+        Astro.Collectible.GOLDEN_APPLE,
+        Astro.Collectible.GOLD_TOOTH,
     },
     trinket = {
         TrinketType.TRINKET_JAW_BREAKER,
