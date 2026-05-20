@@ -31,6 +31,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_FIRE_MIND,
             CollectibleType.COLLECTIBLE_HAEMOLACRIA,
             CollectibleType.COLLECTIBLE_FLAT_STONE,
+            CollectibleType.COLLECTIBLE_ANTI_GRAVITY,
         }
         
         if EID then
