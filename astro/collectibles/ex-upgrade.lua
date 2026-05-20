@@ -69,7 +69,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_MIDAS_TOUCH] = { Id = Astro.Collectible.MARIGOLD, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_MY_LITTLE_UNICORN] = { Id = Astro.Collectible.BICORN, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_EUTHANASIA] = { Id = Astro.Collectible.LIFE_SUSTAINING_TREATMENT, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_HOURGLASS] = { Id = Astro.Collectible.CHRONOS, Chance = 0.1 },
+    --[CollectibleType.COLLECTIBLE_HOURGLASS] = { Id = Astro.Collectible.CHRONOS, Chance = 0.1 },
     [Astro.Collectible.AMAZING_CHAOS_SCROLL] = { Id = Astro.Collectible.AMAZING_CHAOS_SCROLL_OF_GOODNESS, Chance = 0.4 },
     [CollectibleType.COLLECTIBLE_MAGIC_MUSHROOM] = { Id = Astro.Collectible.RAINBOW_MUSHROOM, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_HIVE_MIND] = { Id = Astro.Collectible.OVERMIND, Chance = 0.5 },
@@ -80,14 +80,14 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_SINUS_INFECTION] = { Id = Astro.Collectible.ACUTE_SINUSITIS, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_CHAMPION_BELT] = { Id = Astro.Collectible.TYRANTS_BELT, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_ROSARY] = { Id = Astro.Collectible.LUXURY_ROSARY, Chance = 0.5 },
-    [CollectibleType.COLLECTIBLE_LUMP_OF_COAL] = { Id = Astro.Collectible.MINERAL_SHARD, Chance = 0.5 },
+    --[CollectibleType.COLLECTIBLE_LUMP_OF_COAL] = { Id = Astro.Collectible.MINERAL_SHARD, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_LEAD_PENCIL] = { Id = Astro.Collectible.QUILL_PEN, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_SERPENTS_KISS] = { Id = Astro.Collectible.SERPENTS_KISS_EX, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_HOLY_LIGHT] = { Id = Astro.Collectible.DIVINE_LIGHT, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_APPLE] = { Id = Astro.Collectible.GOLDEN_APPLE, Chance = 0.2 },
     [CollectibleType.COLLECTIBLE_TOUGH_LOVE] = { Id = Astro.Collectible.GOLD_TOOTH, Chance = 0.2 },
-    [CollectibleType.COLLECTIBLE_MARK] = { Id = Astro.Collectible.SEVEN_SEVEN_SEVEN, Chance = 0.3 },
-    [CollectibleType.COLLECTIBLE_PACT] = { Id = Astro.Collectible.LIBERATION, Chance = 0.3 },
+    --[CollectibleType.COLLECTIBLE_MARK] = { Id = Astro.Collectible.SEVEN_SEVEN_SEVEN, Chance = 0.3 },
+    --[CollectibleType.COLLECTIBLE_PACT] = { Id = Astro.Collectible.LIBERATION, Chance = 0.3 },
 }
 
 ---
