@@ -2,7 +2,7 @@
 
 local CHANGE_CHANCE = 1
 
-local NO_FIGHT_CHANCE = 0.2
+local NO_FIGHT_CHANCE = 1
 
 local PRICE = 3
 
