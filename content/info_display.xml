@@ -104,7 +104,7 @@
 	</collectible>
 	<collectible id="23">
 		<info text="Burning Basement, Flooded Caves, Dank Depths, and Scarred Womb floors will not appear in the next run"/>
-		<info text="Deals extra damage to enemies that appear on floors that are not generated"/>
+		<info text="Deals extra damage to champion enemies"/>
 	</collectible>
 	<collectible id="24">
 		<info text="Spawns Schoolbag, Belly Button, and Polydactyly on pickup. Picking up one makes the other 2 disappear"/>
