@@ -371,7 +371,7 @@
 		<info text="Single use"/>
 	</collectible>
 	<collectible id="94">
-		<info text="No prediction allowed."/>
+		<info text="N o  p r e d i c t i o n  a l l o w e d ."/>
 	</collectible>
 	<collectible id="95">
 		<info text="Counts as 3 items for Siamese Twins transformation"/>
@@ -569,7 +569,7 @@
 		<info text="Chance increases with luck"/>
 	</collectible>
 	<collectible id="139">
-		<info text="Familiar that drops a lil battery with 20% chance upon clearing a room"/>
+		<info text="Familiar that drops a micro battery with 20% chance upon clearing a room"/>
 	</collectible>
 	<collectible id="140">
 		<info text="Rerolls each pedestal item in the room to 1-3 ahead or 1-3 behind item ID"/>
@@ -843,7 +843,7 @@
 		<info text="Failure: Permanently decreases damage multiplier by a small amount"/>
 	</collectible>
 	<collectible id="216">
-		<info text="Every 15 tears, fire a the Forgotten's melee attack"/>
+		<info text="Every 3 tears, fire a the Forgotten's melee attack"/>
 	</collectible>
 	<collectible id="217">
 	</collectible>

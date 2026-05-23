@@ -32,7 +32,7 @@ Astro:AddCallback(
                 Astro.Collectible.SUPER_NOVA,
                 "초신성",
                 "광활한 별들의 폭발",
-                "적 명중 시 " .. chance .. "%의 확률로 십자 모양 광선을 소환합니다." ..
+                "적 명중 시 " .. chance .. "%의 확률로 12방향으로 초당 공격력 x10.5의 광선을 소환합니다." ..
                 "#{{TimerSmall}} (쿨타임 " .. cooldown .. "초)" ..
                 "#{{LuckSmall}} 행운 30 이상일 때 100% 확률 (행운 1당 +3%p)",
                 -- 중첩 시
@@ -42,7 +42,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.SUPER_NOVA,
                 "Super Nova", "",
-                chance .. "% chance to summon cross-shaped beam on hit (+3%p per Luck)" ..
+                chance .. "% chance to summon a cross-shaped beam that deals x10.5 Isaac's damage per second on hit (+3%p per Luck)" ..
                 "#{{Timer}} " .. cooldown .. " seconds cooldown",
                 -- Stacks
                 "Stacks increase summon chance and decrease summon cooldown",

@@ -64,12 +64,12 @@ Astro:AddCallback(
                 Astro.Collectible.KAAEN_AUTO_RELOADER,
                 "KAAEN - 재장전 도우미",
                 "재충전해주는 기계 인형",
-                "방 클리어 시 20%의 확률로 {{Crafting19}}리틀 배터리를 소환합니다."
+                "방 클리어 시 20%의 확률로 {{Crafting19}}마이크로 배터리를 소환합니다."
             )
             Astro.EID:AddCollectible(
                 Astro.Collectible.KAAEN_AUTO_RELOADER,
                 "KAAEN - Auto Reloader", "",
-                "20% chance to spawn {{Crafting19}} little battery on room clear",
+                "20% chance to spawn {{Crafting19}} micro battery on room clear",
                 nil, "en_us"
             )
         end

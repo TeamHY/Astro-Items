@@ -105,6 +105,33 @@ Astro:AddCallback(
     end
 )
 
+---@param position Vector
+---@param customScale Vector?
+local function spawnDust(position, customScale)
+    customScale = customScale or 1
+
+    local iceDustColor = Color(1, 1, 1, 1)
+    iceDustColor:SetColorize(1, 1, 1, 0.5)
+    iceDustColor:SetOffset(0.7, 0.7, 0.9)
+
+    local dust = Isaac.Spawn(1000, EffectVariant.DUST_CLOUD, 0, position, Vector.Zero, nil):ToEffect()
+    dust.Color = iceDustColor
+    dust.SpriteScale = Vector(0.5, 0.5) * customScale
+    dust:SetTimeout(30)
+
+    return dust
+end
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_PLAYER_UPDATE,
+    ---@param player EntityPlayer
+    function(_, player)
+        if player:HasCollectible(Astro.Collectible.URANUS_EX) and player:IsFrame(60, 0) then
+            spawnDust(player.Position - Vector(0, 15))
+        end
+    end
+)
+
 Astro:AddCallbackCustom(
     isc.ModCallbackCustom.POST_PLAYER_COLLECTIBLE_ADDED,
     ---@param player EntityPlayer
