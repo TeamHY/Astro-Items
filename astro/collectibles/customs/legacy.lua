@@ -84,6 +84,7 @@ Astro:AddCallback(
             local newCollectible = Astro.SetsCollectibles[randomIndex]
 
             pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newCollectible, true, true, false)
+            pickup.Touched = false
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, -1, pickup.Position, Vector.Zero, nil)
             SFXManager():Play(Astro.SoundEffect.LEGACY_USE, USE_SOUND_VOLUME)
             player:AnimateCollectible(ITEM_ID)

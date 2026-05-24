@@ -9,7 +9,8 @@ Astro:AddCallback(
                 "투척 폭탄",
                 "폭탄 받아라!",
                 "↑ {{Bomb}}폭탄 +5" ..
-                "#폭탄을 설치하지 않고 투척합니다."
+                "#폭탄을 설치하지 않고 투척합니다." ..
+                "#폭발 공격에 피해를 입지 않습니다."
             )
 
             Astro.EID:AddCollectible(
@@ -17,7 +18,8 @@ Astro:AddCallback(
                 "Throw Bomb",
                 "",
                 "↑ {{Bomb}} +5 Bombs" ..
-                "#Throws bombs instead of placing",
+                "#Throws bombs instead of placing" ..
+                "#Grants immunity to explosions",
                 nil, "en_us"
             )
 
@@ -48,6 +50,21 @@ Astro:AddCallback(
 
 
 local THROW_BOMB_FLAGS = nil
+
+Astro:AddCallback(
+    ModCallbacks.MC_ENTITY_TAKE_DMG,
+    ---@param entity Entity
+    ---@param amount number
+    ---@param damageFlags number
+    ---@param source EntityRef
+    ---@param countdownFrames number
+    function(_, entity, amount, damageFlags, source, countdownFrames)
+        if entity:ToPlayer():HasCollectible(Astro.Collectible.THROW_BOMB) and damageFlags & DamageFlag.DAMAGE_EXPLOSION == DamageFlag.DAMAGE_EXPLOSION then
+            return false
+        end
+    end,
+    EntityType.ENTITY_PLAYER
+)
 
 Astro:AddCallback(ModCallbacks.MC_POST_BOMB_INIT,
     ---@param bomb EntityBomb

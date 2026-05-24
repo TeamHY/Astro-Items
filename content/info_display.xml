@@ -579,7 +579,7 @@
 	</collectible>
 	<collectible id="142">
 		<info text="Spawns a tick that lasts for 2.7 seconds on hit"/>
-		<info text="Ticks deal rapid sustained damage x2 tear damage and track to the nearest highest-health enemy"/>
+		<info text="Ticks deal rapid sustained damage x4 tear damage and track to the nearest highest-health enemy"/>
 	</collectible>
 	<collectible id="143">
 		<info text="Always applies Whore of Babylon and Dead Bird effects"/>

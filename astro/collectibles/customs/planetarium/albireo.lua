@@ -133,6 +133,7 @@ Astro:AddCallback(
 
             if Astro.PLANETARIUM_UPGRADE_LIST[id] then
                 pickup:Morph(pickup.Type, pickup.Variant, Astro.PLANETARIUM_UPGRADE_LIST[id].Id, true)
+                pickup.Touched = false
                 Game():SpawnParticles(pickup.Position + Vector(0, 0.1), ALIBREO_POOF_VARIANT, 1, 0)
             end
         end

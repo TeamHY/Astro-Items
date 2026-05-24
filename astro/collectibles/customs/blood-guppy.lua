@@ -61,6 +61,7 @@ Astro:AddUpgradeAction(
     function(player, data)
         for _, guppyItem in ipairs(data.guppyItems) do
             guppyItem:ToPickup():Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, ITEM_ID)
+            guppyItem.Touched = false
             Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, -1, guppyItem.Position, guppyItem.Velocity, nil)
         end
     end

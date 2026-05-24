@@ -80,7 +80,7 @@ Descriptions.collectibles = {
     },
     [19] = {
         { text = "<warning>일회용" },
-        { text = "보스방 보상으로 소지 중인 아이템 1개와 천사방 아이템 2개(양자택일) 소환" },
+        { text = "보스방 보상으로 소지중인 아이템 1개와 천사방 아이템 2개(양자택일) 소환" },
     },
     [20] = {
         { text = "방 클리어 시:" },
@@ -110,7 +110,7 @@ Descriptions.collectibles = {
         { text = "QuickPick 사거리 무제한" },
     },
     [27] = {
-        { text = "<warning>소지 중인 천체관 아이템을 모두 제거하고 제거한 만큼 랜덤 천체관 아이템 소환" },
+        { text = "<warning>소지중인 천체관 아이템을 모두 제거하고 제거한 만큼 랜덤 천체관 아이템 소환" },
     },
     [28] = {
         { text = "눈물 주위에 공격력 x0.5의 작은 눈물이 공전" },
@@ -127,7 +127,7 @@ Descriptions.collectibles = {
     },
     [33] = {
         { text = "<warning>보스방 클리어 시 <color=0xFFFFFF87>정신<color=0xFFFFFFFF>, <color=0xFFFF8080>신체<color=0xFFFFFFFF>, <color=0xFFC8C8FF>영혼<color=0xFFFFFFFF> 제거" },
-        { text = "<warning>스테이지 진입 시 소지 아이템 1개 제거 후 제거된 아이템/<color=0xFFFFFF87>정신<color=0xFFFFFFFF>/<color=0xFFFF8080>신체<color=0xFFFFFFFF>/<color=0xFFC8C8FF>영혼<color=0xFFFFFFFF> 중 1개 선택 가능" },
+        { text = "<warning>스테이지 진입 시 소지 아이템 1개 제거 후 제거된 아이템/<color=0xFFFFFF87>정신<color=0xFFFFFFFF>/<color=0xFFFF8080>신체<color=0xFFFFFFFF>/<color=0xFFC8C8FF>영혼<color=0xFFFFFFFF> 중 택1" },
     },
     [34] = {
         { text = "블랙하트 <color=0xFF3BF745>+1" },
@@ -153,7 +153,7 @@ Descriptions.collectibles = {
         { text = "<arrow>천체관에는 글리치 머신과 <color=0xFFC9FF00>망원경 렌즈<color=0xFFFFFFFF> 존재" },
     },
     [40] = {
-        { text = "소지 중인 공격 방식 교체형 아이템을 모두 제거 및 드롭" },
+        { text = "소지중인 공격 방식 교체형 아이템을 모두 제거 및 드롭" },
     },
     [41] = {
         { text = "행운 <color=0xFF3BF745>+1" },
@@ -169,7 +169,8 @@ Descriptions.collectibles = {
         { text = "적에게 준 피해의 10%만큼 방 안의 모든 몬스터에게 부여" },
     },
     [45] = {
-        { text = "방마다 처음 적 처치 시 블랙홀 소환" },
+        { text = "적 처치 시 블랙홀 소환" },
+        { text = "<arrow><color=0xFFC8C8C8>방당 1회 한정" },
         { text = "방 클리어 시 10초간 무적" },
     },
     [46] = {
@@ -183,7 +184,6 @@ Descriptions.collectibles = {
         { text = "공격이 적을 관통함" },
         { text = "<arrow>관통한 눈물은 적에게 유도됨" },
         { text = "적들이 받는 피해량 1.2배 <color=0xFFb9d27d>(행운 비례)" },
-        { text = "다음 게임에 <color=0xFFC9FF00>큐피드의 화살<color=0xFFFFFFFF>을 들고 시작" },
     },
     [49] = {
         { text = "사용 시 그 다음 방까지 <color=0xFFC9FF00>탐험가 모자<color=0xFFFFFFFF>/<color=0xFFC9FF00>보라 양초<color=0xFFFFFFFF> 효과 부여" },
@@ -276,10 +276,10 @@ Descriptions.collectibles = {
         { text = "체력 증가와 같이 더 로스트에게 불필요한 아이템 미등장" },
     },
     [76] = {
-        { text = "모든 능력치 <color=0xFF3BF745>증<color=0xFFF7513B>감" },
+        { text = "모든 능력치 배율 <color=0xFF3BF745>증<color=0xFFF7513B>감" },
     },
     [77] = {
-        { text = "안 돼" },
+        { text = "안 돼." },
     },
     [78] = {
         { text = "적 명중 시 12방향으로 초당 공격력 x10.5의 광선 발사 <color=0xFFb9d27d>(행운 비례)" },
@@ -291,7 +291,7 @@ Descriptions.collectibles = {
         { text = "<indent><color=0xFFC9FF00>검은 거울<color=0xFFFFFFFF> 장신구 소환" },
     },
     [80] = {
-        { text = "소지 중일 때 적 처치 시 적의 영혼을 2개까지 저장" },
+        { text = "소지중일 때 적 처치 시 적의 영혼을 2개까지 저장" },
         { text = "사용 시 영혼을 모두 소모하고 여러 유령 소환" },
     },
     [81] = {
@@ -300,7 +300,7 @@ Descriptions.collectibles = {
     },
     [83] = {
         { text = "<warning>일회용, <color=0xFF696969>？<color=0xFFFFFFFF>에서만 가능" },
-        { text = "사용 시 소지 중인 3~4퀄리티 아이템 3개 소환" },
+        { text = "사용 시 소지중인 3~4퀄리티 아이템 3개 소환" },
         { text = "<arrow>하나만 선택 가능" },
     },
     [84] = {
@@ -320,13 +320,13 @@ Descriptions.collectibles = {
         { text = "클리어하지 않은 방에서 이동속도 <color=0xFFF7513B>-0.3" },
     },
     [88] = {
-        { text = "소지 중일 때:" },
+        { text = "소지중일 때:" },
         { text = "<indent><color=0xFFC9FF00>모르핀<color=0xFFFFFFFF> 효과 적용" },
         { text = "<indent>적 처치 시 영혼 저장, 적 명중 시 영혼 1개당 1%p 추가 피해" },
         { text = "방 클리어 시 영혼 5개 감소" },
     },
     [89] = {
-        { text = "소지 중일 때:" },
+        { text = "소지중일 때:" },
         { text = "<indent><color=0xFFC9FF00>YO, 리슨!<color=0xFFFFFFFF> 효과 적용" },
         { text = "<indent>적 처치 시 영혼 저장, 적 명중 시 영혼 1개당 1%p 추가 피해" },
         { text = "방 클리어 시 영혼 5개 감소" },
@@ -346,7 +346,7 @@ Descriptions.collectibles = {
         { text = "숫자 8키로 메인 액티브와 카드/알약 슬롯 액티브 자리 교체" },
     },
     [94] = {
-        { text = "<warning><color=0xFFFF0000>예 측 불 허 ." },
+        { text = "<warning>예측 불허." },
     },
     [95] = {
         { text = "샴쌍둥이 변신세트 적용" },
@@ -362,7 +362,7 @@ Descriptions.collectibles = {
         { text = "대각선으로 이동 시 이동속도 <color=0xFF3BF745>+0.3" },
     },
     [99] = {
-        { text = "사용 시 방 안의 모든 아이템을 소지 중인 아이템으로 리롤" },
+        { text = "사용 시 방 안의 모든 아이템을 소지중인 아이템으로 리롤" },
         { text = "<arrow>0~1퀄리티 아이템은 미등장" },
     },
     [100] = {
@@ -424,7 +424,7 @@ Descriptions.collectibles = {
     [112] = {
         { text = "방 입장 시 공격력 배율 <color=0xFF3BF745>x1.1~x1.5" },
         { text = "<color=0xFFC9FF00>지구<color=0xFFFFFFFF> 효과 적용" },
-        { text = "방 클리어 시 <color=0xFFC9FF00>하갈라즈<color=0xFFFFFFFF> 효과 발동" },
+        { text = "방 클리어 시 <color=0xFFC9FF00>하갈라즈<color=0xFFFFFFFF> 발동" },
     },
     [113] = {
         { text = "<color=0xFFC9FF00>화성<color=0xFFFFFFFF> 효과 적용" },
@@ -456,7 +456,7 @@ Descriptions.collectibles = {
         { text = "<warning>스테이지당 1번, <color=0xFF696969>？<color=0xFFFFFFFF>에서만 가능" },
         { text = "사용 시:" },
         { text = "<indent>행운 <color=0xFFF7513B>-1" },
-        { text = "<indent>소지 중인 아이템 1개와 3~4퀄리티 아이템 1개 소환" },
+        { text = "<indent>소지중인 아이템 1개와 3~4퀄리티 아이템 1개 소환" },
         { text = "<indent><arrow>하나만 선택 가능" },
     },
     [120] = {
@@ -484,11 +484,11 @@ Descriptions.collectibles = {
         { text = "증발성 연사 <color=0xFF3BF745>+21.6" },
         { text = "<arrow>증발 도중 적 처치 시 연사 +0.12 회복" },
     },
-    [126] = {
+    [127] = {
         { text = "증발성 행운 <color=0xFF3BF745>+21.6" },
         { text = "<arrow>증발 도중 적 처치 시 행운 +0.12 회복" },
     },
-    [126] = {
+    [128] = {
         { text = "증발성 이동속도 <color=0xFF3BF745>+1.08" },
         { text = "<arrow>증발 도중 적 처치 시 이동속도 +0.006 회복" },
     },
@@ -497,8 +497,7 @@ Descriptions.collectibles = {
         { text = "방 입장 시 그 방의 적 1마리가 이번 게임에서 영원히 미등장" },
     },
     [130] = {
-        { text = "체력, 영혼 심장 또는 검은 심장 1개를 얻습니다" },
-        { text = "모든 능력치의 배율이 증가합니다" },
+        { text = "<color=0xFF3BF745>모든 능력치 배율 증가" },
     },
     [131] = {
         { text = "<warning>일회용" },
@@ -577,7 +576,7 @@ Descriptions.collectibles = {
     [150] = {
         { text = "사용 시 <color=0xFFC9FF00>생득권<color=0xFFFFFFFF> 1개 획득" },
         { text = "획득 시/스테이지 진입 시:" },
-        { text = "<indent>소지 중인 아이템과 능력치를 모두 리롤" },
+        { text = "<indent>소지중인 아이템과 능력치를 모두 리롤" },
     },
     [151] = {
         { text = "블랙하트 <color=0xFF3BF745>+1" },
@@ -606,6 +605,9 @@ Descriptions.collectibles = {
     [155] = {
         { text = "스테이지 진입 시 50% 확률로 구피 세트 <color=0xFF3BF745>+1" },
     },
+    [156] = {
+        { text = "스테이지 진입 시 소멸" },
+    },
     [157] = {
         { text = "능력치가 아이작의 기본 능력치보다 낮아지지 않음" },
     },
@@ -616,7 +618,7 @@ Descriptions.collectibles = {
         { text = "0~2퀄리티 아이템 등장 시 20% 확률로 리롤" },
     },
     [160] = {
-        { text = "사용 시 모든 <color=0xFF9F0000>？<color=0xFFFFFFF>아이템 중 1개를 획득할 수 있는 곳으로 순간이동" },
+        { text = "사용 시 <color=0xFF9F0000>？<color=0xFFFFFFF>아이템 중 1개를 얻을 수 있는 곳으로 순간이동" },
     },
     [161] = {
         { text = "사용 시 방 안의 아이템을 변신세트 아이템으로 리롤" },
@@ -625,7 +627,7 @@ Descriptions.collectibles = {
         { text = "새 층을 시작할 때마다 밴드 덩어리를 얻습니다" },
     },
     [163] = {
-        { text = "사용 시 소지 중인 아이템 중 1개를 획득할 수 있는 곳으로 순간이동" },
+        { text = "사용 시 소지중인 아이템 중 1개를 획득할 수 있는 곳으로 순간이동" },
     },
     [164] = {
         { text = "공격 중 폭탄 설치 시 기가 로켓이 공격방향으로 발사됨" },
@@ -634,7 +636,7 @@ Descriptions.collectibles = {
         { text = "기가 폭탄 10개 드롭" },
     },
     [166] = {
-        { text = "소지 중일 때 적 명중 시 10초 후 사라지는 끈적이 니켈 드롭" },
+        { text = "소지중일 때 적 명중 시 10초 후 사라지는 끈적이 니켈 드롭" },
         { text = "사용 시 끈적이 니켈을 점화된 폭탄으로 변환" },
     },
     [167] = {
@@ -675,7 +677,7 @@ Descriptions.collectibles = {
         { text = "공격키를 누르는 동안 공격력 증가 (<color=0xFF3BF745>최대 x1.5<color=0xFFFFFFFF>)" },
     },
     [176] = {
-        { text = "소지 중일 때 적 처치 시 10% 확률로 불꽃 소환 <color=0xFFb9d27d>(행운 비례)" },
+        { text = "소지중일 때 적 처치 시 10% 확률로 불꽃 소환 <color=0xFFb9d27d>(행운 비례)" },
         { text = "사용 시:" },
         { text = "<indent>그 방의 적 1마리 화상" },
         { text = "<indent><color=0xFFC9FF00>XIX - 태양<color=0xFFFFFFFF> 드롭 <color=0xFFC8C8C8>(처음 한정)" },
@@ -687,7 +689,7 @@ Descriptions.collectibles = {
         { text = "<indent><color=0xFFC9FF00>XVIII - 달<color=0xFFFFFFFF> 드롭 <color=0xFFC8C8C8>(처음 한정)" },
     },
     [178] = {
-        { text = "소지 중일 때 적 처치 시 10% 확률로 불꽃 소환 <color=0xFFb9d27d>(행운 비례)" },
+        { text = "소지중일 때 적 처치 시 10% 확률로 불꽃 소환 <color=0xFFb9d27d>(행운 비례)" },
         { text = "사용 시:" },
         { text = "<indent>그 방의 적 1마리 화상" },
         { text = "<indent><color=0xFFC9FF00>XIX - 태양?<color=0xFFFFFFFF> 드롭 <color=0xFFC8C8C8>(처음 한정)" },
@@ -704,7 +706,7 @@ Descriptions.collectibles = {
     },
     [181] = {
         { text = "<warning>일회용" },
-        { text = "소지 중일 때 목숨 <color=0xFF3BF745>+1" },
+        { text = "소지중일 때 목숨 <color=0xFF3BF745>+1" },
         { text = "사용 시 조우한 아이템 중 소지하지 않은 아이템 1개 소환" },
     },
     [182] = {
@@ -718,7 +720,7 @@ Descriptions.collectibles = {
         { text = "공격력 배율 <color=0xFF3BF745>x1.5" },
     },
     [185] = {
-        { text = "소지 중일 때 연사 <color=0xFF3BF745>+0.5" },
+        { text = "소지중일 때 연사 <color=0xFF3BF745>+0.5" },
         { text = "사용 시 그 방에서 연사 <color=0xFF3BF745>+2" },
     },
     [186] = {
@@ -729,7 +731,7 @@ Descriptions.collectibles = {
         { text = "사용 시 방 안의 모든 아이템이 오지선다로 빠르게 순환함" },
     },
     [188] = {
-        { text = "아이작의 공격 방향으로 공격력 x2의 광선을 발사합니다" },
+        { text = "사용 후 공격방향으로 초당 공격력 x60의 광선 발사" },
     },
     [189] = {
         { text = "방 클리어 시 그 방의 바위를 모두 파괴" },
@@ -808,7 +810,7 @@ Descriptions.collectibles = {
     },
     [209] = {
         { text = "보스방 클리어 시 황금 장신구 3개 드롭" },
-        { text = "Ctrl 키를 눌러 소지 중인 장신구 흡수 및 그 방의 장신구 황금화" },
+        { text = "Ctrl 키를 눌러 소지중인 장신구 흡수 및 그 방의 장신구 황금화" },
     },
     [210] = {
         { text = "모든 변신세트 효과 강화" },
@@ -816,7 +818,7 @@ Descriptions.collectibles = {
     },
     [211] = {
         { text = "<warning>3회 피격 시 소멸" },
-        { text = "소지 중일 때 피격 시 피해를 무시하고 10초간 무적" },
+        { text = "소지중일 때 피격 시 피해를 무시하고 10초간 무적" },
     },
     [212] = {
         { text = "<warning>스테이지당 3번 사용 가능" },
@@ -926,7 +928,7 @@ Descriptions.collectibles = {
     },
     [239] = {
         { text = "사용 시 공격력/연사 모드 전환" },
-        { text = "소지 중일 때 선택한 모드에 따라 능력치 증감" },
+        { text = "소지중일 때 선택한 모드에 따라 능력치 증감" },
     },
     [240] = {
         { text = "사용 시 방 안의 적을 모두 빙결시키고 모든 장애물 파괴" },
@@ -1000,7 +1002,7 @@ Descriptions.trinkets = {
         { text = "패시브 아이템이 생성되지 않습니다" },
     },
     [15] = {
-        { text = "새 층을 시작할 때마다 소지 중인 장신구를 흡수해 효과를 영구적으로 얻습니다" },
+        { text = "새 층을 시작할 때마다 소지중인 장신구를 흡수해 효과를 영구적으로 얻습니다" },
     },
     [16] = {
         { text = "아이작이 알약을 소모할 때마다 방 안의 모든 적에게 즉시 피해를 줍니다" },
