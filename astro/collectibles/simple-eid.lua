@@ -213,7 +213,7 @@ Descriptions.collectibles = {
         { text = "<arrow>실패 시 브로큰하트 <color=0xFFF7513B>+3" },
     },
     [57] = {
-        { text = "모든 알약을 <color=0xFF00FFFF>말<color=0xFFFFFFFF>약으로 대체됨" },
+        { text = "모든 알약이 <color=0xFF00FFFF>말<color=0xFFFFFFFF>약으로 대체됨" },
         { text = "미사용 알약 식별 가능" },
     },
     [58] = {
