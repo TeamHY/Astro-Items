@@ -14,22 +14,22 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            local rgontxt     = "↑ {{ColorCyan}}모든 세트 적용{{CR}}#"
-            local rgontxt_eng = "Applies all transformation#"
+            local rgontxt     = REPENTOGON and "↑ {{ColorCyan}}모든 세트 적용{{CR}}#" or ""
+            local rgontxt_eng = REPENTOGON and "Applies all transformation#" or ""
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "복종의 천칭",
                 "...",
                 rgontxt ..
-                "#공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)"
+                "공격력이 적의 체력보다 높으면 해당 적을 지웁니다. (보스에겐 미적용)"
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Scales of Obedience", "",
                 rgontxt_eng ..
-                "#Erases monsters if Isaac's damage exceeds their health (Does not work on boss monsters)",
+                "Erases monsters if Isaac's damage exceeds their health (Does not work on boss monsters)",
                 nil, "en_us"
             )
         end

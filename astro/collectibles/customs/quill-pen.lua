@@ -14,14 +14,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            local rgonWarning = REPENTOGON and "" or "#!!! REPENTOGON이 없으면 눈물에만 적용"
+            local rgontxt = REPENTOGON and "공격을" or "눈물을"
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.QUILL_PEN,
                 "깃펜",
                 "하늘의 손길",
-                "공격을 " .. FEATHER_INDEX .. "번 발사할 때마다 공격력 x" .. DAMAGE_MULTI .. " +5의 깃털 다발이 나갑니다." ..
-                rgonWarning,
+                rgontxt .. FEATHER_INDEX .. "번 발사할 때마다 공격력 x" .. DAMAGE_MULTI .. " +5의 깃털 다발이 나갑니다.",
                 -- 중첩 시
                 "중첩 시 깃털 다발의 피해량 증가"
             )
