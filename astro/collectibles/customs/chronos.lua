@@ -88,6 +88,7 @@ Astro:AddCallback(
                 for targetItemId, newItemId in pairs(returnItems) do
                     if item.SubType == targetItemId then
                         item:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItemId, true)
+                        item.Touched = false
                         game:MakeShockwave(item.Position, 0.1, 0.02, 20)
                         success = true
                     end
