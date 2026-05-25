@@ -6,7 +6,7 @@ local NO_FIGHT_CHANCE = 1
 
 local PRICE = 3
 
-local RUNE_COUNT = 1
+local RUNE_COUNT = 2
 
 ---
 
