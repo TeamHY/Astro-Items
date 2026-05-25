@@ -31,7 +31,7 @@ local PENALTY_REMOVE_ITEMS = {
         Astro.Collectible.OMEGA_321,
         Astro.Collectible.BIRTHRIGHT_THE_LOST,
         Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
-        Astro.Collectible.GUPPY_PART,
+        Astro.Collectible.SCHRODINGERS_CAT,
         Astro.Collectible.PUZZLE_DICE,
         Astro.Collectible.POWER_ROCK_BOTTOM,
         Astro.Collectible.GOLDEN_APPLE,
