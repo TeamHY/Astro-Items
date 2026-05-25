@@ -1,13 +1,13 @@
 ---
 
 -- 일반 거지에서 변경될 확률
-local CHANGE_CHANCE = 1
+local CHANGE_CHANCE = 0.5
 
 -- 성공 확률 (0 ~ 1)
 local SUCCESS_CHANCE = 1
 
 -- 가격
-local PRICE = 15
+local PRICE = 10
 
 ---
 
