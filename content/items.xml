@@ -241,6 +241,7 @@
 	<active gfx="SnowGrave.png" quality="5" maxcharges="4" devilprice="1" shopprice="6" name="SnowGrave" description="Fatal" id="240" />
 	<passive cache="damage speed" gfx="777.png" quality="3" devilprice="1" shopprice="15" hidden="true" name="777" description="Divinity" id="241" />
 	<passive cache="damage firedelay" gfx="Liberation.png" quality="3" devilprice="1" shopprice="15" hidden="true" name="Liberation" description="Free at last" id="242" />
+	<passive gfx="Giant Marble.png" quality="3" devilprice="1" shopprice="15" name="Giant Marble" description="Too many" id="243" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

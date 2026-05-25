@@ -931,6 +931,9 @@
 	<collectible id="242">
 		<info text="Spawns 4 eternal hearts on pickup"/>
 	</collectible>
+	<collectible id="243">
+		<info text="Spawns 3 random trinkets and a Mega Gulp! pill on pickup"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
