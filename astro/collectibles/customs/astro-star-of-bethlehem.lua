@@ -6,6 +6,8 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
+            local damageMultiplyStr = Astro.IsFight and "x1.2" or "x1.8"
+
             Astro.EID:AddCollectible(
                 Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM,
                 "베들레헴의 한별",
@@ -13,7 +15,7 @@ Astro:AddCallback(
                 "클리어하지 않은 방에 입장 시 오라가 생깁니다." ..
                 "#캐릭터가 오라 안에 있을 시:" ..
                 "#{{IND}}↑ {{TearsSmall}}연사 배율 x2.5" ..
-                "#{{IND}}↑ {{DamageSmall}}공격력 배율 x1.2" ..
+                "#{{IND}}↑ {{DamageSmall}}공격력 배율 " .. damageMultiplyStr ..
                 "#{{IND}} 공격에 유도 효과가 생깁니다.",
                 -- 중첩 시
                 "중첩 시 적 탄환에 맞았을 때 50% 확률로 피해를 무시하며, 방 입장 시 사거리가 3 증가하고 공격이 적에게 유도됩니다."
@@ -25,7 +27,7 @@ Astro:AddCallback(
                 "Slowly travels from the uncleared rooms to the {{BossRoom}} Boss Room" ..
                 "#Standing in its aura grants:" ..
                 "#{{IND}}↑ {{Tears}} x2.5 Tears multiplier" ..
-                "#{{IND}}↑ {{Damage}} x1.2 Damage multiplier" ..
+                "#{{IND}}↑ {{Damage}} " .. damageMultiplyStr .. " Damage multiplier" ..
                 "#{{IND}} Homing Tears",
                 -- Stacks
                 "Stacks has a 50% chance to block enemy shots, and upon entering a room, their range increases by 3 and homing tears",
@@ -65,6 +67,14 @@ Astro:AddCallback(
     function(_, rng, spawnPosition)
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
+
+            if not Astro.IsFight and Astro:HasCollectible(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM) then
+                local data = player:GetData()
+                data._ASTRO_astroBethlehemDamage = 1
+
+                player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
+                player:EvaluateItems()
+            end
         
             hiddenItemManager:Remove(player, CollectibleType.COLLECTIBLE_STAR_OF_BETHLEHEM, "ASTRO_ASTRO_STAR_OF_BETHLEHEM")
         end
@@ -83,10 +93,45 @@ Astro:AddCallback(
     ModCallbacks.MC_FAMILIAR_INIT,
     ---@param familiar EntityFamiliar
     function(_, familiar)
-        if Astro:HasCollectible(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM) and familiar.Variant == FamiliarVariant.STAR_OF_BETHLEHEM then
+        if Astro:HasCollectible(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM) then
             local sprite = familiar:GetSprite()
             sprite:ReplaceSpritesheet(0, "gfx/familiar/astro_star_of_bethlehem.png")
             sprite:LoadGraphics()
+        end
+    end,
+    FamiliarVariant.STAR_OF_BETHLEHEM
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_FAMILIAR_UPDATE,
+    ---@param familiar EntityFamiliar
+    function(_, familiar)
+        if Astro.IsFight then return end
+
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            local data = player:GetData()
+
+            if Astro:HasCollectible(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM) then
+                data._ASTRO_astroBethlehemDamage = 1
+                player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
+                player:EvaluateItems()
+            end
+        end
+
+        if familiar.Visible then
+            local playersInRadius = Isaac.FindInRadius(familiar.Position, 70, EntityPartition.PLAYER)
+
+            for _, entity in pairs(playersInRadius) do
+                local player = entity:ToPlayer()
+                
+                if player and Astro:HasCollectible(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM) then
+                    local data = player:GetData()
+                    data._ASTRO_astroBethlehemDamage = 1.5
+                    player:AddCacheFlags(CacheFlag.CACHE_DAMAGE)
+                    player:EvaluateItems()
+                end
+            end
         end
     end
 )
@@ -95,9 +140,26 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_EFFECT_INIT,
     ---@param effect EntityEffect
     function(_, effect)
-        if Astro:HasCollectible(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM) and effect.Variant == EffectVariant.HALLOWED_GROUND then
+        if Astro:HasCollectible(Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM) then
             local sprite = effect:GetSprite()
             sprite.Color = Color(1, 1, 1, 1, 227 / 255, 142 / 255, 230 / 255)
+        end
+    end,
+    EffectVariant.HALLOWED_GROUND
+)
+
+Astro:AddPriorityCallback(
+    ModCallbacks.MC_EVALUATE_CACHE,
+    Astro.CallbackPriority.MULTIPLY,
+    ---@param player EntityPlayer
+    ---@param cacheFlag CacheFlag
+    function(_, player, cacheFlag)
+        if not Astro.IsFight and cacheFlag == CacheFlag.CACHE_DAMAGE then
+            local data = player:GetData()
+
+            if data._ASTRO_astroBethlehemDamage then
+                player.Damage = player.Damage * data._ASTRO_astroBethlehemDamage
+            end
         end
     end
 )

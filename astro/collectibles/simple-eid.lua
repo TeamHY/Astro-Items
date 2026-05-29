@@ -680,13 +680,13 @@ Descriptions.collectibles = {
         { text = "소지중일 때 적 처치 시 10% 확률로 불꽃 소환 <color=0xFFb9d27d>(행운 비례)" },
         { text = "사용 시:" },
         { text = "<indent>그 방의 적 1마리 화상" },
-        { text = "<indent><color=0xFFC9FF00>XIX - 태양<color=0xFFFFFFFF> 드롭 <color=0xFFC8C8C8>(처음 한정)" },
+        { text = "<indent><color=0xFFC9FF00>XIX - 태양<color=0xFFFFFFFF> 카드 드롭 <color=0xFFC8C8C8>(스테이지당 1회)" },
     },
     [177] = {
         { text = "？<color=0xFF696969>？<color=0xFF9F0000>？<color=0xFFFFFFF>속 달빛과 접촉 시 소울하트/그 스테이지에서 연사(+상한) <color=0xFF3BF745>+0.5" },
         { text = "사용 시:" },
         { text = "<indent>방 중앙에 달빛 생성" },
-        { text = "<indent><color=0xFFC9FF00>XVIII - 달<color=0xFFFFFFFF> 드롭 <color=0xFFC8C8C8>(처음 한정)" },
+        { text = "<indent><color=0xFFC9FF00>XVIII - 달<color=0xFFFFFFFF> 카드 드롭 <color=0xFFC8C8C8>(스테이지당 1회)" },
     },
     [178] = {
         { text = "소지중일 때 적 처치 시 10% 확률로 불꽃 소환 <color=0xFFb9d27d>(행운 비례)" },
@@ -947,7 +947,7 @@ Descriptions.collectibles = {
 
 Descriptions.trinkets = {
     [1] = {
-        { text = "10% 확률로 눈물에 초당 60의 피해를 주는 원광이 생김 <color=0xFFb9d27d>(행운 비례)" },
+        { text = "10% 확률로 <color=0xFFC9FF00>신<color=0xFFFFFFFF> 원광이 생김 <color=0xFFb9d27d>(행운 비례)" },
     },
     [2] = {
         { text = "붉은 상자 등장 시 30% 확률로 하나 더 등장 <color=0xFFb9d27d>(행운 비례)" },
@@ -961,7 +961,7 @@ Descriptions.trinkets = {
     },
     [5] = {
         { text = "<warning>피격 시 흡수됨" },
-        { text = "메가 사탄/섬망/어머니/도그마 처치 시 <color=0xFFC9FF00>에덴의 축복<0xFFFFFFFF> 획득" },
+        { text = "메가 사탄/섬망/어머니/도그마 처치 시 <color=0xFFC9FF00>에덴의 축복<color=0xFFFFFFFF> 획득" },
     },
     [6] = {
         { text = "동전 획득 시 5% 확률로 마이크로 배터리 소환 <color=0xFFb9d27d>(행운 비례)" },
@@ -974,7 +974,7 @@ Descriptions.trinkets = {
         { text = "장신구를 들어올린 즉시 5원을 소모하고 흡수" },
     },
     [9] = {
-        { text = "<warning>일회용" },
+        { text = "<warning>일회용, 획득 시 흡수됨" },
         { text = "보스방 클리어 시 <color=0xFFD8D8D8>어린 양의 분노<color=0xFFFFFFFF> 아이템 2개 소환" },
     },
     [10] = {
@@ -992,7 +992,7 @@ Descriptions.trinkets = {
     },
     [13] = {
         { text = "행운 <color=0xFFF7513B>-2" },
-        { text = "<color=0xFFC9FF00>올백<color=0xFFFFFFFF>과 같은 판정을 가집니다" },
+        { text = "<color=0xFFC9FF00>올백<color=0xFFFFFFFF>과 같은 판정을 가짐" },
     },
     [14] = {
         { text = "소지중일 때 패시브 미등장" },
@@ -1004,6 +1004,7 @@ Descriptions.trinkets = {
         { text = "알약 사용 시 방 전체 적에게 40의 피해를 입힘" },
     },
     [17] = {
+        { text = "<warning>획득 시 흡수됨" },
         { text = "사망 직전 1% 확률로 3초간 무적 <color=0xFFb9d27d>(행운 비례)" },
     },
 }
