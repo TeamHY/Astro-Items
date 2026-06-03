@@ -218,6 +218,23 @@ local lastTap = {
     [ButtonAction.ACTION_SHOOTDOWN] = 0
 }
 
+local function doubleTapShockwave(player, dir)
+    local pData = Astro:GetPersistentPlayerData(player)
+    local vel = Vector.Zero
+
+    if dir == ButtonAction.ACTION_SHOOTLEFT then vel = Vector(-12, 0)
+    elseif dir == ButtonAction.ACTION_SHOOTRIGHT then vel = Vector(12, 0)
+    elseif dir == ButtonAction.ACTION_SHOOTUP then vel = Vector(0, -12)
+    elseif dir == ButtonAction.ACTION_SHOOTDOWN then vel = Vector(0, 12)
+    end
+
+    local shockwave = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.SHOCKWAVE, 0, player.Position - Vector(0, 4), vel, player)
+    shockwave.Parent = player
+    player:UseActiveItem(CollectibleType.COLLECTIBLE_LARYNX, UseFlag.USE_CUSTOMVARDATA, nil, pData["LeoEXStack"])
+
+    pData["LeoEXStack"] = 0
+end
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function()
@@ -237,19 +254,7 @@ Astro:AddCallback(
                     if pressed and pData["LeoEXStack"] and pData["LeoEXStack"] > 0 then
                         if now - lastInput[dir] < 15 then    -- small time window
                             if now - lastTap[dir] > 20 then
-                                -- dash
-                                local vel = Vector.Zero
-                                if dir == ButtonAction.ACTION_SHOOTLEFT then vel = Vector(-12, 0)
-                                elseif dir == ButtonAction.ACTION_SHOOTRIGHT then vel = Vector(12, 0)
-                                elseif dir == ButtonAction.ACTION_SHOOTUP then vel = Vector(0, -12)
-                                elseif dir == ButtonAction.ACTION_SHOOTDOWN then vel = Vector(0, 12)
-                                end
-                                
-                                local shockwave = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.SHOCKWAVE, 0, player.Position - Vector(0, 4), vel, player)
-                                shockwave.Parent = player
-                                player:UseActiveItem(CollectibleType.COLLECTIBLE_LARYNX, UseFlag.USE_CUSTOMVARDATA, nil, pData["LeoEXStack"])
-
-                                pData["LeoEXStack"] = 0
+                                doubleTapShockwave(player, dir)
                                 lastTap[dir] = now
                             end
                         end
@@ -257,6 +262,75 @@ Astro:AddCallback(
                         lastInput[dir] = now
                     end
                 end
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_NEW_ROOM,
+    function()
+        local game = Game()
+        local level = game:GetLevel()
+        local room = level:GetCurrentRoom()
+
+        if room:GetType() == RoomType.ROOM_BOSS and not room:IsClear() then
+            for i = 1, game:GetNumPlayers() do
+                local player = Isaac.GetPlayer(i - 1)
+                local pData = Astro:GetPersistentPlayerData(player)
+                
+                if pData["LeoEXStack"] > 0 then
+                    Astro:ScheduleForUpdate(
+                        function()
+                            local enter, dir
+                            local enterPosition = player.Position
+                            
+                            for _, slot in pairs(DoorSlot) do
+                                local doorPosition = room:GetDoorSlotPosition(slot)
+
+                                if enterPosition:Distance(doorPosition) < 50 then
+                                    enter = slot
+                                end
+                            end
+                            
+                            if enter == DoorSlot.LEFT0 or enter == DoorSlot.LEFT1 then
+                                dir = ButtonAction.ACTION_SHOOTRIGHT
+                            elseif enter == DoorSlot.UP0 or enter == DoorSlot.UP1 then
+                                dir = ButtonAction.ACTION_SHOOTDOWN
+                            elseif enter == DoorSlot.RIGHT0 or enter == DoorSlot.RIGHT1 then
+                                dir = ButtonAction.ACTION_SHOOTLEFT
+                            elseif enter == DoorSlot.DOWN0 or enter == DoorSlot.DOWN1 then
+                                dir = ButtonAction.ACTION_SHOOTUP
+                            end
+
+                            doubleTapShockwave(player, dir)
+                        end,
+                        2
+                    )
+                end
+            end
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_ENTITY_TAKE_DMG,
+    ---@param entity Entity
+    ---@param amount number
+    ---@param damageFlags number
+    ---@param source EntityRef
+    ---@param countdownFrames number
+    function(_, entity, amount, damageFlags, source, countdownFrames)
+        local player = entity:ToPlayer()
+
+        if player ~= nil and player:HasCollectible(Astro.Collectible.LEO_EX) then
+            if (
+                (source.Type == 292 or source.Type + source.Variant == 0)
+                and damageFlags == DamageFlag.DAMAGE_EXPLOSION
+            ) or (
+                damageFlags & DamageFlag.DAMAGE_TNT == DamageFlag.DAMAGE_TNT)
+            then
+                return false
             end
         end
     end

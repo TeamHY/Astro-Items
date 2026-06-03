@@ -488,9 +488,9 @@ Astro:AddCallbackCustom(
             if Astro.Data.ManyuSet == 3 then
                 local Flavor
                 if Options.Language == "kr" or REPKOR then
-                    Flavor = "만유의 생멸"
+                    Flavor = "만유의 생멸!"
                 else
-                    Flavor = "Cycle of Life"
+                    Flavor = "Cycle of Life!"
                 end
 
                 SFXManager():Play(SoundEffect.SOUND_POWERUP_SPEWER)
