@@ -1,5 +1,11 @@
 Astro.Collectible.MINERAL_SHARD = Isaac.GetItemIdByName("Mineral Shard")
 
+---
+
+local EXTRA_DAMAGE_MULTI = 0.004
+
+---
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
@@ -8,7 +14,7 @@ Astro:AddCallback(
                 Astro.Collectible.MINERAL_SHARD,
                 "미네랄 조각",
                 "별의 선물",
-                "{{Collectible132}} 공격이 멀리 나갈수록 타일 1칸당 피해량이 +0.6 증가합니다." ..
+                "{{Collectible132}} 공격이 멀리 나갈수록 타일 1칸당 피해량이 공격력 x0.6 증가합니다." ..
                 "#눈물의 피해량이 초당 +15.5 증가합니다.",
                 -- 중첩 시
                 "중첩 시 눈물 피해량의 상승량이 증가"
@@ -48,33 +54,43 @@ Astro:AddCallback(
         local player = Astro:GetPlayerFromEntity(tear)
         
         if player and player:HasCollectible(Astro.Collectible.MINERAL_SHARD) then
-            if not player:HasCollectible(CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE) and tear.Variant == TearVariant.BLUE or tear.Variant == TearVariant.BLOOD then
+            if tear.Variant == TearVariant.BLUE or tear.Variant == TearVariant.BLOOD then
                 tear:ChangeVariant(TearVariant.DIAMOND)
             end
         end
     end
 )
 
+-- decompiled code by Guantol-Lemat
 Astro:AddCallback(
     ModCallbacks.MC_POST_TEAR_UPDATE,
     ---@param tear EntityTear
     function(_, tear)
         local player = Astro:GetPlayerFromEntity(tear)
 
-        if player and player:HasCollectible(Astro.Collectible.MINERAL_SHARD) and not player:HasCollectible(CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE) then
-            tear.CollisionDamage = tear.CollisionDamage + (tear.FrameCount / 30)
-            tear.Scale = tear.Scale + (tear.FrameCount / 1000)
-        end
-    end
-)
+        if player and player:HasCollectible(Astro.Collectible.MINERAL_SHARD) then
+            if tear:HasTearFlags(TearFlags.TEAR_LUDOVICO) then
+                local tearParams = player:GetTearHitParams(WeaponType.WEAPON_LUDOVICO_TECHNIQUE)
+                local tearDmg = tearParams.TearDamage
+                local tearPos = tear.Position
+                local parentPos = tear.Parent.Position
+                local dist = parentPos:Distance(tearPos)
+                local clampMax = math.max(100, 700 - tearDmg)
+                local clamped = Astro:Clamp(dist, 1, clampMax)
+                local scaleFactor = clamped / clampMax + 1
 
-Astro:AddCallback(
-    ModCallbacks.MC_EVALUATE_CACHE,
-    ---@param player EntityPlayer
-    ---@param cacheFlag CacheFlag
-    function(_, player, cacheFlag)
-        if player:HasCollectible(Astro.Collectible.MINERAL_SHARD) and cacheFlag == CacheFlag.CACHE_TEARFLAG then
-            player.TearFlags = player.TearFlags | TearFlags.TEAR_GROW
+                tear.CollisionDamage = tearDmg * scaleFactor
+                tear.Scale = tearParams.TearScale * 1.9 * scaleFactor
+                
+                if tear.Variant == TearVariant.BLUE or tear.Variant == TearVariant.BLOOD then
+                    tear:ChangeVariant(TearVariant.DIAMOND)
+                end
+            elseif tear.WaitFrames < 1 then
+                local len = tear.PosDisplacement:Length()
+                
+                tear.CollisionDamage = tear.CollisionDamage + len * player.Damage * EXTRA_DAMAGE_MULTI
+                tear.Scale = tear.BaseScale + 0.01
+            end
         end
     end
 )
