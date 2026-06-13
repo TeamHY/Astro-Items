@@ -14,7 +14,7 @@ Astro:AddCallback(
                 Astro.Collectible.MINERAL_SHARD,
                 "미네랄 조각",
                 "별의 선물",
-                "눈물이 멀리 나갈수록 피해량이 프레임당 공격력 x0.004씩 증가합니다.",
+                string.format("공격이 멀리 나갈수록 피해량이 초당 공격력 x%.1f씩 증가합니다.", EXTRA_DAMAGE_MULTI * 300),
                 -- 중첩 시
                 "중첩 시 눈물 피해량의 상승량이 증가"
             )
@@ -22,7 +22,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.MINERAL_SHARD,
                 "Mineral Shard", "",
-                "Tears deal +0.004x Isaac's damage per frames the further they travel",
+                string.format("Tears gain %.1fx of Isaac's damage per second traveled", EXTRA_DAMAGE_MULTI * 300),
                 -- Stacks
                 "Stackable",
                 "en_us"

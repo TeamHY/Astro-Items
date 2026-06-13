@@ -193,7 +193,9 @@ local function LuckChanceCallbackModified(descObj)
 	return descObj
 end
 
-EID:addDescriptionModifier("LuckChanceCallbackAstro", LuckChanceCallbackModified)
+if EID then
+    EID:addDescriptionModifier("LuckChanceCallbackAstro", LuckChanceCallbackModified)
+end
 
 
 ------ 콜백 ------
