@@ -190,6 +190,7 @@ require "astro.collectibles.customs.forbidden-fruit"
 require "astro.collectibles.customs.snowgrave"
 require "astro.collectibles.customs.777"
 require "astro.collectibles.customs.liberation"
+require "astro.collectibles.customs.water-balloon"
 
 --#region PLANETARIUM
 

@@ -1,0 +1,7 @@
+<bombcostumes anm2root="gfx/items/pick ups/bombs/">
+	<bomb variant="0">
+		<rule body="bomb.anm2" />
+		<rule includeFlags="65" body="waterballoon.anm2" />
+	</bomb>
+</bombcostumes>
+

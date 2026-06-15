@@ -1250,6 +1250,7 @@
 		<Item Name="SnowGrave" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Angry Onion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="Water Balloon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>

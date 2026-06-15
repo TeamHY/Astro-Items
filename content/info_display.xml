@@ -935,6 +935,11 @@
 	<collectible id="243">
 		<info text="Spawns 3 random trinkets and a Mega Gulp! pill on pickup"/>
 	</collectible>
+	<collectible id="244">
+		<info text="Bombs explode with short water jets in a cross-shaped pattern"/>
+		<info text="Freezes enemies upon killing them with bombs"/>
+		<info text="Isaac takes no damage from this bomb"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

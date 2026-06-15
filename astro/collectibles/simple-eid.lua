@@ -945,6 +945,14 @@ Descriptions.collectibles = {
         { text = "공격력 <color=0xFF3BF745>+0.5" },
         { text = "이터널하트 4개 드롭" },
     },
+    [243] = {
+        { text = "폭탄 <color=0xFF3BF745>+5" },
+        { text = "폭탄이 터질 때 적 빙결 + 4방향으로 짧은 물대포 발사" },
+    },
+    [244] = {
+        { text = "폭탄 <color=0xFF3BF745>+5" },
+        { text = "폭탄이 터질 때 적 빙결 + 4방향으로 짧은 물대포 발사" },
+    },
 }
 
 Descriptions.trinkets = {
