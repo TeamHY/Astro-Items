@@ -11,14 +11,16 @@ Astro:AddCallback(
                 "!!! 일회용 !!!" ..
                 "#사용 시:" ..
                 "#{{IND}}{{Player" .. Astro.Players.DIABELLSTAR .. "}} 캐릭터를 Diabellstar로 변경합니다." ..
-                "#{{IND}}그 방의 아이템을 {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}} 또는 {{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}으로 바꿉니다."
+                "#{{IND}} 그 방의 아이템을 {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}} 또는 {{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}으로 바꿉니다."
             )
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL,
                 "WANTED: Seeker of Sinful Spoil", "",
                 "!!! SINGLE USE !!!" ..
-                "#{{Player" .. Astro.Players.DIABELLSTAR .. "}} Changes character to Diabellstar",
+                "#Upon use:" ..
+                "#{{IND}}{{Player" .. Astro.Players.DIABELLSTAR .. "}} Changes character to Diabellstar" ..
+                "#{{IND}} Rerolls pedestal items in the room into {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}} or {{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}}",
                 nil, "en_us"
             )
 

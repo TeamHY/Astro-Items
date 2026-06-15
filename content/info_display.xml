@@ -404,6 +404,7 @@
 	</collectible>
 	<collectible id="102">
 		<info text="Changes current character to Diabellstar"/>
+		<info text="Rerolls all pedestal items in the room into Snake Eye"/>
 		<info text="Single use"/>
 	</collectible>
 	<collectible id="103">

@@ -379,7 +379,9 @@ Descriptions.collectibles = {
     },
     [102] = {
         { text = "<warning>일회용" },
-        { text = "사용 시 캐릭터를 디아벨스타로 변경" },
+        { text = "사용 시:" },
+        { text = "<indent>캐릭터를 디아벨스타로 변경" },
+        { text = "<indent>방 안의 아이템을 각각 <color=0xFFC9FF00>반역의 죄보/원죄보<color=0xFFFFFFFF> 중 하나로 변경" },
     },
     [103] = {
         { text = "1초마다 공격력 <color=0xFF3BF745>+0.008" },
