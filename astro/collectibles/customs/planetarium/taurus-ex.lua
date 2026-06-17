@@ -38,37 +38,37 @@ Astro:AddCallback(
                 "Stacks make dash triggers any on-hit item effects",
                 "en_us"
             )
-        end
-        
-        local HotkeyToString = {}
-        for key, num in pairs(Keyboard) do
-            local keyString = key
-            local keyStart, keyEnd = string.find(keyString, "KEY_")
-            keyString = string.sub(keyString, keyEnd + 1, string.len(keyString))
-            keyString = string.gsub(keyString, "_", " ")
-            HotkeyToString[num] = keyString
-        end
-        local function TaurusExCondition(descObj)
-            if descObj.ObjType == 5 and descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE then
-                return true
+            
+            local HotkeyToString = {}
+            for key, num in pairs(Keyboard) do
+                local keyString = key
+                local keyStart, keyEnd = string.find(keyString, "KEY_")
+                keyString = string.sub(keyString, keyEnd + 1, string.len(keyString))
+                keyString = string.gsub(keyString, "_", " ")
+                HotkeyToString[num] = keyString
             end
-            return false
-        end
-        local function TaurusExCallback(descObj)
-            if descObj.ObjSubType == Astro.Collectible.TAURUS_EX and Astro.Data["TaurusExMode"] and Astro.Data["TaurusExKeyBind"] then
-                local taurusKey = HotkeyToString[Astro.Data["TaurusExKeyBind"]]
-                local append1 = (EID:getLanguage() == "ko_kr") and "이동키를 두번 누르면 누른 방향으로"      or "Double-tapping a movement key"
-                local append2 = (EID:getLanguage() == "ko_kr") and taurusKey .. "키를 누르면 이동 방향으로 " or "Tapping a " .. taurusKey .. " key"
-                
-                if Astro.Data["TaurusExMode"] == 1 then
-                    descObj.Description = descObj.Description:gsub("{taurusKeySet}", append1)
-                elseif Astro.Data["TaurusExMode"] == 0 then
-                    descObj.Description = descObj.Description:gsub("{taurusKeySet}", append2)
+            local function TaurusExCondition(descObj)
+                if descObj.ObjType == 5 and descObj.ObjVariant == PickupVariant.PICKUP_COLLECTIBLE then
+                    return true
                 end
+                return false
             end
-            return descObj
+            local function TaurusExCallback(descObj)
+                if descObj.ObjSubType == Astro.Collectible.TAURUS_EX and Astro.Data["TaurusExMode"] and Astro.Data["TaurusExKeyBind"] then
+                    local taurusKey = HotkeyToString[Astro.Data["TaurusExKeyBind"]]
+                    local append1 = (EID:getLanguage() == "ko_kr") and "이동키를 두번 누르면 누른 방향으로"      or "Double-tapping a movement key"
+                    local append2 = (EID:getLanguage() == "ko_kr") and taurusKey .. "키를 누르면 이동 방향으로 " or "Tapping a " .. taurusKey .. " key"
+                    
+                    if Astro.Data["TaurusExMode"] == 1 then
+                        descObj.Description = descObj.Description:gsub("{taurusKeySet}", append1)
+                    elseif Astro.Data["TaurusExMode"] == 0 then
+                        descObj.Description = descObj.Description:gsub("{taurusKeySet}", append2)
+                    end
+                end
+                return descObj
+            end
+            EID:addDescriptionModifier("Taurus EX Modifier", TaurusExCondition, TaurusExCallback)
         end
-        EID:addDescriptionModifier("Taurus EX Modifier", TaurusExCondition, TaurusExCallback)
     end
 )
 
