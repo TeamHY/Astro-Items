@@ -86,9 +86,10 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_HOLY_LIGHT] = { Id = Astro.Collectible.DIVINE_LIGHT, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_APPLE] = { Id = Astro.Collectible.GOLDEN_APPLE, Chance = 0.2 },
     [CollectibleType.COLLECTIBLE_TOUGH_LOVE] = { Id = Astro.Collectible.GOLD_TOOTH, Chance = 0.2 },
-    --[CollectibleType.COLLECTIBLE_MARK] = { Id = Astro.Collectible.SEVEN_SEVEN_SEVEN, Chance = 0.3 },
-    --[CollectibleType.COLLECTIBLE_PACT] = { Id = Astro.Collectible.LIBERATION, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_MARK] = { Id = Astro.Collectible.SEVEN_SEVEN_SEVEN, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_PACT] = { Id = Astro.Collectible.LIBERATION, Chance = 0.3 },
     --[CollectibleType.COLLECTIBLE_MARBLES] = { Id = Astro.Collectible.GIANT_MARBLE, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_BOMBER_BOY] = { Id = Astro.Collectible.WATER_BALLOON, Chance = 0.8 },
 }
 
 ---
