@@ -334,6 +334,7 @@ Descriptions.collectibles = {
     [90] = {
         { text = "<color=0xFFC9FF00>굶주린 영혼<color=0xFFFFFFFF>·<color=0xFFC9FF00>연옥<color=0xFFFFFFFF>·<color=0xFFC9FF00>유령 폭탄<color=0xFFFFFFFF> 효과 적용" },
         { text = "소환하는 유령들의 속도 2배" },
+        { text = "0~1퀄리티 아이템 등장 시 20% 확률로 죄보 아이템 중 하나로 변경" },
     },
     [91] = {
         { text = "스테이지 진입 시 <color=0xFFC9FF00>고기조각<color=0xFFFFFFFF> 1개 획득" },

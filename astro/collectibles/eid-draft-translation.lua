@@ -88,7 +88,7 @@ return {
     [819] = "{{Speed}} +2 Speed in cleared rooms#{{Speed}} -0.3 Speed in uncleared rooms",
  -- [820] = "설명 분리됨",
  -- [821] = "설명 분리됨",
-    [822] = "Applies {{Collectible634}} Hungry Soul, {{Collectible727}} Purgatory, {{Collectible684}} Ghost Bombs#Doubles summoned ghost speed",
+    [822] = "Applies {{Collectible634}} Hungry Soul, {{Collectible727}} Purgatory, {{Collectible684}} Ghost Bombs#Doubles summoned ghost speed#20% chance to reroll {{Quality0}}/{{Quality1}} items into {{Collectible" .. Astro.Collectible.SINFUL_SPOILS_OF_SUBVERSION_SNAKE_EYE .. "}} Sinful Spoils of Subversion - Snake Eye or {{Collectible" .. Astro.Collectible.ORIGINAL_SINFUL_SPOILS_SNAKE_EYE .. "}} Original Sinful Spoils - Snake Eye",
     [823] = "!!! +2 {{Collectible73}} Cube of Meat on first pickup#Spawns Cube of Meat on stage entry#!!! Amount: ({{Collectible" .. Astro.Collectible.BLOOD_TRAIL .. "}} count + {{Collectible" .. Astro.Collectible.BANDAGE_GIRL .. "}} count)",
  -- [824] = "설명 분리됨",
     [825] = "!!! Disappears after activation#Swaps held active item with card/pill slot active item with 8 key#{{ArrowGrayRight}} Moves active item to slot if empty#{{ArrowGrayRight}} Some items can't move to slot#!!! Card/pill slot active disappears on character change",
