@@ -69,4 +69,7 @@
         <sample weight="1" path="feedback/snowgrave-bell3.wav" />
         <sample weight="1" path="feedback/snowgrave-bell4.wav" />
     </sound>
+    <sound name="WaterBallooonExplosion">
+        <sample weight="1" path="feedback/water-balloon-explosion.wav" />
+    </sound>
 </sounds>

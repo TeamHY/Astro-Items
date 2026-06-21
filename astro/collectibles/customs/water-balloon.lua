@@ -31,6 +31,27 @@ Astro:AddCallback(
     end
 )
 
+---@param parent Entity
+---@param player EntityPlayer
+---@param damage number
+local function shootWaterJets(parent, player, damage)
+    local itemNum = player:GetCollectibleNum(Astro.Collectible.WATER_BALLOON)
+    local waterColor = Color(1, 1, 1, 1)
+    waterColor:SetColorize(1.05, 0.98, 1, -1)
+
+    for angle = 0, 360, 90 do
+        local laser = EntityLaser.ShootAngle(LaserVariant.SHOOP, parent.Position, angle, 15, Vector.Zero, player)
+        laser:GetSprite().Color = waterColor
+        laser:SetMaxDistance(40 + 40 * itemNum)
+        laser.CollisionDamage = damage
+        laser.DisableFollowParent = true
+        laser.OneHit = true
+        laser.TearFlags = laser.TearFlags | TearFlags.TEAR_ICE
+
+        laser:GetData()._ASTRO_waterBalloonWaterJet = true
+    end
+end
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_BOMB_UPDATE,
     ---@param bomb EntityBomb
@@ -40,28 +61,33 @@ Astro:AddCallback(
 
         if player and player:HasCollectible(Astro.Collectible.WATER_BALLOON) then
             local itemNum = player:GetCollectibleNum(Astro.Collectible.WATER_BALLOON)
-            local waterColor = Color(1, 1, 1, 1)
-            waterColor:SetColorize(1.05, 0.98, 1, -1)
 
             if not bomb:HasTearFlags(TearFlags.TEAR_ICE) then
                 bomb:AddTearFlags(TearFlags.TEAR_ICE)
             end
 
             if sprite:IsPlaying("Explode") then
-                for angle = 0, 360, 90 do
-                    local laser = EntityLaser.ShootAngle(LaserVariant.SHOOP, bomb.Position, angle, 30, Vector.Zero, player)
-                    laser:GetSprite().Color = waterColor
-                    laser:SetMaxDistance(40 + 40 * itemNum)
-                    laser.CollisionDamage = bomb.ExplosionDamage * itemNum
-                    laser.DisableFollowParent = true
-                    laser.OneHit = true
-                    laser.TearFlags = laser.TearFlags | TearFlags.TEAR_ICE
-
-                    laser:GetData()._ASTRO_waterBalloonWaterJet = true
-                end
+                shootWaterJets(bomb, player, bomb.ExplosionDamage * itemNum)
             end
         end
     end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
+    ---@param effect EntityEffect
+    function(_, effect)
+        local player = Astro:GetPlayerFromEntity(effect)
+
+        if player and player:HasCollectible(Astro.Collectible.WATER_BALLOON) then
+            local itemNum = player:GetCollectibleNum(Astro.Collectible.WATER_BALLOON)
+
+            if effect.Timeout ~= -1 and effect.Timeout < 1 then
+                shootWaterJets(effect, player, player.Damage * 20)
+            end
+        end
+    end,
+    EffectVariant.ROCKET
 )
 
 Astro:AddCallback(
@@ -79,7 +105,7 @@ Astro:AddCallback(
 
                     if sfx:IsPlaying(SoundEffect.SOUND_BOSS1_EXPLOSIONS) then
                         sfx:Stop(SoundEffect.SOUND_BOSS1_EXPLOSIONS)
-                        sfx:Play(SoundEffect.SOUND_BOSS2INTRO_WATER_EXPLOSION, 0.66)
+                        sfx:Play(Astro.SoundEffect.WATER_BALLOON_EXPLOSION)
                     end
                     
                     effect.Visible = false
