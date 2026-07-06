@@ -68,7 +68,19 @@ Astro:AddCallback(
             end
         end
         
-        SFXManager():Play(910)
+        SFXManager():Play(Astro.SoundEffect.WANTED_SEEKER_OF_SINFUL_SPOIL)
+        
+        for i = 1, 5 do
+            Astro:ScheduleForUpdate(
+                function()
+                    local ghost = Isaac.Spawn(EntityType.ENTITY_BEAST, 3, 0, playerWhoUsedItem.Position + Vector(RandomVector().X * 30, 600), Vector.Zero, nil)
+                    ghost.EntityCollisionClass = EntityCollisionClass.ENTCOLL_ENEMIES
+                    ghost.CollisionDamage = 0
+                    ghost:GetData()._ASTRO_spawnedByWSOSS = true
+                end,
+                i * 3
+            )
+        end
 
         return {
             Discharge = true,
@@ -77,4 +89,19 @@ Astro:AddCallback(
         }
     end,
     Astro.Collectible.WANTED_SEEKER_OF_SINFUL_SPOIL
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_ENTITY_TAKE_DMG,
+    ---@param entity Entity
+    ---@param amount number
+    ---@param damageFlags number
+    ---@param source EntityRef
+    ---@param countdownFrames number
+    function(_, entity, amount, damageFlags, source, countdownFrames)
+        if source.Entity and source.Type == EntityType.ENTITY_BEAST and source.Variant == 3 and source.Entity:GetData()._ASTRO_spawnedByWSOSS then
+            return false
+        end
+    end,
+    EntityType.ENTITY_PLAYER
 )

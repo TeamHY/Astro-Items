@@ -72,4 +72,7 @@
     <sound name="WaterBallooonExplosion">
         <sample weight="1" path="feedback/water-balloon-explosion.wav" />
     </sound>
+    <sound name="WantedSeekerOfSinfulSpoil">
+        <sample weight="1" path="feedback/wanted-seeker-of-sinful-spoil.wav" />
+    </sound>
 </sounds>
