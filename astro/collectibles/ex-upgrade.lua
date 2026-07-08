@@ -90,6 +90,8 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_PACT] = { Id = Astro.Collectible.LIBERATION, Chance = 0.3 },
     --[CollectibleType.COLLECTIBLE_MARBLES] = { Id = Astro.Collectible.GIANT_MARBLE, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_BOMBER_BOY] = { Id = Astro.Collectible.WATER_BALLOON, Chance = 0.8 },
+    [Astro.Collectible.UNHOLY_MANTLE] = { Id = CollectibleType.COLLECTIBLE_HOLY_MANTLE, Chance = 0.1 },
+    [Astro.Collectible.FALLEN_ORB] = { Id = CollectibleType.COLLECTIBLE_SACRED_ORB, Chance = 0.1 },
 }
 
 ---

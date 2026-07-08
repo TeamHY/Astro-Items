@@ -202,6 +202,8 @@ end
 ---@param yOffset integer
 ---@return boolean
 local function renderDeletedItem(item, yOffset)    -- by reshaken team
+    if not EID then return end
+
     local itemName = EID:getObjectName(5, item.var, item.id)
     local startingFrame = item.time
     local currentFrame = Game():GetFrameCount()
@@ -211,8 +213,8 @@ local function renderDeletedItem(item, yOffset)    -- by reshaken team
         return true
     end
 
-    local baseXPos = Isaac.GetScreenWidth()
-    local baseYPos = 70
+    local baseXPos = Isaac.GetScreenWidth() / 1.41
+    local baseYPos = Isaac.GetScreenHeight() - 50
     local baseScale = 1
     local alpha = 1
 
@@ -275,7 +277,7 @@ Astro:AddCallback(
     function()
         if #deletedItems > 0 then
             for idx, item in pairs(deletedItems) do
-                if renderDeletedItem(item, idx * 15) then
+                if renderDeletedItem(item, idx * -15) then
                     table.remove(deletedItems, idx)
                 end
             end
