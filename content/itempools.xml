@@ -1248,7 +1248,7 @@
 		<Item Name="24K Copter" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Amplifying Mind" Weight="0.3" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="SnowGrave" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+		<Item Name="SnowGrave" Weight="0.2" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Angry Onion" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Water Balloon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
