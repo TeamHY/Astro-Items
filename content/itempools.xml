@@ -870,6 +870,8 @@
 		<Item Name="Retrograde Arcana" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Brimstone Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 		<Item Name="Divine Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
+
+		<Item Name="Zoltraak" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedTreasure">
 		<Item Name="Cygnus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
