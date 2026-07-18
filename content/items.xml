@@ -129,7 +129,7 @@
 	<passive cache="speed" gfx="Brown Stew.png" hidden="true" quality="2" devilprice="2" shopprice="15" name="Brown Stew" description="Temporary speed up" id="128" />
 	<passive cache="all" gfx="Dracoback, the Rideable Dragon.png" quality="2" devilprice="1" shopprice="12" name="Dracoback, the Rideable Dragon" description="Bad hand" id="129" />
 	<passive cache="all" gfx="Amazing Chaos Scroll of Goodness.png" quality="5" devilprice="2" shopprice="30" hidden="true" name="Amazing Chaos Scroll of Goodness" tags="summonable tearsup" description="Normalization" id="130" />
-	<active cache="all" gfx="Albireo.png" quality="3" devilprice="2" maxcharges="6" shopprice="12" name="Albireo" description="Hitotsu ni narenai rensei" id="131" />
+	<active cache="all" gfx="Albireo.png" quality="3" devilprice="1" maxcharges="6" shopprice="3" name="Albireo" description="Hitotsu ni narenai rensei" id="131" />
 	<passive cache="firedelay" gfx="Copernicus.png" quality="4" devilprice="2" shopprice="40" name="Copernicus" tags="summonable" description="Heliocentrism" id="132" />
 	<passive cache="damage luck firedelay" gfx="RGB.png" quality="2" devilprice="2" shopprice="25" name="RGB" description="Could you turn off the lights?" id="133" />
 	<passive gfx="Abortion.png" quality="4" devilprice="2" shopprice="30" name="Abortion" description="Fetus tears" id="134" />
