@@ -11,7 +11,10 @@ local largeSpriteItems = {
     },
     [Astro.Collectible.MEGA_D8] = {
         renderOffset = Vector(0, 24)
-    }
+    },
+    [Astro.Collectible.GIANT_MARBLE] = {
+        renderOffset = Vector(0, 32)
+    },
 }
 
 Astro:AddCallback(
