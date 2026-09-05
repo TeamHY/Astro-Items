@@ -5,6 +5,7 @@ require "astro.utils.noise"
 require "astro.utils.player-effect"
 require "astro.utils.vardata-text"
 require "astro.utils.fake-death"
+require "astro.utils.dialogue"
 
 Astro.TearModifier = require "astro.utils.tear-modifier"
 Astro.SpringAnimation = require "astro.utils.spring-animation"

@@ -47,6 +47,7 @@ Astro.SoundEffect = {
     SNOWGRAVE_USE = Isaac.GetSoundIdByName("SnowgraveUse"),
     SNOWGRAVE_BELL = Isaac.GetSoundIdByName("SnowgraveBell"),
     WATER_BALLOON_EXPLOSION = Isaac.GetSoundIdByName("WaterBallooonExplosion"),
+    DIALOGUE_TYPING = Isaac.GetSoundIdByName("DialogueTyping"),
 }
 
 Astro.PickupPrice = {

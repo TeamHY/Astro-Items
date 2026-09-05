@@ -243,6 +243,9 @@
 	<passive cache="damage firedelay" gfx="Liberation.png" quality="3" devilprice="1" shopprice="15" hidden="true" name="Liberation" description="Free at last" id="242" />
 	<passive gfx="Giant Marble.png" quality="3" devilprice="1" shopprice="15" name="Giant Marble" description="Too many" id="243" />
 	<passive gfx="Water Balloon.png" quality="3" devilprice="1" shopprice="15" bombs="5" name="Water Balloon" description="Bubble and bubble" id="244" />
+	<active cache="speed firedelay damage range luck" gfx="Astrophage.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Astrophage" description="A microbe that eats stars" id="245" />
+	<familiar gfx="Rocky.png" quality="3" devilprice="1" shopprice="15" name="Rocky" description="Eridian" id="246" />
+	<passive gfx="Xenonite.png" quality="2" devilprice="1" shopprice="15" name="Xenonite" description="Super material of the Eridians" id="247" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

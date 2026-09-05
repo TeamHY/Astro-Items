@@ -954,6 +954,21 @@ Descriptions.collectibles = {
         { text = "폭탄 <color=0xFF3BF745>+5" },
         { text = "폭탄이 터질 때 적 빙결 + 4방향으로 짧은 물대포 발사" },
     },
+    [245] = {
+        { text = "사용 시 방 안의 행성방 아이템을 모두 흡수" },
+        { text = "<indent>흡수한 개수마다 이동 속도/연사/공격력/사거리/행운 증가" },
+        { text = "최초 사용 시 <color=0xFFC9FF00>망원경 렌즈<color=0xFFFFFFFF> 흡수" },
+        { text = "숫자 8키로 소지중인 행성방 아이템을 필드에 소환 (스테이지당 1회)" },
+        { text = "<warning>사용했다면 다음 게임에 태양과 달 아이템 미등장" },
+    },
+    [246] = {
+        { text = "공격 시 십자 방향으로 지형 파괴 눈물을 발사하는 패밀리어" },
+        { text = "0~1퀄리티 아이템을 25% 확률로 <color=0xFFC9FF00>제노나이트<color=0xFFFFFFFF>로 변경" },
+    },
+    [247] = {
+        { text = "<warning><color=0xFFC9FF00>로키<color=0xFFFFFFFF> 미소지 시 다른 아이템으로 변경됨" },
+        { text = "게임 시간 1분마다 10초간 무적" },
+    },
 }
 
 Descriptions.trinkets = {

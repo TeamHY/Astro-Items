@@ -118,4 +118,7 @@
     </entity>
     <entity name="Copernicus Costume" anm2path="copernicus.anm2" id="1000" variant="3121" collisionMass="0" friction="1">
     </entity>
+    <entity anm2path="rocky.anm2" baseHP="0" boss="0" champion="0" collisionDamage="0" collisionMass="3" collisionRadius="13" friction="1" id="3" name="Rocky" numGridCollisionPoints="12" shadowSize="11" stageHP="0" tags="cansacrifice" variant="3109">
+        <gibs amount="0" blood="0" bone="0" eye="0" gut="0" large="0"/>
+    </entity>
 </entities>

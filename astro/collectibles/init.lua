@@ -191,6 +191,9 @@ require "astro.collectibles.customs.snowgrave"
 require "astro.collectibles.customs.777"
 require "astro.collectibles.customs.liberation"
 require "astro.collectibles.customs.water-balloon"
+require "astro.collectibles.customs.astrophage"
+require "astro.collectibles.customs.rocky"
+require "astro.collectibles.customs.xenonite"
 
 --#region PLANETARIUM
 

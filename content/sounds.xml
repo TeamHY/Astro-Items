@@ -75,4 +75,7 @@
     <sound name="WantedSeekerOfSinfulSpoil">
         <sample weight="1" path="feedback/wanted-seeker-of-sinful-spoil.wav" />
     </sound>
+    <sound name="DialogueTyping">
+        <sample weight="1" path="dialogue-typing.wav" />
+    </sound>
 </sounds>
