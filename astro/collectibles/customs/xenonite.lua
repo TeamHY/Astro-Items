@@ -1,7 +1,6 @@
 ---
 
 local INVINCIBLE_INTERVAL = 60 * 30
-local INVINCIBLE_DURATION = 10 * 30
 
 ---
 
@@ -17,19 +16,17 @@ Astro:AddCallback(
                 ITEM_ID,
                 "제노나이트",
                 "에리디언이 사용하는 초고성능 소재",
-                "!!! {{Collectible" .. Astro.Collectible.ROCKY .. "}}Rocky를 소지하고 있지 않으면 다른 아이템으로 바뀝니다." ..
-                "#{{Collectible58}} 게임 시간 " .. (INVINCIBLE_INTERVAL / 30) .. "초마다 " .. (INVINCIBLE_DURATION / 30) .. "초간 무적 상태가 됩니다.",
+                "#{{Collectible58}} 게임 시간 " .. (INVINCIBLE_INTERVAL / 30) .. "초마다 " .. "10초간 무적 상태가 됩니다.",
                 -- 중첩 시
-                "중첩 시 발동 주기가 중첩된 수만큼 나눠지며, 무적 시간이 중첩된 수만큼 합연산으로 증가"
+                "중첩 시 발동 주기가 짧아지며 무적 지속 시간이 길어집니다."
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Xenonite", "",
-                "!!! Rerolled into another item unless {{Collectible" .. Astro.Collectible.ROCKY .. "}}Rocky is held" ..
-                "#{{Collectible58}} Invincibility for " .. (INVINCIBLE_DURATION / 30) .. " seconds every " .. (INVINCIBLE_INTERVAL / 30) .. " seconds of game time",
+                "#{{Collectible58}} Invincibility for 10 seconds every " .. (INVINCIBLE_INTERVAL / 30) .. " seconds of game time",
                 -- Stacks
-                "Stacks divide the interval and increase the invincibility duration",
+                "Stacks shorten the interval and increase the invincibility duration",
                 "en_us"
             )
         end
@@ -70,15 +67,8 @@ Astro:AddCallback(
         local interval = math.max(1, math.floor(INVINCIBLE_INTERVAL / itemNum))
 
         if frameCount % interval == 0 then
-            data["xenoniteInvincibleEndFrame"] = frameCount + INVINCIBLE_DURATION * itemNum
-        end
-
-        if (data["xenoniteInvincibleEndFrame"] or 0) > frameCount then
-            if not player:GetEffects():HasCollectibleEffect(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS) then
-                player:UseActiveItem(
-                    CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS,
-                    UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER
-                )
+            for _ = 1, itemNum do
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS, false)
             end
         end
     end

@@ -872,10 +872,6 @@
 		<Item Name="Divine Guppy" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Zoltraak" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
-		<Item Name="Astrophage" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Rocky" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Xenonite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedTreasure">
 		<Item Name="Cygnus" Weight="0.1" DecreaseBy="1" RemoveOn="0.1"/>
@@ -1260,10 +1256,6 @@
 		<Item Name="Water Balloon" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 
 		<Item Name="Retrograde Arcana" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-
-		<Item Name="Astrophage" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Rocky" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
-		<Item Name="Xenonite" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>
 	</Pool>
 	<Pool Name="greedShop">
 		<Item Name="Pure White Heart" Weight="1" DecreaseBy="1" RemoveOn="0.1"/>

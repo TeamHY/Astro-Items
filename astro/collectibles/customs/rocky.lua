@@ -3,15 +3,20 @@
 local XENONITE_CHANCE = 0.25
 
 local FIRE_DELAY = 20
+
 local DAMAGE_MULTIPLIER = 0.5
+
 local TEAR_SPEED = 10
 
 local MIN_TEAR_DAMAGE_MULTIPLIER = 0.5
+
 local MAX_TEAR_DAMAGE_MULTIPLIER = 2.0
 
 local FORGOTTEN_LULLABY_MULTIPLIER = 2
 
 local ATTACK_ANIMATION_LENGTH = 30
+
+local ATTACK_FIRE_FRAME = 18
 
 local DIALOGUE_DURATION = 75
 
@@ -92,18 +97,19 @@ Astro:AddCallback(
 
                 for i = 1, Game():GetNumPlayers() do
                     local player = Isaac.GetPlayer(i - 1)
-                    local itemNum = player:GetCollectibleNum(ITEM_ID)
 
-                    if itemNum > 0 then
+                    if player:HasCollectible(ITEM_ID) then
                         local rng = player:GetCollectibleRNG(ITEM_ID)
 
-                        if rng:RandomFloat() < XENONITE_CHANCE * itemNum then
+                        if rng:RandomFloat() < XENONITE_CHANCE then
                             return {
                                 reroll = true,
                                 newItem = Astro.Collectible.XENONITE,
                                 modifierName = "Rocky"
                             }
                         end
+
+                        return false
                     end
                 end
 
@@ -116,10 +122,11 @@ Astro:AddCallback(
 ---@param familiar EntityFamiliar
 ---@param animation string
 ---@param playbackSpeed number?
-local function PlayAnimation(familiar, animation, playbackSpeed)
+---@param force boolean?
+local function PlayAnimation(familiar, animation, playbackSpeed, force)
     local data = familiar:GetData()
 
-    if data["rockyAnimation"] ~= animation then
+    if force or data["rockyAnimation"] ~= animation then
         local sprite = familiar:GetSprite()
 
         data["rockyAnimation"] = animation
@@ -190,13 +197,23 @@ Astro:AddCallback(
         if player and player:GetFireDirection() ~= Direction.NO_DIRECTION and familiar.FireCooldown <= 0 then
             local fireDelay = GetFireDelay(player)
 
-            FireCrossTears(familiar, player)
-
             familiar.FireCooldown = fireDelay
-            PlayAnimation(familiar, "Attack", math.max(1, ATTACK_ANIMATION_LENGTH / fireDelay))
+            data["rockyPendingFire"] = true
+            PlayAnimation(familiar, "Attack", math.max(1, ATTACK_ANIMATION_LENGTH / fireDelay), true)
         end
 
         local currentAnimation = data["rockyAnimation"]
+
+        -- 내려찍는 프레임에 도달했을 때 발사한다
+        if data["rockyPendingFire"] then
+            if currentAnimation ~= "Attack" then
+                data["rockyPendingFire"] = nil
+            elseif player and sprite:GetFrame() >= ATTACK_FIRE_FRAME then
+                data["rockyPendingFire"] = nil
+
+                FireCrossTears(familiar, player)
+            end
+        end
 
         if currentAnimation == "Attack" or currentAnimation == "Interaction" then
             if sprite:IsFinished(currentAnimation) then

@@ -966,7 +966,6 @@ Descriptions.collectibles = {
         { text = "0~1퀄리티 아이템을 25% 확률로 <color=0xFFC9FF00>제노나이트<color=0xFFFFFFFF>로 변경" },
     },
     [247] = {
-        { text = "<warning><color=0xFFC9FF00>로키<color=0xFFFFFFFF> 미소지 시 다른 아이템으로 변경됨" },
         { text = "게임 시간 1분마다 10초간 무적" },
     },
 }

@@ -1,13 +1,17 @@
 ---
 
 local ABSORB_SPEED = 0.05
+
 local ABSORB_TEARS = 0.3
+
 local ABSORB_DAMAGE_MULTIPLIER = 1.05
+
 local ABSORB_RANGE = 0.5
+
 local ABSORB_LUCK = 0.5
 
 local SUMMON_KEY = Keyboard.KEY_8
-local SUMMON_KEY_LABEL = "8"
+
 local SUMMON_LIMIT_PER_STAGE = 1
 
 ---
@@ -16,51 +20,8 @@ Astro.Collectible.ASTROPHAGE = Isaac.GetItemIdByName("Astrophage")
 
 local ITEM_ID = Astro.Collectible.ASTROPHAGE
 
----@type CollectibleType[]?
-local planetariumCollectibles = nil
-
----@return CollectibleType[]
-local function GetPlanetariumCollectibles()
-    if planetariumCollectibles then
-        return planetariumCollectibles
-    end
-
-    planetariumCollectibles = {
-        CollectibleType.COLLECTIBLE_SOL,
-        CollectibleType.COLLECTIBLE_LUNA,
-        CollectibleType.COLLECTIBLE_MERCURIUS,
-        CollectibleType.COLLECTIBLE_VENUS,
-        CollectibleType.COLLECTIBLE_TERRA,
-        CollectibleType.COLLECTIBLE_MARS,
-        CollectibleType.COLLECTIBLE_JUPITER,
-        CollectibleType.COLLECTIBLE_SATURNUS,
-        CollectibleType.COLLECTIBLE_URANUS,
-        CollectibleType.COLLECTIBLE_NEPTUNUS,
-        CollectibleType.COLLECTIBLE_PLUTO,
-        CollectibleType.COLLECTIBLE_STAR_OF_BETHLEHEM,
-    }
-
-    local astroCollectibleNames = {
-        "ALBIREO", "ALTAIR", "CASIOPEA", "COMET", "CORVUS", "CYGNUS", "DENEB",
-        "LANIAKEA_SUPERCLUSTER", "PAVO", "PTOLEMAEUS", "QUASAR", "VEGA",
-        "COPERNICUS", "SUPER_NOVA", "PILLARS_OF_CREATION", "SOLAR_SYSTEM",
-        "ASTRO_STAR_OF_BETHLEHEM",
-        "AQUARIUS_EX", "ARIES_EX", "CANCER_EX", "CAPRICORN_EX", "GEMINI_EX", "LEO_EX",
-        "LIBRA_EX", "PISCES_EX", "SAGITTARIUS_EX", "SCORPIO_EX", "TAURUS_EX", "VIRGO_EX",
-        "SOL_EX", "LUNA_EX", "MERCURIUS_EX", "VENUS_EX", "TERRA_EX", "MARS_EX",
-        "JUPITER_EX", "SATURNUS_EX", "URANUS_EX", "NEPTUNUS_EX", "PLUTO_EX",
-    }
-
-    for _, name in ipairs(astroCollectibleNames) do
-        local collectible = Astro.Collectible[name]
-
-        if collectible then
-            table.insert(planetariumCollectibles, collectible)
-        end
-    end
-
-    return planetariumCollectibles
-end
+---@type CollectibleType[]
+local planetariumCollectibles = {}
 
 ---@return CollectibleType[]
 local function GetSunAndMoonCollectibles()
@@ -75,6 +36,49 @@ end
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
+        ---행성방 아이템 목록
+        planetariumCollectibles = {
+            CollectibleType.COLLECTIBLE_CRYSTAL_BALL,
+            CollectibleType.COLLECTIBLE_ZODIAC,
+            CollectibleType.COLLECTIBLE_SOL,
+            CollectibleType.COLLECTIBLE_LUNA,
+            CollectibleType.COLLECTIBLE_MERCURIUS,
+            CollectibleType.COLLECTIBLE_VENUS,
+            CollectibleType.COLLECTIBLE_TERRA,
+            CollectibleType.COLLECTIBLE_MARS,
+            CollectibleType.COLLECTIBLE_JUPITER,
+            CollectibleType.COLLECTIBLE_SATURNUS,
+            CollectibleType.COLLECTIBLE_URANUS,
+            CollectibleType.COLLECTIBLE_NEPTUNUS,
+            CollectibleType.COLLECTIBLE_PLUTO,
+            Astro.Collectible.CYGNUS,
+            Astro.Collectible.LIBRA_EX,
+            Astro.Collectible.CANCER_EX,
+            Astro.Collectible.SCORPIO_EX,
+            Astro.Collectible.CAPRICORN_EX,
+            Astro.Collectible.VIRGO_EX,
+            Astro.Collectible.LEO_EX,
+            Astro.Collectible.ARIES_EX,
+            Astro.Collectible.TAURUS_EX,
+            Astro.Collectible.AQUARIUS_EX,
+            Astro.Collectible.CASIOPEA,
+            Astro.Collectible.CORVUS,
+            Astro.Collectible.PAVO,
+            Astro.Collectible.COMET,
+            Astro.Collectible.PISCES_EX,
+            Astro.Collectible.GEMINI_EX,
+            Astro.Collectible.PTOLEMAEUS,
+            Astro.Collectible.ALTAIR,
+            Astro.Collectible.VEGA,
+            Astro.Collectible.DENEB,
+            Astro.Collectible.SOLAR_SYSTEM,
+            Astro.Collectible.QUASAR,
+            Astro.Collectible.LANIAKEA_SUPERCLUSTER,
+            Astro.Collectible.COPERNICUS,
+            Astro.Collectible.SUPER_NOVA,
+            Astro.Collectible.PILLARS_OF_CREATION,
+        }
+
         if EID then
             Astro.EID:AddCollectible(
                 ITEM_ID,
@@ -88,7 +92,7 @@ Astro:AddCallback(
                 "#{{IND}}↑ {{RangeSmall}}사거리 +" .. ABSORB_RANGE ..
                 "#{{IND}}↑ {{LuckSmall}}행운 +" .. ABSORB_LUCK ..
                 "#{{Trinket152}} 최초 사용 시 Telescope Lens를 흡수합니다." ..
-                "#숫자 " .. SUMMON_KEY_LABEL .. "키를 누르면 스테이지당 " .. SUMMON_LIMIT_PER_STAGE ..
+                "#숫자 8키를 누르면 스테이지당 " .. SUMMON_LIMIT_PER_STAGE ..
                 "번 소지중인 모든 행성방 아이템을 필드에 소환합니다." ..
                 "#!!! 한번이라도 사용했다면 다음 게임에서 {{Collectible" .. CollectibleType.COLLECTIBLE_SOL .. "}}Sol과 " ..
                 "{{Collectible" .. CollectibleType.COLLECTIBLE_LUNA .. "}}Luna가 등장하지 않습니다."
@@ -105,7 +109,7 @@ Astro:AddCallback(
                 "#{{IND}}↑ {{Range}} +" .. ABSORB_RANGE .. " Range" ..
                 "#{{IND}}↑ {{Luck}} +" .. ABSORB_LUCK .. " Luck" ..
                 "#{{Trinket152}} Smelts Telescope Lens on the first use" ..
-                "#Press '" .. SUMMON_KEY_LABEL .. "' key to drop every held planetarium item, " ..
+                "#Press '8' key to drop every held planetarium item, " ..
                 SUMMON_LIMIT_PER_STAGE .. " time per floor" ..
                 "#!!! Sol and Luna will not appear in the next run once this item has been used",
                 nil, "en_us"
@@ -150,7 +154,7 @@ Astro:AddCallback(
         for _, entity in ipairs(Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)) do
             local pickup = entity:ToPickup()
 
-            if pickup and Astro:Contain(GetPlanetariumCollectibles(), pickup.SubType) then
+            if pickup and Astro:Contain(planetariumCollectibles, pickup.SubType) then
                 Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.POOF01, 0, pickup.Position, Vector.Zero, player)
                 pickup:Remove()
 
@@ -192,12 +196,14 @@ local function SummonHeldPlanetariumCollectibles(player)
     local floorData = Astro.SaveManager.GetFloorSave(player)
 
     if not floorData or (floorData["astrophageSummonCount"] or 0) >= SUMMON_LIMIT_PER_STAGE then
+        SFXManager():Play(SoundEffect.SOUND_BOSS2INTRO_ERRORBUZZ)
+
         return
     end
 
     local summonedCount = 0
 
-    for _, collectible in ipairs(GetPlanetariumCollectibles()) do
+    for _, collectible in ipairs(planetariumCollectibles) do
         for _ = 1, player:GetCollectibleNum(collectible, true) do
             player:RemoveCollectible(collectible)
             Astro:SpawnCollectible(collectible, player.Position)
@@ -206,11 +212,15 @@ local function SummonHeldPlanetariumCollectibles(player)
         end
     end
 
-    if summonedCount > 0 then
-        floorData["astrophageSummonCount"] = (floorData["astrophageSummonCount"] or 0) + 1
+    if summonedCount <= 0 then
+        SFXManager():Play(SoundEffect.SOUND_BOSS2INTRO_ERRORBUZZ)
 
-        SFXManager():Play(SoundEffect.SOUND_SUMMONSOUND)
+        return
     end
+
+    floorData["astrophageSummonCount"] = (floorData["astrophageSummonCount"] or 0) + 1
+
+    SFXManager():Play(SoundEffect.SOUND_SUMMONSOUND)
 end
 
 Astro:AddCallback(
