@@ -127,6 +127,21 @@ function Astro:HideDialogue(entity)
     end
 end
 
+---@param entity Entity
+---@return boolean
+function Astro:IsDialogueActive(entity)
+    return FindDialogueIndex(entity) ~= nil
+end
+
+---@param entity Entity
+---@return boolean
+function Astro:IsDialogueTyping(entity)
+    local index = FindDialogueIndex(entity)
+    local dialogue = index and activeDialogues[index]
+
+    return dialogue ~= nil and dialogue.charIndex < dialogue.totalLength
+end
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_UPDATE,
     function(_)
