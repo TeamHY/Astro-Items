@@ -16,7 +16,15 @@ local TYPING_SOUND_INTERVAL = 1
 local font = Font()
 font:Load(Astro.ModPath .. "resources/font/eid_korean_galmoori9.fnt")
 
----@type { entity: Entity, lines: string[][], totalLength: integer, charIndex: integer, timer: integer, duration: integer, alpha: number }[]
+local function LogDialogue(message)
+    if Astro.DebugDialogue then
+        Isaac.DebugString("[AstroItems][Dialogue] frame=" .. Game():GetFrameCount() .. " " .. message)
+    end
+end
+
+Isaac.DebugString("[AstroItems][Dialogue] loaded fontLoaded=" .. tostring(font:IsLoaded()))
+
+---@type { entity: Entity, font: Font, lines: string[][], totalLength: integer, charIndex: integer, timer: integer, duration: integer, alpha: number }[]
 local activeDialogues = {}
 
 ---@param text string
@@ -45,15 +53,17 @@ local function SplitCharacters(text)
 end
 
 ---@param text string
+---@param dialogueFont Font
 ---@return string[][]
-local function WrapText(text)
+local function WrapText(text, dialogueFont)
     local lines = {}
     local currentLine = ""
 
-    for word in string.gmatch(text, "[^%s]+") do
+    -- 로케일에 따라 %s가 한글 UTF-8 바이트를 공백으로 판단하지 않도록 합니다.
+    for word in string.gmatch(text, "[^ \t\n\r\f\v]+") do
         local testLine = currentLine == "" and word or (currentLine .. " " .. word)
 
-        if currentLine ~= "" and font:GetStringWidthUTF8(testLine) > LINE_WIDTH then
+        if currentLine ~= "" and dialogueFont:GetStringWidthUTF8(testLine) > LINE_WIDTH then
             table.insert(lines, SplitCharacters(currentLine))
             currentLine = word
         else
@@ -87,12 +97,15 @@ end
 ---@param entity Entity
 ---@param text string
 ---@param duration integer?
-function Astro:ShowDialogue(entity, text, duration)
+---@param dialogueFont Font?
+function Astro:ShowDialogue(entity, text, duration, dialogueFont)
     if not entity or not entity:Exists() or text == nil or text == "" then
+        LogDialogue("show.skip entityExists=" .. tostring(entity ~= nil and entity:Exists()) .. " text=" .. tostring(text))
         return
     end
 
-    local lines = WrapText(text)
+    dialogueFont = dialogueFont or font
+    local lines = WrapText(text, dialogueFont)
     local totalLength = 0
 
     for _, line in ipairs(lines) do
@@ -101,6 +114,7 @@ function Astro:ShowDialogue(entity, text, duration)
 
     local dialogue = {
         entity = entity,
+        font = dialogueFont,
         lines = lines,
         totalLength = totalLength,
         charIndex = 0,
@@ -116,6 +130,9 @@ function Astro:ShowDialogue(entity, text, duration)
     else
         table.insert(activeDialogues, dialogue)
     end
+
+    LogDialogue(string.format("show.accepted entity=%s lines=%d chars=%d duration=%d replaced=%s text=%s",
+        tostring(GetPtrHash(entity)), #lines, totalLength, dialogue.duration, tostring(index ~= nil), text))
 end
 
 ---@param entity Entity
@@ -123,6 +140,7 @@ function Astro:HideDialogue(entity)
     local index = FindDialogueIndex(entity)
 
     if index then
+        LogDialogue("hide entity=" .. tostring(GetPtrHash(entity)))
         table.remove(activeDialogues, index)
     end
 end
@@ -149,12 +167,20 @@ Astro:AddCallback(
             local dialogue = activeDialogues[index]
 
             if not dialogue.entity:Exists() then
+                LogDialogue("update.remove reason=entity-gone")
                 table.remove(activeDialogues, index)
             elseif dialogue.charIndex < dialogue.totalLength then
+                if dialogue.charIndex == 0 then
+                    LogDialogue("update.typing entity=" .. tostring(GetPtrHash(dialogue.entity)))
+                end
                 dialogue.charIndex = math.min(dialogue.charIndex + TYPING_SPEED, dialogue.totalLength)
 
                 if dialogue.charIndex % TYPING_SOUND_INTERVAL == 0 then
                     SFXManager():Play(TYPING_SOUND, TYPING_SOUND_VOLUME, 0, false, TYPING_SOUND_PITCH)
+                end
+
+                if dialogue.charIndex == dialogue.totalLength then
+                    LogDialogue("update.typing-complete entity=" .. tostring(GetPtrHash(dialogue.entity)))
                 end
             else
                 dialogue.timer = dialogue.timer + 1
@@ -163,6 +189,7 @@ Astro:AddCallback(
                     local elapsed = dialogue.timer - dialogue.duration
 
                     if elapsed >= FADE_OUT_DURATION then
+                        LogDialogue("update.remove reason=expired entity=" .. tostring(GetPtrHash(dialogue.entity)))
                         table.remove(activeDialogues, index)
                     else
                         dialogue.alpha = 1.0 - EaseInOutQuad(elapsed / FADE_OUT_DURATION)
@@ -176,6 +203,7 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function(_)
+        LogDialogue("new-room.clear active=" .. #activeDialogues)
         activeDialogues = {}
     end
 )
@@ -184,6 +212,12 @@ Astro:AddCallback(
     ModCallbacks.MC_POST_RENDER,
     function(_)
         if not Game():GetHUD():IsVisible() then
+            for _, dialogue in ipairs(activeDialogues) do
+                if not dialogue.loggedHiddenHUD then
+                    LogDialogue("render.skip reason=hud-hidden entity=" .. tostring(GetPtrHash(dialogue.entity)))
+                    dialogue.loggedHiddenHUD = true
+                end
+            end
             return
         end
 
@@ -201,7 +235,7 @@ Astro:AddCallback(
 
                 local count = math.min(remaining, #line)
 
-                font:DrawStringUTF8(
+                dialogue.font:DrawStringUTF8(
                     table.concat(line, "", 1, count),
                     baseX,
                     baseY + (lineIndex - 1) * LINE_HEIGHT,
@@ -211,6 +245,12 @@ Astro:AddCallback(
                 )
 
                 remaining = remaining - count
+            end
+
+            if dialogue.charIndex > 0 and not dialogue.loggedRender then
+                LogDialogue(string.format("render.drawn entity=%s x=%.1f y=%.1f chars=%d lines=%d",
+                    tostring(GetPtrHash(dialogue.entity)), position.X, baseY, dialogue.charIndex, #dialogue.lines))
+                dialogue.loggedRender = true
             end
         end
     end
