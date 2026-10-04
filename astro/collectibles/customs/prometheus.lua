@@ -93,7 +93,9 @@ Astro:AddCallback(
             local fires = Isaac.FindByType(EntityType.ENTITY_FIREPLACE)
             
             for _, fire in ipairs(fires) do
-                fire:Kill()
+                if fire.Variant ~= 4 then -- White fireplace
+                    fire:Kill()
+                end
             end
         end
     end
