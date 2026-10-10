@@ -1,5 +1,11 @@
 local isc = require("astro.lib.isaacscript-common")
 
+---
+
+local WARD_ROOM_CLEAR_COUNT = 6
+
+---
+
 Astro.Collectible.PINK_WARD = Isaac.GetItemIdByName("Pink Ward")
 
 Astro:AddCallback(
@@ -11,6 +17,7 @@ Astro:AddCallback(
                 "핑크 와드",
                 "은신 감지",
                 "스테이지 중심 5x5의 방을 보여줍니다." ..
+                "#방을 " .. WARD_ROOM_CLEAR_COUNT .. "번 클리어할 때마다 {{Collectible" .. Astro.Collectible.WARD .. "}}Ward를 발동합니다." ..
                 "#숨어 있는 적을 아군으로 만듭니다.",
                 -- 중첩 시
                 "중첩 시 보여지는 방 범위 증가"
@@ -61,6 +68,25 @@ Astro:AddCallbackCustom(
     function(_, player, collectibleType)
         if collectibleType == Astro.Collectible.PINK_WARD then
             DisplayPinkWardRoom(player:GetCollectibleNum(Astro.Collectible.PINK_WARD) * 2)
+        end
+    end
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
+    function(_)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            if player:HasCollectible(Astro.Collectible.PINK_WARD) then
+                local data = Astro.SaveManager.GetRunSave(player)
+                data.pinkWardRoomClearCount = (data.pinkWardRoomClearCount or 0) + 1
+
+                if data.pinkWardRoomClearCount >= WARD_ROOM_CLEAR_COUNT then
+                    data.pinkWardRoomClearCount = 0
+                    player:UseActiveItem(Astro.Collectible.WARD, UseFlag.USE_NOANIM)
+                end
+            end
         end
     end
 )

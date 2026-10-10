@@ -92,6 +92,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_BOMBER_BOY] = { Id = Astro.Collectible.WATER_BALLOON, Chance = 0.8 },
     [Astro.Collectible.UNHOLY_MANTLE] = { Id = CollectibleType.COLLECTIBLE_HOLY_MANTLE, Chance = 0.1 },
     [Astro.Collectible.FALLEN_ORB] = { Id = CollectibleType.COLLECTIBLE_SACRED_ORB, Chance = 0.1 },
+    [Astro.Collectible.WARD] = { Id = Astro.Collectible.PINK_WARD, Chance = 0.3 },
 }
 
 ---

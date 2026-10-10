@@ -57,7 +57,7 @@
 	<active gfx="Fortune Coin.png" quality="1" devilprice="1" maxcharges="1" shopprice="1" name="Fortune Coin" description="All in" id="56" />
 	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="13" name="Master's Degree" description="Bigger pills" id="57" />
 	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" description="Better pills?" id="58" />
-	<passive gfx="Pink Ward.png" quality="2" devilprice="1" shopprice="18" name="Pink Ward" description="See-through enemies" id="59" />
+	<passive gfx="Pink Ward.png" hidden="true" quality="2" devilprice="1" shopprice="18" name="Pink Ward" description="See-through enemies" id="59" />
 	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50"  shopprice="20" name="Rhongomyniad" description="..." id="60" />
 	<passive gfx="Artifact Sanctum.png" quality="4" devilprice="1" shopprice="20" name="Artifact Sanctum" description="Revealing hidden artifacts" id="61" />
 	<passive cache="damage" gfx="Amplifying Mind.png" quality="5" devilprice="2" shopprice="25" name="Amplifying Mind" description="Determination" id="62" />
