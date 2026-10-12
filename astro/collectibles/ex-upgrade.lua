@@ -31,7 +31,7 @@ Astro.PLANETARIUM_UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_SAGITTARIUS] = { Id = Astro.Collectible.SAGITTARIUS_EX, Chance = 0 },
     [CollectibleType.COLLECTIBLE_CAPRICORN] = { Id = Astro.Collectible.CAPRICORN_EX, Chance = 0 },
     -- 위의 별자리는 자동으로 업그레이드 되지 않음
-    [CollectibleType.COLLECTIBLE_SACRED_HEART] = { Id = Astro.Collectible.ASTRO_SACRED_HEART, Chance = 0.1 },
+    [CollectibleType.COLLECTIBLE_SACRED_HEART] = { Id = CollectibleType.COLLECTIBLE_SACRED_HEART, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_GODHEAD] = { Id = Astro.Collectible.ASTRO_GODHEAD, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_STAR_OF_BETHLEHEM] = { Id = Astro.Collectible.ASTRO_STAR_OF_BETHLEHEM, Chance = 0.4 },
     [CollectibleType.COLLECTIBLE_WE_NEED_TO_GO_DEEPER] = { Id = Astro.Collectible.WE_NEED_TO_GO_DEEPER_ASTRO, Chance = 0.5 },
