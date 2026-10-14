@@ -596,7 +596,7 @@ Descriptions.collectibles = {
         { text = "눈물에 초당 공격력 x0.3의 피해를 주는 원광이 생김" },
     },
     [153] = {
-        { text = "<color=0xFFC9FF00>성스러운 심장<color=0xFFFFFFFF> 효과 적용" },
+        { text = "방 입장 시 <color=0xFFC9FF00>I - 마술사<color=0xFFFFFFFF> 발동" },
         { text = "적들이 받는 피해량 2.3배" },
     },
     [154] = {
