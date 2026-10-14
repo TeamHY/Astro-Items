@@ -246,6 +246,7 @@
 	<active cache="speed firedelay damage range luck" gfx="Astrophage.png" quality="3" devilprice="2" shopprice="15" maxcharges="6" name="Astrophage" description="A microbe that eats stars" id="245" />
 	<familiar gfx="Rocky.png" quality="3" devilprice="1" shopprice="15" name="Rocky" description="Eridian" id="246" />
 	<passive gfx="Xenonite.png" quality="2" devilprice="1" shopprice="15" name="Xenonite" description="Super material of the Eridians" id="247" />
+	<active gfx="Hyper Quantum Dice.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="8" name="Hyper Quantum Dice" description="Choose -3 ~ +3" id="248" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

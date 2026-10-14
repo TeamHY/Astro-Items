@@ -18,7 +18,7 @@ Astro:AddCallback(
 )
 
 local function SpindownModifierConfition(descObj)
-    if descObj.ObjType == 5 and descObj.ObjVariant == 100 and Astro:HasCollectible(Astro.Collectible.QUBIT_DICE) then
+    if descObj.ObjType == 5 and descObj.ObjVariant == 100 and (Astro:HasCollectible(Astro.Collectible.QUBIT_DICE) or Astro:HasCollectible(Astro.Collectible.HYPER_QUANTUM_DICE)) then
         local numPlayers = Game():GetNumPlayers()
         for i = 0, numPlayers - 1 do
             if

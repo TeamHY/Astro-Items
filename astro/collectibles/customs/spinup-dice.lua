@@ -77,7 +77,7 @@ local function SpinupModifierCondition(descObj)
         for i = 0, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
 
-            if player:HasCollectible(Astro.Collectible.SPINUP_DICE) or player:HasCollectible(Astro.Collectible.QUBIT_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
+            if player:HasCollectible(Astro.Collectible.SPINUP_DICE) or player:HasCollectible(Astro.Collectible.QUBIT_DICE) or player:HasCollectible(Astro.Collectible.HYPER_QUANTUM_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
                 return true
             end
         end
@@ -91,7 +91,7 @@ local function SpinupModifierCallback(descObj)
     for i = 0, Game():GetNumPlayers() do
         local player = Isaac.GetPlayer(i - 1)
 
-        if player:HasCollectible(Astro.Collectible.SPINUP_DICE) or player:HasCollectible(Astro.Collectible.QUBIT_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
+        if player:HasCollectible(Astro.Collectible.SPINUP_DICE) or player:HasCollectible(Astro.Collectible.QUBIT_DICE) or player:HasCollectible(Astro.Collectible.HYPER_QUANTUM_DICE) or (EID.absorbedItems[tostring(i)] and EID.absorbedItems[tostring(i)][tostring(Astro.Collectible.SPINUP_DICE)]) then
             playerID = i - 1
             icon = "#{{Collectible" .. Astro.Collectible.SPINUP_DICE .. "}} :"
 

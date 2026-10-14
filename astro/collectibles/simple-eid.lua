@@ -968,6 +968,9 @@ Descriptions.collectibles = {
     [247] = {
         { text = "게임 시간 1분마다 10초간 무적" },
     },
+    [248] = {
+        { text = "사용 시 -3~+3 중 선택한 만큼 방 안의 아이템 ID를 이동" },
+    },
 }
 
 Descriptions.trinkets = {
