@@ -93,7 +93,7 @@ Astro.UPGRADE_LIST = {
     [Astro.Collectible.UNHOLY_MANTLE] = { Id = CollectibleType.COLLECTIBLE_HOLY_MANTLE, Chance = 0.1 },
     [Astro.Collectible.FALLEN_ORB] = { Id = CollectibleType.COLLECTIBLE_SACRED_ORB, Chance = 0.1 },
     [Astro.Collectible.WARD] = { Id = Astro.Collectible.PINK_WARD, Chance = 0.3 },
-    [Astro.Collectible.QUBIT_DICE] = { Id = Astro.Collectible.HYPER_QUANTUM_DICE, Chance = 0.3 },
+    [Astro.Collectible.QUBIT_DICE] = { Id = Astro.Collectible.HYPER_QUANTUM_DICE, Chance = 0.1 },
 }
 
 ---
