@@ -84,34 +84,34 @@ Astro:AddCallback(
                 ITEM_ID,
                 "아스트로파지",
                 "별을 먹는 미생물",
-                "{{Planetarium}} 사용 시 방 안의 모든 행성방 아이템을 흡수합니다." ..
-                "#{{ArrowGrayRight}} 흡수한 개수마다:" ..
-                "#{{IND}}↑ {{SpeedSmall}}이동 속도 +" .. ABSORB_SPEED ..
-                "#{{IND}}↑ {{TearsSmall}}연사 +" .. ABSORB_TEARS ..
-                "#{{IND}}↑ {{DamageSmall}}공격력 배율 x" .. ABSORB_DAMAGE_MULTIPLIER ..
-                "#{{IND}}↑ {{RangeSmall}}사거리 +" .. ABSORB_RANGE ..
-                "#{{IND}}↑ {{LuckSmall}}행운 +" .. ABSORB_LUCK ..
-                "#{{Trinket152}} 최초 사용 시 Telescope Lens를 흡수합니다." ..
-                "#숫자 8키를 누르면 스테이지당 " .. SUMMON_LIMIT_PER_STAGE ..
-                "번 소지중인 모든 행성방 아이템을 필드에 소환합니다." ..
-                "#!!! 한번이라도 사용했다면 다음 게임에서 {{Collectible" .. CollectibleType.COLLECTIBLE_SOL .. "}}Sol과 " ..
-                "{{Collectible" .. CollectibleType.COLLECTIBLE_LUNA .. "}}Luna가 등장하지 않습니다."
+                "!!! 사용 이후 다음 게임에서 {{Collectible" .. CollectibleType.COLLECTIBLE_SOL .. "}}Sol, " ..
+                "{{Collectible" .. CollectibleType.COLLECTIBLE_LUNA .. "}}Luna 미등장" ..
+                "#사용 시:" ..
+                "#{{IND}}↑ {{PlanetariumChanceSmall}}천체방 확률 +9%" ..
+                "#{{IND}}↑ {{PlanetariumChanceSmall}}첫 천체방 확률 +15%" ..
+                "#{{IND}}{{PlanetariumChanceSmall}} Womb/Corpse 스테이지에서 천체방이 등장할 수 있습니다." ..
+                "#{{IND}} 그 방의 {{Planetarium}}천체관 아이템을 흡수하고 능력치가 증가합니다." ..
+                "#{{IND}}{{Blank}} ({{TearsSmall}}+" .. ABSORB_TEARS ..
+                "/{{DamageSmall}}x" .. ABSORB_DAMAGE_MULTIPLIER ..
+                "/{{SpeedSmall}}+" .. ABSORB_SPEED ..
+                "/{{RangeSmall}}+" .. ABSORB_RANGE ..
+                "/{{LuckSmall}}+" .. ABSORB_LUCK .. ")" ..
+                "#스테이지당 " .. SUMMON_LIMIT_PER_STAGE .. "번 숫자 8키를 누르면 소지중인 모든 천체관 아이템을 드랍합니다."
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Astrophage", "",
-                "{{Planetarium}} Absorbs every planetarium item in the room upon use" ..
-                "#{{ArrowGrayRight}} Per absorbed item:" ..
+                "Absorbs every planetarium item in the room" ..
+                "#Per absorbed item:" ..
                 "#{{IND}}↑ {{Speed}} +" .. ABSORB_SPEED .. " Speed" ..
                 "#{{IND}}↑ {{Tears}} +" .. ABSORB_TEARS .. " Tears" ..
                 "#{{IND}}↑ {{Damage}} x" .. ABSORB_DAMAGE_MULTIPLIER .. " Damage multiplier" ..
                 "#{{IND}}↑ {{Range}} +" .. ABSORB_RANGE .. " Range" ..
                 "#{{IND}}↑ {{Luck}} +" .. ABSORB_LUCK .. " Luck" ..
                 "#{{Trinket152}} Smelts Telescope Lens on the first use" ..
-                "#Press '8' key to drop every held planetarium item, " ..
-                SUMMON_LIMIT_PER_STAGE .. " time per floor" ..
-                "#!!! Sol and Luna will not appear in the next run once this item has been used",
+                "#Press the number 8 key to drop every held planetarium item. Can only be used once per floor" ..
+                "#!!! Sol and Luna will not appear in the next run",
                 nil, "en_us"
             )
         end

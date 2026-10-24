@@ -32,7 +32,7 @@ Astro:AddCallback(
                 ITEM_ID,
                 "Legacy", "",
                 rgonWarningENG ..
-                "Press '7' key to transform all items in the room into random tranformation items. Can only be used once per floor" ..
+                "Press the number 7 key to transform all items in the room into random tranformation items. Can only be used once per floor" ..
                 "All transformation effects are enhanced" ..
                 "{{ColorGray}} (Bookworm effect not implemented)",
                 nil, "en_us"

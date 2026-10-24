@@ -44,7 +44,7 @@ local DIALOGUES = {
         "행복! 행복, 행복, 행복!",
     },
     ["en_us"] = {
-        "Grace, Rocky save stars",
+        "Grace Rocky save stars",
         "You worry. I worry you.",
         "Hey, your face is leaking!",
         "Rocky not forget. I give nothing.",
@@ -60,20 +60,17 @@ Astro:AddCallback(
                 ITEM_ID,
                 "로키",
                 "에리디언 종족",
-                "캐릭터를 따라다니는 패밀리어입니다." ..
-                "#공격 버튼을 누르면 십자 방향으로 지형 파괴 눈물을 발사합니다." ..
+                "캐릭터를 따라다니며 바위 눈물을 4갈래로 발사합니다." ..
                 "#{{Quality0}}/{{Quality1}}등급 아이템 등장 시 " .. (XENONITE_CHANCE * 100) ..
-                "%의 확률로 {{Collectible" .. Astro.Collectible.XENONITE .. "}}Xenonite로 바꿉니다." ..
-                "#방 클리어 시 대사를 출력합니다.",
+                "%의 확률로 {{Collectible" .. Astro.Collectible.XENONITE .. "}}Xenonite로 바꿉니다.",
                 -- 중첩 시
-                "중첩 시 Xenonite로 바뀔 확률이 중첩된 수만큼 합연산으로 증가"
+                "중첩 시 Xenonite 확률이 중첩된 수만큼 합연산으로 증가"
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Rocky", "",
-                "A familiar that follows Isaac" ..
-                "#Fires terrain-destroying tears in a cross-shaped pattern while shooting" ..
+                "Shoots 4-way rocks" ..
                 "#{{Quality0}}/{{Quality1}} quality items have a " .. (XENONITE_CHANCE * 100) ..
                 "% chance to become {{Collectible" .. Astro.Collectible.XENONITE .. "}}Xenonite",
                 -- Stacks

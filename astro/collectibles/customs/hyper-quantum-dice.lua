@@ -15,19 +15,16 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "초양자 주사위",
-                "-3 ~ +3 선택",
-                "사용 시 {{ColorOrange}}-3 ~ +3 중 하나를 골라{{CR}} 그 방의 아이템을 그만큼 앞/뒤 코드의 아이템으로 바꿉니다." ..
-                "#!!! 일부 아이템은 등장하지 않습니다."
+                "-3 ~ +3 중에서 골라",
+                "사용 시 그 방의 아이템을 코드 1~3번 앞/뒷번호의 아이템으로 바꿉니다." ..
+                "#!!! 해금하지 않은 아이템과 현재 게임에서 등장할 수 없는 아이템은 등장하지 않습니다."
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
-                "Hyper Quantum Dice",
-                "",
-                "When used, {{ColorOrange}}choose -3 ~ +3{{CR}} and reroll items in the room by that many IDs" ..
-                "#!!! Some items cannot appear",
-                nil,
-                "en_us"
+                "Hyper Quantum Dice", "",
+                "Rerolls all items in the room by shifting their internal IDs by a randomly chosen value from -3 to +3",
+                nil, "en_us"
             )
         end
     end

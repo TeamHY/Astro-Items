@@ -932,12 +932,29 @@
 		<info text="Spawns 4 eternal hearts on pickup"/>
 	</collectible>
 	<collectible id="243">
-		<info text="Spawns 3 random trinkets and a Mega Gulp! pill on pickup"/>
+		<info text="Spawns 3 random trinkets and a Gulp! horse pill on pickup"/>
 	</collectible>
 	<collectible id="244">
 		<info text="Bombs explode with short water jets in a cross-shaped pattern"/>
 		<info text="Freezes enemies upon killing them with bombs"/>
 		<info text="Isaac takes no damage from this bomb"/>
+	</collectible>
+	<collectible id="245">
+		<info text="Increases the chance of a planetarium spawning by 9%"/>
+		<info text="Planetariums can spawn in The Womb and Corpse"/>
+		<info text="Consumes planetarium items in the room"/>
+		<info text="Consuming a passive item grants a permanent stat boost"/>
+		<info text="Press the number 8 key to drop every held planetarium item per floor"/>
+		<info text="Sol, Luna not appear in the next run"/>
+	</collectible>
+	<collectible id="246">
+		<info text="Familiar that fires rocks in a cross pattern"/>
+	</collectible>
+	<collectible id="247">
+		<info text="Every 60 seconds grants a shield bubble for 10 seconds"/>
+	</collectible>
+	<collectible id="248">
+		<info text="Rerolls each pedestal item in the room to a chosen item ID 1-3 ahead or behind"/>
 	</collectible>
 </collectibles>
 

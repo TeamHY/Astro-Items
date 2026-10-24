@@ -14,16 +14,15 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "거대 구슬",
-                "...",
-                "{{Trinket}} 획득 시 랜덤 장신구 " .. TRINKET_COUNT .. "개와 {{Pill1}}메가 Gulp! 알약을 소환합니다."
+                "너무 많아",
+                "{{Trinket}} 획득 시 랜덤 장신구 " .. TRINKET_COUNT .. "개와 {{Pill1}}Gulp! {{ColorCyan}}말{{CR}}약을 소환합니다."
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
-                "Giant Marble",
-                "...",
-                "{{Trinket}} Spawns " .. TRINKET_COUNT .. " random trinkets and a {{Pill1}}Mega Gulp! pill on pickup",
-                "en_us"
+                "Giant Marble", "",
+                "{{Trinket}} Spawns " .. TRINKET_COUNT .. " random trinkets and a {{Pill1}} Gulp! horse pill on pickup",
+                nil, "en_us"
             )
         end
     end

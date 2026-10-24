@@ -12,11 +12,13 @@ Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
+            local duration = string.format("%.f", INVINCIBLE_INTERVAL / 30)
+
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "제노나이트",
-                "에리디언이 사용하는 초고성능 소재",
-                "#{{Collectible58}} 게임 시간 " .. (INVINCIBLE_INTERVAL / 30) .. "초마다 " .. "10초간 무적 상태가 됩니다.",
+                "에리디언의 초고성능 소재",
+                duration .. "초마다 " .. "캐릭터가 10초간 무적 상태가 됩니다.",
                 -- 중첩 시
                 "중첩 시 발동 주기가 짧아지며 무적 지속 시간이 길어집니다."
             )
@@ -24,7 +26,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Xenonite", "",
-                "#{{Collectible58}} Invincibility for 10 seconds every " .. (INVINCIBLE_INTERVAL / 30) .. " seconds of game time",
+                "Invincibility for 10 seconds every " .. duration .. " seconds",
                 -- Stacks
                 "Stacks shorten the interval and increase the invincibility duration",
                 "en_us"
