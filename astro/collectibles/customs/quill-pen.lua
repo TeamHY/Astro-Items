@@ -8,6 +8,8 @@ local FEATHER_AMOUNT = 15    -- 깃털 다발의 양
 
 local DAMAGE_MULTI = 3    -- 깃털 다발은 캐릭터의 공격력 n배 +5의 피해량을 가짐
 
+local SFX_VOLUME = 0.25
+
 ---
 
 Astro:AddCallback(
@@ -123,7 +125,7 @@ else
                     shootFeathers(player, vel, rng)
                 end
 
-                SFXManager():Play(SoundEffect.SOUND_DOGMA_FEATHER_SPRAY, 0.15)
+                SFXManager():Play(SoundEffect.SOUND_DOGMA_FEATHER_SPRAY, SFX_VOLUME)
             end
         end
     )
