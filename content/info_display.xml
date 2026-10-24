@@ -623,7 +623,6 @@
 	</collectible>
 	<collectible id="153">
 		<info text="Homing tears"/>
-		<info text="x2.3 damage multiplier"/>
 		<info text="Enemies take damage at 2.3x the amount"/>
 	</collectible>
 	<collectible id="154">

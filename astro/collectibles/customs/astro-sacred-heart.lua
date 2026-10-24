@@ -8,7 +8,8 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_SACRED_HEART,
                 "광휘로운 심장",
                 "유도 공격 + 추가 피해",
-                "방 입장 시 {{Card2}}I - The Magician이 발동됩니다." ..
+                "↑ {{RangeSmall}}사거리 +3" ..
+                "#공격에 유도 효과가 생깁니다." ..
                 "#적이 받는 피해량이 2.3배로 증가합니다.",
                 -- 중첩 시
                 "중첩 시 적이 받는 피해량이 합연산으로 증가"
@@ -18,7 +19,8 @@ Astro:AddCallback(
                 Astro.Collectible.ASTRO_SACRED_HEART,
                 "Astro Sacred Heart",
                 "",
-                "Uses {{Card2}}I - The Magician when entering a room" ..
+                "↑ {{Range}} +3 Range" ..
+                "#Homing tears" ..
                 "#{{Damage}} Damage to enemies increases by 2.3x on hit",
                 -- Stacks
                 "Stacks increase extra damage",
@@ -48,13 +50,19 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_NEW_ROOM,
-    function(_)
-        for i = 1, Game():GetNumPlayers() do
-            local player = Isaac.GetPlayer(i - 1)
+    ModCallbacks.MC_EVALUATE_CACHE,
+    ---@param player EntityPlayer
+    ---@param cacheFlag CacheFlag
+    function(_, player, cacheFlag)
+        if player:HasCollectible(Astro.Collectible.ASTRO_SACRED_HEART) then
+            local itemCount = player:GetCollectibleNum(Astro.Collectible.ASTRO_SACRED_HEART)
 
-            if player:HasCollectible(Astro.Collectible.ASTRO_SACRED_HEART) then
-                player:UseCard(Card.CARD_MAGICIAN, UseFlag.USE_NOANIM | UseFlag.USE_NOANNOUNCER | UseFlag.USE_NOCOSTUME)
+            if cacheFlag == CacheFlag.CACHE_RANGE then
+                player.TearRange = player.TearRange + (3 * 40)
+            elseif cacheFlag == CacheFlag.CACHE_TEARFLAG then
+                player.TearFlags = player.TearFlags | TearFlags.TEAR_HOMING
+            elseif cacheFlag == CacheFlag.CACHE_TEARCOLOR then
+                player.TearColor = Color(1.5, 2, 2)
             end
         end
     end
