@@ -7,6 +7,7 @@ require "astro.utils.vardata-text"
 require "astro.utils.fake-death"
 require "astro.utils.dialogue"
 require "astro.utils.notification"
+require "astro.utils.josa"
 
 Astro.TearModifier = require "astro.utils.tear-modifier"
 Astro.SpringAnimation = require "astro.utils.spring-animation"

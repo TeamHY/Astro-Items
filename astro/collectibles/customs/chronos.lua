@@ -33,7 +33,7 @@ Astro:AddCallback(
             local function GetMorphString(id)
                 local eidKor = EID:getLanguage() == "ko_kr"
                 local newItemName = "{{Collectible" .. id .. "}} " .. EID:getObjectName(5, 100, id)
-                return eidKor and ("{{ColorYellow}}" .. newItemName .. "{{CR}}(으)로 변환") or ("Rerolls to {{ColorYellow}}" .. newItemName .. "{{CR}}")
+                return eidKor and ("{{ColorYellow}}" .. newItemName .. "{{CR}}" .. Astro:PickJosa(newItemName, "으로/로") .. " 변환") or ("Rerolls to {{ColorYellow}}" .. newItemName .. "{{CR}}")
             end
 
             local function ChronosModifierCondition(descObj)

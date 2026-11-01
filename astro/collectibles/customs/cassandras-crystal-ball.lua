@@ -59,7 +59,7 @@ Astro:AddCallback(
                 function(descObj)
                     local id = Astro.UPGRADE_LIST[descObj.ObjSubType].Id
                     local newItemName = "{{Collectible" .. id .. "}} " .. EID:getObjectName(5, 100, id)
-                    local text = EID:getLanguage() == "ko_kr" and ("{{ColorYellow}}" .. newItemName .. "{{CR}}(으)로 변환") or ("Rerolls to {{ColorYellow}}" .. newItemName .. "{{CR}}")
+                    local text = EID:getLanguage() == "ko_kr" and ("{{ColorYellow}}" .. newItemName .. "{{CR}}" .. Astro:PickJosa(newItemName, "으로/로") .. " 변환") or ("Rerolls to {{ColorYellow}}" .. newItemName .. "{{CR}}")
 
                     EID:appendToDescription(descObj, "#{{Collectible" .. ITEM_ID .. "}} " .. text)
                     return descObj
