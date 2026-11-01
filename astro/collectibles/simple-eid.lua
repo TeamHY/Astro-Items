@@ -971,6 +971,9 @@ Descriptions.collectibles = {
     [248] = {
         { text = "사용 시 방 안의 모든 아이템을 1~3번 앞의 ID나 1~3번 뒤의 ID의 아이템으로 리롤 <color=0xFF808080>(선택 가능)" },
     },
+    [249] = {
+        { text = "사용 시 방 안의 선택형 아이템/픽업을 모두 획득 가능" },
+    },
 }
 
 Descriptions.trinkets = {
