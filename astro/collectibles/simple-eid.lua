@@ -974,6 +974,9 @@ Descriptions.collectibles = {
     [249] = {
         { text = "사용 시 방 안의 선택형 아이템/픽업을 모두 획득 가능" },
     },
+    [250] = {
+        { text = "사용 시 방 안의 아이템을 업그레이드" },
+    },
 }
 
 Descriptions.trinkets = {
