@@ -288,7 +288,7 @@ Astro:AddCallback(
             EID:addIcon("DavidMartinez", "Players", 6, 16, 16, 0, 3, player_icons)
             EID:addIcon("Lucy", "Players", 7, 16, 16, 0, 3, player_icons)
             EID:addIcon("Stellar", "Players", 8, 16, 16, 0, 3, player_icons)
-            EID:addIcon("Nayuta", "Players", 9, 16, 16, 0, 3, player_icons)
+            EID:addIcon("Cassandra", "Players", 9, 16, 16, 0, 3, player_icons)
             EID:addIcon("AinzOoalGown", "Players", 10, 16, 16, 0, 3, player_icons)
             EID:addIcon("PandorasActor", "Players", 11, 16, 16, 0, 3, player_icons)
 
@@ -301,7 +301,7 @@ Astro:AddCallback(
             EID.InlineIcons["Player" .. Astro.Players.DAVID_MARTINEZ] = EID.InlineIcons["DavidMartinez"]
             EID.InlineIcons["Player" .. Astro.Players.DAVID_MARTINEZ_B] = EID.InlineIcons["Lucy"]
             EID.InlineIcons["Player" .. Astro.Players.STELLAR] = EID.InlineIcons["Stellar"]
-            EID.InlineIcons["Player" .. Astro.Players.STELLAR_B] = EID.InlineIcons["Nayuta"]
+            EID.InlineIcons["Player" .. Astro.Players.STELLAR_B] = EID.InlineIcons["Cassandra"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN] = EID.InlineIcons["AinzOoalGown"]
             EID.InlineIcons["Player" .. Astro.Players.AINZ_OOAL_GOWN_B] = EID.InlineIcons["PandorasActor"]
         end

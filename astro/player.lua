@@ -234,7 +234,7 @@ Astro:AddCallback(
             EID:addCharacterInfo(Astro.Players.DAVID_MARTINEZ, "", "David Martinez", "ko_kr")
             EID:addCharacterInfo(Astro.Players.DAVID_MARTINEZ_B, "", "Lucy", "ko_kr")
             EID:addCharacterInfo(Astro.Players.STELLAR, "", "Stellar", "ko_kr")
-            EID:addCharacterInfo(Astro.Players.STELLAR_B, "", "Nayuta", "ko_kr")
+            EID:addCharacterInfo(Astro.Players.STELLAR_B, "", "Cassandra", "ko_kr")
             EID:addCharacterInfo(Astro.Players.AINZ_OOAL_GOWN, "", "Ainz Ooal Gown", "ko_kr")
             EID:addCharacterInfo(Astro.Players.AINZ_OOAL_GOWN_B, "", "Pandora's Actor", "ko_kr")
 
@@ -330,7 +330,7 @@ Astro:AddCallback(
 
                 EID:addEntity(-997, -1,
                     Astro.Players.STELLAR_B,
-                    "나유타",
+                    "카산드라",
                     "준비중",
                     "ko_kr"
                 )

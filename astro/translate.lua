@@ -50,7 +50,7 @@ local playerNames = {
     [Astro.Players.DAVID_MARTINEZ] = "데이비드",
     [Astro.Players.DAVID_MARTINEZ_B] = "루시",
     [Astro.Players.STELLAR] = "스텔라",
-    [Astro.Players.STELLAR_B] = "나유타",
+    [Astro.Players.STELLAR_B] = "카산드라",
     [Astro.Players.AINZ_OOAL_GOWN] = "아인즈",
     [Astro.Players.AINZ_OOAL_GOWN_B] = "판도라즈 액터",
 }
