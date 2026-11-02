@@ -249,6 +249,7 @@
 	<active gfx="Hyper Quantum Dice.png" quality="5" devilprice="2" shopprice="15" hidden="true" maxcharges="8" name="Hyper Quantum Dice" description="Choose -3 ~ +3" id="248" />
 	<active gfx="Gene Scissors.png" quality="4" devilprice="2" shopprice="15" maxcharges="12" name="Gene Scissors" id="249" />
 	<active gfx="Cassandra's Crystal Ball.png" quality="4" devilprice="2" shopprice="15" maxcharges="12" name="Cassandra's Crystal Ball" id="250" />
+	<active gfx="Almagest.png" quality="4" devilprice="2" shopprice="30" maxcharges="12" name="Almagest" id="251" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

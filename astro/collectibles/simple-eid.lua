@@ -978,6 +978,9 @@ Descriptions.collectibles = {
     [250] = {
         { text = "사용 시 방 안의 아이템을 업그레이드" },
     },
+    [251] = {
+        { text = "사용 시 방 안의 아이템을 <color=0xFFC9FF00>프톨레마이오스<color=0xFFFFFFFF>로 변경" },
+    },
 }
 
 Descriptions.trinkets = {
