@@ -106,7 +106,7 @@ local megaUI =
                             CollectibleType.COLLECTIBLE_BREAKFAST,
                             GetCollectibleFlag.BAN_PASSIVES
                         )
-                        pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem)
+                        pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem, true)
                         pickup.Touched = false
                     else
                         local newItem =
@@ -117,7 +117,7 @@ local megaUI =
                             CollectibleType.COLLECTIBLE_BREAKFAST,
                             GetCollectibleFlag.BAN_ACTIVES
                         )
-                        pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem)
+                        pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem, true)
                         pickup.Touched = false
                     end
                     ::continue::
@@ -166,13 +166,14 @@ local megaUI =
                         until attempts >= maxAttempts
 
                         if attempts < maxAttempts then
-                            pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem)
+                            pickup:Morph(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE, newItem, true)
                             pickup.Touched = false
                         else
                             pickup:Morph(
                                 EntityType.ENTITY_PICKUP,
                                 PickupVariant.PICKUP_COLLECTIBLE,
-                                CollectibleType.COLLECTIBLE_BREAKFAST
+                                CollectibleType.COLLECTIBLE_BREAKFAST,
+                                true
                             )
                             pickup.Touched = false
                         end
@@ -203,7 +204,8 @@ local megaUI =
                     pickup:Morph(
                         EntityType.ENTITY_PICKUP,
                         PickupVariant.PICKUP_COLLECTIBLE,
-                        itemPool:GetCollectibleFromList(validItems, seed, CollectibleType.COLLECTIBLE_BREAKFAST)
+                        itemPool:GetCollectibleFromList(validItems, seed, CollectibleType.COLLECTIBLE_BREAKFAST),
+                        true
                     )
                     pickup.Touched = false
                 end
