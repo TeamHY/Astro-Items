@@ -11,14 +11,14 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "알마게스트",
-                "",
+                "천문학의 로망",
                 "사용 시 그 방의 아이템을 {{Collectible" .. Astro.Collectible.PTOLEMAEUS .. "}}Ptolemaeus로 변경합니다."
             )
 
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Almagest", "",
-                "Turns items in the room into {{Collectible" .. Astro.Collectible.PTOLEMAEUS .. "}} Ptolemaeus",
+                "Rerolls items in the room into {{Collectible" .. Astro.Collectible.PTOLEMAEUS .. "}} ptolemaeus",
                 nil, "en_us"
             )
         end

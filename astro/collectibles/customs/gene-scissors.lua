@@ -11,7 +11,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "유전자 가위",
-                "",
+                "운명을 재단하리",
                 "사용 시 그 방의 선택형 아이템/픽업을 모두 획득할 수 있게 됩니다."
             )
 

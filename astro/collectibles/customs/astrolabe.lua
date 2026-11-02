@@ -11,7 +11,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "아스트롤라베",
-                "",
+                "모든 길은 별을 향한다",
                 "사용 시 그 방의 아이템을 {{Planetarium}}천체관 아이템으로 변경합니다." ..
                 "#방에 아이템이 없으면 {{Planetarium}}천체관 아이템을 1개 소환하고 사라집니다."
             )
@@ -19,8 +19,8 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "Astrolabe", "",
-                "Turns items in the room into {{Planetarium}} Planetarium items" ..
-                "#If there are no items in the room, spawns 1 {{Planetarium}} Planetarium item and disappears",
+                "Rerolls items in the room into {{Planetarium}} planetarium items" ..
+                "#If there are no items in the room, spawns 1 {{Planetarium}} planetarium item and disappears",
                 nil, "en_us"
             )
         end

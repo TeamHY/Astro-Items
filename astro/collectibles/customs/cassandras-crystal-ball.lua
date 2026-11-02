@@ -11,7 +11,7 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 ITEM_ID,
                 "카산드라의 수정 구슬",
-                "",
+                "믿지 못할 미래",
                 "!!! 일회용 !!!" ..
                 "#사용 시 그 방의 아이템을 업그레이드합니다."
             )

@@ -956,6 +956,18 @@
 	<collectible id="248">
 		<info text="Rerolls each pedestal item in the room to a chosen item ID 1-3 ahead or behind"/>
 	</collectible>
+	<collectible id="249">
+		<info text="Removes the choice restriction from all pickups in the room"/>
+	</collectible>
+	<collectible id="250">
+		<info text="Upgrades all upgradable items in the room"/>
+	</collectible>
+	<collectible id="251">
+		<info text="Rerolls all pedestal items in the room into ptolemaeus"/>
+	</collectible>
+	<collectible id="252">
+		<info text="Rerolls all pedestal items in the room into planetarium items"/>
+	</collectible>
 </collectibles>
 
 <trinkets>
