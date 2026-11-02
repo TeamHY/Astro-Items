@@ -24,7 +24,8 @@ Astro:AddCallback(
                 Astro.Collectible.CRACKED_BOTTOM,
                 "깨진 밑바닥",
                 "이보다 밑은 없겠지",
-                "{{Player0}} 능력치가 Isaac의 기본 능력치보다 낮아지지 않습니다."
+                "{{Player0}} 능력치가 Isaac의 기본 능력치보다 낮아지지 않습니다." ..
+                "#획득한 스테이지에서 방 클리어 시 {{Collectible351}}Mega Bean을 발동합니다."
             )
             EID:addCondition(
                 "5.100.562",
@@ -37,7 +38,8 @@ Astro:AddCallback(
                 Astro.Collectible.CRACKED_BOTTOM,
                 "Cracked Bottom",
                 "",
-                "↑ Prevents stats from being lowered to {{Player0}} Isaac's base for the rest of the run",
+                "↑ Prevents stats from being lowered to {{Player0}} Isaac's base for the rest of the run" ..
+                "#Activates {{Collectible351}} Mega Bean on room clear for the floor it was picked up on",
                 nil, "en_us"
             )
             EID:addCondition(
@@ -85,6 +87,32 @@ Astro:AddCallback(
         end
     end,
     CollectibleType.COLLECTIBLE_ROCK_BOTTOM
+)
+
+Astro:AddCallback(
+    Astro.Callbacks.POST_PLAYER_COLLECTIBLE_ADDED,
+    ---@param player EntityPlayer
+    ---@param collectibleType CollectibleType
+    function(_, player, collectibleType)
+        Astro.SaveManager.GetFloorSave(player).crackedBottomAcquired = true
+    end,
+    Astro.Collectible.CRACKED_BOTTOM
+)
+
+Astro:AddCallback(
+    ModCallbacks.MC_PRE_SPAWN_CLEAN_AWARD,
+    ---@param rng RNG
+    ---@param spawnPosition Vector
+    function(_, rng, spawnPosition)
+        for i = 1, Game():GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+            local data = Astro.SaveManager.GetFloorSave(player)
+
+            if data.crackedBottomAcquired and player:HasCollectible(Astro.Collectible.CRACKED_BOTTOM) then
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_MEGA_BEAN, false)
+            end
+        end
+    end
 )
 
 local function CheckHasRockBottom(player)

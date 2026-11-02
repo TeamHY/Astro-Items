@@ -613,6 +613,7 @@ Descriptions.collectibles = {
     },
     [157] = {
         { text = "능력치가 아이작의 기본 능력치보다 낮아지지 않음" },
+        { text = "획득한 스테이지에서 방 클리어 시 <color=0xFFC9FF00>대빵 큰 콩<color=0xFFFFFFFF> 발동" },
     },
     [158] = {
         { text = "사용 시 모든 0~2퀄리티 아이템 중 1개를 획득할 수 있는 곳으로 순간이동" },
