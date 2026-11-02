@@ -250,6 +250,7 @@
 	<active gfx="Gene Scissors.png" quality="4" devilprice="2" shopprice="15" maxcharges="12" name="Gene Scissors" id="249" />
 	<active gfx="Cassandra's Crystal Ball.png" quality="4" devilprice="2" shopprice="15" maxcharges="12" name="Cassandra's Crystal Ball" id="250" />
 	<active gfx="Almagest.png" quality="4" devilprice="2" shopprice="30" maxcharges="12" name="Almagest" id="251" />
+	<active gfx="Astrolabe.png" quality="3" devilprice="2" shopprice="20" maxcharges="12" name="Astrolabe" id="252" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

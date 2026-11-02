@@ -981,6 +981,10 @@ Descriptions.collectibles = {
     [251] = {
         { text = "사용 시 방 안의 아이템을 <color=0xFFC9FF00>프톨레마이오스<color=0xFFFFFFFF>로 변경" },
     },
+    [252] = {
+        { text = "사용 시 방 안의 아이템을 천체관 아이템으로 변경" },
+        { text = "방에 아이템이 없으면 천체관 아이템 1개 소환 후 사라짐" },
+    },
 }
 
 Descriptions.trinkets = {
