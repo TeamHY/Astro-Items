@@ -251,6 +251,7 @@
 	<active gfx="Cassandra's Crystal Ball.png" quality="4" devilprice="2" shopprice="15" maxcharges="12" name="Cassandra's Crystal Ball" description="An unbelievable future" id="250" />
 	<active gfx="Almagest.png" quality="4" devilprice="2" shopprice="30" maxcharges="12" name="Almagest" description="The allure of astronomy" id="251" />
 	<active gfx="Astrolabe.png" quality="3" devilprice="2" shopprice="20" maxcharges="12" name="Astrolabe" description="All paths lead to the stars" id="252" />
+	<passive gfx="Sigil of Duality.png" quality="4" devilprice="2" shopprice="30" name="Sigil of Duality" description="" id="253" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

@@ -196,6 +196,8 @@ local function ForcePedestalPrice(pedestal, Price)
     BrokenHeartSprite2:Play("Default", true)
 end
 
+Astro.ForcePedestalPrice = ForcePedestalPrice
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_PICKUP_UPDATE,
     ---@param pickup EntityPickup
@@ -318,6 +320,19 @@ local function GetEntityRenderPos(ent, offset, ignoreShake)
 	return renderPos
 end
 
+---@return boolean
+local function HasBrokenHeartPedestal()
+    for _, entity in ipairs(Isaac.FindByType(EntityType.ENTITY_PICKUP, PickupVariant.PICKUP_COLLECTIBLE)) do
+        local price = entity:ToPickup().Price
+
+        if price == Astro.PickupPrice.PRICE_BROKEN_HEART or price == Astro.PickupPrice.PRICE_TWO_BROKEN_HEARTS then
+            return true
+        end
+    end
+
+    return false
+end
+
 Astro:AddCallback(
     ModCallbacks.MC_POST_UPDATE,
     function()
@@ -325,7 +340,7 @@ Astro:AddCallback(
         local roomType = room:GetType()
         local slots = Isaac.FindByType(EntityType.ENTITY_PICKUP, FOOL_DEVIL_BUM_VARIANT, -1, true)
 
-        if roomType == RoomType.ROOM_DEVIL and #slots > 0 then
+        if roomType == RoomType.ROOM_DEVIL and (#slots > 0 or HasBrokenHeartPedestal()) then
             BrokenHeartSprite1:Update()
             BrokenHeartSprite2:Update()
         end

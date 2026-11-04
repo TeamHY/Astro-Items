@@ -183,6 +183,27 @@ function Astro:Spawn(entityType, entityVariant, entitySubtype, position)
     )
 end
 
+---@param layerSpritesheets table<integer, string>
+function Astro:SpawnBackdrop(layerSpritesheets)
+    local room = Game():GetRoom()
+    local variant = Isaac.GetEntityVariantByName("Backdrop")
+
+    for _, flag in ipairs({ EntityFlag.FLAG_RENDER_WALL, EntityFlag.FLAG_RENDER_FLOOR }) do
+        local backdrop = Isaac.Spawn(EntityType.ENTITY_EFFECT, variant, 0, room:GetTopLeftPos(), Vector.Zero, nil)
+        local sprite = backdrop:GetSprite()
+
+        for layer, spritesheet in pairs(layerSpritesheets) do
+            sprite:ReplaceSpritesheet(layer, spritesheet)
+        end
+
+        sprite:Play(tostring(room:GetRoomShape()), true)
+        sprite:LoadGraphics()
+
+        backdrop.DepthOffset = -9999
+        backdrop:AddEntityFlags(flag)
+    end
+end
+
 ---@param entity Astro.Entity
 ---@param position Vector
 ---@return Entity
