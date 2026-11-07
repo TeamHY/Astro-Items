@@ -52,21 +52,21 @@ local MANYU_SET_LIST = {
 
 local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
+if EID then    -- 우선순위 문제로 분리
+    local manyuIcon = Sprite()
+    manyuIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
+    EID:addIcon("TransformManyu", "Transformation2", 0, 16, 16, 0, -1, manyuIcon)
+    EID:createTransformation("TransformManyu", "Cycle of Life")
+
+    EID:assignTransformation("collectible", Astro.Collectible.REINCARNATION, "TransformManyu")
+    EID:assignTransformation("collectible", Astro.Collectible.MATRYOSHKA, "TransformManyu")
+    EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "TransformManyu")
+end
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function(_)
         if EID then
-            local manyuIcon = Sprite()
-            manyuIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
-            EID:addIcon("TransformManyu", "Transformation2", 0, 16, 16, 0, -1, manyuIcon)
-            EID:createTransformation("TransformManyu", "Cycle of Life")
-
-            EID:assignTransformation("collectible", Astro.Collectible.REINCARNATION, "TransformManyu")
-            EID:assignTransformation("collectible", Astro.Collectible.MATRYOSHKA, "TransformManyu")
-            EID:assignTransformation("collectible", Astro.Collectible.SAMSARA, "TransformManyu")
-
-            ----
-
             Astro.EID:AddCollectible(
                 Astro.Collectible.REINCARNATION,
                 "리인카네이션",

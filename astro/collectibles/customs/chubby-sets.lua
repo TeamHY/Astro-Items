@@ -7,21 +7,25 @@ Astro.Collectible.CHUBBYS_PAW = Isaac.GetItemIdByName("Chubby's Paw")
 
 local chubbyUpSound = Isaac.GetSoundIdByName('ChubbyUp')
 
+if EID then    -- 우선순위 문제로 분리
+    local chubbyIcon = Sprite()
+    chubbyIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
+    EID:addIcon("TransformChubby", "Transformation1", 0, 16, 16, 0, -1, chubbyIcon)
+    EID:createTransformation("TransformChubby", "Chubby!!!")
+
+    EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_HEAD, "TransformChubby")
+    EID:assignTransformation("collectible", Astro.Collectible.SLEEPING_PUPPY, "TransformChubby")
+    EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_TAIL, "TransformChubby")
+    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "TransformChubby")
+    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "TransformChubby")
+    EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "TransformChubby")
+end
+
 Astro:AddCallback(
     Astro.Callbacks.MOD_INIT,
     function()
         if EID then
-            local chubbyIcon = Sprite()
-            chubbyIcon:Load("gfx/ui/eid/astro_transform.anm2", true)
-            EID:addIcon("TransformChubby", "Transformation1", 0, 16, 16, 0, -1, chubbyIcon)
-            EID:createTransformation("TransformChubby", "Chubby!!!")
-
-            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_HEAD, "TransformChubby")
-            EID:assignTransformation("collectible", Astro.Collectible.SLEEPING_PUPPY, "TransformChubby")
-            EID:assignTransformation("collectible", Astro.Collectible.CHUBBYS_TAIL, "TransformChubby")
-            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_DOG_TOOTH, "TransformChubby")
-            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_LITTLE_CHUBBY, "TransformChubby")
-            EID:assignTransformation("collectible", CollectibleType.COLLECTIBLE_BIG_CHUBBY, "TransformChubby")
+            
 
             Astro.EID:AddCollectible(
                 Astro.Collectible.CHUBBYS_HEAD,
