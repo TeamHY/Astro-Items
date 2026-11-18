@@ -25,7 +25,7 @@ return {
     [756] = "Spawns {{Collectible534}} Schoolbag, {{Collectible458}} Belly Button, {{Collectible454}} Polydactyly on pickup;#Choose one; the rest disappear#Spawns {{Card36}} Rune of Ansuz in the next game",
  -- [757] = "설명 분리됨",
  -- [758] = "설명 분리됨",
-    [759] = "!!! Removes all held {{Planetarium}} Planetarium items on pickup;#{{ArrowGrayRight}} Spawns that many {{Planetarium}} Planetarium items",
+ -- [759] = "설명 분리됨",
     [760] = "Tears gain orbiting tears that deal x0.5 damage",
  -- [761] = "설명 분리됨",
  -- [762] = "설명 분리됨",

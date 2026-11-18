@@ -6,18 +6,38 @@ local STAGE_USAGE_LIMIT = 1
 
 Astro.Collectible.SOLAR_SYSTEM = Isaac.GetItemIdByName("Solar System")
 
-if EID then
-    Astro.EID:AddCollectible(
-        Astro.Collectible.SOLAR_SYSTEM,
-        "태양계",
-        "고향별",
-        "사용 시 초 행성 아이템을 하나 선택합니다. 선택한 아이템 효과를 해당 스테이지에 머무를 동안 적용합니다." ..
-        "#소지 시 {{Collectible10}} {{Collectible20}} {{Collectible57}} {{Collectible128}} Halo of Flies, Transcendence, Distant Admiration, Forever Alone 효과가 적용됩니다." ..
-        "#스테이지 당 한번 사용할 수 있습니다."
-    )
-end
-
 local ITEM_ID = Astro.Collectible.SOLAR_SYSTEM
+
+Astro:AddCallback(
+    Astro.Callbacks.MOD_INIT,
+    function(_)
+        if EID then
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "태양계",
+                "고향별",
+                "!!! 스테이지 당 1회만 사용 가능" ..
+                "#소지중일 때:" ..
+                "#{{IND}}↑ 파리 배리어 +3" ..
+                "#{{IND}} 비행 능력을 얻습니다." ..
+                "#사용 시 그 스테이지에서 초 천체관 아이템을 하나 선택하고 그 효과를 적용합니다."
+            )
+
+            Astro.EID:AddCollectible(
+                ITEM_ID,
+                "Solar System", "",
+                "While held:" ..
+                "{{IND}}↑ +3 Fly orbitals" ..
+                "{{IND}} Flight" ..
+                "#Upon Use:" ..
+                "#{{IND}} Selects one EX Planetarium item from the current floor and applies its effect" ..
+                "#{{IND}} Can only be used once per floor",
+                nil, "en_us"
+            )
+        end
+    end
+)
+
 
 Astro:AddCallback(
     ModCallbacks.MC_POST_PLAYER_UPDATE,
