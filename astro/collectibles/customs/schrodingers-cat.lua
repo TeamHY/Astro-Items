@@ -9,9 +9,9 @@ Astro:AddCallback(
                 Astro.Collectible.SCHRODINGERS_CAT,
                 "슈뢰딩거의 고양이",
                 "살아있으면서 죽어있는",
-                "{{Guppy}} 스테이지 진입 시 50%의 확률로 Guppy 세트 +1",
+                "{{Guppy}} 스테이지 진입 시 50%의 확률로 Guppy 세트 아이템을 소환",
                 -- 중첩 시
-                "중첩 시 추가되는 Guppy 세트 개수 증가"
+                "중첩 시 소환되는 개수 증가"
             )
 
             Astro.EID:AddCollectible(
@@ -33,7 +33,7 @@ Astro:AddCallback(
 
             if rng:RandomFloat() < 0.5 then
                 for _ = 1, player:GetCollectibleNum(Astro.Collectible.SCHRODINGERS_CAT) do
-                    player:AddCollectible(Astro.Collectible.GUPPY_PART)
+                    Astro:SpawnCollectible(Astro.Collectible.GUPPY_PART, player.Position + Vector(0, 40))
                 end
             end
         end

@@ -631,7 +631,7 @@
 		<info text="Normal monster damage +1%~+25%"/>
 	</collectible>
 	<collectible id="155">
-		<info text="Grants as Guppy Part with 50% chance upon starting a floor"/>
+		<info text="Spawns a Guppy Part with 50% chance upon starting a floor"/>
 	</collectible>
 	<collectible id="156">
 		<info text="Obtained with Schrodinger's Cat effect"/>
