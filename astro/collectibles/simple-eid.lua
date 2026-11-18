@@ -299,9 +299,8 @@ Descriptions.collectibles = {
         { text = "눈물에 50% 확률로 프레임당 공격력 x1의 피해를 주는 레이저 고리 생성 <color=0xFFb9d27d>(행운 비례)" },
     },
     [83] = {
-        { text = "<warning>일회용, <color=0xFF696969>？<color=0xFFFFFFFF>에서만 가능" },
-        { text = "사용 시 소지중인 3~4퀄리티 아이템 3개 소환" },
-        { text = "<arrow>하나만 선택 가능" },
+        { text = "<warning>일회용" },
+        { text = "사용 시 가장 가까운 패시브 아이템 1개 획득" },
     },
     [84] = {
         { text = "<warning>스테이지당 1번, <color=0xFF696969>？<color=0xFFFFFFFF>에서만 가능" },
