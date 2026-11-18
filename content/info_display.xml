@@ -324,9 +324,8 @@
 		<info text="Removes defense and map-related items from all pools"/>
 	</collectible>
 	<collectible id="83">
-		<info text="Reveals the location of the first floor super secret room on the map"/>
-		<info text="Spawns 3 high-quality held items. Spawned items disappear upon leaving the room, and picking up one makes the others disappear"/>
-		<info text="Cannot be activated if no items are held or not in a super secret room"/>
+		<info text="Grants a copy of the nearest passive item"/>
+		<info text="Cannot be activated if there is no passive item in the room"/>
 		<info text="Single use"/>
 	</collectible>
 	<collectible id="84">
