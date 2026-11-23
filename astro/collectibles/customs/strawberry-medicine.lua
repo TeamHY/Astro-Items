@@ -2,7 +2,7 @@ Astro.Collectible.STRAWBERRY_MEDICINE = Isaac.GetItemIdByName("Strawberry Medici
 
 ---
 
-local DAMAGE_MULTI = 1.1
+local DAMAGE_MULTI = 1.2
 
 ---
 
