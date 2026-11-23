@@ -45,7 +45,7 @@ Astro:AddCallback(
             local quasarNum = player:GetCollectibleNum(Astro.Collectible.QUASAR)
 
             if not Game():GetRoom():IsClear() and quasarNum >= 2 then
-                player:UseActiveItem(CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS, false)
+                player:UseActiveItem(CollectibleType.COLLECTIBLE_TELEKINESIS, false)
             end
         end
     end
