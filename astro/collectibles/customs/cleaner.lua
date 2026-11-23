@@ -33,6 +33,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_FLAT_STONE,
             CollectibleType.COLLECTIBLE_ANTI_GRAVITY,
             CollectibleType.COLLECTIBLE_EYE_OF_THE_OCCULT,
+            CollectibleType.COLLECTIBLE_KIDNEY_STONE,
             Astro.Collectible.OMEGA_321,
         }
         
