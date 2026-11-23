@@ -23,7 +23,6 @@ Astro:AddCallback(
         activeItems = {
             CollectibleType.COLLECTIBLE_BOOK_OF_BELIAL,
             CollectibleType.COLLECTIBLE_BOOK_OF_SHADOWS,
-            CollectibleType.COLLECTIBLE_ERASER,
             CollectibleType.COLLECTIBLE_DADS_KEY,
             CollectibleType.COLLECTIBLE_ANIMA_SOLA,
             CollectibleType.COLLECTIBLE_TELEKINESIS,
