@@ -82,7 +82,7 @@ return {
  -- [813] = "설명 분리됨",
     [814] = "↑ {{SoulHeart}} +1 Soul Heart#After Womb/Corpse, health cap system applies only up to 6#!!! Doesn't appear after pickup:#{{ArrowGrayRight}} {{Collectible21}} {{Collectible581}} {{Collectible313}} {{Collectible705}} {{Collectible213}} {{Collectible54}} {{Collectible333}} {{Collectible246}} {{Collectible651}} {{Collectible158}} {{Collectible91}} {{Collectible779}} {{Collectible840}} {{Collectible781}} {{Collectible791}} ",
     [815] = "!!! SINGLE USE !!!#!!! Can't use if no items held or not in {{SuperSecretRoom}} Super Secret Room#Spawns 3 {{Quality3}}/{{Quality4}} items;#{{ArrowGrayRight}} Spawned items disappear on room exit; choose one, rest disappear#{{SuperSecretRoom}} Reveals Super Secret Room on stage 1 map",
-    [816] = "!!! Usable only in Super Secret Room#!!! Removes one held item on use;#{{ArrowGrayRight}} Spawns removed item and 2 {{IsaacsRoom}} bedroom items#Choose one; the rest disappear#Fully charges on stage entry",
+ -- [816] = "설명 분리됨",
  -- [817] = "설명 분리됨",
     [818] = "Book items' temporary effects become permanent. {{ColorGray}}(AstroItems added books not applied){{CR}}",
     [819] = "{{Speed}} +2 Speed in cleared rooms#{{Speed}} -0.3 Speed in uncleared rooms",

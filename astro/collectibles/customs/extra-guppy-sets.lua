@@ -58,6 +58,7 @@ Astro:AddCallback(
                 )
 
                 blueFly:ClearEntityFlags(EntityFlag.FLAG_APPEAR)
+                blueFly:ToFamiliar():PickEnemyTarget(250)
             end
         end
     end

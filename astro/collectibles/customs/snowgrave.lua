@@ -20,7 +20,7 @@ Astro:AddCallback(
                 "눈무덤",
                 "치명적",
                 "#{{Freezing}} 사용 시 그 방의 장애물을 파괴하고 적에게 9,999,999의 빙결 피해를 줍니다." ..
-                "#{{Petrify}} 보스에게는 3초 동안 석화 효과 + 1,800의 피해를 줍니다." ..
+                "#{{Petrify}} 보스에게는 캐릭터의 공격력 x40 +600의 빙결 피해를 주고 3초 동안 석화시킵니다." ..
                 "#{{BossRoom}} 보스방에서 사용 시 D2(6스테이지)의 경우 보스러시가, W2(8스테이지)의 경우 Blue Womb으로 향하는 문이 열립니다."
             )
 
@@ -28,21 +28,10 @@ Astro:AddCallback(
                 Astro.Collectible.SNOWGRAVE,
                 "SnowGrave", "",
                 "#{{Freezing}} Deals 9,999,999 freeze damage to all enemies in the room" ..
-                "#{{Petrify}} Deals 1,800 damage to the boss and petrifies for 3 seconds" ..
+                "#{{Petrify}} Deals 40x Isaac's damage +10 damage to the boss and petrifies for 3 seconds" ..
                 "#Can open secret rooms and break rocks",
                 nil, "en_us"
             )
-        end
-    end
-)
-
-Astro:AddCallback(
-    ModCallbacks.MC_POST_GAME_STARTED,
-    ---@param isContinued boolean
-    function(_, isContinued)
-        if not isContinued then
-            Astro.Data.snowgraveUsed = false
-            Astro.Data.snowgraveIcePhysics = false
         end
     end
 )
@@ -76,6 +65,39 @@ local iceColor = Color(0.8, 0.8, 0.8, 1)
 iceColor:SetColorize(1, 1, 1, 0.5)
 iceColor:SetOffset(0.3, 0.5, 0.8)
 
+Astro:AddCallback(
+    ModCallbacks.MC_POST_GAME_STARTED,
+    ---@param isContinued boolean
+    function(_, isContinued)
+        if not isContinued then
+            Astro.Data.snowgraveUsed = false
+            Astro.Data.snowgraveIcePhysics = false
+        end
+        
+        readyEnable = -1
+        blueshadeEnable = false
+        flakeSpawnTimer = 0
+        snowfallOpacity = 0
+        bellRepeatCycle = 7
+        snowflakes = {}
+
+        local game = Game()
+        for i = 0, game:GetNumPlayers() - 1 do
+            local player = Isaac.GetPlayer(i)
+            player.ControlsEnabled = true
+            player.Visible = true
+        end
+
+        for _, variant in ipairs({ SNOWFLAKE_VARIANT, SNOWFALL_VARIANT, SNOWSTAR_VARIANT }) do
+            for _, effect in ipairs(Isaac.FindByType(1000, variant)) do
+                effect:Remove()
+            end
+        end
+
+        game:GetRoom():SetFloorColor(Color.Default)
+        game:GetRoom():SetWallColor(Color.Default)
+    end
+)
 local function updateEnemiesFreeze()
     for _, entity in ipairs(Isaac.GetRoomEntities()) do
         if
@@ -118,9 +140,11 @@ local function killEnemies()
             if entity.Variant == BombVariant.BOMB_TROLL or entity.Variant == BombVariant.BOMB_SUPERTROLL then
                 entity:Remove()
                 spawnDust(entity.Position - Vector(0, 10))
-                Game():BombExplosionEffects(entity.Position, 0, nil, iceEnemyColor, Isaac.GetPlayer())
+                Game():BombExplosionEffects(entity.Position, 0, nil, iceEnemyColor, Isaac.GetPlayer(readyEnable))
             end
-        elseif entity.Type == EntityType.ENTITY_FIREPLACE and entity:ToNPC().State ~= 3 or entity.Type == EntityType.ENTITY_SHOPKEEPER or entity:IsInvincible() then
+        elseif entity:IsInvincible() then
+            entity:AddFreeze(EntityRef(Isaac.GetPlayer(readyEnable)), 600, true)
+        elseif entity.Type == EntityType.ENTITY_FIREPLACE and entity:ToNPC().State ~= 3 or entity.Type == EntityType.ENTITY_SHOPKEEPER then
             spawnDust(entity.Position - Vector(0, 15))
             Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
             entity:Die()
@@ -128,15 +152,15 @@ local function killEnemies()
         else
             if not entity:IsBoss() and entity:IsActiveEnemy(false) and entity.Type ~= EntityType.ENTITY_FROZEN_ENEMY then
                 entity:AddEntityFlags(EntityFlag.FLAG_ICE)
-                entity:TakeDamage(9999999, 0, EntityRef(Isaac.GetPlayer(0)), 0)
+                entity:TakeDamage(9999999, 0, EntityRef(Isaac.GetPlayer(readyEnable)), 0)
 
                 if Astro.Data.snowgraveUsed then
                     spawnDust(entity.Position - Vector(0, 10))
                     Isaac.Spawn(1000, SNOWSTAR_VARIANT, 0, entity.Position, Vector(math.random(-150, 150) / 100, math.random(-300, -100) / 100), nil)
                 end
             elseif entity:IsBoss() then
-                entity:AddFreeze(EntityRef(Isaac.GetPlayer(0)), 600, true)
-                entity:TakeDamage(1800, 0, EntityRef(Isaac.GetPlayer(0)), 0)
+                entity:AddFreeze(EntityRef(Isaac.GetPlayer(readyEnable)), 600, true)
+                entity:TakeDamage(Isaac.GetPlayer(readyEnable).Damage * 40 + 600, DamageFlag.DAMAGE_IGNORE_ARMOR, EntityRef(Isaac.GetPlayer(readyEnable)), 0)
                 entity:SetColor(iceEnemyColor, 90, 1, true, false)
 
                 if Astro.Data.snowgraveUsed then

@@ -27,8 +27,8 @@ Astro:AddCallback(
                 ITEM_ID,
                 "Solar System", "",
                 "While held:" ..
-                "{{IND}}↑ +3 Fly orbitals" ..
-                "{{IND}} Flight" ..
+                "#{{IND}}↑ +3 Fly orbitals" ..
+                "#{{IND}} Flight" ..
                 "#Upon Use:" ..
                 "#{{IND}} Selects one EX Planetarium item from the current floor and applies its effect" ..
                 "#{{IND}} Can only be used once per floor",
