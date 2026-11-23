@@ -213,7 +213,7 @@
 	<active gfx="Bicorn.png" quality="2" devilprice="1" maxcharges="3" shopprice="15" name="Bicorn" description="A horse a maiden cannot ride" id="212" />
 	<passive tags="tearsup" cache="firedelay" gfx="Alcohol Bottle.png" quality="2" devilprice="1" shopprice="3" name="Alcohol Bottle" description="His delight" id="213" />
 	<active gfx="Plunger.png" quality="0" devilprice="1" maxcharges="2" shopprice="3" name="Plunger" description="Meow!" id="214" />
-	<passive cache="damage" gfx="Decisive Strike.png" quality="3" devilprice="1" shopprice="4" name="Decisive Strike" description="There is nothing to be scared of" id="215" />
+	<passive cache="damage" gfx="Decisive Strike.png" quality="2" devilprice="1" shopprice="1" name="Decisive Strike" description="There is nothing to be scared of" id="215" />
 	<passive gfx="Casey.png" quality="2" devilprice="1" shopprice="5" name="Casey" description="Who's on first" id="216" />
 	<passive tags="noeden nolostbr nocantrip food" gfx="Canned Bread.png" quality="1" shopprice="5" hearts="4" maxhearts="2" name="Canned Bread" description="Wow, they have it!" id="217" />
 	<passive tags="nolostbr" cache="flying" gfx="Pure Gold Copter.png" quality="2" devilprice="1" shopprice="8" name="24K Copter" description="Instead, it's ultra-compact" id="218" />
