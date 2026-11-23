@@ -1,4 +1,4 @@
-local PRICE = 10
+local PRICE = 1
 
 local isc = require("astro.lib.isaacscript-common")
 
