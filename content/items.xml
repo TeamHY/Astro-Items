@@ -76,7 +76,7 @@
 	<passive gfx="Birthright - The Lost.png" quality="4" devilprice="2" shopprice="22" name="The Lost's Frame" description="Better destiny" id="75" />
 	<passive cache="all" gfx="Amazing Chaos Scroll.png" quality="2" devilprice="1" shopprice="13" name="Amazing Chaos Scroll" tags="summonable tearsup" description="Ssalmuk" id="76" />
 	<passive gfx="Magic Conch Shell.png" quality="4" hidden="true" devilprice="2" shopprice="30" name="Magic Conch Shell" description="No." id="77" />
-	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="30" name="Super Nova" description="Vast explosion of stars" id="78" />
+	<passive gfx="Super Nova.png" quality="4" devilprice="2" shopprice="25" name="Super Nova" description="Vast explosion of stars" id="78" />
 	<active cache="luck" gfx="Rite of Aramesir.png" chargetype="special" quality="5" devilprice="2" maxcharges="50" shopprice="29" name="Rite of Aramesir" description="You were summoned by an ancient covenant" id="79" />
 	<active gfx="Overwhelming Sinful Spoils.png" quality="2" devilprice="1" shopprice="10" maxcharges="240" chargetype="timed" name="Overwhelming Sinful Spoils" description="When excel is normal summoned" id="80" />
 	<passive cache="firedelay" gfx="Godtech.png" quality="5" tags="summonable tech" name="Godtech" description="Cutting-edge divine punishment" id="81" />
