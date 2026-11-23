@@ -7,14 +7,23 @@ Astro:AddCallback(
     function()
         Astro.CleanerList = {
             CollectibleType.COLLECTIBLE_MOMS_KNIFE,
+            CollectibleType.COLLECTIBLE_LOST_CONTACT,
+            CollectibleType.COLLECTIBLE_TAURUS,
+            CollectibleType.COLLECTIBLE_LIBRA,
+            CollectibleType.COLLECTIBLE_TRACTOR_BEAM,
             CollectibleType.COLLECTIBLE_BRIMSTONE,
+            CollectibleType.COLLECTIBLE_TINY_PLANET,
             CollectibleType.COLLECTIBLE_IPECAC,
+            CollectibleType.COLLECTIBLE_NEPTUNUS,
+            CollectibleType.COLLECTIBLE_MYSTERIOUS_LIQUID,
+            CollectibleType.COLLECTIBLE_RUBBER_CEMENT,
             CollectibleType.COLLECTIBLE_EPIC_FETUS,
             CollectibleType.COLLECTIBLE_DR_FETUS,
             CollectibleType.COLLECTIBLE_TECH_X,
             CollectibleType.COLLECTIBLE_TECHNOLOGY,
             CollectibleType.COLLECTIBLE_TECHNOLOGY_2,
             CollectibleType.COLLECTIBLE_SPIRIT_SWORD,
+            CollectibleType.COLLECTIBLE_OCULAR_RIFT,
             CollectibleType.COLLECTIBLE_LUDOVICO_TECHNIQUE,
             CollectibleType.COLLECTIBLE_TRISAGION,
             CollectibleType.COLLECTIBLE_PARASITE,
@@ -35,6 +44,7 @@ Astro:AddCallback(
             CollectibleType.COLLECTIBLE_EYE_OF_THE_OCCULT,
             CollectibleType.COLLECTIBLE_KIDNEY_STONE,
             Astro.Collectible.OMEGA_321,
+            Astro.Collectible.EXPIRED_MILK,
         }
         
         if EID then
