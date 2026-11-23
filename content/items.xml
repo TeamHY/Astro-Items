@@ -55,7 +55,7 @@
 	<passive gfx="Key Is Power.png" quality="2" devilprice="1" name="Key Is Power" description="Clatter = DMG" id="54" />
 	<passive gfx="Bomb Is Power.png" quality="2" devilprice="1" name="Bomb Is Power" description="Boom = DMG" id="55" />
 	<active gfx="Fortune Coin.png" quality="1" devilprice="1" maxcharges="1" shopprice="1" name="Fortune Coin" description="All in" id="56" />
-	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="13" name="Master's Degree" description="Bigger pills" id="57" />
+	<passive gfx="Master's Degree.png" quality="2" devilprice="1" shopprice="10" name="Master's Degree" description="Bigger pills" id="57" />
 	<passive gfx="Bachelor's Degree.png" quality="2" devilprice="1" shopprice="10" name="Bachelor's Degree" description="Better pills?" id="58" />
 	<passive gfx="Pink Ward.png" hidden="true" quality="2" devilprice="1" shopprice="18" name="Pink Ward" description="See-through enemies" id="59" />
 	<active gfx="Rhongomyniad.png" quality="4" devilprice="1" maxcharges="50" hidden="true" shopprice="20" name="Rhongomyniad" description="..." id="60" />
