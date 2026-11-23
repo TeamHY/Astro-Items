@@ -8,7 +8,7 @@ Astro:AddCallback(
                 Astro.Collectible.CLOVER,
                 "클로버",
                 "럭키 가이!",
-                "↑ {{LuckSmall}}행운 +1" ..
+                "↑ {{LuckSmall}}행운 +3" ..
                 "#{{LuckSmall}} 행운 1당 {{DamageSmall}}공격력 +1%p",
                 -- 중첩 시
                 "증가량이 중첩된 수만큼 합연산으로 증가"
@@ -50,7 +50,7 @@ Astro:AddCallback(
     function(_, player, cacheFlag)
         if player:HasCollectible(Astro.Collectible.CLOVER) then
             if cacheFlag == CacheFlag.CACHE_LUCK then
-                player.Luck = player.Luck + 1 * player:GetCollectibleNum(Astro.Collectible.CLOVER)
+                player.Luck = player.Luck + 3 * player:GetCollectibleNum(Astro.Collectible.CLOVER)
             elseif cacheFlag == CacheFlag.CACHE_DAMAGE then
                 player.Damage = player.Damage * (1 + (player.Luck / 100) * player:GetCollectibleNum(Astro.Collectible.CLOVER))
             end
