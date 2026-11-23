@@ -12,9 +12,7 @@ local PENALTY_ACTIVE_ITEMS = {
 -- 패널티 피격 시 아이템 제거
 local PENALTY_REMOVE_ITEMS = {
     collectible = {
-        CollectibleType.COLLECTIBLE_LIBRA,
         CollectibleType.COLLECTIBLE_DEAD_CAT,
-        CollectibleType.COLLECTIBLE_TAURUS,
         CollectibleType.COLLECTIBLE_COMPASS,
         CollectibleType.COLLECTIBLE_TREASURE_MAP,
         CollectibleType.COLLECTIBLE_BLUE_MAP,
@@ -26,11 +24,9 @@ local PENALTY_REMOVE_ITEMS = {
         CollectibleType.COLLECTIBLE_SOL,
         Astro.Collectible.BIRTHRIGHT_ISAAC,
         Astro.Collectible.UNHOLY_MANTLE,
-        Astro.Collectible.OMEGA_321,
         Astro.Collectible.BIRTHRIGHT_THE_LOST,
         Astro.Collectible.BIRTHRIGHT_TAINTED_LOST,
         Astro.Collectible.SCHRODINGERS_CAT,
-        Astro.Collectible.PUZZLE_DICE,
         Astro.Collectible.POWER_ROCK_BOTTOM,
         Astro.Collectible.GOLDEN_APPLE,
         Astro.Collectible.GOLD_TOOTH,
