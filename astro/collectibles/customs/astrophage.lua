@@ -1,14 +1,14 @@
 ---
 
-local ABSORB_SPEED = 0.05
+local ABSORB_SPEED = 0.2
 
-local ABSORB_TEARS = 0.3
+local ABSORB_TEARS = 0.5
 
-local ABSORB_DAMAGE_MULTIPLIER = 1.05
+local ABSORB_DAMAGE_MULTIPLIER = 1.25
 
-local ABSORB_RANGE = 0.5
+local ABSORB_RANGE = 2.5
 
-local ABSORB_LUCK = 0.5
+local ABSORB_LUCK = 3
 
 local SUMMON_KEY = Keyboard.KEY_8
 
