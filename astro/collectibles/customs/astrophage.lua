@@ -233,10 +233,7 @@ Astro:AddCallback(
         for i = 1, Game():GetNumPlayers() do
             local player = Isaac.GetPlayer(i - 1)
 
-            if player.ControllerIndex == 0
-                and player:HasCollectible(ITEM_ID)
-                and Input.IsButtonTriggered(SUMMON_KEY, player.ControllerIndex)
-            then
+            if player:HasCollectible(ITEM_ID) and Input.IsButtonTriggered(SUMMON_KEY, 0) then
                 SummonHeldPlanetariumCollectibles(player)
             end
         end
