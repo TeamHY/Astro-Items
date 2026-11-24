@@ -16,7 +16,7 @@ Astro:AddCallback(
                 "#{{IND}}↑ {{DevilChanceSmall}}악마/천사방 확률 +15%" ..
                 "#{{IND}}{{CurseCursedSmall}} 스테이지에 입장할 때 저주에 걸리지 않습니다." ..
                 "#{{IND}}{{CurseCursedSmall}} 획득 시 Labyrinth/챌린지/특수 시드를 제외한 모든 저주를 제거합니다." ..
-                "#{{CurseBlindSmall}} 가려진 아이템을 볼 수 있습니다." ..
+                "#{{TreasureRoom}} 리펜턴스 추가 스테이지 보물방의 가려진 아이템을 볼 수 있습니다." ..
                 "#방 입장 시 보라색 모닥불이 자동으로 꺼집니다."
             )
             
@@ -27,7 +27,7 @@ Astro:AddCallback(
                 "#{{IND}}{{CurseBlind}} Immune to curses" ..
                 "#{{IND}}↑ {{BlackHeart}} +1 Black Heart" ..
                 "#{{IND}}↑ {{DevilChance}} +15% Devil/Angel Room chance" ..
-                "#{{CurseBlind}} Reveals blind items" ..
+                "#Reveal the blind item in alt path Treasure Rooms" ..
                 "#Automatically extinguishes purple fire places on room entry",
                 nil, "en_us"
             )

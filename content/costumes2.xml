@@ -39,4 +39,5 @@
 	<costume id="237" anm2path="costume_goldenapple.anm2" type="passive" />
 	<costume id="238" anm2path="costume_goldtooth.anm2" type="passive" hasSkinAlt="true" />
 	<costume id="241" anm2path="077x_lucky7.anm2" type="passive" />
+	<costume id="254" anm2path="costume_ai_glasses.anm2" type="passive" />
 </costumes>

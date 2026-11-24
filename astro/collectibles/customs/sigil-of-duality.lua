@@ -48,10 +48,10 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.SIGIL_OF_DUALITY,
                 "이중성의 인장",
-                "",
+                "빛과 어둠의 경계선",
                 "이번 게임 보스방에서 {{DevilRoom}}악마방과 {{AngelRoom}}천사방 문이 열리지 않습니다." ..
                 "#보스방 클리어 시 석상이 등장합니다." ..
-                "#석상에게 접촉 시 천사 보스와 전투합니다." ..
+                "#석상에게 접촉 시 Uriel/Gabriel과 전투합니다." ..
                 "#{{ArrowGrayRight}} 처치 시 각각의 거래 방식을 가진 {{AngelRoom}}천사방 아이템과 {{DevilRoom}}악마방 아이템이 등장합니다."
             )
 
@@ -60,7 +60,7 @@ Astro:AddCallback(
                 "Sigil of Duality", "",
                 "{{DevilRoom}} Devil and {{AngelRoom}} Angel Room doors no longer open after boss fights this run" ..
                 "#A statue appears when a boss room is cleared" ..
-                "#Touching it starts a fight with an angel boss" ..
+                "#Touching it starts a fight with an Uriel/Gabriel" ..
                 "#{{ArrowGrayRight}} Defeating it reveals an {{AngelRoom}} Angel item and a {{DevilRoom}} Devil item, each with its own deal",
                 nil, "en_us"
             )

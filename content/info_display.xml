@@ -967,6 +967,17 @@
 	<collectible id="252">
 		<info text="Rerolls all pedestal items in the room into planetarium items"/>
 	</collectible>
+	<collectible id="253">
+		<info text="A statue appears when a boss room is cleared"/>
+		<info text="Touching it starts a fight with an Uriel/Gabriel"/>
+		<info text="Defeating it reveals an angel item and a devil item, each with its own deal"/>
+	</collectible>
+	<collectible id="254">
+		<info text="Fires 2 tears at a time"/>
+		<info text="Missed shots turn 90 degrees to target enemies"/>
+		<info text="Reveal the blind item in alt path treasure rooms"/>
+		<info text="Reveals and opens secret room entrances"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

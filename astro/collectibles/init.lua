@@ -199,6 +199,7 @@ require "astro.collectibles.customs.water-balloon"
 require "astro.collectibles.customs.astrophage"
 require "astro.collectibles.customs.rocky"
 require "astro.collectibles.customs.xenonite"
+require "astro.collectibles.customs.ai-glasses"
 
 --#region PLANETARIUM
 
