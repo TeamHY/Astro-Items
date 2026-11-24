@@ -208,7 +208,6 @@ Descriptions.collectibles = {
         { text = "폭탄 1개당 공격력 <color=0xFF3BF745>+0.16" },
     },
     [56] = {
-        { text = "<warning>일회용" },
         { text = "사용 시 30% 확률로 그 방의 아이템 소환 <color=0xFFb9d27d>(행운 비례)" },
         { text = "<arrow>실패 시 브로큰하트 <color=0xFFF7513B>+3" },
     },

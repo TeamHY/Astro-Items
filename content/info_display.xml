@@ -223,7 +223,6 @@
 	<collectible id="56">
 		<info text="Chance to spawn an item from the room's pool, or gain 3 broken hearts if failed"/>
 		<info text="Chance increases with luck"/>
-		<info text="Single use"/>
 	</collectible>
 	<collectible id="57">
 		<info text="Replaces all pills with horse pills"/>
