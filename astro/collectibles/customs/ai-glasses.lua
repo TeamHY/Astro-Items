@@ -117,10 +117,10 @@ Astro:AddCallback(
     function(_, effect, renderOffset)
         local offset = effect.SpriteOffset
         local distance = offset:Length()
-        effect.SpriteOffset = offset - offset:Resized(0.175)
+        effect.SpriteOffset = offset - offset:Resized(0.125)
         effect.DepthOffset = -100
 
-        if effect.FrameCount > 27 then
+        if effect.FrameCount > 30 then
             effect:Remove()
         end
     end,

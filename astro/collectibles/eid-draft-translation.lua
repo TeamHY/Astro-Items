@@ -17,7 +17,7 @@ return {
  -- [748] = "설명 분리됨",
     [749] = "!!! Teleports to {{ErrorRoom}} error room with Ultra Greedier on pickup and removes {{Collectible223}} Pyromaniac and {{Collectible375}} Host Hat",
  -- [750] = "설명 분리됨",
-    [751] = "!!! Disappears after activation#Spawns 1 held item and 2 {{AngelRoom}} Angel items on {{BossRoom}} boss clear#Choose one; the rest disappear",
+ -- [751] = "설명 분리됨",
     [752] = "+0.02 Damage and Tears (fixed) on room clear",
  -- [753] = "설명 분리됨",
  -- [754] = "설명 분리됨",

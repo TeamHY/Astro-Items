@@ -985,7 +985,7 @@ Descriptions.collectibles = {
     },
     [253] = {
         { text = "<warning>악마/천사방 미등장" },
-        { text = "보스 처치 후 천사 보스와 전투 가능" },
+        { text = "보스방 클리어 시 천사 보스와 전투 가능" },
         { text = "<arrow>처치 시 거래형 아이템 등장" },
     },
     [254] = {

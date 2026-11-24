@@ -89,6 +89,7 @@
 		<info text="Automatically extinguishes all fire places upon entering a room"/>
 	</collectible>
 	<collectible id="19">
+		<info text="Spawns 1-3 eternal hearts on pickup"/>
 		<info text="Spawns 2 angel room items in addition to boss room rewards, which disappear when one is picked up"/>
 		<info text="Single use"/>
 	</collectible>

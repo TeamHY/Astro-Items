@@ -97,6 +97,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_20_20] = { Id = Astro.Collectible.AI_GLASSES, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_DUALITY] = { Id = Astro.Collectible.SIGIL_OF_DUALITY, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_ERASER] = { Id = Astro.Collectible.LOVE_LETTER, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_REMOTE_DETONATOR] = { Id = Astro.Collectible.LOVE_LETTER, Chance = 0.3 },
 }
 
 ---
