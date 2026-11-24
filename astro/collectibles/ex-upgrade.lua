@@ -96,6 +96,7 @@ Astro.UPGRADE_LIST = {
     [Astro.Collectible.QUBIT_DICE] = { Id = Astro.Collectible.HYPER_QUANTUM_DICE, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_20_20] = { Id = Astro.Collectible.AI_GLASSES, Chance = 0.1 },
     [CollectibleType.COLLECTIBLE_DUALITY] = { Id = Astro.Collectible.SIGIL_OF_DUALITY, Chance = 0.3 },
+    [CollectibleType.COLLECTIBLE_ERASER] = { Id = Astro.Collectible.LOVE_LETTER, Chance = 0.5 },
 }
 
 ---
