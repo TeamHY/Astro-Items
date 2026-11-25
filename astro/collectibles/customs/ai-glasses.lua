@@ -111,13 +111,13 @@ Astro:AddCallback(
 )
 
 Astro:AddCallback(
-    ModCallbacks.MC_POST_EFFECT_RENDER,
+    ModCallbacks.MC_POST_EFFECT_UPDATE,
     ---@param effect EntityEffect
     ---@param renderOffset Vector
     function(_, effect, renderOffset)
         local offset = effect.SpriteOffset
         local distance = offset:Length()
-        effect.SpriteOffset = offset - offset:Resized(0.125)
+        effect.SpriteOffset = offset - offset:Resized(2.5)
         effect.DepthOffset = -100
 
         if effect.FrameCount > 30 then
