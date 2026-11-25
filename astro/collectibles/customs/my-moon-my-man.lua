@@ -288,7 +288,9 @@ Astro:AddCallbackCustom(
     ---@param player EntityPlayer
     ---@param collectibleType CollectibleType
     function(_, player, collectibleType)
-        SFXManager():Play(ADDED_SOUND, ADDED_SOUND_VOULME)
+        if Astro.Data["MuteCopyrightedAudio"] == 1 then
+            SFXManager():Play(ADDED_SOUND, ADDED_SOUND_VOULME)
+        end
     end,
     ItemType.ITEM_PASSIVE,
     Astro.Collectible.MY_MOON_MY_MAN

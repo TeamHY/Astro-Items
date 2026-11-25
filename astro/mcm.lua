@@ -4,6 +4,7 @@ local defaultSetting = {
     ["TaurusExKeyBind"] = Keyboard.KEY_V,
     ["AltLuckyPennyColor"] = 1,
     ["SpinupPreview"] = 1,
+    ["MuteCopyrightedAudio"] = 1,
 }
 
 ----
@@ -128,6 +129,28 @@ if ModConfigMenu then
         end,
         Info = "While Isaac is holding the Spinup Dice, it displays next to the collectibles which collectible they will be rerolled into."
     });
+    ModConfigMenu.AddSetting("Astrobirth", nil,
+    {
+        Type = ModConfigMenu.OptionType.NUMBER,
+        Attribute = "MuteCopyrightedAudio",
+        Minimum = 0,
+        Maximum = 1,
+        ModifyBy = 1,
+        CurrentSetting = function()
+            return Astro.Data["MuteCopyrightedAudio"]
+        end,
+        Display = function()
+            if Astro.Data["MuteCopyrightedAudio"] == 1 then
+                return "Mute copyrighted audio: On"
+            else
+                return "Mute copyrighted audio: Off"
+            end
+        end,
+        OnChange = function(newOption)
+            Astro.Data["MuteCopyrightedAudio"] = newOption;
+        end,
+        Info = "Does not play audio tracks that violate YouTube Content ID."
+    });
 end
 
 Astro:AddCallback(
@@ -138,5 +161,6 @@ Astro:AddCallback(
         Astro.Data["TaurusExKeyBind"] = Astro.Data["TaurusExKeyBind"] or defaultSetting["TaurusExKeyBind"]
         Astro.Data["AltLuckyPennyColor"] = Astro.Data["AltLuckyPennyColor"] or defaultSetting["AltLuckyPennyColor"]
         Astro.Data["SpinupPreview"] = Astro.Data["SpinupPreview"] or defaultSetting["SpinupPreview"]
+        Astro.Data["MuteCopyrightedAudio"] = Astro.Data["MuteCopyrightedAudio"] or defaultSetting["MuteCopyrightedAudio"]
     end
 )
