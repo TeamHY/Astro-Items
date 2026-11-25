@@ -978,6 +978,9 @@
 		<info text="Reveal the blind item in alt path treasure rooms"/>
 		<info text="Reveals and opens secret room entrances"/>
 	</collectible>
+	<collectible id="255">
+		<info text="Causes cracks to appear on the floor during combat. Walking over these cracks spawns 4 ghost familiars that target and crash into enemies, exploding on impact"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

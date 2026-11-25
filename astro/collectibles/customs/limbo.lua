@@ -15,9 +15,21 @@ Astro:AddCallback(
             Astro.EID:AddCollectible(
                 Astro.Collectible.LIMBO,
                 "변옥",
-                "그 고난의 연기가 세세토록 올라가리로다",
+                "고난의 연기가 세세토록 올라가리",
                 "방 안에 랜덤 위치에 푸른 균열이 생성됩니다." ..
-                "#균열에 닿을 시 " .. SPAWN_AMOUNT .. "마리의 유령이 나와 적에게 돌진해 공격력 x2의 피해를 줍니다."
+                "#균열에 닿을 시 " .. SPAWN_AMOUNT .. "마리의 유령이 나와 적에게 돌진해 공격력 x2의 피해를 줍니다.",
+                -- 중첩 시
+                "중첩 시 균열 개수 추가"
+            )
+
+            Astro.EID:AddCollectible(
+                Astro.Collectible.LIMBO,
+                "Limbo", "",
+                "Cyan cracks spawn on the ground in hostile rooms" ..
+                "#Walking over the cracks summons " .. SPAWN_AMOUNT .. " homing exploding ghosts",
+                -- Stacks
+                "Stacks increase the number of cracks",
+                "en_us"
             )
         end
     end
@@ -26,11 +38,19 @@ Astro:AddCallback(
 Astro:AddCallback(
     ModCallbacks.MC_POST_NEW_ROOM,
     function()
-        local level = Game():GetLevel()
-        local room = level:GetCurrentRoom()
+        local game = Game()
+        local room = game:GetRoom()
 
-        if not room:IsClear() and Astro:HasCollectible(Astro.Collectible.LIMBO) then
-            Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PURGATORY, 0, room:GetRandomPosition(30), Vector.Zero, nil)
+        if room:IsClear() then return end
+
+        for i = 1, game:GetNumPlayers() do
+            local player = Isaac.GetPlayer(i - 1)
+
+            if player:HasCollectible(Astro.Collectible.LIMBO) then
+                for _ = 1, player:GetCollectibleNum(Astro.Collectible.LIMBO) do
+                    Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PURGATORY, 0, room:GetRandomPosition(30), Vector.Zero, nil)
+                end
+            end
         end
     end
 )
@@ -58,7 +78,7 @@ Astro:AddCallback(
             local sprite = effect:GetSprite()
 
             if sprite:IsEventTriggered("Shoot") then
-                for i = 1, SPAWN_AMOUNT do
+                for i = 1, SPAWN_AMOUNT - 1 do
                     local ghost = Isaac.Spawn(EntityType.ENTITY_EFFECT, EffectVariant.PURGATORY, 1, effect.Position, Vector.Zero, nil)
                     local newColor = effect.Color
                     

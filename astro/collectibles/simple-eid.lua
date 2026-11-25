@@ -993,6 +993,10 @@ Descriptions.collectibles = {
         { text = "비밀방 입구가 자동으로 열림" },
         { text = "대체 루트 보물방의 가려진 아이템을 밝힘" },
     },
+    [255] = {
+        { text = "방바닥에 균열 생성" },
+        { text = "<arrow>균열을 밟으면 공격력 x2의 피해를 주는 유령 4마리 소환" },
+    },
 }
 
 Descriptions.trinkets = {
