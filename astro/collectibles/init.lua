@@ -201,6 +201,7 @@ require "astro.collectibles.customs.rocky"
 require "astro.collectibles.customs.xenonite"
 require "astro.collectibles.customs.ai-glasses"
 require "astro.collectibles.customs.limbo"
+require "astro.collectibles.customs.molten-core"
 
 --#region PLANETARIUM
 

@@ -981,6 +981,9 @@
 	<collectible id="255">
 		<info text="Causes cracks to appear on the floor during combat. Walking over these cracks spawns 4 ghost familiars that target and crash into enemies, exploding on impact"/>
 	</collectible>
+	<collectible id="256">
+		<info text="Consumes the currently held trinket and grants its golden effect as a permanent passive effect"/>
+	</collectible>
 </collectibles>
 
 <trinkets>

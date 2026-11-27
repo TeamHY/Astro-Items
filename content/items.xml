@@ -254,6 +254,7 @@
 	<passive gfx="Sigil of Duality.png" quality="4" devilprice="1" shopprice="15" name="Sigil of Duality" description="Edge of light and darkness" id="253" />
 	<passive cache="tearflag" gfx="AI Glasses.png" quality="5" devilprice="2" shopprice="20" hidden="true" name="AI Glasses" description="Brain accel" id="254" />
 	<passive gfx="Limbo.png" quality="3" devilprice="1" shopprice="15" hidden="true" name="Limbo" description="The smoke of torment rises forever" id="255" />
+	<active gfx="Molten Core.png" quality="4" devilprice="1" shopprice="15" maxcharges="6" hidden="true" name="Molten Core" description="" id="256" />
 
 	<!-- 아래부터는 커스텀 장신구 -->
 	<trinket id="1" gfx="Eye of God.png" name="Eye Of God" description="Holy vision" cache="tearflag" />

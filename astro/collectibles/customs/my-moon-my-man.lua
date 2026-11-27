@@ -159,7 +159,7 @@ function Astro:PlayerUpdate_MyMoon(player)
     if player.ControlsEnabled then
         --TODO 설정 가능 옵션으로 교체
         if
-            (player.ControllerIndex == 0 and Input.IsButtonTriggered(SWAP_KEY, player.ControllerIndex)) --[[ or
+            (Input.IsButtonTriggered(SWAP_KEY, player.ControllerIndex)) --[[ or
                 (player.ControllerIndex > 0 and Controller and
                     Input.IsButtonPressed(Controller.STICK_RIGHT, player.ControllerIndex) and
                     Input.IsActionTriggered(ButtonAction.ACTION_DROP, player.ControllerIndex)) ]]

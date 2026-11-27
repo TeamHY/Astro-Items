@@ -997,6 +997,9 @@ Descriptions.collectibles = {
         { text = "방바닥에 균열 생성" },
         { text = "<arrow>균열을 밟으면 공격력 x2의 피해를 주는 유령 4마리 소환" },
     },
+    [256] = {
+        { text = "소지중인 장신구를 황금 효과로 흡수" },
+    },
 }
 
 Descriptions.trinkets = {
