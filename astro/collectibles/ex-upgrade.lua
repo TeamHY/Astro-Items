@@ -98,6 +98,7 @@ Astro.UPGRADE_LIST = {
     [CollectibleType.COLLECTIBLE_DUALITY] = { Id = Astro.Collectible.SIGIL_OF_DUALITY, Chance = 0.3 },
     [CollectibleType.COLLECTIBLE_ERASER] = { Id = Astro.Collectible.LOVE_LETTER, Chance = 0.5 },
     [CollectibleType.COLLECTIBLE_PURGATORY] = { Id = Astro.Collectible.LIMBO, Chance = 0.5 },
+    [CollectibleType.COLLECTIBLE_SMELTER] = { Id = Astro.Collectible.MOLTEN_CORE, Chance = 0.5 },
 }
 
 ---

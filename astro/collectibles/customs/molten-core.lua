@@ -9,7 +9,7 @@ Astro:AddCallback(
                 "초고열 용광로",
                 "",
                 "사용 시 소지중인 장신구를 흡수해 효과를 영구적으로 얻습니다." ..
-                "#{{ColorCyan}}흡수된 장신구는 {{ColorGold}}황금{{ColorCyan}} 형태로 흡수됩니다."
+                "#흡수된 장신구는 {{ColorGold}}황금 형태로 흡수됩니다."
             )
 
             Astro.EID:AddCollectible(
